@@ -1,0 +1,25 @@
+{
+    "name": "lingoda/thinkingcap",
+    "description": "Lingoda Thinkingcap Bundle",
+    "type": "symfony-bundle",
+    "version": "1.0",
+    "require-dev": {
+        "laminas/laminas-code": "^4.5"
+    },
+    "license": "proprietary",
+    "require": {
+        "php": "^8.1",
+        "phpro/soap-client": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lingoda\\ThinkingcapBundle\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    }
+}

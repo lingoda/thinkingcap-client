@@ -1,0 +1,8 @@
+includes:
+	- ../../linters/phpstan.neon
+
+parameters:
+    excludePaths:
+        - src/WebService
+    ignoreErrors:
+        - '#Property .+::\$id is never written, only read\.#'
