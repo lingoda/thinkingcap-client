@@ -1,0 +1,17 @@
+parameters:
+    mock_api_key: 'z6kl2fvfqsor4x2sq5hu'
+    mock_wsdl_url_course_management: 'https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx?WSDL'
+    mock_wsdl_url_learner_management: 'https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx?WSDL'
+    api_key: '%env(string:default:mock_api_key:LINGODA__THINKINGCAP_API_KEY)%'
+    course_management: '%env(string:default:mock_wsdl_url_course_management:LINGODA__THINKINGCAP_WSDL_URL_COURSE_MANAGEMENT)%'
+    learner_management: '%env(string:default:mock_wsdl_url_learner_management:LINGODA__THINKINGCAP_WSDL_URL_LEARNER_MANAGEMENT)%'
+
+framework:
+    secret: 's3cr3t'
+    test: true
+
+lingoda_thinkingcap:
+    api_key: '%api_key%'
+    wsdl_urls:
+        course_management: '%course_management%'
+        learner_management: '%learner_management%'

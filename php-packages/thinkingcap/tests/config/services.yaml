@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        public: true
+
+    Lingoda\ThinkingcapBundle\Client\ApiKeySetterSubscriber:
+        arguments:
+            $apiKey: '%lingoda.thinkingcap.api_key%'
+
+    Lingoda\ThinkingcapBundle\WebService\CourseManagement\CourseManagementSoapClient:
+        factory: ['Lingoda\ThinkingcapBundle\Client\CourseClientFactory', 'create']
+        arguments:
+            $wsdlUrl: '%lingoda.thinkingcap.wsdl_url.course_management%'
+            $eventDispatcher: '@event_dispatcher'
+
+    Lingoda\ThinkingcapBundle\WebService\LearnerManagement\LearnerManagementSoapClient:
+        factory: ['Lingoda\ThinkingcapBundle\Client\LearnerClientFactory', 'create']
+        arguments:
+            $wsdlUrl: '%lingoda.thinkingcap.wsdl_url.learner_management%'
+            $eventDispatcher: '@event_dispatcher'

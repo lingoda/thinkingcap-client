@@ -1,2 +1,5 @@
 /vendor/
+/var/
+/tests/var/
 composer.lock
+.phpunit.result.cache

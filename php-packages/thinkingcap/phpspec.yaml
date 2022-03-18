@@ -1,0 +1,6 @@
+runner.maintainers.errors.level: 8191 # E_ALL & ~E_USER_DEPRECATED & ~E_DEPRECATED
+suites:
+    thinkingcap_bundle:
+        namespace: Lingoda\ThinkingcapBundle
+        psr4_prefix: Lingoda\ThinkingcapBundle
+code_generation: false

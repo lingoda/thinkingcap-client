@@ -4,11 +4,15 @@
 └── thinkingcap
     ├── bin
     │   └── GenerateFiles.sh
-    ├── .
-    ├── .
+    ├── docs
+    ├── spec
     ├── src
-    │   ├── .
-    │   ├── .
+    │   ├── Client
+    │   │   ├── ApiKeySetterSubscriber.php
+    │   │   ├── CourseClientFactory.php
+    │   │   └── LearnerClientFactory.php
+    │   ├── DependencyInjection
+    │   ├── Resources
     │   └── WebService
     │       ├── CourseManagement
     │       │   ├── Type
@@ -17,7 +21,6 @@
     │       │   │   ├── .
     │       │   │   ├── .
     │       │   │   └── Xml.php
-    │       │   ├── CourseManagement.wsdl
     │       │   ├── CourseManagementClassmap.php
     │       │   ├── CourseManagementSoapClient.php
     │       │   └── CourseManagementSoapClientConfig.php
@@ -28,13 +31,13 @@
     │           │   ├── .
     │           │   ├── .
     │           │   └── Xml.php
-    │           ├── LearnerManagement.wsdl
     │           ├── LearnerManagementClassmap.php
     │           ├── LearnerManagementSoapClient.php
     │           └── LearnerManagementSoapClientConfig.php
-    ├── .
-    └── .
+    └── tests
 ```
+
+**Note:** To know how to use the package as an end-user, please see the [usage](usage.md) doc.
 
 ## Folder 'src/WebService'
 
@@ -50,7 +53,6 @@ in the following structure:
 
 ```
     ├── Type
-    ├── LearnerManagement.wsdl
     ├── LearnerManagementClassmap.php
     ├── LearnerManagementSoapClient.php
     └── LearnerManagementSoapClientConfig.php

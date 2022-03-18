@@ -1,0 +1,68 @@
+
+-
+    request:
+        method: POST
+        url: 'https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx'
+        headers:
+            Host: lingoda.thinkingcap.com
+            Content-Type: 'text/xml; charset=utf-8;'
+            SOAPAction: 'http://www.thinkingcap.com/GetUserByEmail'
+        body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://www.thinkingcap.com/\"><SOAP-ENV:Body><ns1:GetUserByEmail><ns1:apiKey>z6kl2fvfqsor4x2sq5hu</ns1:apiKey><ns1:userEmail>testEmail@lingoda.com</ns1:userEmail></ns1:GetUserByEmail></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"
+    response:
+        status:
+            code: 200
+            message: OK
+        headers:
+            Cache-Control: 'private, max-age=0'
+            Content-Length: '9608'
+            Content-Type: 'text/xml; charset=utf-8'
+            X-Agile-DAS: 'C:5,  QT: 0.0193379s,  QA: 0.0038675s,  QM: 0.0193379s,  PT: 0.0193379s,  DP: 100%'
+            X-Agile-XTS: 'XT: 0s, TT: 0s, RT: 0s'
+            Request-Context: 'appId=cid-v1:903563bd-4b58-4e07-ab0e-88877b26c6c9'
+            Access-Control-Expose-Headers: Request-Context
+            X-Frame-Options: SAMEORIGIN
+            X-XSS-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            Content-Security-Policy: 'frame-ancestors ''self'''
+            Access-Control-Allow-Origin: '*'
+            Set-Cookie: [ARRAffinity=3ca474cbd62374b241b553ae8bd3ccc286afbba95023009621096b28d6306fd1;Path=/;HttpOnly;Secure;Domain=lingoda.thinkingcap.com, ARRAffinitySameSite=3ca474cbd62374b241b553ae8bd3ccc286afbba95023009621096b28d6306fd1;Path=/;HttpOnly;SameSite=None;Secure;Domain=lingoda.thinkingcap.com]
+            Date: 'Tue, 01 Mar 2022 14:12:41 GMT'
+        body: '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetUserByEmailResponse xmlns="http://www.thinkingcap.com/"><GetUserByEmailResult><Result><ID>1e088bc7-2e96-4174-aaa3-cdf63ef491d5</ID><DisplayID>01464</DisplayID><HomeDomain>00000000-0000-0000-0000-000000000000</HomeDomain><BaseURLs><DomainURLsCollection><language>en</language><languageURLs><string>https://lingoda.thinkingcap.com</string></languageURLs></DomainURLsCollection></BaseURLs><FirstName>abbas</FirstName><LastLoginDate>2022-03-01T11:20:33.477</LastLoginDate><IsLoginLocked>false</IsLoginLocked><CompletedUserSetup>false</CompletedUserSetup><LastName>afsharfarnia</LastName><ScreenName>abbas afsharfarnia</ScreenName><Title /><Email>testEmail@lingoda.com</Email><CreationDate>2022-02-09T07:40:17.487</CreationDate><LastModifiedDate>0001-01-01T00:00:00</LastModifiedDate><PasswordChangeDate>0001-01-01T00:00:00</PasswordChangeDate><Password>********</Password><MustChangePassword>false</MustChangePassword><Language>en</Language><Active>true</Active><StatusLocked>false</StatusLocked><Pending>false</Pending><SuperUser>false</SuperUser><OutsideEmail /><NewsLetterEmailOptOutDisabled>false</NewsLetterEmailOptOutDisabled><Roles /><Permissions /><BlockNotifications>false</BlockNotifications><Programs><Program><ID>00000000-0000-0000-0000-000000000000</ID><Name>Lingoda</Name><Code>Lingoda_LMS_Root</Code><Description>Root</Description><ParentPath>00000000-0000-0000-0000-000000000000,Lingoda\</ParentPath><ProgramPath>Lingoda</ProgramPath><AutoEnrollSubprograms>false</AutoEnrollSubprograms><AutoIncludeUsersType /><AutoIncludeUsers>false</AutoIncludeUsers><AutoIncludeUsersFields /><AutoIncludeCoursesType /><AutoIncludeCourses>false</AutoIncludeCourses><AutoIncludeCoursesFields /><IsSearchFilter>false</IsSearchFilter><AllowSelfRegistration>false</AllowSelfRegistration><RequiresRegistrationApproval>false</RequiresRegistrationApproval><RegistrationAutomaticApproval>false</RegistrationAutomaticApproval><RegistrationRequiresCode>false</RegistrationRequiresCode><RegistrationRequiresRequest>false</RegistrationRequiresRequest><RegistrationInstruction /><RegistrationAutomaticApproval_Domain>false</RegistrationAutomaticApproval_Domain><AutomaticApproveRegistrationDomain /><RegistrationFields>&lt;RegistrationFields/&gt;</RegistrationFields><RegistrationSubdomains /><AllowUserDomainSelection>false</AllowUserDomainSelection><UserDomainSelectionRequired>false</UserDomainSelectionRequired><UserDomainSelectAll>false</UserDomainSelectAll><UserDomainDisplayLabel /><UserRegistrationDomains /><UserRegistrationDomainsList /><UserRegistrationDomainsDisplay>textbox</UserRegistrationDomainsDisplay><UserRegistrationDomainsMode>code</UserRegistrationDomainsMode><RegistrationConfirmationText /><RegistrationIntroText /><RegistrationToDomainIntroText /><RegistrationRequestConfirmationText /><RegistrationDisclaimerText /><RequiresRegistrationDisclaimerAck>false</RequiresRegistrationDisclaimerAck><RegistrationRequiresPurchase>false</RegistrationRequiresPurchase><RegistrationRequiresVerification>false</RegistrationRequiresVerification><RegistrationSubscription /><RegistrationPasses /><CollectLoginMetadataOnce>false</CollectLoginMetadataOnce><ShowLoginNotRequiredFields>false</ShowLoginNotRequiredFields><SendRegistrationConfirmation>false</SendRegistrationConfirmation><SendRegistrationRequest>false</SendRegistrationRequest><PasswordExpirationDurationInSeconds>0</PasswordExpirationDurationInSeconds><SendRegistrationApproval>false</SendRegistrationApproval><SendRegistrationDenial>false</SendRegistrationDenial><OverrideGlobalRegistrationConfirmation>false</OverrideGlobalRegistrationConfirmation><OverrideGlobalRegistrationRequest>false</OverrideGlobalRegistrationRequest><OverrideGlobalRegistrationApproval>false</OverrideGlobalRegistrationApproval><OverrideGlobalRegistrationDenial>false</OverrideGlobalRegistrationDenial><RegistrationConfirmationEmailText /><RegistrationRequestEmailText /><RegistrationApprovalEmailText /><RegistrationDenialEmailText /><RegistrationCaptchaMode>full</RegistrationCaptchaMode><RegistrationCaptchaType>reCAPTCHA</RegistrationCaptchaType><ForumCaptchaType>reCAPTCHA</ForumCaptchaType><ForumHasDisclaimer>false</ForumHasDisclaimer><RegistrationDenyPublicEmails>false</RegistrationDenyPublicEmails><RegistrationAutoFillDefaultFields>false</RegistrationAutoFillDefaultFields><SubPrograms /><UseCustomLearnerUrl>true</UseCustomLearnerUrl><UseSSL>false</UseSSL><HideUrlFromSearch>false</HideUrlFromSearch><CanConsumeShared>false</CanConsumeShared><CanShare>false</CanShare><CanSiblingShareOnly>false</CanSiblingShareOnly><DoNotInheritRosterOptions>false</DoNotInheritRosterOptions><AllowChildRosterEnroll>false</AllowChildRosterEnroll><AllowAddUsersFromRoster>false</AllowAddUsersFromRoster><AddUsersFromRosterToRoot>false</AddUsersFromRosterToRoot><RosterCompletionAfterStartDate>false</RosterCompletionAfterStartDate><LimitRosterUploadDate>false</LimitRosterUploadDate><LimitRosterUploadUnit>2147483647</LimitRosterUploadUnit><IncludeStatusInRoster>false</IncludeStatusInRoster><IncludeSuccessInRoster>false</IncludeSuccessInRoster><IncludeScoreInRoster>false</IncludeScoreInRoster><IncludeTimeSpentInRoster>false</IncludeTimeSpentInRoster><AllColumnsRequiredInRoster>false</AllColumnsRequiredInRoster><OverrideSessionCertificate>false</OverrideSessionCertificate><LearningActivityTypeOffFilters /><ParentLearningActivityTypeOffFilters /><LearningActivityStatusOffFilters /><ParentLearningActivityStatusOffFilters /><LearningActivityOriginOffFilters /><ParentLearningActivityOriginOffFilters /><LearningActivityHideFilters>false</LearningActivityHideFilters><ParentLearningActivityHideFilters>false</ParentLearningActivityHideFilters><DenyChildLearningObjects>false</DenyChildLearningObjects><GenerateLearningActivitiesCode>false</GenerateLearningActivitiesCode><AllowOverrideLearningActivitiesCode>false</AllowOverrideLearningActivitiesCode><IsParent>false</IsParent><SubscriptionRules /><RegistrationIntroXmlNode><introduction xmlns="" /></RegistrationIntroXmlNode><RegistrationDuplicateAccountInstrXmlNode><duplicateAccountInstruction xmlns="" /></RegistrationDuplicateAccountInstrXmlNode><RegistrationDisclaimerXmlNode><disclaimer xmlns="" /></RegistrationDisclaimerXmlNode><RegistrationConfirmationTextXmlNode><confirmation xmlns="" /></RegistrationConfirmationTextXmlNode><RegistrationRequestConfirmationTextXmlNode><requestConfirmation xmlns="" /></RegistrationRequestConfirmationTextXmlNode><RegistrationConfirmationEmailXmlNode><confirmationEmail xmlns="" /></RegistrationConfirmationEmailXmlNode><RegistrationRequestEmailXmlNode><requestEmail xmlns="" /></RegistrationRequestEmailXmlNode><RegistrationRequestApprovalEmailXmlNode><requestApprovalEmail xmlns="" /></RegistrationRequestApprovalEmailXmlNode><RegistrationRequestDenialEmailXmlNode><requestDenialEmail xmlns="" /></RegistrationRequestDenialEmailXmlNode><UserDomainDisplayLabelXmlNode><userDomainDisplay xmlns="" /></UserDomainDisplayLabelXmlNode><CapLicenseTotal>false</CapLicenseTotal><CapLicenseActive>false</CapLicenseActive><LicenseTotalUsers>2147483647</LicenseTotalUsers><LicenseActiveUsers>2147483647</LicenseActiveUsers><LicenseCycleDay>-1</LicenseCycleDay><MonthlyUniqueLogins>-1</MonthlyUniqueLogins><UseParentEmail>false</UseParentEmail><DoNotInheritCreditSettings>false</DoNotInheritCreditSettings><AwardCreditsAcrossVariousCategories>false</AwardCreditsAcrossVariousCategories><DoNotInheritILTSettings>false</DoNotInheritILTSettings><LimitCredits>false</LimitCredits><MaxCreditsPerHour>0</MaxCreditsPerHour><MaxCreditsPerSession>0</MaxCreditsPerSession><MaxCreditsPerDay>0</MaxCreditsPerDay><FacilitatorCredits>0</FacilitatorCredits><SpeakerCredits>0</SpeakerCredits><ReviewerCredits>0</ReviewerCredits><ShowSessionLocation>false</ShowSessionLocation><ShowSessionFecilitators>false</ShowSessionFecilitators><ShowSessionSpeakers>false</ShowSessionSpeakers><ShowSessionCertificates>false</ShowSessionCertificates><ShowSessionCredits>false</ShowSessionCredits><ShowSessionRequired>false</ShowSessionRequired><ShowSessionTimeDateTBD>false</ShowSessionTimeDateTBD><ShowLocationTimezone>false</ShowLocationTimezone><ShowAccommodationLink>false</ShowAccommodationLink><DenyOutsideDomainsTranscriptVisibility>false</DenyOutsideDomainsTranscriptVisibility><ParentDenyOutsideDomainsTranscriptVisibility>false</ParentDenyOutsideDomainsTranscriptVisibility><AllowDomainMembershipExtension>false</AllowDomainMembershipExtension><PendingUserMembership>false</PendingUserMembership><ForceDisplayDomainTimezone>false</ForceDisplayDomainTimezone><RemoveNotMatchingRulesUsers>false</RemoveNotMatchingRulesUsers><LearningActivityDetailsPrivate>false</LearningActivityDetailsPrivate><SupervisorRules /></Program></Programs><ProgramMgr>false</ProgramMgr><Courses /><CourseTitles /><ActivityMaps /><ActivityMapTitles /><TACourses /><TACourseTitles /><TAActivityMaps /><TAActivityMapTitles /><Mails /><PersonalFolders /><Contacts /><TimeZone><Code>EST</Code><DSTCode>EDT</DSTCode><Name>Eastern Standard Time (GMT-5:00)</Name><ApplyDaylightSavings>false</ApplyDaylightSavings><IsDaylightSaving>false</IsDaylightSaving><Offset><OffsetHours>-5</OffsetHours><OffsetMinutes>0</OffsetMinutes></Offset><CiscoCode>20</CiscoCode></TimeZone><DateFormat>MM/dd/yyyy</DateFormat></Result><Success>true</Success></GetUserByEmailResult></GetUserByEmailResponse></soap:Body></soap:Envelope>'
+        curl_info:
+            url: 'https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx'
+            content_type: 'text/xml; charset=utf-8'
+            http_code: 200
+            header_size: 888
+            request_size: 568
+            filetime: -1
+            ssl_verify_result: 0
+            redirect_count: 0
+            total_time: 0.239255
+            namelookup_time: 0.043075
+            connect_time: 0.091185
+            pretransfer_time: 0.181658
+            size_upload: 356.0
+            size_download: 9608.0
+            speed_download: 40200.0
+            speed_upload: 1489.0
+            download_content_length: 9608.0
+            upload_content_length: 356.0
+            starttransfer_time: 0.239158
+            redirect_time: 0.0
+            redirect_url: ''
+            primary_ip: 20.50.2.22
+            certinfo: { }
+            primary_port: 443
+            local_ip: 192.168.0.32
+            local_port: 44874
+            http_version: 2
+            protocol: 2
+            ssl_verifyresult: 0
+            scheme: HTTPS
+            appconnect_time_us: 181539
+            connect_time_us: 91185
+            namelookup_time_us: 43075
+            pretransfer_time_us: 181658
+            redirect_time_us: 0
+            starttransfer_time_us: 239158
+            total_time_us: 239255

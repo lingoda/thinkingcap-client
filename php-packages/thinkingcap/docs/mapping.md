@@ -32,13 +32,12 @@ If you want to generate the files manually, you need to follow these steps:
 For example, we want to update the CourseManagement web service. So the only place that should be affected
 is `src/WebService/CourseManagement`
 
-1- Update the wsdl file:
+1- Create the wsdl file:
 
-Copy the new wsdl into the `src/WebService/CourseManagement/CourseManagement.wsdl` file or download it via the
-following command:
+Create `src/WebService/CourseManagement/CourseManagement.wsdl` file or download it via the following command:
 
 ```
-wget -O src/WebService/CourseManagement/CourseManagement.wsdl https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx?WSDL
+curl -o src/WebService/CourseManagement/CourseManagement.wsdl https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx?WSDL
 ```
 
 2- Install dev dependencies to have `laminas/laminas-code` package
