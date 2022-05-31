@@ -215,6 +215,18 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
     }
 
     /**
+     * @param RequestInterface|Type\DeleteUserByLookup $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\DeleteUserByLookupResponse
+     */
+    public function deleteUserByLookup(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\DeleteUserByLookup $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\DeleteUserByLookupResponse
+    {
+        return $this->call('DeleteUserByLookup', $parameters);
+    }
+
+    /**
      * @param RequestInterface|Type\AddUserToDomain $parameters
      *
      * @throws SoapException
@@ -248,6 +260,18 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
     public function setUserActive(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActive $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActiveResponse
     {
         return $this->call('SetUserActive', $parameters);
+    }
+
+    /**
+     * @param RequestInterface|Type\SetUserActiveByLookup $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\SetUserActiveByLookupResponse
+     */
+    public function setUserActiveByLookup(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActiveByLookup $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActiveByLookupResponse
+    {
+        return $this->call('SetUserActiveByLookup', $parameters);
     }
 
     /**
@@ -308,6 +332,18 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
     public function studentSelfEnroll(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentSelfEnroll $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentSelfEnrollResponse
     {
         return $this->call('StudentSelfEnroll', $parameters);
+    }
+
+    /**
+     * @param RequestInterface|Type\WithdrawStudent $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\WithdrawStudentResponse
+     */
+    public function withdrawStudent(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\WithdrawStudent $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\WithdrawStudentResponse
+    {
+        return $this->call('WithdrawStudent', $parameters);
     }
 
     /**

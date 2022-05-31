@@ -101,7 +101,6 @@
               <s:element minOccurs="1" maxOccurs="1" name="ChallengeFrequency" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="AddTimeInReadOnly" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="Timeout" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="AllowAnonPreview" type="s:boolean" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -242,6 +241,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAnonPreview" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="BaseUrl" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HasAccessCode" type="s:boolean" />
@@ -510,6 +510,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="AllowWaitListing" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="WaitListMaxNumber" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="DisableSupervisorSignOff" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerRequestEvaluation" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="SendSupervisorSignOffEmailOnLogin" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="AuthenticationTypeName" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="AuthenticationTypeCode" type="s:string" />
@@ -540,6 +541,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="ActivityNotifications" type="tns:ArrayOfActivityNotification" />
               <s:element minOccurs="0" maxOccurs="1" name="ActCertificateRules" type="tns:ArrayOfAnyType" />
               <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="CourseCredit" type="s:decimal" />
               <s:element minOccurs="0" maxOccurs="1" name="RecordCreditValue" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
@@ -1417,6 +1419,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ReenrollmentAllowedBeforeExpiringUnits" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="ReenrollmentAllowedBeforeExpiringInterval" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sessions" type="tns:ArrayOfCourseSession" />
           <s:element minOccurs="0" maxOccurs="1" name="DetailsLink" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedTimestamp" type="s:dateTime" />
         </s:sequence>
@@ -1436,6 +1439,11 @@
       <s:complexType name="ArrayOfString1">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="Value" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCourseSession">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CourseSession" nillable="true" type="tns:CourseSession" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetLearningActivityByIDResponse">
@@ -1606,19 +1614,19 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SetCourseInfo">
+      <s:element name="UpdateLearningActivityInfo">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="courseID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="coursexml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="learningActivityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="learningActivitySettingsXML" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SetCourseInfoResponse">
+      <s:element name="UpdateLearningActivityInfoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SetCourseInfoResult" type="tns:ServiceResultOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateLearningActivityInfoResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1986,6 +1994,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="sessionLocationID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="webinarProviderID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="zoomSubAccountHostID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customMeetingURL" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="isRecurringSession" type="s:boolean" />
             <s:element minOccurs="0" maxOccurs="1" name="recurringCadence" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="recurringNo" type="s:int" />
@@ -1997,6 +2006,34 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="AddCourseSessionResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCourseSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="courseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sessionIsRequired" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeIsTDB" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionStartDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionEndDateTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="locationIsTBD" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionLocationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="webinarProviderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zoomSubAccountHostID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customMeetingURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attendanceCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCourseSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCourseSessionResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2013,11 +2050,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:ArrayOfCourseSession" />
           <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfCourseSession">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CourseSession" nillable="true" type="tns:CourseSession" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetCourseSessionsListResponse">
@@ -2094,6 +2126,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="SeriesKeyword" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SeriesProgram" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowGlobalOnly" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WaitlistOnlyInOneMember" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="DoNotInherit" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="SeriesFieldsXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CertificateRules" type="tns:ArrayOfAnyType" />
@@ -2272,11 +2305,11 @@
   <wsdl:message name="DeleteLearningActivitySoapOut">
     <wsdl:part name="parameters" element="tns:DeleteLearningActivityResponse" />
   </wsdl:message>
-  <wsdl:message name="SetCourseInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:SetCourseInfo" />
+  <wsdl:message name="UpdateLearningActivityInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLearningActivityInfo" />
   </wsdl:message>
-  <wsdl:message name="SetCourseInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:SetCourseInfoResponse" />
+  <wsdl:message name="UpdateLearningActivityInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLearningActivityInfoResponse" />
   </wsdl:message>
   <wsdl:message name="SetCourseTAsSoapIn">
     <wsdl:part name="parameters" element="tns:SetCourseTAs" />
@@ -2373,6 +2406,12 @@
   </wsdl:message>
   <wsdl:message name="AddCourseSessionSoapOut">
     <wsdl:part name="parameters" element="tns:AddCourseSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCourseSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCourseSession" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCourseSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCourseSessionResponse" />
   </wsdl:message>
   <wsdl:message name="GetCourseSessionsListSoapIn">
     <wsdl:part name="parameters" element="tns:GetCourseSessionsList" />
@@ -2515,12 +2554,12 @@
   <wsdl:message name="DeleteLearningActivityHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
-  <wsdl:message name="SetCourseInfoHttpGetIn">
+  <wsdl:message name="UpdateLearningActivityInfoHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
-    <wsdl:part name="courseID" type="s:string" />
-    <wsdl:part name="coursexml" type="s:string" />
+    <wsdl:part name="learningActivityID" type="s:string" />
+    <wsdl:part name="learningActivitySettingsXML" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="SetCourseInfoHttpGetOut">
+  <wsdl:message name="UpdateLearningActivityInfoHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="SetCourseTAsHttpGetIn">
@@ -2656,12 +2695,33 @@
     <wsdl:part name="sessionLocationID" type="s:string" />
     <wsdl:part name="webinarProviderID" type="s:string" />
     <wsdl:part name="zoomSubAccountHostID" type="s:string" />
+    <wsdl:part name="customMeetingURL" type="s:string" />
     <wsdl:part name="isRecurringSession" type="s:string" />
     <wsdl:part name="recurringCadence" type="s:string" />
     <wsdl:part name="recurringNo" type="s:string" />
     <wsdl:part name="attendanceCode" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddCourseSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCourseSessionHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="courseID" type="s:string" />
+    <wsdl:part name="sessionID" type="s:string" />
+    <wsdl:part name="sessionTitle" type="s:string" />
+    <wsdl:part name="sessionDescription" type="s:string" />
+    <wsdl:part name="sessionIsRequired" type="s:string" />
+    <wsdl:part name="timeIsTDB" type="s:string" />
+    <wsdl:part name="sessionStartDateTime" type="s:string" />
+    <wsdl:part name="sessionEndDateTime" type="s:string" />
+    <wsdl:part name="locationIsTBD" type="s:string" />
+    <wsdl:part name="sessionLocationID" type="s:string" />
+    <wsdl:part name="webinarProviderID" type="s:string" />
+    <wsdl:part name="zoomSubAccountHostID" type="s:string" />
+    <wsdl:part name="customMeetingURL" type="s:string" />
+    <wsdl:part name="attendanceCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCourseSessionHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GetCourseSessionsListHttpGetIn">
@@ -2824,12 +2884,12 @@
   <wsdl:message name="DeleteLearningActivityHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
-  <wsdl:message name="SetCourseInfoHttpPostIn">
+  <wsdl:message name="UpdateLearningActivityInfoHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
-    <wsdl:part name="courseID" type="s:string" />
-    <wsdl:part name="coursexml" type="s:string" />
+    <wsdl:part name="learningActivityID" type="s:string" />
+    <wsdl:part name="learningActivitySettingsXML" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="SetCourseInfoHttpPostOut">
+  <wsdl:message name="UpdateLearningActivityInfoHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="SetCourseTAsHttpPostIn">
@@ -2965,12 +3025,33 @@
     <wsdl:part name="sessionLocationID" type="s:string" />
     <wsdl:part name="webinarProviderID" type="s:string" />
     <wsdl:part name="zoomSubAccountHostID" type="s:string" />
+    <wsdl:part name="customMeetingURL" type="s:string" />
     <wsdl:part name="isRecurringSession" type="s:string" />
     <wsdl:part name="recurringCadence" type="s:string" />
     <wsdl:part name="recurringNo" type="s:string" />
     <wsdl:part name="attendanceCode" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddCourseSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCourseSessionHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="courseID" type="s:string" />
+    <wsdl:part name="sessionID" type="s:string" />
+    <wsdl:part name="sessionTitle" type="s:string" />
+    <wsdl:part name="sessionDescription" type="s:string" />
+    <wsdl:part name="sessionIsRequired" type="s:string" />
+    <wsdl:part name="timeIsTDB" type="s:string" />
+    <wsdl:part name="sessionStartDateTime" type="s:string" />
+    <wsdl:part name="sessionEndDateTime" type="s:string" />
+    <wsdl:part name="locationIsTBD" type="s:string" />
+    <wsdl:part name="sessionLocationID" type="s:string" />
+    <wsdl:part name="webinarProviderID" type="s:string" />
+    <wsdl:part name="zoomSubAccountHostID" type="s:string" />
+    <wsdl:part name="customMeetingURL" type="s:string" />
+    <wsdl:part name="attendanceCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCourseSessionHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GetCourseSessionsListHttpPostIn">
@@ -3092,10 +3173,10 @@
       <wsdl:input message="tns:DeleteLearningActivitySoapIn" />
       <wsdl:output message="tns:DeleteLearningActivitySoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a course information with parameters passed in the xml.</wsdl:documentation>
-      <wsdl:input message="tns:SetCourseInfoSoapIn" />
-      <wsdl:output message="tns:SetCourseInfoSoapOut" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a learning activity information with parameters passed in the xml. &lt;br/&gt;The learning activity settings to be updated are passed in the XML parameter. Settings nodes that should not change can be ommitted.&lt;br/&gt;Settings XML format: &lt;SettingsXML&gt;&lt;Title&gt;the new learning activity title&lt;/Title&gt;&lt;Description&gt;the new learning activity description&lt;/Description&gt;&lt;FirstEnrollmentDate&gt;the new first enrollment date in format yyyy-MM-dd&lt;/FirstEnrollmentDate&gt;&lt;LastEnrollmentDate&gt;the new last enrollment date ["unlimited","date in format yyyy-MM-dd"]&lt;/LastEnrollmentDate&gt;&lt;StartDate&gt;the new start date in format yyyy-MM-dd (not for ILTs)&lt;/StartDate&gt;&lt;HasForum&gt;["True","False"]&lt;/HasForum&gt;&lt;Prerequisites&gt;&lt;Prerequisite&gt;ID in LMS of a prerequisite learning activity&lt;/Prerequisite&gt;...&lt;Prerequisite&gt;ID in LMS of a prerequisite learning activity&lt;/Prerequisite&gt;&lt;/Prerequisites&gt;&lt;/SettingsXML&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLearningActivityInfoSoapIn" />
+      <wsdl:output message="tns:UpdateLearningActivityInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetCourseTAs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the TAs for a course from a comma separated list of user IDs</wsdl:documentation>
@@ -3173,9 +3254,14 @@
       <wsdl:output message="tns:GetCourseModeratorsListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. The result contains the new session LMS ID or if a meeting was created, the session ID and the meeting ID separated by "|".&lt;br/&gt;Parameters: API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session title (required, string), &lt;br/&gt;session description (optional, string), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a location is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar, &lt;br/&gt;session is recurring (required, boolean True/False), &lt;br/&gt;recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;code to verify attendance (optional, string)</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. A successful operation returns the new session LMS ID.&lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session title (required, string), &lt;br/&gt;session description (optional, string), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;session is recurring (required, boolean True/False), &lt;br/&gt;recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;code to verify attendance (optional, string)</wsdl:documentation>
       <wsdl:input message="tns:AddCourseSessionSoapIn" />
       <wsdl:output message="tns:AddCourseSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates an existing IL Course session. If webinar information is passed, creates a meeting for the webinar provider passed. A successful operation returns the session LMS ID.If no location, webinar or custom meeting URL are passed, the session location is not modified. All optional parameters not passed will not be modified. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session ID (required, string in GUID format), &lt;br/&gt;session title (optional, string - if not passed will not be modified), &lt;br/&gt;session description (optional, string - if not passed will not be modified), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00" - if not passed will not be modified), &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00" - if not passed will not be modified), &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;code to verify attendance (optional, string - if not passed will not be modified)</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCourseSessionSoapIn" />
+      <wsdl:output message="tns:UpdateCourseSessionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseSessionsList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of an IL Course's sessions. Sessions times are returned in UTC.</wsdl:documentation>
@@ -3269,10 +3355,10 @@
       <wsdl:input message="tns:DeleteLearningActivityHttpGetIn" />
       <wsdl:output message="tns:DeleteLearningActivityHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a course information with parameters passed in the xml.</wsdl:documentation>
-      <wsdl:input message="tns:SetCourseInfoHttpGetIn" />
-      <wsdl:output message="tns:SetCourseInfoHttpGetOut" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a learning activity information with parameters passed in the xml. &lt;br/&gt;The learning activity settings to be updated are passed in the XML parameter. Settings nodes that should not change can be ommitted.&lt;br/&gt;Settings XML format: &lt;SettingsXML&gt;&lt;Title&gt;the new learning activity title&lt;/Title&gt;&lt;Description&gt;the new learning activity description&lt;/Description&gt;&lt;FirstEnrollmentDate&gt;the new first enrollment date in format yyyy-MM-dd&lt;/FirstEnrollmentDate&gt;&lt;LastEnrollmentDate&gt;the new last enrollment date ["unlimited","date in format yyyy-MM-dd"]&lt;/LastEnrollmentDate&gt;&lt;StartDate&gt;the new start date in format yyyy-MM-dd (not for ILTs)&lt;/StartDate&gt;&lt;HasForum&gt;["True","False"]&lt;/HasForum&gt;&lt;Prerequisites&gt;&lt;Prerequisite&gt;ID in LMS of a prerequisite learning activity&lt;/Prerequisite&gt;...&lt;Prerequisite&gt;ID in LMS of a prerequisite learning activity&lt;/Prerequisite&gt;&lt;/Prerequisites&gt;&lt;/SettingsXML&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLearningActivityInfoHttpGetIn" />
+      <wsdl:output message="tns:UpdateLearningActivityInfoHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="SetCourseTAs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the TAs for a course from a comma separated list of user IDs</wsdl:documentation>
@@ -3345,9 +3431,14 @@
       <wsdl:output message="tns:GetCourseModeratorsListHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. The result contains the new session LMS ID or if a meeting was created, the session ID and the meeting ID separated by "|".&lt;br/&gt;Parameters: API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session title (required, string), &lt;br/&gt;session description (optional, string), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a location is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar, &lt;br/&gt;session is recurring (required, boolean True/False), &lt;br/&gt;recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;code to verify attendance (optional, string)</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. A successful operation returns the new session LMS ID.&lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session title (required, string), &lt;br/&gt;session description (optional, string), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;session is recurring (required, boolean True/False), &lt;br/&gt;recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;code to verify attendance (optional, string)</wsdl:documentation>
       <wsdl:input message="tns:AddCourseSessionHttpGetIn" />
       <wsdl:output message="tns:AddCourseSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates an existing IL Course session. If webinar information is passed, creates a meeting for the webinar provider passed. A successful operation returns the session LMS ID.If no location, webinar or custom meeting URL are passed, the session location is not modified. All optional parameters not passed will not be modified. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session ID (required, string in GUID format), &lt;br/&gt;session title (optional, string - if not passed will not be modified), &lt;br/&gt;session description (optional, string - if not passed will not be modified), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00" - if not passed will not be modified), &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00" - if not passed will not be modified), &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;code to verify attendance (optional, string - if not passed will not be modified)</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCourseSessionHttpGetIn" />
+      <wsdl:output message="tns:UpdateCourseSessionHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseSessionsList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of an IL Course's sessions. Sessions times are returned in UTC.</wsdl:documentation>
@@ -3441,10 +3532,10 @@
       <wsdl:input message="tns:DeleteLearningActivityHttpPostIn" />
       <wsdl:output message="tns:DeleteLearningActivityHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a course information with parameters passed in the xml.</wsdl:documentation>
-      <wsdl:input message="tns:SetCourseInfoHttpPostIn" />
-      <wsdl:output message="tns:SetCourseInfoHttpPostOut" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a learning activity information with parameters passed in the xml. &lt;br/&gt;The learning activity settings to be updated are passed in the XML parameter. Settings nodes that should not change can be ommitted.&lt;br/&gt;Settings XML format: &lt;SettingsXML&gt;&lt;Title&gt;the new learning activity title&lt;/Title&gt;&lt;Description&gt;the new learning activity description&lt;/Description&gt;&lt;FirstEnrollmentDate&gt;the new first enrollment date in format yyyy-MM-dd&lt;/FirstEnrollmentDate&gt;&lt;LastEnrollmentDate&gt;the new last enrollment date ["unlimited","date in format yyyy-MM-dd"]&lt;/LastEnrollmentDate&gt;&lt;StartDate&gt;the new start date in format yyyy-MM-dd (not for ILTs)&lt;/StartDate&gt;&lt;HasForum&gt;["True","False"]&lt;/HasForum&gt;&lt;Prerequisites&gt;&lt;Prerequisite&gt;ID in LMS of a prerequisite learning activity&lt;/Prerequisite&gt;...&lt;Prerequisite&gt;ID in LMS of a prerequisite learning activity&lt;/Prerequisite&gt;&lt;/Prerequisites&gt;&lt;/SettingsXML&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UpdateLearningActivityInfoHttpPostIn" />
+      <wsdl:output message="tns:UpdateLearningActivityInfoHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="SetCourseTAs">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the TAs for a course from a comma separated list of user IDs</wsdl:documentation>
@@ -3517,9 +3608,14 @@
       <wsdl:output message="tns:GetCourseModeratorsListHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. The result contains the new session LMS ID or if a meeting was created, the session ID and the meeting ID separated by "|".&lt;br/&gt;Parameters: API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session title (required, string), &lt;br/&gt;session description (optional, string), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a location is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar, &lt;br/&gt;session is recurring (required, boolean True/False), &lt;br/&gt;recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;code to verify attendance (optional, string)</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. A successful operation returns the new session LMS ID.&lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session title (required, string), &lt;br/&gt;session description (optional, string), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;session is recurring (required, boolean True/False), &lt;br/&gt;recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;code to verify attendance (optional, string)</wsdl:documentation>
       <wsdl:input message="tns:AddCourseSessionHttpPostIn" />
       <wsdl:output message="tns:AddCourseSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates an existing IL Course session. If webinar information is passed, creates a meeting for the webinar provider passed. A successful operation returns the session LMS ID.If no location, webinar or custom meeting URL are passed, the session location is not modified. All optional parameters not passed will not be modified. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;API key, &lt;br/&gt;ILT ID (required, string in GUID format), &lt;br/&gt;session ID (required, string in GUID format), &lt;br/&gt;session title (optional, string - if not passed will not be modified), &lt;br/&gt;session description (optional, string - if not passed will not be modified), &lt;br/&gt;session is required (required, boolean True/False), &lt;br/&gt;time is TBD (required, boolean True/False), &lt;br/&gt;session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00" - if not passed will not be modified), &lt;br/&gt;session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00" - if not passed will not be modified), &lt;br/&gt;location is TBD (required, boolean True/False), &lt;br/&gt;location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;code to verify attendance (optional, string - if not passed will not be modified)</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCourseSessionHttpPostIn" />
+      <wsdl:output message="tns:UpdateCourseSessionHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseSessionsList">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of an IL Course's sessions. Sessions times are returned in UTC.</wsdl:documentation>
@@ -3650,8 +3746,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <soap:operation soapAction="http://www.thinkingcap.com/SetCourseInfo" style="document" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <soap:operation soapAction="http://www.thinkingcap.com/UpdateLearningActivityInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3796,6 +3892,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
       <soap:operation soapAction="http://www.thinkingcap.com/AddCourseSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <soap:operation soapAction="http://www.thinkingcap.com/UpdateCourseSession" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3968,8 +4073,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <soap12:operation soapAction="http://www.thinkingcap.com/SetCourseInfo" style="document" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <soap12:operation soapAction="http://www.thinkingcap.com/UpdateLearningActivityInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4114,6 +4219,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
       <soap12:operation soapAction="http://www.thinkingcap.com/AddCourseSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <soap12:operation soapAction="http://www.thinkingcap.com/UpdateCourseSession" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4286,8 +4400,8 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <http:operation location="/SetCourseInfo" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <http:operation location="/UpdateLearningActivityInfo" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -4423,6 +4537,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
       <http:operation location="/AddCourseSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <http:operation location="/UpdateCourseSession" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -4595,8 +4718,8 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SetCourseInfo">
-      <http:operation location="/SetCourseInfo" />
+    <wsdl:operation name="UpdateLearningActivityInfo">
+      <http:operation location="/UpdateLearningActivityInfo" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -4732,6 +4855,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
       <http:operation location="/AddCourseSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseSession">
+      <http:operation location="/UpdateCourseSession" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -367,11 +367,6 @@ class Course
     private $Timeout;
 
     /**
-     * @var bool
-     */
-    private $AllowAnonPreview;
-
-    /**
      * @return string
      */
     public function getType()
@@ -1879,27 +1874,6 @@ class Course
     {
         $new = clone $this;
         $new->Timeout = $Timeout;
-
-        return $new;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getAllowAnonPreview()
-    {
-        return $this->AllowAnonPreview;
-    }
-
-    /**
-     * @param bool $AllowAnonPreview
-     *
-     * @return Course
-     */
-    public function withAllowAnonPreview($AllowAnonPreview)
-    {
-        $new = clone $this;
-        $new->AllowAnonPreview = $AllowAnonPreview;
 
         return $new;
     }

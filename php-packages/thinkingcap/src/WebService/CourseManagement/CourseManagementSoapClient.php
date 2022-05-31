@@ -119,15 +119,15 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
     }
 
     /**
-     * @param RequestInterface|Type\SetCourseInfo $parameters
+     * @param RequestInterface|Type\UpdateLearningActivityInfo $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\SetCourseInfoResponse
+     * @return ResultInterface|Type\UpdateLearningActivityInfoResponse
      */
-    public function setCourseInfo(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseInfo $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseInfoResponse
+    public function updateLearningActivityInfo(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityInfo $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityInfoResponse
     {
-        return $this->call('SetCourseInfo', $parameters);
+        return $this->call('UpdateLearningActivityInfo', $parameters);
     }
 
     /**
@@ -308,6 +308,18 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
     public function addCourseSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddCourseSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddCourseSessionResponse
     {
         return $this->call('AddCourseSession', $parameters);
+    }
+
+    /**
+     * @param RequestInterface|Type\UpdateCourseSession $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\UpdateCourseSessionResponse
+     */
+    public function updateCourseSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateCourseSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateCourseSessionResponse
+    {
+        return $this->call('UpdateCourseSession', $parameters);
     }
 
     /**

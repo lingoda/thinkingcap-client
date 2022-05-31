@@ -187,6 +187,11 @@ class LearningActivity
     private $CustomFields;
 
     /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseSession
+     */
+    private $Sessions;
+
+    /**
      * @var string
      */
     private $DetailsLink;
@@ -948,6 +953,27 @@ class LearningActivity
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
+
+        return $new;
+    }
+
+    /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseSession
+     */
+    public function getSessions()
+    {
+        return $this->Sessions;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseSession $Sessions
+     *
+     * @return LearningActivity
+     */
+    public function withSessions($Sessions)
+    {
+        $new = clone $this;
+        $new->Sessions = $Sessions;
 
         return $new;
     }

@@ -647,6 +647,11 @@ class LearningType
     private $StudentHasPass;
 
     /**
+     * @var bool
+     */
+    private $AllowAnonPreview;
+
+    /**
      * @var string
      */
     private $FieldsXml;
@@ -4145,6 +4150,27 @@ class LearningType
     {
         $new = clone $this;
         $new->StudentHasPass = $StudentHasPass;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowAnonPreview()
+    {
+        return $this->AllowAnonPreview;
+    }
+
+    /**
+     * @param bool $AllowAnonPreview
+     *
+     * @return LearningType
+     */
+    public function withAllowAnonPreview($AllowAnonPreview)
+    {
+        $new = clone $this;
+        $new->AllowAnonPreview = $AllowAnonPreview;
 
         return $new;
     }

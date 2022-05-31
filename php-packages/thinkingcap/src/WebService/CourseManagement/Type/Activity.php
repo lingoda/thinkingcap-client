@@ -84,6 +84,11 @@ class Activity
     /**
      * @var bool
      */
+    private $LearnerRequestEvaluation;
+
+    /**
+     * @var bool
+     */
     private $SendSupervisorSignOffEmailOnLogin;
 
     /**
@@ -230,6 +235,11 @@ class Activity
      * @var string
      */
     private $FileName;
+
+    /**
+     * @var string
+     */
+    private $OriginalFileName;
 
     /**
      * @var float
@@ -562,6 +572,27 @@ class Activity
     {
         $new = clone $this;
         $new->DisableSupervisorSignOff = $DisableSupervisorSignOff;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getLearnerRequestEvaluation()
+    {
+        return $this->LearnerRequestEvaluation;
+    }
+
+    /**
+     * @param bool $LearnerRequestEvaluation
+     *
+     * @return Activity
+     */
+    public function withLearnerRequestEvaluation($LearnerRequestEvaluation)
+    {
+        $new = clone $this;
+        $new->LearnerRequestEvaluation = $LearnerRequestEvaluation;
 
         return $new;
     }
@@ -1192,6 +1223,27 @@ class Activity
     {
         $new = clone $this;
         $new->FileName = $FileName;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOriginalFileName()
+    {
+        return $this->OriginalFileName;
+    }
+
+    /**
+     * @param string $OriginalFileName
+     *
+     * @return Activity
+     */
+    public function withOriginalFileName($OriginalFileName)
+    {
+        $new = clone $this;
+        $new->OriginalFileName = $OriginalFileName;
 
         return $new;
     }

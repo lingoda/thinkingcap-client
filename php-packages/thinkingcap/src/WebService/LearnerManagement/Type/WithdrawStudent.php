@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
+namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 
-class SetCourseInfo implements RequestInterface
+class WithdrawStudent implements RequestInterface
 {
     /**
      * @var string
@@ -16,12 +16,12 @@ class SetCourseInfo implements RequestInterface
     /**
      * @var string
      */
-    private $courseID;
+    private $studentID;
 
     /**
      * @var string
      */
-    private $coursexml;
+    private $learningObjectID;
 
     /**
      * Constructor
@@ -30,11 +30,11 @@ class SetCourseInfo implements RequestInterface
      * @var string
      * @var string
      */
-    public function __construct($apiKey, $courseID, $coursexml)
+    public function __construct($apiKey, $studentID, $learningObjectID)
     {
         $this->apiKey = $apiKey;
-        $this->courseID = $courseID;
-        $this->coursexml = $coursexml;
+        $this->studentID = $studentID;
+        $this->learningObjectID = $learningObjectID;
     }
 
     /**
@@ -48,7 +48,7 @@ class SetCourseInfo implements RequestInterface
     /**
      * @param string $apiKey
      *
-     * @return SetCourseInfo
+     * @return WithdrawStudent
      */
     public function withApiKey($apiKey)
     {
@@ -61,20 +61,20 @@ class SetCourseInfo implements RequestInterface
     /**
      * @return string
      */
-    public function getCourseID()
+    public function getStudentID()
     {
-        return $this->courseID;
+        return $this->studentID;
     }
 
     /**
-     * @param string $courseID
+     * @param string $studentID
      *
-     * @return SetCourseInfo
+     * @return WithdrawStudent
      */
-    public function withCourseID($courseID)
+    public function withStudentID($studentID)
     {
         $new = clone $this;
-        $new->courseID = $courseID;
+        $new->studentID = $studentID;
 
         return $new;
     }
@@ -82,20 +82,20 @@ class SetCourseInfo implements RequestInterface
     /**
      * @return string
      */
-    public function getCoursexml()
+    public function getLearningObjectID()
     {
-        return $this->coursexml;
+        return $this->learningObjectID;
     }
 
     /**
-     * @param string $coursexml
+     * @param string $learningObjectID
      *
-     * @return SetCourseInfo
+     * @return WithdrawStudent
      */
-    public function withCoursexml($coursexml)
+    public function withLearningObjectID($learningObjectID)
     {
         $new = clone $this;
-        $new->coursexml = $coursexml;
+        $new->learningObjectID = $learningObjectID;
 
         return $new;
     }

@@ -445,7 +445,6 @@
               <s:element minOccurs="1" maxOccurs="1" name="ChallengeFrequency" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="AddTimeInReadOnly" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="Timeout" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="AllowAnonPreview" type="s:boolean" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -586,6 +585,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAnonPreview" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="BaseUrl" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HasAccessCode" type="s:boolean" />
@@ -1467,6 +1467,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="DeleteUserByLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lookupValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserByLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteUserByLookupResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="AddUserToDomain">
         <s:complexType>
           <s:sequence>
@@ -1513,6 +1528,22 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SetUserActiveResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserActiveByLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lookupValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserActiveByLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUserActiveByLookupResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1736,6 +1767,22 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="StudentSelfEnrollResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="learningObjectID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WithdrawStudentResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2266,6 +2313,12 @@
   <wsdl:message name="DeleteUserSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
   </wsdl:message>
+  <wsdl:message name="DeleteUserByLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserByLookup" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserByLookupResponse" />
+  </wsdl:message>
   <wsdl:message name="AddUserToDomainSoapIn">
     <wsdl:part name="parameters" element="tns:AddUserToDomain" />
   </wsdl:message>
@@ -2283,6 +2336,12 @@
   </wsdl:message>
   <wsdl:message name="SetUserActiveSoapOut">
     <wsdl:part name="parameters" element="tns:SetUserActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveByLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserActiveByLookup" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveByLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserActiveByLookupResponse" />
   </wsdl:message>
   <wsdl:message name="GetStudentTranscriptSoapIn">
     <wsdl:part name="parameters" element="tns:GetStudentTranscript" />
@@ -2313,6 +2372,12 @@
   </wsdl:message>
   <wsdl:message name="StudentSelfEnrollSoapOut">
     <wsdl:part name="parameters" element="tns:StudentSelfEnrollResponse" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:WithdrawStudent" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:WithdrawStudentResponse" />
   </wsdl:message>
   <wsdl:message name="MarkStudentSessionSoapIn">
     <wsdl:part name="parameters" element="tns:MarkStudentSession" />
@@ -2584,6 +2649,13 @@
   <wsdl:message name="DeleteUserHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="DeleteUserByLookupHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="lookupValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByLookupHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="AddUserToDomainHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userID" type="s:string" />
@@ -2607,6 +2679,14 @@
     <wsdl:part name="active" type="s:string" />
   </wsdl:message>
   <wsdl:message name="SetUserActiveHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveByLookupHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="lookupValue" type="s:string" />
+    <wsdl:part name="active" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveByLookupHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GetStudentTranscriptHttpGetIn">
@@ -2653,6 +2733,14 @@
     <wsdl:part name="enrollmentDomainID" type="s:string" />
   </wsdl:message>
   <wsdl:message name="StudentSelfEnrollHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawStudentHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentID" type="s:string" />
+    <wsdl:part name="learningObjectID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawStudentHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="MarkStudentSessionHttpGetIn">
@@ -2980,6 +3068,13 @@
   <wsdl:message name="DeleteUserHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="DeleteUserByLookupHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="lookupValue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByLookupHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="AddUserToDomainHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userID" type="s:string" />
@@ -3003,6 +3098,14 @@
     <wsdl:part name="active" type="s:string" />
   </wsdl:message>
   <wsdl:message name="SetUserActiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveByLookupHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="lookupValue" type="s:string" />
+    <wsdl:part name="active" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveByLookupHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GetStudentTranscriptHttpPostIn">
@@ -3049,6 +3152,14 @@
     <wsdl:part name="enrollmentDomainID" type="s:string" />
   </wsdl:message>
   <wsdl:message name="StudentSelfEnrollHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawStudentHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentID" type="s:string" />
+    <wsdl:part name="learningObjectID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawStudentHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="MarkStudentSessionHttpPostIn">
@@ -3312,6 +3423,11 @@
       <wsdl:input message="tns:DeleteUserSoapIn" />
       <wsdl:output message="tns:DeleteUserSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserByLookupSoapIn" />
+      <wsdl:output message="tns:DeleteUserByLookupSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainSoapIn" />
@@ -3326,6 +3442,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets a user active or not.</wsdl:documentation>
       <wsdl:input message="tns:SetUserActiveSoapIn" />
       <wsdl:output message="tns:SetUserActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a user active status. Finds the user by the LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:input message="tns:SetUserActiveByLookupSoapIn" />
+      <wsdl:output message="tns:SetUserActiveByLookupSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStudentTranscript">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.</wsdl:documentation>
@@ -3352,8 +3473,13 @@
       <wsdl:input message="tns:StudentSelfEnrollSoapIn" />
       <wsdl:output message="tns:StudentSelfEnrollSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
+      <wsdl:input message="tns:WithdrawStudentSoapIn" />
+      <wsdl:output message="tns:WithdrawStudentSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="MarkStudentSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. If no score is to be set, a negative value should be passed. The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
       <wsdl:input message="tns:MarkStudentSessionSoapIn" />
       <wsdl:output message="tns:MarkStudentSessionSoapOut" />
     </wsdl:operation>
@@ -3539,6 +3665,11 @@
       <wsdl:input message="tns:DeleteUserHttpGetIn" />
       <wsdl:output message="tns:DeleteUserHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserByLookupHttpGetIn" />
+      <wsdl:output message="tns:DeleteUserByLookupHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainHttpGetIn" />
@@ -3553,6 +3684,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets a user active or not.</wsdl:documentation>
       <wsdl:input message="tns:SetUserActiveHttpGetIn" />
       <wsdl:output message="tns:SetUserActiveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a user active status. Finds the user by the LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:input message="tns:SetUserActiveByLookupHttpGetIn" />
+      <wsdl:output message="tns:SetUserActiveByLookupHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStudentTranscript">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.</wsdl:documentation>
@@ -3579,8 +3715,13 @@
       <wsdl:input message="tns:StudentSelfEnrollHttpGetIn" />
       <wsdl:output message="tns:StudentSelfEnrollHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
+      <wsdl:input message="tns:WithdrawStudentHttpGetIn" />
+      <wsdl:output message="tns:WithdrawStudentHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="MarkStudentSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. If no score is to be set, a negative value should be passed. The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
       <wsdl:input message="tns:MarkStudentSessionHttpGetIn" />
       <wsdl:output message="tns:MarkStudentSessionHttpGetOut" />
     </wsdl:operation>
@@ -3766,6 +3907,11 @@
       <wsdl:input message="tns:DeleteUserHttpPostIn" />
       <wsdl:output message="tns:DeleteUserHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserByLookupHttpPostIn" />
+      <wsdl:output message="tns:DeleteUserByLookupHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainHttpPostIn" />
@@ -3780,6 +3926,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets a user active or not.</wsdl:documentation>
       <wsdl:input message="tns:SetUserActiveHttpPostIn" />
       <wsdl:output message="tns:SetUserActiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a user active status. Finds the user by the LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:input message="tns:SetUserActiveByLookupHttpPostIn" />
+      <wsdl:output message="tns:SetUserActiveByLookupHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStudentTranscript">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.</wsdl:documentation>
@@ -3806,8 +3957,13 @@
       <wsdl:input message="tns:StudentSelfEnrollHttpPostIn" />
       <wsdl:output message="tns:StudentSelfEnrollHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
+      <wsdl:input message="tns:WithdrawStudentHttpPostIn" />
+      <wsdl:output message="tns:WithdrawStudentHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="MarkStudentSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. If no score is to be set, a negative value should be passed. The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
       <wsdl:input message="tns:MarkStudentSessionHttpPostIn" />
       <wsdl:output message="tns:MarkStudentSessionHttpPostOut" />
     </wsdl:operation>
@@ -4062,6 +4218,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <soap:operation soapAction="http://www.thinkingcap.com/DeleteUserByLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <soap:operation soapAction="http://www.thinkingcap.com/AddUserToDomain" style="document" />
       <wsdl:input>
@@ -4082,6 +4247,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetUserActive">
       <soap:operation soapAction="http://www.thinkingcap.com/SetUserActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <soap:operation soapAction="http://www.thinkingcap.com/SetUserActiveByLookup" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4127,6 +4301,15 @@
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
       <soap:operation soapAction="http://www.thinkingcap.com/StudentSelfEnroll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <soap:operation soapAction="http://www.thinkingcap.com/WithdrawStudent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4470,6 +4653,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <soap12:operation soapAction="http://www.thinkingcap.com/DeleteUserByLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <soap12:operation soapAction="http://www.thinkingcap.com/AddUserToDomain" style="document" />
       <wsdl:input>
@@ -4490,6 +4682,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetUserActive">
       <soap12:operation soapAction="http://www.thinkingcap.com/SetUserActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <soap12:operation soapAction="http://www.thinkingcap.com/SetUserActiveByLookup" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4535,6 +4736,15 @@
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
       <soap12:operation soapAction="http://www.thinkingcap.com/StudentSelfEnroll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <soap12:operation soapAction="http://www.thinkingcap.com/WithdrawStudent" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4878,6 +5088,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <http:operation location="/DeleteUserByLookup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <http:operation location="/AddUserToDomain" />
       <wsdl:input>
@@ -4898,6 +5117,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetUserActive">
       <http:operation location="/SetUserActive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <http:operation location="/SetUserActiveByLookup" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -4943,6 +5171,15 @@
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
       <http:operation location="/StudentSelfEnroll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <http:operation location="/WithdrawStudent" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -5286,6 +5523,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteUserByLookup">
+      <http:operation location="/DeleteUserByLookup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
       <http:operation location="/AddUserToDomain" />
       <wsdl:input>
@@ -5306,6 +5552,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetUserActive">
       <http:operation location="/SetUserActive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveByLookup">
+      <http:operation location="/SetUserActiveByLookup" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -5351,6 +5606,15 @@
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
       <http:operation location="/StudentSelfEnroll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawStudent">
+      <http:operation location="/WithdrawStudent" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 
-class AddCourseSession implements RequestInterface
+class UpdateCourseSession implements RequestInterface
 {
     /**
      * @var string
@@ -17,6 +17,11 @@ class AddCourseSession implements RequestInterface
      * @var string
      */
     private $courseID;
+
+    /**
+     * @var string
+     */
+    private $sessionID;
 
     /**
      * @var string
@@ -74,21 +79,6 @@ class AddCourseSession implements RequestInterface
     private $customMeetingURL;
 
     /**
-     * @var bool
-     */
-    private $isRecurringSession;
-
-    /**
-     * @var string
-     */
-    private $recurringCadence;
-
-    /**
-     * @var int
-     */
-    private $recurringNo;
-
-    /**
      * @var string
      */
     private $attendanceCode;
@@ -100,24 +90,23 @@ class AddCourseSession implements RequestInterface
      * @var string
      * @var string
      * @var string
-     * @var bool
-     * @var bool
-     * @var string
      * @var string
      * @var bool
-     * @var string
-     * @var string
+     * @var bool
      * @var string
      * @var string
      * @var bool
      * @var string
-     * @var int
+     * @var string
+     * @var string
+     * @var string
      * @var string
      */
-    public function __construct($apiKey, $courseID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $isRecurringSession, $recurringCadence, $recurringNo, $attendanceCode)
+    public function __construct($apiKey, $courseID, $sessionID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $attendanceCode)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
+        $this->sessionID = $sessionID;
         $this->sessionTitle = $sessionTitle;
         $this->sessionDescription = $sessionDescription;
         $this->sessionIsRequired = $sessionIsRequired;
@@ -129,9 +118,6 @@ class AddCourseSession implements RequestInterface
         $this->webinarProviderID = $webinarProviderID;
         $this->zoomSubAccountHostID = $zoomSubAccountHostID;
         $this->customMeetingURL = $customMeetingURL;
-        $this->isRecurringSession = $isRecurringSession;
-        $this->recurringCadence = $recurringCadence;
-        $this->recurringNo = $recurringNo;
         $this->attendanceCode = $attendanceCode;
     }
 
@@ -146,7 +132,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $apiKey
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withApiKey($apiKey)
     {
@@ -167,12 +153,33 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $courseID
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withCourseID($courseID)
     {
         $new = clone $this;
         $new->courseID = $courseID;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSessionID()
+    {
+        return $this->sessionID;
+    }
+
+    /**
+     * @param string $sessionID
+     *
+     * @return UpdateCourseSession
+     */
+    public function withSessionID($sessionID)
+    {
+        $new = clone $this;
+        $new->sessionID = $sessionID;
 
         return $new;
     }
@@ -188,7 +195,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $sessionTitle
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withSessionTitle($sessionTitle)
     {
@@ -209,7 +216,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $sessionDescription
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withSessionDescription($sessionDescription)
     {
@@ -230,7 +237,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param bool $sessionIsRequired
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withSessionIsRequired($sessionIsRequired)
     {
@@ -251,7 +258,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param bool $timeIsTDB
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withTimeIsTDB($timeIsTDB)
     {
@@ -272,7 +279,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $sessionStartDateTime
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withSessionStartDateTime($sessionStartDateTime)
     {
@@ -293,7 +300,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $sessionEndDateTime
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withSessionEndDateTime($sessionEndDateTime)
     {
@@ -314,7 +321,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param bool $locationIsTBD
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withLocationIsTBD($locationIsTBD)
     {
@@ -335,7 +342,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $sessionLocationID
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withSessionLocationID($sessionLocationID)
     {
@@ -356,7 +363,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $webinarProviderID
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withWebinarProviderID($webinarProviderID)
     {
@@ -377,7 +384,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $zoomSubAccountHostID
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withZoomSubAccountHostID($zoomSubAccountHostID)
     {
@@ -398,75 +405,12 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $customMeetingURL
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withCustomMeetingURL($customMeetingURL)
     {
         $new = clone $this;
         $new->customMeetingURL = $customMeetingURL;
-
-        return $new;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getIsRecurringSession()
-    {
-        return $this->isRecurringSession;
-    }
-
-    /**
-     * @param bool $isRecurringSession
-     *
-     * @return AddCourseSession
-     */
-    public function withIsRecurringSession($isRecurringSession)
-    {
-        $new = clone $this;
-        $new->isRecurringSession = $isRecurringSession;
-
-        return $new;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRecurringCadence()
-    {
-        return $this->recurringCadence;
-    }
-
-    /**
-     * @param string $recurringCadence
-     *
-     * @return AddCourseSession
-     */
-    public function withRecurringCadence($recurringCadence)
-    {
-        $new = clone $this;
-        $new->recurringCadence = $recurringCadence;
-
-        return $new;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRecurringNo()
-    {
-        return $this->recurringNo;
-    }
-
-    /**
-     * @param int $recurringNo
-     *
-     * @return AddCourseSession
-     */
-    public function withRecurringNo($recurringNo)
-    {
-        $new = clone $this;
-        $new->recurringNo = $recurringNo;
 
         return $new;
     }
@@ -482,7 +426,7 @@ class AddCourseSession implements RequestInterface
     /**
      * @param string $attendanceCode
      *
-     * @return AddCourseSession
+     * @return UpdateCourseSession
      */
     public function withAttendanceCode($attendanceCode)
     {

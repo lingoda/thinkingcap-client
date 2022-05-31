@@ -44,6 +44,11 @@ class CourseSeries
     /**
      * @var bool
      */
+    private $WaitlistOnlyInOneMember;
+
+    /**
+     * @var bool
+     */
     private $DoNotInherit;
 
     /**
@@ -209,6 +214,27 @@ class CourseSeries
     {
         $new = clone $this;
         $new->AllowGlobalOnly = $AllowGlobalOnly;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getWaitlistOnlyInOneMember()
+    {
+        return $this->WaitlistOnlyInOneMember;
+    }
+
+    /**
+     * @param bool $WaitlistOnlyInOneMember
+     *
+     * @return CourseSeries
+     */
+    public function withWaitlistOnlyInOneMember($WaitlistOnlyInOneMember)
+    {
+        $new = clone $this;
+        $new->WaitlistOnlyInOneMember = $WaitlistOnlyInOneMember;
 
         return $new;
     }
