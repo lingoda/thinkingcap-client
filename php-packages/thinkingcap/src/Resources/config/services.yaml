@@ -1,7 +1,7 @@
 services:
     Lingoda\ThinkingcapBundle\Client\ApiKeySetterSubscriber:
         arguments:
-            $apiKey: '%lingoda.thinkingcap.api_key%'
+            $apiKeys: '%lingoda.thinkingcap.api_keys%'
 
     Lingoda\ThinkingcapBundle\WebService\CourseManagement\CourseManagementSoapClient:
         factory: ['Lingoda\ThinkingcapBundle\Client\CourseClientFactory', 'create']

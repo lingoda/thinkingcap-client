@@ -19,6 +19,28 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
         self::bootKernel();
     }
 
+    public function testForNonExistingDomain(): void
+    {
+        $client = $this->getMockBuilder(LearnerManagementSoapClient::class)
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $getUserByEmailType = RequestFactory::create(
+            'Szczebrzeszyn',
+            GetUserByEmail::class,
+            'testEmail@lingoda.com'
+        );
+
+        $event = new RequestEvent($client, 'getUserByEmail', $getUserByEmailType);
+
+        self::expectException(\InvalidArgumentException::class);
+
+        /** @var ApiKeySetterSubscriber $subscriber */
+        $subscriber = self::$container->get(ApiKeySetterSubscriber::class);
+        $subscriber->onClientRequest($event);
+    }
+
     public function testSetApiKeyOnClientRequest(): void
     {
         $client = $this->getMockBuilder(LearnerManagementSoapClient::class)
@@ -27,6 +49,7 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
         ;
 
         $getUserByEmailType = RequestFactory::create(
+            'test2',
             GetUserByEmail::class,
             'testEmail@lingoda.com'
         );
@@ -35,7 +58,7 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
 
         /** @var GetUserByEmail $request */
         $request = $event->getRequest();
-        self::assertEquals(RequestFactory::API_KEY_PLACEHOLDER, $request->getApiKey());
+        self::assertEquals(sprintf(RequestFactory::API_KEY_PLACEHOLDER, 'test2'), $request->getApiKey());
 
         /** @var ApiKeySetterSubscriber $subscriber */
         $subscriber = self::$container->get(ApiKeySetterSubscriber::class);

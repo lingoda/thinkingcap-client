@@ -11,11 +11,12 @@ use Webmozart\Assert\Assert;
 
 class ApiKeySetterSubscriber implements EventSubscriberInterface
 {
-    private string $apiKey;
-
-    public function __construct(string $apiKey)
-    {
-        $this->apiKey = $apiKey;
+    /**
+     * @param string[] $apiKeys
+     */
+    public function __construct(
+        private readonly array $apiKeys
+    ) {
     }
 
     public function onClientRequest(RequestEvent $event): void
@@ -23,13 +24,35 @@ class ApiKeySetterSubscriber implements EventSubscriberInterface
         $request = $event->getRequest();
 
         Assert::methodExists($request, 'getApiKey');
-        if ($request->getApiKey() !== RequestFactory::API_KEY_PLACEHOLDER) {
+
+        $apiName = $this->getApiDomain($request->getApiKey());
+        if (!$apiName) {
             return;
         }
 
         Assert::methodExists($request, 'withApiKey');
-        $request = $request->withApiKey($this->apiKey);
+        $request = $request->withApiKey($this->getKeyForDomain($apiName));
         $event->registerRequest($request);
+    }
+
+    private function getKeyForDomain(string $domain): string
+    {
+        if (!isset($this->apiKeys[$domain])) {
+            throw new \InvalidArgumentException(sprintf('Domain "%s" has no API key configured', $domain));
+        }
+
+        return $this->apiKeys[$domain];
+    }
+
+    private function getApiDomain(string $value): ?string
+    {
+        $result = sscanf($value, RequestFactory::API_KEY_PLACEHOLDER);
+
+        if (empty($result) || empty($result[0])) {
+            return null;
+        }
+
+        return $result[0];
     }
 
     /**

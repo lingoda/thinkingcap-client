@@ -29,6 +29,7 @@ final class LearnerClientTest extends KernelTestCase
         $client = self::$container->get(LearnerManagementSoapClient::class);
 
         $getUserByEmailType = RequestFactory::create(
+            'test2',
             GetUserByEmail::class,
             'testEmail@lingoda.com'
         );

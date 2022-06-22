@@ -28,8 +28,8 @@ class LingodaThinkingcapExtension extends ConfigurableExtension
         $loader->load('services.yaml');
 
         $container->setParameter(
-            'lingoda.thinkingcap.api_key',
-            $mergedConfig['api_key']
+            'lingoda.thinkingcap.api_keys',
+            $mergedConfig['api_keys']
         );
 
         $container->setParameter(

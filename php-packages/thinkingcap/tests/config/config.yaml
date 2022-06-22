@@ -11,7 +11,9 @@ framework:
     test: true
 
 lingoda_thinkingcap:
-    api_key: '%api_key%'
+    api_keys:
+        test1: asd1
+        test2: z6kl2fvfqsor4x2sq5hu
     wsdl_urls:
         course_management: '%course_management%'
         learner_management: '%learner_management%'

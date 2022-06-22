@@ -15,7 +15,10 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
-            ->scalarNode('api_key')->isRequired()->cannotBeEmpty()->end()
+            ->arrayNode('api_keys')
+            ->requiresAtLeastOneElement()
+            ->scalarPrototype()->end()
+            ->end()
             ->arrayNode('wsdl_urls')
             ->children()
             ->scalarNode('course_management')->isRequired()->cannotBeEmpty()->end()
