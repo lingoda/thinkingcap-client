@@ -107,6 +107,18 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
     }
 
     /**
+     * @param RequestInterface|Type\UpdateLearningActivity $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\UpdateLearningActivityResponse
+     */
+    public function updateLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityResponse
+    {
+        return $this->call('UpdateLearningActivity', $parameters);
+    }
+
+    /**
      * @param RequestInterface|Type\DeleteLearningActivity $parameters
      *
      * @throws SoapException

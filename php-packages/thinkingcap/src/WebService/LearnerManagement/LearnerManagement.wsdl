@@ -161,6 +161,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresCode" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresRequest" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCodes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationInstruction" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval_Domain" type="s:boolean" />
@@ -489,6 +490,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="VideoBookmarkProgress" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoStartAuto" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoCompleteOnOpen" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VideoCompleteOnEnd" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoCompleteOnTime" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="VideoCompleteOnTime_Minute" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="VideoCompleteOnTime_Sec" type="s:string" />
@@ -536,6 +538,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ReAutoenrollLastRunDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="ReAutoenrollAllExcludeRulesRequired" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SelfEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowTransfer" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SelfEnrollAllDomainMembers" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="PermissionEnroll" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="EnrollPermissionFrom" type="s:string" />

@@ -199,6 +199,11 @@ class LearningType
     /**
      * @var bool
      */
+    private $VideoCompleteOnEnd;
+
+    /**
+     * @var bool
+     */
     private $VideoCompleteOnTime;
 
     /**
@@ -400,6 +405,11 @@ class LearningType
      * @var bool
      */
     private $SelfEnroll;
+
+    /**
+     * @var bool
+     */
+    private $AllowTransfer;
 
     /**
      * @var bool
@@ -2267,6 +2277,27 @@ class LearningType
     /**
      * @return bool
      */
+    public function getVideoCompleteOnEnd()
+    {
+        return $this->VideoCompleteOnEnd;
+    }
+
+    /**
+     * @param bool $VideoCompleteOnEnd
+     *
+     * @return LearningType
+     */
+    public function withVideoCompleteOnEnd($VideoCompleteOnEnd)
+    {
+        $new = clone $this;
+        $new->VideoCompleteOnEnd = $VideoCompleteOnEnd;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
     public function getVideoCompleteOnTime()
     {
         return $this->VideoCompleteOnTime;
@@ -3121,6 +3152,27 @@ class LearningType
     {
         $new = clone $this;
         $new->SelfEnroll = $SelfEnroll;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowTransfer()
+    {
+        return $this->AllowTransfer;
+    }
+
+    /**
+     * @param bool $AllowTransfer
+     *
+     * @return LearningType
+     */
+    public function withAllowTransfer($AllowTransfer)
+    {
+        $new = clone $this;
+        $new->AllowTransfer = $AllowTransfer;
 
         return $new;
     }

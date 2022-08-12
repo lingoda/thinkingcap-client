@@ -109,6 +109,11 @@ class Program
     /**
      * @var string
      */
+    private $RegistrationAccessCodes;
+
+    /**
+     * @var string
+     */
     private $RegistrationAccessCode;
 
     /**
@@ -1202,6 +1207,27 @@ class Program
     {
         $new = clone $this;
         $new->RegistrationRequiresRequest = $RegistrationRequiresRequest;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegistrationAccessCodes()
+    {
+        return $this->RegistrationAccessCodes;
+    }
+
+    /**
+     * @param string $RegistrationAccessCodes
+     *
+     * @return Program
+     */
+    public function withRegistrationAccessCodes($RegistrationAccessCodes)
+    {
+        $new = clone $this;
+        $new->RegistrationAccessCodes = $RegistrationAccessCodes;
 
         return $new;
     }

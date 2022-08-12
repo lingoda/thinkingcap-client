@@ -41,7 +41,7 @@ class CreateCourseSeries implements RequestInterface
     /**
      * @var bool
      */
-    private $globalOnly;
+    private $denyInheritance;
 
     /**
      * Constructor
@@ -54,7 +54,7 @@ class CreateCourseSeries implements RequestInterface
      * @var string
      * @var bool
      */
-    public function __construct($apiKey, $programID, $code, $name, $description, $tags, $globalOnly)
+    public function __construct($apiKey, $programID, $code, $name, $description, $tags, $denyInheritance)
     {
         $this->apiKey = $apiKey;
         $this->programID = $programID;
@@ -62,7 +62,7 @@ class CreateCourseSeries implements RequestInterface
         $this->name = $name;
         $this->description = $description;
         $this->tags = $tags;
-        $this->globalOnly = $globalOnly;
+        $this->denyInheritance = $denyInheritance;
     }
 
     /**
@@ -194,20 +194,20 @@ class CreateCourseSeries implements RequestInterface
     /**
      * @return bool
      */
-    public function getGlobalOnly()
+    public function getDenyInheritance()
     {
-        return $this->globalOnly;
+        return $this->denyInheritance;
     }
 
     /**
-     * @param bool $globalOnly
+     * @param bool $denyInheritance
      *
      * @return CreateCourseSeries
      */
-    public function withGlobalOnly($globalOnly)
+    public function withDenyInheritance($denyInheritance)
     {
         $new = clone $this;
-        $new->globalOnly = $globalOnly;
+        $new->denyInheritance = $denyInheritance;
 
         return $new;
     }

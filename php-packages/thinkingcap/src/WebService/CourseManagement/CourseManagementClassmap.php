@@ -106,6 +106,8 @@ class CourseManagementClassmap
             new ClassMap('ReserveSpotILTResponse', Type\ReserveSpotILTResponse::class),
             new ClassMap('AddLearningActivity', Type\AddLearningActivity::class),
             new ClassMap('AddLearningActivityResponse', Type\AddLearningActivityResponse::class),
+            new ClassMap('UpdateLearningActivity', Type\UpdateLearningActivity::class),
+            new ClassMap('UpdateLearningActivityResponse', Type\UpdateLearningActivityResponse::class),
             new ClassMap('DeleteLearningActivity', Type\DeleteLearningActivity::class),
             new ClassMap('DeleteLearningActivityResponse', Type\DeleteLearningActivityResponse::class),
             new ClassMap('UpdateLearningActivityInfo', Type\UpdateLearningActivityInfo::class),
