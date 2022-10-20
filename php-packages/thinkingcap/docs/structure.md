@@ -10,7 +10,8 @@
     │   ├── Client
     │   │   ├── ApiKeySetterSubscriber.php
     │   │   ├── CourseClientFactory.php
-    │   │   └── LearnerClientFactory.php
+    │   │   ├── LearnerClientFactory.php
+    │   │   └── RequestFactory.php
     │   ├── DependencyInjection
     │   ├── Resources
     │   └── WebService
@@ -21,6 +22,7 @@
     │       │   │   ├── .
     │       │   │   ├── .
     │       │   │   └── Xml.php
+    │       │   ├── CourseManagement.wsdl
     │       │   ├── CourseManagementClassmap.php
     │       │   ├── CourseManagementSoapClient.php
     │       │   └── CourseManagementSoapClientConfig.php
@@ -31,6 +33,7 @@
     │           │   ├── .
     │           │   ├── .
     │           │   └── Xml.php
+    │           ├── LearnerManagement.wsdl
     │           ├── LearnerManagementClassmap.php
     │           ├── LearnerManagementSoapClient.php
     │           └── LearnerManagementSoapClientConfig.php
@@ -53,6 +56,7 @@ in the following structure:
 
 ```
     ├── Type
+    ├── LearnerManagement.wsdl
     ├── LearnerManagementClassmap.php
     ├── LearnerManagementSoapClient.php
     └── LearnerManagementSoapClientConfig.php

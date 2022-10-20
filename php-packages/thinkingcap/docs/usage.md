@@ -3,9 +3,12 @@
 1- Add thinkingcap api key and wsdl urls to `.env.local`
 
 ```
-LINGODA__THINKINGCAP_API_KEY=<api_key>
-LINGODA__THINKINGCAP_WSDL_URL_COURSE_MANAGEMENT=<wsdl_url_course_management>
-LINGODA__THINKINGCAP_WSDL_URL_LEARNER_MANAGEMENT=<wsdl_url_learner_management>
+LINGODA__THINKINGCAP_API_KEY_NURSING=
+LINGODA__THINKINGCAP_API_KEY_MIDWIFERY=
+LINGODA__THINKINGCAP_API_KEY_DOCTORS=
+LINGODA__THINKINGCAP_API_KEY_ROOT=
+LINGODA__THINKINGCAP_WSDL_URL_COURSE_MANAGEMENT='https://www.lingoda.care/WebService/CourseManagement.asmx?WSDL'
+LINGODA__THINKINGCAP_WSDL_URL_LEARNER_MANAGEMENT='https://www.lingoda.care/WebService/LearnerManagement.asmx?WSDL'
 ```
 
 2- Based on the usage, inject one of the following services:
@@ -20,7 +23,7 @@ public function __construct(LearnerManagementSoapClient $client)
 }
 ```
 
-3- Create a type instance by `RequestFactory` based on the method you are going to call.
+3- Create a type instance by `RequestFactory` based on the method you are going to call and specify the intended domain.
 
 -   Find the related type for LearnerManagement from `Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type`
 -   Find the related type for CourseManagement from `Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type`
@@ -33,12 +36,13 @@ use Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByEmail;
 .
 .
 $getUserByEmailType = RequestFactory::create(
+    $domain
     GetUserByEmail::class,
     'testEmail@lingoda.com'
 );
 ```
 
-**Note:** API key will be injected automatically, therefore you only need to define the rest argument here.
+**Note:** API key will be injected automatically based on the domain.
 
 4- Call the intended method by sending the created type as its argument:
 
