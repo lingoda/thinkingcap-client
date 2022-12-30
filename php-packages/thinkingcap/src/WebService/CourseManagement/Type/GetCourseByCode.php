@@ -26,9 +26,9 @@ class GetCourseByCode implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $courseCode
+     * @var string $language
      */
     public function __construct($apiKey, $courseCode, $language)
     {

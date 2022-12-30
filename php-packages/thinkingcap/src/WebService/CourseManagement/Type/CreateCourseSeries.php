@@ -46,13 +46,13 @@ class CreateCourseSeries implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var bool
+     * @var string $apiKey
+     * @var string $programID
+     * @var string $code
+     * @var string $name
+     * @var string $description
+     * @var string $tags
+     * @var bool $denyInheritance
      */
     public function __construct($apiKey, $programID, $code, $name, $description, $tags, $denyInheritance)
     {

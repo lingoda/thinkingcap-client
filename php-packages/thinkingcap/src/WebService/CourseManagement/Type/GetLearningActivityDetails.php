@@ -26,9 +26,9 @@ class GetLearningActivityDetails implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $activityID
+     * @var string $customFieldIDs
      */
     public function __construct($apiKey, $activityID, $customFieldIDs)
     {

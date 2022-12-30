@@ -31,10 +31,10 @@ class GetCourseAssignmentsList implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $courseID
+     * @var string $programID
+     * @var string $status
      */
     public function __construct($apiKey, $courseID, $programID, $status)
     {

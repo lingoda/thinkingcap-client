@@ -96,23 +96,23 @@ class AddCourseSession implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var bool
-     * @var bool
-     * @var string
-     * @var string
-     * @var bool
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var bool
-     * @var string
-     * @var int
-     * @var string
+     * @var string $apiKey
+     * @var string $courseID
+     * @var string $sessionTitle
+     * @var string $sessionDescription
+     * @var bool $sessionIsRequired
+     * @var bool $timeIsTDB
+     * @var string $sessionStartDateTime
+     * @var string $sessionEndDateTime
+     * @var bool $locationIsTBD
+     * @var string $sessionLocationID
+     * @var string $webinarProviderID
+     * @var string $zoomSubAccountHostID
+     * @var string $customMeetingURL
+     * @var bool $isRecurringSession
+     * @var string $recurringCadence
+     * @var int $recurringNo
+     * @var string $attendanceCode
      */
     public function __construct($apiKey, $courseID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $isRecurringSession, $recurringCadence, $recurringNo, $attendanceCode)
     {

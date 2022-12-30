@@ -26,9 +26,9 @@ class GetILTCourseCurrentSession implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $courseID
+     * @var string $timestamp
      */
     public function __construct($apiKey, $courseID, $timestamp)
     {

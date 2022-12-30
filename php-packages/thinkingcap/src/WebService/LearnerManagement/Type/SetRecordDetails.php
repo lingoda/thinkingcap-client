@@ -56,15 +56,15 @@ class SetRecordDetails implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $studentRecordID
+     * @var string $status
+     * @var string $lastModuleName
+     * @var string $dateCompleted
+     * @var string $percentCompleted
+     * @var string $score
+     * @var string $credits
+     * @var string $timeSpent
      */
     public function __construct($apiKey, $studentRecordID, $status, $lastModuleName, $dateCompleted, $percentCompleted, $score, $credits, $timeSpent)
     {

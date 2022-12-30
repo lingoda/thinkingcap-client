@@ -997,6 +997,9 @@
           <s:element minOccurs="0" maxOccurs="1" name="LastLoginBrowser" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="LastLoginDevice" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsLoginLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMFACheck" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFACreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFACheckDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletedUserSetup" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ScreenName" type="s:string" />
@@ -1006,6 +1009,9 @@
           <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="CreationMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualChange" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualDeletion" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SyncDomain" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="PasswordChangeDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="MustChangePassword" type="s:boolean" />
@@ -1014,12 +1020,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Pending" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SuperUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanUseLMSLogin" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="OutsideEmail" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="NewsLetterEmailOptOutDisabled" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Roles" type="tns:ArrayOfRole" />
           <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
           <s:element minOccurs="1" maxOccurs="1" name="BlockNotifications" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="BlockNotificationsReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlockDomainAnnouncements" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Programs" type="tns:ArrayOfProgram" />
           <s:element minOccurs="1" maxOccurs="1" name="ProgramMgr" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Courses" type="tns:ArrayOfCourse" />
@@ -1106,6 +1114,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresCode" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresRequest" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AltPrices" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCodes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationInstruction" type="s:string" />
@@ -1161,6 +1170,16 @@
           <s:element minOccurs="0" maxOccurs="1" name="LogoContentType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="UseCustomLearnerUrl" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UseSSL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAdminsLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFA" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MFAMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForLearner" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForAdmin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFAAdminInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFALearnerInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnSSO" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnLMSLogin" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HideUrlFromSearch" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanConsumeShared" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanShare" type="s:boolean" />
@@ -1192,6 +1211,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DenyChildLearningObjects" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GenerateLearningActivitiesCode" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowOverrideLearningActivitiesCode" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawInactiveLearners" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsParent" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="SubscriptionRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationIntroXmlNode">
@@ -3221,7 +3241,7 @@
       <wsdl:output message="tns:GetCourseByCodeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetILTClassSizeDetailsXML">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of remaining places, the total allowed and the total for waitlisting of an ILT</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of remaining places, the total allowed and the total for waitlisting of an ILT passed by its code. If an ILT code is not passed, returns the details for all ILTs in the domain</wsdl:documentation>
       <wsdl:input message="tns:GetILTClassSizeDetailsXMLSoapIn" />
       <wsdl:output message="tns:GetILTClassSizeDetailsXMLSoapOut" />
     </wsdl:operation>
@@ -3266,17 +3286,17 @@
       <wsdl:output message="tns:SetCourseTAsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetCourseMarkedBy">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets who can mark a course. If moderator=true, moderator can mark the course. If ta = true, teaching assistants can mark the course. If both true, then both moderator AND ta can mark course.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets who can mark a course. If moderator = true, moderator can mark the course. If ta = true, teaching assistants can mark the course. If both true, then both moderator AND ta can mark course.</wsdl:documentation>
       <wsdl:input message="tns:SetCourseMarkedBySoapIn" />
       <wsdl:output message="tns:SetCourseMarkedBySoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseAssignmentsList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of a Course's Assignments.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of a course's assignments.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseAssignmentsListSoapIn" />
       <wsdl:output message="tns:GetCourseAssignmentsListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseAssignmentsXml">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a Course's assignments in XML format.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a course's assignments in XML format.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseAssignmentsXmlSoapIn" />
       <wsdl:output message="tns:GetCourseAssignmentsXmlSoapOut" />
     </wsdl:operation>
@@ -3381,7 +3401,7 @@
       <wsdl:output message="tns:GetEquivalencyLearningActivitiesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetAvailableCourses">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available in the system or for a domain. Course type can be 'Course' or 'Learning Path' or empty to return all course types. If Self enrollment is passed as a false then courses with self enrollment and without self enrollment are returned. If a program ID is passed, only courses in the passed domain are returned. If a language is passed, only courses for the passed language are returned. The returned list includes links to the catalogue course details pages.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available in the system or for a domain. Course type can be 'Course' or 'Learning Path' or empty to return all course types. If self enrollment is passed as a false then courses with self enrollment and without self enrollment are returned. If a program ID is passed, only courses in the passed domain are returned. If a language is passed, only courses for the passed language are returned. The returned list includes links to the catalogue course details pages.</wsdl:documentation>
       <wsdl:input message="tns:GetAvailableCoursesSoapIn" />
       <wsdl:output message="tns:GetAvailableCoursesSoapOut" />
     </wsdl:operation>
@@ -3408,7 +3428,7 @@
       <wsdl:output message="tns:GetCourseByCodeHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetILTClassSizeDetailsXML">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of remaining places, the total allowed and the total for waitlisting of an ILT</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of remaining places, the total allowed and the total for waitlisting of an ILT passed by its code. If an ILT code is not passed, returns the details for all ILTs in the domain</wsdl:documentation>
       <wsdl:input message="tns:GetILTClassSizeDetailsXMLHttpGetIn" />
       <wsdl:output message="tns:GetILTClassSizeDetailsXMLHttpGetOut" />
     </wsdl:operation>
@@ -3453,17 +3473,17 @@
       <wsdl:output message="tns:SetCourseTAsHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="SetCourseMarkedBy">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets who can mark a course. If moderator=true, moderator can mark the course. If ta = true, teaching assistants can mark the course. If both true, then both moderator AND ta can mark course.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets who can mark a course. If moderator = true, moderator can mark the course. If ta = true, teaching assistants can mark the course. If both true, then both moderator AND ta can mark course.</wsdl:documentation>
       <wsdl:input message="tns:SetCourseMarkedByHttpGetIn" />
       <wsdl:output message="tns:SetCourseMarkedByHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseAssignmentsList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of a Course's Assignments.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of a course's assignments.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseAssignmentsListHttpGetIn" />
       <wsdl:output message="tns:GetCourseAssignmentsListHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseAssignmentsXml">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a Course's assignments in XML format.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a course's assignments in XML format.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseAssignmentsXmlHttpGetIn" />
       <wsdl:output message="tns:GetCourseAssignmentsXmlHttpGetOut" />
     </wsdl:operation>
@@ -3563,7 +3583,7 @@
       <wsdl:output message="tns:GetEquivalencyLearningActivitiesHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetAvailableCourses">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available in the system or for a domain. Course type can be 'Course' or 'Learning Path' or empty to return all course types. If Self enrollment is passed as a false then courses with self enrollment and without self enrollment are returned. If a program ID is passed, only courses in the passed domain are returned. If a language is passed, only courses for the passed language are returned. The returned list includes links to the catalogue course details pages.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available in the system or for a domain. Course type can be 'Course' or 'Learning Path' or empty to return all course types. If self enrollment is passed as a false then courses with self enrollment and without self enrollment are returned. If a program ID is passed, only courses in the passed domain are returned. If a language is passed, only courses for the passed language are returned. The returned list includes links to the catalogue course details pages.</wsdl:documentation>
       <wsdl:input message="tns:GetAvailableCoursesHttpGetIn" />
       <wsdl:output message="tns:GetAvailableCoursesHttpGetOut" />
     </wsdl:operation>
@@ -3590,7 +3610,7 @@
       <wsdl:output message="tns:GetCourseByCodeHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetILTClassSizeDetailsXML">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of remaining places, the total allowed and the total for waitlisting of an ILT</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the total number of remaining places, the total allowed and the total for waitlisting of an ILT passed by its code. If an ILT code is not passed, returns the details for all ILTs in the domain</wsdl:documentation>
       <wsdl:input message="tns:GetILTClassSizeDetailsXMLHttpPostIn" />
       <wsdl:output message="tns:GetILTClassSizeDetailsXMLHttpPostOut" />
     </wsdl:operation>
@@ -3635,17 +3655,17 @@
       <wsdl:output message="tns:SetCourseTAsHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="SetCourseMarkedBy">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets who can mark a course. If moderator=true, moderator can mark the course. If ta = true, teaching assistants can mark the course. If both true, then both moderator AND ta can mark course.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets who can mark a course. If moderator = true, moderator can mark the course. If ta = true, teaching assistants can mark the course. If both true, then both moderator AND ta can mark course.</wsdl:documentation>
       <wsdl:input message="tns:SetCourseMarkedByHttpPostIn" />
       <wsdl:output message="tns:SetCourseMarkedByHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseAssignmentsList">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of a Course's Assignments.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of a course's assignments.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseAssignmentsListHttpPostIn" />
       <wsdl:output message="tns:GetCourseAssignmentsListHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseAssignmentsXml">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a Course's assignments in XML format.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a course's assignments in XML format.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseAssignmentsXmlHttpPostIn" />
       <wsdl:output message="tns:GetCourseAssignmentsXmlHttpPostOut" />
     </wsdl:operation>
@@ -3745,7 +3765,7 @@
       <wsdl:output message="tns:GetEquivalencyLearningActivitiesHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetAvailableCourses">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available in the system or for a domain. Course type can be 'Course' or 'Learning Path' or empty to return all course types. If Self enrollment is passed as a false then courses with self enrollment and without self enrollment are returned. If a program ID is passed, only courses in the passed domain are returned. If a language is passed, only courses for the passed language are returned. The returned list includes links to the catalogue course details pages.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available in the system or for a domain. Course type can be 'Course' or 'Learning Path' or empty to return all course types. If self enrollment is passed as a false then courses with self enrollment and without self enrollment are returned. If a program ID is passed, only courses in the passed domain are returned. If a language is passed, only courses for the passed language are returned. The returned list includes links to the catalogue course details pages.</wsdl:documentation>
       <wsdl:input message="tns:GetAvailableCoursesHttpPostIn" />
       <wsdl:output message="tns:GetAvailableCoursesHttpPostOut" />
     </wsdl:operation>

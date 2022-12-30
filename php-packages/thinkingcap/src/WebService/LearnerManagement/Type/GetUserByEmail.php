@@ -21,8 +21,8 @@ class GetUserByEmail implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userEmail
      */
     public function __construct($apiKey, $userEmail)
     {

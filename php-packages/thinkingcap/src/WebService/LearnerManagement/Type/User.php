@@ -64,6 +64,21 @@ class User
     /**
      * @var bool
      */
+    private $IsMFACheck;
+
+    /**
+     * @var \DateTimeInterface
+     */
+    private $MFACreatedDate;
+
+    /**
+     * @var \DateTimeInterface
+     */
+    private $MFACheckDate;
+
+    /**
+     * @var bool
+     */
     private $CompletedUserSetup;
 
     /**
@@ -107,6 +122,21 @@ class User
     private $CreationMethod;
 
     /**
+     * @var bool
+     */
+    private $ProtectFromManualChange;
+
+    /**
+     * @var bool
+     */
+    private $ProtectFromManualDeletion;
+
+    /**
+     * @var string
+     */
+    private $SyncDomain;
+
+    /**
      * @var \DateTimeInterface
      */
     private $PasswordChangeDate;
@@ -147,6 +177,11 @@ class User
     private $SuperUser;
 
     /**
+     * @var bool
+     */
+    private $CanUseLMSLogin;
+
+    /**
      * @var string
      */
     private $OutsideEmail;
@@ -175,6 +210,11 @@ class User
      * @var string
      */
     private $BlockNotificationsReason;
+
+    /**
+     * @var bool
+     */
+    private $BlockDomainAnnouncements;
 
     /**
      * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfProgram
@@ -500,6 +540,69 @@ class User
     /**
      * @return bool
      */
+    public function getIsMFACheck()
+    {
+        return $this->IsMFACheck;
+    }
+
+    /**
+     * @param bool $IsMFACheck
+     *
+     * @return User
+     */
+    public function withIsMFACheck($IsMFACheck)
+    {
+        $new = clone $this;
+        $new->IsMFACheck = $IsMFACheck;
+
+        return $new;
+    }
+
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getMFACreatedDate()
+    {
+        return $this->MFACreatedDate;
+    }
+
+    /**
+     * @param \DateTimeInterface $MFACreatedDate
+     *
+     * @return User
+     */
+    public function withMFACreatedDate($MFACreatedDate)
+    {
+        $new = clone $this;
+        $new->MFACreatedDate = $MFACreatedDate;
+
+        return $new;
+    }
+
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getMFACheckDate()
+    {
+        return $this->MFACheckDate;
+    }
+
+    /**
+     * @param \DateTimeInterface $MFACheckDate
+     *
+     * @return User
+     */
+    public function withMFACheckDate($MFACheckDate)
+    {
+        $new = clone $this;
+        $new->MFACheckDate = $MFACheckDate;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
     public function getCompletedUserSetup()
     {
         return $this->CompletedUserSetup;
@@ -687,6 +790,69 @@ class User
     }
 
     /**
+     * @return bool
+     */
+    public function getProtectFromManualChange()
+    {
+        return $this->ProtectFromManualChange;
+    }
+
+    /**
+     * @param bool $ProtectFromManualChange
+     *
+     * @return User
+     */
+    public function withProtectFromManualChange($ProtectFromManualChange)
+    {
+        $new = clone $this;
+        $new->ProtectFromManualChange = $ProtectFromManualChange;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getProtectFromManualDeletion()
+    {
+        return $this->ProtectFromManualDeletion;
+    }
+
+    /**
+     * @param bool $ProtectFromManualDeletion
+     *
+     * @return User
+     */
+    public function withProtectFromManualDeletion($ProtectFromManualDeletion)
+    {
+        $new = clone $this;
+        $new->ProtectFromManualDeletion = $ProtectFromManualDeletion;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSyncDomain()
+    {
+        return $this->SyncDomain;
+    }
+
+    /**
+     * @param string $SyncDomain
+     *
+     * @return User
+     */
+    public function withSyncDomain($SyncDomain)
+    {
+        $new = clone $this;
+        $new->SyncDomain = $SyncDomain;
+
+        return $new;
+    }
+
+    /**
      * @return \DateTimeInterface
      */
     public function getPasswordChangeDate()
@@ -855,6 +1021,27 @@ class User
     }
 
     /**
+     * @return bool
+     */
+    public function getCanUseLMSLogin()
+    {
+        return $this->CanUseLMSLogin;
+    }
+
+    /**
+     * @param bool $CanUseLMSLogin
+     *
+     * @return User
+     */
+    public function withCanUseLMSLogin($CanUseLMSLogin)
+    {
+        $new = clone $this;
+        $new->CanUseLMSLogin = $CanUseLMSLogin;
+
+        return $new;
+    }
+
+    /**
      * @return string
      */
     public function getOutsideEmail()
@@ -976,6 +1163,27 @@ class User
     {
         $new = clone $this;
         $new->BlockNotificationsReason = $BlockNotificationsReason;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getBlockDomainAnnouncements()
+    {
+        return $this->BlockDomainAnnouncements;
+    }
+
+    /**
+     * @param bool $BlockDomainAnnouncements
+     *
+     * @return User
+     */
+    public function withBlockDomainAnnouncements($BlockDomainAnnouncements)
+    {
+        $new = clone $this;
+        $new->BlockDomainAnnouncements = $BlockDomainAnnouncements;
 
         return $new;
     }

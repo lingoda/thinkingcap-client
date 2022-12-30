@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement;
 
+use Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 

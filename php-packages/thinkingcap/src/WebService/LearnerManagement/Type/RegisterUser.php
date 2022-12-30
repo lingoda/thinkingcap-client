@@ -61,16 +61,16 @@ class RegisterUser implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userID
+     * @var string $userFirstName
+     * @var string $userLastName
+     * @var string $userTitle
+     * @var string $userEmail
+     * @var string $userPassword
+     * @var string $userScreenName
+     * @var string $userLanguage
+     * @var string $userCustomMetadata
      */
     public function __construct($apiKey, $userID, $userFirstName, $userLastName, $userTitle, $userEmail, $userPassword, $userScreenName, $userLanguage, $userCustomMetadata)
     {

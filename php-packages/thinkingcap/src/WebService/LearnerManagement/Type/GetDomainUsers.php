@@ -41,12 +41,12 @@ class GetDomainUsers implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var bool
-     * @var bool
-     * @var int
-     * @var int
+     * @var string $apiKey
+     * @var string $domainID
+     * @var bool $includeInactive
+     * @var bool $includeMetadata
+     * @var int $offset
+     * @var int $take
      */
     public function __construct($apiKey, $domainID, $includeInactive, $includeMetadata, $offset, $take)
     {

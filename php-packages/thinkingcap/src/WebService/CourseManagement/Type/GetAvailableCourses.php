@@ -36,11 +36,11 @@ class GetAvailableCourses implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $courseType
+     * @var string $onlySelfEnrollmentCourse
+     * @var string $programID
+     * @var string $language
      */
     public function __construct($apiKey, $courseType, $onlySelfEnrollmentCourse, $programID, $language)
     {

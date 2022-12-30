@@ -21,8 +21,8 @@ class GetUserByUserName implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userName
      */
     public function __construct($apiKey, $userName)
     {

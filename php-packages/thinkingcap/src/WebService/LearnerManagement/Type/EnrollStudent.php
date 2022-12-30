@@ -31,10 +31,10 @@ class EnrollStudent implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $studentID
+     * @var string $learningObjectID
+     * @var string $enrollmentDomainID
      */
     public function __construct($apiKey, $studentID, $learningObjectID, $enrollmentDomainID)
     {

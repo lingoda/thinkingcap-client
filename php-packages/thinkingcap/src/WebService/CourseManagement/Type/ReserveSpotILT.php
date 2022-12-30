@@ -41,12 +41,12 @@ class ReserveSpotILT implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var int
-     * @var int
-     * @var bool
+     * @var string $apiKey
+     * @var string $learningActivityCode
+     * @var string $learningActivityID
+     * @var int $numberOfSeats
+     * @var int $duration
+     * @var bool $checkWaitList
      */
     public function __construct($apiKey, $learningActivityCode, $learningActivityID, $numberOfSeats, $duration, $checkWaitList)
     {

@@ -26,9 +26,9 @@ class IsTrainingLocationAvailable implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeIntervalsList
+     * @var string $apiKey
+     * @var string $locationID
+     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeIntervalsList $timeIntervalsList
      */
     public function __construct($apiKey, $locationID, $timeIntervalsList)
     {

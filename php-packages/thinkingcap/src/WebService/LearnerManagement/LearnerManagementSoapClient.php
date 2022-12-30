@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement;
 
+use Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
@@ -44,6 +45,18 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
     public function registerUser(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterUser $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterUserResponse
     {
         return $this->call('RegisterUser', $parameters);
+    }
+
+    /**
+     * @param RequestInterface|Type\RegisterBulkUser $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\RegisterBulkUserResponse
+     */
+    public function registerBulkUser(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterBulkUser $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterBulkUserResponse
+    {
+        return $this->call('RegisterBulkUser', $parameters);
     }
 
     /**
@@ -104,6 +117,18 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
     public function getSupervisorUsers(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetSupervisorUsers $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetSupervisorUsersResponse
     {
         return $this->call('GetSupervisorUsers', $parameters);
+    }
+
+    /**
+     * @param RequestInterface|Type\GetUserSupervisors $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\GetUserSupervisorsResponse
+     */
+    public function getUserSupervisors(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserSupervisors $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserSupervisorsResponse
+    {
+        return $this->call('GetUserSupervisors', $parameters);
     }
 
     /**

@@ -26,9 +26,9 @@ class GetSCORMDetails implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $userLogin
+     * @var string $userPassword
+     * @var string $courseID
      */
     public function __construct($userLogin, $userPassword, $courseID)
     {

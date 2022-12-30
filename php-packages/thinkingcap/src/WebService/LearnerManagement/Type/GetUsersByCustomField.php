@@ -26,9 +26,9 @@ class GetUsersByCustomField implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $customFieldID
+     * @var string $customFieldValue
      */
     public function __construct($apiKey, $customFieldID, $customFieldValue)
     {

@@ -26,9 +26,9 @@ class GetUserByID implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var bool
+     * @var string $apiKey
+     * @var string $userID
+     * @var bool $includeMetadata
      */
     public function __construct($apiKey, $userID, $includeMetadata)
     {

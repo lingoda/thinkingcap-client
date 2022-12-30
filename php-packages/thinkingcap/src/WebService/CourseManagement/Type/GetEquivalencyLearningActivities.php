@@ -21,8 +21,8 @@ class GetEquivalencyLearningActivities implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $equivalencyID
      */
     public function __construct($apiKey, $equivalencyID)
     {

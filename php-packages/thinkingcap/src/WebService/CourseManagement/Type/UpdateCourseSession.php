@@ -86,21 +86,21 @@ class UpdateCourseSession implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var bool
-     * @var bool
-     * @var string
-     * @var string
-     * @var bool
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $courseID
+     * @var string $sessionID
+     * @var string $sessionTitle
+     * @var string $sessionDescription
+     * @var bool $sessionIsRequired
+     * @var bool $timeIsTDB
+     * @var string $sessionStartDateTime
+     * @var string $sessionEndDateTime
+     * @var bool $locationIsTBD
+     * @var string $sessionLocationID
+     * @var string $webinarProviderID
+     * @var string $zoomSubAccountHostID
+     * @var string $customMeetingURL
+     * @var string $attendanceCode
      */
     public function __construct($apiKey, $courseID, $sessionID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $attendanceCode)
     {

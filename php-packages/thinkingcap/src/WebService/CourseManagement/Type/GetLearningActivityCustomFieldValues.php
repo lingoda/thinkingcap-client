@@ -26,9 +26,9 @@ class GetLearningActivityCustomFieldValues implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $learningActivityID
+     * @var string $customFieldID
      */
     public function __construct($apiKey, $learningActivityID, $customFieldID)
     {

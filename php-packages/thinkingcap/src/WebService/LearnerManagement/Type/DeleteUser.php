@@ -21,8 +21,8 @@ class DeleteUser implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userID
      */
     public function __construct($apiKey, $userID)
     {

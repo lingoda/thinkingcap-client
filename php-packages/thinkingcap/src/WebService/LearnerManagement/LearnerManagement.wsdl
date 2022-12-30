@@ -47,6 +47,9 @@
           <s:element minOccurs="0" maxOccurs="1" name="LastLoginBrowser" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="LastLoginDevice" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsLoginLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMFACheck" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFACreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFACheckDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletedUserSetup" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ScreenName" type="s:string" />
@@ -56,6 +59,9 @@
           <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="CreationMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualChange" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualDeletion" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SyncDomain" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="PasswordChangeDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="MustChangePassword" type="s:boolean" />
@@ -64,12 +70,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Pending" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SuperUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanUseLMSLogin" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="OutsideEmail" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="NewsLetterEmailOptOutDisabled" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Roles" type="tns:ArrayOfRole" />
           <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
           <s:element minOccurs="1" maxOccurs="1" name="BlockNotifications" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="BlockNotificationsReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlockDomainAnnouncements" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Programs" type="tns:ArrayOfProgram" />
           <s:element minOccurs="1" maxOccurs="1" name="ProgramMgr" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Courses" type="tns:ArrayOfCourse" />
@@ -161,6 +169,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresCode" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresRequest" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AltPrices" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCodes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationInstruction" type="s:string" />
@@ -216,6 +225,16 @@
           <s:element minOccurs="0" maxOccurs="1" name="LogoContentType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="UseCustomLearnerUrl" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UseSSL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAdminsLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFA" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MFAMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForLearner" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForAdmin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFAAdminInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFALearnerInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnSSO" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnLMSLogin" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HideUrlFromSearch" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanConsumeShared" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanShare" type="s:boolean" />
@@ -247,6 +266,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DenyChildLearningObjects" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GenerateLearningActivitiesCode" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowOverrideLearningActivitiesCode" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawInactiveLearners" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsParent" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="SubscriptionRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="RegistrationIntroXmlNode">
@@ -1226,6 +1246,32 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="RegisterBulkUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userScreenName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userLanguage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userCustomMetadata" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="syncDomainID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="protectFromManualChange" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterBulkUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterBulkUserResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="UpdateUser">
         <s:complexType>
           <s:sequence>
@@ -1315,6 +1361,68 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetSupervisorUsersResult" type="tns:ServiceResultOfListOfServiceUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserSupervisors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ServiceResultOfListOfServiceSupervisor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:ArrayOfServiceSupervisor" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceSupervisor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceSupervisor" nillable="true" type="tns:ServiceSupervisor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceSupervisor">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ServiceUser">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SupervisorType" type="tns:SupervisorType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SupervisorType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomainID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnrollLearners" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawLearners" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApproveDeclineEnrollment" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApproveDeclineWithdrawal" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarkAssignments" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SignOffAttestations" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViewSurveyResults" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViewAssessmentResults" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PullAttestationDocuments" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PullCompletionReports" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApproveForumPosts" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViewCertificates" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AssignmentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MatchingLearnersMetadata" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorMetadata" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorMetadataoption" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserSupervisorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserSupervisorsResult" type="tns:ServiceResultOfListOfServiceSupervisor" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2192,6 +2300,7 @@
       <s:element name="ServiceResultOfUserList" nillable="true" type="tns:ServiceResultOfUserList" />
       <s:element name="ServiceResultOfListOfServiceUser" nillable="true" type="tns:ServiceResultOfListOfServiceUser" />
       <s:element name="ServiceResultOfString" nillable="true" type="tns:ServiceResultOfString" />
+      <s:element name="ServiceResultOfListOfServiceSupervisor" nillable="true" type="tns:ServiceResultOfListOfServiceSupervisor" />
       <s:element name="ServiceResultOfServiceUser" nillable="true" type="tns:ServiceResultOfServiceUser" />
       <s:element name="ServiceResultOfUser" nillable="true" type="tns:ServiceResultOfUser" />
       <s:element name="ServiceResultOfStudentRecordList" nillable="true" type="tns:ServiceResultOfStudentRecordList" />
@@ -2232,6 +2341,12 @@
   <wsdl:message name="RegisterUserSoapOut">
     <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
   </wsdl:message>
+  <wsdl:message name="RegisterBulkUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterBulkUser" />
+  </wsdl:message>
+  <wsdl:message name="RegisterBulkUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterBulkUserResponse" />
+  </wsdl:message>
   <wsdl:message name="UpdateUserSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateUser" />
   </wsdl:message>
@@ -2261,6 +2376,12 @@
   </wsdl:message>
   <wsdl:message name="GetSupervisorUsersSoapOut">
     <wsdl:part name="parameters" element="tns:GetSupervisorUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSupervisorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserSupervisors" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSupervisorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserSupervisorsResponse" />
   </wsdl:message>
   <wsdl:message name="GetUserByIDSoapIn">
     <wsdl:part name="parameters" element="tns:GetUserByID" />
@@ -2534,6 +2655,24 @@
   <wsdl:message name="RegisterUserHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="RegisterBulkUserHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="userFirstName" type="s:string" />
+    <wsdl:part name="userLastName" type="s:string" />
+    <wsdl:part name="userTitle" type="s:string" />
+    <wsdl:part name="userEmail" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="userScreenName" type="s:string" />
+    <wsdl:part name="userLanguage" type="s:string" />
+    <wsdl:part name="userCustomMetadata" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="syncDomainID" type="s:string" />
+    <wsdl:part name="protectFromManualChange" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterBulkUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="UpdateUserHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userID" type="s:string" />
@@ -2585,6 +2724,14 @@
   </wsdl:message>
   <wsdl:message name="GetSupervisorUsersHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfListOfServiceUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSupervisorsHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSupervisorsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfListOfServiceSupervisor" />
   </wsdl:message>
   <wsdl:message name="GetUserByIDHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
@@ -2953,6 +3100,24 @@
   <wsdl:message name="RegisterUserHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="RegisterBulkUserHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="userFirstName" type="s:string" />
+    <wsdl:part name="userLastName" type="s:string" />
+    <wsdl:part name="userTitle" type="s:string" />
+    <wsdl:part name="userEmail" type="s:string" />
+    <wsdl:part name="userPassword" type="s:string" />
+    <wsdl:part name="userScreenName" type="s:string" />
+    <wsdl:part name="userLanguage" type="s:string" />
+    <wsdl:part name="userCustomMetadata" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="syncDomainID" type="s:string" />
+    <wsdl:part name="protectFromManualChange" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterBulkUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="UpdateUserHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userID" type="s:string" />
@@ -3004,6 +3169,14 @@
   </wsdl:message>
   <wsdl:message name="GetSupervisorUsersHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfListOfServiceUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSupervisorsHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="userID" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSupervisorsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfListOfServiceSupervisor" />
   </wsdl:message>
   <wsdl:message name="GetUserByIDHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
@@ -3352,9 +3525,14 @@
       <wsdl:output message="tns:GetDomainUsersSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, optional userID (system generated if not provided), user first name (100 characters max), user last name (100 characters max), user title (100 characters max), user email (100 characters max), user password (50 characters max), user screen name (200 characters max), learner language (10 characters max - example: "en"), user custom metadata (XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:RegisterUserSoapIn" />
       <wsdl:output message="tns:RegisterUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
+      <wsdl:input message="tns:RegisterBulkUserSoapIn" />
+      <wsdl:output message="tns:RegisterBulkUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the account information for the user with the passed LMS ID. Any information not passed for the user will be left unchanged. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
@@ -3377,9 +3555,14 @@
       <wsdl:output message="tns:UpdateStudentSupervisorsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users.Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetSupervisorUsersSoapIn" />
       <wsdl:output message="tns:GetSupervisorUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of supervisors for the passed user specified by its LMS ID. Includes or not the supervisor users metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetUserSupervisorsSoapIn" />
+      <wsdl:output message="tns:GetUserSupervisorsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByID">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified LMS ID. Includes or not the user metadata.</wsdl:documentation>
@@ -3594,9 +3777,14 @@
       <wsdl:output message="tns:GetDomainUsersHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, optional userID (system generated if not provided), user first name (100 characters max), user last name (100 characters max), user title (100 characters max), user email (100 characters max), user password (50 characters max), user screen name (200 characters max), learner language (10 characters max - example: "en"), user custom metadata (XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:RegisterUserHttpGetIn" />
       <wsdl:output message="tns:RegisterUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
+      <wsdl:input message="tns:RegisterBulkUserHttpGetIn" />
+      <wsdl:output message="tns:RegisterBulkUserHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the account information for the user with the passed LMS ID. Any information not passed for the user will be left unchanged. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
@@ -3619,9 +3807,14 @@
       <wsdl:output message="tns:UpdateStudentSupervisorsHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users.Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetSupervisorUsersHttpGetIn" />
       <wsdl:output message="tns:GetSupervisorUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of supervisors for the passed user specified by its LMS ID. Includes or not the supervisor users metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetUserSupervisorsHttpGetIn" />
+      <wsdl:output message="tns:GetUserSupervisorsHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByID">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified LMS ID. Includes or not the user metadata.</wsdl:documentation>
@@ -3836,9 +4029,14 @@
       <wsdl:output message="tns:GetDomainUsersHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, optional userID (system generated if not provided), user first name (100 characters max), user last name (100 characters max), user title (100 characters max), user email (100 characters max), user password (50 characters max), user screen name (200 characters max), learner language (10 characters max - example: "en"), user custom metadata (XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:RegisterUserHttpPostIn" />
       <wsdl:output message="tns:RegisterUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
+      <wsdl:input message="tns:RegisterBulkUserHttpPostIn" />
+      <wsdl:output message="tns:RegisterBulkUserHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the account information for the user with the passed LMS ID. Any information not passed for the user will be left unchanged. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
@@ -3861,9 +4059,14 @@
       <wsdl:output message="tns:UpdateStudentSupervisorsHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users.Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetSupervisorUsersHttpPostIn" />
       <wsdl:output message="tns:GetSupervisorUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of supervisors for the passed user specified by its LMS ID. Includes or not the supervisor users metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetUserSupervisorsHttpPostIn" />
+      <wsdl:output message="tns:GetUserSupervisorsHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByID">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified LMS ID. Includes or not the user metadata.</wsdl:documentation>
@@ -4095,6 +4298,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <soap:operation soapAction="http://www.thinkingcap.com/RegisterBulkUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <soap:operation soapAction="http://www.thinkingcap.com/UpdateUser" style="document" />
       <wsdl:input>
@@ -4133,6 +4345,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
       <soap:operation soapAction="http://www.thinkingcap.com/GetSupervisorUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <soap:operation soapAction="http://www.thinkingcap.com/GetUserSupervisors" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4530,6 +4751,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <soap12:operation soapAction="http://www.thinkingcap.com/RegisterBulkUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <soap12:operation soapAction="http://www.thinkingcap.com/UpdateUser" style="document" />
       <wsdl:input>
@@ -4568,6 +4798,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
       <soap12:operation soapAction="http://www.thinkingcap.com/GetSupervisorUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <soap12:operation soapAction="http://www.thinkingcap.com/GetUserSupervisors" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4965,6 +5204,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <http:operation location="/RegisterBulkUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <http:operation location="/UpdateUser" />
       <wsdl:input>
@@ -5003,6 +5251,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
       <http:operation location="/GetSupervisorUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <http:operation location="/GetUserSupervisors" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -5400,6 +5657,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterBulkUser">
+      <http:operation location="/RegisterBulkUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <http:operation location="/UpdateUser" />
       <wsdl:input>
@@ -5438,6 +5704,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
       <http:operation location="/GetSupervisorUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSupervisors">
+      <http:operation location="/GetUserSupervisors" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -26,9 +26,9 @@ class GetStudentLearningActivityRecords implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $studentID
+     * @var string $learningObjectID
      */
     public function __construct($apiKey, $studentID, $learningObjectID)
     {

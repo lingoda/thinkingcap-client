@@ -26,9 +26,9 @@ class UpdateStudentSupervisors implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $studentID
+     * @var string $supervisorsList
      */
     public function __construct($apiKey, $studentID, $supervisorsList)
     {

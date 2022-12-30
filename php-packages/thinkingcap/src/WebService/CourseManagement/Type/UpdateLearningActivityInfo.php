@@ -26,9 +26,9 @@ class UpdateLearningActivityInfo implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $learningActivityID
+     * @var string $learningActivitySettingsXML
      */
     public function __construct($apiKey, $learningActivityID, $learningActivitySettingsXML)
     {

@@ -26,9 +26,9 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var bool
+     * @var string $apiKey
+     * @var string $learningObjectID
+     * @var bool $active
      */
     public function __construct($apiKey, $learningObjectID, $active)
     {

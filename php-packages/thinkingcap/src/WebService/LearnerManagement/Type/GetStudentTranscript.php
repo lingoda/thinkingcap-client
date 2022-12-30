@@ -26,9 +26,9 @@ class GetStudentTranscript implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $studentID
+     * @var string $type
      */
     public function __construct($apiKey, $studentID, $type)
     {

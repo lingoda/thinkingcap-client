@@ -26,9 +26,9 @@ class AddUserToDomain implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userID
+     * @var string $domainID
      */
     public function __construct($apiKey, $userID, $domainID)
     {

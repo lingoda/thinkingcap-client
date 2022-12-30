@@ -91,22 +91,22 @@ class AddLearningActivity implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var float
-     * @var bool
-     * @var bool
-     * @var string
-     * @var int
-     * @var string
+     * @var string $apiKey
+     * @var string $learningActivityDomainID
+     * @var string $learningActivityType
+     * @var string $learningActivityID
+     * @var string $learningActivityTitle
+     * @var string $learningActivityCode
+     * @var string $learningActivityDescription
+     * @var string $learningActivityLanguage
+     * @var string $learningActivityEquivalencyCode
+     * @var string $learningActivityTags
+     * @var float $learningActivityEstimatedTimeMinutes
+     * @var bool $learningActivityShowSupervisorLogin
+     * @var bool $learningActivityRequiresEvidence
+     * @var string $learningActivityCertificateTemplateName
+     * @var int $learningActivityCertificateMinScore
+     * @var string $learningActivityCustomMetadata
      */
     public function __construct($apiKey, $learningActivityDomainID, $learningActivityType, $learningActivityID, $learningActivityTitle, $learningActivityCode, $learningActivityDescription, $learningActivityLanguage, $learningActivityEquivalencyCode, $learningActivityTags, $learningActivityEstimatedTimeMinutes, $learningActivityShowSupervisorLogin, $learningActivityRequiresEvidence, $learningActivityCertificateTemplateName, $learningActivityCertificateMinScore, $learningActivityCustomMetadata)
     {

@@ -26,9 +26,9 @@ class UpdateUserMetadataValues implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userID
+     * @var string $fieldsValuesXml
      */
     public function __construct($apiKey, $userID, $fieldsValuesXml)
     {

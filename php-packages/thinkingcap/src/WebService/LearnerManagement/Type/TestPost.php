@@ -16,7 +16,7 @@ class TestPost implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
+     * @var string $apiKey
      */
     public function __construct($apiKey)
     {

@@ -107,6 +107,11 @@ class Program
     private $RegistrationRequiresRequest;
 
     /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType
+     */
+    private $AltPrices;
+
+    /**
      * @var string
      */
     private $RegistrationAccessCodes;
@@ -384,6 +389,56 @@ class Program
     /**
      * @var bool
      */
+    private $AllowAdminsLMSLogin;
+
+    /**
+     * @var bool
+     */
+    private $AllowLearnersLMSLogin;
+
+    /**
+     * @var bool
+     */
+    private $UseMFA;
+
+    /**
+     * @var string
+     */
+    private $MFAMethod;
+
+    /**
+     * @var bool
+     */
+    private $UseMFAForLearner;
+
+    /**
+     * @var bool
+     */
+    private $UseMFAForAdmin;
+
+    /**
+     * @var int
+     */
+    private $MFAAdminInterval;
+
+    /**
+     * @var int
+     */
+    private $MFALearnerInterval;
+
+    /**
+     * @var bool
+     */
+    private $UseMFAOnSSO;
+
+    /**
+     * @var bool
+     */
+    private $UseMFAOnLMSLogin;
+
+    /**
+     * @var bool
+     */
     private $HideUrlFromSearch;
 
     /**
@@ -535,6 +590,11 @@ class Program
      * @var bool
      */
     private $AllowOverrideLearningActivitiesCode;
+
+    /**
+     * @var bool
+     */
+    private $WithdrawInactiveLearners;
 
     /**
      * @var bool
@@ -1207,6 +1267,27 @@ class Program
     {
         $new = clone $this;
         $new->RegistrationRequiresRequest = $RegistrationRequiresRequest;
+
+        return $new;
+    }
+
+    /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType
+     */
+    public function getAltPrices()
+    {
+        return $this->AltPrices;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType $AltPrices
+     *
+     * @return Program
+     */
+    public function withAltPrices($AltPrices)
+    {
+        $new = clone $this;
+        $new->AltPrices = $AltPrices;
 
         return $new;
     }
@@ -2369,6 +2450,216 @@ class Program
     /**
      * @return bool
      */
+    public function getAllowAdminsLMSLogin()
+    {
+        return $this->AllowAdminsLMSLogin;
+    }
+
+    /**
+     * @param bool $AllowAdminsLMSLogin
+     *
+     * @return Program
+     */
+    public function withAllowAdminsLMSLogin($AllowAdminsLMSLogin)
+    {
+        $new = clone $this;
+        $new->AllowAdminsLMSLogin = $AllowAdminsLMSLogin;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowLearnersLMSLogin()
+    {
+        return $this->AllowLearnersLMSLogin;
+    }
+
+    /**
+     * @param bool $AllowLearnersLMSLogin
+     *
+     * @return Program
+     */
+    public function withAllowLearnersLMSLogin($AllowLearnersLMSLogin)
+    {
+        $new = clone $this;
+        $new->AllowLearnersLMSLogin = $AllowLearnersLMSLogin;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUseMFA()
+    {
+        return $this->UseMFA;
+    }
+
+    /**
+     * @param bool $UseMFA
+     *
+     * @return Program
+     */
+    public function withUseMFA($UseMFA)
+    {
+        $new = clone $this;
+        $new->UseMFA = $UseMFA;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMFAMethod()
+    {
+        return $this->MFAMethod;
+    }
+
+    /**
+     * @param string $MFAMethod
+     *
+     * @return Program
+     */
+    public function withMFAMethod($MFAMethod)
+    {
+        $new = clone $this;
+        $new->MFAMethod = $MFAMethod;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUseMFAForLearner()
+    {
+        return $this->UseMFAForLearner;
+    }
+
+    /**
+     * @param bool $UseMFAForLearner
+     *
+     * @return Program
+     */
+    public function withUseMFAForLearner($UseMFAForLearner)
+    {
+        $new = clone $this;
+        $new->UseMFAForLearner = $UseMFAForLearner;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUseMFAForAdmin()
+    {
+        return $this->UseMFAForAdmin;
+    }
+
+    /**
+     * @param bool $UseMFAForAdmin
+     *
+     * @return Program
+     */
+    public function withUseMFAForAdmin($UseMFAForAdmin)
+    {
+        $new = clone $this;
+        $new->UseMFAForAdmin = $UseMFAForAdmin;
+
+        return $new;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMFAAdminInterval()
+    {
+        return $this->MFAAdminInterval;
+    }
+
+    /**
+     * @param int $MFAAdminInterval
+     *
+     * @return Program
+     */
+    public function withMFAAdminInterval($MFAAdminInterval)
+    {
+        $new = clone $this;
+        $new->MFAAdminInterval = $MFAAdminInterval;
+
+        return $new;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMFALearnerInterval()
+    {
+        return $this->MFALearnerInterval;
+    }
+
+    /**
+     * @param int $MFALearnerInterval
+     *
+     * @return Program
+     */
+    public function withMFALearnerInterval($MFALearnerInterval)
+    {
+        $new = clone $this;
+        $new->MFALearnerInterval = $MFALearnerInterval;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUseMFAOnSSO()
+    {
+        return $this->UseMFAOnSSO;
+    }
+
+    /**
+     * @param bool $UseMFAOnSSO
+     *
+     * @return Program
+     */
+    public function withUseMFAOnSSO($UseMFAOnSSO)
+    {
+        $new = clone $this;
+        $new->UseMFAOnSSO = $UseMFAOnSSO;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUseMFAOnLMSLogin()
+    {
+        return $this->UseMFAOnLMSLogin;
+    }
+
+    /**
+     * @param bool $UseMFAOnLMSLogin
+     *
+     * @return Program
+     */
+    public function withUseMFAOnLMSLogin($UseMFAOnLMSLogin)
+    {
+        $new = clone $this;
+        $new->UseMFAOnLMSLogin = $UseMFAOnLMSLogin;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
     public function getHideUrlFromSearch()
     {
         return $this->HideUrlFromSearch;
@@ -3013,6 +3304,27 @@ class Program
     {
         $new = clone $this;
         $new->AllowOverrideLearningActivitiesCode = $AllowOverrideLearningActivitiesCode;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getWithdrawInactiveLearners()
+    {
+        return $this->WithdrawInactiveLearners;
+    }
+
+    /**
+     * @param bool $WithdrawInactiveLearners
+     *
+     * @return Program
+     */
+    public function withWithdrawInactiveLearners($WithdrawInactiveLearners)
+    {
+        $new = clone $this;
+        $new->WithdrawInactiveLearners = $WithdrawInactiveLearners;
 
         return $new;
     }

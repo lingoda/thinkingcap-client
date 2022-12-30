@@ -26,9 +26,9 @@ class GetActiveDirectorySynchSettings implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $clientKey
+     * @var string $domainID
      */
     public function __construct($apiKey, $clientKey, $domainID)
     {

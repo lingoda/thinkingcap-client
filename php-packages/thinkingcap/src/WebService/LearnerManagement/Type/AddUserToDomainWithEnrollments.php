@@ -31,10 +31,10 @@ class AddUserToDomainWithEnrollments implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var bool
+     * @var string $apiKey
+     * @var string $userID
+     * @var string $domainID
+     * @var bool $doAutoEnrollment
      */
     public function __construct($apiKey, $userID, $domainID, $doAutoEnrollment)
     {

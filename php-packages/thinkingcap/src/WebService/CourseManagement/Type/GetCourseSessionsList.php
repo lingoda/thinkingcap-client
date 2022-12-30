@@ -21,8 +21,8 @@ class GetCourseSessionsList implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $courseID
      */
     public function __construct($apiKey, $courseID)
     {

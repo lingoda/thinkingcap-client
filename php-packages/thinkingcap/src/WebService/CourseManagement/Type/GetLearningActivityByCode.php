@@ -21,8 +21,8 @@ class GetLearningActivityByCode implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $learningActivityCode
      */
     public function __construct($apiKey, $learningActivityCode)
     {

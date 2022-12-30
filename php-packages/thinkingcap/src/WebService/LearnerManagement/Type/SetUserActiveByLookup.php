@@ -26,9 +26,9 @@ class SetUserActiveByLookup implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var bool
+     * @var string $apiKey
+     * @var string $lookupValue
+     * @var bool $active
      */
     public function __construct($apiKey, $lookupValue, $active)
     {

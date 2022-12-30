@@ -36,11 +36,11 @@ class GetLMSUserAutoLoginURL implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var string
-     * @var string
-     * @var string
-     * @var string
+     * @var string $apiKey
+     * @var string $userLogin
+     * @var string $userPassword
+     * @var string $domainID
+     * @var string $returnUrl
      */
     public function __construct($apiKey, $userLogin, $userPassword, $domainID, $returnUrl)
     {

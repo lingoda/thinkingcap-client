@@ -21,8 +21,8 @@ class GenerateTimedSeed implements RequestInterface
     /**
      * Constructor
      *
-     * @var string
-     * @var int
+     * @var string $apiKey
+     * @var int $expireSeconds
      */
     public function __construct($apiKey, $expireSeconds)
     {

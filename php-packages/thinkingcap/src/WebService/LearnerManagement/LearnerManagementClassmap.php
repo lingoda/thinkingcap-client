@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement;
 
+use Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 
@@ -83,6 +84,8 @@ class LearnerManagementClassmap
             new ClassMap('RegisterUser', Type\RegisterUser::class),
             new ClassMap('ServiceResultOfString', Type\ServiceResultOfString::class),
             new ClassMap('RegisterUserResponse', Type\RegisterUserResponse::class),
+            new ClassMap('RegisterBulkUser', Type\RegisterBulkUser::class),
+            new ClassMap('RegisterBulkUserResponse', Type\RegisterBulkUserResponse::class),
             new ClassMap('UpdateUser', Type\UpdateUser::class),
             new ClassMap('UpdateUserResponse', Type\UpdateUserResponse::class),
             new ClassMap('UpdateUserMetadataValues', Type\UpdateUserMetadataValues::class),
@@ -93,6 +96,12 @@ class LearnerManagementClassmap
             new ClassMap('UpdateStudentSupervisorsResponse', Type\UpdateStudentSupervisorsResponse::class),
             new ClassMap('GetSupervisorUsers', Type\GetSupervisorUsers::class),
             new ClassMap('GetSupervisorUsersResponse', Type\GetSupervisorUsersResponse::class),
+            new ClassMap('GetUserSupervisors', Type\GetUserSupervisors::class),
+            new ClassMap('ServiceResultOfListOfServiceSupervisor', Type\ServiceResultOfListOfServiceSupervisor::class),
+            new ClassMap('ArrayOfServiceSupervisor', Type\ArrayOfServiceSupervisor::class),
+            new ClassMap('ServiceSupervisor', Type\ServiceSupervisor::class),
+            new ClassMap('SupervisorType', Type\SupervisorType::class),
+            new ClassMap('GetUserSupervisorsResponse', Type\GetUserSupervisorsResponse::class),
             new ClassMap('GetUserByID', Type\GetUserByID::class),
             new ClassMap('ServiceResultOfServiceUser', Type\ServiceResultOfServiceUser::class),
             new ClassMap('GetUserByIDResponse', Type\GetUserByIDResponse::class),
