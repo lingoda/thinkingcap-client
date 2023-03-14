@@ -54,6 +54,11 @@ class Assignment
     /**
      * @var bool
      */
+    private $AllowAudioRecordingSubmission;
+
+    /**
+     * @var bool
+     */
     private $Mastery;
 
     /**
@@ -90,6 +95,11 @@ class Assignment
      * @var string
      */
     private $ContentType;
+
+    /**
+     * @var string
+     */
+    private $AudioRecordingContentType;
 
     /**
      * @var string
@@ -328,6 +338,27 @@ class Assignment
     /**
      * @return bool
      */
+    public function getAllowAudioRecordingSubmission()
+    {
+        return $this->AllowAudioRecordingSubmission;
+    }
+
+    /**
+     * @param bool $AllowAudioRecordingSubmission
+     *
+     * @return Assignment
+     */
+    public function withAllowAudioRecordingSubmission($AllowAudioRecordingSubmission)
+    {
+        $new = clone $this;
+        $new->AllowAudioRecordingSubmission = $AllowAudioRecordingSubmission;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
     public function getMastery()
     {
         return $this->Mastery;
@@ -489,6 +520,27 @@ class Assignment
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAudioRecordingContentType()
+    {
+        return $this->AudioRecordingContentType;
+    }
+
+    /**
+     * @param string $AudioRecordingContentType
+     *
+     * @return Assignment
+     */
+    public function withAudioRecordingContentType($AudioRecordingContentType)
+    {
+        $new = clone $this;
+        $new->AudioRecordingContentType = $AudioRecordingContentType;
 
         return $new;
     }

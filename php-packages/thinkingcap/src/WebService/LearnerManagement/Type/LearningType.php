@@ -644,6 +644,11 @@ class LearningType
     /**
      * @var bool
      */
+    private $WithdrawIncompleteLPActivitiesOnCompletion;
+
+    /**
+     * @var bool
+     */
     private $StudentIsEnrolled;
 
     /**
@@ -4139,6 +4144,27 @@ class LearningType
     {
         $new = clone $this;
         $new->ExcludeLPEnrollNotSelfEnrollActivities = $ExcludeLPEnrollNotSelfEnrollActivities;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getWithdrawIncompleteLPActivitiesOnCompletion()
+    {
+        return $this->WithdrawIncompleteLPActivitiesOnCompletion;
+    }
+
+    /**
+     * @param bool $WithdrawIncompleteLPActivitiesOnCompletion
+     *
+     * @return LearningType
+     */
+    public function withWithdrawIncompleteLPActivitiesOnCompletion($WithdrawIncompleteLPActivitiesOnCompletion)
+    {
+        $new = clone $this;
+        $new->WithdrawIncompleteLPActivitiesOnCompletion = $WithdrawIncompleteLPActivitiesOnCompletion;
 
         return $new;
     }

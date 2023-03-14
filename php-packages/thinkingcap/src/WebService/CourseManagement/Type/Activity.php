@@ -262,6 +262,26 @@ class Activity
     private $LastRosterFilePath;
 
     /**
+     * @var bool
+     */
+    private $AllowCollaboration;
+
+    /**
+     * @var bool
+     */
+    private $EndCollaborationOnCompletion;
+
+    /**
+     * @var string
+     */
+    private $CollaborationTitle;
+
+    /**
+     * @var string
+     */
+    private $CollaborationDescription;
+
+    /**
      * @return string
      */
     public function getTypeName()
@@ -1328,6 +1348,90 @@ class Activity
     {
         $new = clone $this;
         $new->LastRosterFilePath = $LastRosterFilePath;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowCollaboration()
+    {
+        return $this->AllowCollaboration;
+    }
+
+    /**
+     * @param bool $AllowCollaboration
+     *
+     * @return Activity
+     */
+    public function withAllowCollaboration($AllowCollaboration)
+    {
+        $new = clone $this;
+        $new->AllowCollaboration = $AllowCollaboration;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getEndCollaborationOnCompletion()
+    {
+        return $this->EndCollaborationOnCompletion;
+    }
+
+    /**
+     * @param bool $EndCollaborationOnCompletion
+     *
+     * @return Activity
+     */
+    public function withEndCollaborationOnCompletion($EndCollaborationOnCompletion)
+    {
+        $new = clone $this;
+        $new->EndCollaborationOnCompletion = $EndCollaborationOnCompletion;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCollaborationTitle()
+    {
+        return $this->CollaborationTitle;
+    }
+
+    /**
+     * @param string $CollaborationTitle
+     *
+     * @return Activity
+     */
+    public function withCollaborationTitle($CollaborationTitle)
+    {
+        $new = clone $this;
+        $new->CollaborationTitle = $CollaborationTitle;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCollaborationDescription()
+    {
+        return $this->CollaborationDescription;
+    }
+
+    /**
+     * @param string $CollaborationDescription
+     *
+     * @return Activity
+     */
+    public function withCollaborationDescription($CollaborationDescription)
+    {
+        $new = clone $this;
+        $new->CollaborationDescription = $CollaborationDescription;
 
         return $new;
     }

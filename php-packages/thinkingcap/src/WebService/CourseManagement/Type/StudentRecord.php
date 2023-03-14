@@ -497,6 +497,11 @@ class StudentRecord
     private $ManualUpdateNotes;
 
     /**
+     * @var bool
+     */
+    private $ManualCompleted;
+
+    /**
      * @var \DateTimeInterface
      */
     private $AuditTimestamp;
@@ -2590,6 +2595,27 @@ class StudentRecord
     {
         $new = clone $this;
         $new->ManualUpdateNotes = $ManualUpdateNotes;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getManualCompleted()
+    {
+        return $this->ManualCompleted;
+    }
+
+    /**
+     * @param bool $ManualCompleted
+     *
+     * @return StudentRecord
+     */
+    public function withManualCompleted($ManualCompleted)
+    {
+        $new = clone $this;
+        $new->ManualCompleted = $ManualCompleted;
 
         return $new;
     }

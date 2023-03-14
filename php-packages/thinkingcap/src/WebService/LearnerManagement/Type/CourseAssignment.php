@@ -42,6 +42,11 @@ class CourseAssignment
     private $AllowTextSubmission;
 
     /**
+     * @var bool
+     */
+    private $AllowAudioRecordingSubmission;
+
+    /**
      * @return string
      */
     public function getID()
@@ -184,6 +189,27 @@ class CourseAssignment
     {
         $new = clone $this;
         $new->AllowTextSubmission = $AllowTextSubmission;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowAudioRecordingSubmission()
+    {
+        return $this->AllowAudioRecordingSubmission;
+    }
+
+    /**
+     * @param bool $AllowAudioRecordingSubmission
+     *
+     * @return CourseAssignment
+     */
+    public function withAllowAudioRecordingSubmission($AllowAudioRecordingSubmission)
+    {
+        $new = clone $this;
+        $new->AllowAudioRecordingSubmission = $AllowAudioRecordingSubmission;
 
         return $new;
     }

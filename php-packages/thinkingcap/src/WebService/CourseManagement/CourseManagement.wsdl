@@ -72,6 +72,10 @@
               <s:element minOccurs="1" maxOccurs="1" name="RunDirectAlways" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="Stylesheets" type="tns:ArrayOfCourseStylesheet" />
               <s:element minOccurs="1" maxOccurs="1" name="Published" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowCollaboration" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndCollaborationOnCompletion" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollaborationTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Versions" type="tns:ArrayOfCourseVersion" />
               <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="ForceUserFeedback" type="s:boolean" />
@@ -240,6 +244,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="AutoEnrollLPActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollPurchaseActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
@@ -548,6 +553,10 @@
               <s:element minOccurs="0" maxOccurs="1" name="RecordCreditValue" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="LastRosterFilePath" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowCollaboration" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndCollaborationOnCompletion" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollaborationTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -611,6 +620,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="StudentDisplayID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowTextSubmission" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAudioRecordingSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Mastery" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Completed" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SubmitDate" type="s:dateTime" />
@@ -619,6 +629,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FacultyID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ContentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AudioRecordingContentType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileContentType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ReviewercontentType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ReviewerfileName" type="s:string" />
@@ -644,6 +655,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Mastery" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MaxAttempts" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowTextSubmission" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAudioRecordingSubmission" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfCourseStylesheet">
@@ -855,6 +867,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="NotificationSettingXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ManualUpdateNotes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManualCompleted" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AuditTimestamp" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedTimestamp" type="s:dateTime" />
