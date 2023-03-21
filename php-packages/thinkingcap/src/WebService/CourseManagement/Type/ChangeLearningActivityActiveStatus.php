@@ -24,17 +24,31 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
     private $active;
 
     /**
+     * @var bool
+     */
+    private $updateAdminCatalogs;
+
+    /**
+     * @var bool
+     */
+    private $updateLearnerCatalogs;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
      * @var string $learningObjectID
      * @var bool $active
+     * @var bool $updateAdminCatalogs
+     * @var bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningObjectID, $active)
+    public function __construct($apiKey, $learningObjectID, $active, $updateAdminCatalogs, $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningObjectID = $learningObjectID;
         $this->active = $active;
+        $this->updateAdminCatalogs = $updateAdminCatalogs;
+        $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
     /**
@@ -96,6 +110,48 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
     {
         $new = clone $this;
         $new->active = $active;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateAdminCatalogs()
+    {
+        return $this->updateAdminCatalogs;
+    }
+
+    /**
+     * @param bool $updateAdminCatalogs
+     *
+     * @return ChangeLearningActivityActiveStatus
+     */
+    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    {
+        $new = clone $this;
+        $new->updateAdminCatalogs = $updateAdminCatalogs;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateLearnerCatalogs()
+    {
+        return $this->updateLearnerCatalogs;
+    }
+
+    /**
+     * @param bool $updateLearnerCatalogs
+     *
+     * @return ChangeLearningActivityActiveStatus
+     */
+    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    {
+        $new = clone $this;
+        $new->updateLearnerCatalogs = $updateLearnerCatalogs;
 
         return $new;
     }

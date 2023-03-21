@@ -19,15 +19,29 @@ class DeleteLearningActivity implements RequestInterface
     private $learningActivityID;
 
     /**
+     * @var bool
+     */
+    private $updateAdminCatalogs;
+
+    /**
+     * @var bool
+     */
+    private $updateLearnerCatalogs;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
      * @var string $learningActivityID
+     * @var bool $updateAdminCatalogs
+     * @var bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningActivityID)
+    public function __construct($apiKey, $learningActivityID, $updateAdminCatalogs, $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityID = $learningActivityID;
+        $this->updateAdminCatalogs = $updateAdminCatalogs;
+        $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
     /**
@@ -68,6 +82,48 @@ class DeleteLearningActivity implements RequestInterface
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateAdminCatalogs()
+    {
+        return $this->updateAdminCatalogs;
+    }
+
+    /**
+     * @param bool $updateAdminCatalogs
+     *
+     * @return DeleteLearningActivity
+     */
+    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    {
+        $new = clone $this;
+        $new->updateAdminCatalogs = $updateAdminCatalogs;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateLearnerCatalogs()
+    {
+        return $this->updateLearnerCatalogs;
+    }
+
+    /**
+     * @param bool $updateLearnerCatalogs
+     *
+     * @return DeleteLearningActivity
+     */
+    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    {
+        $new = clone $this;
+        $new->updateLearnerCatalogs = $updateLearnerCatalogs;
 
         return $new;
     }

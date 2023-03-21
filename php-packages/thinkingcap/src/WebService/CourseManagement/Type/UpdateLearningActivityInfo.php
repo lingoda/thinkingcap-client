@@ -24,17 +24,31 @@ class UpdateLearningActivityInfo implements RequestInterface
     private $learningActivitySettingsXML;
 
     /**
+     * @var bool
+     */
+    private $updateAdminCatalogs;
+
+    /**
+     * @var bool
+     */
+    private $updateLearnerCatalogs;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
      * @var string $learningActivityID
      * @var string $learningActivitySettingsXML
+     * @var bool $updateAdminCatalogs
+     * @var bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningActivityID, $learningActivitySettingsXML)
+    public function __construct($apiKey, $learningActivityID, $learningActivitySettingsXML, $updateAdminCatalogs, $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityID = $learningActivityID;
         $this->learningActivitySettingsXML = $learningActivitySettingsXML;
+        $this->updateAdminCatalogs = $updateAdminCatalogs;
+        $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
     /**
@@ -96,6 +110,48 @@ class UpdateLearningActivityInfo implements RequestInterface
     {
         $new = clone $this;
         $new->learningActivitySettingsXML = $learningActivitySettingsXML;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateAdminCatalogs()
+    {
+        return $this->updateAdminCatalogs;
+    }
+
+    /**
+     * @param bool $updateAdminCatalogs
+     *
+     * @return UpdateLearningActivityInfo
+     */
+    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    {
+        $new = clone $this;
+        $new->updateAdminCatalogs = $updateAdminCatalogs;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateLearnerCatalogs()
+    {
+        return $this->updateLearnerCatalogs;
+    }
+
+    /**
+     * @param bool $updateLearnerCatalogs
+     *
+     * @return UpdateLearningActivityInfo
+     */
+    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    {
+        $new = clone $this;
+        $new->updateLearnerCatalogs = $updateLearnerCatalogs;
 
         return $new;
     }

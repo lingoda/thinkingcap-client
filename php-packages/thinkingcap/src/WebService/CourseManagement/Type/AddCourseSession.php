@@ -94,6 +94,16 @@ class AddCourseSession implements RequestInterface
     private $attendanceCode;
 
     /**
+     * @var bool
+     */
+    private $updateAdminCatalogs;
+
+    /**
+     * @var bool
+     */
+    private $updateLearnerCatalogs;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
@@ -113,8 +123,10 @@ class AddCourseSession implements RequestInterface
      * @var string $recurringCadence
      * @var int $recurringNo
      * @var string $attendanceCode
+     * @var bool $updateAdminCatalogs
+     * @var bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $courseID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $isRecurringSession, $recurringCadence, $recurringNo, $attendanceCode)
+    public function __construct($apiKey, $courseID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $isRecurringSession, $recurringCadence, $recurringNo, $attendanceCode, $updateAdminCatalogs, $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
@@ -133,6 +145,8 @@ class AddCourseSession implements RequestInterface
         $this->recurringCadence = $recurringCadence;
         $this->recurringNo = $recurringNo;
         $this->attendanceCode = $attendanceCode;
+        $this->updateAdminCatalogs = $updateAdminCatalogs;
+        $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
     /**
@@ -488,6 +502,48 @@ class AddCourseSession implements RequestInterface
     {
         $new = clone $this;
         $new->attendanceCode = $attendanceCode;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateAdminCatalogs()
+    {
+        return $this->updateAdminCatalogs;
+    }
+
+    /**
+     * @param bool $updateAdminCatalogs
+     *
+     * @return AddCourseSession
+     */
+    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    {
+        $new = clone $this;
+        $new->updateAdminCatalogs = $updateAdminCatalogs;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateLearnerCatalogs()
+    {
+        return $this->updateLearnerCatalogs;
+    }
+
+    /**
+     * @param bool $updateLearnerCatalogs
+     *
+     * @return AddCourseSession
+     */
+    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    {
+        $new = clone $this;
+        $new->updateLearnerCatalogs = $updateLearnerCatalogs;
 
         return $new;
     }

@@ -89,6 +89,16 @@ class AddLearningActivity implements RequestInterface
     private $learningActivityCustomMetadata;
 
     /**
+     * @var bool
+     */
+    private $updateAdminCatalogs;
+
+    /**
+     * @var bool
+     */
+    private $updateLearnerCatalogs;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
@@ -107,8 +117,10 @@ class AddLearningActivity implements RequestInterface
      * @var string $learningActivityCertificateTemplateName
      * @var int $learningActivityCertificateMinScore
      * @var string $learningActivityCustomMetadata
+     * @var bool $updateAdminCatalogs
+     * @var bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningActivityDomainID, $learningActivityType, $learningActivityID, $learningActivityTitle, $learningActivityCode, $learningActivityDescription, $learningActivityLanguage, $learningActivityEquivalencyCode, $learningActivityTags, $learningActivityEstimatedTimeMinutes, $learningActivityShowSupervisorLogin, $learningActivityRequiresEvidence, $learningActivityCertificateTemplateName, $learningActivityCertificateMinScore, $learningActivityCustomMetadata)
+    public function __construct($apiKey, $learningActivityDomainID, $learningActivityType, $learningActivityID, $learningActivityTitle, $learningActivityCode, $learningActivityDescription, $learningActivityLanguage, $learningActivityEquivalencyCode, $learningActivityTags, $learningActivityEstimatedTimeMinutes, $learningActivityShowSupervisorLogin, $learningActivityRequiresEvidence, $learningActivityCertificateTemplateName, $learningActivityCertificateMinScore, $learningActivityCustomMetadata, $updateAdminCatalogs, $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityDomainID = $learningActivityDomainID;
@@ -126,6 +138,8 @@ class AddLearningActivity implements RequestInterface
         $this->learningActivityCertificateTemplateName = $learningActivityCertificateTemplateName;
         $this->learningActivityCertificateMinScore = $learningActivityCertificateMinScore;
         $this->learningActivityCustomMetadata = $learningActivityCustomMetadata;
+        $this->updateAdminCatalogs = $updateAdminCatalogs;
+        $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
     /**
@@ -460,6 +474,48 @@ class AddLearningActivity implements RequestInterface
     {
         $new = clone $this;
         $new->learningActivityCustomMetadata = $learningActivityCustomMetadata;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateAdminCatalogs()
+    {
+        return $this->updateAdminCatalogs;
+    }
+
+    /**
+     * @param bool $updateAdminCatalogs
+     *
+     * @return AddLearningActivity
+     */
+    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    {
+        $new = clone $this;
+        $new->updateAdminCatalogs = $updateAdminCatalogs;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUpdateLearnerCatalogs()
+    {
+        return $this->updateLearnerCatalogs;
+    }
+
+    /**
+     * @param bool $updateLearnerCatalogs
+     *
+     * @return AddLearningActivity
+     */
+    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    {
+        $new = clone $this;
+        $new->updateLearnerCatalogs = $updateLearnerCatalogs;
 
         return $new;
     }

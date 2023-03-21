@@ -1625,6 +1625,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="learningActivityCertificateTemplateName" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="learningActivityCertificateMinScore" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="learningActivityCustomMetadata" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1653,6 +1655,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="learningActivityCertificateTemplateName" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="learningActivityCertificateMinScore" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="learningActivityCustomMetadata" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1668,6 +1672,8 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="learningActivityID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1684,6 +1690,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="learningActivityID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="learningActivitySettingsXML" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1865,6 +1873,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="learningObjectID" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2063,6 +2073,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="recurringCadence" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="recurringNo" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="attendanceCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2091,6 +2103,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="zoomSubAccountHostID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="customMeetingURL" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="attendanceCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminCatalogs" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateLearnerCatalogs" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
