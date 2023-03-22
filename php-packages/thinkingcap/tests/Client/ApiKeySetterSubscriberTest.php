@@ -29,7 +29,8 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
         $getUserByEmailType = RequestFactory::create(
             'Szczebrzeszyn',
             GetUserByEmail::class,
-            'testEmail@lingoda.com'
+            'testEmail@lingoda.com',
+            false
         );
 
         $event = new RequestEvent($client, 'getUserByEmail', $getUserByEmailType);
@@ -51,7 +52,8 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
         $getUserByEmailType = RequestFactory::create(
             'test2',
             GetUserByEmail::class,
-            'testEmail@lingoda.com'
+            'testEmail@lingoda.com',
+            false
         );
 
         $event = new RequestEvent($client, 'getUserByEmail', $getUserByEmailType);

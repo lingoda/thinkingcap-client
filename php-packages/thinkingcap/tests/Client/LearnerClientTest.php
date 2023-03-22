@@ -31,7 +31,8 @@ final class LearnerClientTest extends KernelTestCase
         $getUserByEmailType = RequestFactory::create(
             'test2',
             GetUserByEmail::class,
-            'testEmail@lingoda.com'
+            'testEmail@lingoda.com',
+            false
         );
 
         $response = $client->getUserByEmail($getUserByEmailType);

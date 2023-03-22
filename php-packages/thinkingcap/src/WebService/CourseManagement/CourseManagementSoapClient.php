@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement;
 
-use Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;

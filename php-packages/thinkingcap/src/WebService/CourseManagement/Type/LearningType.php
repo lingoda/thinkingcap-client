@@ -277,6 +277,16 @@ class LearningType
     private $LastEnrollmentCutOff;
 
     /**
+     * @var bool
+     */
+    private $AllowSupervisorExtendDueDate;
+
+    /**
+     * @var int
+     */
+    private $SupervisorExtensionDaysLimit;
+
+    /**
      * @var \DateTimeInterface
      */
     private $StartDate;
@@ -1420,6 +1430,11 @@ class LearningType
      * @var bool
      */
     private $HideInteractionsFromUser;
+
+    /**
+     * @var bool
+     */
+    private $HideInteractionsFromSupervisor;
 
     /**
      * @var bool
@@ -2611,6 +2626,48 @@ class LearningType
     {
         $new = clone $this;
         $new->LastEnrollmentCutOff = $LastEnrollmentCutOff;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowSupervisorExtendDueDate()
+    {
+        return $this->AllowSupervisorExtendDueDate;
+    }
+
+    /**
+     * @param bool $AllowSupervisorExtendDueDate
+     *
+     * @return LearningType
+     */
+    public function withAllowSupervisorExtendDueDate($AllowSupervisorExtendDueDate)
+    {
+        $new = clone $this;
+        $new->AllowSupervisorExtendDueDate = $AllowSupervisorExtendDueDate;
+
+        return $new;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSupervisorExtensionDaysLimit()
+    {
+        return $this->SupervisorExtensionDaysLimit;
+    }
+
+    /**
+     * @param int $SupervisorExtensionDaysLimit
+     *
+     * @return LearningType
+     */
+    public function withSupervisorExtensionDaysLimit($SupervisorExtensionDaysLimit)
+    {
+        $new = clone $this;
+        $new->SupervisorExtensionDaysLimit = $SupervisorExtensionDaysLimit;
 
         return $new;
     }
@@ -7420,6 +7477,27 @@ class LearningType
     {
         $new = clone $this;
         $new->HideInteractionsFromUser = $HideInteractionsFromUser;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getHideInteractionsFromSupervisor()
+    {
+        return $this->HideInteractionsFromSupervisor;
+    }
+
+    /**
+     * @param bool $HideInteractionsFromSupervisor
+     *
+     * @return LearningType
+     */
+    public function withHideInteractionsFromSupervisor($HideInteractionsFromSupervisor)
+    {
+        $new = clone $this;
+        $new->HideInteractionsFromSupervisor = $HideInteractionsFromSupervisor;
 
         return $new;
     }

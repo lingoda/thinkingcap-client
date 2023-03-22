@@ -536,6 +536,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowEnrollAfterLastEnrollDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentCutOff" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowSupervisorExtendDueDate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupervisorExtensionDaysLimit" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowEnrollmentCodeAfterEnrollmentDate" type="s:boolean" />
@@ -765,6 +767,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="HideTranscriptScore" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowCustomScoreFeedback" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HideInteractionsFromUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HideInteractionsFromSupervisor" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Log" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomScoreFeedbackXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomActivityTypeID" type="s:string" />
@@ -1001,7 +1004,12 @@
       </s:complexType>
       <s:complexType name="ActivityMap">
         <s:complexContent mixed="false">
-          <s:extension base="tns:Course" />
+          <s:extension base="tns:Course">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objectivesJson" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObjectivesJson" type="s:string" />
+            </s:sequence>
+          </s:extension>
         </s:complexContent>
       </s:complexType>
       <s:complexType name="ArrayOfMail">
@@ -1462,20 +1470,14 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="userEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ServiceResultOfUser">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:User" />
-          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetUserByEmailResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetUserByEmailResult" type="tns:ServiceResultOfUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByEmailResult" type="tns:ServiceResultOfServiceUser" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1502,6 +1504,13 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ServiceResultOfUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:User" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetUserByUserNameResponse">
         <s:complexType>
           <s:sequence>
@@ -2753,9 +2762,10 @@
   <wsdl:message name="GetUserByEmailHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userEmail" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetUserByEmailHttpGetOut">
-    <wsdl:part name="Body" element="tns:ServiceResultOfUser" />
+    <wsdl:part name="Body" element="tns:ServiceResultOfServiceUser" />
   </wsdl:message>
   <wsdl:message name="FindUserIDByEmailHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
@@ -3198,9 +3208,10 @@
   <wsdl:message name="GetUserByEmailHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userEmail" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetUserByEmailHttpPostOut">
-    <wsdl:part name="Body" element="tns:ServiceResultOfUser" />
+    <wsdl:part name="Body" element="tns:ServiceResultOfServiceUser" />
   </wsdl:message>
   <wsdl:message name="FindUserIDByEmailHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
@@ -3579,7 +3590,7 @@
       <wsdl:output message="tns:GetUserByIDSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByEmail">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified email address.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified email address. Includes or not the user metadata.</wsdl:documentation>
       <wsdl:input message="tns:GetUserByEmailSoapIn" />
       <wsdl:output message="tns:GetUserByEmailSoapOut" />
     </wsdl:operation>
@@ -3831,7 +3842,7 @@
       <wsdl:output message="tns:GetUserByIDHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByEmail">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified email address.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified email address. Includes or not the user metadata.</wsdl:documentation>
       <wsdl:input message="tns:GetUserByEmailHttpGetIn" />
       <wsdl:output message="tns:GetUserByEmailHttpGetOut" />
     </wsdl:operation>
@@ -4083,7 +4094,7 @@
       <wsdl:output message="tns:GetUserByIDHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserByEmail">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified email address.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a user with the specified email address. Includes or not the user metadata.</wsdl:documentation>
       <wsdl:input message="tns:GetUserByEmailHttpPostIn" />
       <wsdl:output message="tns:GetUserByEmailHttpPostOut" />
     </wsdl:operation>

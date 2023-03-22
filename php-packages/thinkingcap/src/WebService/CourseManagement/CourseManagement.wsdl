@@ -171,6 +171,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowEnrollAfterLastEnrollDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentCutOff" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowSupervisorExtendDueDate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupervisorExtensionDaysLimit" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowEnrollmentCodeAfterEnrollmentDate" type="s:boolean" />
@@ -400,6 +402,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="HideTranscriptScore" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowCustomScoreFeedback" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HideInteractionsFromUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HideInteractionsFromSupervisor" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Log" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomScoreFeedbackXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomActivityTypeID" type="s:string" />
@@ -764,7 +767,12 @@
       </s:complexType>
       <s:complexType name="ActivityMap">
         <s:complexContent mixed="false">
-          <s:extension base="tns:Course" />
+          <s:extension base="tns:Course">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objectivesJson" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObjectivesJson" type="s:string" />
+            </s:sequence>
+          </s:extension>
         </s:complexContent>
       </s:complexType>
       <s:complexType name="StudentRecord">
@@ -2627,6 +2635,8 @@
     <wsdl:part name="learningActivityCertificateTemplateName" type="s:string" />
     <wsdl:part name="learningActivityCertificateMinScore" type="s:string" />
     <wsdl:part name="learningActivityCustomMetadata" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddLearningActivityHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2647,6 +2657,8 @@
     <wsdl:part name="learningActivityCertificateTemplateName" type="s:string" />
     <wsdl:part name="learningActivityCertificateMinScore" type="s:string" />
     <wsdl:part name="learningActivityCustomMetadata" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="UpdateLearningActivityHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2654,6 +2666,8 @@
   <wsdl:message name="DeleteLearningActivityHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningActivityID" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="DeleteLearningActivityHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2662,6 +2676,8 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningActivityID" type="s:string" />
     <wsdl:part name="learningActivitySettingsXML" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="UpdateLearningActivityInfoHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2727,6 +2743,8 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningObjectID" type="s:string" />
     <wsdl:part name="active" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ChangeLearningActivityActiveStatusHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2804,6 +2822,8 @@
     <wsdl:part name="recurringCadence" type="s:string" />
     <wsdl:part name="recurringNo" type="s:string" />
     <wsdl:part name="attendanceCode" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddCourseSessionHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2824,6 +2844,8 @@
     <wsdl:part name="zoomSubAccountHostID" type="s:string" />
     <wsdl:part name="customMeetingURL" type="s:string" />
     <wsdl:part name="attendanceCode" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="UpdateCourseSessionHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2977,6 +2999,8 @@
     <wsdl:part name="learningActivityCertificateTemplateName" type="s:string" />
     <wsdl:part name="learningActivityCertificateMinScore" type="s:string" />
     <wsdl:part name="learningActivityCustomMetadata" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddLearningActivityHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -2997,6 +3021,8 @@
     <wsdl:part name="learningActivityCertificateTemplateName" type="s:string" />
     <wsdl:part name="learningActivityCertificateMinScore" type="s:string" />
     <wsdl:part name="learningActivityCustomMetadata" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="UpdateLearningActivityHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -3004,6 +3030,8 @@
   <wsdl:message name="DeleteLearningActivityHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningActivityID" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="DeleteLearningActivityHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -3012,6 +3040,8 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningActivityID" type="s:string" />
     <wsdl:part name="learningActivitySettingsXML" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="UpdateLearningActivityInfoHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -3077,6 +3107,8 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningObjectID" type="s:string" />
     <wsdl:part name="active" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="ChangeLearningActivityActiveStatusHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -3154,6 +3186,8 @@
     <wsdl:part name="recurringCadence" type="s:string" />
     <wsdl:part name="recurringNo" type="s:string" />
     <wsdl:part name="attendanceCode" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="AddCourseSessionHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
@@ -3174,6 +3208,8 @@
     <wsdl:part name="zoomSubAccountHostID" type="s:string" />
     <wsdl:part name="customMeetingURL" type="s:string" />
     <wsdl:part name="attendanceCode" type="s:string" />
+    <wsdl:part name="updateAdminCatalogs" type="s:string" />
+    <wsdl:part name="updateLearnerCatalogs" type="s:string" />
   </wsdl:message>
   <wsdl:message name="UpdateCourseSessionHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />

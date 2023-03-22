@@ -2,7 +2,7 @@
     "name": "lingoda/thinkingcap",
     "description": "Lingoda Thinkingcap Bundle",
     "type": "symfony-bundle",
-    "version": "2.2",
+    "version": "2.3.1",
     "require-dev": {
         "laminas/laminas-code": "^4.5",
         "phpspec/phpspec": "^7.1.x-dev",

@@ -9,12 +9,12 @@ use Phpro\SoapClient\Type\ResultInterface;
 class GetUserByEmailResponse implements ResultInterface
 {
     /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfUser
+     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfServiceUser
      */
     private $GetUserByEmailResult;
 
     /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfUser
+     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfServiceUser
      */
     public function getGetUserByEmailResult()
     {
@@ -22,7 +22,7 @@ class GetUserByEmailResponse implements ResultInterface
     }
 
     /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfUser $GetUserByEmailResult
+     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfServiceUser $GetUserByEmailResult
      *
      * @return GetUserByEmailResponse
      */

@@ -7,7 +7,7 @@
             Host: lingoda.thinkingcap.com
             Content-Type: 'text/xml; charset=utf-8;'
             SOAPAction: 'http://www.thinkingcap.com/GetUserByEmail'
-        body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://www.thinkingcap.com/\"><SOAP-ENV:Body><ns1:GetUserByEmail><ns1:apiKey>z6kl2fvfqsor4x2sq5hu</ns1:apiKey><ns1:userEmail>testEmail@lingoda.com</ns1:userEmail></ns1:GetUserByEmail></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"
+        body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://www.thinkingcap.com/\"><SOAP-ENV:Body><ns1:GetUserByEmail><ns1:apiKey>z6kl2fvfqsor4x2sq5hu</ns1:apiKey><ns1:userEmail>testEmail@lingoda.com</ns1:userEmail><ns1:includeMetadata>false</ns1:includeMetadata></ns1:GetUserByEmail></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"
     response:
         status:
             code: 200

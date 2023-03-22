@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement;
 
-use Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 
@@ -106,11 +105,11 @@ class LearnerManagementClassmap
             new ClassMap('ServiceResultOfServiceUser', Type\ServiceResultOfServiceUser::class),
             new ClassMap('GetUserByIDResponse', Type\GetUserByIDResponse::class),
             new ClassMap('GetUserByEmail', Type\GetUserByEmail::class),
-            new ClassMap('ServiceResultOfUser', Type\ServiceResultOfUser::class),
             new ClassMap('GetUserByEmailResponse', Type\GetUserByEmailResponse::class),
             new ClassMap('FindUserIDByEmail', Type\FindUserIDByEmail::class),
             new ClassMap('FindUserIDByEmailResponse', Type\FindUserIDByEmailResponse::class),
             new ClassMap('GetUserByUserName', Type\GetUserByUserName::class),
+            new ClassMap('ServiceResultOfUser', Type\ServiceResultOfUser::class),
             new ClassMap('GetUserByUserNameResponse', Type\GetUserByUserNameResponse::class),
             new ClassMap('FindUserIDByUserName', Type\FindUserIDByUserName::class),
             new ClassMap('FindUserIDByUserNameResponse', Type\FindUserIDByUserNameResponse::class),
