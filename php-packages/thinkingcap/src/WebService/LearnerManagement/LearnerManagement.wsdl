@@ -420,6 +420,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="TeachingAssts" type="tns:ArrayOfString" />
               <s:element minOccurs="0" maxOccurs="1" name="TeachingAssistantList" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="HasAssignments" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowReviewAfterAttemptEnd" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="Assignments" type="tns:ArrayOfAssignment" />
               <s:element minOccurs="0" maxOccurs="1" name="CourseAssignments" type="tns:ArrayOfCourseAssignment" />
               <s:element minOccurs="1" maxOccurs="1" name="MasterGlossary" type="s:boolean" />
@@ -1171,6 +1172,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="domainID" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="includeInactive" type="s:boolean" />
             <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDomains" type="s:boolean" />
             <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="take" type="s:int" />
           </s:sequence>
@@ -1206,6 +1208,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ProfilePhotoUrl" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
+          <s:element minOccurs="0" maxOccurs="1" name="Domains" type="tns:ArrayOfDomain" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfCustomField">
@@ -1213,11 +1216,25 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfDomain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Domain" nillable="true" type="tns:Domain" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="CustomField">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="FieldID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldValues" type="tns:ArrayOfString1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Domain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DomainID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomainName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomainCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentDomainID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MembershipPending" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfString1">
@@ -1448,6 +1465,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDomains" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1471,6 +1489,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="userEmail" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDomains" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>

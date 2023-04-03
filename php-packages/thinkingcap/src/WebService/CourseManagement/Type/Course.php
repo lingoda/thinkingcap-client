@@ -137,6 +137,11 @@ class Course
     private $HasAssignments;
 
     /**
+     * @var bool
+     */
+    private $AllowReviewAfterAttemptEnd;
+
+    /**
      * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAssignment
      */
     private $Assignments;
@@ -928,6 +933,27 @@ class Course
     {
         $new = clone $this;
         $new->HasAssignments = $HasAssignments;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowReviewAfterAttemptEnd()
+    {
+        return $this->AllowReviewAfterAttemptEnd;
+    }
+
+    /**
+     * @param bool $AllowReviewAfterAttemptEnd
+     *
+     * @return Course
+     */
+    public function withAllowReviewAfterAttemptEnd($AllowReviewAfterAttemptEnd)
+    {
+        $new = clone $this;
+        $new->AllowReviewAfterAttemptEnd = $AllowReviewAfterAttemptEnd;
 
         return $new;
     }

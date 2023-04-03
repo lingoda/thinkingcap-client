@@ -55,6 +55,7 @@
               <s:element minOccurs="0" maxOccurs="1" name="TeachingAssts" type="tns:ArrayOfString" />
               <s:element minOccurs="0" maxOccurs="1" name="TeachingAssistantList" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="HasAssignments" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowReviewAfterAttemptEnd" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="Assignments" type="tns:ArrayOfAssignment" />
               <s:element minOccurs="0" maxOccurs="1" name="CourseAssignments" type="tns:ArrayOfCourseAssignment" />
               <s:element minOccurs="1" maxOccurs="1" name="MasterGlossary" type="s:boolean" />

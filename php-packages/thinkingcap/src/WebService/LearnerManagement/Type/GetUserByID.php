@@ -24,17 +24,24 @@ class GetUserByID implements RequestInterface
     private $includeMetadata;
 
     /**
+     * @var bool
+     */
+    private $includeDomains;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
      * @var string $userID
      * @var bool $includeMetadata
+     * @var bool $includeDomains
      */
-    public function __construct($apiKey, $userID, $includeMetadata)
+    public function __construct($apiKey, $userID, $includeMetadata, $includeDomains)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
         $this->includeMetadata = $includeMetadata;
+        $this->includeDomains = $includeDomains;
     }
 
     /**
@@ -96,6 +103,27 @@ class GetUserByID implements RequestInterface
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIncludeDomains()
+    {
+        return $this->includeDomains;
+    }
+
+    /**
+     * @param bool $includeDomains
+     *
+     * @return GetUserByID
+     */
+    public function withIncludeDomains($includeDomains)
+    {
+        $new = clone $this;
+        $new->includeDomains = $includeDomains;
 
         return $new;
     }

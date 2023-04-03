@@ -87,6 +87,11 @@ class ServiceUser
     private $CustomFields;
 
     /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfDomain
+     */
+    private $Domains;
+
+    /**
      * @return string
      */
     public function getUserID()
@@ -418,6 +423,27 @@ class ServiceUser
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
+
+        return $new;
+    }
+
+    /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfDomain
+     */
+    public function getDomains()
+    {
+        return $this->Domains;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfDomain $Domains
+     *
+     * @return ServiceUser
+     */
+    public function withDomains($Domains)
+    {
+        $new = clone $this;
+        $new->Domains = $Domains;
 
         return $new;
     }

@@ -24,17 +24,24 @@ class GetUserByEmail implements RequestInterface
     private $includeMetadata;
 
     /**
+     * @var bool
+     */
+    private $includeDomains;
+
+    /**
      * Constructor
      *
      * @var string $apiKey
      * @var string $userEmail
      * @var bool $includeMetadata
+     * @var bool $includeDomains
      */
-    public function __construct($apiKey, $userEmail, $includeMetadata)
+    public function __construct($apiKey, $userEmail, $includeMetadata, $includeDomains)
     {
         $this->apiKey = $apiKey;
         $this->userEmail = $userEmail;
         $this->includeMetadata = $includeMetadata;
+        $this->includeDomains = $includeDomains;
     }
 
     /**
@@ -96,6 +103,27 @@ class GetUserByEmail implements RequestInterface
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIncludeDomains()
+    {
+        return $this->includeDomains;
+    }
+
+    /**
+     * @param bool $includeDomains
+     *
+     * @return GetUserByEmail
+     */
+    public function withIncludeDomains($includeDomains)
+    {
+        $new = clone $this;
+        $new->includeDomains = $includeDomains;
 
         return $new;
     }

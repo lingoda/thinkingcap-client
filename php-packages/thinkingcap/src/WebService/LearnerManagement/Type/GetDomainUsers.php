@@ -29,6 +29,11 @@ class GetDomainUsers implements RequestInterface
     private $includeMetadata;
 
     /**
+     * @var bool
+     */
+    private $includeDomains;
+
+    /**
      * @var int
      */
     private $offset;
@@ -45,15 +50,17 @@ class GetDomainUsers implements RequestInterface
      * @var string $domainID
      * @var bool $includeInactive
      * @var bool $includeMetadata
+     * @var bool $includeDomains
      * @var int $offset
      * @var int $take
      */
-    public function __construct($apiKey, $domainID, $includeInactive, $includeMetadata, $offset, $take)
+    public function __construct($apiKey, $domainID, $includeInactive, $includeMetadata, $includeDomains, $offset, $take)
     {
         $this->apiKey = $apiKey;
         $this->domainID = $domainID;
         $this->includeInactive = $includeInactive;
         $this->includeMetadata = $includeMetadata;
+        $this->includeDomains = $includeDomains;
         $this->offset = $offset;
         $this->take = $take;
     }
@@ -138,6 +145,27 @@ class GetDomainUsers implements RequestInterface
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIncludeDomains()
+    {
+        return $this->includeDomains;
+    }
+
+    /**
+     * @param bool $includeDomains
+     *
+     * @return GetDomainUsers
+     */
+    public function withIncludeDomains($includeDomains)
+    {
+        $new = clone $this;
+        $new->includeDomains = $includeDomains;
 
         return $new;
     }

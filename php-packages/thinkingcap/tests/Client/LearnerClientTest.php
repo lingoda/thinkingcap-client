@@ -32,6 +32,7 @@ final class LearnerClientTest extends KernelTestCase
             'test2',
             GetUserByEmail::class,
             'testEmail@lingoda.com',
+            false,
             false
         );
 

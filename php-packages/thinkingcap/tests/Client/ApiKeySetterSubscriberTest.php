@@ -30,6 +30,7 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
             'Szczebrzeszyn',
             GetUserByEmail::class,
             'testEmail@lingoda.com',
+            false,
             false
         );
 
@@ -53,6 +54,7 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
             'test2',
             GetUserByEmail::class,
             'testEmail@lingoda.com',
+            false,
             false
         );
 
