@@ -2,14 +2,10 @@
 
 set -e
 
-for dir in *; do
-  echo "Running for $dir"
-
-  if test -f "${dir}/vendor/bin/paratest"; then
-    ${dir}/vendor/bin/paratest -c ${dir}/phpunit.xml.dist
-  elif test -f "${dir}/vendor/bin/simple-phpunit"; then
-    ${dir}/vendor/bin/simple-phpunit -c ${dir}/phpunit.xml.dist
-  elif test -f "${dir}/vendor/bin/phpunit"; then
-    ${dir}/vendor/bin/phpunit -c ${dir}/phpunit.xml.dist
-  fi
-done
+if test -f "vendor/bin/paratest"; then
+  vendor/bin/paratest -c phpunit.xml.dist
+elif test -f "vendor/bin/simple-phpunit"; then
+  vendor/bin/simple-phpunit -c phpunit.xml.dist
+elif test -f "vendor/bin/phpunit"; then
+  vendor/bin/phpunit -c phpunit.xml.dist
+fi
