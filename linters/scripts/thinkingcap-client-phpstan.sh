@@ -2,12 +2,7 @@
 
 set -e
 
-for dir in php-packages/*; do
-  # notifier package has no tests as it's ported from SF5
-  if [[ "$dir" == "php-packages/notifier" ]]; then
-      continue
-  fi
-
+for dir in *; do
   echo "Running for $dir"
   cd "$dir"
 

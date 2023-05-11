@@ -2,7 +2,7 @@
 
 set -e
 
-for dir in php-packages/*; do
+for dir in *; do
   echo "Running for $dir"
 
   composer update "$@" --no-interaction --no-progress --prefer-dist -d ${dir}

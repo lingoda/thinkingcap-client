@@ -2,7 +2,7 @@
 
 set -e
 
-for dir in php-packages/*; do
+for dir in *; do
     cd "$dir"
 
     if [ -f phpspec.yaml ]; then

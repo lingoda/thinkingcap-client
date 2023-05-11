@@ -2,7 +2,7 @@
 
 set -e
 
-for dir in php-packages/*; do
+for dir in *; do
   echo "Running for $dir"
 
   if test -f "${dir}/vendor/bin/paratest"; then

@@ -1,4 +1,4 @@
-name: php-packages
+name: thinkingcap-client
 permissions: write-all
 on: [pull_request, push]
 env:
@@ -66,12 +66,12 @@ jobs:
             - name: install
               run: |
                   composer install --no-interaction --no-progress --prefer-dist -d linters
-                  linters/scripts/php-packages-install.sh ${{ matrix.install-args }}
+                  linters/scripts/thinkingcap-client-install.sh ${{ matrix.install-args }}
 
             - name: phpspec
               if: ${{ !cancelled() }}
               run: |
-                  linters/scripts/php-packages-phpspec.sh
+                  linters/scripts/thinkingcap-client-phpspec.sh
 
             - name: phpstan-cache
               if: ${{ !cancelled() }}
@@ -86,7 +86,7 @@ jobs:
             - name: phpstan
               if: ${{ !cancelled() }}
               run: |
-                  linters/scripts/php-packages-phpstan.sh
+                  linters/scripts/thinkingcap-client-phpstan.sh
 
             - name: phpunit
               if: ${{ !cancelled() }}
@@ -94,7 +94,7 @@ jobs:
                   # List deprecations and fail on self ones
                   SYMFONY_DEPRECATIONS_HELPER: 'max[self]=0&verbose=0'
               run: |
-                  linters/scripts/php-packages-phpunit.sh
+                  linters/scripts/thinkingcap-client-phpunit.sh
 
             - name: slack
               if: failure()
