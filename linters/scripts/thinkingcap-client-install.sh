@@ -2,7 +2,7 @@
 
 set -e
 
-composer update "$@" --no-interaction --no-progress --prefer-dist -d
+composer update "$@" --no-interaction --no-progress --prefer-dist
 
 if test -f "vendor/bin/paratest"; then
     vendor/bin/paratest -c phpunit.xml.dist --version
