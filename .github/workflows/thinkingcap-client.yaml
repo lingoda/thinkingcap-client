@@ -22,7 +22,6 @@ jobs:
             - name: composer-cache
               id: composercache
               run: |
-                  cd linguando
                   echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
             - name: slack
@@ -61,7 +60,7 @@ jobs:
               uses: actions/cache@v3.2.6
               with:
                   path: ${{ needs.prepare.outputs.composercachedir }}
-                  key: composer-phppkg-${{ hashFiles('linguando/composer.lock') }}
+                  key: composer-phppkg-${{ hashFiles('composer.lock') }}
                   restore-keys: composer-phppkg-
 
             - name: install
