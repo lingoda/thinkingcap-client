@@ -24,4 +24,4 @@ lingoda_thinkingcap:
         learner_management: '...here comes the learner management WSDL URL...'
 ```
 
-TBR
+TBRR
