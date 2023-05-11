@@ -11,7 +11,6 @@
     "license": "proprietary",
     "require": {
         "php": "^8.1",
-        "php-vcr/php-vcr": "~1.5.2",
         "phpro/soap-client": "^1.7",
         "symfony/framework-bundle": "^4.4 || ^5.2",
         "symfony/yaml": "^4.4 || ^5.2"

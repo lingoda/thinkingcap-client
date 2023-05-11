@@ -1,0 +1,10 @@
+{
+    "name": "linters",
+    "private": true,
+    "version": "1.0.0",
+    "devDependencies": {
+        "stylelint": "^15.6.1",
+        "stylelint-config-standard": "^32.0.0",
+        "typescript": "^4.9.5"
+    }
+}
