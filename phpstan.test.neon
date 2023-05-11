@@ -1,2 +1,2 @@
 includes:
-	- ../../linters/phpstan.test.neon
+	- linters/phpstan.test.neon
