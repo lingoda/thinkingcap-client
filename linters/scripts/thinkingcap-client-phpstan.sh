@@ -2,6 +2,8 @@
 
 set -e
 
+ls -lsa
+
 linters/vendor/bin/phpstan analyse \
     -c "phpstan.neon" \
     "src" \
