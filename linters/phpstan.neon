@@ -1,0 +1,19 @@
+includes:
+    - phpstan.common.neon
+parameters:
+    resultCachePath: %tmpDir%/resultCache-src.php
+    paths:
+        - src
+    exceptions: # https://phpstan.org/blog/bring-your-exceptions-under-control
+        check:
+            missingCheckedExceptionInThrows: true
+            tooWideThrowType: true
+        uncheckedExceptionClasses:
+            - RuntimeException # https://www.php.net/manual/en/class.runtimeexception.php
+            - LogicException # https://www.php.net/manual/en/class.logicexception.php
+            - Doctrine\DBAL\Exception
+            - Doctrine\ORM\ORMException
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        # Symfony's TreeBuilder has problem - some method(s) in the chain have a wrong return typehint:
+        - '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::\w+\(\).#'
