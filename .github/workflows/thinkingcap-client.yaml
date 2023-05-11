@@ -1,5 +1,15 @@
 name: php-packages
 permissions: write-all
+on:
+    pull_request:
+        paths:
+            - .
+    push:
+        branches:
+            - master
+        paths:
+            - .
+
 env:
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     GITHUB_TOKEN: ${{ github.token }}
