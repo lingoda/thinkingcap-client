@@ -21,8 +21,8 @@ class GetCourseSeriesList implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $programID
+     * @param string $apiKey
+     * @param string $programID
      */
     public function __construct($apiKey, $programID)
     {

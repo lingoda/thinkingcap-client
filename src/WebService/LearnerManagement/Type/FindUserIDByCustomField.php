@@ -26,9 +26,9 @@ class FindUserIDByCustomField implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $customFieldID
-     * @var string $customFieldValue
+     * @param string $apiKey
+     * @param string $customFieldID
+     * @param string $customFieldValue
      */
     public function __construct($apiKey, $customFieldID, $customFieldValue)
     {

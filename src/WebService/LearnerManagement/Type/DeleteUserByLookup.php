@@ -21,8 +21,8 @@ class DeleteUserByLookup implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $lookupValue
+     * @param string $apiKey
+     * @param string $lookupValue
      */
     public function __construct($apiKey, $lookupValue)
     {

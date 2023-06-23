@@ -31,10 +31,10 @@ class SetCourseMarkedBy implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseID
-     * @var bool $moderator
-     * @var bool $ta
+     * @param string $apiKey
+     * @param string $courseID
+     * @param bool $moderator
+     * @param bool $ta
      */
     public function __construct($apiKey, $courseID, $moderator, $ta)
     {

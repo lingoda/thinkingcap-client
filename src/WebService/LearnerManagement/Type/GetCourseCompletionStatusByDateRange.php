@@ -56,15 +56,15 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $domainID
-     * @var string $learningActivityCode
-     * @var string $learningActivityType
-     * @var string $learnerID
-     * @var string $startDateTime
-     * @var string $endDateTime
-     * @var bool $useLastDateAttendanceTakenForILT
-     * @var string $timezoneCode
+     * @param string $apiKey
+     * @param string $domainID
+     * @param string $learningActivityCode
+     * @param string $learningActivityType
+     * @param string $learnerID
+     * @param string $startDateTime
+     * @param string $endDateTime
+     * @param bool $useLastDateAttendanceTakenForILT
+     * @param string $timezoneCode
      */
     public function __construct($apiKey, $domainID, $learningActivityCode, $learningActivityType, $learnerID, $startDateTime, $endDateTime, $useLastDateAttendanceTakenForILT, $timezoneCode)
     {

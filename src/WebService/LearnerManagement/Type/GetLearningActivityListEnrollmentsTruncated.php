@@ -21,8 +21,8 @@ class GetLearningActivityListEnrollmentsTruncated implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userCustomMetadata
+     * @param string $apiKey
+     * @param string $userCustomMetadata
      */
     public function __construct($apiKey, $userCustomMetadata)
     {

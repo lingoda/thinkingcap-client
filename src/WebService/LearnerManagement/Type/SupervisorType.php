@@ -89,6 +89,11 @@ class SupervisorType
     /**
      * @var bool
      */
+    private $ExtendDueDate;
+
+    /**
+     * @var bool
+     */
     private $ViewCertificates;
 
     /**
@@ -443,6 +448,27 @@ class SupervisorType
     {
         $new = clone $this;
         $new->ApproveForumPosts = $ApproveForumPosts;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getExtendDueDate()
+    {
+        return $this->ExtendDueDate;
+    }
+
+    /**
+     * @param bool $ExtendDueDate
+     *
+     * @return SupervisorType
+     */
+    public function withExtendDueDate($ExtendDueDate)
+    {
+        $new = clone $this;
+        $new->ExtendDueDate = $ExtendDueDate;
 
         return $new;
     }

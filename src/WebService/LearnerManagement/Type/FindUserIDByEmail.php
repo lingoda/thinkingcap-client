@@ -21,8 +21,8 @@ class FindUserIDByEmail implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentEmail
+     * @param string $apiKey
+     * @param string $studentEmail
      */
     public function __construct($apiKey, $studentEmail)
     {

@@ -4,12 +4,23 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement;
 
+use Phpro\SoapClient\Caller\Caller;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class CourseManagementSoapClient extends \Phpro\SoapClient\Client
+class CourseManagementSoapClient
 {
+    /**
+     * @var Caller
+     */
+    private $caller;
+
+    public function __construct(\Phpro\SoapClient\Caller\Caller $caller)
+    {
+        $this->caller = $caller;
+    }
+
     /**
      * @param RequestInterface|Type\FindCourse $parameters
      *
@@ -19,7 +30,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function findCourse(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FindCourse $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FindCourseResponse
     {
-        return $this->call('FindCourse', $parameters);
+        return ($this->caller)('FindCourse', $parameters);
     }
 
     /**
@@ -31,7 +42,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityByID(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByID $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByIDResponse
     {
-        return $this->call('GetLearningActivityByID', $parameters);
+        return ($this->caller)('GetLearningActivityByID', $parameters);
     }
 
     /**
@@ -43,7 +54,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseByCode(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseByCode $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseByCodeResponse
     {
-        return $this->call('GetCourseByCode', $parameters);
+        return ($this->caller)('GetCourseByCode', $parameters);
     }
 
     /**
@@ -55,7 +66,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getILTClassSizeDetailsXML(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTClassSizeDetailsXML $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTClassSizeDetailsXMLResponse
     {
-        return $this->call('GetILTClassSizeDetailsXML', $parameters);
+        return ($this->caller)('GetILTClassSizeDetailsXML', $parameters);
     }
 
     /**
@@ -67,7 +78,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityByCode(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByCode $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByCodeResponse
     {
-        return $this->call('GetLearningActivityByCode', $parameters);
+        return ($this->caller)('GetLearningActivityByCode', $parameters);
     }
 
     /**
@@ -79,7 +90,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getDomainLearningActivities(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetDomainLearningActivities $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetDomainLearningActivitiesResponse
     {
-        return $this->call('GetDomainLearningActivities', $parameters);
+        return ($this->caller)('GetDomainLearningActivities', $parameters);
     }
 
     /**
@@ -91,7 +102,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function reserveSpotILT(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ReserveSpotILT $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ReserveSpotILTResponse
     {
-        return $this->call('ReserveSpotILT', $parameters);
+        return ($this->caller)('ReserveSpotILT', $parameters);
     }
 
     /**
@@ -103,7 +114,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function addLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddLearningActivityResponse
     {
-        return $this->call('AddLearningActivity', $parameters);
+        return ($this->caller)('AddLearningActivity', $parameters);
     }
 
     /**
@@ -115,7 +126,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityResponse
     {
-        return $this->call('UpdateLearningActivity', $parameters);
+        return ($this->caller)('UpdateLearningActivity', $parameters);
     }
 
     /**
@@ -127,7 +138,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function deleteLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DeleteLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DeleteLearningActivityResponse
     {
-        return $this->call('DeleteLearningActivity', $parameters);
+        return ($this->caller)('DeleteLearningActivity', $parameters);
     }
 
     /**
@@ -139,7 +150,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateLearningActivityInfo(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityInfo $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityInfoResponse
     {
-        return $this->call('UpdateLearningActivityInfo', $parameters);
+        return ($this->caller)('UpdateLearningActivityInfo', $parameters);
     }
 
     /**
@@ -151,7 +162,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function setCourseTAs(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseTAs $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseTAsResponse
     {
-        return $this->call('SetCourseTAs', $parameters);
+        return ($this->caller)('SetCourseTAs', $parameters);
     }
 
     /**
@@ -163,7 +174,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function setCourseMarkedBy(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseMarkedBy $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseMarkedByResponse
     {
-        return $this->call('SetCourseMarkedBy', $parameters);
+        return ($this->caller)('SetCourseMarkedBy', $parameters);
     }
 
     /**
@@ -175,7 +186,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseAssignmentsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsListResponse
     {
-        return $this->call('GetCourseAssignmentsList', $parameters);
+        return ($this->caller)('GetCourseAssignmentsList', $parameters);
     }
 
     /**
@@ -187,7 +198,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseAssignmentsXml(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsXml $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsXmlResponse
     {
-        return $this->call('GetCourseAssignmentsXml', $parameters);
+        return ($this->caller)('GetCourseAssignmentsXml', $parameters);
     }
 
     /**
@@ -199,7 +210,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseStudentsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseStudentsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseStudentsListResponse
     {
-        return $this->call('GetCourseStudentsList', $parameters);
+        return ($this->caller)('GetCourseStudentsList', $parameters);
     }
 
     /**
@@ -211,7 +222,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityStudentRecords(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityStudentRecords $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityStudentRecordsResponse
     {
-        return $this->call('GetLearningActivityStudentRecords', $parameters);
+        return ($this->caller)('GetLearningActivityStudentRecords', $parameters);
     }
 
     /**
@@ -223,7 +234,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityCustomFieldValues(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityCustomFieldValues $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityCustomFieldValuesResponse
     {
-        return $this->call('GetLearningActivityCustomFieldValues', $parameters);
+        return ($this->caller)('GetLearningActivityCustomFieldValues', $parameters);
     }
 
     /**
@@ -235,7 +246,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function changeLearningActivityActiveStatus(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ChangeLearningActivityActiveStatus $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ChangeLearningActivityActiveStatusResponse
     {
-        return $this->call('ChangeLearningActivityActiveStatus', $parameters);
+        return ($this->caller)('ChangeLearningActivityActiveStatus', $parameters);
     }
 
     /**
@@ -247,7 +258,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function generateECommerceCourseToken(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GenerateECommerceCourseToken $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GenerateECommerceCourseTokenResponse
     {
-        return $this->call('GenerateECommerceCourseToken', $parameters);
+        return ($this->caller)('GenerateECommerceCourseToken', $parameters);
     }
 
     /**
@@ -259,7 +270,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function addTrainingLocation(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddTrainingLocationWithTimeZone $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddTrainingLocationWithTimeZoneResponse
     {
-        return $this->call('AddTrainingLocation', $parameters);
+        return ($this->caller)('AddTrainingLocation', $parameters);
     }
 
     /**
@@ -271,7 +282,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getTrainingLocationsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocationsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocationsListResponse
     {
-        return $this->call('GetTrainingLocationsList', $parameters);
+        return ($this->caller)('GetTrainingLocationsList', $parameters);
     }
 
     /**
@@ -283,7 +294,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getTrainingLocation(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocation $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocationResponse
     {
-        return $this->call('GetTrainingLocation', $parameters);
+        return ($this->caller)('GetTrainingLocation', $parameters);
     }
 
     /**
@@ -295,7 +306,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function isTrainingLocationAvailable(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\IsTrainingLocationAvailable $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\IsTrainingLocationAvailableResponse
     {
-        return $this->call('IsTrainingLocationAvailable', $parameters);
+        return ($this->caller)('IsTrainingLocationAvailable', $parameters);
     }
 
     /**
@@ -307,7 +318,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseModeratorsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseModeratorsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseModeratorsListResponse
     {
-        return $this->call('GetCourseModeratorsList', $parameters);
+        return ($this->caller)('GetCourseModeratorsList', $parameters);
     }
 
     /**
@@ -319,7 +330,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function addCourseSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddCourseSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddCourseSessionResponse
     {
-        return $this->call('AddCourseSession', $parameters);
+        return ($this->caller)('AddCourseSession', $parameters);
     }
 
     /**
@@ -331,7 +342,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateCourseSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateCourseSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateCourseSessionResponse
     {
-        return $this->call('UpdateCourseSession', $parameters);
+        return ($this->caller)('UpdateCourseSession', $parameters);
     }
 
     /**
@@ -343,7 +354,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseSessionsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSessionsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSessionsListResponse
     {
-        return $this->call('GetCourseSessionsList', $parameters);
+        return ($this->caller)('GetCourseSessionsList', $parameters);
     }
 
     /**
@@ -355,7 +366,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getILTCourseCurrentSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTCourseCurrentSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTCourseCurrentSessionResponse
     {
-        return $this->call('GetILTCourseCurrentSession', $parameters);
+        return ($this->caller)('GetILTCourseCurrentSession', $parameters);
     }
 
     /**
@@ -367,7 +378,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function createCourseSeries(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CreateCourseSeries $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CreateCourseSeriesResponse
     {
-        return $this->call('CreateCourseSeries', $parameters);
+        return ($this->caller)('CreateCourseSeries', $parameters);
     }
 
     /**
@@ -379,7 +390,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityEquivalencyByID(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByID $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByIDResponse
     {
-        return $this->call('GetLearningActivityEquivalencyByID', $parameters);
+        return ($this->caller)('GetLearningActivityEquivalencyByID', $parameters);
     }
 
     /**
@@ -391,7 +402,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityEquivalencyByCode(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByCode $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByCodeResponse
     {
-        return $this->call('GetLearningActivityEquivalencyByCode', $parameters);
+        return ($this->caller)('GetLearningActivityEquivalencyByCode', $parameters);
     }
 
     /**
@@ -403,7 +414,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseSeriesList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSeriesList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSeriesListResponse
     {
-        return $this->call('GetCourseSeriesList', $parameters);
+        return ($this->caller)('GetCourseSeriesList', $parameters);
     }
 
     /**
@@ -415,7 +426,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getEquivalencyLearningActivities(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetEquivalencyLearningActivities $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetEquivalencyLearningActivitiesResponse
     {
-        return $this->call('GetEquivalencyLearningActivities', $parameters);
+        return ($this->caller)('GetEquivalencyLearningActivities', $parameters);
     }
 
     /**
@@ -427,7 +438,7 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getAvailableCourses(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetAvailableCourses $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetAvailableCoursesResponse
     {
-        return $this->call('GetAvailableCourses', $parameters);
+        return ($this->caller)('GetAvailableCourses', $parameters);
     }
 
     /**
@@ -439,6 +450,6 @@ class CourseManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityDetails(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityDetailsResponse
     {
-        return $this->call('getLearningActivityDetails', $parameters);
+        return ($this->caller)('getLearningActivityDetails', $parameters);
     }
 }

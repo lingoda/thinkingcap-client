@@ -26,9 +26,9 @@ class GetCourseAssignmentsXml implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $user
-     * @var string $courseID
+     * @param string $apiKey
+     * @param string $user
+     * @param string $courseID
      */
     public function __construct($apiKey, $user, $courseID)
     {

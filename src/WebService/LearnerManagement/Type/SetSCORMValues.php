@@ -31,10 +31,10 @@ class SetSCORMValues implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $userLogin
-     * @var string $userPassword
-     * @var string $courseID
-     * @var string $scormObjectJson
+     * @param string $userLogin
+     * @param string $userPassword
+     * @param string $courseID
+     * @param string $scormObjectJson
      */
     public function __construct($userLogin, $userPassword, $courseID, $scormObjectJson)
     {

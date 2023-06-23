@@ -26,9 +26,9 @@ class GetCourseModeratorsList implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $type
-     * @var string $programID
+     * @param string $apiKey
+     * @param string $type
+     * @param string $programID
      */
     public function __construct($apiKey, $type, $programID)
     {

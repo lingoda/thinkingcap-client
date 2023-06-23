@@ -4,14 +4,14 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement;
 
-use Phpro\SoapClient\Soap\ClassMap\ClassMap;
-use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
+use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMap;
+use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection;
 
 class LearnerManagementClassmap
 {
-    public static function getCollection(): \Phpro\SoapClient\Soap\ClassMap\ClassMapCollection
+    public static function getCollection(): \Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection
     {
-        return new ClassMapCollection([
+        return new ClassMapCollection(
             new ClassMap('GetAllUsers', Type\GetAllUsers::class),
             new ClassMap('GetAllUsersResponse', Type\GetAllUsersResponse::class),
             new ClassMap('ServiceResultOfUserList', Type\ServiceResultOfUserList::class),
@@ -77,10 +77,10 @@ class LearnerManagementClassmap
             new ClassMap('ArrayOfServiceUser', Type\ArrayOfServiceUser::class),
             new ClassMap('ServiceUser', Type\ServiceUser::class),
             new ClassMap('ArrayOfCustomField', Type\ArrayOfCustomField::class),
-            new ClassMap('ArrayOfDomain', Type\ArrayOfDomain::class),
             new ClassMap('CustomField', Type\CustomField::class),
-            new ClassMap('Domain', Type\Domain::class),
             new ClassMap('ArrayOfString1', Type\ArrayOfString1::class),
+            new ClassMap('ArrayOfDomain', Type\ArrayOfDomain::class),
+            new ClassMap('Domain', Type\Domain::class),
             new ClassMap('GetDomainUsersResponse', Type\GetDomainUsersResponse::class),
             new ClassMap('RegisterUser', Type\RegisterUser::class),
             new ClassMap('ServiceResultOfString', Type\ServiceResultOfString::class),
@@ -198,6 +198,6 @@ class LearnerManagementClassmap
             new ClassMap('GetSCORMDetailsResponse', Type\GetSCORMDetailsResponse::class),
             new ClassMap('SetSCORMValues', Type\SetSCORMValues::class),
             new ClassMap('SetSCORMValuesResponse', Type\SetSCORMValuesResponse::class),
-        ]);
+        );
     }
 }

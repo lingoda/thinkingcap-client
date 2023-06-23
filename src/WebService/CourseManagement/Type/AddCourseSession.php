@@ -106,25 +106,25 @@ class AddCourseSession implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseID
-     * @var string $sessionTitle
-     * @var string $sessionDescription
-     * @var bool $sessionIsRequired
-     * @var bool $timeIsTDB
-     * @var string $sessionStartDateTime
-     * @var string $sessionEndDateTime
-     * @var bool $locationIsTBD
-     * @var string $sessionLocationID
-     * @var string $webinarProviderID
-     * @var string $zoomSubAccountHostID
-     * @var string $customMeetingURL
-     * @var bool $isRecurringSession
-     * @var string $recurringCadence
-     * @var int $recurringNo
-     * @var string $attendanceCode
-     * @var bool $updateAdminCatalogs
-     * @var bool $updateLearnerCatalogs
+     * @param string $apiKey
+     * @param string $courseID
+     * @param string $sessionTitle
+     * @param string $sessionDescription
+     * @param bool $sessionIsRequired
+     * @param bool $timeIsTDB
+     * @param string $sessionStartDateTime
+     * @param string $sessionEndDateTime
+     * @param bool $locationIsTBD
+     * @param string $sessionLocationID
+     * @param string $webinarProviderID
+     * @param string $zoomSubAccountHostID
+     * @param string $customMeetingURL
+     * @param bool $isRecurringSession
+     * @param string $recurringCadence
+     * @param int $recurringNo
+     * @param string $attendanceCode
+     * @param bool $updateAdminCatalogs
+     * @param bool $updateLearnerCatalogs
      */
     public function __construct($apiKey, $courseID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $isRecurringSession, $recurringCadence, $recurringNo, $attendanceCode, $updateAdminCatalogs, $updateLearnerCatalogs)
     {

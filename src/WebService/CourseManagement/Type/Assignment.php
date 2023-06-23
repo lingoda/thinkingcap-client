@@ -54,6 +54,11 @@ class Assignment
     /**
      * @var bool
      */
+    private $AllowFilesSubmission;
+
+    /**
+     * @var bool
+     */
     private $AllowAudioRecordingSubmission;
 
     /**
@@ -125,6 +130,26 @@ class Assignment
      * @var string
      */
     private $AdditionalFileExtension;
+
+    /**
+     * @var string
+     */
+    private $AdditionalFileExtension1;
+
+    /**
+     * @var string
+     */
+    private $AdditionalFileExtension2;
+
+    /**
+     * @var string
+     */
+    private $AdditionalFileExtension3;
+
+    /**
+     * @var string
+     */
+    private $AdditionalFileExtension4;
 
     /**
      * @var string
@@ -331,6 +356,27 @@ class Assignment
     {
         $new = clone $this;
         $new->AllowTextSubmission = $AllowTextSubmission;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowFilesSubmission()
+    {
+        return $this->AllowFilesSubmission;
+    }
+
+    /**
+     * @param bool $AllowFilesSubmission
+     *
+     * @return Assignment
+     */
+    public function withAllowFilesSubmission($AllowFilesSubmission)
+    {
+        $new = clone $this;
+        $new->AllowFilesSubmission = $AllowFilesSubmission;
 
         return $new;
     }
@@ -646,6 +692,90 @@ class Assignment
     {
         $new = clone $this;
         $new->AdditionalFileExtension = $AdditionalFileExtension;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalFileExtension1()
+    {
+        return $this->AdditionalFileExtension1;
+    }
+
+    /**
+     * @param string $AdditionalFileExtension1
+     *
+     * @return Assignment
+     */
+    public function withAdditionalFileExtension1($AdditionalFileExtension1)
+    {
+        $new = clone $this;
+        $new->AdditionalFileExtension1 = $AdditionalFileExtension1;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalFileExtension2()
+    {
+        return $this->AdditionalFileExtension2;
+    }
+
+    /**
+     * @param string $AdditionalFileExtension2
+     *
+     * @return Assignment
+     */
+    public function withAdditionalFileExtension2($AdditionalFileExtension2)
+    {
+        $new = clone $this;
+        $new->AdditionalFileExtension2 = $AdditionalFileExtension2;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalFileExtension3()
+    {
+        return $this->AdditionalFileExtension3;
+    }
+
+    /**
+     * @param string $AdditionalFileExtension3
+     *
+     * @return Assignment
+     */
+    public function withAdditionalFileExtension3($AdditionalFileExtension3)
+    {
+        $new = clone $this;
+        $new->AdditionalFileExtension3 = $AdditionalFileExtension3;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdditionalFileExtension4()
+    {
+        return $this->AdditionalFileExtension4;
+    }
+
+    /**
+     * @param string $AdditionalFileExtension4
+     *
+     * @return Assignment
+     */
+    public function withAdditionalFileExtension4($AdditionalFileExtension4)
+    {
+        $new = clone $this;
+        $new->AdditionalFileExtension4 = $AdditionalFileExtension4;
 
         return $new;
     }

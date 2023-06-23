@@ -96,23 +96,23 @@ class UpdateCourseSession implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseID
-     * @var string $sessionID
-     * @var string $sessionTitle
-     * @var string $sessionDescription
-     * @var bool $sessionIsRequired
-     * @var bool $timeIsTDB
-     * @var string $sessionStartDateTime
-     * @var string $sessionEndDateTime
-     * @var bool $locationIsTBD
-     * @var string $sessionLocationID
-     * @var string $webinarProviderID
-     * @var string $zoomSubAccountHostID
-     * @var string $customMeetingURL
-     * @var string $attendanceCode
-     * @var bool $updateAdminCatalogs
-     * @var bool $updateLearnerCatalogs
+     * @param string $apiKey
+     * @param string $courseID
+     * @param string $sessionID
+     * @param string $sessionTitle
+     * @param string $sessionDescription
+     * @param bool $sessionIsRequired
+     * @param bool $timeIsTDB
+     * @param string $sessionStartDateTime
+     * @param string $sessionEndDateTime
+     * @param bool $locationIsTBD
+     * @param string $sessionLocationID
+     * @param string $webinarProviderID
+     * @param string $zoomSubAccountHostID
+     * @param string $customMeetingURL
+     * @param string $attendanceCode
+     * @param bool $updateAdminCatalogs
+     * @param bool $updateLearnerCatalogs
      */
     public function __construct($apiKey, $courseID, $sessionID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $attendanceCode, $updateAdminCatalogs, $updateLearnerCatalogs)
     {

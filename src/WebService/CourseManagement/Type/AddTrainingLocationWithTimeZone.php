@@ -56,15 +56,15 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $country
-     * @var string $state
-     * @var string $city
-     * @var string $address
-     * @var string $postalCode
-     * @var string $room
-     * @var string $timezoneCode
-     * @var string $useDST
+     * @param string $apiKey
+     * @param string $country
+     * @param string $state
+     * @param string $city
+     * @param string $address
+     * @param string $postalCode
+     * @param string $room
+     * @param string $timezoneCode
+     * @param string $useDST
      */
     public function __construct($apiKey, $country, $state, $city, $address, $postalCode, $room, $timezoneCode, $useDST)
     {

@@ -26,9 +26,9 @@ class GetLearningActivityListEnrollments implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userCustomMetadata
-     * @var string $customFieldIDs
+     * @param string $apiKey
+     * @param string $userCustomMetadata
+     * @param string $customFieldIDs
      */
     public function __construct($apiKey, $userCustomMetadata, $customFieldIDs)
     {

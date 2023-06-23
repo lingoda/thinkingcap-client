@@ -31,10 +31,10 @@ class DeleteLearningActivity implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $learningActivityID
-     * @var bool $updateAdminCatalogs
-     * @var bool $updateLearnerCatalogs
+     * @param string $apiKey
+     * @param string $learningActivityID
+     * @param bool $updateAdminCatalogs
+     * @param bool $updateLearnerCatalogs
      */
     public function __construct($apiKey, $learningActivityID, $updateAdminCatalogs, $updateLearnerCatalogs)
     {

@@ -31,10 +31,10 @@ class GetStudentLPDetails implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentID
-     * @var string $learningPathID
-     * @var string $language
+     * @param string $apiKey
+     * @param string $studentID
+     * @param string $learningPathID
+     * @param string $language
      */
     public function __construct($apiKey, $studentID, $learningPathID, $language)
     {

@@ -44,6 +44,11 @@ class CourseAssignment
     /**
      * @var bool
      */
+    private $AllowFilesSubmission;
+
+    /**
+     * @var bool
+     */
     private $AllowAudioRecordingSubmission;
 
     /**
@@ -189,6 +194,27 @@ class CourseAssignment
     {
         $new = clone $this;
         $new->AllowTextSubmission = $AllowTextSubmission;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAllowFilesSubmission()
+    {
+        return $this->AllowFilesSubmission;
+    }
+
+    /**
+     * @param bool $AllowFilesSubmission
+     *
+     * @return CourseAssignment
+     */
+    public function withAllowFilesSubmission($AllowFilesSubmission)
+    {
+        $new = clone $this;
+        $new->AllowFilesSubmission = $AllowFilesSubmission;
 
         return $new;
     }

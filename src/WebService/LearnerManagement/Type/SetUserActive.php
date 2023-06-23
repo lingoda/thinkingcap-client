@@ -26,9 +26,9 @@ class SetUserActive implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userID
-     * @var bool $active
+     * @param string $apiKey
+     * @param string $userID
+     * @param bool $active
      */
     public function __construct($apiKey, $userID, $active)
     {

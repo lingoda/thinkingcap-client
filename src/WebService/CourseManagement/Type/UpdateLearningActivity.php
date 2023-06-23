@@ -96,23 +96,23 @@ class UpdateLearningActivity implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $learningActivityID
-     * @var string $learningActivityType
-     * @var string $learningActivityTitle
-     * @var string $learningActivityCode
-     * @var string $learningActivityDescription
-     * @var string $learningActivityLanguage
-     * @var string $learningActivityEquivalencyCode
-     * @var string $learningActivityTags
-     * @var float $learningActivityEstimatedTimeMinutes
-     * @var bool $learningActivityShowSupervisorLogin
-     * @var bool $learningActivityRequiresEvidence
-     * @var string $learningActivityCertificateTemplateName
-     * @var int $learningActivityCertificateMinScore
-     * @var string $learningActivityCustomMetadata
-     * @var bool $updateAdminCatalogs
-     * @var bool $updateLearnerCatalogs
+     * @param string $apiKey
+     * @param string $learningActivityID
+     * @param string $learningActivityType
+     * @param string $learningActivityTitle
+     * @param string $learningActivityCode
+     * @param string $learningActivityDescription
+     * @param string $learningActivityLanguage
+     * @param string $learningActivityEquivalencyCode
+     * @param string $learningActivityTags
+     * @param float $learningActivityEstimatedTimeMinutes
+     * @param bool $learningActivityShowSupervisorLogin
+     * @param bool $learningActivityRequiresEvidence
+     * @param string $learningActivityCertificateTemplateName
+     * @param int $learningActivityCertificateMinScore
+     * @param string $learningActivityCustomMetadata
+     * @param bool $updateAdminCatalogs
+     * @param bool $updateLearnerCatalogs
      */
     public function __construct($apiKey, $learningActivityID, $learningActivityType, $learningActivityTitle, $learningActivityCode, $learningActivityDescription, $learningActivityLanguage, $learningActivityEquivalencyCode, $learningActivityTags, $learningActivityEstimatedTimeMinutes, $learningActivityShowSupervisorLogin, $learningActivityRequiresEvidence, $learningActivityCertificateTemplateName, $learningActivityCertificateMinScore, $learningActivityCustomMetadata, $updateAdminCatalogs, $updateLearnerCatalogs)
     {

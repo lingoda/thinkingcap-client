@@ -4,12 +4,23 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement;
 
+use Phpro\SoapClient\Caller\Caller;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
-class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
+class LearnerManagementSoapClient
 {
+    /**
+     * @var Caller
+     */
+    private $caller;
+
+    public function __construct(\Phpro\SoapClient\Caller\Caller $caller)
+    {
+        $this->caller = $caller;
+    }
+
     /**
      * @param RequestInterface|Type\GetAllUsers $parameters
      *
@@ -19,7 +30,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getAllUsers(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetAllUsers $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetAllUsersResponse
     {
-        return $this->call('GetAllUsers', $parameters);
+        return ($this->caller)('GetAllUsers', $parameters);
     }
 
     /**
@@ -31,7 +42,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getDomainUsers(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetDomainUsers $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetDomainUsersResponse
     {
-        return $this->call('GetDomainUsers', $parameters);
+        return ($this->caller)('GetDomainUsers', $parameters);
     }
 
     /**
@@ -43,7 +54,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function registerUser(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterUser $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterUserResponse
     {
-        return $this->call('RegisterUser', $parameters);
+        return ($this->caller)('RegisterUser', $parameters);
     }
 
     /**
@@ -55,7 +66,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function registerBulkUser(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterBulkUser $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\RegisterBulkUserResponse
     {
-        return $this->call('RegisterBulkUser', $parameters);
+        return ($this->caller)('RegisterBulkUser', $parameters);
     }
 
     /**
@@ -67,7 +78,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateUser(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateUser $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateUserResponse
     {
-        return $this->call('UpdateUser', $parameters);
+        return ($this->caller)('UpdateUser', $parameters);
     }
 
     /**
@@ -79,7 +90,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateUserMetadataValues(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateUserMetadataValues $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateUserMetadataValuesResponse
     {
-        return $this->call('UpdateUserMetadataValues', $parameters);
+        return ($this->caller)('UpdateUserMetadataValues', $parameters);
     }
 
     /**
@@ -91,7 +102,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateUserProfile(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateUserProfile $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateUserProfileResponse
     {
-        return $this->call('UpdateUserProfile', $parameters);
+        return ($this->caller)('UpdateUserProfile', $parameters);
     }
 
     /**
@@ -103,7 +114,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function updateStudentSupervisors(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateStudentSupervisors $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\UpdateStudentSupervisorsResponse
     {
-        return $this->call('UpdateStudentSupervisors', $parameters);
+        return ($this->caller)('UpdateStudentSupervisors', $parameters);
     }
 
     /**
@@ -115,7 +126,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getSupervisorUsers(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetSupervisorUsers $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetSupervisorUsersResponse
     {
-        return $this->call('GetSupervisorUsers', $parameters);
+        return ($this->caller)('GetSupervisorUsers', $parameters);
     }
 
     /**
@@ -127,7 +138,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getUserSupervisors(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserSupervisors $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserSupervisorsResponse
     {
-        return $this->call('GetUserSupervisors', $parameters);
+        return ($this->caller)('GetUserSupervisors', $parameters);
     }
 
     /**
@@ -139,7 +150,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getUserByID(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByID $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByIDResponse
     {
-        return $this->call('GetUserByID', $parameters);
+        return ($this->caller)('GetUserByID', $parameters);
     }
 
     /**
@@ -151,7 +162,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getUserByEmail(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByEmail $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByEmailResponse
     {
-        return $this->call('GetUserByEmail', $parameters);
+        return ($this->caller)('GetUserByEmail', $parameters);
     }
 
     /**
@@ -163,7 +174,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function findUserIDByEmail(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\FindUserIDByEmail $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\FindUserIDByEmailResponse
     {
-        return $this->call('FindUserIDByEmail', $parameters);
+        return ($this->caller)('FindUserIDByEmail', $parameters);
     }
 
     /**
@@ -175,7 +186,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getUserByUserName(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByUserName $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByUserNameResponse
     {
-        return $this->call('GetUserByUserName', $parameters);
+        return ($this->caller)('GetUserByUserName', $parameters);
     }
 
     /**
@@ -187,7 +198,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function findUserIDByUserName(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\FindUserIDByUserName $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\FindUserIDByUserNameResponse
     {
-        return $this->call('FindUserIDByUserName', $parameters);
+        return ($this->caller)('FindUserIDByUserName', $parameters);
     }
 
     /**
@@ -199,7 +210,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getUsersByScreenName(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUsersByScreenName $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUsersByScreenNameResponse
     {
-        return $this->call('GetUsersByScreenName', $parameters);
+        return ($this->caller)('GetUsersByScreenName', $parameters);
     }
 
     /**
@@ -211,7 +222,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getUsersByCustomField(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUsersByCustomField $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUsersByCustomFieldResponse
     {
-        return $this->call('GetUsersByCustomField', $parameters);
+        return ($this->caller)('GetUsersByCustomField', $parameters);
     }
 
     /**
@@ -223,7 +234,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function findUserIDByCustomField(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\FindUserIDByCustomField $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\FindUserIDByCustomFieldResponse
     {
-        return $this->call('FindUserIDByCustomField', $parameters);
+        return ($this->caller)('FindUserIDByCustomField', $parameters);
     }
 
     /**
@@ -235,7 +246,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function deleteUser(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\DeleteUser $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\DeleteUserResponse
     {
-        return $this->call('DeleteUser', $parameters);
+        return ($this->caller)('DeleteUser', $parameters);
     }
 
     /**
@@ -247,7 +258,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function deleteUserByLookup(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\DeleteUserByLookup $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\DeleteUserByLookupResponse
     {
-        return $this->call('DeleteUserByLookup', $parameters);
+        return ($this->caller)('DeleteUserByLookup', $parameters);
     }
 
     /**
@@ -259,7 +270,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function addUserToDomain(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AddUserToDomain $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AddUserToDomainResponse
     {
-        return $this->call('AddUserToDomain', $parameters);
+        return ($this->caller)('AddUserToDomain', $parameters);
     }
 
     /**
@@ -271,7 +282,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function addUserToDomainWithEnrollments(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AddUserToDomainWithEnrollments $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AddUserToDomainWithEnrollmentsResponse
     {
-        return $this->call('AddUserToDomainWithEnrollments', $parameters);
+        return ($this->caller)('AddUserToDomainWithEnrollments', $parameters);
     }
 
     /**
@@ -283,7 +294,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function setUserActive(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActive $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActiveResponse
     {
-        return $this->call('SetUserActive', $parameters);
+        return ($this->caller)('SetUserActive', $parameters);
     }
 
     /**
@@ -295,7 +306,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function setUserActiveByLookup(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActiveByLookup $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetUserActiveByLookupResponse
     {
-        return $this->call('SetUserActiveByLookup', $parameters);
+        return ($this->caller)('SetUserActiveByLookup', $parameters);
     }
 
     /**
@@ -307,7 +318,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getStudentTranscript(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentTranscript $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentTranscriptResponse
     {
-        return $this->call('GetStudentTranscript', $parameters);
+        return ($this->caller)('GetStudentTranscript', $parameters);
     }
 
     /**
@@ -319,7 +330,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function enrollStudentWithDetails(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\EnrollStudentWithDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\EnrollStudentWithDetailsResponse
     {
-        return $this->call('EnrollStudentWithDetails', $parameters);
+        return ($this->caller)('EnrollStudentWithDetails', $parameters);
     }
 
     /**
@@ -331,7 +342,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function enrollStudent(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\EnrollStudent $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\EnrollStudentResponse
     {
-        return $this->call('EnrollStudent', $parameters);
+        return ($this->caller)('EnrollStudent', $parameters);
     }
 
     /**
@@ -343,7 +354,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function enrollStudentReservation(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\EnrollStudentReservation $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\EnrollStudentReservationResponse
     {
-        return $this->call('EnrollStudentReservation', $parameters);
+        return ($this->caller)('EnrollStudentReservation', $parameters);
     }
 
     /**
@@ -355,7 +366,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function studentSelfEnroll(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentSelfEnroll $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentSelfEnrollResponse
     {
-        return $this->call('StudentSelfEnroll', $parameters);
+        return ($this->caller)('StudentSelfEnroll', $parameters);
     }
 
     /**
@@ -367,7 +378,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function withdrawStudent(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\WithdrawStudent $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\WithdrawStudentResponse
     {
-        return $this->call('WithdrawStudent', $parameters);
+        return ($this->caller)('WithdrawStudent', $parameters);
     }
 
     /**
@@ -379,7 +390,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function markStudentSession(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MarkStudentSession $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MarkStudentSessionResponse
     {
-        return $this->call('MarkStudentSession', $parameters);
+        return ($this->caller)('MarkStudentSession', $parameters);
     }
 
     /**
@@ -391,7 +402,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getStudentLPDetails(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentLPDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentLPDetailsResponse
     {
-        return $this->call('GetStudentLPDetails', $parameters);
+        return ($this->caller)('GetStudentLPDetails', $parameters);
     }
 
     /**
@@ -403,7 +414,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getRecordDetails(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetRecordDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetRecordDetailsResponse
     {
-        return $this->call('GetRecordDetails', $parameters);
+        return ($this->caller)('GetRecordDetails', $parameters);
     }
 
     /**
@@ -415,7 +426,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getStudentLearningActivityRecordDetails(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentLearningActivityRecordDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentLearningActivityRecordDetailsResponse
     {
-        return $this->call('GetStudentLearningActivityRecordDetails', $parameters);
+        return ($this->caller)('GetStudentLearningActivityRecordDetails', $parameters);
     }
 
     /**
@@ -427,7 +438,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getStudentLearningActivityRecords(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentLearningActivityRecords $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentLearningActivityRecordsResponse
     {
-        return $this->call('GetStudentLearningActivityRecords', $parameters);
+        return ($this->caller)('GetStudentLearningActivityRecords', $parameters);
     }
 
     /**
@@ -439,7 +450,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getAllStudentLearningActivityRecords(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetAllStudentLearningActivityRecords $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetAllStudentLearningActivityRecordsResponse
     {
-        return $this->call('GetAllStudentLearningActivityRecords', $parameters);
+        return ($this->caller)('GetAllStudentLearningActivityRecords', $parameters);
     }
 
     /**
@@ -451,7 +462,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function setRecordDetails(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetRecordDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetRecordDetailsResponse
     {
-        return $this->call('SetRecordDetails', $parameters);
+        return ($this->caller)('SetRecordDetails', $parameters);
     }
 
     /**
@@ -463,7 +474,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function generateTimedSeed(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GenerateTimedSeed $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GenerateTimedSeedResponse
     {
-        return $this->call('GenerateTimedSeed', $parameters);
+        return ($this->caller)('GenerateTimedSeed', $parameters);
     }
 
     /**
@@ -475,7 +486,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function validateTimedSeed(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ValidateTimedSeed $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ValidateTimedSeedResponse
     {
-        return $this->call('ValidateTimedSeed', $parameters);
+        return ($this->caller)('ValidateTimedSeed', $parameters);
     }
 
     /**
@@ -487,7 +498,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function mergeStudentTranscripts(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MergeStudentTranscripts $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MergeStudentTranscriptsResponse
     {
-        return $this->call('MergeStudentTranscripts', $parameters);
+        return ($this->caller)('MergeStudentTranscripts', $parameters);
     }
 
     /**
@@ -499,7 +510,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getStudentAvailableCourses(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentAvailableCourses $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetStudentAvailableCoursesResponse
     {
-        return $this->call('GetStudentAvailableCourses', $parameters);
+        return ($this->caller)('GetStudentAvailableCourses', $parameters);
     }
 
     /**
@@ -511,7 +522,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getCourseCompletionStatusByDateRange(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetCourseCompletionStatusByDateRange $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetCourseCompletionStatusByDateRangeResponse
     {
-        return $this->call('GetCourseCompletionStatusByDateRange', $parameters);
+        return ($this->caller)('GetCourseCompletionStatusByDateRange', $parameters);
     }
 
     /**
@@ -523,7 +534,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityListEnrollments(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLearningActivityListEnrollments $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLearningActivityListEnrollmentsResponse
     {
-        return $this->call('getLearningActivityListEnrollments', $parameters);
+        return ($this->caller)('getLearningActivityListEnrollments', $parameters);
     }
 
     /**
@@ -535,7 +546,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLearningActivityListEnrollmentsTruncated(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLearningActivityListEnrollmentsTruncated $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLearningActivityListEnrollmentsTruncatedResponse
     {
-        return $this->call('getLearningActivityListEnrollmentsTruncated', $parameters);
+        return ($this->caller)('getLearningActivityListEnrollmentsTruncated', $parameters);
     }
 
     /**
@@ -547,7 +558,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLMSUserAutoLoginURL(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLMSUserAutoLoginURL $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLMSUserAutoLoginURLResponse
     {
-        return $this->call('GetLMSUserAutoLoginURL', $parameters);
+        return ($this->caller)('GetLMSUserAutoLoginURL', $parameters);
     }
 
     /**
@@ -559,7 +570,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getLMSUserAutoLoginURLByUsername(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLMSUserAutoLoginURLByUsername $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetLMSUserAutoLoginURLByUsernameResponse
     {
-        return $this->call('GetLMSUserAutoLoginURLByUsername', $parameters);
+        return ($this->caller)('GetLMSUserAutoLoginURLByUsername', $parameters);
     }
 
     /**
@@ -571,7 +582,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getActiveDirectorySynchSettings(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetActiveDirectorySynchSettings $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetActiveDirectorySynchSettingsResponse
     {
-        return $this->call('GetActiveDirectorySynchSettings', $parameters);
+        return ($this->caller)('GetActiveDirectorySynchSettings', $parameters);
     }
 
     /**
@@ -583,7 +594,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function testPost(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TestPost $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TestPostResponse
     {
-        return $this->call('TestPost', $parameters);
+        return ($this->caller)('TestPost', $parameters);
     }
 
     /**
@@ -595,7 +606,7 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function getSCORMDetails(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetSCORMDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetSCORMDetailsResponse
     {
-        return $this->call('GetSCORMDetails', $parameters);
+        return ($this->caller)('GetSCORMDetails', $parameters);
     }
 
     /**
@@ -607,6 +618,6 @@ class LearnerManagementSoapClient extends \Phpro\SoapClient\Client
      */
     public function setSCORMValues(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetSCORMValues $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetSCORMValuesResponse
     {
-        return $this->call('SetSCORMValues', $parameters);
+        return ($this->caller)('SetSCORMValues', $parameters);
     }
 }

@@ -21,8 +21,8 @@ class FindUserIDByUserName implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userName
+     * @param string $apiKey
+     * @param string $userName
      */
     public function __construct($apiKey, $userName)
     {

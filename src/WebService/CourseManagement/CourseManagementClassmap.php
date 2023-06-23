@@ -4,14 +4,14 @@ declare(strict_types = 1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement;
 
-use Phpro\SoapClient\Soap\ClassMap\ClassMap;
-use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
+use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMap;
+use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection;
 
 class CourseManagementClassmap
 {
-    public static function getCollection(): \Phpro\SoapClient\Soap\ClassMap\ClassMapCollection
+    public static function getCollection(): \Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection
     {
-        return new ClassMapCollection([
+        return new ClassMapCollection(
             new ClassMap('FindCourse', Type\FindCourse::class),
             new ClassMap('FindCourseResponse', Type\FindCourseResponse::class),
             new ClassMap('ServiceResultOfCourse', Type\ServiceResultOfCourse::class),
@@ -21,12 +21,12 @@ class CourseManagementClassmap
             new ClassMap('AccreditationDetails', Type\AccreditationDetails::class),
             new ClassMap('ArrayOfReference', Type\ArrayOfReference::class),
             new ClassMap('Reference', Type\Reference::class),
-            new ClassMap('ArrayOfString', Type\ArrayOfString::class),
             new ClassMap('ArrayOfAnyType', Type\ArrayOfAnyType::class),
             new ClassMap('Activity', Type\Activity::class),
             new ClassMap('TitleNode', Type\TitleNode::class),
             new ClassMap('DescriptionNode', Type\DescriptionNode::class),
             new ClassMap('Schedule', Type\Schedule::class),
+            new ClassMap('ArrayOfString', Type\ArrayOfString::class),
             new ClassMap('ArrayOfActivityNotification', Type\ArrayOfActivityNotification::class),
             new ClassMap('ActivityNotification', Type\ActivityNotification::class),
             new ClassMap('ArrayOfAssignment', Type\ArrayOfAssignment::class),
@@ -88,6 +88,8 @@ class CourseManagementClassmap
             new ClassMap('CustomField', Type\CustomField::class),
             new ClassMap('ArrayOfString1', Type\ArrayOfString1::class),
             new ClassMap('ArrayOfCourseSession', Type\ArrayOfCourseSession::class),
+            new ClassMap('ArrayOfLearningActivityCohort', Type\ArrayOfLearningActivityCohort::class),
+            new ClassMap('LearningActivityCohort', Type\LearningActivityCohort::class),
             new ClassMap('GetLearningActivityByIDResponse', Type\GetLearningActivityByIDResponse::class),
             new ClassMap('GetCourseByCode', Type\GetCourseByCode::class),
             new ClassMap('GetCourseByCodeResponse', Type\GetCourseByCodeResponse::class),
@@ -185,6 +187,6 @@ class CourseManagementClassmap
             new ClassMap('GetAvailableCoursesResponse', Type\GetAvailableCoursesResponse::class),
             new ClassMap('getLearningActivityDetails', Type\GetLearningActivityDetails::class),
             new ClassMap('getLearningActivityDetailsResponse', Type\GetLearningActivityDetailsResponse::class),
-        ]);
+        );
     }
 }
