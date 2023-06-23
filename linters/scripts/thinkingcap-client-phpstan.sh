@@ -13,4 +13,3 @@ linters/vendor/bin/phpstan analyse \
     "tests" \
     --memory-limit=1G \
     --no-progress
-
