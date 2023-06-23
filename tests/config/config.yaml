@@ -1,8 +1,8 @@
 parameters:
-    mock_api_key: 'z6kl2fvfqsor4x2sq5hu'
-    mock_wsdl_url_course_management: 'https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx?WSDL'
-    mock_wsdl_url_learner_management: 'https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx?WSDL'
-    api_key: '%env(string:default:mock_api_key:LINGODA__THINKINGCAP_API_KEY)%'
+    mock_api_key: 'kpghu7kcw96gpk4rnjve'
+    mock_wsdl_url_course_management: 'https://www.lingoda.care/WebService/CourseManagement.asmx?WSDL'
+    mock_wsdl_url_learner_management: 'https://www.lingoda.care/WebService/LearnerManagement.asmx?WSDL'
+    api_key: '%env(string:default:mock_api_key:LINGODA__THINKINGCAP_API_KEY_NURSING)%'
     course_management: '%env(string:default:mock_wsdl_url_course_management:LINGODA__THINKINGCAP_WSDL_URL_COURSE_MANAGEMENT)%'
     learner_management: '%env(string:default:mock_wsdl_url_learner_management:LINGODA__THINKINGCAP_WSDL_URL_LEARNER_MANAGEMENT)%'
 
@@ -13,7 +13,7 @@ framework:
 lingoda_thinkingcap:
     api_keys:
         test1: asd1
-        test2: z6kl2fvfqsor4x2sq5hu
+        test2: kpghu7kcw96gpk4rnjve
     wsdl_urls:
         course_management: '%course_management%'
         learner_management: '%learner_management%'

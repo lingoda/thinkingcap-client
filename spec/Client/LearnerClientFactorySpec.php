@@ -18,7 +18,7 @@ class LearnerClientFactorySpec extends ObjectBehavior
         $this->beConstructedThrough(
             'create',
             [
-                'https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx?WSDL',
+                'https://www.lingoda.care/WebService/LearnerManagement.asmx?WSDL',
                 $eventDispatcher,
                 $apiKeySetterSubscriber,
             ]

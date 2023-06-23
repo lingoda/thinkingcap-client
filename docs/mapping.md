@@ -37,7 +37,7 @@ is `src/WebService/CourseManagement`
 Create `src/WebService/CourseManagement/CourseManagement.wsdl` file or download it via the following command:
 
 ```
-curl -o src/WebService/CourseManagement/CourseManagement.wsdl https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx?WSDL
+curl -o src/WebService/CourseManagement/CourseManagement.wsdl https://www.lingoda.care/WebService/CourseManagement.asmx?WSDL
 ```
 
 2- Install dev dependencies to have `laminas/laminas-code` package
