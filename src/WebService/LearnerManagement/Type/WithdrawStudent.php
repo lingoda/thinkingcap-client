@@ -26,9 +26,9 @@ class WithdrawStudent implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentID
-     * @var string $learningObjectID
+     * @param string $apiKey
+     * @param string $studentID
+     * @param string $learningObjectID
      */
     public function __construct($apiKey, $studentID, $learningObjectID)
     {

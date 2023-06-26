@@ -76,19 +76,19 @@ class RegisterBulkUser implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userID
-     * @var string $userFirstName
-     * @var string $userLastName
-     * @var string $userTitle
-     * @var string $userEmail
-     * @var string $userPassword
-     * @var string $userScreenName
-     * @var string $userLanguage
-     * @var string $userCustomMetadata
-     * @var string $source
-     * @var string $syncDomainID
-     * @var bool $protectFromManualChange
+     * @param string $apiKey
+     * @param string $userID
+     * @param string $userFirstName
+     * @param string $userLastName
+     * @param string $userTitle
+     * @param string $userEmail
+     * @param string $userPassword
+     * @param string $userScreenName
+     * @param string $userLanguage
+     * @param string $userCustomMetadata
+     * @param string $source
+     * @param string $syncDomainID
+     * @param bool $protectFromManualChange
      */
     public function __construct($apiKey, $userID, $userFirstName, $userLastName, $userTitle, $userEmail, $userPassword, $userScreenName, $userLanguage, $userCustomMetadata, $source, $syncDomainID, $protectFromManualChange)
     {

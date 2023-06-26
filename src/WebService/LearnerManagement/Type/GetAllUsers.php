@@ -16,7 +16,7 @@ class GetAllUsers implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
+     * @param string $apiKey
      */
     public function __construct($apiKey)
     {

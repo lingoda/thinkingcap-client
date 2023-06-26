@@ -21,8 +21,8 @@ class GetTrainingLocation implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $locationID
+     * @param string $apiKey
+     * @param string $locationID
      */
     public function __construct($apiKey, $locationID)
     {

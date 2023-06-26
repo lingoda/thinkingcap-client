@@ -46,13 +46,13 @@ class MarkStudentSession implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentID
-     * @var string $courseID
-     * @var string $sessionID
-     * @var int $scorePercent
-     * @var string $comments
-     * @var string $attendanceValue
+     * @param string $apiKey
+     * @param string $studentID
+     * @param string $courseID
+     * @param string $sessionID
+     * @param int $scorePercent
+     * @param string $comments
+     * @param string $attendanceValue
      */
     public function __construct($apiKey, $studentID, $courseID, $sessionID, $scorePercent, $comments, $attendanceValue)
     {

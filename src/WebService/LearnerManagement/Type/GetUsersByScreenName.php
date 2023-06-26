@@ -21,8 +21,8 @@ class GetUsersByScreenName implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $screenName
+     * @param string $apiKey
+     * @param string $screenName
      */
     public function __construct($apiKey, $screenName)
     {

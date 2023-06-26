@@ -31,10 +31,10 @@ class MergeStudentTranscripts implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentToRemainID
-     * @var string $studentToGoID
-     * @var bool $markMergedAccountsPending
+     * @param string $apiKey
+     * @param string $studentToRemainID
+     * @param string $studentToGoID
+     * @param bool $markMergedAccountsPending
      */
     public function __construct($apiKey, $studentToRemainID, $studentToGoID, $markMergedAccountsPending)
     {

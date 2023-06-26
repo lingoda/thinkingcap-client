@@ -167,16 +167,6 @@ class LearningType
     private $ShowSharingLink;
 
     /**
-     * @var string
-     */
-    private $Tags;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $TagsList;
-
-    /**
      * @var bool
      */
     private $VideoShowScrubber;
@@ -240,11 +230,6 @@ class LearningType
      * @var \DateTimeInterface
      */
     private $FirstEnrollmentDate;
-
-    /**
-     * @var bool
-     */
-    private $UseAutoEnrollmentRuleForReEnroll;
 
     /**
      * @var bool
@@ -370,6 +355,16 @@ class LearningType
      * @var bool
      */
     private $AutoenrollExcludeRulesRequired;
+
+    /**
+     * @var bool
+     */
+    private $ReAutoEnroll;
+
+    /**
+     * @var bool
+     */
+    private $UseAutoEnrollmentRuleForReEnroll;
 
     /**
      * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
@@ -654,7 +649,7 @@ class LearningType
     /**
      * @var bool
      */
-    private $WithdrawIncompleteLPActivitiesOnCompletion;
+    private $WithdrawIncompleteLPActivitiesOnLPEnroll;
 
     /**
      * @var bool
@@ -2169,48 +2164,6 @@ class LearningType
     }
 
     /**
-     * @return string
-     */
-    public function getTags()
-    {
-        return $this->Tags;
-    }
-
-    /**
-     * @param string $Tags
-     *
-     * @return LearningType
-     */
-    public function withTags($Tags)
-    {
-        $new = clone $this;
-        $new->Tags = $Tags;
-
-        return $new;
-    }
-
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getTagsList()
-    {
-        return $this->TagsList;
-    }
-
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $TagsList
-     *
-     * @return LearningType
-     */
-    public function withTagsList($TagsList)
-    {
-        $new = clone $this;
-        $new->TagsList = $TagsList;
-
-        return $new;
-    }
-
-    /**
      * @return bool
      */
     public function getVideoShowScrubber()
@@ -2479,27 +2432,6 @@ class LearningType
     {
         $new = clone $this;
         $new->FirstEnrollmentDate = $FirstEnrollmentDate;
-
-        return $new;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getUseAutoEnrollmentRuleForReEnroll()
-    {
-        return $this->UseAutoEnrollmentRuleForReEnroll;
-    }
-
-    /**
-     * @param bool $UseAutoEnrollmentRuleForReEnroll
-     *
-     * @return LearningType
-     */
-    public function withUseAutoEnrollmentRuleForReEnroll($UseAutoEnrollmentRuleForReEnroll)
-    {
-        $new = clone $this;
-        $new->UseAutoEnrollmentRuleForReEnroll = $UseAutoEnrollmentRuleForReEnroll;
 
         return $new;
     }
@@ -3025,6 +2957,48 @@ class LearningType
     {
         $new = clone $this;
         $new->AutoenrollExcludeRulesRequired = $AutoenrollExcludeRulesRequired;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getReAutoEnroll()
+    {
+        return $this->ReAutoEnroll;
+    }
+
+    /**
+     * @param bool $ReAutoEnroll
+     *
+     * @return LearningType
+     */
+    public function withReAutoEnroll($ReAutoEnroll)
+    {
+        $new = clone $this;
+        $new->ReAutoEnroll = $ReAutoEnroll;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getUseAutoEnrollmentRuleForReEnroll()
+    {
+        return $this->UseAutoEnrollmentRuleForReEnroll;
+    }
+
+    /**
+     * @param bool $UseAutoEnrollmentRuleForReEnroll
+     *
+     * @return LearningType
+     */
+    public function withUseAutoEnrollmentRuleForReEnroll($UseAutoEnrollmentRuleForReEnroll)
+    {
+        $new = clone $this;
+        $new->UseAutoEnrollmentRuleForReEnroll = $UseAutoEnrollmentRuleForReEnroll;
 
         return $new;
     }
@@ -4208,20 +4182,20 @@ class LearningType
     /**
      * @return bool
      */
-    public function getWithdrawIncompleteLPActivitiesOnCompletion()
+    public function getWithdrawIncompleteLPActivitiesOnLPEnroll()
     {
-        return $this->WithdrawIncompleteLPActivitiesOnCompletion;
+        return $this->WithdrawIncompleteLPActivitiesOnLPEnroll;
     }
 
     /**
-     * @param bool $WithdrawIncompleteLPActivitiesOnCompletion
+     * @param bool $WithdrawIncompleteLPActivitiesOnLPEnroll
      *
      * @return LearningType
      */
-    public function withWithdrawIncompleteLPActivitiesOnCompletion($WithdrawIncompleteLPActivitiesOnCompletion)
+    public function withWithdrawIncompleteLPActivitiesOnLPEnroll($WithdrawIncompleteLPActivitiesOnLPEnroll)
     {
         $new = clone $this;
-        $new->WithdrawIncompleteLPActivitiesOnCompletion = $WithdrawIncompleteLPActivitiesOnCompletion;
+        $new->WithdrawIncompleteLPActivitiesOnLPEnroll = $WithdrawIncompleteLPActivitiesOnLPEnroll;
 
         return $new;
     }

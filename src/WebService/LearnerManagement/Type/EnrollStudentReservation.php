@@ -36,11 +36,11 @@ class EnrollStudentReservation implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentID
-     * @var string $learningObjectID
-     * @var string $enrollmentDomainID
-     * @var string $reserVationID
+     * @param string $apiKey
+     * @param string $studentID
+     * @param string $learningObjectID
+     * @param string $enrollmentDomainID
+     * @param string $reserVationID
      */
     public function __construct($apiKey, $studentID, $learningObjectID, $enrollmentDomainID, $reserVationID)
     {

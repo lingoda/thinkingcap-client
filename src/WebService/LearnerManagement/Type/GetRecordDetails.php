@@ -21,8 +21,8 @@ class GetRecordDetails implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentRecordID
+     * @param string $apiKey
+     * @param string $studentRecordID
      */
     public function __construct($apiKey, $studentRecordID)
     {

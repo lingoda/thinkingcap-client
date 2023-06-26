@@ -26,9 +26,9 @@ class GetCourseStudentsList implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseID
-     * @var string $programID
+     * @param string $apiKey
+     * @param string $courseID
+     * @param string $programID
      */
     public function __construct($apiKey, $courseID, $programID)
     {

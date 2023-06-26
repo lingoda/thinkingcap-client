@@ -21,8 +21,8 @@ class GenerateECommerceCourseToken implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseCode
+     * @param string $apiKey
+     * @param string $courseCode
      */
     public function __construct($apiKey, $courseCode)
     {

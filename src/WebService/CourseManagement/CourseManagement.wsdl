@@ -77,6 +77,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="EndCollaborationOnCompletion" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationTitle" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollaborationCustomFields" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Versions" type="tns:ArrayOfCourseVersion" />
               <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="ForceUserFeedback" type="s:boolean" />
@@ -144,8 +145,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="LeaningPathActivityLayout" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ShowLearnerProgressAs" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowSharingLink" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Tags" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="TagsList" type="tns:ArrayOfString" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoShowScrubber" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoBookmarkProgress" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoStartAuto" type="s:boolean" />
@@ -165,7 +164,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="WaitlistEnrollAfterLastWithdrawDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LastUnenrollmentDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="FirstEnrollmentDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseAutoEnrollmentRuleForReEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UnlimitedLastEnrollment" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentBasedFirstEnrollmentDate" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="LastEnrollmentBasedFirstEnrollmentDateSetting" type="s:string" />
@@ -191,6 +189,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="AutoenrollLastRunDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="AutoenrollExcludeRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="1" maxOccurs="1" name="AutoenrollExcludeRulesRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReAutoEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseAutoEnrollmentRuleForReEnroll" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="RecertificationAutoEnrollRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="RecertificationAutoEnrollExcludeRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="1" maxOccurs="1" name="ReAutoEnrollmentAllowAll" type="s:boolean" />
@@ -247,7 +247,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="AutoEnrollLPActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollPurchaseActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnCompletion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnLPEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
@@ -480,11 +480,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:complexType name="ArrayOfAnyType">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
@@ -587,6 +582,11 @@
           <s:element minOccurs="0" maxOccurs="1" name="DurationString" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="ArrayOfActivityNotification">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="ActivityNotification" nillable="true" type="tns:ActivityNotification" />
@@ -624,6 +624,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="StudentDisplayID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowTextSubmission" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowFilesSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowAudioRecordingSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Mastery" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Completed" type="s:boolean" />
@@ -639,6 +640,10 @@
           <s:element minOccurs="0" maxOccurs="1" name="ReviewerfileName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension4" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Rubric" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentNotes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentTextData" type="s:string" />
@@ -659,6 +664,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Mastery" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MaxAttempts" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowTextSubmission" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowFilesSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowAudioRecordingSubmission" type="s:boolean" />
         </s:sequence>
       </s:complexType>
@@ -1465,6 +1471,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ReenrollmentAllowedBeforeExpiringInterval" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
           <s:element minOccurs="0" maxOccurs="1" name="Sessions" type="tns:ArrayOfCourseSession" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cohorts" type="tns:ArrayOfLearningActivityCohort" />
           <s:element minOccurs="0" maxOccurs="1" name="DetailsLink" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedTimestamp" type="s:dateTime" />
         </s:sequence>
@@ -1489,6 +1496,23 @@
       <s:complexType name="ArrayOfCourseSession">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="CourseSession" nillable="true" type="tns:CourseSession" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLearningActivityCohort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LearningActivityCohort" nillable="true" type="tns:LearningActivityCohort" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LearningActivityCohort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxEnrollments" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowSelfEnroll" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetLearningActivityByIDResponse">
@@ -3420,7 +3444,7 @@
       <wsdl:output message="tns:GetCourseModeratorsListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ILT ID (required, string in GUID format), &lt;br/&gt;- session title (required, string), &lt;br/&gt;- session description (optional, string), &lt;br/&gt;- session is required (required, boolean True/False), &lt;br/&gt;- time is TBD (required, boolean True/False), &lt;br/&gt;- session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;- session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;- location is TBD (required, boolean True/False), &lt;br/&gt;- location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;- webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;- Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;- custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;- session is recurring (required, boolean True/False), &lt;br/&gt;- recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;- the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;- code to verify attendance (optional, string).&lt;br/&gt;&lt;br/&gt;Returns: if successful, the new session LMS ID (string in GUID format) or else an error code.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ILT ID (required, string in GUID format), &lt;br/&gt;- session title (required, string), &lt;br/&gt;- session description (optional, string), &lt;br/&gt;- session is required (required, boolean True/False), &lt;br/&gt;- time is TBD (required, boolean True/False), &lt;br/&gt;- session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;- session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;- location is TBD (required, boolean True/False), &lt;br/&gt;- location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;- webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;- Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;- custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;- session is recurring (required, boolean True/False), &lt;br/&gt;- recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;- the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;- code to verify attendance (optional, string), &lt;br/&gt;- update admin view (required, boolean) - True to update the admin view catalogs, &lt;br/&gt;- update learner catalogs (required, boolean) - True to update the learner view branch and page catalogs.&lt;br/&gt;&lt;br/&gt;Returns: if successful, the new session LMS ID (string in GUID format) or else an error code.</wsdl:documentation>
       <wsdl:input message="tns:AddCourseSessionSoapIn" />
       <wsdl:output message="tns:AddCourseSessionSoapOut" />
     </wsdl:operation>
@@ -3602,7 +3626,7 @@
       <wsdl:output message="tns:GetCourseModeratorsListHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ILT ID (required, string in GUID format), &lt;br/&gt;- session title (required, string), &lt;br/&gt;- session description (optional, string), &lt;br/&gt;- session is required (required, boolean True/False), &lt;br/&gt;- time is TBD (required, boolean True/False), &lt;br/&gt;- session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;- session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;- location is TBD (required, boolean True/False), &lt;br/&gt;- location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;- webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;- Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;- custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;- session is recurring (required, boolean True/False), &lt;br/&gt;- recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;- the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;- code to verify attendance (optional, string).&lt;br/&gt;&lt;br/&gt;Returns: if successful, the new session LMS ID (string in GUID format) or else an error code.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ILT ID (required, string in GUID format), &lt;br/&gt;- session title (required, string), &lt;br/&gt;- session description (optional, string), &lt;br/&gt;- session is required (required, boolean True/False), &lt;br/&gt;- time is TBD (required, boolean True/False), &lt;br/&gt;- session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;- session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;- location is TBD (required, boolean True/False), &lt;br/&gt;- location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;- webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;- Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;- custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;- session is recurring (required, boolean True/False), &lt;br/&gt;- recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;- the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;- code to verify attendance (optional, string), &lt;br/&gt;- update admin view (required, boolean) - True to update the admin view catalogs, &lt;br/&gt;- update learner catalogs (required, boolean) - True to update the learner view branch and page catalogs.&lt;br/&gt;&lt;br/&gt;Returns: if successful, the new session LMS ID (string in GUID format) or else an error code.</wsdl:documentation>
       <wsdl:input message="tns:AddCourseSessionHttpGetIn" />
       <wsdl:output message="tns:AddCourseSessionHttpGetOut" />
     </wsdl:operation>
@@ -3784,7 +3808,7 @@
       <wsdl:output message="tns:GetCourseModeratorsListHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="AddCourseSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ILT ID (required, string in GUID format), &lt;br/&gt;- session title (required, string), &lt;br/&gt;- session description (optional, string), &lt;br/&gt;- session is required (required, boolean True/False), &lt;br/&gt;- time is TBD (required, boolean True/False), &lt;br/&gt;- session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;- session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;- location is TBD (required, boolean True/False), &lt;br/&gt;- location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;- webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;- Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;- custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;- session is recurring (required, boolean True/False), &lt;br/&gt;- recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;- the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;- code to verify attendance (optional, string).&lt;br/&gt;&lt;br/&gt;Returns: if successful, the new session LMS ID (string in GUID format) or else an error code.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a new session to an IL Course. If webinar information is passed, creates a meeting for the webinar provider passed. &lt;br/&gt;The start and end times are assumed to be in the domain default timezone if custom URL or TBD location session, location timezone if room session and webinar provider timezone if web session.&lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ILT ID (required, string in GUID format), &lt;br/&gt;- session title (required, string), &lt;br/&gt;- session description (optional, string), &lt;br/&gt;- session is required (required, boolean True/False), &lt;br/&gt;- time is TBD (required, boolean True/False), &lt;br/&gt;- session start date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 09:00") - required if time is not TBD, &lt;br/&gt;- session end date/time (optional, format yyyy-MM-dd HH:mm e.g. "2022-10-21 17:00") - required if time is not TBD, &lt;br/&gt;- location is TBD (required, boolean True/False), &lt;br/&gt;- location ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is passed, the location to be set for the session, &lt;br/&gt;- webinar provider ID in LMS (optional, string in GUID format) - if the location is not TBD and a physical location ID is not passed, the webinar to create a meeting and set it as the session location, &lt;br/&gt;- Zoom sub-account host ID (optional, string) - only used if the location is not TBD and of type Zoom sub-account webinar - a webinar provider ID must be passed as well, &lt;br/&gt;- custom session meeting URL (optional, string) - if the location is not TBD and a physical location ID or a webinar ID are not passed, the custom meeting URL for the session, &lt;br/&gt;- session is recurring (required, boolean True/False), &lt;br/&gt;- recurring interval (optional, "Daily","Weekly|Monday","Monthly") - required if the session is recurring, &lt;br/&gt;- the number of times the session will repeat base on the recurring interval (required, integer) - only used if the session is recurring (min 1 if recurring, 0 if not recurring), &lt;br/&gt;- code to verify attendance (optional, string), &lt;br/&gt;- update admin view (required, boolean) - True to update the admin view catalogs, &lt;br/&gt;- update learner catalogs (required, boolean) - True to update the learner view branch and page catalogs.&lt;br/&gt;&lt;br/&gt;Returns: if successful, the new session LMS ID (string in GUID format) or else an error code.</wsdl:documentation>
       <wsdl:input message="tns:AddCourseSessionHttpPostIn" />
       <wsdl:output message="tns:AddCourseSessionHttpPostOut" />
     </wsdl:operation>
@@ -5168,16 +5192,16 @@
   <wsdl:service name="CourseManagement">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A course management service for creating, modifying and retrieving course information.</wsdl:documentation>
     <wsdl:port name="CourseManagementSoap" binding="tns:CourseManagementSoap">
-      <soap:address location="https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx" />
+      <soap:address location="https://www.lingoda.care/WebService/CourseManagement.asmx" />
     </wsdl:port>
     <wsdl:port name="CourseManagementSoap12" binding="tns:CourseManagementSoap12">
-      <soap12:address location="https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx" />
+      <soap12:address location="https://www.lingoda.care/WebService/CourseManagement.asmx" />
     </wsdl:port>
     <wsdl:port name="CourseManagementHttpGet" binding="tns:CourseManagementHttpGet">
-      <http:address location="https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx" />
+      <http:address location="https://www.lingoda.care/WebService/CourseManagement.asmx" />
     </wsdl:port>
     <wsdl:port name="CourseManagementHttpPost" binding="tns:CourseManagementHttpPost">
-      <http:address location="https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx" />
+      <http:address location="https://www.lingoda.care/WebService/CourseManagement.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

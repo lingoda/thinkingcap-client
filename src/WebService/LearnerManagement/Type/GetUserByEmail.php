@@ -31,10 +31,10 @@ class GetUserByEmail implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userEmail
-     * @var bool $includeMetadata
-     * @var bool $includeDomains
+     * @param string $apiKey
+     * @param string $userEmail
+     * @param bool $includeMetadata
+     * @param bool $includeDomains
      */
     public function __construct($apiKey, $userEmail, $includeMetadata, $includeDomains)
     {

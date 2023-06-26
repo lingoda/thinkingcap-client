@@ -21,8 +21,8 @@ class FindCourse implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseID
+     * @param string $apiKey
+     * @param string $courseID
      */
     public function __construct($apiKey, $courseID)
     {

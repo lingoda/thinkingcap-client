@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace Lingoda\ThinkingcapBundle\Client;
 
 use Phpro\SoapClient\Event\RequestEvent;
-use Phpro\SoapClient\Events;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Webmozart\Assert\Assert;
 
@@ -61,7 +60,7 @@ class ApiKeySetterSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            Events::REQUEST => 'onClientRequest',
+            RequestEvent::class => 'onClientRequest',
         ];
     }
 }

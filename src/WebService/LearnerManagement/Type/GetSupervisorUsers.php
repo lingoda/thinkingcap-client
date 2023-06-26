@@ -41,12 +41,12 @@ class GetSupervisorUsers implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $supervisorID
-     * @var bool $includeInactive
-     * @var bool $includeMetadata
-     * @var int $offset
-     * @var int $take
+     * @param string $apiKey
+     * @param string $supervisorID
+     * @param bool $includeInactive
+     * @param bool $includeMetadata
+     * @param int $offset
+     * @param int $take
      */
     public function __construct($apiKey, $supervisorID, $includeInactive, $includeMetadata, $offset, $take)
     {

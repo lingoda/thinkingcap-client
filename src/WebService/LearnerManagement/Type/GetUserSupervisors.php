@@ -26,9 +26,9 @@ class GetUserSupervisors implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $userID
-     * @var bool $includeMetadata
+     * @param string $apiKey
+     * @param string $userID
+     * @param bool $includeMetadata
      */
     public function __construct($apiKey, $userID, $includeMetadata)
     {

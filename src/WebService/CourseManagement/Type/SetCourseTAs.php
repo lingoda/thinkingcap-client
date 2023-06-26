@@ -26,9 +26,9 @@ class SetCourseTAs implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $courseID
-     * @var string $taList
+     * @param string $apiKey
+     * @param string $courseID
+     * @param string $taList
      */
     public function __construct($apiKey, $courseID, $taList)
     {

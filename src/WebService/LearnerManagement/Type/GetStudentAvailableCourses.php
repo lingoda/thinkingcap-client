@@ -26,9 +26,9 @@ class GetStudentAvailableCourses implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $studentID
-     * @var string $onlyDomainID
+     * @param string $apiKey
+     * @param string $studentID
+     * @param string $onlyDomainID
      */
     public function __construct($apiKey, $studentID, $onlyDomainID)
     {

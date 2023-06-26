@@ -5,11 +5,11 @@ declare(strict_types = 1);
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
 use Phpro\SoapClient\CodeGenerator\Rules;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
+use Phpro\SoapClient\Soap\DefaultEngineFactory;
+use Soap\ExtSoapEngine\ExtSoapOptions;
 
 return Config::create()
-    ->setEngine($engine = ExtSoapEngineFactory::fromOptions(
+    ->setEngine($engine = DefaultEngineFactory::create(
         ExtSoapOptions::defaults('src/WebService/CourseManagement/CourseManagement.wsdl', [])
             ->disableWsdlCache()
     ))

@@ -46,13 +46,13 @@ class GetDomainLearningActivities implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $onlyDomainID
-     * @var string $learningActivityTypeFilter
-     * @var bool $includeInactive
-     * @var bool $includeMetadata
-     * @var int $offset
-     * @var int $take
+     * @param string $apiKey
+     * @param string $onlyDomainID
+     * @param string $learningActivityTypeFilter
+     * @param bool $includeInactive
+     * @param bool $includeMetadata
+     * @param int $offset
+     * @param int $take
      */
     public function __construct($apiKey, $onlyDomainID, $learningActivityTypeFilter, $includeInactive, $includeMetadata, $offset, $take)
     {

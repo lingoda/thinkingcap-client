@@ -247,6 +247,11 @@ class Course
     private $CollaborationDescription;
 
     /**
+     * @var string
+     */
+    private $CollaborationCustomFields;
+
+    /**
      * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfCourseVersion
      */
     private $Versions;
@@ -1395,6 +1400,27 @@ class Course
     {
         $new = clone $this;
         $new->CollaborationDescription = $CollaborationDescription;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCollaborationCustomFields()
+    {
+        return $this->CollaborationCustomFields;
+    }
+
+    /**
+     * @param string $CollaborationCustomFields
+     *
+     * @return Course
+     */
+    public function withCollaborationCustomFields($CollaborationCustomFields)
+    {
+        $new = clone $this;
+        $new->CollaborationCustomFields = $CollaborationCustomFields;
 
         return $new;
     }

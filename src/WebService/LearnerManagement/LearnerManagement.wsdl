@@ -442,6 +442,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="EndCollaborationOnCompletion" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationTitle" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CollaborationCustomFields" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Versions" type="tns:ArrayOfCourseVersion" />
               <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="ForceUserFeedback" type="s:boolean" />
@@ -509,8 +510,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="LeaningPathActivityLayout" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ShowLearnerProgressAs" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowSharingLink" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Tags" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="TagsList" type="tns:ArrayOfString" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoShowScrubber" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoBookmarkProgress" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="VideoStartAuto" type="s:boolean" />
@@ -530,7 +529,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="WaitlistEnrollAfterLastWithdrawDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LastUnenrollmentDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="FirstEnrollmentDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseAutoEnrollmentRuleForReEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UnlimitedLastEnrollment" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentBasedFirstEnrollmentDate" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="LastEnrollmentBasedFirstEnrollmentDateSetting" type="s:string" />
@@ -556,6 +554,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="AutoenrollLastRunDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="AutoenrollExcludeRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="1" maxOccurs="1" name="AutoenrollExcludeRulesRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReAutoEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseAutoEnrollmentRuleForReEnroll" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="RecertificationAutoEnrollRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="RecertificationAutoEnrollExcludeRules" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="1" maxOccurs="1" name="ReAutoEnrollmentAllowAll" type="s:boolean" />
@@ -612,7 +612,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="AutoEnrollLPActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollPurchaseActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnCompletion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnLPEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
@@ -861,6 +861,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="StudentDisplayID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowTextSubmission" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowFilesSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowAudioRecordingSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Mastery" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Completed" type="s:boolean" />
@@ -876,6 +877,10 @@
           <s:element minOccurs="0" maxOccurs="1" name="ReviewerfileName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalFileExtension4" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Rubric" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentNotes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentTextData" type="s:string" />
@@ -896,6 +901,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Mastery" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MaxAttempts" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowTextSubmission" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowFilesSubmission" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowAudioRecordingSubmission" type="s:boolean" />
         </s:sequence>
       </s:complexType>
@@ -1216,16 +1222,21 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfDomain">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Domain" nillable="true" type="tns:Domain" />
-        </s:sequence>
-      </s:complexType>
       <s:complexType name="CustomField">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="FieldID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldValues" type="tns:ArrayOfString1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Value" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDomain">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Domain" nillable="true" type="tns:Domain" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="Domain">
@@ -1235,11 +1246,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="DomainCode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ParentDomainID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="MembershipPending" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfString1">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Value" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetDomainUsersResponse">
@@ -1445,6 +1451,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="PullAttestationDocuments" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="PullCompletionReports" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ApproveForumPosts" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExtendDueDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ViewCertificates" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="AssignmentType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MatchingLearnersMetadata" type="s:string" />
@@ -2671,6 +2678,7 @@
     <wsdl:part name="domainID" type="s:string" />
     <wsdl:part name="includeInactive" type="s:string" />
     <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includeDomains" type="s:string" />
     <wsdl:part name="offset" type="s:string" />
     <wsdl:part name="take" type="s:string" />
   </wsdl:message>
@@ -2774,6 +2782,7 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userID" type="s:string" />
     <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includeDomains" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetUserByIDHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfServiceUser" />
@@ -2782,6 +2791,7 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userEmail" type="s:string" />
     <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includeDomains" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetUserByEmailHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfServiceUser" />
@@ -3117,6 +3127,7 @@
     <wsdl:part name="domainID" type="s:string" />
     <wsdl:part name="includeInactive" type="s:string" />
     <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includeDomains" type="s:string" />
     <wsdl:part name="offset" type="s:string" />
     <wsdl:part name="take" type="s:string" />
   </wsdl:message>
@@ -3220,6 +3231,7 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userID" type="s:string" />
     <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includeDomains" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetUserByIDHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfServiceUser" />
@@ -3228,6 +3240,7 @@
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="userEmail" type="s:string" />
     <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includeDomains" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetUserByEmailHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfServiceUser" />
@@ -6122,16 +6135,16 @@
   </wsdl:binding>
   <wsdl:service name="LearnerManagement">
     <wsdl:port name="LearnerManagementSoap" binding="tns:LearnerManagementSoap">
-      <soap:address location="https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx" />
+      <soap:address location="https://www.lingoda.care/WebService/LearnerManagement.asmx" />
     </wsdl:port>
     <wsdl:port name="LearnerManagementSoap12" binding="tns:LearnerManagementSoap12">
-      <soap12:address location="https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx" />
+      <soap12:address location="https://www.lingoda.care/WebService/LearnerManagement.asmx" />
     </wsdl:port>
     <wsdl:port name="LearnerManagementHttpGet" binding="tns:LearnerManagementHttpGet">
-      <http:address location="https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx" />
+      <http:address location="https://www.lingoda.care/WebService/LearnerManagement.asmx" />
     </wsdl:port>
     <wsdl:port name="LearnerManagementHttpPost" binding="tns:LearnerManagementHttpPost">
-      <http:address location="https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx" />
+      <http:address location="https://www.lingoda.care/WebService/LearnerManagement.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

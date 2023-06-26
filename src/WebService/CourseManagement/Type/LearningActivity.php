@@ -192,6 +192,11 @@ class LearningActivity
     private $Sessions;
 
     /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfLearningActivityCohort
+     */
+    private $Cohorts;
+
+    /**
      * @var string
      */
     private $DetailsLink;
@@ -974,6 +979,27 @@ class LearningActivity
     {
         $new = clone $this;
         $new->Sessions = $Sessions;
+
+        return $new;
+    }
+
+    /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfLearningActivityCohort
+     */
+    public function getCohorts()
+    {
+        return $this->Cohorts;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfLearningActivityCohort $Cohorts
+     *
+     * @return LearningActivity
+     */
+    public function withCohorts($Cohorts)
+    {
+        $new = clone $this;
+        $new->Cohorts = $Cohorts;
 
         return $new;
     }

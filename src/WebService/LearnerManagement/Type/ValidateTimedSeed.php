@@ -21,8 +21,8 @@ class ValidateTimedSeed implements RequestInterface
     /**
      * Constructor
      *
-     * @var string $apiKey
-     * @var string $seed
+     * @param string $apiKey
+     * @param string $seed
      */
     public function __construct($apiKey, $seed)
     {

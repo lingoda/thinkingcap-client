@@ -12,8 +12,8 @@ normal=$(tput sgr0)
 # Steps to generates the files:
 
 # 1- Provide WSDL files:
-courseWsdlUrl=https://lingoda.thinkingcap.com/WebService/CourseManagement.asmx?WSDL
-learnerWsdlUrl=https://lingoda.thinkingcap.com/WebService/LearnerManagement.asmx?WSDL
+courseWsdlUrl=https://www.lingoda.care/WebService/CourseManagement.asmx?WSDL
+learnerWsdlUrl=https://www.lingoda.care/WebService/LearnerManagement.asmx?WSDL
 while true; do
     read -p "${bold}Choose yes to download the WSDL files, or no to use the existing files [Y|n]? ${normal}" answer
     answer=${answer:-Y}
@@ -69,6 +69,6 @@ pre-commit run end-of-file-fixer --files $courseFolder/CourseManagement.wsdl $le
 echo "- Mixing line ending ..."
 pre-commit run mixed-line-ending --files $courseFolder/CourseManagement.wsdl $learnerFolder/LearnerManagement.wsdl > /dev/null
 echo "- EasyCodingStandard is running ..."
-../../linters/vendor/bin/ecs check src/WebService/ --fix --config=../../linters/ecs.php  --quiet
+./linters/vendor/bin/ecs check src/WebService/ --fix --config=./linters/ecs.php  --quiet
 
 echo $'\n'"${bold}Completed successfully.${normal}"$'\n'
