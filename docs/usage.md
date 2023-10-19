@@ -38,7 +38,9 @@ use Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\GetUserByEmail;
 $getUserByEmailType = RequestFactory::create(
     $domain
     GetUserByEmail::class,
-    'testEmail@lingoda.com'
+    'testEmail@lingoda.com',
+    false, 
+    false
 );
 ```
 

@@ -29,7 +29,7 @@ final class LearnerClientTest extends KernelTestCase
                 ->withClassMap(LearnerManagementClassmap::getCollection())
         );
         /** @var EventDispatcherInterface $eventDispatcher */
-        $eventDispatcher = self::$container->get(EventDispatcherInterface::class);
+        $eventDispatcher = self::getContainer()->get(EventDispatcherInterface::class);
         $caller = new EventDispatchingCaller(new EngineCaller($engine), $eventDispatcher);
         $this->client = new LearnerManagementSoapClient($caller);
     }
