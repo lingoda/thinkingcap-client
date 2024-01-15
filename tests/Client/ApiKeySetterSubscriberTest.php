@@ -30,10 +30,10 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
 
         $event = new RequestEvent('getUserByEmail', $getUserByEmailType);
 
-        self::expectException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         /** @var ApiKeySetterSubscriber $subscriber */
-        $subscriber = self::$container->get(ApiKeySetterSubscriber::class);
+        $subscriber = self::getContainer()->get(ApiKeySetterSubscriber::class);
         $subscriber->onClientRequest($event);
     }
 
@@ -54,7 +54,7 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
         self::assertEquals(sprintf(RequestFactory::API_KEY_PLACEHOLDER, 'test2'), $request->getApiKey());
 
         /** @var ApiKeySetterSubscriber $subscriber */
-        $subscriber = self::$container->get(ApiKeySetterSubscriber::class);
+        $subscriber = self::getContainer()->get(ApiKeySetterSubscriber::class);
         $subscriber->onClientRequest($event);
 
         /** @var GetUserByEmail $request */

@@ -41,7 +41,7 @@ jobs:
         needs: [prepare]
         strategy:
             matrix:
-                install-args: ['', --prefer-lowest]
+                install-args: ['']
             fail-fast: false
         env:
             # List deprecations and fail on self ones
@@ -75,7 +75,7 @@ jobs:
 
             - name: phpstan-cache
               if: ${{ !cancelled() }}
-              uses: actions/cache@v3.2.6
+              uses: actions/cache@v3.3.2
               with:
                   key: phpstan-phppkg-${{ github.ref }}-${{ github.sha }}
                   path: linters/.phpstan-cache
