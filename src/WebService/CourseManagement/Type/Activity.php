@@ -179,6 +179,11 @@ class Activity
     /**
      * @var string
      */
+    private $SurveyContentType;
+
+    /**
+     * @var string
+     */
     private $CustomTypeName;
 
     /**
@@ -991,6 +996,27 @@ class Activity
     {
         $new = clone $this;
         $new->AttestationType = $AttestationType;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSurveyContentType()
+    {
+        return $this->SurveyContentType;
+    }
+
+    /**
+     * @param string $SurveyContentType
+     *
+     * @return Activity
+     */
+    public function withSurveyContentType($SurveyContentType)
+    {
+        $new = clone $this;
+        $new->SurveyContentType = $SurveyContentType;
 
         return $new;
     }

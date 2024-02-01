@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use PedroTroller\CS\Fixer\DoctrineMigrationsFixer;
 use PedroTroller\CS\Fixer\PhpspecFixer;
@@ -43,38 +43,41 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ECSConfig $containerConfigurator): void {
-    $containerConfigurator->import(SetList::PSR_12);
-    $containerConfigurator->import(SetList::DOCTRINE_ANNOTATIONS);
+    $containerConfigurator->sets([
+        SetList::PSR_12,
+        SetList::DOCTRINE_ANNOTATIONS,
+    ]);
 
-    $services = $containerConfigurator->services();
-    $services->set(AlignMultilineCommentFixer::class);
-    $services->set(ArrayIndentationFixer::class);
-    $services->set(CombineConsecutiveIssetsFixer::class);
-    $services->set(CombineConsecutiveUnsetsFixer::class);
-    $services->set(ConcatSpaceFixer::class)->call('configure', [[
-        'spacing' => 'one',
-    ]]);
-    $services->set(DeclareEqualNormalizeFixer::class)->call('configure', [[
+    $containerConfigurator->rule(AlignMultilineCommentFixer::class);
+    $containerConfigurator->rule(ArrayIndentationFixer::class);
+    $containerConfigurator->rule(CombineConsecutiveIssetsFixer::class);
+    $containerConfigurator->rule(CombineConsecutiveUnsetsFixer::class);
+    $containerConfigurator->ruleWithConfiguration(ConcatSpaceFixer::class,
+        [
+            'spacing' => 'one',
+        ],
+    );
+    $containerConfigurator->ruleWithConfiguration(DeclareEqualNormalizeFixer::class, [
         'space' => 'single',
-    ]]);
-    $services->set(ListSyntaxFixer::class)->call('configure', [[
-        'syntax' => 'long',
-    ]]);
-    $services->set(MbStrFunctionsFixer::class);
-    $services->set(MethodArgumentSpaceFixer::class)->call('configure', [[
+    ]);
+    $containerConfigurator->ruleWithConfiguration(ListSyntaxFixer::class, [
+            'syntax' => 'long',
+    ]);
+    $containerConfigurator->rule(MbStrFunctionsFixer::class);
+    $containerConfigurator->ruleWithConfiguration(MethodArgumentSpaceFixer::class, [
         'after_heredoc' => false,
         'keep_multiple_spaces_after_comma' => false,
         'on_multiline' => 'ensure_fully_multiline',
-    ]]);
-    $services->set(MethodChainingIndentationFixer::class);
-    $services->set(MultilineCommentOpeningClosingFixer::class);
-    $services->set(MultilineWhitespaceBeforeSemicolonsFixer::class)->call('configure', [[
+    ]);
+    $containerConfigurator->rule(MethodChainingIndentationFixer::class);
+    $containerConfigurator->rule(MultilineCommentOpeningClosingFixer::class);
+    $containerConfigurator->ruleWithConfiguration(MultilineWhitespaceBeforeSemicolonsFixer::class, [
         'strategy' => 'new_line_for_chained_calls',
-    ]]);
-    $services->set(NoSuperfluousElseifFixer::class);
-    $services->set(NoUselessElseFixer::class);
-    $services->set(NullableTypeDeclarationForDefaultNullValueFixer::class);
-    $services->set(OrderedClassElementsFixer::class)->call('configure', [[
+    ]);
+    $containerConfigurator->rule(NoSuperfluousElseifFixer::class);
+    $containerConfigurator->rule(NoUselessElseFixer::class);
+    $containerConfigurator->rule(NullableTypeDeclarationForDefaultNullValueFixer::class);
+    $containerConfigurator->ruleWithConfiguration(OrderedClassElementsFixer::class, [
         'order' => [
             'use_trait',
             'constant_public',
@@ -85,26 +88,28 @@ return static function (ECSConfig $containerConfigurator): void {
             'property_private',
         ],
         'sort_algorithm' => 'none',
-    ]]);
-    $services->set(PhpdocNoEmptyReturnFixer::class);
-    $services->set(PhpdocOrderFixer::class);
-    $services->set(CommentToPhpdocFixer::class);
-    $services->set(StrictComparisonFixer::class);
-    $services->set(StandaloneLinePromotedPropertyFixer::class);
-    $services->set(StrictParamFixer::class);
-    $services->set(PhpspecFixer::class);
-    $services->set(DoctrineMigrationsFixer::class);
-    $services->set(AssignNullCoalescingToCoalesceEqualFixer::class);
-    $services->set(ShortScalarCastFixer::class);
-    $services->set(NormalizeIndexBraceFixer::class);
-    $services->set(ImplodeCallFixer::class);
-    $services->set(NoAliasFunctionsFixer::class);
-    $services->set(UseArrowFunctionsFixer::class);
-    $services->set(DeclareStrictTypesFixer::class);
-    $services->set(NoUnusedImportsFixer::class);
-    $services->set(PhpdocSeparationFixer::class);
-    $services->remove(PhpdocAlignFixer::class);
-    $services->remove(PhpdocSummaryFixer::class);
-    $services->remove(PhpdocToCommentFixer::class);
-    $services->remove(YodaStyleFixer::class);
+    ]);
+    $containerConfigurator->rule(PhpdocNoEmptyReturnFixer::class);
+    $containerConfigurator->rule(PhpdocOrderFixer::class);
+    $containerConfigurator->rule(CommentToPhpdocFixer::class);
+    $containerConfigurator->rule(StrictComparisonFixer::class);
+    $containerConfigurator->rule(StandaloneLinePromotedPropertyFixer::class);
+    $containerConfigurator->rule(StrictParamFixer::class);
+    $containerConfigurator->rule(PhpspecFixer::class);
+    $containerConfigurator->rule(DoctrineMigrationsFixer::class);
+    $containerConfigurator->rule(AssignNullCoalescingToCoalesceEqualFixer::class);
+    $containerConfigurator->rule(ShortScalarCastFixer::class);
+    $containerConfigurator->rule(NormalizeIndexBraceFixer::class);
+    $containerConfigurator->rule(ImplodeCallFixer::class);
+    $containerConfigurator->rule(NoAliasFunctionsFixer::class);
+    $containerConfigurator->rule(UseArrowFunctionsFixer::class);
+    $containerConfigurator->rule(DeclareStrictTypesFixer::class);
+    $containerConfigurator->rule(NoUnusedImportsFixer::class);
+    $containerConfigurator->rule(PhpdocSeparationFixer::class);
+    $containerConfigurator->skip([
+        PhpdocAlignFixer::class,
+        PhpdocSummaryFixer::class,
+        PhpdocToCommentFixer::class,
+        YodaStyleFixer::class,
+    ]);
 };

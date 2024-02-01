@@ -117,6 +117,11 @@ class SupervisorType
     private $SupervisorMetadataoption;
 
     /**
+     * @var bool
+     */
+    private $AutomatedMatchIncludesSupervisors;
+
+    /**
      * @return string
      */
     public function getID()
@@ -574,6 +579,27 @@ class SupervisorType
     {
         $new = clone $this;
         $new->SupervisorMetadataoption = $SupervisorMetadataoption;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAutomatedMatchIncludesSupervisors()
+    {
+        return $this->AutomatedMatchIncludesSupervisors;
+    }
+
+    /**
+     * @param bool $AutomatedMatchIncludesSupervisors
+     *
+     * @return SupervisorType
+     */
+    public function withAutomatedMatchIncludesSupervisors($AutomatedMatchIncludesSupervisors)
+    {
+        $new = clone $this;
+        $new->AutomatedMatchIncludesSupervisors = $AutomatedMatchIncludesSupervisors;
 
         return $new;
     }
