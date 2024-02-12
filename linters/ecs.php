@@ -53,13 +53,13 @@ return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->rule(CombineConsecutiveIssetsFixer::class);
     $containerConfigurator->rule(CombineConsecutiveUnsetsFixer::class);
     $containerConfigurator->ruleWithConfiguration(ConcatSpaceFixer::class, [
-            'spacing' => 'one',
+        'spacing' => 'one',
     ]);
     $containerConfigurator->ruleWithConfiguration(DeclareEqualNormalizeFixer::class, [
         'space' => 'none',
     ]);
     $containerConfigurator->ruleWithConfiguration(ListSyntaxFixer::class, [
-            'syntax' => 'long',
+        'syntax' => 'long',
     ]);
     $containerConfigurator->rule(MbStrFunctionsFixer::class);
     $containerConfigurator->ruleWithConfiguration(MethodArgumentSpaceFixer::class, [
