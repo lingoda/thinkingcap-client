@@ -52,13 +52,11 @@ return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->rule(ArrayIndentationFixer::class);
     $containerConfigurator->rule(CombineConsecutiveIssetsFixer::class);
     $containerConfigurator->rule(CombineConsecutiveUnsetsFixer::class);
-    $containerConfigurator->ruleWithConfiguration(ConcatSpaceFixer::class,
-        [
+    $containerConfigurator->ruleWithConfiguration(ConcatSpaceFixer::class, [
             'spacing' => 'one',
-        ],
-    );
+    ]);
     $containerConfigurator->ruleWithConfiguration(DeclareEqualNormalizeFixer::class, [
-        'space' => 'single',
+        'space' => 'none',
     ]);
     $containerConfigurator->ruleWithConfiguration(ListSyntaxFixer::class, [
             'syntax' => 'long',
