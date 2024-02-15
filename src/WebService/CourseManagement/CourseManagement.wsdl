@@ -172,6 +172,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="LastEnrollmentCutOff" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowSupervisorExtendDueDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SupervisorExtensionDaysLimit" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorExtensionDaysLimitStartFrom" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowEnrollmentCodeAfterEnrollmentDate" type="s:boolean" />
@@ -248,6 +249,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollPurchaseActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnLPEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FastStartLPActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
@@ -535,6 +537,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="IsPortfolioEvidence" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="PortfolioEvidenceType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="AttestationType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SurveyContentType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CustomTypeName" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="IsCompletedTrainingDate" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="TrainingCompletionDate" type="s:dateTime" />
@@ -731,6 +734,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SectionID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextEN" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Display" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="ChoiceList" type="tns:ArrayOfAnyType" />
           <s:element minOccurs="0" maxOccurs="1" name="SubquestionList" type="tns:ArrayOfAnyType" />
@@ -1051,6 +1055,9 @@
           <s:element minOccurs="1" maxOccurs="1" name="CanUseLMSLogin" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="OutsideEmail" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="NewsLetterEmailOptOutDisabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mails" type="tns:ArrayOfMail" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalFolders" type="tns:ArrayOfMailFolder" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contacts" type="tns:ArrayOfContact" />
           <s:element minOccurs="0" maxOccurs="1" name="Roles" type="tns:ArrayOfRole" />
           <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
           <s:element minOccurs="1" maxOccurs="1" name="BlockNotifications" type="s:boolean" />
@@ -1067,9 +1074,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="TACourseTitles" type="tns:ArrayOfString" />
           <s:element minOccurs="0" maxOccurs="1" name="TAActivityMaps" type="tns:ArrayOfCourse" />
           <s:element minOccurs="0" maxOccurs="1" name="TAActivityMapTitles" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="Mails" type="tns:ArrayOfMail" />
-          <s:element minOccurs="0" maxOccurs="1" name="PersonalFolders" type="tns:ArrayOfMailFolder" />
-          <s:element minOccurs="0" maxOccurs="1" name="Contacts" type="tns:ArrayOfContact" />
           <s:element minOccurs="0" maxOccurs="1" name="Impersonator" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TimeZone" type="tns:TimeZone" />
           <s:element minOccurs="0" maxOccurs="1" name="DateFormat" type="s:string" />
@@ -1085,6 +1089,58 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="languageURLs" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Mail" nillable="true" type="tns:Mail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Mail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MailID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromScreenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BCC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumReplies" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMailFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MailFolder" nillable="true" type="tns:MailFolder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MailFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Contact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactScreenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfRole">
@@ -1356,58 +1412,6 @@
       <s:complexType name="ArrayOfCourse">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfMail">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Mail" nillable="true" type="tns:Mail" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Mail">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="MailID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromScreenName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ToEmail" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BCC" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="MailDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="NumReplies" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfMailFolder">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="MailFolder" nillable="true" type="tns:MailFolder" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="MailFolder">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfContact">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Contact">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactScreenName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="CourseTALoad">

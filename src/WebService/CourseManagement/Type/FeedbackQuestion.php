@@ -22,6 +22,11 @@ class FeedbackQuestion
     private $Text;
 
     /**
+     * @var string
+     */
+    private $TextEN;
+
+    /**
      * @var int
      */
     private $Display;
@@ -170,6 +175,27 @@ class FeedbackQuestion
     {
         $new = clone $this;
         $new->Text = $Text;
+
+        return $new;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTextEN()
+    {
+        return $this->TextEN;
+    }
+
+    /**
+     * @param string $TextEN
+     *
+     * @return FeedbackQuestion
+     */
+    public function withTextEN($TextEN)
+    {
+        $new = clone $this;
+        $new->TextEN = $TextEN;
 
         return $new;
     }

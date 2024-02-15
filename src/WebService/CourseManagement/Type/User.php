@@ -192,6 +192,21 @@ class User
     private $NewsLetterEmailOptOutDisabled;
 
     /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail
+     */
+    private $Mails;
+
+    /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder
+     */
+    private $PersonalFolders;
+
+    /**
+     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact
+     */
+    private $Contacts;
+
+    /**
      * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfRole
      */
     private $Roles;
@@ -270,21 +285,6 @@ class User
      * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
      */
     private $TAActivityMapTitles;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail
-     */
-    private $Mails;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder
-     */
-    private $PersonalFolders;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact
-     */
-    private $Contacts;
 
     /**
      * @var string
@@ -1084,6 +1084,69 @@ class User
     }
 
     /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail
+     */
+    public function getMails()
+    {
+        return $this->Mails;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail $Mails
+     *
+     * @return User
+     */
+    public function withMails($Mails)
+    {
+        $new = clone $this;
+        $new->Mails = $Mails;
+
+        return $new;
+    }
+
+    /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder
+     */
+    public function getPersonalFolders()
+    {
+        return $this->PersonalFolders;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder $PersonalFolders
+     *
+     * @return User
+     */
+    public function withPersonalFolders($PersonalFolders)
+    {
+        $new = clone $this;
+        $new->PersonalFolders = $PersonalFolders;
+
+        return $new;
+    }
+
+    /**
+     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact
+     */
+    public function getContacts()
+    {
+        return $this->Contacts;
+    }
+
+    /**
+     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact $Contacts
+     *
+     * @return User
+     */
+    public function withContacts($Contacts)
+    {
+        $new = clone $this;
+        $new->Contacts = $Contacts;
+
+        return $new;
+    }
+
+    /**
      * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfRole
      */
     public function getRoles()
@@ -1415,69 +1478,6 @@ class User
     {
         $new = clone $this;
         $new->TAActivityMapTitles = $TAActivityMapTitles;
-
-        return $new;
-    }
-
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail
-     */
-    public function getMails()
-    {
-        return $this->Mails;
-    }
-
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail $Mails
-     *
-     * @return User
-     */
-    public function withMails($Mails)
-    {
-        $new = clone $this;
-        $new->Mails = $Mails;
-
-        return $new;
-    }
-
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder
-     */
-    public function getPersonalFolders()
-    {
-        return $this->PersonalFolders;
-    }
-
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder $PersonalFolders
-     *
-     * @return User
-     */
-    public function withPersonalFolders($PersonalFolders)
-    {
-        $new = clone $this;
-        $new->PersonalFolders = $PersonalFolders;
-
-        return $new;
-    }
-
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact
-     */
-    public function getContacts()
-    {
-        return $this->Contacts;
-    }
-
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact $Contacts
-     *
-     * @return User
-     */
-    public function withContacts($Contacts)
-    {
-        $new = clone $this;
-        $new->Contacts = $Contacts;
 
         return $new;
     }

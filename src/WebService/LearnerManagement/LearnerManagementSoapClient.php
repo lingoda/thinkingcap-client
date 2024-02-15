@@ -620,4 +620,16 @@ class LearnerManagementSoapClient
     {
         return ($this->caller)('SetSCORMValues', $parameters);
     }
+
+    /**
+     * @param RequestInterface|Type\SetFeedbackCompleted $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface|Type\SetFeedbackCompletedResponse
+     */
+    public function setFeedbackCompleted(\Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetFeedbackCompleted $parameters): \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SetFeedbackCompletedResponse
+    {
+        return ($this->caller)('SetFeedbackCompleted', $parameters);
+    }
 }

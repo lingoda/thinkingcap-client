@@ -272,6 +272,11 @@ class LearningType
     private $SupervisorExtensionDaysLimit;
 
     /**
+     * @var string
+     */
+    private $SupervisorExtensionDaysLimitStartFrom;
+
+    /**
      * @var \DateTimeInterface
      */
     private $StartDate;
@@ -650,6 +655,11 @@ class LearningType
      * @var bool
      */
     private $WithdrawIncompleteLPActivitiesOnLPEnroll;
+
+    /**
+     * @var bool
+     */
+    private $FastStartLPActivities;
 
     /**
      * @var bool
@@ -2605,6 +2615,27 @@ class LearningType
     }
 
     /**
+     * @return string
+     */
+    public function getSupervisorExtensionDaysLimitStartFrom()
+    {
+        return $this->SupervisorExtensionDaysLimitStartFrom;
+    }
+
+    /**
+     * @param string $SupervisorExtensionDaysLimitStartFrom
+     *
+     * @return LearningType
+     */
+    public function withSupervisorExtensionDaysLimitStartFrom($SupervisorExtensionDaysLimitStartFrom)
+    {
+        $new = clone $this;
+        $new->SupervisorExtensionDaysLimitStartFrom = $SupervisorExtensionDaysLimitStartFrom;
+
+        return $new;
+    }
+
+    /**
      * @return \DateTimeInterface
      */
     public function getStartDate()
@@ -4196,6 +4227,27 @@ class LearningType
     {
         $new = clone $this;
         $new->WithdrawIncompleteLPActivitiesOnLPEnroll = $WithdrawIncompleteLPActivitiesOnLPEnroll;
+
+        return $new;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFastStartLPActivities()
+    {
+        return $this->FastStartLPActivities;
+    }
+
+    /**
+     * @param bool $FastStartLPActivities
+     *
+     * @return LearningType
+     */
+    public function withFastStartLPActivities($FastStartLPActivities)
+    {
+        $new = clone $this;
+        $new->FastStartLPActivities = $FastStartLPActivities;
 
         return $new;
     }
