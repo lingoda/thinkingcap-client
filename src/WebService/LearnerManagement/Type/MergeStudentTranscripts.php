@@ -8,13 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class MergeStudentTranscripts implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $studentToRemainID;
+    private ?string $studentToRemainID;
 
     
-    private string $studentToGoID;
+    private ?string $studentToGoID;
 
     
     private bool $markMergedAccountsPending;
@@ -23,7 +23,7 @@ class MergeStudentTranscripts implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $studentToRemainID, string $studentToGoID, bool $markMergedAccountsPending)
+    public function __construct(?string $apiKey, ?string $studentToRemainID, ?string $studentToGoID, bool $markMergedAccountsPending)
     {
         $this->apiKey = $apiKey;
         $this->studentToRemainID = $studentToRemainID;
@@ -32,13 +32,13 @@ class MergeStudentTranscripts implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class MergeStudentTranscripts implements RequestInterface
     }
 
     
-    public function getStudentToRemainID(): string
+    public function getStudentToRemainID(): ?string
     {
         return $this->studentToRemainID;
     }
 
     
-    public function withStudentToRemainID(string $studentToRemainID): static
+    public function withStudentToRemainID(?string $studentToRemainID): static
     {
         $new = clone $this;
         $new->studentToRemainID = $studentToRemainID;
@@ -62,13 +62,13 @@ class MergeStudentTranscripts implements RequestInterface
     }
 
     
-    public function getStudentToGoID(): string
+    public function getStudentToGoID(): ?string
     {
         return $this->studentToGoID;
     }
 
     
-    public function withStudentToGoID(string $studentToGoID): static
+    public function withStudentToGoID(?string $studentToGoID): static
     {
         $new = clone $this;
         $new->studentToGoID = $studentToGoID;

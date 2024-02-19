@@ -10,13 +10,11 @@ class GetSCORMDetailsResponse implements ResultInterface
 {
     private ServiceResultOfString $GetSCORMDetailsResult;
 
-    
     public function getGetSCORMDetailsResult(): ServiceResultOfString
     {
         return $this->GetSCORMDetailsResult;
     }
 
-    
     public function withGetSCORMDetailsResult(ServiceResultOfString $GetSCORMDetailsResult): static
     {
         $new = clone $this;

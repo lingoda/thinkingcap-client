@@ -10,13 +10,11 @@ class DeleteLearningActivityResponse implements ResultInterface
 {
     private ServiceResultOfString $DeleteLearningActivityResult;
 
-    
     public function getDeleteLearningActivityResult(): ServiceResultOfString
     {
         return $this->DeleteLearningActivityResult;
     }
 
-    
     public function withDeleteLearningActivityResult(ServiceResultOfString $DeleteLearningActivityResult): static
     {
         $new = clone $this;

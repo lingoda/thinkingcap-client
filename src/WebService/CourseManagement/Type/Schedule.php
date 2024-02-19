@@ -8,10 +8,10 @@ use DateTimeInterface;
 
 class Schedule
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Period;
+    private ?string $Period;
 
     
     private int $Frequency;
@@ -20,22 +20,22 @@ class Schedule
     private int $Day;
 
     
-    private string $DayOfWeek;
+    private ?string $DayOfWeek;
 
     
     private int $WeekNumber;
 
     
-    private string $WeekNumberString;
+    private ?string $WeekNumberString;
 
     
     private int $Month;
 
     
-    private string $TimeZone;
+    private ?string $TimeZone;
 
     
-    private string $MonthString;
+    private ?string $MonthString;
 
     
     private DateTimeInterface $StartDate;
@@ -50,25 +50,25 @@ class Schedule
     private bool $Expired;
 
     
-    private string $StartTime;
+    private ?string $StartTime;
 
     
-    private string $EndTime;
+    private ?string $EndTime;
 
     
     private int $Duration;
 
     
-    private string $DurationString;
+    private ?string $DurationString;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -77,13 +77,13 @@ class Schedule
     }
 
     
-    public function getPeriod(): string
+    public function getPeriod(): ?string
     {
         return $this->Period;
     }
 
     
-    public function withPeriod(string $Period): static
+    public function withPeriod(?string $Period): static
     {
         $new = clone $this;
         $new->Period = $Period;
@@ -122,13 +122,13 @@ class Schedule
     }
 
     
-    public function getDayOfWeek(): string
+    public function getDayOfWeek(): ?string
     {
         return $this->DayOfWeek;
     }
 
     
-    public function withDayOfWeek(string $DayOfWeek): static
+    public function withDayOfWeek(?string $DayOfWeek): static
     {
         $new = clone $this;
         $new->DayOfWeek = $DayOfWeek;
@@ -152,13 +152,13 @@ class Schedule
     }
 
     
-    public function getWeekNumberString(): string
+    public function getWeekNumberString(): ?string
     {
         return $this->WeekNumberString;
     }
 
     
-    public function withWeekNumberString(string $WeekNumberString): static
+    public function withWeekNumberString(?string $WeekNumberString): static
     {
         $new = clone $this;
         $new->WeekNumberString = $WeekNumberString;
@@ -182,13 +182,13 @@ class Schedule
     }
 
     
-    public function getTimeZone(): string
+    public function getTimeZone(): ?string
     {
         return $this->TimeZone;
     }
 
     
-    public function withTimeZone(string $TimeZone): static
+    public function withTimeZone(?string $TimeZone): static
     {
         $new = clone $this;
         $new->TimeZone = $TimeZone;
@@ -197,13 +197,13 @@ class Schedule
     }
 
     
-    public function getMonthString(): string
+    public function getMonthString(): ?string
     {
         return $this->MonthString;
     }
 
     
-    public function withMonthString(string $MonthString): static
+    public function withMonthString(?string $MonthString): static
     {
         $new = clone $this;
         $new->MonthString = $MonthString;
@@ -272,13 +272,13 @@ class Schedule
     }
 
     
-    public function getStartTime(): string
+    public function getStartTime(): ?string
     {
         return $this->StartTime;
     }
 
     
-    public function withStartTime(string $StartTime): static
+    public function withStartTime(?string $StartTime): static
     {
         $new = clone $this;
         $new->StartTime = $StartTime;
@@ -287,13 +287,13 @@ class Schedule
     }
 
     
-    public function getEndTime(): string
+    public function getEndTime(): ?string
     {
         return $this->EndTime;
     }
 
     
-    public function withEndTime(string $EndTime): static
+    public function withEndTime(?string $EndTime): static
     {
         $new = clone $this;
         $new->EndTime = $EndTime;
@@ -317,13 +317,13 @@ class Schedule
     }
 
     
-    public function getDurationString(): string
+    public function getDurationString(): ?string
     {
         return $this->DurationString;
     }
 
     
-    public function withDurationString(string $DurationString): static
+    public function withDurationString(?string $DurationString): static
     {
         $new = clone $this;
         $new->DurationString = $DurationString;

@@ -10,13 +10,11 @@ class AddTrainingLocationWithTimeZoneResponse implements ResultInterface
 {
     private ServiceResultOfString $AddTrainingLocationWithTimeZoneResult;
 
-    
     public function getAddTrainingLocationWithTimeZoneResult(): ServiceResultOfString
     {
         return $this->AddTrainingLocationWithTimeZoneResult;
     }
 
-    
     public function withAddTrainingLocationWithTimeZoneResult(ServiceResultOfString $AddTrainingLocationWithTimeZoneResult): static
     {
         $new = clone $this;

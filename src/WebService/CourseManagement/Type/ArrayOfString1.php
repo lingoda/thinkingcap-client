@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfString1
 {
-    private string $Value;
+    /**
+     * @var null | array<int<0,max>, string>
+     */
+    private ?array $Value;
 
-    
-    public function getValue(): string
+    /**
+     * @return null | array<int<0,max>, string>
+     */
+    public function getValue(): ?array
     {
         return $this->Value;
     }
 
-    
-    public function withValue(string $Value): static
+    /**
+     * @param null | array<int<0,max>, string> $Value
+     */
+    public function withValue(?array $Value): static
     {
         $new = clone $this;
         $new->Value = $Value;

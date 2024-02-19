@@ -6,16 +6,16 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CourseAssignment
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Name;
+    private ?string $Name;
 
     
-    private string $Instructions;
+    private ?string $Instructions;
 
     
-    private string $CourseID;
+    private ?string $CourseID;
 
     
     private bool $Mastery;
@@ -33,13 +33,13 @@ class CourseAssignment
     private bool $AllowAudioRecordingSubmission;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -48,13 +48,13 @@ class CourseAssignment
     }
 
     
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
 
     
-    public function withName(string $Name): static
+    public function withName(?string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -63,13 +63,13 @@ class CourseAssignment
     }
 
     
-    public function getInstructions(): string
+    public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
     
-    public function withInstructions(string $Instructions): static
+    public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
         $new->Instructions = $Instructions;
@@ -78,13 +78,13 @@ class CourseAssignment
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
     
-    public function withCourseID(string $CourseID): static
+    public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;

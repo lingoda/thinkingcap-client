@@ -10,13 +10,11 @@ class TestPostResponse implements ResultInterface
 {
     private ServiceResultOfString $TestPostResult;
 
-    
     public function getTestPostResult(): ServiceResultOfString
     {
         return $this->TestPostResult;
     }
 
-    
     public function withTestPostResult(ServiceResultOfString $TestPostResult): static
     {
         $new = clone $this;

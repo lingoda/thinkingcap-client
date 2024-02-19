@@ -10,13 +10,11 @@ class GetLearningActivityEquivalencyByCodeResponse implements ResultInterface
 {
     private ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult;
 
-    
     public function getGetLearningActivityEquivalencyByCodeResult(): ServiceResultOfXmlDocument
     {
         return $this->GetLearningActivityEquivalencyByCodeResult;
     }
 
-    
     public function withGetLearningActivityEquivalencyByCodeResult(ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult): static
     {
         $new = clone $this;

@@ -10,13 +10,11 @@ class SetUserActiveByLookupResponse implements ResultInterface
 {
     private ServiceResultOfString $SetUserActiveByLookupResult;
 
-    
     public function getSetUserActiveByLookupResult(): ServiceResultOfString
     {
         return $this->SetUserActiveByLookupResult;
     }
 
-    
     public function withSetUserActiveByLookupResult(ServiceResultOfString $SetUserActiveByLookupResult): static
     {
         $new = clone $this;

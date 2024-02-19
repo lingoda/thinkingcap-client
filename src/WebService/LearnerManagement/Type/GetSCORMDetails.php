@@ -8,19 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetSCORMDetails implements RequestInterface
 {
-    private string $userLogin;
+    private ?string $userLogin;
 
     
-    private string $userPassword;
+    private ?string $userPassword;
 
     
-    private string $courseID;
+    private ?string $courseID;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $userLogin, string $userPassword, string $courseID)
+    public function __construct(?string $userLogin, ?string $userPassword, ?string $courseID)
     {
         $this->userLogin = $userLogin;
         $this->userPassword = $userPassword;
@@ -28,13 +28,13 @@ class GetSCORMDetails implements RequestInterface
     }
 
     
-    public function getUserLogin(): string
+    public function getUserLogin(): ?string
     {
         return $this->userLogin;
     }
 
     
-    public function withUserLogin(string $userLogin): static
+    public function withUserLogin(?string $userLogin): static
     {
         $new = clone $this;
         $new->userLogin = $userLogin;
@@ -43,13 +43,13 @@ class GetSCORMDetails implements RequestInterface
     }
 
     
-    public function getUserPassword(): string
+    public function getUserPassword(): ?string
     {
         return $this->userPassword;
     }
 
     
-    public function withUserPassword(string $userPassword): static
+    public function withUserPassword(?string $userPassword): static
     {
         $new = clone $this;
         $new->userPassword = $userPassword;
@@ -58,13 +58,13 @@ class GetSCORMDetails implements RequestInterface
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
     
-    public function withCourseID(string $courseID): static
+    public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;

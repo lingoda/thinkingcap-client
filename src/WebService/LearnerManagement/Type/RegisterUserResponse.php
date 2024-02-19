@@ -10,13 +10,11 @@ class RegisterUserResponse implements ResultInterface
 {
     private ServiceResultOfString $RegisterUserResult;
 
-    
     public function getRegisterUserResult(): ServiceResultOfString
     {
         return $this->RegisterUserResult;
     }
 
-    
     public function withRegisterUserResult(ServiceResultOfString $RegisterUserResult): static
     {
         $new = clone $this;

@@ -10,13 +10,11 @@ class UpdateUserMetadataValuesResponse implements ResultInterface
 {
     private ServiceResultOfString $UpdateUserMetadataValuesResult;
 
-    
     public function getUpdateUserMetadataValuesResult(): ServiceResultOfString
     {
         return $this->UpdateUserMetadataValuesResult;
     }
 
-    
     public function withUpdateUserMetadataValuesResult(ServiceResultOfString $UpdateUserMetadataValuesResult): static
     {
         $new = clone $this;

@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
+use Laminas\Code\Generator\PropertyGenerator;
+use Lingoda\ThinkingcapBundle\Resources\Assembler as CustomAssembler;
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
 use Phpro\SoapClient\CodeGenerator\Rules;
-use Phpro\SoapClient\Soap\DefaultEngineFactory;
-use Soap\ExtSoapEngine\ExtSoapOptions;
+use Phpro\SoapClient\Soap\CodeGeneratorEngineFactory;
+use Soap\Wsdl\Loader\FlatteningLoader;
+use Soap\Wsdl\Loader\StreamWrapperLoader;
 
 return Config::create()
-    ->setEngine($engine = DefaultEngineFactory::create(
-        ExtSoapOptions::defaults('src/WebService/CourseManagement/CourseManagement.wsdl', [])
-            ->disableWsdlCache()
+    ->setEngine($engine = CodeGeneratorEngineFactory::create(
+        'src/WebService/CourseManagement/CourseManagement.wsdl',
+        new FlatteningLoader(new StreamWrapperLoader())
     ))
     ->setTypeDestination('src/WebService/CourseManagement/Type')
     ->setTypeNamespace('Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type')
@@ -35,11 +38,82 @@ return Config::create()
         )
     )
     ->addRule(
+        new Rules\IsExtendingTypeRule(
+            $engine->getMetadata(),
+            new Rules\AssembleRule(new Assembler\ExtendingTypeAssembler())
+        )
+    )
+    ->addRule(
         new Rules\IsResultRule(
             $engine->getMetadata(),
             new Rules\MultiRule([
                 new Rules\AssembleRule(new Assembler\ResultAssembler()),
             ])
+        )
+    )
+    ->addRule(
+        new Rules\TypenameMatchesRule(
+            new Rules\PropertynameMatchesRule(
+                new Rules\MultiRule([
+                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
+                        (new CustomAssembler\PropertyAssemblerOptions())
+                            ->withNillable()
+                            ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
+                            ->withOptionalValue()
+                    )),
+                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
+                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
+                ]),
+                '/^(Result|Message)$/'
+            ),
+            '/^(ServiceResultOfString)$/'
+        )
+    )
+    ->addRule(
+        new Rules\TypenameMatchesRule(
+            new Rules\PropertynameMatchesRule(
+                new Rules\AssembleRule(new Assembler\PropertyAssembler(
+                    (new Assembler\PropertyAssemblerOptions())
+                        ->withOptionalValue()
+                )),
+                '/^(Tags|Sessions|CourseSession)$/'
+            ),
+            '/^(LearningActivity|ArrayOfCourseSession)$/'
+        )
+    )
+    ->addRule(
+        new Rules\TypenameMatchesRule(
+            new Rules\PropertynameMatchesRule(
+                new Rules\MultiRule([
+                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
+                        (new CustomAssembler\PropertyAssemblerOptions())
+                            ->withNillable()
+                            ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
+                            ->withDocBlocks(false)
+                    )),
+                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
+                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
+                ]),
+                '/^(ID|Type|Code|Language|Title|Description)$/'
+            ),
+            '/^(LearningActivity)$/'
+        )
+    )
+    ->addRule(
+        new Rules\TypenameMatchesRule(
+            new Rules\PropertynameMatchesRule(
+                new Rules\MultiRule([
+                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
+                        (new CustomAssembler\PropertyAssemblerOptions())
+                            ->withNillable()
+                            ->withDocBlocks(false)
+                    )),
+                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
+                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
+                ]),
+                '/Result$/'
+            ),
+            '/^(?!ServiceResultOfString)(ServiceResultOf)|(Response$)/'
         )
     )
 ;

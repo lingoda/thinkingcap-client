@@ -8,22 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseAssignmentsList implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $courseID;
+    private ?string $courseID;
 
     
-    private string $programID;
+    private ?string $programID;
 
     
-    private string $status;
+    private ?string $status;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $courseID, string $programID, string $status)
+    public function __construct(?string $apiKey, ?string $courseID, ?string $programID, ?string $status)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
@@ -32,13 +32,13 @@ class GetCourseAssignmentsList implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class GetCourseAssignmentsList implements RequestInterface
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
     
-    public function withCourseID(string $courseID): static
+    public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -62,13 +62,13 @@ class GetCourseAssignmentsList implements RequestInterface
     }
 
     
-    public function getProgramID(): string
+    public function getProgramID(): ?string
     {
         return $this->programID;
     }
 
     
-    public function withProgramID(string $programID): static
+    public function withProgramID(?string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;
@@ -77,13 +77,13 @@ class GetCourseAssignmentsList implements RequestInterface
     }
 
     
-    public function getStatus(): string
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
     
-    public function withStatus(string $status): static
+    public function withStatus(?string $status): static
     {
         $new = clone $this;
         $new->status = $status;

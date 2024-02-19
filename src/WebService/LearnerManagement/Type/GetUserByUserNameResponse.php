@@ -10,13 +10,11 @@ class GetUserByUserNameResponse implements ResultInterface
 {
     private ServiceResultOfUser $GetUserByUserNameResult;
 
-    
     public function getGetUserByUserNameResult(): ServiceResultOfUser
     {
         return $this->GetUserByUserNameResult;
     }
 
-    
     public function withGetUserByUserNameResult(ServiceResultOfUser $GetUserByUserNameResult): static
     {
         $new = clone $this;

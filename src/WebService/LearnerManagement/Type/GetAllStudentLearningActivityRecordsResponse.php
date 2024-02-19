@@ -10,13 +10,11 @@ class GetAllStudentLearningActivityRecordsResponse implements ResultInterface
 {
     private ServiceResultOfListOfLearningActivityRecord $GetAllStudentLearningActivityRecordsResult;
 
-    
     public function getGetAllStudentLearningActivityRecordsResult(): ServiceResultOfListOfLearningActivityRecord
     {
         return $this->GetAllStudentLearningActivityRecordsResult;
     }
 
-    
     public function withGetAllStudentLearningActivityRecordsResult(ServiceResultOfListOfLearningActivityRecord $GetAllStudentLearningActivityRecordsResult): static
     {
         $new = clone $this;

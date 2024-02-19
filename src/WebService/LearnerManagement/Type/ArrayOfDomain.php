@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfDomain
 {
-    private Domain $Domain;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Domain>
+     */
+    private ?array $Domain;
 
-    
-    public function getDomain(): Domain
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Domain>
+     */
+    public function getDomain(): ?array
     {
         return $this->Domain;
     }
 
-    
-    public function withDomain(Domain $Domain): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Domain> $Domain
+     */
+    public function withDomain(?array $Domain): static
     {
         $new = clone $this;
         $new->Domain = $Domain;

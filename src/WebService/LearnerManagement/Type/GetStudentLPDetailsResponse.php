@@ -10,13 +10,11 @@ class GetStudentLPDetailsResponse implements ResultInterface
 {
     private ServiceResultOfString $GetStudentLPDetailsResult;
 
-    
     public function getGetStudentLPDetailsResult(): ServiceResultOfString
     {
         return $this->GetStudentLPDetailsResult;
     }
 
-    
     public function withGetStudentLPDetailsResult(ServiceResultOfString $GetStudentLPDetailsResult): static
     {
         $new = clone $this;

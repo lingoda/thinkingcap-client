@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfDomainURLsCollection
 {
-    private DomainURLsCollection $DomainURLsCollection;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection>
+     */
+    private ?array $DomainURLsCollection;
 
-    
-    public function getDomainURLsCollection(): DomainURLsCollection
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection>
+     */
+    public function getDomainURLsCollection(): ?array
     {
         return $this->DomainURLsCollection;
     }
 
-    
-    public function withDomainURLsCollection(DomainURLsCollection $DomainURLsCollection): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection> $DomainURLsCollection
+     */
+    public function withDomainURLsCollection(?array $DomainURLsCollection): static
     {
         $new = clone $this;
         $new->DomainURLsCollection = $DomainURLsCollection;

@@ -10,13 +10,11 @@ class DeleteUserByLookupResponse implements ResultInterface
 {
     private ServiceResultOfString $DeleteUserByLookupResult;
 
-    
     public function getDeleteUserByLookupResult(): ServiceResultOfString
     {
         return $this->DeleteUserByLookupResult;
     }
 
-    
     public function withDeleteUserByLookupResult(ServiceResultOfString $DeleteUserByLookupResult): static
     {
         $new = clone $this;

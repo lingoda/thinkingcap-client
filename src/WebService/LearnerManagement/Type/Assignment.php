@@ -8,28 +8,28 @@ use DateTimeInterface;
 
 class Assignment
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Name;
+    private ?string $Name;
 
     
-    private string $Instructions;
+    private ?string $Instructions;
 
     
-    private string $CourseID;
+    private ?string $CourseID;
 
     
-    private string $CourseTitle;
+    private ?string $CourseTitle;
 
     
-    private string $StudentID;
+    private ?string $StudentID;
 
     
-    private string $StudentDisplayID;
+    private ?string $StudentDisplayID;
 
     
-    private string $StudentName;
+    private ?string $StudentName;
 
     
     private bool $AllowTextSubmission;
@@ -56,64 +56,64 @@ class Assignment
     private int $MaxAttempts;
 
     
-    private string $Comments;
+    private ?string $Comments;
 
     
-    private string $FacultyID;
+    private ?string $FacultyID;
 
     
-    private string $ContentType;
+    private ?string $ContentType;
 
     
-    private string $AudioRecordingContentType;
+    private ?string $AudioRecordingContentType;
 
     
-    private string $AdditionalFileContentType;
+    private ?string $AdditionalFileContentType;
 
     
-    private string $ReviewercontentType;
+    private ?string $ReviewercontentType;
 
     
-    private string $ReviewerfileName;
+    private ?string $ReviewerfileName;
 
     
-    private string $Extension;
+    private ?string $Extension;
 
     
-    private string $AdditionalFileExtension;
+    private ?string $AdditionalFileExtension;
 
     
-    private string $AdditionalFileExtension1;
+    private ?string $AdditionalFileExtension1;
 
     
-    private string $AdditionalFileExtension2;
+    private ?string $AdditionalFileExtension2;
 
     
-    private string $AdditionalFileExtension3;
+    private ?string $AdditionalFileExtension3;
 
     
-    private string $AdditionalFileExtension4;
+    private ?string $AdditionalFileExtension4;
 
     
-    private string $Rubric;
+    private ?string $Rubric;
 
     
-    private string $StudentNotes;
+    private ?string $StudentNotes;
 
     
-    private string $StudentTextData;
+    private ?string $StudentTextData;
 
     
-    private string $Status;
+    private ?string $Status;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -122,13 +122,13 @@ class Assignment
     }
 
     
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
 
     
-    public function withName(string $Name): static
+    public function withName(?string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -137,13 +137,13 @@ class Assignment
     }
 
     
-    public function getInstructions(): string
+    public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
     
-    public function withInstructions(string $Instructions): static
+    public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
         $new->Instructions = $Instructions;
@@ -152,13 +152,13 @@ class Assignment
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
     
-    public function withCourseID(string $CourseID): static
+    public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -167,13 +167,13 @@ class Assignment
     }
 
     
-    public function getCourseTitle(): string
+    public function getCourseTitle(): ?string
     {
         return $this->CourseTitle;
     }
 
     
-    public function withCourseTitle(string $CourseTitle): static
+    public function withCourseTitle(?string $CourseTitle): static
     {
         $new = clone $this;
         $new->CourseTitle = $CourseTitle;
@@ -182,13 +182,13 @@ class Assignment
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
     
-    public function withStudentID(string $StudentID): static
+    public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -197,13 +197,13 @@ class Assignment
     }
 
     
-    public function getStudentDisplayID(): string
+    public function getStudentDisplayID(): ?string
     {
         return $this->StudentDisplayID;
     }
 
     
-    public function withStudentDisplayID(string $StudentDisplayID): static
+    public function withStudentDisplayID(?string $StudentDisplayID): static
     {
         $new = clone $this;
         $new->StudentDisplayID = $StudentDisplayID;
@@ -212,13 +212,13 @@ class Assignment
     }
 
     
-    public function getStudentName(): string
+    public function getStudentName(): ?string
     {
         return $this->StudentName;
     }
 
     
-    public function withStudentName(string $StudentName): static
+    public function withStudentName(?string $StudentName): static
     {
         $new = clone $this;
         $new->StudentName = $StudentName;
@@ -347,13 +347,13 @@ class Assignment
     }
 
     
-    public function getComments(): string
+    public function getComments(): ?string
     {
         return $this->Comments;
     }
 
     
-    public function withComments(string $Comments): static
+    public function withComments(?string $Comments): static
     {
         $new = clone $this;
         $new->Comments = $Comments;
@@ -362,13 +362,13 @@ class Assignment
     }
 
     
-    public function getFacultyID(): string
+    public function getFacultyID(): ?string
     {
         return $this->FacultyID;
     }
 
     
-    public function withFacultyID(string $FacultyID): static
+    public function withFacultyID(?string $FacultyID): static
     {
         $new = clone $this;
         $new->FacultyID = $FacultyID;
@@ -377,13 +377,13 @@ class Assignment
     }
 
     
-    public function getContentType(): string
+    public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
     
-    public function withContentType(string $ContentType): static
+    public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -392,13 +392,13 @@ class Assignment
     }
 
     
-    public function getAudioRecordingContentType(): string
+    public function getAudioRecordingContentType(): ?string
     {
         return $this->AudioRecordingContentType;
     }
 
     
-    public function withAudioRecordingContentType(string $AudioRecordingContentType): static
+    public function withAudioRecordingContentType(?string $AudioRecordingContentType): static
     {
         $new = clone $this;
         $new->AudioRecordingContentType = $AudioRecordingContentType;
@@ -407,13 +407,13 @@ class Assignment
     }
 
     
-    public function getAdditionalFileContentType(): string
+    public function getAdditionalFileContentType(): ?string
     {
         return $this->AdditionalFileContentType;
     }
 
     
-    public function withAdditionalFileContentType(string $AdditionalFileContentType): static
+    public function withAdditionalFileContentType(?string $AdditionalFileContentType): static
     {
         $new = clone $this;
         $new->AdditionalFileContentType = $AdditionalFileContentType;
@@ -422,13 +422,13 @@ class Assignment
     }
 
     
-    public function getReviewercontentType(): string
+    public function getReviewercontentType(): ?string
     {
         return $this->ReviewercontentType;
     }
 
     
-    public function withReviewercontentType(string $ReviewercontentType): static
+    public function withReviewercontentType(?string $ReviewercontentType): static
     {
         $new = clone $this;
         $new->ReviewercontentType = $ReviewercontentType;
@@ -437,13 +437,13 @@ class Assignment
     }
 
     
-    public function getReviewerfileName(): string
+    public function getReviewerfileName(): ?string
     {
         return $this->ReviewerfileName;
     }
 
     
-    public function withReviewerfileName(string $ReviewerfileName): static
+    public function withReviewerfileName(?string $ReviewerfileName): static
     {
         $new = clone $this;
         $new->ReviewerfileName = $ReviewerfileName;
@@ -452,13 +452,13 @@ class Assignment
     }
 
     
-    public function getExtension(): string
+    public function getExtension(): ?string
     {
         return $this->Extension;
     }
 
     
-    public function withExtension(string $Extension): static
+    public function withExtension(?string $Extension): static
     {
         $new = clone $this;
         $new->Extension = $Extension;
@@ -467,13 +467,13 @@ class Assignment
     }
 
     
-    public function getAdditionalFileExtension(): string
+    public function getAdditionalFileExtension(): ?string
     {
         return $this->AdditionalFileExtension;
     }
 
     
-    public function withAdditionalFileExtension(string $AdditionalFileExtension): static
+    public function withAdditionalFileExtension(?string $AdditionalFileExtension): static
     {
         $new = clone $this;
         $new->AdditionalFileExtension = $AdditionalFileExtension;
@@ -482,13 +482,13 @@ class Assignment
     }
 
     
-    public function getAdditionalFileExtension1(): string
+    public function getAdditionalFileExtension1(): ?string
     {
         return $this->AdditionalFileExtension1;
     }
 
     
-    public function withAdditionalFileExtension1(string $AdditionalFileExtension1): static
+    public function withAdditionalFileExtension1(?string $AdditionalFileExtension1): static
     {
         $new = clone $this;
         $new->AdditionalFileExtension1 = $AdditionalFileExtension1;
@@ -497,13 +497,13 @@ class Assignment
     }
 
     
-    public function getAdditionalFileExtension2(): string
+    public function getAdditionalFileExtension2(): ?string
     {
         return $this->AdditionalFileExtension2;
     }
 
     
-    public function withAdditionalFileExtension2(string $AdditionalFileExtension2): static
+    public function withAdditionalFileExtension2(?string $AdditionalFileExtension2): static
     {
         $new = clone $this;
         $new->AdditionalFileExtension2 = $AdditionalFileExtension2;
@@ -512,13 +512,13 @@ class Assignment
     }
 
     
-    public function getAdditionalFileExtension3(): string
+    public function getAdditionalFileExtension3(): ?string
     {
         return $this->AdditionalFileExtension3;
     }
 
     
-    public function withAdditionalFileExtension3(string $AdditionalFileExtension3): static
+    public function withAdditionalFileExtension3(?string $AdditionalFileExtension3): static
     {
         $new = clone $this;
         $new->AdditionalFileExtension3 = $AdditionalFileExtension3;
@@ -527,13 +527,13 @@ class Assignment
     }
 
     
-    public function getAdditionalFileExtension4(): string
+    public function getAdditionalFileExtension4(): ?string
     {
         return $this->AdditionalFileExtension4;
     }
 
     
-    public function withAdditionalFileExtension4(string $AdditionalFileExtension4): static
+    public function withAdditionalFileExtension4(?string $AdditionalFileExtension4): static
     {
         $new = clone $this;
         $new->AdditionalFileExtension4 = $AdditionalFileExtension4;
@@ -542,13 +542,13 @@ class Assignment
     }
 
     
-    public function getRubric(): string
+    public function getRubric(): ?string
     {
         return $this->Rubric;
     }
 
     
-    public function withRubric(string $Rubric): static
+    public function withRubric(?string $Rubric): static
     {
         $new = clone $this;
         $new->Rubric = $Rubric;
@@ -557,13 +557,13 @@ class Assignment
     }
 
     
-    public function getStudentNotes(): string
+    public function getStudentNotes(): ?string
     {
         return $this->StudentNotes;
     }
 
     
-    public function withStudentNotes(string $StudentNotes): static
+    public function withStudentNotes(?string $StudentNotes): static
     {
         $new = clone $this;
         $new->StudentNotes = $StudentNotes;
@@ -572,13 +572,13 @@ class Assignment
     }
 
     
-    public function getStudentTextData(): string
+    public function getStudentTextData(): ?string
     {
         return $this->StudentTextData;
     }
 
     
-    public function withStudentTextData(string $StudentTextData): static
+    public function withStudentTextData(?string $StudentTextData): static
     {
         $new = clone $this;
         $new->StudentTextData = $StudentTextData;
@@ -587,13 +587,13 @@ class Assignment
     }
 
     
-    public function getStatus(): string
+    public function getStatus(): ?string
     {
         return $this->Status;
     }
 
     
-    public function withStatus(string $Status): static
+    public function withStatus(?string $Status): static
     {
         $new = clone $this;
         $new->Status = $Status;

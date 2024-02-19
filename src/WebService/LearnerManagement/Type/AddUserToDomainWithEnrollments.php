@@ -8,13 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class AddUserToDomainWithEnrollments implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userID;
+    private ?string $userID;
 
     
-    private string $domainID;
+    private ?string $domainID;
 
     
     private bool $doAutoEnrollment;
@@ -23,7 +23,7 @@ class AddUserToDomainWithEnrollments implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $userID, string $domainID, bool $doAutoEnrollment)
+    public function __construct(?string $apiKey, ?string $userID, ?string $domainID, bool $doAutoEnrollment)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
@@ -32,13 +32,13 @@ class AddUserToDomainWithEnrollments implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class AddUserToDomainWithEnrollments implements RequestInterface
     }
 
     
-    public function getUserID(): string
+    public function getUserID(): ?string
     {
         return $this->userID;
     }
 
     
-    public function withUserID(string $userID): static
+    public function withUserID(?string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -62,13 +62,13 @@ class AddUserToDomainWithEnrollments implements RequestInterface
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
     
-    public function withDomainID(string $domainID): static
+    public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;

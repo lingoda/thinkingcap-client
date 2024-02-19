@@ -8,19 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityDetails implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $activityID;
+    private ?string $activityID;
 
     
-    private string $customFieldIDs;
+    private ?string $customFieldIDs;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $activityID, string $customFieldIDs)
+    public function __construct(?string $apiKey, ?string $activityID, ?string $customFieldIDs)
     {
         $this->apiKey = $apiKey;
         $this->activityID = $activityID;
@@ -28,13 +28,13 @@ class GetLearningActivityDetails implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -43,13 +43,13 @@ class GetLearningActivityDetails implements RequestInterface
     }
 
     
-    public function getActivityID(): string
+    public function getActivityID(): ?string
     {
         return $this->activityID;
     }
 
     
-    public function withActivityID(string $activityID): static
+    public function withActivityID(?string $activityID): static
     {
         $new = clone $this;
         $new->activityID = $activityID;
@@ -58,13 +58,13 @@ class GetLearningActivityDetails implements RequestInterface
     }
 
     
-    public function getCustomFieldIDs(): string
+    public function getCustomFieldIDs(): ?string
     {
         return $this->customFieldIDs;
     }
 
     
-    public function withCustomFieldIDs(string $customFieldIDs): static
+    public function withCustomFieldIDs(?string $customFieldIDs): static
     {
         $new = clone $this;
         $new->customFieldIDs = $customFieldIDs;

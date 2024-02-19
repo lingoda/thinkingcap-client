@@ -10,13 +10,11 @@ class GetLearningActivityListEnrollmentsTruncatedResponse implements ResultInter
 {
     private ServiceResultOfXmlDocument $getLearningActivityListEnrollmentsTruncatedResult;
 
-    
     public function getGetLearningActivityListEnrollmentsTruncatedResult(): ServiceResultOfXmlDocument
     {
         return $this->getLearningActivityListEnrollmentsTruncatedResult;
     }
 
-    
     public function withGetLearningActivityListEnrollmentsTruncatedResult(ServiceResultOfXmlDocument $getLearningActivityListEnrollmentsTruncatedResult): static
     {
         $new = clone $this;

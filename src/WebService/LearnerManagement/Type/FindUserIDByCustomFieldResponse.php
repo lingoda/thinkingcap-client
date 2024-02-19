@@ -10,13 +10,11 @@ class FindUserIDByCustomFieldResponse implements ResultInterface
 {
     private ServiceResultOfString $FindUserIDByCustomFieldResult;
 
-    
     public function getFindUserIDByCustomFieldResult(): ServiceResultOfString
     {
         return $this->FindUserIDByCustomFieldResult;
     }
 
-    
     public function withFindUserIDByCustomFieldResult(ServiceResultOfString $FindUserIDByCustomFieldResult): static
     {
         $new = clone $this;

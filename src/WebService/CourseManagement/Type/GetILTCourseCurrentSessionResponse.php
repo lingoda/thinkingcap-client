@@ -10,13 +10,11 @@ class GetILTCourseCurrentSessionResponse implements ResultInterface
 {
     private ServiceResultOfCourseSession $GetILTCourseCurrentSessionResult;
 
-    
     public function getGetILTCourseCurrentSessionResult(): ServiceResultOfCourseSession
     {
         return $this->GetILTCourseCurrentSessionResult;
     }
 
-    
     public function withGetILTCourseCurrentSessionResult(ServiceResultOfCourseSession $GetILTCourseCurrentSessionResult): static
     {
         $new = clone $this;

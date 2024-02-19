@@ -10,13 +10,11 @@ class UpdateUserResponse implements ResultInterface
 {
     private ServiceResultOfString $UpdateUserResult;
 
-    
     public function getUpdateUserResult(): ServiceResultOfString
     {
         return $this->UpdateUserResult;
     }
 
-    
     public function withUpdateUserResult(ServiceResultOfString $UpdateUserResult): static
     {
         $new = clone $this;

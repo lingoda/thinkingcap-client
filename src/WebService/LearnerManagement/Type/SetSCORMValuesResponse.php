@@ -10,13 +10,11 @@ class SetSCORMValuesResponse implements ResultInterface
 {
     private ServiceResultOfString $SetSCORMValuesResult;
 
-    
     public function getSetSCORMValuesResult(): ServiceResultOfString
     {
         return $this->SetSCORMValuesResult;
     }
 
-    
     public function withSetSCORMValuesResult(ServiceResultOfString $SetSCORMValuesResult): static
     {
         $new = clone $this;

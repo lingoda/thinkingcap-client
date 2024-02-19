@@ -10,13 +10,11 @@ class StudentSelfEnrollResponse implements ResultInterface
 {
     private ServiceResultOfString $StudentSelfEnrollResult;
 
-    
     public function getStudentSelfEnrollResult(): ServiceResultOfString
     {
         return $this->StudentSelfEnrollResult;
     }
 
-    
     public function withStudentSelfEnrollResult(ServiceResultOfString $StudentSelfEnrollResult): static
     {
         $new = clone $this;

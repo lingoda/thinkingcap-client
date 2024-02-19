@@ -10,13 +10,11 @@ class GetLearningActivityEquivalencyByIDResponse implements ResultInterface
 {
     private ServiceResultOfCourseSeries $GetLearningActivityEquivalencyByIDResult;
 
-    
     public function getGetLearningActivityEquivalencyByIDResult(): ServiceResultOfCourseSeries
     {
         return $this->GetLearningActivityEquivalencyByIDResult;
     }
 
-    
     public function withGetLearningActivityEquivalencyByIDResult(ServiceResultOfCourseSeries $GetLearningActivityEquivalencyByIDResult): static
     {
         $new = clone $this;

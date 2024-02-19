@@ -8,25 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetAvailableCourses implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $courseType;
+    private ?string $courseType;
 
     
-    private string $onlySelfEnrollmentCourse;
+    private ?string $onlySelfEnrollmentCourse;
 
     
-    private string $programID;
+    private ?string $programID;
 
     
-    private string $language;
+    private ?string $language;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $courseType, string $onlySelfEnrollmentCourse, string $programID, string $language)
+    public function __construct(?string $apiKey, ?string $courseType, ?string $onlySelfEnrollmentCourse, ?string $programID, ?string $language)
     {
         $this->apiKey = $apiKey;
         $this->courseType = $courseType;
@@ -36,13 +36,13 @@ class GetAvailableCourses implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,13 +51,13 @@ class GetAvailableCourses implements RequestInterface
     }
 
     
-    public function getCourseType(): string
+    public function getCourseType(): ?string
     {
         return $this->courseType;
     }
 
     
-    public function withCourseType(string $courseType): static
+    public function withCourseType(?string $courseType): static
     {
         $new = clone $this;
         $new->courseType = $courseType;
@@ -66,13 +66,13 @@ class GetAvailableCourses implements RequestInterface
     }
 
     
-    public function getOnlySelfEnrollmentCourse(): string
+    public function getOnlySelfEnrollmentCourse(): ?string
     {
         return $this->onlySelfEnrollmentCourse;
     }
 
     
-    public function withOnlySelfEnrollmentCourse(string $onlySelfEnrollmentCourse): static
+    public function withOnlySelfEnrollmentCourse(?string $onlySelfEnrollmentCourse): static
     {
         $new = clone $this;
         $new->onlySelfEnrollmentCourse = $onlySelfEnrollmentCourse;
@@ -81,13 +81,13 @@ class GetAvailableCourses implements RequestInterface
     }
 
     
-    public function getProgramID(): string
+    public function getProgramID(): ?string
     {
         return $this->programID;
     }
 
     
-    public function withProgramID(string $programID): static
+    public function withProgramID(?string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;
@@ -96,13 +96,13 @@ class GetAvailableCourses implements RequestInterface
     }
 
     
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
     
-    public function withLanguage(string $language): static
+    public function withLanguage(?string $language): static
     {
         $new = clone $this;
         $new->language = $language;

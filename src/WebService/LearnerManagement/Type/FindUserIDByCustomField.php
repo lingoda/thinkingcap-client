@@ -8,19 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class FindUserIDByCustomField implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $customFieldID;
+    private ?string $customFieldID;
 
     
-    private string $customFieldValue;
+    private ?string $customFieldValue;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $customFieldID, string $customFieldValue)
+    public function __construct(?string $apiKey, ?string $customFieldID, ?string $customFieldValue)
     {
         $this->apiKey = $apiKey;
         $this->customFieldID = $customFieldID;
@@ -28,13 +28,13 @@ class FindUserIDByCustomField implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -43,13 +43,13 @@ class FindUserIDByCustomField implements RequestInterface
     }
 
     
-    public function getCustomFieldID(): string
+    public function getCustomFieldID(): ?string
     {
         return $this->customFieldID;
     }
 
     
-    public function withCustomFieldID(string $customFieldID): static
+    public function withCustomFieldID(?string $customFieldID): static
     {
         $new = clone $this;
         $new->customFieldID = $customFieldID;
@@ -58,13 +58,13 @@ class FindUserIDByCustomField implements RequestInterface
     }
 
     
-    public function getCustomFieldValue(): string
+    public function getCustomFieldValue(): ?string
     {
         return $this->customFieldValue;
     }
 
     
-    public function withCustomFieldValue(string $customFieldValue): static
+    public function withCustomFieldValue(?string $customFieldValue): static
     {
         $new = clone $this;
         $new->customFieldValue = $customFieldValue;

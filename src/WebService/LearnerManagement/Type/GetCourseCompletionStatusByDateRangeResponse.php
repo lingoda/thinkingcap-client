@@ -10,13 +10,11 @@ class GetCourseCompletionStatusByDateRangeResponse implements ResultInterface
 {
     private ServiceResultOfString $GetCourseCompletionStatusByDateRangeResult;
 
-    
     public function getGetCourseCompletionStatusByDateRangeResult(): ServiceResultOfString
     {
         return $this->GetCourseCompletionStatusByDateRangeResult;
     }
 
-    
     public function withGetCourseCompletionStatusByDateRangeResult(ServiceResultOfString $GetCourseCompletionStatusByDateRangeResult): static
     {
         $new = clone $this;

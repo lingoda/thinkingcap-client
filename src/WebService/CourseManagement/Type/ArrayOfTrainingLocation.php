@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfTrainingLocation
 {
-    private TrainingLocation $TrainingLocation;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TrainingLocation>
+     */
+    private ?array $TrainingLocation;
 
-    
-    public function getTrainingLocation(): TrainingLocation
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TrainingLocation>
+     */
+    public function getTrainingLocation(): ?array
     {
         return $this->TrainingLocation;
     }
 
-    
-    public function withTrainingLocation(TrainingLocation $TrainingLocation): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TrainingLocation> $TrainingLocation
+     */
+    public function withTrainingLocation(?array $TrainingLocation): static
     {
         $new = clone $this;
         $new->TrainingLocation = $TrainingLocation;

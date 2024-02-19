@@ -6,28 +6,28 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Contact
 {
-    private string $UserID;
+    private ?string $UserID;
 
     
-    private string $ContactID;
+    private ?string $ContactID;
 
     
-    private string $ContactName;
+    private ?string $ContactName;
 
     
-    private string $ContactScreenName;
+    private ?string $ContactScreenName;
 
     
-    private string $ContactEmail;
+    private ?string $ContactEmail;
 
     
-    public function getUserID(): string
+    public function getUserID(): ?string
     {
         return $this->UserID;
     }
 
     
-    public function withUserID(string $UserID): static
+    public function withUserID(?string $UserID): static
     {
         $new = clone $this;
         $new->UserID = $UserID;
@@ -36,13 +36,13 @@ class Contact
     }
 
     
-    public function getContactID(): string
+    public function getContactID(): ?string
     {
         return $this->ContactID;
     }
 
     
-    public function withContactID(string $ContactID): static
+    public function withContactID(?string $ContactID): static
     {
         $new = clone $this;
         $new->ContactID = $ContactID;
@@ -51,13 +51,13 @@ class Contact
     }
 
     
-    public function getContactName(): string
+    public function getContactName(): ?string
     {
         return $this->ContactName;
     }
 
     
-    public function withContactName(string $ContactName): static
+    public function withContactName(?string $ContactName): static
     {
         $new = clone $this;
         $new->ContactName = $ContactName;
@@ -66,13 +66,13 @@ class Contact
     }
 
     
-    public function getContactScreenName(): string
+    public function getContactScreenName(): ?string
     {
         return $this->ContactScreenName;
     }
 
     
-    public function withContactScreenName(string $ContactScreenName): static
+    public function withContactScreenName(?string $ContactScreenName): static
     {
         $new = clone $this;
         $new->ContactScreenName = $ContactScreenName;
@@ -81,13 +81,13 @@ class Contact
     }
 
     
-    public function getContactEmail(): string
+    public function getContactEmail(): ?string
     {
         return $this->ContactEmail;
     }
 
     
-    public function withContactEmail(string $ContactEmail): static
+    public function withContactEmail(?string $ContactEmail): static
     {
         $new = clone $this;
         $new->ContactEmail = $ContactEmail;

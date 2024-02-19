@@ -12,15 +12,13 @@ class ServiceResultOfCourseSession
     private bool $Success;
 
     
-    private string $Message;
+    private ?string $Message;
 
-    
     public function getResult(): CourseSession
     {
         return $this->Result;
     }
 
-    
     public function withResult(CourseSession $Result): static
     {
         $new = clone $this;
@@ -45,13 +43,13 @@ class ServiceResultOfCourseSession
     }
 
     
-    public function getMessage(): string
+    public function getMessage(): ?string
     {
         return $this->Message;
     }
 
     
-    public function withMessage(string $Message): static
+    public function withMessage(?string $Message): static
     {
         $new = clone $this;
         $new->Message = $Message;

@@ -10,13 +10,11 @@ class GetILTClassSizeDetailsXMLResponse implements ResultInterface
 {
     private ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult;
 
-    
     public function getGetILTClassSizeDetailsXMLResult(): ServiceResultOfXmlDocument
     {
         return $this->GetILTClassSizeDetailsXMLResult;
     }
 
-    
     public function withGetILTClassSizeDetailsXMLResult(ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult): static
     {
         $new = clone $this;

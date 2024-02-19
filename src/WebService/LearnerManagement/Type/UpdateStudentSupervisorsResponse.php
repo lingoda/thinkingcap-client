@@ -10,13 +10,11 @@ class UpdateStudentSupervisorsResponse implements ResultInterface
 {
     private ServiceResultOfString $UpdateStudentSupervisorsResult;
 
-    
     public function getUpdateStudentSupervisorsResult(): ServiceResultOfString
     {
         return $this->UpdateStudentSupervisorsResult;
     }
 
-    
     public function withUpdateStudentSupervisorsResult(ServiceResultOfString $UpdateStudentSupervisorsResult): static
     {
         $new = clone $this;

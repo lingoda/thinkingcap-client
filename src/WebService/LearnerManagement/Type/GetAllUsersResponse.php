@@ -10,13 +10,11 @@ class GetAllUsersResponse implements ResultInterface
 {
     private ServiceResultOfUserList $GetAllUsersResult;
 
-    
     public function getGetAllUsersResult(): ServiceResultOfUserList
     {
         return $this->GetAllUsersResult;
     }
 
-    
     public function withGetAllUsersResult(ServiceResultOfUserList $GetAllUsersResult): static
     {
         $new = clone $this;

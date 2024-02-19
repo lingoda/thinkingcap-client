@@ -6,31 +6,31 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class CourseSession
 {
-    private string $SessionID;
+    private ?string $SessionID;
 
     
-    private string $SessionName;
+    private ?string $SessionName;
 
     
-    private string $SessionDescription;
+    private ?string $SessionDescription;
 
     
-    private string $CourseID;
+    private ?string $CourseID;
 
     
-    private string $LocationType;
+    private ?string $LocationType;
 
     
-    private string $WebResourceLocation;
+    private ?string $WebResourceLocation;
 
     
-    private string $WebResourceLocationName;
+    private ?string $WebResourceLocationName;
 
     
-    private string $HostID;
+    private ?string $HostID;
 
     
-    private TrainingLocation $Location;
+    private ?TrainingLocation $Location;
 
     
     private bool $IsTBD;
@@ -39,79 +39,81 @@ class CourseSession
     private bool $IsMultipleDaysSession;
 
     
-    private string $SessionStartDate;
+    private ?string $SessionStartDate;
 
     
-    private string $SessionEndDate;
+    private ?string $SessionEndDate;
 
     
-    private string $CourseDate;
+    private ?string $CourseDate;
 
     
-    private string $StartHour;
+    private ?string $StartHour;
 
     
-    private string $StartMinute;
+    private ?string $StartMinute;
 
     
-    private string $EndHour;
+    private ?string $EndHour;
 
     
-    private string $EndMinute;
+    private ?string $EndMinute;
 
     
-    private string $StartMeridian;
+    private ?string $StartMeridian;
 
     
-    private string $EndMeridian;
+    private ?string $EndMeridian;
 
     
     private bool $DoProcessLocation;
 
     
-    private string $StudentID;
+    private ?string $StudentID;
 
     
     private bool $IsRequired;
 
-    
-    private Base64Binary $DocumentFile;
+    /**
+     * @var null | mixed
+     */
+    private mixed $DocumentFile;
 
     
-    private string $ContentType;
+    private ?string $ContentType;
 
     
-    private string $LastRosterFilePath;
+    private ?string $LastRosterFilePath;
 
     
-    private string $AttendanceCode;
+    private ?string $AttendanceCode;
 
     
-    private string $RecurringPeriod;
+    private ?string $RecurringPeriod;
 
     
     private int $RecurringNo;
 
     
-    private ArrayOfString $Facilitators;
+    private ?ArrayOfString $Facilitators;
 
     
-    private string $FacilitatorsList;
+    private ?string $FacilitatorsList;
 
     
-    private ArrayOfUser $Speakers;
+    private ?ArrayOfUser $Speakers;
 
     
-    private ArrayOfAnyType $CertificateRules;
+    private ?ArrayOfAnyType $CertificateRules;
 
     
-    public function getSessionID(): string
+    public function getSessionID(): ?string
     {
         return $this->SessionID;
     }
 
     
-    public function withSessionID(string $SessionID): static
+    public function withSessionID(?string $SessionID): static
     {
         $new = clone $this;
         $new->SessionID = $SessionID;
@@ -120,13 +122,13 @@ class CourseSession
     }
 
     
-    public function getSessionName(): string
+    public function getSessionName(): ?string
     {
         return $this->SessionName;
     }
 
     
-    public function withSessionName(string $SessionName): static
+    public function withSessionName(?string $SessionName): static
     {
         $new = clone $this;
         $new->SessionName = $SessionName;
@@ -135,13 +137,13 @@ class CourseSession
     }
 
     
-    public function getSessionDescription(): string
+    public function getSessionDescription(): ?string
     {
         return $this->SessionDescription;
     }
 
     
-    public function withSessionDescription(string $SessionDescription): static
+    public function withSessionDescription(?string $SessionDescription): static
     {
         $new = clone $this;
         $new->SessionDescription = $SessionDescription;
@@ -150,13 +152,13 @@ class CourseSession
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
     
-    public function withCourseID(string $CourseID): static
+    public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -165,13 +167,13 @@ class CourseSession
     }
 
     
-    public function getLocationType(): string
+    public function getLocationType(): ?string
     {
         return $this->LocationType;
     }
 
     
-    public function withLocationType(string $LocationType): static
+    public function withLocationType(?string $LocationType): static
     {
         $new = clone $this;
         $new->LocationType = $LocationType;
@@ -180,13 +182,13 @@ class CourseSession
     }
 
     
-    public function getWebResourceLocation(): string
+    public function getWebResourceLocation(): ?string
     {
         return $this->WebResourceLocation;
     }
 
     
-    public function withWebResourceLocation(string $WebResourceLocation): static
+    public function withWebResourceLocation(?string $WebResourceLocation): static
     {
         $new = clone $this;
         $new->WebResourceLocation = $WebResourceLocation;
@@ -195,13 +197,13 @@ class CourseSession
     }
 
     
-    public function getWebResourceLocationName(): string
+    public function getWebResourceLocationName(): ?string
     {
         return $this->WebResourceLocationName;
     }
 
     
-    public function withWebResourceLocationName(string $WebResourceLocationName): static
+    public function withWebResourceLocationName(?string $WebResourceLocationName): static
     {
         $new = clone $this;
         $new->WebResourceLocationName = $WebResourceLocationName;
@@ -210,13 +212,13 @@ class CourseSession
     }
 
     
-    public function getHostID(): string
+    public function getHostID(): ?string
     {
         return $this->HostID;
     }
 
     
-    public function withHostID(string $HostID): static
+    public function withHostID(?string $HostID): static
     {
         $new = clone $this;
         $new->HostID = $HostID;
@@ -225,13 +227,13 @@ class CourseSession
     }
 
     
-    public function getLocation(): TrainingLocation
+    public function getLocation(): ?TrainingLocation
     {
         return $this->Location;
     }
 
     
-    public function withLocation(TrainingLocation $Location): static
+    public function withLocation(?TrainingLocation $Location): static
     {
         $new = clone $this;
         $new->Location = $Location;
@@ -270,13 +272,13 @@ class CourseSession
     }
 
     
-    public function getSessionStartDate(): string
+    public function getSessionStartDate(): ?string
     {
         return $this->SessionStartDate;
     }
 
     
-    public function withSessionStartDate(string $SessionStartDate): static
+    public function withSessionStartDate(?string $SessionStartDate): static
     {
         $new = clone $this;
         $new->SessionStartDate = $SessionStartDate;
@@ -285,13 +287,13 @@ class CourseSession
     }
 
     
-    public function getSessionEndDate(): string
+    public function getSessionEndDate(): ?string
     {
         return $this->SessionEndDate;
     }
 
     
-    public function withSessionEndDate(string $SessionEndDate): static
+    public function withSessionEndDate(?string $SessionEndDate): static
     {
         $new = clone $this;
         $new->SessionEndDate = $SessionEndDate;
@@ -300,13 +302,13 @@ class CourseSession
     }
 
     
-    public function getCourseDate(): string
+    public function getCourseDate(): ?string
     {
         return $this->CourseDate;
     }
 
     
-    public function withCourseDate(string $CourseDate): static
+    public function withCourseDate(?string $CourseDate): static
     {
         $new = clone $this;
         $new->CourseDate = $CourseDate;
@@ -315,13 +317,13 @@ class CourseSession
     }
 
     
-    public function getStartHour(): string
+    public function getStartHour(): ?string
     {
         return $this->StartHour;
     }
 
     
-    public function withStartHour(string $StartHour): static
+    public function withStartHour(?string $StartHour): static
     {
         $new = clone $this;
         $new->StartHour = $StartHour;
@@ -330,13 +332,13 @@ class CourseSession
     }
 
     
-    public function getStartMinute(): string
+    public function getStartMinute(): ?string
     {
         return $this->StartMinute;
     }
 
     
-    public function withStartMinute(string $StartMinute): static
+    public function withStartMinute(?string $StartMinute): static
     {
         $new = clone $this;
         $new->StartMinute = $StartMinute;
@@ -345,13 +347,13 @@ class CourseSession
     }
 
     
-    public function getEndHour(): string
+    public function getEndHour(): ?string
     {
         return $this->EndHour;
     }
 
     
-    public function withEndHour(string $EndHour): static
+    public function withEndHour(?string $EndHour): static
     {
         $new = clone $this;
         $new->EndHour = $EndHour;
@@ -360,13 +362,13 @@ class CourseSession
     }
 
     
-    public function getEndMinute(): string
+    public function getEndMinute(): ?string
     {
         return $this->EndMinute;
     }
 
     
-    public function withEndMinute(string $EndMinute): static
+    public function withEndMinute(?string $EndMinute): static
     {
         $new = clone $this;
         $new->EndMinute = $EndMinute;
@@ -375,13 +377,13 @@ class CourseSession
     }
 
     
-    public function getStartMeridian(): string
+    public function getStartMeridian(): ?string
     {
         return $this->StartMeridian;
     }
 
     
-    public function withStartMeridian(string $StartMeridian): static
+    public function withStartMeridian(?string $StartMeridian): static
     {
         $new = clone $this;
         $new->StartMeridian = $StartMeridian;
@@ -390,13 +392,13 @@ class CourseSession
     }
 
     
-    public function getEndMeridian(): string
+    public function getEndMeridian(): ?string
     {
         return $this->EndMeridian;
     }
 
     
-    public function withEndMeridian(string $EndMeridian): static
+    public function withEndMeridian(?string $EndMeridian): static
     {
         $new = clone $this;
         $new->EndMeridian = $EndMeridian;
@@ -420,13 +422,13 @@ class CourseSession
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
     
-    public function withStudentID(string $StudentID): static
+    public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -449,14 +451,18 @@ class CourseSession
         return $new;
     }
 
-    
-    public function getDocumentFile(): Base64Binary
+    /**
+     * @return null | mixed
+     */
+    public function getDocumentFile(): mixed
     {
         return $this->DocumentFile;
     }
 
-    
-    public function withDocumentFile(Base64Binary $DocumentFile): static
+    /**
+     * @param null | mixed $DocumentFile
+     */
+    public function withDocumentFile(mixed $DocumentFile): static
     {
         $new = clone $this;
         $new->DocumentFile = $DocumentFile;
@@ -465,13 +471,13 @@ class CourseSession
     }
 
     
-    public function getContentType(): string
+    public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
     
-    public function withContentType(string $ContentType): static
+    public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -480,13 +486,13 @@ class CourseSession
     }
 
     
-    public function getLastRosterFilePath(): string
+    public function getLastRosterFilePath(): ?string
     {
         return $this->LastRosterFilePath;
     }
 
     
-    public function withLastRosterFilePath(string $LastRosterFilePath): static
+    public function withLastRosterFilePath(?string $LastRosterFilePath): static
     {
         $new = clone $this;
         $new->LastRosterFilePath = $LastRosterFilePath;
@@ -495,13 +501,13 @@ class CourseSession
     }
 
     
-    public function getAttendanceCode(): string
+    public function getAttendanceCode(): ?string
     {
         return $this->AttendanceCode;
     }
 
     
-    public function withAttendanceCode(string $AttendanceCode): static
+    public function withAttendanceCode(?string $AttendanceCode): static
     {
         $new = clone $this;
         $new->AttendanceCode = $AttendanceCode;
@@ -510,13 +516,13 @@ class CourseSession
     }
 
     
-    public function getRecurringPeriod(): string
+    public function getRecurringPeriod(): ?string
     {
         return $this->RecurringPeriod;
     }
 
     
-    public function withRecurringPeriod(string $RecurringPeriod): static
+    public function withRecurringPeriod(?string $RecurringPeriod): static
     {
         $new = clone $this;
         $new->RecurringPeriod = $RecurringPeriod;
@@ -540,13 +546,13 @@ class CourseSession
     }
 
     
-    public function getFacilitators(): ArrayOfString
+    public function getFacilitators(): ?ArrayOfString
     {
         return $this->Facilitators;
     }
 
     
-    public function withFacilitators(ArrayOfString $Facilitators): static
+    public function withFacilitators(?ArrayOfString $Facilitators): static
     {
         $new = clone $this;
         $new->Facilitators = $Facilitators;
@@ -555,13 +561,13 @@ class CourseSession
     }
 
     
-    public function getFacilitatorsList(): string
+    public function getFacilitatorsList(): ?string
     {
         return $this->FacilitatorsList;
     }
 
     
-    public function withFacilitatorsList(string $FacilitatorsList): static
+    public function withFacilitatorsList(?string $FacilitatorsList): static
     {
         $new = clone $this;
         $new->FacilitatorsList = $FacilitatorsList;
@@ -570,13 +576,13 @@ class CourseSession
     }
 
     
-    public function getSpeakers(): ArrayOfUser
+    public function getSpeakers(): ?ArrayOfUser
     {
         return $this->Speakers;
     }
 
     
-    public function withSpeakers(ArrayOfUser $Speakers): static
+    public function withSpeakers(?ArrayOfUser $Speakers): static
     {
         $new = clone $this;
         $new->Speakers = $Speakers;
@@ -585,13 +591,13 @@ class CourseSession
     }
 
     
-    public function getCertificateRules(): ArrayOfAnyType
+    public function getCertificateRules(): ?ArrayOfAnyType
     {
         return $this->CertificateRules;
     }
 
     
-    public function withCertificateRules(ArrayOfAnyType $CertificateRules): static
+    public function withCertificateRules(?ArrayOfAnyType $CertificateRules): static
     {
         $new = clone $this;
         $new->CertificateRules = $CertificateRules;

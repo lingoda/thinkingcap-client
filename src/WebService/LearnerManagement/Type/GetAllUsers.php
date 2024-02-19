@@ -8,25 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetAllUsers implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey)
+    public function __construct(?string $apiKey)
     {
         $this->apiKey = $apiKey;
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;

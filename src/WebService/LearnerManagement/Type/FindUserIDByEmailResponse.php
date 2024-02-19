@@ -10,13 +10,11 @@ class FindUserIDByEmailResponse implements ResultInterface
 {
     private ServiceResultOfString $FindUserIDByEmailResult;
 
-    
     public function getFindUserIDByEmailResult(): ServiceResultOfString
     {
         return $this->FindUserIDByEmailResult;
     }
 
-    
     public function withFindUserIDByEmailResult(ServiceResultOfString $FindUserIDByEmailResult): static
     {
         $new = clone $this;

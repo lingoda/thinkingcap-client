@@ -10,13 +10,11 @@ class GetUserByEmailResponse implements ResultInterface
 {
     private ServiceResultOfServiceUser $GetUserByEmailResult;
 
-    
     public function getGetUserByEmailResult(): ServiceResultOfServiceUser
     {
         return $this->GetUserByEmailResult;
     }
 
-    
     public function withGetUserByEmailResult(ServiceResultOfServiceUser $GetUserByEmailResult): static
     {
         $new = clone $this;

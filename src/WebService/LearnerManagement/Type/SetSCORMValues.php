@@ -8,22 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetSCORMValues implements RequestInterface
 {
-    private string $userLogin;
+    private ?string $userLogin;
 
     
-    private string $userPassword;
+    private ?string $userPassword;
 
     
-    private string $courseID;
+    private ?string $courseID;
 
     
-    private string $scormObjectJson;
+    private ?string $scormObjectJson;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $userLogin, string $userPassword, string $courseID, string $scormObjectJson)
+    public function __construct(?string $userLogin, ?string $userPassword, ?string $courseID, ?string $scormObjectJson)
     {
         $this->userLogin = $userLogin;
         $this->userPassword = $userPassword;
@@ -32,13 +32,13 @@ class SetSCORMValues implements RequestInterface
     }
 
     
-    public function getUserLogin(): string
+    public function getUserLogin(): ?string
     {
         return $this->userLogin;
     }
 
     
-    public function withUserLogin(string $userLogin): static
+    public function withUserLogin(?string $userLogin): static
     {
         $new = clone $this;
         $new->userLogin = $userLogin;
@@ -47,13 +47,13 @@ class SetSCORMValues implements RequestInterface
     }
 
     
-    public function getUserPassword(): string
+    public function getUserPassword(): ?string
     {
         return $this->userPassword;
     }
 
     
-    public function withUserPassword(string $userPassword): static
+    public function withUserPassword(?string $userPassword): static
     {
         $new = clone $this;
         $new->userPassword = $userPassword;
@@ -62,13 +62,13 @@ class SetSCORMValues implements RequestInterface
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
     
-    public function withCourseID(string $courseID): static
+    public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -77,13 +77,13 @@ class SetSCORMValues implements RequestInterface
     }
 
     
-    public function getScormObjectJson(): string
+    public function getScormObjectJson(): ?string
     {
         return $this->scormObjectJson;
     }
 
     
-    public function withScormObjectJson(string $scormObjectJson): static
+    public function withScormObjectJson(?string $scormObjectJson): static
     {
         $new = clone $this;
         $new->scormObjectJson = $scormObjectJson;

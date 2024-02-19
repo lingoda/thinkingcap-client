@@ -8,10 +8,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class DeleteLearningActivity implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $learningActivityID;
+    private ?string $learningActivityID;
 
     
     private bool $updateAdminCatalogs;
@@ -23,7 +23,7 @@ class DeleteLearningActivity implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $learningActivityID, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
+    public function __construct(?string $apiKey, ?string $learningActivityID, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityID = $learningActivityID;
@@ -32,13 +32,13 @@ class DeleteLearningActivity implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class DeleteLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityID(): string
+    public function getLearningActivityID(): ?string
     {
         return $this->learningActivityID;
     }
 
     
-    public function withLearningActivityID(string $learningActivityID): static
+    public function withLearningActivityID(?string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;

@@ -6,19 +6,19 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class SupervisorType
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Name;
+    private ?string $Name;
 
     
-    private string $Code;
+    private ?string $Code;
 
     
-    private string $DomainID;
+    private ?string $DomainID;
 
     
-    private string $Description;
+    private ?string $Description;
 
     
     private bool $EnrollLearners;
@@ -60,28 +60,28 @@ class SupervisorType
     private bool $ViewCertificates;
 
     
-    private string $AssignmentType;
+    private ?string $AssignmentType;
 
     
-    private string $MatchingLearnersMetadata;
+    private ?string $MatchingLearnersMetadata;
 
     
-    private string $SupervisorMetadata;
+    private ?string $SupervisorMetadata;
 
     
-    private string $SupervisorMetadataoption;
+    private ?string $SupervisorMetadataoption;
 
     
     private bool $AutomatedMatchIncludesSupervisors;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -90,13 +90,13 @@ class SupervisorType
     }
 
     
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
 
     
-    public function withName(string $Name): static
+    public function withName(?string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -105,13 +105,13 @@ class SupervisorType
     }
 
     
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
 
     
-    public function withCode(string $Code): static
+    public function withCode(?string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -120,13 +120,13 @@ class SupervisorType
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->DomainID;
     }
 
     
-    public function withDomainID(string $DomainID): static
+    public function withDomainID(?string $DomainID): static
     {
         $new = clone $this;
         $new->DomainID = $DomainID;
@@ -135,13 +135,13 @@ class SupervisorType
     }
 
     
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
 
     
-    public function withDescription(string $Description): static
+    public function withDescription(?string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -345,13 +345,13 @@ class SupervisorType
     }
 
     
-    public function getAssignmentType(): string
+    public function getAssignmentType(): ?string
     {
         return $this->AssignmentType;
     }
 
     
-    public function withAssignmentType(string $AssignmentType): static
+    public function withAssignmentType(?string $AssignmentType): static
     {
         $new = clone $this;
         $new->AssignmentType = $AssignmentType;
@@ -360,13 +360,13 @@ class SupervisorType
     }
 
     
-    public function getMatchingLearnersMetadata(): string
+    public function getMatchingLearnersMetadata(): ?string
     {
         return $this->MatchingLearnersMetadata;
     }
 
     
-    public function withMatchingLearnersMetadata(string $MatchingLearnersMetadata): static
+    public function withMatchingLearnersMetadata(?string $MatchingLearnersMetadata): static
     {
         $new = clone $this;
         $new->MatchingLearnersMetadata = $MatchingLearnersMetadata;
@@ -375,13 +375,13 @@ class SupervisorType
     }
 
     
-    public function getSupervisorMetadata(): string
+    public function getSupervisorMetadata(): ?string
     {
         return $this->SupervisorMetadata;
     }
 
     
-    public function withSupervisorMetadata(string $SupervisorMetadata): static
+    public function withSupervisorMetadata(?string $SupervisorMetadata): static
     {
         $new = clone $this;
         $new->SupervisorMetadata = $SupervisorMetadata;
@@ -390,13 +390,13 @@ class SupervisorType
     }
 
     
-    public function getSupervisorMetadataoption(): string
+    public function getSupervisorMetadataoption(): ?string
     {
         return $this->SupervisorMetadataoption;
     }
 
     
-    public function withSupervisorMetadataoption(string $SupervisorMetadataoption): static
+    public function withSupervisorMetadataoption(?string $SupervisorMetadataoption): static
     {
         $new = clone $this;
         $new->SupervisorMetadataoption = $SupervisorMetadataoption;

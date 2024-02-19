@@ -10,13 +10,11 @@ class GenerateECommerceCourseTokenResponse implements ResultInterface
 {
     private ServiceResultOfString $GenerateECommerceCourseTokenResult;
 
-    
     public function getGenerateECommerceCourseTokenResult(): ServiceResultOfString
     {
         return $this->GenerateECommerceCourseTokenResult;
     }
 
-    
     public function withGenerateECommerceCourseTokenResult(ServiceResultOfString $GenerateECommerceCourseTokenResult): static
     {
         $new = clone $this;

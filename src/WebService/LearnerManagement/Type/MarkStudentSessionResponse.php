@@ -10,13 +10,11 @@ class MarkStudentSessionResponse implements ResultInterface
 {
     private ServiceResultOfString $MarkStudentSessionResult;
 
-    
     public function getMarkStudentSessionResult(): ServiceResultOfString
     {
         return $this->MarkStudentSessionResult;
     }
 
-    
     public function withMarkStudentSessionResult(ServiceResultOfString $MarkStudentSessionResult): static
     {
         $new = clone $this;

@@ -8,22 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLMSUserAutoLoginURLByUsername implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userName;
+    private ?string $userName;
 
     
-    private string $domainID;
+    private ?string $domainID;
 
     
-    private string $returnUrl;
+    private ?string $returnUrl;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $userName, string $domainID, string $returnUrl)
+    public function __construct(?string $apiKey, ?string $userName, ?string $domainID, ?string $returnUrl)
     {
         $this->apiKey = $apiKey;
         $this->userName = $userName;
@@ -32,13 +32,13 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
     }
 
     
-    public function getUserName(): string
+    public function getUserName(): ?string
     {
         return $this->userName;
     }
 
     
-    public function withUserName(string $userName): static
+    public function withUserName(?string $userName): static
     {
         $new = clone $this;
         $new->userName = $userName;
@@ -62,13 +62,13 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
     
-    public function withDomainID(string $domainID): static
+    public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;
@@ -77,13 +77,13 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
     }
 
     
-    public function getReturnUrl(): string
+    public function getReturnUrl(): ?string
     {
         return $this->returnUrl;
     }
 
     
-    public function withReturnUrl(string $returnUrl): static
+    public function withReturnUrl(?string $returnUrl): static
     {
         $new = clone $this;
         $new->returnUrl = $returnUrl;

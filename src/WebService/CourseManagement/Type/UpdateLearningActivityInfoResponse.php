@@ -10,13 +10,11 @@ class UpdateLearningActivityInfoResponse implements ResultInterface
 {
     private ServiceResultOfString $UpdateLearningActivityInfoResult;
 
-    
     public function getUpdateLearningActivityInfoResult(): ServiceResultOfString
     {
         return $this->UpdateLearningActivityInfoResult;
     }
 
-    
     public function withUpdateLearningActivityInfoResult(ServiceResultOfString $UpdateLearningActivityInfoResult): static
     {
         $new = clone $this;

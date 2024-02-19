@@ -8,49 +8,51 @@ use DateTimeInterface;
 
 class Reference
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $CourseID;
+    private ?string $CourseID;
 
     
-    private string $Type;
+    private ?string $Type;
 
     
-    private string $ISBN;
+    private ?string $ISBN;
 
     
-    private string $URL;
+    private ?string $URL;
 
     
-    private string $VideoID;
+    private ?string $VideoID;
 
     
-    private string $VideoDescription;
+    private ?string $VideoDescription;
 
     
-    private string $Title;
+    private ?string $Title;
 
     
-    private string $Author;
+    private ?string $Author;
 
     
-    private string $Comments;
+    private ?string $Comments;
 
     
-    private string $Extension;
+    private ?string $Extension;
 
     
-    private string $ContentType;
+    private ?string $ContentType;
 
     
     private int $ContentLength;
 
     
-    private string $DocumentType;
+    private ?string $DocumentType;
 
-    
-    private Base64Binary $DocumentFile;
+    /**
+     * @var null | mixed
+     */
+    private mixed $DocumentFile;
 
     
     private DateTimeInterface $UploadDate;
@@ -59,25 +61,25 @@ class Reference
     private bool $HideFromLearners;
 
     
-    private string $ParentID;
+    private ?string $ParentID;
 
     
-    private string $ObjectType;
+    private ?string $ObjectType;
 
     
-    private string $OriginalFileName;
+    private ?string $OriginalFileName;
 
     
-    private string $FieldsXml;
+    private ?string $FieldsXml;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -86,13 +88,13 @@ class Reference
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
     
-    public function withCourseID(string $CourseID): static
+    public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -101,13 +103,13 @@ class Reference
     }
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
 
     
-    public function withType(string $Type): static
+    public function withType(?string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -116,13 +118,13 @@ class Reference
     }
 
     
-    public function getISBN(): string
+    public function getISBN(): ?string
     {
         return $this->ISBN;
     }
 
     
-    public function withISBN(string $ISBN): static
+    public function withISBN(?string $ISBN): static
     {
         $new = clone $this;
         $new->ISBN = $ISBN;
@@ -131,13 +133,13 @@ class Reference
     }
 
     
-    public function getURL(): string
+    public function getURL(): ?string
     {
         return $this->URL;
     }
 
     
-    public function withURL(string $URL): static
+    public function withURL(?string $URL): static
     {
         $new = clone $this;
         $new->URL = $URL;
@@ -146,13 +148,13 @@ class Reference
     }
 
     
-    public function getVideoID(): string
+    public function getVideoID(): ?string
     {
         return $this->VideoID;
     }
 
     
-    public function withVideoID(string $VideoID): static
+    public function withVideoID(?string $VideoID): static
     {
         $new = clone $this;
         $new->VideoID = $VideoID;
@@ -161,13 +163,13 @@ class Reference
     }
 
     
-    public function getVideoDescription(): string
+    public function getVideoDescription(): ?string
     {
         return $this->VideoDescription;
     }
 
     
-    public function withVideoDescription(string $VideoDescription): static
+    public function withVideoDescription(?string $VideoDescription): static
     {
         $new = clone $this;
         $new->VideoDescription = $VideoDescription;
@@ -176,13 +178,13 @@ class Reference
     }
 
     
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
 
     
-    public function withTitle(string $Title): static
+    public function withTitle(?string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -191,13 +193,13 @@ class Reference
     }
 
     
-    public function getAuthor(): string
+    public function getAuthor(): ?string
     {
         return $this->Author;
     }
 
     
-    public function withAuthor(string $Author): static
+    public function withAuthor(?string $Author): static
     {
         $new = clone $this;
         $new->Author = $Author;
@@ -206,13 +208,13 @@ class Reference
     }
 
     
-    public function getComments(): string
+    public function getComments(): ?string
     {
         return $this->Comments;
     }
 
     
-    public function withComments(string $Comments): static
+    public function withComments(?string $Comments): static
     {
         $new = clone $this;
         $new->Comments = $Comments;
@@ -221,13 +223,13 @@ class Reference
     }
 
     
-    public function getExtension(): string
+    public function getExtension(): ?string
     {
         return $this->Extension;
     }
 
     
-    public function withExtension(string $Extension): static
+    public function withExtension(?string $Extension): static
     {
         $new = clone $this;
         $new->Extension = $Extension;
@@ -236,13 +238,13 @@ class Reference
     }
 
     
-    public function getContentType(): string
+    public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
     
-    public function withContentType(string $ContentType): static
+    public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -266,13 +268,13 @@ class Reference
     }
 
     
-    public function getDocumentType(): string
+    public function getDocumentType(): ?string
     {
         return $this->DocumentType;
     }
 
     
-    public function withDocumentType(string $DocumentType): static
+    public function withDocumentType(?string $DocumentType): static
     {
         $new = clone $this;
         $new->DocumentType = $DocumentType;
@@ -280,14 +282,18 @@ class Reference
         return $new;
     }
 
-    
-    public function getDocumentFile(): Base64Binary
+    /**
+     * @return null | mixed
+     */
+    public function getDocumentFile(): mixed
     {
         return $this->DocumentFile;
     }
 
-    
-    public function withDocumentFile(Base64Binary $DocumentFile): static
+    /**
+     * @param null | mixed $DocumentFile
+     */
+    public function withDocumentFile(mixed $DocumentFile): static
     {
         $new = clone $this;
         $new->DocumentFile = $DocumentFile;
@@ -326,13 +332,13 @@ class Reference
     }
 
     
-    public function getParentID(): string
+    public function getParentID(): ?string
     {
         return $this->ParentID;
     }
 
     
-    public function withParentID(string $ParentID): static
+    public function withParentID(?string $ParentID): static
     {
         $new = clone $this;
         $new->ParentID = $ParentID;
@@ -341,13 +347,13 @@ class Reference
     }
 
     
-    public function getObjectType(): string
+    public function getObjectType(): ?string
     {
         return $this->ObjectType;
     }
 
     
-    public function withObjectType(string $ObjectType): static
+    public function withObjectType(?string $ObjectType): static
     {
         $new = clone $this;
         $new->ObjectType = $ObjectType;
@@ -356,13 +362,13 @@ class Reference
     }
 
     
-    public function getOriginalFileName(): string
+    public function getOriginalFileName(): ?string
     {
         return $this->OriginalFileName;
     }
 
     
-    public function withOriginalFileName(string $OriginalFileName): static
+    public function withOriginalFileName(?string $OriginalFileName): static
     {
         $new = clone $this;
         $new->OriginalFileName = $OriginalFileName;
@@ -371,13 +377,13 @@ class Reference
     }
 
     
-    public function getFieldsXml(): string
+    public function getFieldsXml(): ?string
     {
         return $this->FieldsXml;
     }
 
     
-    public function withFieldsXml(string $FieldsXml): static
+    public function withFieldsXml(?string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;

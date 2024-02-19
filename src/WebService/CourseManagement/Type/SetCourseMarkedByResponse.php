@@ -10,13 +10,11 @@ class SetCourseMarkedByResponse implements ResultInterface
 {
     private ServiceResultOfString $SetCourseMarkedByResult;
 
-    
     public function getSetCourseMarkedByResult(): ServiceResultOfString
     {
         return $this->SetCourseMarkedByResult;
     }
 
-    
     public function withSetCourseMarkedByResult(ServiceResultOfString $SetCourseMarkedByResult): static
     {
         $new = clone $this;

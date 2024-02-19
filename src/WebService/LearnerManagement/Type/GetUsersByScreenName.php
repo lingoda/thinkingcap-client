@@ -8,29 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUsersByScreenName implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $screenName;
+    private ?string $screenName;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $screenName)
+    public function __construct(?string $apiKey, ?string $screenName)
     {
         $this->apiKey = $apiKey;
         $this->screenName = $screenName;
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -39,13 +39,13 @@ class GetUsersByScreenName implements RequestInterface
     }
 
     
-    public function getScreenName(): string
+    public function getScreenName(): ?string
     {
         return $this->screenName;
     }
 
     
-    public function withScreenName(string $screenName): static
+    public function withScreenName(?string $screenName): static
     {
         $new = clone $this;
         $new->screenName = $screenName;

@@ -8,13 +8,11 @@ class AddTrainingLocationResponse
 {
     private ServiceResultOfString $AddTrainingLocationResult;
 
-    
     public function getAddTrainingLocationResult(): ServiceResultOfString
     {
         return $this->AddTrainingLocationResult;
     }
 
-    
     public function withAddTrainingLocationResult(ServiceResultOfString $AddTrainingLocationResult): static
     {
         $new = clone $this;

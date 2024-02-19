@@ -8,34 +8,34 @@ use DateTimeInterface;
 
 class User
 {
-    private CustomFields $CustomFields;
+    private ?CustomFields $CustomFields;
 
     
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $DisplayID;
+    private ?string $DisplayID;
 
     
-    private string $HomeDomain;
+    private ?string $HomeDomain;
 
     
-    private string $HomeDomainName;
+    private ?string $HomeDomainName;
 
     
-    private ArrayOfDomainURLsCollection $BaseURLs;
+    private ?ArrayOfDomainURLsCollection $BaseURLs;
 
     
-    private string $FirstName;
+    private ?string $FirstName;
 
     
     private DateTimeInterface $LastLoginDate;
 
     
-    private string $LastLoginBrowser;
+    private ?string $LastLoginBrowser;
 
     
-    private string $LastLoginDevice;
+    private ?string $LastLoginDevice;
 
     
     private bool $IsLoginLocked;
@@ -53,19 +53,19 @@ class User
     private bool $CompletedUserSetup;
 
     
-    private string $LastName;
+    private ?string $LastName;
 
     
-    private string $ScreenName;
+    private ?string $ScreenName;
 
     
-    private string $Title;
+    private ?string $Title;
 
     
-    private string $Email;
+    private ?string $Email;
 
     
-    private string $UserName;
+    private ?string $UserName;
 
     
     private DateTimeInterface $CreationDate;
@@ -74,7 +74,7 @@ class User
     private DateTimeInterface $LastModifiedDate;
 
     
-    private string $CreationMethod;
+    private ?string $CreationMethod;
 
     
     private bool $ProtectFromManualChange;
@@ -83,19 +83,19 @@ class User
     private bool $ProtectFromManualDeletion;
 
     
-    private string $SyncDomain;
+    private ?string $SyncDomain;
 
     
     private DateTimeInterface $PasswordChangeDate;
 
     
-    private string $Password;
+    private ?string $Password;
 
     
     private bool $MustChangePassword;
 
     
-    private string $Language;
+    private ?string $Language;
 
     
     private bool $Active;
@@ -113,88 +113,88 @@ class User
     private bool $CanUseLMSLogin;
 
     
-    private string $OutsideEmail;
+    private ?string $OutsideEmail;
 
     
     private bool $NewsLetterEmailOptOutDisabled;
 
     
-    private ArrayOfMail $Mails;
+    private ?ArrayOfMail $Mails;
 
     
-    private ArrayOfMailFolder $PersonalFolders;
+    private ?ArrayOfMailFolder $PersonalFolders;
 
     
-    private ArrayOfContact $Contacts;
+    private ?ArrayOfContact $Contacts;
 
     
-    private ArrayOfRole $Roles;
+    private ?ArrayOfRole $Roles;
 
     
-    private ArrayOfPermission $Permissions;
+    private ?ArrayOfPermission $Permissions;
 
     
     private bool $BlockNotifications;
 
     
-    private string $BlockNotificationsReason;
+    private ?string $BlockNotificationsReason;
 
     
     private bool $BlockDomainAnnouncements;
 
     
-    private ArrayOfProgram $Programs;
+    private ?ArrayOfProgram $Programs;
 
     
     private bool $ProgramMgr;
 
     
-    private ArrayOfCourse $Courses;
+    private ?ArrayOfCourse $Courses;
 
     
-    private ArrayOfString $CourseTitles;
+    private ?ArrayOfString $CourseTitles;
 
     
-    private ArrayOfCourse $ActivityMaps;
+    private ?ArrayOfCourse $ActivityMaps;
 
     
-    private ArrayOfString $ActivityMapTitles;
+    private ?ArrayOfString $ActivityMapTitles;
 
     
-    private Course $CurrentCourse;
+    private ?Course $CurrentCourse;
 
     
-    private ArrayOfCourse $TACourses;
+    private ?ArrayOfCourse $TACourses;
 
     
-    private ArrayOfString $TACourseTitles;
+    private ?ArrayOfString $TACourseTitles;
 
     
-    private ArrayOfCourse $TAActivityMaps;
+    private ?ArrayOfCourse $TAActivityMaps;
 
     
-    private ArrayOfString $TAActivityMapTitles;
+    private ?ArrayOfString $TAActivityMapTitles;
 
     
-    private string $Impersonator;
+    private ?string $Impersonator;
 
     
-    private TimeZone $TimeZone;
+    private ?TimeZone $TimeZone;
 
     
-    private string $DateFormat;
+    private ?string $DateFormat;
 
     
-    private string $FieldsXml;
+    private ?string $FieldsXml;
 
     
-    public function getCustomFields(): CustomFields
+    public function getCustomFields(): ?CustomFields
     {
         return $this->CustomFields;
     }
 
     
-    public function withCustomFields(CustomFields $CustomFields): static
+    public function withCustomFields(?CustomFields $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
@@ -203,13 +203,13 @@ class User
     }
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -218,13 +218,13 @@ class User
     }
 
     
-    public function getDisplayID(): string
+    public function getDisplayID(): ?string
     {
         return $this->DisplayID;
     }
 
     
-    public function withDisplayID(string $DisplayID): static
+    public function withDisplayID(?string $DisplayID): static
     {
         $new = clone $this;
         $new->DisplayID = $DisplayID;
@@ -233,13 +233,13 @@ class User
     }
 
     
-    public function getHomeDomain(): string
+    public function getHomeDomain(): ?string
     {
         return $this->HomeDomain;
     }
 
     
-    public function withHomeDomain(string $HomeDomain): static
+    public function withHomeDomain(?string $HomeDomain): static
     {
         $new = clone $this;
         $new->HomeDomain = $HomeDomain;
@@ -248,13 +248,13 @@ class User
     }
 
     
-    public function getHomeDomainName(): string
+    public function getHomeDomainName(): ?string
     {
         return $this->HomeDomainName;
     }
 
     
-    public function withHomeDomainName(string $HomeDomainName): static
+    public function withHomeDomainName(?string $HomeDomainName): static
     {
         $new = clone $this;
         $new->HomeDomainName = $HomeDomainName;
@@ -263,13 +263,13 @@ class User
     }
 
     
-    public function getBaseURLs(): ArrayOfDomainURLsCollection
+    public function getBaseURLs(): ?ArrayOfDomainURLsCollection
     {
         return $this->BaseURLs;
     }
 
     
-    public function withBaseURLs(ArrayOfDomainURLsCollection $BaseURLs): static
+    public function withBaseURLs(?ArrayOfDomainURLsCollection $BaseURLs): static
     {
         $new = clone $this;
         $new->BaseURLs = $BaseURLs;
@@ -278,13 +278,13 @@ class User
     }
 
     
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->FirstName;
     }
 
     
-    public function withFirstName(string $FirstName): static
+    public function withFirstName(?string $FirstName): static
     {
         $new = clone $this;
         $new->FirstName = $FirstName;
@@ -308,13 +308,13 @@ class User
     }
 
     
-    public function getLastLoginBrowser(): string
+    public function getLastLoginBrowser(): ?string
     {
         return $this->LastLoginBrowser;
     }
 
     
-    public function withLastLoginBrowser(string $LastLoginBrowser): static
+    public function withLastLoginBrowser(?string $LastLoginBrowser): static
     {
         $new = clone $this;
         $new->LastLoginBrowser = $LastLoginBrowser;
@@ -323,13 +323,13 @@ class User
     }
 
     
-    public function getLastLoginDevice(): string
+    public function getLastLoginDevice(): ?string
     {
         return $this->LastLoginDevice;
     }
 
     
-    public function withLastLoginDevice(string $LastLoginDevice): static
+    public function withLastLoginDevice(?string $LastLoginDevice): static
     {
         $new = clone $this;
         $new->LastLoginDevice = $LastLoginDevice;
@@ -413,13 +413,13 @@ class User
     }
 
     
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->LastName;
     }
 
     
-    public function withLastName(string $LastName): static
+    public function withLastName(?string $LastName): static
     {
         $new = clone $this;
         $new->LastName = $LastName;
@@ -428,13 +428,13 @@ class User
     }
 
     
-    public function getScreenName(): string
+    public function getScreenName(): ?string
     {
         return $this->ScreenName;
     }
 
     
-    public function withScreenName(string $ScreenName): static
+    public function withScreenName(?string $ScreenName): static
     {
         $new = clone $this;
         $new->ScreenName = $ScreenName;
@@ -443,13 +443,13 @@ class User
     }
 
     
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
 
     
-    public function withTitle(string $Title): static
+    public function withTitle(?string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -458,13 +458,13 @@ class User
     }
 
     
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->Email;
     }
 
     
-    public function withEmail(string $Email): static
+    public function withEmail(?string $Email): static
     {
         $new = clone $this;
         $new->Email = $Email;
@@ -473,13 +473,13 @@ class User
     }
 
     
-    public function getUserName(): string
+    public function getUserName(): ?string
     {
         return $this->UserName;
     }
 
     
-    public function withUserName(string $UserName): static
+    public function withUserName(?string $UserName): static
     {
         $new = clone $this;
         $new->UserName = $UserName;
@@ -518,13 +518,13 @@ class User
     }
 
     
-    public function getCreationMethod(): string
+    public function getCreationMethod(): ?string
     {
         return $this->CreationMethod;
     }
 
     
-    public function withCreationMethod(string $CreationMethod): static
+    public function withCreationMethod(?string $CreationMethod): static
     {
         $new = clone $this;
         $new->CreationMethod = $CreationMethod;
@@ -563,13 +563,13 @@ class User
     }
 
     
-    public function getSyncDomain(): string
+    public function getSyncDomain(): ?string
     {
         return $this->SyncDomain;
     }
 
     
-    public function withSyncDomain(string $SyncDomain): static
+    public function withSyncDomain(?string $SyncDomain): static
     {
         $new = clone $this;
         $new->SyncDomain = $SyncDomain;
@@ -593,13 +593,13 @@ class User
     }
 
     
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return $this->Password;
     }
 
     
-    public function withPassword(string $Password): static
+    public function withPassword(?string $Password): static
     {
         $new = clone $this;
         $new->Password = $Password;
@@ -623,13 +623,13 @@ class User
     }
 
     
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->Language;
     }
 
     
-    public function withLanguage(string $Language): static
+    public function withLanguage(?string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -713,13 +713,13 @@ class User
     }
 
     
-    public function getOutsideEmail(): string
+    public function getOutsideEmail(): ?string
     {
         return $this->OutsideEmail;
     }
 
     
-    public function withOutsideEmail(string $OutsideEmail): static
+    public function withOutsideEmail(?string $OutsideEmail): static
     {
         $new = clone $this;
         $new->OutsideEmail = $OutsideEmail;
@@ -743,13 +743,13 @@ class User
     }
 
     
-    public function getMails(): ArrayOfMail
+    public function getMails(): ?ArrayOfMail
     {
         return $this->Mails;
     }
 
     
-    public function withMails(ArrayOfMail $Mails): static
+    public function withMails(?ArrayOfMail $Mails): static
     {
         $new = clone $this;
         $new->Mails = $Mails;
@@ -758,13 +758,13 @@ class User
     }
 
     
-    public function getPersonalFolders(): ArrayOfMailFolder
+    public function getPersonalFolders(): ?ArrayOfMailFolder
     {
         return $this->PersonalFolders;
     }
 
     
-    public function withPersonalFolders(ArrayOfMailFolder $PersonalFolders): static
+    public function withPersonalFolders(?ArrayOfMailFolder $PersonalFolders): static
     {
         $new = clone $this;
         $new->PersonalFolders = $PersonalFolders;
@@ -773,13 +773,13 @@ class User
     }
 
     
-    public function getContacts(): ArrayOfContact
+    public function getContacts(): ?ArrayOfContact
     {
         return $this->Contacts;
     }
 
     
-    public function withContacts(ArrayOfContact $Contacts): static
+    public function withContacts(?ArrayOfContact $Contacts): static
     {
         $new = clone $this;
         $new->Contacts = $Contacts;
@@ -788,13 +788,13 @@ class User
     }
 
     
-    public function getRoles(): ArrayOfRole
+    public function getRoles(): ?ArrayOfRole
     {
         return $this->Roles;
     }
 
     
-    public function withRoles(ArrayOfRole $Roles): static
+    public function withRoles(?ArrayOfRole $Roles): static
     {
         $new = clone $this;
         $new->Roles = $Roles;
@@ -803,13 +803,13 @@ class User
     }
 
     
-    public function getPermissions(): ArrayOfPermission
+    public function getPermissions(): ?ArrayOfPermission
     {
         return $this->Permissions;
     }
 
     
-    public function withPermissions(ArrayOfPermission $Permissions): static
+    public function withPermissions(?ArrayOfPermission $Permissions): static
     {
         $new = clone $this;
         $new->Permissions = $Permissions;
@@ -833,13 +833,13 @@ class User
     }
 
     
-    public function getBlockNotificationsReason(): string
+    public function getBlockNotificationsReason(): ?string
     {
         return $this->BlockNotificationsReason;
     }
 
     
-    public function withBlockNotificationsReason(string $BlockNotificationsReason): static
+    public function withBlockNotificationsReason(?string $BlockNotificationsReason): static
     {
         $new = clone $this;
         $new->BlockNotificationsReason = $BlockNotificationsReason;
@@ -863,13 +863,13 @@ class User
     }
 
     
-    public function getPrograms(): ArrayOfProgram
+    public function getPrograms(): ?ArrayOfProgram
     {
         return $this->Programs;
     }
 
     
-    public function withPrograms(ArrayOfProgram $Programs): static
+    public function withPrograms(?ArrayOfProgram $Programs): static
     {
         $new = clone $this;
         $new->Programs = $Programs;
@@ -893,13 +893,13 @@ class User
     }
 
     
-    public function getCourses(): ArrayOfCourse
+    public function getCourses(): ?ArrayOfCourse
     {
         return $this->Courses;
     }
 
     
-    public function withCourses(ArrayOfCourse $Courses): static
+    public function withCourses(?ArrayOfCourse $Courses): static
     {
         $new = clone $this;
         $new->Courses = $Courses;
@@ -908,13 +908,13 @@ class User
     }
 
     
-    public function getCourseTitles(): ArrayOfString
+    public function getCourseTitles(): ?ArrayOfString
     {
         return $this->CourseTitles;
     }
 
     
-    public function withCourseTitles(ArrayOfString $CourseTitles): static
+    public function withCourseTitles(?ArrayOfString $CourseTitles): static
     {
         $new = clone $this;
         $new->CourseTitles = $CourseTitles;
@@ -923,13 +923,13 @@ class User
     }
 
     
-    public function getActivityMaps(): ArrayOfCourse
+    public function getActivityMaps(): ?ArrayOfCourse
     {
         return $this->ActivityMaps;
     }
 
     
-    public function withActivityMaps(ArrayOfCourse $ActivityMaps): static
+    public function withActivityMaps(?ArrayOfCourse $ActivityMaps): static
     {
         $new = clone $this;
         $new->ActivityMaps = $ActivityMaps;
@@ -938,13 +938,13 @@ class User
     }
 
     
-    public function getActivityMapTitles(): ArrayOfString
+    public function getActivityMapTitles(): ?ArrayOfString
     {
         return $this->ActivityMapTitles;
     }
 
     
-    public function withActivityMapTitles(ArrayOfString $ActivityMapTitles): static
+    public function withActivityMapTitles(?ArrayOfString $ActivityMapTitles): static
     {
         $new = clone $this;
         $new->ActivityMapTitles = $ActivityMapTitles;
@@ -953,13 +953,13 @@ class User
     }
 
     
-    public function getCurrentCourse(): Course
+    public function getCurrentCourse(): ?Course
     {
         return $this->CurrentCourse;
     }
 
     
-    public function withCurrentCourse(Course $CurrentCourse): static
+    public function withCurrentCourse(?Course $CurrentCourse): static
     {
         $new = clone $this;
         $new->CurrentCourse = $CurrentCourse;
@@ -968,13 +968,13 @@ class User
     }
 
     
-    public function getTACourses(): ArrayOfCourse
+    public function getTACourses(): ?ArrayOfCourse
     {
         return $this->TACourses;
     }
 
     
-    public function withTACourses(ArrayOfCourse $TACourses): static
+    public function withTACourses(?ArrayOfCourse $TACourses): static
     {
         $new = clone $this;
         $new->TACourses = $TACourses;
@@ -983,13 +983,13 @@ class User
     }
 
     
-    public function getTACourseTitles(): ArrayOfString
+    public function getTACourseTitles(): ?ArrayOfString
     {
         return $this->TACourseTitles;
     }
 
     
-    public function withTACourseTitles(ArrayOfString $TACourseTitles): static
+    public function withTACourseTitles(?ArrayOfString $TACourseTitles): static
     {
         $new = clone $this;
         $new->TACourseTitles = $TACourseTitles;
@@ -998,13 +998,13 @@ class User
     }
 
     
-    public function getTAActivityMaps(): ArrayOfCourse
+    public function getTAActivityMaps(): ?ArrayOfCourse
     {
         return $this->TAActivityMaps;
     }
 
     
-    public function withTAActivityMaps(ArrayOfCourse $TAActivityMaps): static
+    public function withTAActivityMaps(?ArrayOfCourse $TAActivityMaps): static
     {
         $new = clone $this;
         $new->TAActivityMaps = $TAActivityMaps;
@@ -1013,13 +1013,13 @@ class User
     }
 
     
-    public function getTAActivityMapTitles(): ArrayOfString
+    public function getTAActivityMapTitles(): ?ArrayOfString
     {
         return $this->TAActivityMapTitles;
     }
 
     
-    public function withTAActivityMapTitles(ArrayOfString $TAActivityMapTitles): static
+    public function withTAActivityMapTitles(?ArrayOfString $TAActivityMapTitles): static
     {
         $new = clone $this;
         $new->TAActivityMapTitles = $TAActivityMapTitles;
@@ -1028,13 +1028,13 @@ class User
     }
 
     
-    public function getImpersonator(): string
+    public function getImpersonator(): ?string
     {
         return $this->Impersonator;
     }
 
     
-    public function withImpersonator(string $Impersonator): static
+    public function withImpersonator(?string $Impersonator): static
     {
         $new = clone $this;
         $new->Impersonator = $Impersonator;
@@ -1043,13 +1043,13 @@ class User
     }
 
     
-    public function getTimeZone(): TimeZone
+    public function getTimeZone(): ?TimeZone
     {
         return $this->TimeZone;
     }
 
     
-    public function withTimeZone(TimeZone $TimeZone): static
+    public function withTimeZone(?TimeZone $TimeZone): static
     {
         $new = clone $this;
         $new->TimeZone = $TimeZone;
@@ -1058,13 +1058,13 @@ class User
     }
 
     
-    public function getDateFormat(): string
+    public function getDateFormat(): ?string
     {
         return $this->DateFormat;
     }
 
     
-    public function withDateFormat(string $DateFormat): static
+    public function withDateFormat(?string $DateFormat): static
     {
         $new = clone $this;
         $new->DateFormat = $DateFormat;
@@ -1073,13 +1073,13 @@ class User
     }
 
     
-    public function getFieldsXml(): string
+    public function getFieldsXml(): ?string
     {
         return $this->FieldsXml;
     }
 
     
-    public function withFieldsXml(string $FieldsXml): static
+    public function withFieldsXml(?string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;

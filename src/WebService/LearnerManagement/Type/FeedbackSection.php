@@ -6,10 +6,10 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class FeedbackSection
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Title;
+    private ?string $Title;
 
     
     private int $Display;
@@ -18,16 +18,16 @@ class FeedbackSection
     private bool $IsGlobal;
 
     
-    private ArrayOfFeedbackQuestion $Questions;
+    private ?ArrayOfFeedbackQuestion $Questions;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -36,13 +36,13 @@ class FeedbackSection
     }
 
     
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
 
     
-    public function withTitle(string $Title): static
+    public function withTitle(?string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -81,13 +81,13 @@ class FeedbackSection
     }
 
     
-    public function getQuestions(): ArrayOfFeedbackQuestion
+    public function getQuestions(): ?ArrayOfFeedbackQuestion
     {
         return $this->Questions;
     }
 
     
-    public function withQuestions(ArrayOfFeedbackQuestion $Questions): static
+    public function withQuestions(?ArrayOfFeedbackQuestion $Questions): static
     {
         $new = clone $this;
         $new->Questions = $Questions;

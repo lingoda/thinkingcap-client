@@ -10,13 +10,11 @@ class GetActiveDirectorySynchSettingsResponse implements ResultInterface
 {
     private ServiceResultOfString $GetActiveDirectorySynchSettingsResult;
 
-    
     public function getGetActiveDirectorySynchSettingsResult(): ServiceResultOfString
     {
         return $this->GetActiveDirectorySynchSettingsResult;
     }
 
-    
     public function withGetActiveDirectorySynchSettingsResult(ServiceResultOfString $GetActiveDirectorySynchSettingsResult): static
     {
         $new = clone $this;

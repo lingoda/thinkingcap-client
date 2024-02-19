@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfUser
 {
-    private User $User;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\User>
+     */
+    private ?array $User;
 
-    
-    public function getUser(): User
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\User>
+     */
+    public function getUser(): ?array
     {
         return $this->User;
     }
 
-    
-    public function withUser(User $User): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\User> $User
+     */
+    public function withUser(?array $User): static
     {
         $new = clone $this;
         $new->User = $User;

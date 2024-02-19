@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfServiceSupervisor
 {
-    private ServiceSupervisor $ServiceSupervisor;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor>
+     */
+    private ?array $ServiceSupervisor;
 
-    
-    public function getServiceSupervisor(): ServiceSupervisor
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor>
+     */
+    public function getServiceSupervisor(): ?array
     {
         return $this->ServiceSupervisor;
     }
 
-    
-    public function withServiceSupervisor(ServiceSupervisor $ServiceSupervisor): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor> $ServiceSupervisor
+     */
+    public function withServiceSupervisor(?array $ServiceSupervisor): static
     {
         $new = clone $this;
         $new->ServiceSupervisor = $ServiceSupervisor;

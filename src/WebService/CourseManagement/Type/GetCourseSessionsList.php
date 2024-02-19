@@ -8,29 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseSessionsList implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $courseID;
+    private ?string $courseID;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $courseID)
+    public function __construct(?string $apiKey, ?string $courseID)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -39,13 +39,13 @@ class GetCourseSessionsList implements RequestInterface
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
     
-    public function withCourseID(string $courseID): static
+    public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;

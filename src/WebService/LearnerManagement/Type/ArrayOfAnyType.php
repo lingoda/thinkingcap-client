@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfAnyType
 {
-    private mixed $anyType;
+    /**
+     * @var null | array<int<0,max>, mixed>
+     */
+    private ?array $anyType;
 
-    
-    public function getAnyType(): mixed
+    /**
+     * @return null | array<int<0,max>, mixed>
+     */
+    public function getAnyType(): ?array
     {
         return $this->anyType;
     }
 
-    
-    public function withAnyType(mixed $anyType): static
+    /**
+     * @param null | array<int<0,max>, mixed> $anyType
+     */
+    public function withAnyType(?array $anyType): static
     {
         $new = clone $this;
         $new->anyType = $anyType;

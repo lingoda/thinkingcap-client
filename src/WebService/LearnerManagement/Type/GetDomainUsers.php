@@ -8,10 +8,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetDomainUsers implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $domainID;
+    private ?string $domainID;
 
     
     private bool $includeInactive;
@@ -32,7 +32,7 @@ class GetDomainUsers implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $domainID, bool $includeInactive, bool $includeMetadata, bool $includeDomains, int $offset, int $take)
+    public function __construct(?string $apiKey, ?string $domainID, bool $includeInactive, bool $includeMetadata, bool $includeDomains, int $offset, int $take)
     {
         $this->apiKey = $apiKey;
         $this->domainID = $domainID;
@@ -44,13 +44,13 @@ class GetDomainUsers implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -59,13 +59,13 @@ class GetDomainUsers implements RequestInterface
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
     
-    public function withDomainID(string $domainID): static
+    public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;

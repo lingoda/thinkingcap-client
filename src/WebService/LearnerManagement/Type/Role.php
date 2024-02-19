@@ -6,34 +6,34 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Role
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Code;
+    private ?string $Code;
 
     
-    private string $Title;
+    private ?string $Title;
 
     
-    private string $Description;
+    private ?string $Description;
 
     
     private bool $IsDefault;
 
     
-    private string $ProgramID;
+    private ?string $ProgramID;
 
     
-    private ArrayOfPermission $Permissions;
+    private ?ArrayOfPermission $Permissions;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -42,13 +42,13 @@ class Role
     }
 
     
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
 
     
-    public function withCode(string $Code): static
+    public function withCode(?string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -57,13 +57,13 @@ class Role
     }
 
     
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
 
     
-    public function withTitle(string $Title): static
+    public function withTitle(?string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -72,13 +72,13 @@ class Role
     }
 
     
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
 
     
-    public function withDescription(string $Description): static
+    public function withDescription(?string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -102,13 +102,13 @@ class Role
     }
 
     
-    public function getProgramID(): string
+    public function getProgramID(): ?string
     {
         return $this->ProgramID;
     }
 
     
-    public function withProgramID(string $ProgramID): static
+    public function withProgramID(?string $ProgramID): static
     {
         $new = clone $this;
         $new->ProgramID = $ProgramID;
@@ -117,13 +117,13 @@ class Role
     }
 
     
-    public function getPermissions(): ArrayOfPermission
+    public function getPermissions(): ?ArrayOfPermission
     {
         return $this->Permissions;
     }
 
     
-    public function withPermissions(ArrayOfPermission $Permissions): static
+    public function withPermissions(?ArrayOfPermission $Permissions): static
     {
         $new = clone $this;
         $new->Permissions = $Permissions;

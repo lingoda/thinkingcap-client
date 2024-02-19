@@ -6,21 +6,19 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfString
 {
-    private string $Result;
+    protected string $Result = '';
+
+    
+    protected string $Message = '';
 
     
     private bool $Success;
 
-    
-    private string $Message;
-
-    
     public function getResult(): string
     {
         return $this->Result;
     }
 
-    
     public function withResult(string $Result): static
     {
         $new = clone $this;
@@ -44,13 +42,11 @@ class ServiceResultOfString
         return $new;
     }
 
-    
     public function getMessage(): string
     {
         return $this->Message;
     }
 
-    
     public function withMessage(string $Message): static
     {
         $new = clone $this;

@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
-class Course
+class Course extends LearningType
 {
-    private string $Type;
+    private ?string $Type;
 
     
     private bool $IsOnline;
 
     
-    private string $Keywords;
+    private ?string $Keywords;
 
     
     private float $CreditValue;
@@ -24,7 +24,7 @@ class Course
     private float $CertificateMinTime;
 
     
-    private string $CertificateType;
+    private ?string $CertificateType;
 
     
     private bool $CanPrintCertificate;
@@ -39,46 +39,46 @@ class Course
     private int $ExpireUnit;
 
     
-    private string $ExpireInterval;
+    private ?string $ExpireInterval;
 
     
     private int $NotifyUnit;
 
     
-    private string $NotifyInterval;
+    private ?string $NotifyInterval;
 
     
     private bool $ProctorSignIn;
 
     
-    private string $ShowModule;
+    private ?string $ShowModule;
 
     
-    private string $ShowMenu;
+    private ?string $ShowMenu;
 
     
-    private string $LastProgramID;
+    private ?string $LastProgramID;
 
     
-    private string $ProgramPath;
+    private ?string $ProgramPath;
 
     
-    private string $ModeratorID;
+    private ?string $ModeratorID;
 
     
-    private string $ModeratorName;
+    private ?string $ModeratorName;
 
     
-    private string $ModeratorUserName;
+    private ?string $ModeratorUserName;
 
     
-    private string $AutoEnrollFields;
+    private ?string $AutoEnrollFields;
 
     
-    private ArrayOfString $TeachingAssts;
+    private ?ArrayOfString $TeachingAssts;
 
     
-    private string $TeachingAssistantList;
+    private ?string $TeachingAssistantList;
 
     
     private bool $HasAssignments;
@@ -87,19 +87,19 @@ class Course
     private bool $AllowReviewAfterAttemptEnd;
 
     
-    private ArrayOfAssignment $Assignments;
+    private ?ArrayOfAssignment $Assignments;
 
     
-    private ArrayOfCourseAssignment $CourseAssignments;
+    private ?ArrayOfCourseAssignment $CourseAssignments;
 
     
     private bool $MasterGlossary;
 
     
-    private ArrayOfAnyType $Sessions;
+    private ?ArrayOfAnyType $Sessions;
 
     
-    private ArrayOfAnyType $PendingApprovalSessions;
+    private ?ArrayOfAnyType $PendingApprovalSessions;
 
     
     private int $TotalEnrolled;
@@ -132,7 +132,7 @@ class Course
     private bool $RunDirectAlways;
 
     
-    private ArrayOfCourseStylesheet $Stylesheets;
+    private ?ArrayOfCourseStylesheet $Stylesheets;
 
     
     private bool $Published;
@@ -144,16 +144,16 @@ class Course
     private bool $EndCollaborationOnCompletion;
 
     
-    private string $CollaborationTitle;
+    private ?string $CollaborationTitle;
 
     
-    private string $CollaborationDescription;
+    private ?string $CollaborationDescription;
 
     
-    private string $CollaborationCustomFields;
+    private ?string $CollaborationCustomFields;
 
     
-    private ArrayOfCourseVersion $Versions;
+    private ?ArrayOfCourseVersion $Versions;
 
     
     private bool $HasChat;
@@ -162,7 +162,7 @@ class Course
     private bool $ForceUserFeedback;
 
     
-    private FeedbackSection $Feedback;
+    private ?FeedbackSection $Feedback;
 
     
     private bool $IsAssessment;
@@ -174,7 +174,7 @@ class Course
     private bool $UseOwnerSettingsForShared;
 
     
-    private ArrayOfCourseNotification $CourseNotifications;
+    private ?ArrayOfCourseNotification $CourseNotifications;
 
     
     private int $ClassSize;
@@ -186,7 +186,7 @@ class Course
     private int $WaitlistCutoffUnit;
 
     
-    private string $WailtistCutoffInterval;
+    private ?string $WailtistCutoffInterval;
 
     
     private bool $AllowWaitlist;
@@ -201,7 +201,7 @@ class Course
     private bool $RecordAttendance;
 
     
-    private string $RecordAttendanceMode;
+    private ?string $RecordAttendanceMode;
 
     
     private bool $ShowSignInRelatedContent;
@@ -240,13 +240,13 @@ class Course
     private int $Timeout;
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
 
     
-    public function withType(string $Type): static
+    public function withType(?string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -270,13 +270,13 @@ class Course
     }
 
     
-    public function getKeywords(): string
+    public function getKeywords(): ?string
     {
         return $this->Keywords;
     }
 
     
-    public function withKeywords(string $Keywords): static
+    public function withKeywords(?string $Keywords): static
     {
         $new = clone $this;
         $new->Keywords = $Keywords;
@@ -330,13 +330,13 @@ class Course
     }
 
     
-    public function getCertificateType(): string
+    public function getCertificateType(): ?string
     {
         return $this->CertificateType;
     }
 
     
-    public function withCertificateType(string $CertificateType): static
+    public function withCertificateType(?string $CertificateType): static
     {
         $new = clone $this;
         $new->CertificateType = $CertificateType;
@@ -405,13 +405,13 @@ class Course
     }
 
     
-    public function getExpireInterval(): string
+    public function getExpireInterval(): ?string
     {
         return $this->ExpireInterval;
     }
 
     
-    public function withExpireInterval(string $ExpireInterval): static
+    public function withExpireInterval(?string $ExpireInterval): static
     {
         $new = clone $this;
         $new->ExpireInterval = $ExpireInterval;
@@ -435,13 +435,13 @@ class Course
     }
 
     
-    public function getNotifyInterval(): string
+    public function getNotifyInterval(): ?string
     {
         return $this->NotifyInterval;
     }
 
     
-    public function withNotifyInterval(string $NotifyInterval): static
+    public function withNotifyInterval(?string $NotifyInterval): static
     {
         $new = clone $this;
         $new->NotifyInterval = $NotifyInterval;
@@ -465,13 +465,13 @@ class Course
     }
 
     
-    public function getShowModule(): string
+    public function getShowModule(): ?string
     {
         return $this->ShowModule;
     }
 
     
-    public function withShowModule(string $ShowModule): static
+    public function withShowModule(?string $ShowModule): static
     {
         $new = clone $this;
         $new->ShowModule = $ShowModule;
@@ -480,13 +480,13 @@ class Course
     }
 
     
-    public function getShowMenu(): string
+    public function getShowMenu(): ?string
     {
         return $this->ShowMenu;
     }
 
     
-    public function withShowMenu(string $ShowMenu): static
+    public function withShowMenu(?string $ShowMenu): static
     {
         $new = clone $this;
         $new->ShowMenu = $ShowMenu;
@@ -495,13 +495,13 @@ class Course
     }
 
     
-    public function getLastProgramID(): string
+    public function getLastProgramID(): ?string
     {
         return $this->LastProgramID;
     }
 
     
-    public function withLastProgramID(string $LastProgramID): static
+    public function withLastProgramID(?string $LastProgramID): static
     {
         $new = clone $this;
         $new->LastProgramID = $LastProgramID;
@@ -510,13 +510,13 @@ class Course
     }
 
     
-    public function getProgramPath(): string
+    public function getProgramPath(): ?string
     {
         return $this->ProgramPath;
     }
 
     
-    public function withProgramPath(string $ProgramPath): static
+    public function withProgramPath(?string $ProgramPath): static
     {
         $new = clone $this;
         $new->ProgramPath = $ProgramPath;
@@ -525,13 +525,13 @@ class Course
     }
 
     
-    public function getModeratorID(): string
+    public function getModeratorID(): ?string
     {
         return $this->ModeratorID;
     }
 
     
-    public function withModeratorID(string $ModeratorID): static
+    public function withModeratorID(?string $ModeratorID): static
     {
         $new = clone $this;
         $new->ModeratorID = $ModeratorID;
@@ -540,13 +540,13 @@ class Course
     }
 
     
-    public function getModeratorName(): string
+    public function getModeratorName(): ?string
     {
         return $this->ModeratorName;
     }
 
     
-    public function withModeratorName(string $ModeratorName): static
+    public function withModeratorName(?string $ModeratorName): static
     {
         $new = clone $this;
         $new->ModeratorName = $ModeratorName;
@@ -555,13 +555,13 @@ class Course
     }
 
     
-    public function getModeratorUserName(): string
+    public function getModeratorUserName(): ?string
     {
         return $this->ModeratorUserName;
     }
 
     
-    public function withModeratorUserName(string $ModeratorUserName): static
+    public function withModeratorUserName(?string $ModeratorUserName): static
     {
         $new = clone $this;
         $new->ModeratorUserName = $ModeratorUserName;
@@ -570,13 +570,13 @@ class Course
     }
 
     
-    public function getAutoEnrollFields(): string
+    public function getAutoEnrollFields(): ?string
     {
         return $this->AutoEnrollFields;
     }
 
     
-    public function withAutoEnrollFields(string $AutoEnrollFields): static
+    public function withAutoEnrollFields(?string $AutoEnrollFields): static
     {
         $new = clone $this;
         $new->AutoEnrollFields = $AutoEnrollFields;
@@ -585,13 +585,13 @@ class Course
     }
 
     
-    public function getTeachingAssts(): ArrayOfString
+    public function getTeachingAssts(): ?ArrayOfString
     {
         return $this->TeachingAssts;
     }
 
     
-    public function withTeachingAssts(ArrayOfString $TeachingAssts): static
+    public function withTeachingAssts(?ArrayOfString $TeachingAssts): static
     {
         $new = clone $this;
         $new->TeachingAssts = $TeachingAssts;
@@ -600,13 +600,13 @@ class Course
     }
 
     
-    public function getTeachingAssistantList(): string
+    public function getTeachingAssistantList(): ?string
     {
         return $this->TeachingAssistantList;
     }
 
     
-    public function withTeachingAssistantList(string $TeachingAssistantList): static
+    public function withTeachingAssistantList(?string $TeachingAssistantList): static
     {
         $new = clone $this;
         $new->TeachingAssistantList = $TeachingAssistantList;
@@ -645,13 +645,13 @@ class Course
     }
 
     
-    public function getAssignments(): ArrayOfAssignment
+    public function getAssignments(): ?ArrayOfAssignment
     {
         return $this->Assignments;
     }
 
     
-    public function withAssignments(ArrayOfAssignment $Assignments): static
+    public function withAssignments(?ArrayOfAssignment $Assignments): static
     {
         $new = clone $this;
         $new->Assignments = $Assignments;
@@ -660,13 +660,13 @@ class Course
     }
 
     
-    public function getCourseAssignments(): ArrayOfCourseAssignment
+    public function getCourseAssignments(): ?ArrayOfCourseAssignment
     {
         return $this->CourseAssignments;
     }
 
     
-    public function withCourseAssignments(ArrayOfCourseAssignment $CourseAssignments): static
+    public function withCourseAssignments(?ArrayOfCourseAssignment $CourseAssignments): static
     {
         $new = clone $this;
         $new->CourseAssignments = $CourseAssignments;
@@ -690,13 +690,13 @@ class Course
     }
 
     
-    public function getSessions(): ArrayOfAnyType
+    public function getSessions(): ?ArrayOfAnyType
     {
         return $this->Sessions;
     }
 
     
-    public function withSessions(ArrayOfAnyType $Sessions): static
+    public function withSessions(?ArrayOfAnyType $Sessions): static
     {
         $new = clone $this;
         $new->Sessions = $Sessions;
@@ -705,13 +705,13 @@ class Course
     }
 
     
-    public function getPendingApprovalSessions(): ArrayOfAnyType
+    public function getPendingApprovalSessions(): ?ArrayOfAnyType
     {
         return $this->PendingApprovalSessions;
     }
 
     
-    public function withPendingApprovalSessions(ArrayOfAnyType $PendingApprovalSessions): static
+    public function withPendingApprovalSessions(?ArrayOfAnyType $PendingApprovalSessions): static
     {
         $new = clone $this;
         $new->PendingApprovalSessions = $PendingApprovalSessions;
@@ -870,13 +870,13 @@ class Course
     }
 
     
-    public function getStylesheets(): ArrayOfCourseStylesheet
+    public function getStylesheets(): ?ArrayOfCourseStylesheet
     {
         return $this->Stylesheets;
     }
 
     
-    public function withStylesheets(ArrayOfCourseStylesheet $Stylesheets): static
+    public function withStylesheets(?ArrayOfCourseStylesheet $Stylesheets): static
     {
         $new = clone $this;
         $new->Stylesheets = $Stylesheets;
@@ -930,13 +930,13 @@ class Course
     }
 
     
-    public function getCollaborationTitle(): string
+    public function getCollaborationTitle(): ?string
     {
         return $this->CollaborationTitle;
     }
 
     
-    public function withCollaborationTitle(string $CollaborationTitle): static
+    public function withCollaborationTitle(?string $CollaborationTitle): static
     {
         $new = clone $this;
         $new->CollaborationTitle = $CollaborationTitle;
@@ -945,13 +945,13 @@ class Course
     }
 
     
-    public function getCollaborationDescription(): string
+    public function getCollaborationDescription(): ?string
     {
         return $this->CollaborationDescription;
     }
 
     
-    public function withCollaborationDescription(string $CollaborationDescription): static
+    public function withCollaborationDescription(?string $CollaborationDescription): static
     {
         $new = clone $this;
         $new->CollaborationDescription = $CollaborationDescription;
@@ -960,13 +960,13 @@ class Course
     }
 
     
-    public function getCollaborationCustomFields(): string
+    public function getCollaborationCustomFields(): ?string
     {
         return $this->CollaborationCustomFields;
     }
 
     
-    public function withCollaborationCustomFields(string $CollaborationCustomFields): static
+    public function withCollaborationCustomFields(?string $CollaborationCustomFields): static
     {
         $new = clone $this;
         $new->CollaborationCustomFields = $CollaborationCustomFields;
@@ -975,13 +975,13 @@ class Course
     }
 
     
-    public function getVersions(): ArrayOfCourseVersion
+    public function getVersions(): ?ArrayOfCourseVersion
     {
         return $this->Versions;
     }
 
     
-    public function withVersions(ArrayOfCourseVersion $Versions): static
+    public function withVersions(?ArrayOfCourseVersion $Versions): static
     {
         $new = clone $this;
         $new->Versions = $Versions;
@@ -1020,13 +1020,13 @@ class Course
     }
 
     
-    public function getFeedback(): FeedbackSection
+    public function getFeedback(): ?FeedbackSection
     {
         return $this->Feedback;
     }
 
     
-    public function withFeedback(FeedbackSection $Feedback): static
+    public function withFeedback(?FeedbackSection $Feedback): static
     {
         $new = clone $this;
         $new->Feedback = $Feedback;
@@ -1080,13 +1080,13 @@ class Course
     }
 
     
-    public function getCourseNotifications(): ArrayOfCourseNotification
+    public function getCourseNotifications(): ?ArrayOfCourseNotification
     {
         return $this->CourseNotifications;
     }
 
     
-    public function withCourseNotifications(ArrayOfCourseNotification $CourseNotifications): static
+    public function withCourseNotifications(?ArrayOfCourseNotification $CourseNotifications): static
     {
         $new = clone $this;
         $new->CourseNotifications = $CourseNotifications;
@@ -1140,13 +1140,13 @@ class Course
     }
 
     
-    public function getWailtistCutoffInterval(): string
+    public function getWailtistCutoffInterval(): ?string
     {
         return $this->WailtistCutoffInterval;
     }
 
     
-    public function withWailtistCutoffInterval(string $WailtistCutoffInterval): static
+    public function withWailtistCutoffInterval(?string $WailtistCutoffInterval): static
     {
         $new = clone $this;
         $new->WailtistCutoffInterval = $WailtistCutoffInterval;
@@ -1215,13 +1215,13 @@ class Course
     }
 
     
-    public function getRecordAttendanceMode(): string
+    public function getRecordAttendanceMode(): ?string
     {
         return $this->RecordAttendanceMode;
     }
 
     
-    public function withRecordAttendanceMode(string $RecordAttendanceMode): static
+    public function withRecordAttendanceMode(?string $RecordAttendanceMode): static
     {
         $new = clone $this;
         $new->RecordAttendanceMode = $RecordAttendanceMode;

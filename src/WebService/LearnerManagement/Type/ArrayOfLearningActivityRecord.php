@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfLearningActivityRecord
 {
-    private LearningActivityRecord $LearningActivityRecord;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\LearningActivityRecord>
+     */
+    private ?array $LearningActivityRecord;
 
-    
-    public function getLearningActivityRecord(): LearningActivityRecord
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\LearningActivityRecord>
+     */
+    public function getLearningActivityRecord(): ?array
     {
         return $this->LearningActivityRecord;
     }
 
-    
-    public function withLearningActivityRecord(LearningActivityRecord $LearningActivityRecord): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\LearningActivityRecord> $LearningActivityRecord
+     */
+    public function withLearningActivityRecord(?array $LearningActivityRecord): static
     {
         $new = clone $this;
         $new->LearningActivityRecord = $LearningActivityRecord;
