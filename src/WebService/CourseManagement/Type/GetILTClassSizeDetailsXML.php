@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetILTClassSizeDetailsXML implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseCode;
+    
+    private string $courseCode;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseCode
      */
-    public function __construct($apiKey, $courseCode)
+    public function __construct(string $apiKey, string $courseCode)
     {
         $this->apiKey = $apiKey;
         $this->courseCode = $courseCode;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetILTClassSizeDetailsXML
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GetILTClassSizeDetailsXML implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseCode()
+    
+    public function getCourseCode(): string
     {
         return $this->courseCode;
     }
 
-    /**
-     * @param string $courseCode
-     *
-     * @return GetILTClassSizeDetailsXML
-     */
-    public function withCourseCode($courseCode)
+    
+    public function withCourseCode(string $courseCode): static
     {
         $new = clone $this;
         $new->courseCode = $courseCode;

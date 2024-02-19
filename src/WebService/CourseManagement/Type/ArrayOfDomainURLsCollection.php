@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfDomainURLsCollection
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection
-     */
-    private $DomainURLsCollection;
+    private DomainURLsCollection $DomainURLsCollection;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection
-     */
-    public function getDomainURLsCollection()
+    
+    public function getDomainURLsCollection(): DomainURLsCollection
     {
         return $this->DomainURLsCollection;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection $DomainURLsCollection
-     *
-     * @return ArrayOfDomainURLsCollection
-     */
-    public function withDomainURLsCollection($DomainURLsCollection)
+    
+    public function withDomainURLsCollection(DomainURLsCollection $DomainURLsCollection): static
     {
         $new = clone $this;
         $new->DomainURLsCollection = $DomainURLsCollection;

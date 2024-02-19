@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfContact
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Contact
-     */
-    private $Contact;
+    private Contact $Contact;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Contact
-     */
-    public function getContact()
+    
+    public function getContact(): Contact
     {
         return $this->Contact;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Contact $Contact
-     *
-     * @return ArrayOfContact
-     */
-    public function withContact($Contact)
+    
+    public function withContact(Contact $Contact): static
     {
         $new = clone $this;
         $new->Contact = $Contact;

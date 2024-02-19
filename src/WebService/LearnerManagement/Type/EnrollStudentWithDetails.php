@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,41 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class EnrollStudentWithDetails implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentID;
+    
+    private string $studentID;
 
-    /**
-     * @var string
-     */
-    private $learningObjectID;
+    
+    private string $learningObjectID;
 
-    /**
-     * @var string
-     */
-    private $enrollmentDomainID;
+    
+    private string $enrollmentDomainID;
 
-    /**
-     * @var string
-     */
-    private $details;
+    
+    private string $details;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentID
-     * @param string $learningObjectID
-     * @param string $enrollmentDomainID
-     * @param string $details
      */
-    public function __construct($apiKey, $studentID, $learningObjectID, $enrollmentDomainID, $details)
+    public function __construct(string $apiKey, string $studentID, string $learningObjectID, string $enrollmentDomainID, string $details)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -51,20 +35,14 @@ class EnrollStudentWithDetails implements RequestInterface
         $this->details = $details;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return EnrollStudentWithDetails
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -72,20 +50,14 @@ class EnrollStudentWithDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->studentID;
     }
 
-    /**
-     * @param string $studentID
-     *
-     * @return EnrollStudentWithDetails
-     */
-    public function withStudentID($studentID)
+    
+    public function withStudentID(string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -93,20 +65,14 @@ class EnrollStudentWithDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningObjectID()
+    
+    public function getLearningObjectID(): string
     {
         return $this->learningObjectID;
     }
 
-    /**
-     * @param string $learningObjectID
-     *
-     * @return EnrollStudentWithDetails
-     */
-    public function withLearningObjectID($learningObjectID)
+    
+    public function withLearningObjectID(string $learningObjectID): static
     {
         $new = clone $this;
         $new->learningObjectID = $learningObjectID;
@@ -114,20 +80,14 @@ class EnrollStudentWithDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEnrollmentDomainID()
+    
+    public function getEnrollmentDomainID(): string
     {
         return $this->enrollmentDomainID;
     }
 
-    /**
-     * @param string $enrollmentDomainID
-     *
-     * @return EnrollStudentWithDetails
-     */
-    public function withEnrollmentDomainID($enrollmentDomainID)
+    
+    public function withEnrollmentDomainID(string $enrollmentDomainID): static
     {
         $new = clone $this;
         $new->enrollmentDomainID = $enrollmentDomainID;
@@ -135,20 +95,14 @@ class EnrollStudentWithDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDetails()
+    
+    public function getDetails(): string
     {
         return $this->details;
     }
 
-    /**
-     * @param string $details
-     *
-     * @return EnrollStudentWithDetails
-     */
-    public function withDetails($details)
+    
+    public function withDetails(string $details): static
     {
         $new = clone $this;
         $new->details = $details;

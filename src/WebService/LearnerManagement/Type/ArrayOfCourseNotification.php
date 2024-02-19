@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfCourseNotification
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CourseNotification
-     */
-    private $CourseNotification;
+    private CourseNotification $CourseNotification;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CourseNotification
-     */
-    public function getCourseNotification()
+    
+    public function getCourseNotification(): CourseNotification
     {
         return $this->CourseNotification;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CourseNotification $CourseNotification
-     *
-     * @return ArrayOfCourseNotification
-     */
-    public function withCourseNotification($CourseNotification)
+    
+    public function withCourseNotification(CourseNotification $CourseNotification): static
     {
         $new = clone $this;
         $new->CourseNotification = $CourseNotification;

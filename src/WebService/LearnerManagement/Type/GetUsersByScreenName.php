@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUsersByScreenName implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $screenName;
+    
+    private string $screenName;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $screenName
      */
-    public function __construct($apiKey, $screenName)
+    public function __construct(string $apiKey, string $screenName)
     {
         $this->apiKey = $apiKey;
         $this->screenName = $screenName;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetUsersByScreenName
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GetUsersByScreenName implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getScreenName()
+    
+    public function getScreenName(): string
     {
         return $this->screenName;
     }
 
-    /**
-     * @param string $screenName
-     *
-     * @return GetUsersByScreenName
-     */
-    public function withScreenName($screenName)
+    
+    public function withScreenName(string $screenName): static
     {
         $new = clone $this;
         $new->screenName = $screenName;

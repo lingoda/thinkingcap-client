@@ -1,60 +1,39 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Role
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Code;
+    
+    private string $Code;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $Description;
+    
+    private string $Description;
 
-    /**
-     * @var bool
-     */
-    private $IsDefault;
+    
+    private bool $IsDefault;
 
-    /**
-     * @var string
-     */
-    private $ProgramID;
+    
+    private string $ProgramID;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfPermission
-     */
-    private $Permissions;
+    
+    private ArrayOfPermission $Permissions;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return Role
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -62,20 +41,14 @@ class Role
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return Role
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -83,20 +56,14 @@ class Role
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return Role
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -104,20 +71,14 @@ class Role
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return Role
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -125,20 +86,14 @@ class Role
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsDefault()
+    
+    public function getIsDefault(): bool
     {
         return $this->IsDefault;
     }
 
-    /**
-     * @param bool $IsDefault
-     *
-     * @return Role
-     */
-    public function withIsDefault($IsDefault)
+    
+    public function withIsDefault(bool $IsDefault): static
     {
         $new = clone $this;
         $new->IsDefault = $IsDefault;
@@ -146,20 +101,14 @@ class Role
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->ProgramID;
     }
 
-    /**
-     * @param string $ProgramID
-     *
-     * @return Role
-     */
-    public function withProgramID($ProgramID)
+    
+    public function withProgramID(string $ProgramID): static
     {
         $new = clone $this;
         $new->ProgramID = $ProgramID;
@@ -167,20 +116,14 @@ class Role
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfPermission
-     */
-    public function getPermissions()
+    
+    public function getPermissions(): ArrayOfPermission
     {
         return $this->Permissions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfPermission $Permissions
-     *
-     * @return Role
-     */
-    public function withPermissions($Permissions)
+    
+    public function withPermissions(ArrayOfPermission $Permissions): static
     {
         $new = clone $this;
         $new->Permissions = $Permissions;

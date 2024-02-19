@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetUserByEmailResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfServiceUser
-     */
-    private $GetUserByEmailResult;
+    private ServiceResultOfServiceUser $GetUserByEmailResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfServiceUser
-     */
-    public function getGetUserByEmailResult()
+    
+    public function getGetUserByEmailResult(): ServiceResultOfServiceUser
     {
         return $this->GetUserByEmailResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfServiceUser $GetUserByEmailResult
-     *
-     * @return GetUserByEmailResponse
-     */
-    public function withGetUserByEmailResult($GetUserByEmailResult)
+    
+    public function withGetUserByEmailResult(ServiceResultOfServiceUser $GetUserByEmailResult): static
     {
         $new = clone $this;
         $new->GetUserByEmailResult = $GetUserByEmailResult;

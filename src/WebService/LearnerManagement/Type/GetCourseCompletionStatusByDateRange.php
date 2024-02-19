@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,65 +8,37 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseCompletionStatusByDateRange implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $domainID;
+    
+    private string $domainID;
 
-    /**
-     * @var string
-     */
-    private $learningActivityCode;
+    
+    private string $learningActivityCode;
 
-    /**
-     * @var string
-     */
-    private $learningActivityType;
+    
+    private string $learningActivityType;
 
-    /**
-     * @var string
-     */
-    private $learnerID;
+    
+    private string $learnerID;
 
-    /**
-     * @var string
-     */
-    private $startDateTime;
+    
+    private string $startDateTime;
 
-    /**
-     * @var string
-     */
-    private $endDateTime;
+    
+    private string $endDateTime;
 
-    /**
-     * @var bool
-     */
-    private $useLastDateAttendanceTakenForILT;
+    
+    private bool $useLastDateAttendanceTakenForILT;
 
-    /**
-     * @var string
-     */
-    private $timezoneCode;
+    
+    private string $timezoneCode;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $domainID
-     * @param string $learningActivityCode
-     * @param string $learningActivityType
-     * @param string $learnerID
-     * @param string $startDateTime
-     * @param string $endDateTime
-     * @param bool $useLastDateAttendanceTakenForILT
-     * @param string $timezoneCode
      */
-    public function __construct($apiKey, $domainID, $learningActivityCode, $learningActivityType, $learnerID, $startDateTime, $endDateTime, $useLastDateAttendanceTakenForILT, $timezoneCode)
+    public function __construct(string $apiKey, string $domainID, string $learningActivityCode, string $learningActivityType, string $learnerID, string $startDateTime, string $endDateTime, bool $useLastDateAttendanceTakenForILT, string $timezoneCode)
     {
         $this->apiKey = $apiKey;
         $this->domainID = $domainID;
@@ -79,20 +51,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         $this->timezoneCode = $timezoneCode;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -100,20 +66,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->domainID;
     }
 
-    /**
-     * @param string $domainID
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withDomainID($domainID)
+    
+    public function withDomainID(string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;
@@ -121,20 +81,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCode()
+    
+    public function getLearningActivityCode(): string
     {
         return $this->learningActivityCode;
     }
 
-    /**
-     * @param string $learningActivityCode
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withLearningActivityCode($learningActivityCode)
+    
+    public function withLearningActivityCode(string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;
@@ -142,20 +96,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityType()
+    
+    public function getLearningActivityType(): string
     {
         return $this->learningActivityType;
     }
 
-    /**
-     * @param string $learningActivityType
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withLearningActivityType($learningActivityType)
+    
+    public function withLearningActivityType(string $learningActivityType): static
     {
         $new = clone $this;
         $new->learningActivityType = $learningActivityType;
@@ -163,20 +111,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearnerID()
+    
+    public function getLearnerID(): string
     {
         return $this->learnerID;
     }
 
-    /**
-     * @param string $learnerID
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withLearnerID($learnerID)
+    
+    public function withLearnerID(string $learnerID): static
     {
         $new = clone $this;
         $new->learnerID = $learnerID;
@@ -184,20 +126,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStartDateTime()
+    
+    public function getStartDateTime(): string
     {
         return $this->startDateTime;
     }
 
-    /**
-     * @param string $startDateTime
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withStartDateTime($startDateTime)
+    
+    public function withStartDateTime(string $startDateTime): static
     {
         $new = clone $this;
         $new->startDateTime = $startDateTime;
@@ -205,20 +141,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEndDateTime()
+    
+    public function getEndDateTime(): string
     {
         return $this->endDateTime;
     }
 
-    /**
-     * @param string $endDateTime
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withEndDateTime($endDateTime)
+    
+    public function withEndDateTime(string $endDateTime): static
     {
         $new = clone $this;
         $new->endDateTime = $endDateTime;
@@ -226,20 +156,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseLastDateAttendanceTakenForILT()
+    
+    public function getUseLastDateAttendanceTakenForILT(): bool
     {
         return $this->useLastDateAttendanceTakenForILT;
     }
 
-    /**
-     * @param bool $useLastDateAttendanceTakenForILT
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withUseLastDateAttendanceTakenForILT($useLastDateAttendanceTakenForILT)
+    
+    public function withUseLastDateAttendanceTakenForILT(bool $useLastDateAttendanceTakenForILT): static
     {
         $new = clone $this;
         $new->useLastDateAttendanceTakenForILT = $useLastDateAttendanceTakenForILT;
@@ -247,20 +171,14 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTimezoneCode()
+    
+    public function getTimezoneCode(): string
     {
         return $this->timezoneCode;
     }
 
-    /**
-     * @param string $timezoneCode
-     *
-     * @return GetCourseCompletionStatusByDateRange
-     */
-    public function withTimezoneCode($timezoneCode)
+    
+    public function withTimezoneCode(string $timezoneCode): static
     {
         $new = clone $this;
         $new->timezoneCode = $timezoneCode;

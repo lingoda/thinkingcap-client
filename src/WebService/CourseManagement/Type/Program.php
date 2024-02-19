@@ -1,870 +1,528 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Program
 {
-    /**
-     * @var string
-     */
-    private $ID;
-
-    /**
-     * @var string
-     */
-    private $Name;
-
-    /**
-     * @var string
-     */
-    private $Code;
-
-    /**
-     * @var string
-     */
-    private $Description;
-
-    /**
-     * @var string
-     */
-    private $ParentID;
-
-    /**
-     * @var string
-     */
-    private $ParentPath;
-
-    /**
-     * @var string
-     */
-    private $ProgramPath;
-
-    /**
-     * @var bool
-     */
-    private $AutoEnrollSubprograms;
-
-    /**
-     * @var string
-     */
-    private $AutoIncludeUsersType;
-
-    /**
-     * @var bool
-     */
-    private $AutoIncludeUsers;
-
-    /**
-     * @var string
-     */
-    private $AutoIncludeUsersFields;
-
-    /**
-     * @var string
-     */
-    private $AutoIncludeCoursesType;
-
-    /**
-     * @var bool
-     */
-    private $AutoIncludeCourses;
-
-    /**
-     * @var string
-     */
-    private $AutoIncludeCoursesFields;
-
-    /**
-     * @var bool
-     */
-    private $IsSearchFilter;
-
-    /**
-     * @var bool
-     */
-    private $AllowSelfRegistration;
-
-    /**
-     * @var bool
-     */
-    private $RequiresRegistrationApproval;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationAutomaticApproval;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationRequiresCode;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationRequiresRequest;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AltPrices;
-
-    /**
-     * @var string
-     */
-    private $RegistrationAccessCodes;
-
-    /**
-     * @var string
-     */
-    private $RegistrationAccessCode;
-
-    /**
-     * @var string
-     */
-    private $RegistrationInstruction;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationAutomaticApproval_Domain;
-
-    /**
-     * @var string
-     */
-    private $AutomaticApproveRegistrationDomain;
-
-    /**
-     * @var string
-     */
-    private $RegistrationFields;
-
-    /**
-     * @var string
-     */
-    private $RegistrationSubdomains;
-
-    /**
-     * @var bool
-     */
-    private $AllowUserDomainSelection;
-
-    /**
-     * @var bool
-     */
-    private $UserDomainSelectionRequired;
-
-    /**
-     * @var bool
-     */
-    private $UserDomainSelectAll;
-
-    /**
-     * @var string
-     */
-    private $UserDomainDisplayLabel;
-
-    /**
-     * @var string
-     */
-    private $UserRegistrationDomains;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram
-     */
-    private $UserRegistrationDomainsList;
-
-    /**
-     * @var string
-     */
-    private $UserRegistrationDomainsDisplay;
-
-    /**
-     * @var string
-     */
-    private $UserRegistrationDomainsMode;
-
-    /**
-     * @var string
-     */
-    private $RegistrationConfirmationText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationIntroText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationToDomainIntroText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationRequestConfirmationText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationDisclaimerText;
-
-    /**
-     * @var bool
-     */
-    private $RequiresRegistrationDisclaimerAck;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationRequiresPurchase;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationRequiresVerification;
-
-    /**
-     * @var string
-     */
-    private $RegistrationSubscription;
-
-    /**
-     * @var string
-     */
-    private $RegistrationPasses;
-
-    /**
-     * @var bool
-     */
-    private $CollectLoginMetadataOnce;
-
-    /**
-     * @var bool
-     */
-    private $ShowLoginNotRequiredFields;
-
-    /**
-     * @var bool
-     */
-    private $SendRegistrationConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $SendRegistrationRequest;
-
-    /**
-     * @var int
-     */
-    private $PasswordExpirationDurationInSeconds;
-
-    /**
-     * @var bool
-     */
-    private $SendRegistrationApproval;
-
-    /**
-     * @var bool
-     */
-    private $SendRegistrationDenial;
-
-    /**
-     * @var bool
-     */
-    private $OverrideGlobalRegistrationConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $OverrideGlobalRegistrationRequest;
-
-    /**
-     * @var bool
-     */
-    private $OverrideGlobalRegistrationApproval;
-
-    /**
-     * @var bool
-     */
-    private $OverrideGlobalRegistrationDenial;
-
-    /**
-     * @var string
-     */
-    private $RegistrationConfirmationEmailText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationRequestEmailText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationApprovalEmailText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationDenialEmailText;
-
-    /**
-     * @var string
-     */
-    private $RegistrationCaptchaMode;
-
-    /**
-     * @var string
-     */
-    private $RegistrationCaptchaType;
-
-    /**
-     * @var string
-     */
-    private $ForumCaptchaType;
-
-    /**
-     * @var string
-     */
-    private $ForumDisclaimerText;
-
-    /**
-     * @var string
-     */
-    private $ShowForumDisclaimerWhen;
-
-    /**
-     * @var string
-     */
-    private $ForumDisclaimerButtonText;
-
-    /**
-     * @var bool
-     */
-    private $ForumHasDisclaimer;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationDenyPublicEmails;
-
-    /**
-     * @var bool
-     */
-    private $RegistrationAutoFillDefaultFields;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram
-     */
-    private $SubPrograms;
-
-    /**
-     * @var string
-     */
-    private $ClassroomTemplate;
-
-    /**
-     * @var string
-     */
-    private $Logo;
-
-    /**
-     * @var string
-     */
-    private $LogoContentType;
-
-    /**
-     * @var bool
-     */
-    private $UseCustomLearnerUrl;
-
-    /**
-     * @var bool
-     */
-    private $UseSSL;
-
-    /**
-     * @var bool
-     */
-    private $AllowAdminsLMSLogin;
-
-    /**
-     * @var bool
-     */
-    private $AllowLearnersLMSLogin;
-
-    /**
-     * @var bool
-     */
-    private $UseMFA;
-
-    /**
-     * @var string
-     */
-    private $MFAMethod;
-
-    /**
-     * @var bool
-     */
-    private $UseMFAForLearner;
-
-    /**
-     * @var bool
-     */
-    private $UseMFAForAdmin;
-
-    /**
-     * @var int
-     */
-    private $MFAAdminInterval;
-
-    /**
-     * @var int
-     */
-    private $MFALearnerInterval;
-
-    /**
-     * @var bool
-     */
-    private $UseMFAOnSSO;
-
-    /**
-     * @var bool
-     */
-    private $UseMFAOnLMSLogin;
-
-    /**
-     * @var bool
-     */
-    private $HideUrlFromSearch;
-
-    /**
-     * @var bool
-     */
-    private $CanConsumeShared;
-
-    /**
-     * @var bool
-     */
-    private $CanShare;
-
-    /**
-     * @var bool
-     */
-    private $CanSiblingShareOnly;
-
-    /**
-     * @var bool
-     */
-    private $DoNotInheritRosterOptions;
-
-    /**
-     * @var bool
-     */
-    private $AllowChildRosterEnroll;
-
-    /**
-     * @var bool
-     */
-    private $AllowAddUsersFromRoster;
-
-    /**
-     * @var bool
-     */
-    private $AddUsersFromRosterToRoot;
-
-    /**
-     * @var bool
-     */
-    private $RosterCompletionAfterStartDate;
-
-    /**
-     * @var bool
-     */
-    private $LimitRosterUploadDate;
-
-    /**
-     * @var int
-     */
-    private $LimitRosterUploadUnit;
-
-    /**
-     * @var bool
-     */
-    private $IncludeStatusInRoster;
-
-    /**
-     * @var bool
-     */
-    private $IncludeSuccessInRoster;
-
-    /**
-     * @var bool
-     */
-    private $IncludeScoreInRoster;
-
-    /**
-     * @var bool
-     */
-    private $IncludeTimeSpentInRoster;
-
-    /**
-     * @var bool
-     */
-    private $AllColumnsRequiredInRoster;
-
-    /**
-     * @var bool
-     */
-    private $OverrideSessionCertificate;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $AllowedLearningActivities;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $ParentAllowedLearningActivities;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $LearningActivityTypeOffFilters;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $ParentLearningActivityTypeOffFilters;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $LearningActivityStatusOffFilters;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $ParentLearningActivityStatusOffFilters;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $LearningActivityOriginOffFilters;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $ParentLearningActivityOriginOffFilters;
-
-    /**
-     * @var bool
-     */
-    private $LearningActivityHideFilters;
-
-    /**
-     * @var bool
-     */
-    private $ParentLearningActivityHideFilters;
-
-    /**
-     * @var string
-     */
-    private $LearningActivitiesSortSettings;
-
-    /**
-     * @var bool
-     */
-    private $DenyChildLearningObjects;
-
-    /**
-     * @var bool
-     */
-    private $GenerateLearningActivitiesCode;
-
-    /**
-     * @var bool
-     */
-    private $AllowOverrideLearningActivitiesCode;
-
-    /**
-     * @var bool
-     */
-    private $WithdrawInactiveLearners;
-
-    /**
-     * @var bool
-     */
-    private $IsParent;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $SubscriptionRules;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationIntroXmlNode
-     */
-    private $RegistrationIntroXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationDuplicateAccountInstrXmlNode
-     */
-    private $RegistrationDuplicateAccountInstrXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationDisclaimerXmlNode
-     */
-    private $RegistrationDisclaimerXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationConfirmationTextXmlNode
-     */
-    private $RegistrationConfirmationTextXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestConfirmationTextXmlNode
-     */
-    private $RegistrationRequestConfirmationTextXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationConfirmationEmailXmlNode
-     */
-    private $RegistrationConfirmationEmailXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestEmailXmlNode
-     */
-    private $RegistrationRequestEmailXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestApprovalEmailXmlNode
-     */
-    private $RegistrationRequestApprovalEmailXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestDenialEmailXmlNode
-     */
-    private $RegistrationRequestDenialEmailXmlNode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UserDomainDisplayLabelXmlNode
-     */
-    private $UserDomainDisplayLabelXmlNode;
-
-    /**
-     * @var bool
-     */
-    private $CapLicenseTotal;
-
-    /**
-     * @var bool
-     */
-    private $CapLicenseActive;
-
-    /**
-     * @var int
-     */
-    private $LicenseTotalUsers;
-
-    /**
-     * @var int
-     */
-    private $LicenseActiveUsers;
-
-    /**
-     * @var string
-     */
-    private $LicenseContact;
-
-    /**
-     * @var string
-     */
-    private $LicenseAniversary;
-
-    /**
-     * @var int
-     */
-    private $LicenseCycleDay;
-
-    /**
-     * @var int
-     */
-    private $MonthlyUniqueLogins;
-
-    /**
-     * @var string
-     */
-    private $OwnerID;
-
-    /**
-     * @var string
-     */
-    private $FromName;
-
-    /**
-     * @var string
-     */
-    private $FromEmail;
-
-    /**
-     * @var bool
-     */
-    private $UseParentEmail;
-
-    /**
-     * @var bool
-     */
-    private $DoNotInheritCreditSettings;
-
-    /**
-     * @var bool
-     */
-    private $AwardCreditsAcrossVariousCategories;
-
-    /**
-     * @var bool
-     */
-    private $DoNotInheritILTSettings;
-
-    /**
-     * @var bool
-     */
-    private $LimitCredits;
-
-    /**
-     * @var int
-     */
-    private $MaxCreditsPerHour;
-
-    /**
-     * @var int
-     */
-    private $MaxCreditsPerSession;
-
-    /**
-     * @var int
-     */
-    private $MaxCreditsPerDay;
-
-    /**
-     * @var float
-     */
-    private $FacilitatorCredits;
-
-    /**
-     * @var float
-     */
-    private $SpeakerCredits;
-
-    /**
-     * @var float
-     */
-    private $ReviewerCredits;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionLocation;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionFecilitators;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionSpeakers;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionCertificates;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionCredits;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionRequired;
-
-    /**
-     * @var bool
-     */
-    private $ShowSessionTimeDateTBD;
-
-    /**
-     * @var bool
-     */
-    private $ShowLocationTimezone;
-
-    /**
-     * @var bool
-     */
-    private $ShowAccommodationLink;
-
-    /**
-     * @var bool
-     */
-    private $DenyOutsideDomainsTranscriptVisibility;
-
-    /**
-     * @var bool
-     */
-    private $ParentDenyOutsideDomainsTranscriptVisibility;
-
-    /**
-     * @var bool
-     */
-    private $AllowDomainMembershipExtension;
-
-    /**
-     * @var bool
-     */
-    private $PendingUserMembership;
-
-    /**
-     * @var bool
-     */
-    private $ForceDisplayDomainTimezone;
-
-    /**
-     * @var bool
-     */
-    private $RemoveNotMatchingRulesUsers;
-
-    /**
-     * @var bool
-     */
-    private $LearningActivityDetailsPrivate;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $SupervisorRules;
-
-    /**
-     * @return string
-     */
-    public function getID()
+    private string $ID;
+
+    
+    private string $Name;
+
+    
+    private string $Code;
+
+    
+    private string $Description;
+
+    
+    private string $ParentID;
+
+    
+    private string $ParentPath;
+
+    
+    private string $ProgramPath;
+
+    
+    private bool $AutoEnrollSubprograms;
+
+    
+    private string $AutoIncludeUsersType;
+
+    
+    private bool $AutoIncludeUsers;
+
+    
+    private string $AutoIncludeUsersFields;
+
+    
+    private string $AutoIncludeCoursesType;
+
+    
+    private bool $AutoIncludeCourses;
+
+    
+    private string $AutoIncludeCoursesFields;
+
+    
+    private bool $IsSearchFilter;
+
+    
+    private bool $AllowSelfRegistration;
+
+    
+    private bool $RequiresRegistrationApproval;
+
+    
+    private bool $RequiresRegistrationCodeForExistingAccounts;
+
+    
+    private bool $RegistrationAutomaticApproval;
+
+    
+    private bool $RegistrationRequiresCode;
+
+    
+    private bool $RegistrationRequiresRequest;
+
+    
+    private ArrayOfAnyType $AltPrices;
+
+    
+    private string $RegistrationAccessCodes;
+
+    
+    private string $RegistrationAccessCode;
+
+    
+    private string $RegistrationInstruction;
+
+    
+    private bool $RegistrationAutomaticApproval_Domain;
+
+    
+    private string $AutomaticApproveRegistrationDomain;
+
+    
+    private string $RegistrationFields;
+
+    
+    private string $RegistrationSubdomains;
+
+    
+    private bool $AllowUserDomainSelection;
+
+    
+    private bool $UserDomainSelectionRequired;
+
+    
+    private bool $UserDomainSelectAll;
+
+    
+    private string $UserDomainDisplayLabel;
+
+    
+    private string $UserRegistrationDomains;
+
+    
+    private ArrayOfProgram $UserRegistrationDomainsList;
+
+    
+    private string $UserRegistrationDomainsDisplay;
+
+    
+    private string $UserRegistrationDomainsMode;
+
+    
+    private string $RegistrationConfirmationText;
+
+    
+    private string $RegistrationIntroText;
+
+    
+    private string $RegistrationToDomainIntroText;
+
+    
+    private string $RegistrationRequestConfirmationText;
+
+    
+    private string $RegistrationDisclaimerText;
+
+    
+    private bool $RequiresRegistrationDisclaimerAck;
+
+    
+    private bool $RegistrationRequiresPurchase;
+
+    
+    private bool $RegistrationRequiresVerification;
+
+    
+    private string $RegistrationSubscription;
+
+    
+    private string $RegistrationPasses;
+
+    
+    private bool $CollectLoginMetadataOnce;
+
+    
+    private bool $ShowLoginNotRequiredFields;
+
+    
+    private bool $SendRegistrationConfirmation;
+
+    
+    private bool $SendRegistrationRequest;
+
+    
+    private int $PasswordExpirationDurationInSeconds;
+
+    
+    private bool $SendRegistrationApproval;
+
+    
+    private bool $SendRegistrationDenial;
+
+    
+    private bool $OverrideGlobalRegistrationConfirmation;
+
+    
+    private bool $OverrideGlobalRegistrationRequest;
+
+    
+    private bool $OverrideGlobalRegistrationApproval;
+
+    
+    private bool $OverrideGlobalRegistrationDenial;
+
+    
+    private string $RegistrationConfirmationEmailText;
+
+    
+    private string $RegistrationRequestEmailText;
+
+    
+    private string $RegistrationApprovalEmailText;
+
+    
+    private string $RegistrationDenialEmailText;
+
+    
+    private string $RegistrationCaptchaMode;
+
+    
+    private string $RegistrationCaptchaType;
+
+    
+    private string $ForumCaptchaType;
+
+    
+    private string $ForumDisclaimerText;
+
+    
+    private string $ShowForumDisclaimerWhen;
+
+    
+    private string $ForumDisclaimerButtonText;
+
+    
+    private bool $ForumHasDisclaimer;
+
+    
+    private bool $RegistrationDenyPublicEmails;
+
+    
+    private bool $RegistrationAutoFillDefaultFields;
+
+    
+    private ArrayOfProgram $SubPrograms;
+
+    
+    private string $ClassroomTemplate;
+
+    
+    private Base64Binary $Logo;
+
+    
+    private string $LogoContentType;
+
+    
+    private bool $UseCustomLearnerUrl;
+
+    
+    private bool $UseSSL;
+
+    
+    private bool $AllowAdminsLMSLogin;
+
+    
+    private bool $AllowLearnersLMSLogin;
+
+    
+    private bool $UseMFA;
+
+    
+    private string $MFAMethod;
+
+    
+    private bool $UseMFAForLearner;
+
+    
+    private bool $UseMFAForAdmin;
+
+    
+    private int $MFAAdminInterval;
+
+    
+    private int $MFALearnerInterval;
+
+    
+    private bool $UseMFAOnSSO;
+
+    
+    private bool $UseMFAOnLMSLogin;
+
+    
+    private bool $HideUrlFromSearch;
+
+    
+    private bool $CanConsumeShared;
+
+    
+    private bool $CanShare;
+
+    
+    private bool $CanSiblingShareOnly;
+
+    
+    private bool $DoNotInheritRosterOptions;
+
+    
+    private bool $AllowChildRosterEnroll;
+
+    
+    private bool $AllowAddUsersFromRoster;
+
+    
+    private bool $AddUsersFromRosterToRoot;
+
+    
+    private bool $RosterCompletionAfterStartDate;
+
+    
+    private bool $LimitRosterUploadDate;
+
+    
+    private int $LimitRosterUploadUnit;
+
+    
+    private bool $IncludeStatusInRoster;
+
+    
+    private bool $IncludeSuccessInRoster;
+
+    
+    private bool $IncludeScoreInRoster;
+
+    
+    private bool $IncludeTimeSpentInRoster;
+
+    
+    private bool $AllColumnsRequiredInRoster;
+
+    
+    private bool $OverrideSessionCertificate;
+
+    
+    private ArrayOfString $AllowedLearningActivities;
+
+    
+    private ArrayOfString $ParentAllowedLearningActivities;
+
+    
+    private ArrayOfString $LearningActivityTypeOffFilters;
+
+    
+    private ArrayOfString $ParentLearningActivityTypeOffFilters;
+
+    
+    private ArrayOfString $LearningActivityStatusOffFilters;
+
+    
+    private ArrayOfString $ParentLearningActivityStatusOffFilters;
+
+    
+    private ArrayOfString $LearningActivityOriginOffFilters;
+
+    
+    private ArrayOfString $ParentLearningActivityOriginOffFilters;
+
+    
+    private bool $LearningActivityHideFilters;
+
+    
+    private bool $ParentLearningActivityHideFilters;
+
+    
+    private string $LearningActivitiesSortSettings;
+
+    
+    private bool $DenyChildLearningObjects;
+
+    
+    private bool $GenerateLearningActivitiesCode;
+
+    
+    private bool $AllowOverrideLearningActivitiesCode;
+
+    
+    private bool $WithdrawInactiveLearners;
+
+    
+    private bool $IsParent;
+
+    
+    private ArrayOfAnyType $SubscriptionRules;
+
+    
+    private RegistrationIntroXmlNode $RegistrationIntroXmlNode;
+
+    
+    private RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode;
+
+    
+    private RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode;
+
+    
+    private RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode;
+
+    
+    private RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode;
+
+    
+    private RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode;
+
+    
+    private RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode;
+
+    
+    private RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode;
+
+    
+    private RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode;
+
+    
+    private UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode;
+
+    
+    private bool $CapLicenseTotal;
+
+    
+    private bool $CapLicenseActive;
+
+    
+    private int $LicenseTotalUsers;
+
+    
+    private int $LicenseActiveUsers;
+
+    
+    private string $LicenseContact;
+
+    
+    private string $LicenseAniversary;
+
+    
+    private int $LicenseCycleDay;
+
+    
+    private int $MonthlyUniqueLogins;
+
+    
+    private string $OwnerID;
+
+    
+    private string $FromName;
+
+    
+    private string $FromEmail;
+
+    
+    private bool $UseParentEmail;
+
+    
+    private bool $DoNotInheritCreditSettings;
+
+    
+    private bool $AwardCreditsAcrossVariousCategories;
+
+    
+    private bool $DoNotInheritILTSettings;
+
+    
+    private bool $LimitCredits;
+
+    
+    private int $MaxCreditsPerHour;
+
+    
+    private int $MaxCreditsPerSession;
+
+    
+    private int $MaxCreditsPerDay;
+
+    
+    private float $FacilitatorCredits;
+
+    
+    private float $SpeakerCredits;
+
+    
+    private float $ReviewerCredits;
+
+    
+    private bool $ShowSessionLocation;
+
+    
+    private bool $ShowSessionFecilitators;
+
+    
+    private bool $ShowSessionSpeakers;
+
+    
+    private bool $ShowSessionCertificates;
+
+    
+    private bool $ShowSessionCredits;
+
+    
+    private bool $ShowSessionRequired;
+
+    
+    private bool $ShowSessionTimeDateTBD;
+
+    
+    private bool $ShowLocationTimezone;
+
+    
+    private bool $ShowAccommodationLink;
+
+    
+    private bool $DenyOutsideDomainsTranscriptVisibility;
+
+    
+    private bool $ParentDenyOutsideDomainsTranscriptVisibility;
+
+    
+    private bool $AllowDomainMembershipExtension;
+
+    
+    private bool $PendingUserMembership;
+
+    
+    private bool $ForceDisplayDomainTimezone;
+
+    
+    private bool $RemoveNotMatchingRulesUsers;
+
+    
+    private bool $LearningActivityDetailsPrivate;
+
+    
+    private ArrayOfAnyType $SupervisorRules;
+
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return Program
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -872,20 +530,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     *
-     * @return Program
-     */
-    public function withName($Name)
+    
+    public function withName(string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -893,20 +545,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return Program
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -914,20 +560,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return Program
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -935,20 +575,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getParentID()
+    
+    public function getParentID(): string
     {
         return $this->ParentID;
     }
 
-    /**
-     * @param string $ParentID
-     *
-     * @return Program
-     */
-    public function withParentID($ParentID)
+    
+    public function withParentID(string $ParentID): static
     {
         $new = clone $this;
         $new->ParentID = $ParentID;
@@ -956,20 +590,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getParentPath()
+    
+    public function getParentPath(): string
     {
         return $this->ParentPath;
     }
 
-    /**
-     * @param string $ParentPath
-     *
-     * @return Program
-     */
-    public function withParentPath($ParentPath)
+    
+    public function withParentPath(string $ParentPath): static
     {
         $new = clone $this;
         $new->ParentPath = $ParentPath;
@@ -977,20 +605,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramPath()
+    
+    public function getProgramPath(): string
     {
         return $this->ProgramPath;
     }
 
-    /**
-     * @param string $ProgramPath
-     *
-     * @return Program
-     */
-    public function withProgramPath($ProgramPath)
+    
+    public function withProgramPath(string $ProgramPath): static
     {
         $new = clone $this;
         $new->ProgramPath = $ProgramPath;
@@ -998,20 +620,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoEnrollSubprograms()
+    
+    public function getAutoEnrollSubprograms(): bool
     {
         return $this->AutoEnrollSubprograms;
     }
 
-    /**
-     * @param bool $AutoEnrollSubprograms
-     *
-     * @return Program
-     */
-    public function withAutoEnrollSubprograms($AutoEnrollSubprograms)
+    
+    public function withAutoEnrollSubprograms(bool $AutoEnrollSubprograms): static
     {
         $new = clone $this;
         $new->AutoEnrollSubprograms = $AutoEnrollSubprograms;
@@ -1019,20 +635,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoIncludeUsersType()
+    
+    public function getAutoIncludeUsersType(): string
     {
         return $this->AutoIncludeUsersType;
     }
 
-    /**
-     * @param string $AutoIncludeUsersType
-     *
-     * @return Program
-     */
-    public function withAutoIncludeUsersType($AutoIncludeUsersType)
+    
+    public function withAutoIncludeUsersType(string $AutoIncludeUsersType): static
     {
         $new = clone $this;
         $new->AutoIncludeUsersType = $AutoIncludeUsersType;
@@ -1040,20 +650,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoIncludeUsers()
+    
+    public function getAutoIncludeUsers(): bool
     {
         return $this->AutoIncludeUsers;
     }
 
-    /**
-     * @param bool $AutoIncludeUsers
-     *
-     * @return Program
-     */
-    public function withAutoIncludeUsers($AutoIncludeUsers)
+    
+    public function withAutoIncludeUsers(bool $AutoIncludeUsers): static
     {
         $new = clone $this;
         $new->AutoIncludeUsers = $AutoIncludeUsers;
@@ -1061,20 +665,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoIncludeUsersFields()
+    
+    public function getAutoIncludeUsersFields(): string
     {
         return $this->AutoIncludeUsersFields;
     }
 
-    /**
-     * @param string $AutoIncludeUsersFields
-     *
-     * @return Program
-     */
-    public function withAutoIncludeUsersFields($AutoIncludeUsersFields)
+    
+    public function withAutoIncludeUsersFields(string $AutoIncludeUsersFields): static
     {
         $new = clone $this;
         $new->AutoIncludeUsersFields = $AutoIncludeUsersFields;
@@ -1082,20 +680,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoIncludeCoursesType()
+    
+    public function getAutoIncludeCoursesType(): string
     {
         return $this->AutoIncludeCoursesType;
     }
 
-    /**
-     * @param string $AutoIncludeCoursesType
-     *
-     * @return Program
-     */
-    public function withAutoIncludeCoursesType($AutoIncludeCoursesType)
+    
+    public function withAutoIncludeCoursesType(string $AutoIncludeCoursesType): static
     {
         $new = clone $this;
         $new->AutoIncludeCoursesType = $AutoIncludeCoursesType;
@@ -1103,20 +695,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoIncludeCourses()
+    
+    public function getAutoIncludeCourses(): bool
     {
         return $this->AutoIncludeCourses;
     }
 
-    /**
-     * @param bool $AutoIncludeCourses
-     *
-     * @return Program
-     */
-    public function withAutoIncludeCourses($AutoIncludeCourses)
+    
+    public function withAutoIncludeCourses(bool $AutoIncludeCourses): static
     {
         $new = clone $this;
         $new->AutoIncludeCourses = $AutoIncludeCourses;
@@ -1124,20 +710,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoIncludeCoursesFields()
+    
+    public function getAutoIncludeCoursesFields(): string
     {
         return $this->AutoIncludeCoursesFields;
     }
 
-    /**
-     * @param string $AutoIncludeCoursesFields
-     *
-     * @return Program
-     */
-    public function withAutoIncludeCoursesFields($AutoIncludeCoursesFields)
+    
+    public function withAutoIncludeCoursesFields(string $AutoIncludeCoursesFields): static
     {
         $new = clone $this;
         $new->AutoIncludeCoursesFields = $AutoIncludeCoursesFields;
@@ -1145,20 +725,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsSearchFilter()
+    
+    public function getIsSearchFilter(): bool
     {
         return $this->IsSearchFilter;
     }
 
-    /**
-     * @param bool $IsSearchFilter
-     *
-     * @return Program
-     */
-    public function withIsSearchFilter($IsSearchFilter)
+    
+    public function withIsSearchFilter(bool $IsSearchFilter): static
     {
         $new = clone $this;
         $new->IsSearchFilter = $IsSearchFilter;
@@ -1166,20 +740,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowSelfRegistration()
+    
+    public function getAllowSelfRegistration(): bool
     {
         return $this->AllowSelfRegistration;
     }
 
-    /**
-     * @param bool $AllowSelfRegistration
-     *
-     * @return Program
-     */
-    public function withAllowSelfRegistration($AllowSelfRegistration)
+    
+    public function withAllowSelfRegistration(bool $AllowSelfRegistration): static
     {
         $new = clone $this;
         $new->AllowSelfRegistration = $AllowSelfRegistration;
@@ -1187,20 +755,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequiresRegistrationApproval()
+    
+    public function getRequiresRegistrationApproval(): bool
     {
         return $this->RequiresRegistrationApproval;
     }
 
-    /**
-     * @param bool $RequiresRegistrationApproval
-     *
-     * @return Program
-     */
-    public function withRequiresRegistrationApproval($RequiresRegistrationApproval)
+    
+    public function withRequiresRegistrationApproval(bool $RequiresRegistrationApproval): static
     {
         $new = clone $this;
         $new->RequiresRegistrationApproval = $RequiresRegistrationApproval;
@@ -1208,20 +770,29 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationAutomaticApproval()
+    
+    public function getRequiresRegistrationCodeForExistingAccounts(): bool
+    {
+        return $this->RequiresRegistrationCodeForExistingAccounts;
+    }
+
+    
+    public function withRequiresRegistrationCodeForExistingAccounts(bool $RequiresRegistrationCodeForExistingAccounts): static
+    {
+        $new = clone $this;
+        $new->RequiresRegistrationCodeForExistingAccounts = $RequiresRegistrationCodeForExistingAccounts;
+
+        return $new;
+    }
+
+    
+    public function getRegistrationAutomaticApproval(): bool
     {
         return $this->RegistrationAutomaticApproval;
     }
 
-    /**
-     * @param bool $RegistrationAutomaticApproval
-     *
-     * @return Program
-     */
-    public function withRegistrationAutomaticApproval($RegistrationAutomaticApproval)
+    
+    public function withRegistrationAutomaticApproval(bool $RegistrationAutomaticApproval): static
     {
         $new = clone $this;
         $new->RegistrationAutomaticApproval = $RegistrationAutomaticApproval;
@@ -1229,20 +800,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationRequiresCode()
+    
+    public function getRegistrationRequiresCode(): bool
     {
         return $this->RegistrationRequiresCode;
     }
 
-    /**
-     * @param bool $RegistrationRequiresCode
-     *
-     * @return Program
-     */
-    public function withRegistrationRequiresCode($RegistrationRequiresCode)
+    
+    public function withRegistrationRequiresCode(bool $RegistrationRequiresCode): static
     {
         $new = clone $this;
         $new->RegistrationRequiresCode = $RegistrationRequiresCode;
@@ -1250,20 +815,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationRequiresRequest()
+    
+    public function getRegistrationRequiresRequest(): bool
     {
         return $this->RegistrationRequiresRequest;
     }
 
-    /**
-     * @param bool $RegistrationRequiresRequest
-     *
-     * @return Program
-     */
-    public function withRegistrationRequiresRequest($RegistrationRequiresRequest)
+    
+    public function withRegistrationRequiresRequest(bool $RegistrationRequiresRequest): static
     {
         $new = clone $this;
         $new->RegistrationRequiresRequest = $RegistrationRequiresRequest;
@@ -1271,20 +830,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAltPrices()
+    
+    public function getAltPrices(): ArrayOfAnyType
     {
         return $this->AltPrices;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AltPrices
-     *
-     * @return Program
-     */
-    public function withAltPrices($AltPrices)
+    
+    public function withAltPrices(ArrayOfAnyType $AltPrices): static
     {
         $new = clone $this;
         $new->AltPrices = $AltPrices;
@@ -1292,20 +845,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationAccessCodes()
+    
+    public function getRegistrationAccessCodes(): string
     {
         return $this->RegistrationAccessCodes;
     }
 
-    /**
-     * @param string $RegistrationAccessCodes
-     *
-     * @return Program
-     */
-    public function withRegistrationAccessCodes($RegistrationAccessCodes)
+    
+    public function withRegistrationAccessCodes(string $RegistrationAccessCodes): static
     {
         $new = clone $this;
         $new->RegistrationAccessCodes = $RegistrationAccessCodes;
@@ -1313,20 +860,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationAccessCode()
+    
+    public function getRegistrationAccessCode(): string
     {
         return $this->RegistrationAccessCode;
     }
 
-    /**
-     * @param string $RegistrationAccessCode
-     *
-     * @return Program
-     */
-    public function withRegistrationAccessCode($RegistrationAccessCode)
+    
+    public function withRegistrationAccessCode(string $RegistrationAccessCode): static
     {
         $new = clone $this;
         $new->RegistrationAccessCode = $RegistrationAccessCode;
@@ -1334,20 +875,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationInstruction()
+    
+    public function getRegistrationInstruction(): string
     {
         return $this->RegistrationInstruction;
     }
 
-    /**
-     * @param string $RegistrationInstruction
-     *
-     * @return Program
-     */
-    public function withRegistrationInstruction($RegistrationInstruction)
+    
+    public function withRegistrationInstruction(string $RegistrationInstruction): static
     {
         $new = clone $this;
         $new->RegistrationInstruction = $RegistrationInstruction;
@@ -1355,20 +890,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationAutomaticApproval_Domain()
+    
+    public function getRegistrationAutomaticApprovalDomain(): bool
     {
         return $this->RegistrationAutomaticApproval_Domain;
     }
 
-    /**
-     * @param bool $RegistrationAutomaticApproval_Domain
-     *
-     * @return Program
-     */
-    public function withRegistrationAutomaticApproval_Domain($RegistrationAutomaticApproval_Domain)
+    
+    public function withRegistrationAutomaticApprovalDomain(bool $RegistrationAutomaticApproval_Domain): static
     {
         $new = clone $this;
         $new->RegistrationAutomaticApproval_Domain = $RegistrationAutomaticApproval_Domain;
@@ -1376,20 +905,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutomaticApproveRegistrationDomain()
+    
+    public function getAutomaticApproveRegistrationDomain(): string
     {
         return $this->AutomaticApproveRegistrationDomain;
     }
 
-    /**
-     * @param string $AutomaticApproveRegistrationDomain
-     *
-     * @return Program
-     */
-    public function withAutomaticApproveRegistrationDomain($AutomaticApproveRegistrationDomain)
+    
+    public function withAutomaticApproveRegistrationDomain(string $AutomaticApproveRegistrationDomain): static
     {
         $new = clone $this;
         $new->AutomaticApproveRegistrationDomain = $AutomaticApproveRegistrationDomain;
@@ -1397,20 +920,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationFields()
+    
+    public function getRegistrationFields(): string
     {
         return $this->RegistrationFields;
     }
 
-    /**
-     * @param string $RegistrationFields
-     *
-     * @return Program
-     */
-    public function withRegistrationFields($RegistrationFields)
+    
+    public function withRegistrationFields(string $RegistrationFields): static
     {
         $new = clone $this;
         $new->RegistrationFields = $RegistrationFields;
@@ -1418,20 +935,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationSubdomains()
+    
+    public function getRegistrationSubdomains(): string
     {
         return $this->RegistrationSubdomains;
     }
 
-    /**
-     * @param string $RegistrationSubdomains
-     *
-     * @return Program
-     */
-    public function withRegistrationSubdomains($RegistrationSubdomains)
+    
+    public function withRegistrationSubdomains(string $RegistrationSubdomains): static
     {
         $new = clone $this;
         $new->RegistrationSubdomains = $RegistrationSubdomains;
@@ -1439,20 +950,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowUserDomainSelection()
+    
+    public function getAllowUserDomainSelection(): bool
     {
         return $this->AllowUserDomainSelection;
     }
 
-    /**
-     * @param bool $AllowUserDomainSelection
-     *
-     * @return Program
-     */
-    public function withAllowUserDomainSelection($AllowUserDomainSelection)
+    
+    public function withAllowUserDomainSelection(bool $AllowUserDomainSelection): static
     {
         $new = clone $this;
         $new->AllowUserDomainSelection = $AllowUserDomainSelection;
@@ -1460,20 +965,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUserDomainSelectionRequired()
+    
+    public function getUserDomainSelectionRequired(): bool
     {
         return $this->UserDomainSelectionRequired;
     }
 
-    /**
-     * @param bool $UserDomainSelectionRequired
-     *
-     * @return Program
-     */
-    public function withUserDomainSelectionRequired($UserDomainSelectionRequired)
+    
+    public function withUserDomainSelectionRequired(bool $UserDomainSelectionRequired): static
     {
         $new = clone $this;
         $new->UserDomainSelectionRequired = $UserDomainSelectionRequired;
@@ -1481,20 +980,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUserDomainSelectAll()
+    
+    public function getUserDomainSelectAll(): bool
     {
         return $this->UserDomainSelectAll;
     }
 
-    /**
-     * @param bool $UserDomainSelectAll
-     *
-     * @return Program
-     */
-    public function withUserDomainSelectAll($UserDomainSelectAll)
+    
+    public function withUserDomainSelectAll(bool $UserDomainSelectAll): static
     {
         $new = clone $this;
         $new->UserDomainSelectAll = $UserDomainSelectAll;
@@ -1502,20 +995,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserDomainDisplayLabel()
+    
+    public function getUserDomainDisplayLabel(): string
     {
         return $this->UserDomainDisplayLabel;
     }
 
-    /**
-     * @param string $UserDomainDisplayLabel
-     *
-     * @return Program
-     */
-    public function withUserDomainDisplayLabel($UserDomainDisplayLabel)
+    
+    public function withUserDomainDisplayLabel(string $UserDomainDisplayLabel): static
     {
         $new = clone $this;
         $new->UserDomainDisplayLabel = $UserDomainDisplayLabel;
@@ -1523,20 +1010,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserRegistrationDomains()
+    
+    public function getUserRegistrationDomains(): string
     {
         return $this->UserRegistrationDomains;
     }
 
-    /**
-     * @param string $UserRegistrationDomains
-     *
-     * @return Program
-     */
-    public function withUserRegistrationDomains($UserRegistrationDomains)
+    
+    public function withUserRegistrationDomains(string $UserRegistrationDomains): static
     {
         $new = clone $this;
         $new->UserRegistrationDomains = $UserRegistrationDomains;
@@ -1544,20 +1025,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram
-     */
-    public function getUserRegistrationDomainsList()
+    
+    public function getUserRegistrationDomainsList(): ArrayOfProgram
     {
         return $this->UserRegistrationDomainsList;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram $UserRegistrationDomainsList
-     *
-     * @return Program
-     */
-    public function withUserRegistrationDomainsList($UserRegistrationDomainsList)
+    
+    public function withUserRegistrationDomainsList(ArrayOfProgram $UserRegistrationDomainsList): static
     {
         $new = clone $this;
         $new->UserRegistrationDomainsList = $UserRegistrationDomainsList;
@@ -1565,20 +1040,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserRegistrationDomainsDisplay()
+    
+    public function getUserRegistrationDomainsDisplay(): string
     {
         return $this->UserRegistrationDomainsDisplay;
     }
 
-    /**
-     * @param string $UserRegistrationDomainsDisplay
-     *
-     * @return Program
-     */
-    public function withUserRegistrationDomainsDisplay($UserRegistrationDomainsDisplay)
+    
+    public function withUserRegistrationDomainsDisplay(string $UserRegistrationDomainsDisplay): static
     {
         $new = clone $this;
         $new->UserRegistrationDomainsDisplay = $UserRegistrationDomainsDisplay;
@@ -1586,20 +1055,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserRegistrationDomainsMode()
+    
+    public function getUserRegistrationDomainsMode(): string
     {
         return $this->UserRegistrationDomainsMode;
     }
 
-    /**
-     * @param string $UserRegistrationDomainsMode
-     *
-     * @return Program
-     */
-    public function withUserRegistrationDomainsMode($UserRegistrationDomainsMode)
+    
+    public function withUserRegistrationDomainsMode(string $UserRegistrationDomainsMode): static
     {
         $new = clone $this;
         $new->UserRegistrationDomainsMode = $UserRegistrationDomainsMode;
@@ -1607,20 +1070,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationConfirmationText()
+    
+    public function getRegistrationConfirmationText(): string
     {
         return $this->RegistrationConfirmationText;
     }
 
-    /**
-     * @param string $RegistrationConfirmationText
-     *
-     * @return Program
-     */
-    public function withRegistrationConfirmationText($RegistrationConfirmationText)
+    
+    public function withRegistrationConfirmationText(string $RegistrationConfirmationText): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationText = $RegistrationConfirmationText;
@@ -1628,20 +1085,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationIntroText()
+    
+    public function getRegistrationIntroText(): string
     {
         return $this->RegistrationIntroText;
     }
 
-    /**
-     * @param string $RegistrationIntroText
-     *
-     * @return Program
-     */
-    public function withRegistrationIntroText($RegistrationIntroText)
+    
+    public function withRegistrationIntroText(string $RegistrationIntroText): static
     {
         $new = clone $this;
         $new->RegistrationIntroText = $RegistrationIntroText;
@@ -1649,20 +1100,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationToDomainIntroText()
+    
+    public function getRegistrationToDomainIntroText(): string
     {
         return $this->RegistrationToDomainIntroText;
     }
 
-    /**
-     * @param string $RegistrationToDomainIntroText
-     *
-     * @return Program
-     */
-    public function withRegistrationToDomainIntroText($RegistrationToDomainIntroText)
+    
+    public function withRegistrationToDomainIntroText(string $RegistrationToDomainIntroText): static
     {
         $new = clone $this;
         $new->RegistrationToDomainIntroText = $RegistrationToDomainIntroText;
@@ -1670,20 +1115,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationRequestConfirmationText()
+    
+    public function getRegistrationRequestConfirmationText(): string
     {
         return $this->RegistrationRequestConfirmationText;
     }
 
-    /**
-     * @param string $RegistrationRequestConfirmationText
-     *
-     * @return Program
-     */
-    public function withRegistrationRequestConfirmationText($RegistrationRequestConfirmationText)
+    
+    public function withRegistrationRequestConfirmationText(string $RegistrationRequestConfirmationText): static
     {
         $new = clone $this;
         $new->RegistrationRequestConfirmationText = $RegistrationRequestConfirmationText;
@@ -1691,20 +1130,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationDisclaimerText()
+    
+    public function getRegistrationDisclaimerText(): string
     {
         return $this->RegistrationDisclaimerText;
     }
 
-    /**
-     * @param string $RegistrationDisclaimerText
-     *
-     * @return Program
-     */
-    public function withRegistrationDisclaimerText($RegistrationDisclaimerText)
+    
+    public function withRegistrationDisclaimerText(string $RegistrationDisclaimerText): static
     {
         $new = clone $this;
         $new->RegistrationDisclaimerText = $RegistrationDisclaimerText;
@@ -1712,20 +1145,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequiresRegistrationDisclaimerAck()
+    
+    public function getRequiresRegistrationDisclaimerAck(): bool
     {
         return $this->RequiresRegistrationDisclaimerAck;
     }
 
-    /**
-     * @param bool $RequiresRegistrationDisclaimerAck
-     *
-     * @return Program
-     */
-    public function withRequiresRegistrationDisclaimerAck($RequiresRegistrationDisclaimerAck)
+    
+    public function withRequiresRegistrationDisclaimerAck(bool $RequiresRegistrationDisclaimerAck): static
     {
         $new = clone $this;
         $new->RequiresRegistrationDisclaimerAck = $RequiresRegistrationDisclaimerAck;
@@ -1733,20 +1160,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationRequiresPurchase()
+    
+    public function getRegistrationRequiresPurchase(): bool
     {
         return $this->RegistrationRequiresPurchase;
     }
 
-    /**
-     * @param bool $RegistrationRequiresPurchase
-     *
-     * @return Program
-     */
-    public function withRegistrationRequiresPurchase($RegistrationRequiresPurchase)
+    
+    public function withRegistrationRequiresPurchase(bool $RegistrationRequiresPurchase): static
     {
         $new = clone $this;
         $new->RegistrationRequiresPurchase = $RegistrationRequiresPurchase;
@@ -1754,20 +1175,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationRequiresVerification()
+    
+    public function getRegistrationRequiresVerification(): bool
     {
         return $this->RegistrationRequiresVerification;
     }
 
-    /**
-     * @param bool $RegistrationRequiresVerification
-     *
-     * @return Program
-     */
-    public function withRegistrationRequiresVerification($RegistrationRequiresVerification)
+    
+    public function withRegistrationRequiresVerification(bool $RegistrationRequiresVerification): static
     {
         $new = clone $this;
         $new->RegistrationRequiresVerification = $RegistrationRequiresVerification;
@@ -1775,20 +1190,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationSubscription()
+    
+    public function getRegistrationSubscription(): string
     {
         return $this->RegistrationSubscription;
     }
 
-    /**
-     * @param string $RegistrationSubscription
-     *
-     * @return Program
-     */
-    public function withRegistrationSubscription($RegistrationSubscription)
+    
+    public function withRegistrationSubscription(string $RegistrationSubscription): static
     {
         $new = clone $this;
         $new->RegistrationSubscription = $RegistrationSubscription;
@@ -1796,20 +1205,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationPasses()
+    
+    public function getRegistrationPasses(): string
     {
         return $this->RegistrationPasses;
     }
 
-    /**
-     * @param string $RegistrationPasses
-     *
-     * @return Program
-     */
-    public function withRegistrationPasses($RegistrationPasses)
+    
+    public function withRegistrationPasses(string $RegistrationPasses): static
     {
         $new = clone $this;
         $new->RegistrationPasses = $RegistrationPasses;
@@ -1817,20 +1220,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCollectLoginMetadataOnce()
+    
+    public function getCollectLoginMetadataOnce(): bool
     {
         return $this->CollectLoginMetadataOnce;
     }
 
-    /**
-     * @param bool $CollectLoginMetadataOnce
-     *
-     * @return Program
-     */
-    public function withCollectLoginMetadataOnce($CollectLoginMetadataOnce)
+    
+    public function withCollectLoginMetadataOnce(bool $CollectLoginMetadataOnce): static
     {
         $new = clone $this;
         $new->CollectLoginMetadataOnce = $CollectLoginMetadataOnce;
@@ -1838,20 +1235,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowLoginNotRequiredFields()
+    
+    public function getShowLoginNotRequiredFields(): bool
     {
         return $this->ShowLoginNotRequiredFields;
     }
 
-    /**
-     * @param bool $ShowLoginNotRequiredFields
-     *
-     * @return Program
-     */
-    public function withShowLoginNotRequiredFields($ShowLoginNotRequiredFields)
+    
+    public function withShowLoginNotRequiredFields(bool $ShowLoginNotRequiredFields): static
     {
         $new = clone $this;
         $new->ShowLoginNotRequiredFields = $ShowLoginNotRequiredFields;
@@ -1859,20 +1250,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendRegistrationConfirmation()
+    
+    public function getSendRegistrationConfirmation(): bool
     {
         return $this->SendRegistrationConfirmation;
     }
 
-    /**
-     * @param bool $SendRegistrationConfirmation
-     *
-     * @return Program
-     */
-    public function withSendRegistrationConfirmation($SendRegistrationConfirmation)
+    
+    public function withSendRegistrationConfirmation(bool $SendRegistrationConfirmation): static
     {
         $new = clone $this;
         $new->SendRegistrationConfirmation = $SendRegistrationConfirmation;
@@ -1880,20 +1265,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendRegistrationRequest()
+    
+    public function getSendRegistrationRequest(): bool
     {
         return $this->SendRegistrationRequest;
     }
 
-    /**
-     * @param bool $SendRegistrationRequest
-     *
-     * @return Program
-     */
-    public function withSendRegistrationRequest($SendRegistrationRequest)
+    
+    public function withSendRegistrationRequest(bool $SendRegistrationRequest): static
     {
         $new = clone $this;
         $new->SendRegistrationRequest = $SendRegistrationRequest;
@@ -1901,20 +1280,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getPasswordExpirationDurationInSeconds()
+    
+    public function getPasswordExpirationDurationInSeconds(): int
     {
         return $this->PasswordExpirationDurationInSeconds;
     }
 
-    /**
-     * @param int $PasswordExpirationDurationInSeconds
-     *
-     * @return Program
-     */
-    public function withPasswordExpirationDurationInSeconds($PasswordExpirationDurationInSeconds)
+    
+    public function withPasswordExpirationDurationInSeconds(int $PasswordExpirationDurationInSeconds): static
     {
         $new = clone $this;
         $new->PasswordExpirationDurationInSeconds = $PasswordExpirationDurationInSeconds;
@@ -1922,20 +1295,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendRegistrationApproval()
+    
+    public function getSendRegistrationApproval(): bool
     {
         return $this->SendRegistrationApproval;
     }
 
-    /**
-     * @param bool $SendRegistrationApproval
-     *
-     * @return Program
-     */
-    public function withSendRegistrationApproval($SendRegistrationApproval)
+    
+    public function withSendRegistrationApproval(bool $SendRegistrationApproval): static
     {
         $new = clone $this;
         $new->SendRegistrationApproval = $SendRegistrationApproval;
@@ -1943,20 +1310,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendRegistrationDenial()
+    
+    public function getSendRegistrationDenial(): bool
     {
         return $this->SendRegistrationDenial;
     }
 
-    /**
-     * @param bool $SendRegistrationDenial
-     *
-     * @return Program
-     */
-    public function withSendRegistrationDenial($SendRegistrationDenial)
+    
+    public function withSendRegistrationDenial(bool $SendRegistrationDenial): static
     {
         $new = clone $this;
         $new->SendRegistrationDenial = $SendRegistrationDenial;
@@ -1964,20 +1325,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideGlobalRegistrationConfirmation()
+    
+    public function getOverrideGlobalRegistrationConfirmation(): bool
     {
         return $this->OverrideGlobalRegistrationConfirmation;
     }
 
-    /**
-     * @param bool $OverrideGlobalRegistrationConfirmation
-     *
-     * @return Program
-     */
-    public function withOverrideGlobalRegistrationConfirmation($OverrideGlobalRegistrationConfirmation)
+    
+    public function withOverrideGlobalRegistrationConfirmation(bool $OverrideGlobalRegistrationConfirmation): static
     {
         $new = clone $this;
         $new->OverrideGlobalRegistrationConfirmation = $OverrideGlobalRegistrationConfirmation;
@@ -1985,20 +1340,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideGlobalRegistrationRequest()
+    
+    public function getOverrideGlobalRegistrationRequest(): bool
     {
         return $this->OverrideGlobalRegistrationRequest;
     }
 
-    /**
-     * @param bool $OverrideGlobalRegistrationRequest
-     *
-     * @return Program
-     */
-    public function withOverrideGlobalRegistrationRequest($OverrideGlobalRegistrationRequest)
+    
+    public function withOverrideGlobalRegistrationRequest(bool $OverrideGlobalRegistrationRequest): static
     {
         $new = clone $this;
         $new->OverrideGlobalRegistrationRequest = $OverrideGlobalRegistrationRequest;
@@ -2006,20 +1355,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideGlobalRegistrationApproval()
+    
+    public function getOverrideGlobalRegistrationApproval(): bool
     {
         return $this->OverrideGlobalRegistrationApproval;
     }
 
-    /**
-     * @param bool $OverrideGlobalRegistrationApproval
-     *
-     * @return Program
-     */
-    public function withOverrideGlobalRegistrationApproval($OverrideGlobalRegistrationApproval)
+    
+    public function withOverrideGlobalRegistrationApproval(bool $OverrideGlobalRegistrationApproval): static
     {
         $new = clone $this;
         $new->OverrideGlobalRegistrationApproval = $OverrideGlobalRegistrationApproval;
@@ -2027,20 +1370,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideGlobalRegistrationDenial()
+    
+    public function getOverrideGlobalRegistrationDenial(): bool
     {
         return $this->OverrideGlobalRegistrationDenial;
     }
 
-    /**
-     * @param bool $OverrideGlobalRegistrationDenial
-     *
-     * @return Program
-     */
-    public function withOverrideGlobalRegistrationDenial($OverrideGlobalRegistrationDenial)
+    
+    public function withOverrideGlobalRegistrationDenial(bool $OverrideGlobalRegistrationDenial): static
     {
         $new = clone $this;
         $new->OverrideGlobalRegistrationDenial = $OverrideGlobalRegistrationDenial;
@@ -2048,20 +1385,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationConfirmationEmailText()
+    
+    public function getRegistrationConfirmationEmailText(): string
     {
         return $this->RegistrationConfirmationEmailText;
     }
 
-    /**
-     * @param string $RegistrationConfirmationEmailText
-     *
-     * @return Program
-     */
-    public function withRegistrationConfirmationEmailText($RegistrationConfirmationEmailText)
+    
+    public function withRegistrationConfirmationEmailText(string $RegistrationConfirmationEmailText): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationEmailText = $RegistrationConfirmationEmailText;
@@ -2069,20 +1400,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationRequestEmailText()
+    
+    public function getRegistrationRequestEmailText(): string
     {
         return $this->RegistrationRequestEmailText;
     }
 
-    /**
-     * @param string $RegistrationRequestEmailText
-     *
-     * @return Program
-     */
-    public function withRegistrationRequestEmailText($RegistrationRequestEmailText)
+    
+    public function withRegistrationRequestEmailText(string $RegistrationRequestEmailText): static
     {
         $new = clone $this;
         $new->RegistrationRequestEmailText = $RegistrationRequestEmailText;
@@ -2090,20 +1415,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationApprovalEmailText()
+    
+    public function getRegistrationApprovalEmailText(): string
     {
         return $this->RegistrationApprovalEmailText;
     }
 
-    /**
-     * @param string $RegistrationApprovalEmailText
-     *
-     * @return Program
-     */
-    public function withRegistrationApprovalEmailText($RegistrationApprovalEmailText)
+    
+    public function withRegistrationApprovalEmailText(string $RegistrationApprovalEmailText): static
     {
         $new = clone $this;
         $new->RegistrationApprovalEmailText = $RegistrationApprovalEmailText;
@@ -2111,20 +1430,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationDenialEmailText()
+    
+    public function getRegistrationDenialEmailText(): string
     {
         return $this->RegistrationDenialEmailText;
     }
 
-    /**
-     * @param string $RegistrationDenialEmailText
-     *
-     * @return Program
-     */
-    public function withRegistrationDenialEmailText($RegistrationDenialEmailText)
+    
+    public function withRegistrationDenialEmailText(string $RegistrationDenialEmailText): static
     {
         $new = clone $this;
         $new->RegistrationDenialEmailText = $RegistrationDenialEmailText;
@@ -2132,20 +1445,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationCaptchaMode()
+    
+    public function getRegistrationCaptchaMode(): string
     {
         return $this->RegistrationCaptchaMode;
     }
 
-    /**
-     * @param string $RegistrationCaptchaMode
-     *
-     * @return Program
-     */
-    public function withRegistrationCaptchaMode($RegistrationCaptchaMode)
+    
+    public function withRegistrationCaptchaMode(string $RegistrationCaptchaMode): static
     {
         $new = clone $this;
         $new->RegistrationCaptchaMode = $RegistrationCaptchaMode;
@@ -2153,20 +1460,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegistrationCaptchaType()
+    
+    public function getRegistrationCaptchaType(): string
     {
         return $this->RegistrationCaptchaType;
     }
 
-    /**
-     * @param string $RegistrationCaptchaType
-     *
-     * @return Program
-     */
-    public function withRegistrationCaptchaType($RegistrationCaptchaType)
+    
+    public function withRegistrationCaptchaType(string $RegistrationCaptchaType): static
     {
         $new = clone $this;
         $new->RegistrationCaptchaType = $RegistrationCaptchaType;
@@ -2174,20 +1475,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getForumCaptchaType()
+    
+    public function getForumCaptchaType(): string
     {
         return $this->ForumCaptchaType;
     }
 
-    /**
-     * @param string $ForumCaptchaType
-     *
-     * @return Program
-     */
-    public function withForumCaptchaType($ForumCaptchaType)
+    
+    public function withForumCaptchaType(string $ForumCaptchaType): static
     {
         $new = clone $this;
         $new->ForumCaptchaType = $ForumCaptchaType;
@@ -2195,20 +1490,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getForumDisclaimerText()
+    
+    public function getForumDisclaimerText(): string
     {
         return $this->ForumDisclaimerText;
     }
 
-    /**
-     * @param string $ForumDisclaimerText
-     *
-     * @return Program
-     */
-    public function withForumDisclaimerText($ForumDisclaimerText)
+    
+    public function withForumDisclaimerText(string $ForumDisclaimerText): static
     {
         $new = clone $this;
         $new->ForumDisclaimerText = $ForumDisclaimerText;
@@ -2216,20 +1505,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getShowForumDisclaimerWhen()
+    
+    public function getShowForumDisclaimerWhen(): string
     {
         return $this->ShowForumDisclaimerWhen;
     }
 
-    /**
-     * @param string $ShowForumDisclaimerWhen
-     *
-     * @return Program
-     */
-    public function withShowForumDisclaimerWhen($ShowForumDisclaimerWhen)
+    
+    public function withShowForumDisclaimerWhen(string $ShowForumDisclaimerWhen): static
     {
         $new = clone $this;
         $new->ShowForumDisclaimerWhen = $ShowForumDisclaimerWhen;
@@ -2237,20 +1520,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getForumDisclaimerButtonText()
+    
+    public function getForumDisclaimerButtonText(): string
     {
         return $this->ForumDisclaimerButtonText;
     }
 
-    /**
-     * @param string $ForumDisclaimerButtonText
-     *
-     * @return Program
-     */
-    public function withForumDisclaimerButtonText($ForumDisclaimerButtonText)
+    
+    public function withForumDisclaimerButtonText(string $ForumDisclaimerButtonText): static
     {
         $new = clone $this;
         $new->ForumDisclaimerButtonText = $ForumDisclaimerButtonText;
@@ -2258,20 +1535,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getForumHasDisclaimer()
+    
+    public function getForumHasDisclaimer(): bool
     {
         return $this->ForumHasDisclaimer;
     }
 
-    /**
-     * @param bool $ForumHasDisclaimer
-     *
-     * @return Program
-     */
-    public function withForumHasDisclaimer($ForumHasDisclaimer)
+    
+    public function withForumHasDisclaimer(bool $ForumHasDisclaimer): static
     {
         $new = clone $this;
         $new->ForumHasDisclaimer = $ForumHasDisclaimer;
@@ -2279,20 +1550,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationDenyPublicEmails()
+    
+    public function getRegistrationDenyPublicEmails(): bool
     {
         return $this->RegistrationDenyPublicEmails;
     }
 
-    /**
-     * @param bool $RegistrationDenyPublicEmails
-     *
-     * @return Program
-     */
-    public function withRegistrationDenyPublicEmails($RegistrationDenyPublicEmails)
+    
+    public function withRegistrationDenyPublicEmails(bool $RegistrationDenyPublicEmails): static
     {
         $new = clone $this;
         $new->RegistrationDenyPublicEmails = $RegistrationDenyPublicEmails;
@@ -2300,20 +1565,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRegistrationAutoFillDefaultFields()
+    
+    public function getRegistrationAutoFillDefaultFields(): bool
     {
         return $this->RegistrationAutoFillDefaultFields;
     }
 
-    /**
-     * @param bool $RegistrationAutoFillDefaultFields
-     *
-     * @return Program
-     */
-    public function withRegistrationAutoFillDefaultFields($RegistrationAutoFillDefaultFields)
+    
+    public function withRegistrationAutoFillDefaultFields(bool $RegistrationAutoFillDefaultFields): static
     {
         $new = clone $this;
         $new->RegistrationAutoFillDefaultFields = $RegistrationAutoFillDefaultFields;
@@ -2321,20 +1580,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram
-     */
-    public function getSubPrograms()
+    
+    public function getSubPrograms(): ArrayOfProgram
     {
         return $this->SubPrograms;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram $SubPrograms
-     *
-     * @return Program
-     */
-    public function withSubPrograms($SubPrograms)
+    
+    public function withSubPrograms(ArrayOfProgram $SubPrograms): static
     {
         $new = clone $this;
         $new->SubPrograms = $SubPrograms;
@@ -2342,20 +1595,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getClassroomTemplate()
+    
+    public function getClassroomTemplate(): string
     {
         return $this->ClassroomTemplate;
     }
 
-    /**
-     * @param string $ClassroomTemplate
-     *
-     * @return Program
-     */
-    public function withClassroomTemplate($ClassroomTemplate)
+    
+    public function withClassroomTemplate(string $ClassroomTemplate): static
     {
         $new = clone $this;
         $new->ClassroomTemplate = $ClassroomTemplate;
@@ -2363,20 +1610,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogo()
+    
+    public function getLogo(): Base64Binary
     {
         return $this->Logo;
     }
 
-    /**
-     * @param string $Logo
-     *
-     * @return Program
-     */
-    public function withLogo($Logo)
+    
+    public function withLogo(Base64Binary $Logo): static
     {
         $new = clone $this;
         $new->Logo = $Logo;
@@ -2384,20 +1625,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogoContentType()
+    
+    public function getLogoContentType(): string
     {
         return $this->LogoContentType;
     }
 
-    /**
-     * @param string $LogoContentType
-     *
-     * @return Program
-     */
-    public function withLogoContentType($LogoContentType)
+    
+    public function withLogoContentType(string $LogoContentType): static
     {
         $new = clone $this;
         $new->LogoContentType = $LogoContentType;
@@ -2405,20 +1640,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseCustomLearnerUrl()
+    
+    public function getUseCustomLearnerUrl(): bool
     {
         return $this->UseCustomLearnerUrl;
     }
 
-    /**
-     * @param bool $UseCustomLearnerUrl
-     *
-     * @return Program
-     */
-    public function withUseCustomLearnerUrl($UseCustomLearnerUrl)
+    
+    public function withUseCustomLearnerUrl(bool $UseCustomLearnerUrl): static
     {
         $new = clone $this;
         $new->UseCustomLearnerUrl = $UseCustomLearnerUrl;
@@ -2426,20 +1655,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseSSL()
+    
+    public function getUseSSL(): bool
     {
         return $this->UseSSL;
     }
 
-    /**
-     * @param bool $UseSSL
-     *
-     * @return Program
-     */
-    public function withUseSSL($UseSSL)
+    
+    public function withUseSSL(bool $UseSSL): static
     {
         $new = clone $this;
         $new->UseSSL = $UseSSL;
@@ -2447,20 +1670,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAdminsLMSLogin()
+    
+    public function getAllowAdminsLMSLogin(): bool
     {
         return $this->AllowAdminsLMSLogin;
     }
 
-    /**
-     * @param bool $AllowAdminsLMSLogin
-     *
-     * @return Program
-     */
-    public function withAllowAdminsLMSLogin($AllowAdminsLMSLogin)
+    
+    public function withAllowAdminsLMSLogin(bool $AllowAdminsLMSLogin): static
     {
         $new = clone $this;
         $new->AllowAdminsLMSLogin = $AllowAdminsLMSLogin;
@@ -2468,20 +1685,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowLearnersLMSLogin()
+    
+    public function getAllowLearnersLMSLogin(): bool
     {
         return $this->AllowLearnersLMSLogin;
     }
 
-    /**
-     * @param bool $AllowLearnersLMSLogin
-     *
-     * @return Program
-     */
-    public function withAllowLearnersLMSLogin($AllowLearnersLMSLogin)
+    
+    public function withAllowLearnersLMSLogin(bool $AllowLearnersLMSLogin): static
     {
         $new = clone $this;
         $new->AllowLearnersLMSLogin = $AllowLearnersLMSLogin;
@@ -2489,20 +1700,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseMFA()
+    
+    public function getUseMFA(): bool
     {
         return $this->UseMFA;
     }
 
-    /**
-     * @param bool $UseMFA
-     *
-     * @return Program
-     */
-    public function withUseMFA($UseMFA)
+    
+    public function withUseMFA(bool $UseMFA): static
     {
         $new = clone $this;
         $new->UseMFA = $UseMFA;
@@ -2510,20 +1715,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMFAMethod()
+    
+    public function getMFAMethod(): string
     {
         return $this->MFAMethod;
     }
 
-    /**
-     * @param string $MFAMethod
-     *
-     * @return Program
-     */
-    public function withMFAMethod($MFAMethod)
+    
+    public function withMFAMethod(string $MFAMethod): static
     {
         $new = clone $this;
         $new->MFAMethod = $MFAMethod;
@@ -2531,20 +1730,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseMFAForLearner()
+    
+    public function getUseMFAForLearner(): bool
     {
         return $this->UseMFAForLearner;
     }
 
-    /**
-     * @param bool $UseMFAForLearner
-     *
-     * @return Program
-     */
-    public function withUseMFAForLearner($UseMFAForLearner)
+    
+    public function withUseMFAForLearner(bool $UseMFAForLearner): static
     {
         $new = clone $this;
         $new->UseMFAForLearner = $UseMFAForLearner;
@@ -2552,20 +1745,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseMFAForAdmin()
+    
+    public function getUseMFAForAdmin(): bool
     {
         return $this->UseMFAForAdmin;
     }
 
-    /**
-     * @param bool $UseMFAForAdmin
-     *
-     * @return Program
-     */
-    public function withUseMFAForAdmin($UseMFAForAdmin)
+    
+    public function withUseMFAForAdmin(bool $UseMFAForAdmin): static
     {
         $new = clone $this;
         $new->UseMFAForAdmin = $UseMFAForAdmin;
@@ -2573,20 +1760,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMFAAdminInterval()
+    
+    public function getMFAAdminInterval(): int
     {
         return $this->MFAAdminInterval;
     }
 
-    /**
-     * @param int $MFAAdminInterval
-     *
-     * @return Program
-     */
-    public function withMFAAdminInterval($MFAAdminInterval)
+    
+    public function withMFAAdminInterval(int $MFAAdminInterval): static
     {
         $new = clone $this;
         $new->MFAAdminInterval = $MFAAdminInterval;
@@ -2594,20 +1775,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMFALearnerInterval()
+    
+    public function getMFALearnerInterval(): int
     {
         return $this->MFALearnerInterval;
     }
 
-    /**
-     * @param int $MFALearnerInterval
-     *
-     * @return Program
-     */
-    public function withMFALearnerInterval($MFALearnerInterval)
+    
+    public function withMFALearnerInterval(int $MFALearnerInterval): static
     {
         $new = clone $this;
         $new->MFALearnerInterval = $MFALearnerInterval;
@@ -2615,20 +1790,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseMFAOnSSO()
+    
+    public function getUseMFAOnSSO(): bool
     {
         return $this->UseMFAOnSSO;
     }
 
-    /**
-     * @param bool $UseMFAOnSSO
-     *
-     * @return Program
-     */
-    public function withUseMFAOnSSO($UseMFAOnSSO)
+    
+    public function withUseMFAOnSSO(bool $UseMFAOnSSO): static
     {
         $new = clone $this;
         $new->UseMFAOnSSO = $UseMFAOnSSO;
@@ -2636,20 +1805,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseMFAOnLMSLogin()
+    
+    public function getUseMFAOnLMSLogin(): bool
     {
         return $this->UseMFAOnLMSLogin;
     }
 
-    /**
-     * @param bool $UseMFAOnLMSLogin
-     *
-     * @return Program
-     */
-    public function withUseMFAOnLMSLogin($UseMFAOnLMSLogin)
+    
+    public function withUseMFAOnLMSLogin(bool $UseMFAOnLMSLogin): static
     {
         $new = clone $this;
         $new->UseMFAOnLMSLogin = $UseMFAOnLMSLogin;
@@ -2657,20 +1820,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHideUrlFromSearch()
+    
+    public function getHideUrlFromSearch(): bool
     {
         return $this->HideUrlFromSearch;
     }
 
-    /**
-     * @param bool $HideUrlFromSearch
-     *
-     * @return Program
-     */
-    public function withHideUrlFromSearch($HideUrlFromSearch)
+    
+    public function withHideUrlFromSearch(bool $HideUrlFromSearch): static
     {
         $new = clone $this;
         $new->HideUrlFromSearch = $HideUrlFromSearch;
@@ -2678,20 +1835,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanConsumeShared()
+    
+    public function getCanConsumeShared(): bool
     {
         return $this->CanConsumeShared;
     }
 
-    /**
-     * @param bool $CanConsumeShared
-     *
-     * @return Program
-     */
-    public function withCanConsumeShared($CanConsumeShared)
+    
+    public function withCanConsumeShared(bool $CanConsumeShared): static
     {
         $new = clone $this;
         $new->CanConsumeShared = $CanConsumeShared;
@@ -2699,20 +1850,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanShare()
+    
+    public function getCanShare(): bool
     {
         return $this->CanShare;
     }
 
-    /**
-     * @param bool $CanShare
-     *
-     * @return Program
-     */
-    public function withCanShare($CanShare)
+    
+    public function withCanShare(bool $CanShare): static
     {
         $new = clone $this;
         $new->CanShare = $CanShare;
@@ -2720,20 +1865,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanSiblingShareOnly()
+    
+    public function getCanSiblingShareOnly(): bool
     {
         return $this->CanSiblingShareOnly;
     }
 
-    /**
-     * @param bool $CanSiblingShareOnly
-     *
-     * @return Program
-     */
-    public function withCanSiblingShareOnly($CanSiblingShareOnly)
+    
+    public function withCanSiblingShareOnly(bool $CanSiblingShareOnly): static
     {
         $new = clone $this;
         $new->CanSiblingShareOnly = $CanSiblingShareOnly;
@@ -2741,20 +1880,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotInheritRosterOptions()
+    
+    public function getDoNotInheritRosterOptions(): bool
     {
         return $this->DoNotInheritRosterOptions;
     }
 
-    /**
-     * @param bool $DoNotInheritRosterOptions
-     *
-     * @return Program
-     */
-    public function withDoNotInheritRosterOptions($DoNotInheritRosterOptions)
+    
+    public function withDoNotInheritRosterOptions(bool $DoNotInheritRosterOptions): static
     {
         $new = clone $this;
         $new->DoNotInheritRosterOptions = $DoNotInheritRosterOptions;
@@ -2762,20 +1895,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowChildRosterEnroll()
+    
+    public function getAllowChildRosterEnroll(): bool
     {
         return $this->AllowChildRosterEnroll;
     }
 
-    /**
-     * @param bool $AllowChildRosterEnroll
-     *
-     * @return Program
-     */
-    public function withAllowChildRosterEnroll($AllowChildRosterEnroll)
+    
+    public function withAllowChildRosterEnroll(bool $AllowChildRosterEnroll): static
     {
         $new = clone $this;
         $new->AllowChildRosterEnroll = $AllowChildRosterEnroll;
@@ -2783,20 +1910,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAddUsersFromRoster()
+    
+    public function getAllowAddUsersFromRoster(): bool
     {
         return $this->AllowAddUsersFromRoster;
     }
 
-    /**
-     * @param bool $AllowAddUsersFromRoster
-     *
-     * @return Program
-     */
-    public function withAllowAddUsersFromRoster($AllowAddUsersFromRoster)
+    
+    public function withAllowAddUsersFromRoster(bool $AllowAddUsersFromRoster): static
     {
         $new = clone $this;
         $new->AllowAddUsersFromRoster = $AllowAddUsersFromRoster;
@@ -2804,20 +1925,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAddUsersFromRosterToRoot()
+    
+    public function getAddUsersFromRosterToRoot(): bool
     {
         return $this->AddUsersFromRosterToRoot;
     }
 
-    /**
-     * @param bool $AddUsersFromRosterToRoot
-     *
-     * @return Program
-     */
-    public function withAddUsersFromRosterToRoot($AddUsersFromRosterToRoot)
+    
+    public function withAddUsersFromRosterToRoot(bool $AddUsersFromRosterToRoot): static
     {
         $new = clone $this;
         $new->AddUsersFromRosterToRoot = $AddUsersFromRosterToRoot;
@@ -2825,20 +1940,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRosterCompletionAfterStartDate()
+    
+    public function getRosterCompletionAfterStartDate(): bool
     {
         return $this->RosterCompletionAfterStartDate;
     }
 
-    /**
-     * @param bool $RosterCompletionAfterStartDate
-     *
-     * @return Program
-     */
-    public function withRosterCompletionAfterStartDate($RosterCompletionAfterStartDate)
+    
+    public function withRosterCompletionAfterStartDate(bool $RosterCompletionAfterStartDate): static
     {
         $new = clone $this;
         $new->RosterCompletionAfterStartDate = $RosterCompletionAfterStartDate;
@@ -2846,20 +1955,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLimitRosterUploadDate()
+    
+    public function getLimitRosterUploadDate(): bool
     {
         return $this->LimitRosterUploadDate;
     }
 
-    /**
-     * @param bool $LimitRosterUploadDate
-     *
-     * @return Program
-     */
-    public function withLimitRosterUploadDate($LimitRosterUploadDate)
+    
+    public function withLimitRosterUploadDate(bool $LimitRosterUploadDate): static
     {
         $new = clone $this;
         $new->LimitRosterUploadDate = $LimitRosterUploadDate;
@@ -2867,20 +1970,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getLimitRosterUploadUnit()
+    
+    public function getLimitRosterUploadUnit(): int
     {
         return $this->LimitRosterUploadUnit;
     }
 
-    /**
-     * @param int $LimitRosterUploadUnit
-     *
-     * @return Program
-     */
-    public function withLimitRosterUploadUnit($LimitRosterUploadUnit)
+    
+    public function withLimitRosterUploadUnit(int $LimitRosterUploadUnit): static
     {
         $new = clone $this;
         $new->LimitRosterUploadUnit = $LimitRosterUploadUnit;
@@ -2888,20 +1985,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeStatusInRoster()
+    
+    public function getIncludeStatusInRoster(): bool
     {
         return $this->IncludeStatusInRoster;
     }
 
-    /**
-     * @param bool $IncludeStatusInRoster
-     *
-     * @return Program
-     */
-    public function withIncludeStatusInRoster($IncludeStatusInRoster)
+    
+    public function withIncludeStatusInRoster(bool $IncludeStatusInRoster): static
     {
         $new = clone $this;
         $new->IncludeStatusInRoster = $IncludeStatusInRoster;
@@ -2909,20 +2000,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeSuccessInRoster()
+    
+    public function getIncludeSuccessInRoster(): bool
     {
         return $this->IncludeSuccessInRoster;
     }
 
-    /**
-     * @param bool $IncludeSuccessInRoster
-     *
-     * @return Program
-     */
-    public function withIncludeSuccessInRoster($IncludeSuccessInRoster)
+    
+    public function withIncludeSuccessInRoster(bool $IncludeSuccessInRoster): static
     {
         $new = clone $this;
         $new->IncludeSuccessInRoster = $IncludeSuccessInRoster;
@@ -2930,20 +2015,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeScoreInRoster()
+    
+    public function getIncludeScoreInRoster(): bool
     {
         return $this->IncludeScoreInRoster;
     }
 
-    /**
-     * @param bool $IncludeScoreInRoster
-     *
-     * @return Program
-     */
-    public function withIncludeScoreInRoster($IncludeScoreInRoster)
+    
+    public function withIncludeScoreInRoster(bool $IncludeScoreInRoster): static
     {
         $new = clone $this;
         $new->IncludeScoreInRoster = $IncludeScoreInRoster;
@@ -2951,20 +2030,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeTimeSpentInRoster()
+    
+    public function getIncludeTimeSpentInRoster(): bool
     {
         return $this->IncludeTimeSpentInRoster;
     }
 
-    /**
-     * @param bool $IncludeTimeSpentInRoster
-     *
-     * @return Program
-     */
-    public function withIncludeTimeSpentInRoster($IncludeTimeSpentInRoster)
+    
+    public function withIncludeTimeSpentInRoster(bool $IncludeTimeSpentInRoster): static
     {
         $new = clone $this;
         $new->IncludeTimeSpentInRoster = $IncludeTimeSpentInRoster;
@@ -2972,20 +2045,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllColumnsRequiredInRoster()
+    
+    public function getAllColumnsRequiredInRoster(): bool
     {
         return $this->AllColumnsRequiredInRoster;
     }
 
-    /**
-     * @param bool $AllColumnsRequiredInRoster
-     *
-     * @return Program
-     */
-    public function withAllColumnsRequiredInRoster($AllColumnsRequiredInRoster)
+    
+    public function withAllColumnsRequiredInRoster(bool $AllColumnsRequiredInRoster): static
     {
         $new = clone $this;
         $new->AllColumnsRequiredInRoster = $AllColumnsRequiredInRoster;
@@ -2993,20 +2060,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideSessionCertificate()
+    
+    public function getOverrideSessionCertificate(): bool
     {
         return $this->OverrideSessionCertificate;
     }
 
-    /**
-     * @param bool $OverrideSessionCertificate
-     *
-     * @return Program
-     */
-    public function withOverrideSessionCertificate($OverrideSessionCertificate)
+    
+    public function withOverrideSessionCertificate(bool $OverrideSessionCertificate): static
     {
         $new = clone $this;
         $new->OverrideSessionCertificate = $OverrideSessionCertificate;
@@ -3014,20 +2075,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getAllowedLearningActivities()
+    
+    public function getAllowedLearningActivities(): ArrayOfString
     {
         return $this->AllowedLearningActivities;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $AllowedLearningActivities
-     *
-     * @return Program
-     */
-    public function withAllowedLearningActivities($AllowedLearningActivities)
+    
+    public function withAllowedLearningActivities(ArrayOfString $AllowedLearningActivities): static
     {
         $new = clone $this;
         $new->AllowedLearningActivities = $AllowedLearningActivities;
@@ -3035,20 +2090,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getParentAllowedLearningActivities()
+    
+    public function getParentAllowedLearningActivities(): ArrayOfString
     {
         return $this->ParentAllowedLearningActivities;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $ParentAllowedLearningActivities
-     *
-     * @return Program
-     */
-    public function withParentAllowedLearningActivities($ParentAllowedLearningActivities)
+    
+    public function withParentAllowedLearningActivities(ArrayOfString $ParentAllowedLearningActivities): static
     {
         $new = clone $this;
         $new->ParentAllowedLearningActivities = $ParentAllowedLearningActivities;
@@ -3056,20 +2105,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getLearningActivityTypeOffFilters()
+    
+    public function getLearningActivityTypeOffFilters(): ArrayOfString
     {
         return $this->LearningActivityTypeOffFilters;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $LearningActivityTypeOffFilters
-     *
-     * @return Program
-     */
-    public function withLearningActivityTypeOffFilters($LearningActivityTypeOffFilters)
+    
+    public function withLearningActivityTypeOffFilters(ArrayOfString $LearningActivityTypeOffFilters): static
     {
         $new = clone $this;
         $new->LearningActivityTypeOffFilters = $LearningActivityTypeOffFilters;
@@ -3077,20 +2120,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getParentLearningActivityTypeOffFilters()
+    
+    public function getParentLearningActivityTypeOffFilters(): ArrayOfString
     {
         return $this->ParentLearningActivityTypeOffFilters;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $ParentLearningActivityTypeOffFilters
-     *
-     * @return Program
-     */
-    public function withParentLearningActivityTypeOffFilters($ParentLearningActivityTypeOffFilters)
+    
+    public function withParentLearningActivityTypeOffFilters(ArrayOfString $ParentLearningActivityTypeOffFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityTypeOffFilters = $ParentLearningActivityTypeOffFilters;
@@ -3098,20 +2135,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getLearningActivityStatusOffFilters()
+    
+    public function getLearningActivityStatusOffFilters(): ArrayOfString
     {
         return $this->LearningActivityStatusOffFilters;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $LearningActivityStatusOffFilters
-     *
-     * @return Program
-     */
-    public function withLearningActivityStatusOffFilters($LearningActivityStatusOffFilters)
+    
+    public function withLearningActivityStatusOffFilters(ArrayOfString $LearningActivityStatusOffFilters): static
     {
         $new = clone $this;
         $new->LearningActivityStatusOffFilters = $LearningActivityStatusOffFilters;
@@ -3119,20 +2150,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getParentLearningActivityStatusOffFilters()
+    
+    public function getParentLearningActivityStatusOffFilters(): ArrayOfString
     {
         return $this->ParentLearningActivityStatusOffFilters;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $ParentLearningActivityStatusOffFilters
-     *
-     * @return Program
-     */
-    public function withParentLearningActivityStatusOffFilters($ParentLearningActivityStatusOffFilters)
+    
+    public function withParentLearningActivityStatusOffFilters(ArrayOfString $ParentLearningActivityStatusOffFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityStatusOffFilters = $ParentLearningActivityStatusOffFilters;
@@ -3140,20 +2165,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getLearningActivityOriginOffFilters()
+    
+    public function getLearningActivityOriginOffFilters(): ArrayOfString
     {
         return $this->LearningActivityOriginOffFilters;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $LearningActivityOriginOffFilters
-     *
-     * @return Program
-     */
-    public function withLearningActivityOriginOffFilters($LearningActivityOriginOffFilters)
+    
+    public function withLearningActivityOriginOffFilters(ArrayOfString $LearningActivityOriginOffFilters): static
     {
         $new = clone $this;
         $new->LearningActivityOriginOffFilters = $LearningActivityOriginOffFilters;
@@ -3161,20 +2180,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getParentLearningActivityOriginOffFilters()
+    
+    public function getParentLearningActivityOriginOffFilters(): ArrayOfString
     {
         return $this->ParentLearningActivityOriginOffFilters;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $ParentLearningActivityOriginOffFilters
-     *
-     * @return Program
-     */
-    public function withParentLearningActivityOriginOffFilters($ParentLearningActivityOriginOffFilters)
+    
+    public function withParentLearningActivityOriginOffFilters(ArrayOfString $ParentLearningActivityOriginOffFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityOriginOffFilters = $ParentLearningActivityOriginOffFilters;
@@ -3182,20 +2195,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLearningActivityHideFilters()
+    
+    public function getLearningActivityHideFilters(): bool
     {
         return $this->LearningActivityHideFilters;
     }
 
-    /**
-     * @param bool $LearningActivityHideFilters
-     *
-     * @return Program
-     */
-    public function withLearningActivityHideFilters($LearningActivityHideFilters)
+    
+    public function withLearningActivityHideFilters(bool $LearningActivityHideFilters): static
     {
         $new = clone $this;
         $new->LearningActivityHideFilters = $LearningActivityHideFilters;
@@ -3203,20 +2210,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getParentLearningActivityHideFilters()
+    
+    public function getParentLearningActivityHideFilters(): bool
     {
         return $this->ParentLearningActivityHideFilters;
     }
 
-    /**
-     * @param bool $ParentLearningActivityHideFilters
-     *
-     * @return Program
-     */
-    public function withParentLearningActivityHideFilters($ParentLearningActivityHideFilters)
+    
+    public function withParentLearningActivityHideFilters(bool $ParentLearningActivityHideFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityHideFilters = $ParentLearningActivityHideFilters;
@@ -3224,20 +2225,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivitiesSortSettings()
+    
+    public function getLearningActivitiesSortSettings(): string
     {
         return $this->LearningActivitiesSortSettings;
     }
 
-    /**
-     * @param string $LearningActivitiesSortSettings
-     *
-     * @return Program
-     */
-    public function withLearningActivitiesSortSettings($LearningActivitiesSortSettings)
+    
+    public function withLearningActivitiesSortSettings(string $LearningActivitiesSortSettings): static
     {
         $new = clone $this;
         $new->LearningActivitiesSortSettings = $LearningActivitiesSortSettings;
@@ -3245,20 +2240,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDenyChildLearningObjects()
+    
+    public function getDenyChildLearningObjects(): bool
     {
         return $this->DenyChildLearningObjects;
     }
 
-    /**
-     * @param bool $DenyChildLearningObjects
-     *
-     * @return Program
-     */
-    public function withDenyChildLearningObjects($DenyChildLearningObjects)
+    
+    public function withDenyChildLearningObjects(bool $DenyChildLearningObjects): static
     {
         $new = clone $this;
         $new->DenyChildLearningObjects = $DenyChildLearningObjects;
@@ -3266,20 +2255,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGenerateLearningActivitiesCode()
+    
+    public function getGenerateLearningActivitiesCode(): bool
     {
         return $this->GenerateLearningActivitiesCode;
     }
 
-    /**
-     * @param bool $GenerateLearningActivitiesCode
-     *
-     * @return Program
-     */
-    public function withGenerateLearningActivitiesCode($GenerateLearningActivitiesCode)
+    
+    public function withGenerateLearningActivitiesCode(bool $GenerateLearningActivitiesCode): static
     {
         $new = clone $this;
         $new->GenerateLearningActivitiesCode = $GenerateLearningActivitiesCode;
@@ -3287,20 +2270,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowOverrideLearningActivitiesCode()
+    
+    public function getAllowOverrideLearningActivitiesCode(): bool
     {
         return $this->AllowOverrideLearningActivitiesCode;
     }
 
-    /**
-     * @param bool $AllowOverrideLearningActivitiesCode
-     *
-     * @return Program
-     */
-    public function withAllowOverrideLearningActivitiesCode($AllowOverrideLearningActivitiesCode)
+    
+    public function withAllowOverrideLearningActivitiesCode(bool $AllowOverrideLearningActivitiesCode): static
     {
         $new = clone $this;
         $new->AllowOverrideLearningActivitiesCode = $AllowOverrideLearningActivitiesCode;
@@ -3308,20 +2285,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWithdrawInactiveLearners()
+    
+    public function getWithdrawInactiveLearners(): bool
     {
         return $this->WithdrawInactiveLearners;
     }
 
-    /**
-     * @param bool $WithdrawInactiveLearners
-     *
-     * @return Program
-     */
-    public function withWithdrawInactiveLearners($WithdrawInactiveLearners)
+    
+    public function withWithdrawInactiveLearners(bool $WithdrawInactiveLearners): static
     {
         $new = clone $this;
         $new->WithdrawInactiveLearners = $WithdrawInactiveLearners;
@@ -3329,20 +2300,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsParent()
+    
+    public function getIsParent(): bool
     {
         return $this->IsParent;
     }
 
-    /**
-     * @param bool $IsParent
-     *
-     * @return Program
-     */
-    public function withIsParent($IsParent)
+    
+    public function withIsParent(bool $IsParent): static
     {
         $new = clone $this;
         $new->IsParent = $IsParent;
@@ -3350,20 +2315,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getSubscriptionRules()
+    
+    public function getSubscriptionRules(): ArrayOfAnyType
     {
         return $this->SubscriptionRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $SubscriptionRules
-     *
-     * @return Program
-     */
-    public function withSubscriptionRules($SubscriptionRules)
+    
+    public function withSubscriptionRules(ArrayOfAnyType $SubscriptionRules): static
     {
         $new = clone $this;
         $new->SubscriptionRules = $SubscriptionRules;
@@ -3371,20 +2330,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationIntroXmlNode
-     */
-    public function getRegistrationIntroXmlNode()
+    
+    public function getRegistrationIntroXmlNode(): RegistrationIntroXmlNode
     {
         return $this->RegistrationIntroXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationIntroXmlNode $RegistrationIntroXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationIntroXmlNode($RegistrationIntroXmlNode)
+    
+    public function withRegistrationIntroXmlNode(RegistrationIntroXmlNode $RegistrationIntroXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationIntroXmlNode = $RegistrationIntroXmlNode;
@@ -3392,20 +2345,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationDuplicateAccountInstrXmlNode
-     */
-    public function getRegistrationDuplicateAccountInstrXmlNode()
+    
+    public function getRegistrationDuplicateAccountInstrXmlNode(): RegistrationDuplicateAccountInstrXmlNode
     {
         return $this->RegistrationDuplicateAccountInstrXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationDuplicateAccountInstrXmlNode($RegistrationDuplicateAccountInstrXmlNode)
+    
+    public function withRegistrationDuplicateAccountInstrXmlNode(RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationDuplicateAccountInstrXmlNode = $RegistrationDuplicateAccountInstrXmlNode;
@@ -3413,20 +2360,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationDisclaimerXmlNode
-     */
-    public function getRegistrationDisclaimerXmlNode()
+    
+    public function getRegistrationDisclaimerXmlNode(): RegistrationDisclaimerXmlNode
     {
         return $this->RegistrationDisclaimerXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationDisclaimerXmlNode($RegistrationDisclaimerXmlNode)
+    
+    public function withRegistrationDisclaimerXmlNode(RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationDisclaimerXmlNode = $RegistrationDisclaimerXmlNode;
@@ -3434,20 +2375,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationConfirmationTextXmlNode
-     */
-    public function getRegistrationConfirmationTextXmlNode()
+    
+    public function getRegistrationConfirmationTextXmlNode(): RegistrationConfirmationTextXmlNode
     {
         return $this->RegistrationConfirmationTextXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationConfirmationTextXmlNode($RegistrationConfirmationTextXmlNode)
+    
+    public function withRegistrationConfirmationTextXmlNode(RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationTextXmlNode = $RegistrationConfirmationTextXmlNode;
@@ -3455,20 +2390,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestConfirmationTextXmlNode
-     */
-    public function getRegistrationRequestConfirmationTextXmlNode()
+    
+    public function getRegistrationRequestConfirmationTextXmlNode(): RegistrationRequestConfirmationTextXmlNode
     {
         return $this->RegistrationRequestConfirmationTextXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationRequestConfirmationTextXmlNode($RegistrationRequestConfirmationTextXmlNode)
+    
+    public function withRegistrationRequestConfirmationTextXmlNode(RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestConfirmationTextXmlNode = $RegistrationRequestConfirmationTextXmlNode;
@@ -3476,20 +2405,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationConfirmationEmailXmlNode
-     */
-    public function getRegistrationConfirmationEmailXmlNode()
+    
+    public function getRegistrationConfirmationEmailXmlNode(): RegistrationConfirmationEmailXmlNode
     {
         return $this->RegistrationConfirmationEmailXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationConfirmationEmailXmlNode($RegistrationConfirmationEmailXmlNode)
+    
+    public function withRegistrationConfirmationEmailXmlNode(RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationEmailXmlNode = $RegistrationConfirmationEmailXmlNode;
@@ -3497,20 +2420,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestEmailXmlNode
-     */
-    public function getRegistrationRequestEmailXmlNode()
+    
+    public function getRegistrationRequestEmailXmlNode(): RegistrationRequestEmailXmlNode
     {
         return $this->RegistrationRequestEmailXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationRequestEmailXmlNode($RegistrationRequestEmailXmlNode)
+    
+    public function withRegistrationRequestEmailXmlNode(RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestEmailXmlNode = $RegistrationRequestEmailXmlNode;
@@ -3518,20 +2435,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestApprovalEmailXmlNode
-     */
-    public function getRegistrationRequestApprovalEmailXmlNode()
+    
+    public function getRegistrationRequestApprovalEmailXmlNode(): RegistrationRequestApprovalEmailXmlNode
     {
         return $this->RegistrationRequestApprovalEmailXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationRequestApprovalEmailXmlNode($RegistrationRequestApprovalEmailXmlNode)
+    
+    public function withRegistrationRequestApprovalEmailXmlNode(RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestApprovalEmailXmlNode = $RegistrationRequestApprovalEmailXmlNode;
@@ -3539,20 +2450,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestDenialEmailXmlNode
-     */
-    public function getRegistrationRequestDenialEmailXmlNode()
+    
+    public function getRegistrationRequestDenialEmailXmlNode(): RegistrationRequestDenialEmailXmlNode
     {
         return $this->RegistrationRequestDenialEmailXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode
-     *
-     * @return Program
-     */
-    public function withRegistrationRequestDenialEmailXmlNode($RegistrationRequestDenialEmailXmlNode)
+    
+    public function withRegistrationRequestDenialEmailXmlNode(RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestDenialEmailXmlNode = $RegistrationRequestDenialEmailXmlNode;
@@ -3560,20 +2465,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UserDomainDisplayLabelXmlNode
-     */
-    public function getUserDomainDisplayLabelXmlNode()
+    
+    public function getUserDomainDisplayLabelXmlNode(): UserDomainDisplayLabelXmlNode
     {
         return $this->UserDomainDisplayLabelXmlNode;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode
-     *
-     * @return Program
-     */
-    public function withUserDomainDisplayLabelXmlNode($UserDomainDisplayLabelXmlNode)
+    
+    public function withUserDomainDisplayLabelXmlNode(UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode): static
     {
         $new = clone $this;
         $new->UserDomainDisplayLabelXmlNode = $UserDomainDisplayLabelXmlNode;
@@ -3581,20 +2480,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCapLicenseTotal()
+    
+    public function getCapLicenseTotal(): bool
     {
         return $this->CapLicenseTotal;
     }
 
-    /**
-     * @param bool $CapLicenseTotal
-     *
-     * @return Program
-     */
-    public function withCapLicenseTotal($CapLicenseTotal)
+    
+    public function withCapLicenseTotal(bool $CapLicenseTotal): static
     {
         $new = clone $this;
         $new->CapLicenseTotal = $CapLicenseTotal;
@@ -3602,20 +2495,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCapLicenseActive()
+    
+    public function getCapLicenseActive(): bool
     {
         return $this->CapLicenseActive;
     }
 
-    /**
-     * @param bool $CapLicenseActive
-     *
-     * @return Program
-     */
-    public function withCapLicenseActive($CapLicenseActive)
+    
+    public function withCapLicenseActive(bool $CapLicenseActive): static
     {
         $new = clone $this;
         $new->CapLicenseActive = $CapLicenseActive;
@@ -3623,20 +2510,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getLicenseTotalUsers()
+    
+    public function getLicenseTotalUsers(): int
     {
         return $this->LicenseTotalUsers;
     }
 
-    /**
-     * @param int $LicenseTotalUsers
-     *
-     * @return Program
-     */
-    public function withLicenseTotalUsers($LicenseTotalUsers)
+    
+    public function withLicenseTotalUsers(int $LicenseTotalUsers): static
     {
         $new = clone $this;
         $new->LicenseTotalUsers = $LicenseTotalUsers;
@@ -3644,20 +2525,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getLicenseActiveUsers()
+    
+    public function getLicenseActiveUsers(): int
     {
         return $this->LicenseActiveUsers;
     }
 
-    /**
-     * @param int $LicenseActiveUsers
-     *
-     * @return Program
-     */
-    public function withLicenseActiveUsers($LicenseActiveUsers)
+    
+    public function withLicenseActiveUsers(int $LicenseActiveUsers): static
     {
         $new = clone $this;
         $new->LicenseActiveUsers = $LicenseActiveUsers;
@@ -3665,20 +2540,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLicenseContact()
+    
+    public function getLicenseContact(): string
     {
         return $this->LicenseContact;
     }
 
-    /**
-     * @param string $LicenseContact
-     *
-     * @return Program
-     */
-    public function withLicenseContact($LicenseContact)
+    
+    public function withLicenseContact(string $LicenseContact): static
     {
         $new = clone $this;
         $new->LicenseContact = $LicenseContact;
@@ -3686,20 +2555,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLicenseAniversary()
+    
+    public function getLicenseAniversary(): string
     {
         return $this->LicenseAniversary;
     }
 
-    /**
-     * @param string $LicenseAniversary
-     *
-     * @return Program
-     */
-    public function withLicenseAniversary($LicenseAniversary)
+    
+    public function withLicenseAniversary(string $LicenseAniversary): static
     {
         $new = clone $this;
         $new->LicenseAniversary = $LicenseAniversary;
@@ -3707,20 +2570,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getLicenseCycleDay()
+    
+    public function getLicenseCycleDay(): int
     {
         return $this->LicenseCycleDay;
     }
 
-    /**
-     * @param int $LicenseCycleDay
-     *
-     * @return Program
-     */
-    public function withLicenseCycleDay($LicenseCycleDay)
+    
+    public function withLicenseCycleDay(int $LicenseCycleDay): static
     {
         $new = clone $this;
         $new->LicenseCycleDay = $LicenseCycleDay;
@@ -3728,20 +2585,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMonthlyUniqueLogins()
+    
+    public function getMonthlyUniqueLogins(): int
     {
         return $this->MonthlyUniqueLogins;
     }
 
-    /**
-     * @param int $MonthlyUniqueLogins
-     *
-     * @return Program
-     */
-    public function withMonthlyUniqueLogins($MonthlyUniqueLogins)
+    
+    public function withMonthlyUniqueLogins(int $MonthlyUniqueLogins): static
     {
         $new = clone $this;
         $new->MonthlyUniqueLogins = $MonthlyUniqueLogins;
@@ -3749,20 +2600,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOwnerID()
+    
+    public function getOwnerID(): string
     {
         return $this->OwnerID;
     }
 
-    /**
-     * @param string $OwnerID
-     *
-     * @return Program
-     */
-    public function withOwnerID($OwnerID)
+    
+    public function withOwnerID(string $OwnerID): static
     {
         $new = clone $this;
         $new->OwnerID = $OwnerID;
@@ -3770,20 +2615,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFromName()
+    
+    public function getFromName(): string
     {
         return $this->FromName;
     }
 
-    /**
-     * @param string $FromName
-     *
-     * @return Program
-     */
-    public function withFromName($FromName)
+    
+    public function withFromName(string $FromName): static
     {
         $new = clone $this;
         $new->FromName = $FromName;
@@ -3791,20 +2630,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFromEmail()
+    
+    public function getFromEmail(): string
     {
         return $this->FromEmail;
     }
 
-    /**
-     * @param string $FromEmail
-     *
-     * @return Program
-     */
-    public function withFromEmail($FromEmail)
+    
+    public function withFromEmail(string $FromEmail): static
     {
         $new = clone $this;
         $new->FromEmail = $FromEmail;
@@ -3812,20 +2645,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseParentEmail()
+    
+    public function getUseParentEmail(): bool
     {
         return $this->UseParentEmail;
     }
 
-    /**
-     * @param bool $UseParentEmail
-     *
-     * @return Program
-     */
-    public function withUseParentEmail($UseParentEmail)
+    
+    public function withUseParentEmail(bool $UseParentEmail): static
     {
         $new = clone $this;
         $new->UseParentEmail = $UseParentEmail;
@@ -3833,20 +2660,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotInheritCreditSettings()
+    
+    public function getDoNotInheritCreditSettings(): bool
     {
         return $this->DoNotInheritCreditSettings;
     }
 
-    /**
-     * @param bool $DoNotInheritCreditSettings
-     *
-     * @return Program
-     */
-    public function withDoNotInheritCreditSettings($DoNotInheritCreditSettings)
+    
+    public function withDoNotInheritCreditSettings(bool $DoNotInheritCreditSettings): static
     {
         $new = clone $this;
         $new->DoNotInheritCreditSettings = $DoNotInheritCreditSettings;
@@ -3854,20 +2675,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAwardCreditsAcrossVariousCategories()
+    
+    public function getAwardCreditsAcrossVariousCategories(): bool
     {
         return $this->AwardCreditsAcrossVariousCategories;
     }
 
-    /**
-     * @param bool $AwardCreditsAcrossVariousCategories
-     *
-     * @return Program
-     */
-    public function withAwardCreditsAcrossVariousCategories($AwardCreditsAcrossVariousCategories)
+    
+    public function withAwardCreditsAcrossVariousCategories(bool $AwardCreditsAcrossVariousCategories): static
     {
         $new = clone $this;
         $new->AwardCreditsAcrossVariousCategories = $AwardCreditsAcrossVariousCategories;
@@ -3875,20 +2690,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotInheritILTSettings()
+    
+    public function getDoNotInheritILTSettings(): bool
     {
         return $this->DoNotInheritILTSettings;
     }
 
-    /**
-     * @param bool $DoNotInheritILTSettings
-     *
-     * @return Program
-     */
-    public function withDoNotInheritILTSettings($DoNotInheritILTSettings)
+    
+    public function withDoNotInheritILTSettings(bool $DoNotInheritILTSettings): static
     {
         $new = clone $this;
         $new->DoNotInheritILTSettings = $DoNotInheritILTSettings;
@@ -3896,20 +2705,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLimitCredits()
+    
+    public function getLimitCredits(): bool
     {
         return $this->LimitCredits;
     }
 
-    /**
-     * @param bool $LimitCredits
-     *
-     * @return Program
-     */
-    public function withLimitCredits($LimitCredits)
+    
+    public function withLimitCredits(bool $LimitCredits): static
     {
         $new = clone $this;
         $new->LimitCredits = $LimitCredits;
@@ -3917,20 +2720,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxCreditsPerHour()
+    
+    public function getMaxCreditsPerHour(): int
     {
         return $this->MaxCreditsPerHour;
     }
 
-    /**
-     * @param int $MaxCreditsPerHour
-     *
-     * @return Program
-     */
-    public function withMaxCreditsPerHour($MaxCreditsPerHour)
+    
+    public function withMaxCreditsPerHour(int $MaxCreditsPerHour): static
     {
         $new = clone $this;
         $new->MaxCreditsPerHour = $MaxCreditsPerHour;
@@ -3938,20 +2735,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxCreditsPerSession()
+    
+    public function getMaxCreditsPerSession(): int
     {
         return $this->MaxCreditsPerSession;
     }
 
-    /**
-     * @param int $MaxCreditsPerSession
-     *
-     * @return Program
-     */
-    public function withMaxCreditsPerSession($MaxCreditsPerSession)
+    
+    public function withMaxCreditsPerSession(int $MaxCreditsPerSession): static
     {
         $new = clone $this;
         $new->MaxCreditsPerSession = $MaxCreditsPerSession;
@@ -3959,20 +2750,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxCreditsPerDay()
+    
+    public function getMaxCreditsPerDay(): int
     {
         return $this->MaxCreditsPerDay;
     }
 
-    /**
-     * @param int $MaxCreditsPerDay
-     *
-     * @return Program
-     */
-    public function withMaxCreditsPerDay($MaxCreditsPerDay)
+    
+    public function withMaxCreditsPerDay(int $MaxCreditsPerDay): static
     {
         $new = clone $this;
         $new->MaxCreditsPerDay = $MaxCreditsPerDay;
@@ -3980,20 +2765,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getFacilitatorCredits()
+    
+    public function getFacilitatorCredits(): float
     {
         return $this->FacilitatorCredits;
     }
 
-    /**
-     * @param float $FacilitatorCredits
-     *
-     * @return Program
-     */
-    public function withFacilitatorCredits($FacilitatorCredits)
+    
+    public function withFacilitatorCredits(float $FacilitatorCredits): static
     {
         $new = clone $this;
         $new->FacilitatorCredits = $FacilitatorCredits;
@@ -4001,20 +2780,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getSpeakerCredits()
+    
+    public function getSpeakerCredits(): float
     {
         return $this->SpeakerCredits;
     }
 
-    /**
-     * @param float $SpeakerCredits
-     *
-     * @return Program
-     */
-    public function withSpeakerCredits($SpeakerCredits)
+    
+    public function withSpeakerCredits(float $SpeakerCredits): static
     {
         $new = clone $this;
         $new->SpeakerCredits = $SpeakerCredits;
@@ -4022,20 +2795,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getReviewerCredits()
+    
+    public function getReviewerCredits(): float
     {
         return $this->ReviewerCredits;
     }
 
-    /**
-     * @param float $ReviewerCredits
-     *
-     * @return Program
-     */
-    public function withReviewerCredits($ReviewerCredits)
+    
+    public function withReviewerCredits(float $ReviewerCredits): static
     {
         $new = clone $this;
         $new->ReviewerCredits = $ReviewerCredits;
@@ -4043,20 +2810,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionLocation()
+    
+    public function getShowSessionLocation(): bool
     {
         return $this->ShowSessionLocation;
     }
 
-    /**
-     * @param bool $ShowSessionLocation
-     *
-     * @return Program
-     */
-    public function withShowSessionLocation($ShowSessionLocation)
+    
+    public function withShowSessionLocation(bool $ShowSessionLocation): static
     {
         $new = clone $this;
         $new->ShowSessionLocation = $ShowSessionLocation;
@@ -4064,20 +2825,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionFecilitators()
+    
+    public function getShowSessionFecilitators(): bool
     {
         return $this->ShowSessionFecilitators;
     }
 
-    /**
-     * @param bool $ShowSessionFecilitators
-     *
-     * @return Program
-     */
-    public function withShowSessionFecilitators($ShowSessionFecilitators)
+    
+    public function withShowSessionFecilitators(bool $ShowSessionFecilitators): static
     {
         $new = clone $this;
         $new->ShowSessionFecilitators = $ShowSessionFecilitators;
@@ -4085,20 +2840,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionSpeakers()
+    
+    public function getShowSessionSpeakers(): bool
     {
         return $this->ShowSessionSpeakers;
     }
 
-    /**
-     * @param bool $ShowSessionSpeakers
-     *
-     * @return Program
-     */
-    public function withShowSessionSpeakers($ShowSessionSpeakers)
+    
+    public function withShowSessionSpeakers(bool $ShowSessionSpeakers): static
     {
         $new = clone $this;
         $new->ShowSessionSpeakers = $ShowSessionSpeakers;
@@ -4106,20 +2855,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionCertificates()
+    
+    public function getShowSessionCertificates(): bool
     {
         return $this->ShowSessionCertificates;
     }
 
-    /**
-     * @param bool $ShowSessionCertificates
-     *
-     * @return Program
-     */
-    public function withShowSessionCertificates($ShowSessionCertificates)
+    
+    public function withShowSessionCertificates(bool $ShowSessionCertificates): static
     {
         $new = clone $this;
         $new->ShowSessionCertificates = $ShowSessionCertificates;
@@ -4127,20 +2870,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionCredits()
+    
+    public function getShowSessionCredits(): bool
     {
         return $this->ShowSessionCredits;
     }
 
-    /**
-     * @param bool $ShowSessionCredits
-     *
-     * @return Program
-     */
-    public function withShowSessionCredits($ShowSessionCredits)
+    
+    public function withShowSessionCredits(bool $ShowSessionCredits): static
     {
         $new = clone $this;
         $new->ShowSessionCredits = $ShowSessionCredits;
@@ -4148,20 +2885,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionRequired()
+    
+    public function getShowSessionRequired(): bool
     {
         return $this->ShowSessionRequired;
     }
 
-    /**
-     * @param bool $ShowSessionRequired
-     *
-     * @return Program
-     */
-    public function withShowSessionRequired($ShowSessionRequired)
+    
+    public function withShowSessionRequired(bool $ShowSessionRequired): static
     {
         $new = clone $this;
         $new->ShowSessionRequired = $ShowSessionRequired;
@@ -4169,20 +2900,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSessionTimeDateTBD()
+    
+    public function getShowSessionTimeDateTBD(): bool
     {
         return $this->ShowSessionTimeDateTBD;
     }
 
-    /**
-     * @param bool $ShowSessionTimeDateTBD
-     *
-     * @return Program
-     */
-    public function withShowSessionTimeDateTBD($ShowSessionTimeDateTBD)
+    
+    public function withShowSessionTimeDateTBD(bool $ShowSessionTimeDateTBD): static
     {
         $new = clone $this;
         $new->ShowSessionTimeDateTBD = $ShowSessionTimeDateTBD;
@@ -4190,20 +2915,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowLocationTimezone()
+    
+    public function getShowLocationTimezone(): bool
     {
         return $this->ShowLocationTimezone;
     }
 
-    /**
-     * @param bool $ShowLocationTimezone
-     *
-     * @return Program
-     */
-    public function withShowLocationTimezone($ShowLocationTimezone)
+    
+    public function withShowLocationTimezone(bool $ShowLocationTimezone): static
     {
         $new = clone $this;
         $new->ShowLocationTimezone = $ShowLocationTimezone;
@@ -4211,20 +2930,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowAccommodationLink()
+    
+    public function getShowAccommodationLink(): bool
     {
         return $this->ShowAccommodationLink;
     }
 
-    /**
-     * @param bool $ShowAccommodationLink
-     *
-     * @return Program
-     */
-    public function withShowAccommodationLink($ShowAccommodationLink)
+    
+    public function withShowAccommodationLink(bool $ShowAccommodationLink): static
     {
         $new = clone $this;
         $new->ShowAccommodationLink = $ShowAccommodationLink;
@@ -4232,20 +2945,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDenyOutsideDomainsTranscriptVisibility()
+    
+    public function getDenyOutsideDomainsTranscriptVisibility(): bool
     {
         return $this->DenyOutsideDomainsTranscriptVisibility;
     }
 
-    /**
-     * @param bool $DenyOutsideDomainsTranscriptVisibility
-     *
-     * @return Program
-     */
-    public function withDenyOutsideDomainsTranscriptVisibility($DenyOutsideDomainsTranscriptVisibility)
+    
+    public function withDenyOutsideDomainsTranscriptVisibility(bool $DenyOutsideDomainsTranscriptVisibility): static
     {
         $new = clone $this;
         $new->DenyOutsideDomainsTranscriptVisibility = $DenyOutsideDomainsTranscriptVisibility;
@@ -4253,20 +2960,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getParentDenyOutsideDomainsTranscriptVisibility()
+    
+    public function getParentDenyOutsideDomainsTranscriptVisibility(): bool
     {
         return $this->ParentDenyOutsideDomainsTranscriptVisibility;
     }
 
-    /**
-     * @param bool $ParentDenyOutsideDomainsTranscriptVisibility
-     *
-     * @return Program
-     */
-    public function withParentDenyOutsideDomainsTranscriptVisibility($ParentDenyOutsideDomainsTranscriptVisibility)
+    
+    public function withParentDenyOutsideDomainsTranscriptVisibility(bool $ParentDenyOutsideDomainsTranscriptVisibility): static
     {
         $new = clone $this;
         $new->ParentDenyOutsideDomainsTranscriptVisibility = $ParentDenyOutsideDomainsTranscriptVisibility;
@@ -4274,20 +2975,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowDomainMembershipExtension()
+    
+    public function getAllowDomainMembershipExtension(): bool
     {
         return $this->AllowDomainMembershipExtension;
     }
 
-    /**
-     * @param bool $AllowDomainMembershipExtension
-     *
-     * @return Program
-     */
-    public function withAllowDomainMembershipExtension($AllowDomainMembershipExtension)
+    
+    public function withAllowDomainMembershipExtension(bool $AllowDomainMembershipExtension): static
     {
         $new = clone $this;
         $new->AllowDomainMembershipExtension = $AllowDomainMembershipExtension;
@@ -4295,20 +2990,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPendingUserMembership()
+    
+    public function getPendingUserMembership(): bool
     {
         return $this->PendingUserMembership;
     }
 
-    /**
-     * @param bool $PendingUserMembership
-     *
-     * @return Program
-     */
-    public function withPendingUserMembership($PendingUserMembership)
+    
+    public function withPendingUserMembership(bool $PendingUserMembership): static
     {
         $new = clone $this;
         $new->PendingUserMembership = $PendingUserMembership;
@@ -4316,20 +3005,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getForceDisplayDomainTimezone()
+    
+    public function getForceDisplayDomainTimezone(): bool
     {
         return $this->ForceDisplayDomainTimezone;
     }
 
-    /**
-     * @param bool $ForceDisplayDomainTimezone
-     *
-     * @return Program
-     */
-    public function withForceDisplayDomainTimezone($ForceDisplayDomainTimezone)
+    
+    public function withForceDisplayDomainTimezone(bool $ForceDisplayDomainTimezone): static
     {
         $new = clone $this;
         $new->ForceDisplayDomainTimezone = $ForceDisplayDomainTimezone;
@@ -4337,20 +3020,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRemoveNotMatchingRulesUsers()
+    
+    public function getRemoveNotMatchingRulesUsers(): bool
     {
         return $this->RemoveNotMatchingRulesUsers;
     }
 
-    /**
-     * @param bool $RemoveNotMatchingRulesUsers
-     *
-     * @return Program
-     */
-    public function withRemoveNotMatchingRulesUsers($RemoveNotMatchingRulesUsers)
+    
+    public function withRemoveNotMatchingRulesUsers(bool $RemoveNotMatchingRulesUsers): static
     {
         $new = clone $this;
         $new->RemoveNotMatchingRulesUsers = $RemoveNotMatchingRulesUsers;
@@ -4358,20 +3035,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLearningActivityDetailsPrivate()
+    
+    public function getLearningActivityDetailsPrivate(): bool
     {
         return $this->LearningActivityDetailsPrivate;
     }
 
-    /**
-     * @param bool $LearningActivityDetailsPrivate
-     *
-     * @return Program
-     */
-    public function withLearningActivityDetailsPrivate($LearningActivityDetailsPrivate)
+    
+    public function withLearningActivityDetailsPrivate(bool $LearningActivityDetailsPrivate): static
     {
         $new = clone $this;
         $new->LearningActivityDetailsPrivate = $LearningActivityDetailsPrivate;
@@ -4379,20 +3050,14 @@ class Program
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getSupervisorRules()
+    
+    public function getSupervisorRules(): ArrayOfAnyType
     {
         return $this->SupervisorRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $SupervisorRules
-     *
-     * @return Program
-     */
-    public function withSupervisorRules($SupervisorRules)
+    
+    public function withSupervisorRules(ArrayOfAnyType $SupervisorRules): static
     {
         $new = clone $this;
         $new->SupervisorRules = $SupervisorRules;

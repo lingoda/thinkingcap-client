@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetUserActive implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var bool
-     */
-    private $active;
+    
+    private bool $active;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param bool $active
      */
-    public function __construct($apiKey, $userID, $active)
+    public function __construct(string $apiKey, string $userID, bool $active)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
         $this->active = $active;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return SetUserActive
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class SetUserActive implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return SetUserActive
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -79,20 +57,14 @@ class SetUserActive implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getActive()
+    
+    public function getActive(): bool
     {
         return $this->active;
     }
 
-    /**
-     * @param bool $active
-     *
-     * @return SetUserActive
-     */
-    public function withActive($active)
+    
+    public function withActive(bool $active): static
     {
         $new = clone $this;
         $new->active = $active;

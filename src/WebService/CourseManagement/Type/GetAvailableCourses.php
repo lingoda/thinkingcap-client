@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,41 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetAvailableCourses implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseType;
+    
+    private string $courseType;
 
-    /**
-     * @var string
-     */
-    private $onlySelfEnrollmentCourse;
+    
+    private string $onlySelfEnrollmentCourse;
 
-    /**
-     * @var string
-     */
-    private $programID;
+    
+    private string $programID;
 
-    /**
-     * @var string
-     */
-    private $language;
+    
+    private string $language;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseType
-     * @param string $onlySelfEnrollmentCourse
-     * @param string $programID
-     * @param string $language
      */
-    public function __construct($apiKey, $courseType, $onlySelfEnrollmentCourse, $programID, $language)
+    public function __construct(string $apiKey, string $courseType, string $onlySelfEnrollmentCourse, string $programID, string $language)
     {
         $this->apiKey = $apiKey;
         $this->courseType = $courseType;
@@ -51,20 +35,14 @@ class GetAvailableCourses implements RequestInterface
         $this->language = $language;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetAvailableCourses
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -72,20 +50,14 @@ class GetAvailableCourses implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseType()
+    
+    public function getCourseType(): string
     {
         return $this->courseType;
     }
 
-    /**
-     * @param string $courseType
-     *
-     * @return GetAvailableCourses
-     */
-    public function withCourseType($courseType)
+    
+    public function withCourseType(string $courseType): static
     {
         $new = clone $this;
         $new->courseType = $courseType;
@@ -93,20 +65,14 @@ class GetAvailableCourses implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOnlySelfEnrollmentCourse()
+    
+    public function getOnlySelfEnrollmentCourse(): string
     {
         return $this->onlySelfEnrollmentCourse;
     }
 
-    /**
-     * @param string $onlySelfEnrollmentCourse
-     *
-     * @return GetAvailableCourses
-     */
-    public function withOnlySelfEnrollmentCourse($onlySelfEnrollmentCourse)
+    
+    public function withOnlySelfEnrollmentCourse(string $onlySelfEnrollmentCourse): static
     {
         $new = clone $this;
         $new->onlySelfEnrollmentCourse = $onlySelfEnrollmentCourse;
@@ -114,20 +80,14 @@ class GetAvailableCourses implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->programID;
     }
 
-    /**
-     * @param string $programID
-     *
-     * @return GetAvailableCourses
-     */
-    public function withProgramID($programID)
+    
+    public function withProgramID(string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;
@@ -135,20 +95,14 @@ class GetAvailableCourses implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
-    /**
-     * @param string $language
-     *
-     * @return GetAvailableCourses
-     */
-    public function withLanguage($language)
+    
+    public function withLanguage(string $language): static
     {
         $new = clone $this;
         $new->language = $language;

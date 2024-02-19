@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Xml
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AnyXML
-     */
-    private $any;
+    private AnyXML $any;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AnyXML
-     */
-    public function getAny()
+    
+    public function getAny(): AnyXML
     {
         return $this->any;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\AnyXML $any
-     *
-     * @return Xml
-     */
-    public function withAny($any)
+    
+    public function withAny(AnyXML $any): static
     {
         $new = clone $this;
         $new->any = $any;

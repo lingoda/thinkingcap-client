@@ -1,50 +1,33 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class FeedbackSection
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var int
-     */
-    private $Display;
+    
+    private int $Display;
 
-    /**
-     * @var bool
-     */
-    private $IsGlobal;
+    
+    private bool $IsGlobal;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfFeedbackQuestion
-     */
-    private $Questions;
+    
+    private ArrayOfFeedbackQuestion $Questions;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return FeedbackSection
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -52,20 +35,14 @@ class FeedbackSection
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return FeedbackSection
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -73,20 +50,14 @@ class FeedbackSection
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getDisplay()
+    
+    public function getDisplay(): int
     {
         return $this->Display;
     }
 
-    /**
-     * @param int $Display
-     *
-     * @return FeedbackSection
-     */
-    public function withDisplay($Display)
+    
+    public function withDisplay(int $Display): static
     {
         $new = clone $this;
         $new->Display = $Display;
@@ -94,20 +65,14 @@ class FeedbackSection
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsGlobal()
+    
+    public function getIsGlobal(): bool
     {
         return $this->IsGlobal;
     }
 
-    /**
-     * @param bool $IsGlobal
-     *
-     * @return FeedbackSection
-     */
-    public function withIsGlobal($IsGlobal)
+    
+    public function withIsGlobal(bool $IsGlobal): static
     {
         $new = clone $this;
         $new->IsGlobal = $IsGlobal;
@@ -115,20 +80,14 @@ class FeedbackSection
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfFeedbackQuestion
-     */
-    public function getQuestions()
+    
+    public function getQuestions(): ArrayOfFeedbackQuestion
     {
         return $this->Questions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfFeedbackQuestion $Questions
-     *
-     * @return FeedbackSection
-     */
-    public function withQuestions($Questions)
+    
+    public function withQuestions(ArrayOfFeedbackQuestion $Questions): static
     {
         $new = clone $this;
         $new->Questions = $Questions;

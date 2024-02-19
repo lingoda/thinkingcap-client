@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class IsTrainingLocationAvailableResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfBoolean
-     */
-    private $IsTrainingLocationAvailableResult;
+    private ServiceResultOfBoolean $IsTrainingLocationAvailableResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfBoolean
-     */
-    public function getIsTrainingLocationAvailableResult()
+    
+    public function getIsTrainingLocationAvailableResult(): ServiceResultOfBoolean
     {
         return $this->IsTrainingLocationAvailableResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfBoolean $IsTrainingLocationAvailableResult
-     *
-     * @return IsTrainingLocationAvailableResponse
-     */
-    public function withIsTrainingLocationAvailableResult($IsTrainingLocationAvailableResult)
+    
+    public function withIsTrainingLocationAvailableResult(ServiceResultOfBoolean $IsTrainingLocationAvailableResult): static
     {
         $new = clone $this;
         $new->IsTrainingLocationAvailableResult = $IsTrainingLocationAvailableResult;

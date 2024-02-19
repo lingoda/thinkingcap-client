@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class WithdrawStudentResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $WithdrawStudentResult;
+    private ServiceResultOfString $WithdrawStudentResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getWithdrawStudentResult()
+    
+    public function getWithdrawStudentResult(): ServiceResultOfString
     {
         return $this->WithdrawStudentResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $WithdrawStudentResult
-     *
-     * @return WithdrawStudentResponse
-     */
-    public function withWithdrawStudentResult($WithdrawStudentResult)
+    
+    public function withWithdrawStudentResult(ServiceResultOfString $WithdrawStudentResult): static
     {
         $new = clone $this;
         $new->WithdrawStudentResult = $WithdrawStudentResult;

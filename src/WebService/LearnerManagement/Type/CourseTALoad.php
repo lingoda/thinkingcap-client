@@ -1,40 +1,27 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class CourseTALoad
 {
-    /**
-     * @var string
-     */
-    private $TaID;
+    private string $TaID;
 
-    /**
-     * @var string
-     */
-    private $CourseID;
+    
+    private string $CourseID;
 
-    /**
-     * @var int
-     */
-    private $TaStudentCount;
+    
+    private int $TaStudentCount;
 
-    /**
-     * @return string
-     */
-    public function getTaID()
+    
+    public function getTaID(): string
     {
         return $this->TaID;
     }
 
-    /**
-     * @param string $TaID
-     *
-     * @return CourseTALoad
-     */
-    public function withTaID($TaID)
+    
+    public function withTaID(string $TaID): static
     {
         $new = clone $this;
         $new->TaID = $TaID;
@@ -42,20 +29,14 @@ class CourseTALoad
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return CourseTALoad
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -63,20 +44,14 @@ class CourseTALoad
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTaStudentCount()
+    
+    public function getTaStudentCount(): int
     {
         return $this->TaStudentCount;
     }
 
-    /**
-     * @param int $TaStudentCount
-     *
-     * @return CourseTALoad
-     */
-    public function withTaStudentCount($TaStudentCount)
+    
+    public function withTaStudentCount(int $TaStudentCount): static
     {
         $new = clone $this;
         $new->TaStudentCount = $TaStudentCount;

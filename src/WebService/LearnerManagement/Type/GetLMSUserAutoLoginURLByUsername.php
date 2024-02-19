@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLMSUserAutoLoginURLByUsername implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userName;
+    
+    private string $userName;
 
-    /**
-     * @var string
-     */
-    private $domainID;
+    
+    private string $domainID;
 
-    /**
-     * @var string
-     */
-    private $returnUrl;
+    
+    private string $returnUrl;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userName
-     * @param string $domainID
-     * @param string $returnUrl
      */
-    public function __construct($apiKey, $userName, $domainID, $returnUrl)
+    public function __construct(string $apiKey, string $userName, string $domainID, string $returnUrl)
     {
         $this->apiKey = $apiKey;
         $this->userName = $userName;
@@ -44,20 +31,14 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         $this->returnUrl = $returnUrl;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetLMSUserAutoLoginURLByUsername
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserName()
+    
+    public function getUserName(): string
     {
         return $this->userName;
     }
 
-    /**
-     * @param string $userName
-     *
-     * @return GetLMSUserAutoLoginURLByUsername
-     */
-    public function withUserName($userName)
+    
+    public function withUserName(string $userName): static
     {
         $new = clone $this;
         $new->userName = $userName;
@@ -86,20 +61,14 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->domainID;
     }
 
-    /**
-     * @param string $domainID
-     *
-     * @return GetLMSUserAutoLoginURLByUsername
-     */
-    public function withDomainID($domainID)
+    
+    public function withDomainID(string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;
@@ -107,20 +76,14 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReturnUrl()
+    
+    public function getReturnUrl(): string
     {
         return $this->returnUrl;
     }
 
-    /**
-     * @param string $returnUrl
-     *
-     * @return GetLMSUserAutoLoginURLByUsername
-     */
-    public function withReturnUrl($returnUrl)
+    
+    public function withReturnUrl(string $returnUrl): static
     {
         $new = clone $this;
         $new->returnUrl = $returnUrl;

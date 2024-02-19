@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateUserMetadataValues implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var string
-     */
-    private $fieldsValuesXml;
+    
+    private string $fieldsValuesXml;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param string $fieldsValuesXml
      */
-    public function __construct($apiKey, $userID, $fieldsValuesXml)
+    public function __construct(string $apiKey, string $userID, string $fieldsValuesXml)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
         $this->fieldsValuesXml = $fieldsValuesXml;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return UpdateUserMetadataValues
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class UpdateUserMetadataValues implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return UpdateUserMetadataValues
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -79,20 +57,14 @@ class UpdateUserMetadataValues implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFieldsValuesXml()
+    
+    public function getFieldsValuesXml(): string
     {
         return $this->fieldsValuesXml;
     }
 
-    /**
-     * @param string $fieldsValuesXml
-     *
-     * @return UpdateUserMetadataValues
-     */
-    public function withFieldsValuesXml($fieldsValuesXml)
+    
+    public function withFieldsValuesXml(string $fieldsValuesXml): static
     {
         $new = clone $this;
         $new->fieldsValuesXml = $fieldsValuesXml;

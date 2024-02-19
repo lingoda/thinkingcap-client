@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,41 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateUserProfile implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var string
-     */
-    private $biography;
+    
+    private string $biography;
 
-    /**
-     * @var string
-     */
-    private $contentType;
+    
+    private string $contentType;
 
-    /**
-     * @var string
-     */
-    private $photo;
+    
+    private Base64Binary $photo;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param string $biography
-     * @param string $contentType
-     * @param string $photo
      */
-    public function __construct($apiKey, $userID, $biography, $contentType, $photo)
+    public function __construct(string $apiKey, string $userID, string $biography, string $contentType, Base64Binary $photo)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
@@ -51,20 +35,14 @@ class UpdateUserProfile implements RequestInterface
         $this->photo = $photo;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return UpdateUserProfile
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -72,20 +50,14 @@ class UpdateUserProfile implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return UpdateUserProfile
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -93,20 +65,14 @@ class UpdateUserProfile implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getBiography()
+    
+    public function getBiography(): string
     {
         return $this->biography;
     }
 
-    /**
-     * @param string $biography
-     *
-     * @return UpdateUserProfile
-     */
-    public function withBiography($biography)
+    
+    public function withBiography(string $biography): static
     {
         $new = clone $this;
         $new->biography = $biography;
@@ -114,20 +80,14 @@ class UpdateUserProfile implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContentType()
+    
+    public function getContentType(): string
     {
         return $this->contentType;
     }
 
-    /**
-     * @param string $contentType
-     *
-     * @return UpdateUserProfile
-     */
-    public function withContentType($contentType)
+    
+    public function withContentType(string $contentType): static
     {
         $new = clone $this;
         $new->contentType = $contentType;
@@ -135,20 +95,14 @@ class UpdateUserProfile implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhoto()
+    
+    public function getPhoto(): Base64Binary
     {
         return $this->photo;
     }
 
-    /**
-     * @param string $photo
-     *
-     * @return UpdateUserProfile
-     */
-    public function withPhoto($photo)
+    
+    public function withPhoto(Base64Binary $photo): static
     {
         $new = clone $this;
         $new->photo = $photo;

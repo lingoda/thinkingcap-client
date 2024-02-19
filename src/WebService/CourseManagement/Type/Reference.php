@@ -1,130 +1,83 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class Reference
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $CourseID;
+    
+    private string $CourseID;
 
-    /**
-     * @var string
-     */
-    private $Type;
+    
+    private string $Type;
 
-    /**
-     * @var string
-     */
-    private $ISBN;
+    
+    private string $ISBN;
 
-    /**
-     * @var string
-     */
-    private $URL;
+    
+    private string $URL;
 
-    /**
-     * @var string
-     */
-    private $VideoID;
+    
+    private string $VideoID;
 
-    /**
-     * @var string
-     */
-    private $VideoDescription;
+    
+    private string $VideoDescription;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $Author;
+    
+    private string $Author;
 
-    /**
-     * @var string
-     */
-    private $Comments;
+    
+    private string $Comments;
 
-    /**
-     * @var string
-     */
-    private $Extension;
+    
+    private string $Extension;
 
-    /**
-     * @var string
-     */
-    private $ContentType;
+    
+    private string $ContentType;
 
-    /**
-     * @var int
-     */
-    private $ContentLength;
+    
+    private int $ContentLength;
 
-    /**
-     * @var string
-     */
-    private $DocumentType;
+    
+    private string $DocumentType;
 
-    /**
-     * @var string
-     */
-    private $DocumentFile;
+    
+    private Base64Binary $DocumentFile;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $UploadDate;
+    
+    private DateTimeInterface $UploadDate;
 
-    /**
-     * @var bool
-     */
-    private $HideFromLearners;
+    
+    private bool $HideFromLearners;
 
-    /**
-     * @var string
-     */
-    private $ParentID;
+    
+    private string $ParentID;
 
-    /**
-     * @var string
-     */
-    private $ObjectType;
+    
+    private string $ObjectType;
 
-    /**
-     * @var string
-     */
-    private $OriginalFileName;
+    
+    private string $OriginalFileName;
 
-    /**
-     * @var string
-     */
-    private $FieldsXml;
+    
+    private string $FieldsXml;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return Reference
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -132,20 +85,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return Reference
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -153,20 +100,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return Reference
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -174,20 +115,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getISBN()
+    
+    public function getISBN(): string
     {
         return $this->ISBN;
     }
 
-    /**
-     * @param string $ISBN
-     *
-     * @return Reference
-     */
-    public function withISBN($ISBN)
+    
+    public function withISBN(string $ISBN): static
     {
         $new = clone $this;
         $new->ISBN = $ISBN;
@@ -195,20 +130,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getURL()
+    
+    public function getURL(): string
     {
         return $this->URL;
     }
 
-    /**
-     * @param string $URL
-     *
-     * @return Reference
-     */
-    public function withURL($URL)
+    
+    public function withURL(string $URL): static
     {
         $new = clone $this;
         $new->URL = $URL;
@@ -216,20 +145,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getVideoID()
+    
+    public function getVideoID(): string
     {
         return $this->VideoID;
     }
 
-    /**
-     * @param string $VideoID
-     *
-     * @return Reference
-     */
-    public function withVideoID($VideoID)
+    
+    public function withVideoID(string $VideoID): static
     {
         $new = clone $this;
         $new->VideoID = $VideoID;
@@ -237,20 +160,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getVideoDescription()
+    
+    public function getVideoDescription(): string
     {
         return $this->VideoDescription;
     }
 
-    /**
-     * @param string $VideoDescription
-     *
-     * @return Reference
-     */
-    public function withVideoDescription($VideoDescription)
+    
+    public function withVideoDescription(string $VideoDescription): static
     {
         $new = clone $this;
         $new->VideoDescription = $VideoDescription;
@@ -258,20 +175,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return Reference
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -279,20 +190,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAuthor()
+    
+    public function getAuthor(): string
     {
         return $this->Author;
     }
 
-    /**
-     * @param string $Author
-     *
-     * @return Reference
-     */
-    public function withAuthor($Author)
+    
+    public function withAuthor(string $Author): static
     {
         $new = clone $this;
         $new->Author = $Author;
@@ -300,20 +205,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getComments()
+    
+    public function getComments(): string
     {
         return $this->Comments;
     }
 
-    /**
-     * @param string $Comments
-     *
-     * @return Reference
-     */
-    public function withComments($Comments)
+    
+    public function withComments(string $Comments): static
     {
         $new = clone $this;
         $new->Comments = $Comments;
@@ -321,20 +220,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getExtension()
+    
+    public function getExtension(): string
     {
         return $this->Extension;
     }
 
-    /**
-     * @param string $Extension
-     *
-     * @return Reference
-     */
-    public function withExtension($Extension)
+    
+    public function withExtension(string $Extension): static
     {
         $new = clone $this;
         $new->Extension = $Extension;
@@ -342,20 +235,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContentType()
+    
+    public function getContentType(): string
     {
         return $this->ContentType;
     }
 
-    /**
-     * @param string $ContentType
-     *
-     * @return Reference
-     */
-    public function withContentType($ContentType)
+    
+    public function withContentType(string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -363,20 +250,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getContentLength()
+    
+    public function getContentLength(): int
     {
         return $this->ContentLength;
     }
 
-    /**
-     * @param int $ContentLength
-     *
-     * @return Reference
-     */
-    public function withContentLength($ContentLength)
+    
+    public function withContentLength(int $ContentLength): static
     {
         $new = clone $this;
         $new->ContentLength = $ContentLength;
@@ -384,20 +265,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDocumentType()
+    
+    public function getDocumentType(): string
     {
         return $this->DocumentType;
     }
 
-    /**
-     * @param string $DocumentType
-     *
-     * @return Reference
-     */
-    public function withDocumentType($DocumentType)
+    
+    public function withDocumentType(string $DocumentType): static
     {
         $new = clone $this;
         $new->DocumentType = $DocumentType;
@@ -405,20 +280,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDocumentFile()
+    
+    public function getDocumentFile(): Base64Binary
     {
         return $this->DocumentFile;
     }
 
-    /**
-     * @param string $DocumentFile
-     *
-     * @return Reference
-     */
-    public function withDocumentFile($DocumentFile)
+    
+    public function withDocumentFile(Base64Binary $DocumentFile): static
     {
         $new = clone $this;
         $new->DocumentFile = $DocumentFile;
@@ -426,20 +295,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getUploadDate()
+    
+    public function getUploadDate(): DateTimeInterface
     {
         return $this->UploadDate;
     }
 
-    /**
-     * @param \DateTimeInterface $UploadDate
-     *
-     * @return Reference
-     */
-    public function withUploadDate($UploadDate)
+    
+    public function withUploadDate(DateTimeInterface $UploadDate): static
     {
         $new = clone $this;
         $new->UploadDate = $UploadDate;
@@ -447,20 +310,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHideFromLearners()
+    
+    public function getHideFromLearners(): bool
     {
         return $this->HideFromLearners;
     }
 
-    /**
-     * @param bool $HideFromLearners
-     *
-     * @return Reference
-     */
-    public function withHideFromLearners($HideFromLearners)
+    
+    public function withHideFromLearners(bool $HideFromLearners): static
     {
         $new = clone $this;
         $new->HideFromLearners = $HideFromLearners;
@@ -468,20 +325,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getParentID()
+    
+    public function getParentID(): string
     {
         return $this->ParentID;
     }
 
-    /**
-     * @param string $ParentID
-     *
-     * @return Reference
-     */
-    public function withParentID($ParentID)
+    
+    public function withParentID(string $ParentID): static
     {
         $new = clone $this;
         $new->ParentID = $ParentID;
@@ -489,20 +340,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getObjectType()
+    
+    public function getObjectType(): string
     {
         return $this->ObjectType;
     }
 
-    /**
-     * @param string $ObjectType
-     *
-     * @return Reference
-     */
-    public function withObjectType($ObjectType)
+    
+    public function withObjectType(string $ObjectType): static
     {
         $new = clone $this;
         $new->ObjectType = $ObjectType;
@@ -510,20 +355,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalFileName()
+    
+    public function getOriginalFileName(): string
     {
         return $this->OriginalFileName;
     }
 
-    /**
-     * @param string $OriginalFileName
-     *
-     * @return Reference
-     */
-    public function withOriginalFileName($OriginalFileName)
+    
+    public function withOriginalFileName(string $OriginalFileName): static
     {
         $new = clone $this;
         $new->OriginalFileName = $OriginalFileName;
@@ -531,20 +370,14 @@ class Reference
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFieldsXml()
+    
+    public function getFieldsXml(): string
     {
         return $this->FieldsXml;
     }
 
-    /**
-     * @param string $FieldsXml
-     *
-     * @return Reference
-     */
-    public function withFieldsXml($FieldsXml)
+    
+    public function withFieldsXml(string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;

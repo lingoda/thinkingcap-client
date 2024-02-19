@@ -1,140 +1,87 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class SupervisorType
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Name;
+    
+    private string $Name;
 
-    /**
-     * @var string
-     */
-    private $Code;
+    
+    private string $Code;
 
-    /**
-     * @var string
-     */
-    private $DomainID;
+    
+    private string $DomainID;
 
-    /**
-     * @var string
-     */
-    private $Description;
+    
+    private string $Description;
 
-    /**
-     * @var bool
-     */
-    private $EnrollLearners;
+    
+    private bool $EnrollLearners;
 
-    /**
-     * @var bool
-     */
-    private $WithdrawLearners;
+    
+    private bool $WithdrawLearners;
 
-    /**
-     * @var bool
-     */
-    private $ApproveDeclineEnrollment;
+    
+    private bool $ApproveDeclineEnrollment;
 
-    /**
-     * @var bool
-     */
-    private $ApproveDeclineWithdrawal;
+    
+    private bool $ApproveDeclineWithdrawal;
 
-    /**
-     * @var bool
-     */
-    private $MarkAssignments;
+    
+    private bool $MarkAssignments;
 
-    /**
-     * @var bool
-     */
-    private $SignOffAttestations;
+    
+    private bool $SignOffAttestations;
 
-    /**
-     * @var bool
-     */
-    private $ViewSurveyResults;
+    
+    private bool $ViewSurveyResults;
 
-    /**
-     * @var bool
-     */
-    private $ViewAssessmentResults;
+    
+    private bool $ViewAssessmentResults;
 
-    /**
-     * @var bool
-     */
-    private $PullAttestationDocuments;
+    
+    private bool $PullAttestationDocuments;
 
-    /**
-     * @var bool
-     */
-    private $PullCompletionReports;
+    
+    private bool $PullCompletionReports;
 
-    /**
-     * @var bool
-     */
-    private $ApproveForumPosts;
+    
+    private bool $ApproveForumPosts;
 
-    /**
-     * @var bool
-     */
-    private $ExtendDueDate;
+    
+    private bool $ExtendDueDate;
 
-    /**
-     * @var bool
-     */
-    private $ViewCertificates;
+    
+    private bool $ViewCertificates;
 
-    /**
-     * @var string
-     */
-    private $AssignmentType;
+    
+    private string $AssignmentType;
 
-    /**
-     * @var string
-     */
-    private $MatchingLearnersMetadata;
+    
+    private string $MatchingLearnersMetadata;
 
-    /**
-     * @var string
-     */
-    private $SupervisorMetadata;
+    
+    private string $SupervisorMetadata;
 
-    /**
-     * @var string
-     */
-    private $SupervisorMetadataoption;
+    
+    private string $SupervisorMetadataoption;
 
-    /**
-     * @var bool
-     */
-    private $AutomatedMatchIncludesSupervisors;
+    
+    private bool $AutomatedMatchIncludesSupervisors;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return SupervisorType
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -142,20 +89,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     *
-     * @return SupervisorType
-     */
-    public function withName($Name)
+    
+    public function withName(string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -163,20 +104,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return SupervisorType
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -184,20 +119,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->DomainID;
     }
 
-    /**
-     * @param string $DomainID
-     *
-     * @return SupervisorType
-     */
-    public function withDomainID($DomainID)
+    
+    public function withDomainID(string $DomainID): static
     {
         $new = clone $this;
         $new->DomainID = $DomainID;
@@ -205,20 +134,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return SupervisorType
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -226,20 +149,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getEnrollLearners()
+    
+    public function getEnrollLearners(): bool
     {
         return $this->EnrollLearners;
     }
 
-    /**
-     * @param bool $EnrollLearners
-     *
-     * @return SupervisorType
-     */
-    public function withEnrollLearners($EnrollLearners)
+    
+    public function withEnrollLearners(bool $EnrollLearners): static
     {
         $new = clone $this;
         $new->EnrollLearners = $EnrollLearners;
@@ -247,20 +164,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWithdrawLearners()
+    
+    public function getWithdrawLearners(): bool
     {
         return $this->WithdrawLearners;
     }
 
-    /**
-     * @param bool $WithdrawLearners
-     *
-     * @return SupervisorType
-     */
-    public function withWithdrawLearners($WithdrawLearners)
+    
+    public function withWithdrawLearners(bool $WithdrawLearners): static
     {
         $new = clone $this;
         $new->WithdrawLearners = $WithdrawLearners;
@@ -268,20 +179,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApproveDeclineEnrollment()
+    
+    public function getApproveDeclineEnrollment(): bool
     {
         return $this->ApproveDeclineEnrollment;
     }
 
-    /**
-     * @param bool $ApproveDeclineEnrollment
-     *
-     * @return SupervisorType
-     */
-    public function withApproveDeclineEnrollment($ApproveDeclineEnrollment)
+    
+    public function withApproveDeclineEnrollment(bool $ApproveDeclineEnrollment): static
     {
         $new = clone $this;
         $new->ApproveDeclineEnrollment = $ApproveDeclineEnrollment;
@@ -289,20 +194,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApproveDeclineWithdrawal()
+    
+    public function getApproveDeclineWithdrawal(): bool
     {
         return $this->ApproveDeclineWithdrawal;
     }
 
-    /**
-     * @param bool $ApproveDeclineWithdrawal
-     *
-     * @return SupervisorType
-     */
-    public function withApproveDeclineWithdrawal($ApproveDeclineWithdrawal)
+    
+    public function withApproveDeclineWithdrawal(bool $ApproveDeclineWithdrawal): static
     {
         $new = clone $this;
         $new->ApproveDeclineWithdrawal = $ApproveDeclineWithdrawal;
@@ -310,20 +209,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMarkAssignments()
+    
+    public function getMarkAssignments(): bool
     {
         return $this->MarkAssignments;
     }
 
-    /**
-     * @param bool $MarkAssignments
-     *
-     * @return SupervisorType
-     */
-    public function withMarkAssignments($MarkAssignments)
+    
+    public function withMarkAssignments(bool $MarkAssignments): static
     {
         $new = clone $this;
         $new->MarkAssignments = $MarkAssignments;
@@ -331,20 +224,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSignOffAttestations()
+    
+    public function getSignOffAttestations(): bool
     {
         return $this->SignOffAttestations;
     }
 
-    /**
-     * @param bool $SignOffAttestations
-     *
-     * @return SupervisorType
-     */
-    public function withSignOffAttestations($SignOffAttestations)
+    
+    public function withSignOffAttestations(bool $SignOffAttestations): static
     {
         $new = clone $this;
         $new->SignOffAttestations = $SignOffAttestations;
@@ -352,20 +239,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getViewSurveyResults()
+    
+    public function getViewSurveyResults(): bool
     {
         return $this->ViewSurveyResults;
     }
 
-    /**
-     * @param bool $ViewSurveyResults
-     *
-     * @return SupervisorType
-     */
-    public function withViewSurveyResults($ViewSurveyResults)
+    
+    public function withViewSurveyResults(bool $ViewSurveyResults): static
     {
         $new = clone $this;
         $new->ViewSurveyResults = $ViewSurveyResults;
@@ -373,20 +254,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getViewAssessmentResults()
+    
+    public function getViewAssessmentResults(): bool
     {
         return $this->ViewAssessmentResults;
     }
 
-    /**
-     * @param bool $ViewAssessmentResults
-     *
-     * @return SupervisorType
-     */
-    public function withViewAssessmentResults($ViewAssessmentResults)
+    
+    public function withViewAssessmentResults(bool $ViewAssessmentResults): static
     {
         $new = clone $this;
         $new->ViewAssessmentResults = $ViewAssessmentResults;
@@ -394,20 +269,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPullAttestationDocuments()
+    
+    public function getPullAttestationDocuments(): bool
     {
         return $this->PullAttestationDocuments;
     }
 
-    /**
-     * @param bool $PullAttestationDocuments
-     *
-     * @return SupervisorType
-     */
-    public function withPullAttestationDocuments($PullAttestationDocuments)
+    
+    public function withPullAttestationDocuments(bool $PullAttestationDocuments): static
     {
         $new = clone $this;
         $new->PullAttestationDocuments = $PullAttestationDocuments;
@@ -415,20 +284,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPullCompletionReports()
+    
+    public function getPullCompletionReports(): bool
     {
         return $this->PullCompletionReports;
     }
 
-    /**
-     * @param bool $PullCompletionReports
-     *
-     * @return SupervisorType
-     */
-    public function withPullCompletionReports($PullCompletionReports)
+    
+    public function withPullCompletionReports(bool $PullCompletionReports): static
     {
         $new = clone $this;
         $new->PullCompletionReports = $PullCompletionReports;
@@ -436,20 +299,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApproveForumPosts()
+    
+    public function getApproveForumPosts(): bool
     {
         return $this->ApproveForumPosts;
     }
 
-    /**
-     * @param bool $ApproveForumPosts
-     *
-     * @return SupervisorType
-     */
-    public function withApproveForumPosts($ApproveForumPosts)
+    
+    public function withApproveForumPosts(bool $ApproveForumPosts): static
     {
         $new = clone $this;
         $new->ApproveForumPosts = $ApproveForumPosts;
@@ -457,20 +314,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getExtendDueDate()
+    
+    public function getExtendDueDate(): bool
     {
         return $this->ExtendDueDate;
     }
 
-    /**
-     * @param bool $ExtendDueDate
-     *
-     * @return SupervisorType
-     */
-    public function withExtendDueDate($ExtendDueDate)
+    
+    public function withExtendDueDate(bool $ExtendDueDate): static
     {
         $new = clone $this;
         $new->ExtendDueDate = $ExtendDueDate;
@@ -478,20 +329,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getViewCertificates()
+    
+    public function getViewCertificates(): bool
     {
         return $this->ViewCertificates;
     }
 
-    /**
-     * @param bool $ViewCertificates
-     *
-     * @return SupervisorType
-     */
-    public function withViewCertificates($ViewCertificates)
+    
+    public function withViewCertificates(bool $ViewCertificates): static
     {
         $new = clone $this;
         $new->ViewCertificates = $ViewCertificates;
@@ -499,20 +344,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAssignmentType()
+    
+    public function getAssignmentType(): string
     {
         return $this->AssignmentType;
     }
 
-    /**
-     * @param string $AssignmentType
-     *
-     * @return SupervisorType
-     */
-    public function withAssignmentType($AssignmentType)
+    
+    public function withAssignmentType(string $AssignmentType): static
     {
         $new = clone $this;
         $new->AssignmentType = $AssignmentType;
@@ -520,20 +359,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMatchingLearnersMetadata()
+    
+    public function getMatchingLearnersMetadata(): string
     {
         return $this->MatchingLearnersMetadata;
     }
 
-    /**
-     * @param string $MatchingLearnersMetadata
-     *
-     * @return SupervisorType
-     */
-    public function withMatchingLearnersMetadata($MatchingLearnersMetadata)
+    
+    public function withMatchingLearnersMetadata(string $MatchingLearnersMetadata): static
     {
         $new = clone $this;
         $new->MatchingLearnersMetadata = $MatchingLearnersMetadata;
@@ -541,20 +374,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSupervisorMetadata()
+    
+    public function getSupervisorMetadata(): string
     {
         return $this->SupervisorMetadata;
     }
 
-    /**
-     * @param string $SupervisorMetadata
-     *
-     * @return SupervisorType
-     */
-    public function withSupervisorMetadata($SupervisorMetadata)
+    
+    public function withSupervisorMetadata(string $SupervisorMetadata): static
     {
         $new = clone $this;
         $new->SupervisorMetadata = $SupervisorMetadata;
@@ -562,20 +389,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSupervisorMetadataoption()
+    
+    public function getSupervisorMetadataoption(): string
     {
         return $this->SupervisorMetadataoption;
     }
 
-    /**
-     * @param string $SupervisorMetadataoption
-     *
-     * @return SupervisorType
-     */
-    public function withSupervisorMetadataoption($SupervisorMetadataoption)
+    
+    public function withSupervisorMetadataoption(string $SupervisorMetadataoption): static
     {
         $new = clone $this;
         $new->SupervisorMetadataoption = $SupervisorMetadataoption;
@@ -583,20 +404,14 @@ class SupervisorType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutomatedMatchIncludesSupervisors()
+    
+    public function getAutomatedMatchIncludesSupervisors(): bool
     {
         return $this->AutomatedMatchIncludesSupervisors;
     }
 
-    /**
-     * @param bool $AutomatedMatchIncludesSupervisors
-     *
-     * @return SupervisorType
-     */
-    public function withAutomatedMatchIncludesSupervisors($AutomatedMatchIncludesSupervisors)
+    
+    public function withAutomatedMatchIncludesSupervisors(bool $AutomatedMatchIncludesSupervisors): static
     {
         $new = clone $this;
         $new->AutomatedMatchIncludesSupervisors = $AutomatedMatchIncludesSupervisors;

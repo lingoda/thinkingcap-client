@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateStudentSupervisors implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentID;
+    
+    private string $studentID;
 
-    /**
-     * @var string
-     */
-    private $supervisorsList;
+    
+    private string $supervisorsList;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentID
-     * @param string $supervisorsList
      */
-    public function __construct($apiKey, $studentID, $supervisorsList)
+    public function __construct(string $apiKey, string $studentID, string $supervisorsList)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
         $this->supervisorsList = $supervisorsList;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return UpdateStudentSupervisors
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class UpdateStudentSupervisors implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->studentID;
     }
 
-    /**
-     * @param string $studentID
-     *
-     * @return UpdateStudentSupervisors
-     */
-    public function withStudentID($studentID)
+    
+    public function withStudentID(string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -79,20 +57,14 @@ class UpdateStudentSupervisors implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSupervisorsList()
+    
+    public function getSupervisorsList(): string
     {
         return $this->supervisorsList;
     }
 
-    /**
-     * @param string $supervisorsList
-     *
-     * @return UpdateStudentSupervisors
-     */
-    public function withSupervisorsList($supervisorsList)
+    
+    public function withSupervisorsList(string $supervisorsList): static
     {
         $new = clone $this;
         $new->supervisorsList = $supervisorsList;

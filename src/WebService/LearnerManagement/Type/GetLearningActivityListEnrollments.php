@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityListEnrollments implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userCustomMetadata;
+    
+    private string $userCustomMetadata;
 
-    /**
-     * @var string
-     */
-    private $customFieldIDs;
+    
+    private string $customFieldIDs;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userCustomMetadata
-     * @param string $customFieldIDs
      */
-    public function __construct($apiKey, $userCustomMetadata, $customFieldIDs)
+    public function __construct(string $apiKey, string $userCustomMetadata, string $customFieldIDs)
     {
         $this->apiKey = $apiKey;
         $this->userCustomMetadata = $userCustomMetadata;
         $this->customFieldIDs = $customFieldIDs;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetLearningActivityListEnrollments
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetLearningActivityListEnrollments implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserCustomMetadata()
+    
+    public function getUserCustomMetadata(): string
     {
         return $this->userCustomMetadata;
     }
 
-    /**
-     * @param string $userCustomMetadata
-     *
-     * @return GetLearningActivityListEnrollments
-     */
-    public function withUserCustomMetadata($userCustomMetadata)
+    
+    public function withUserCustomMetadata(string $userCustomMetadata): static
     {
         $new = clone $this;
         $new->userCustomMetadata = $userCustomMetadata;
@@ -79,20 +57,14 @@ class GetLearningActivityListEnrollments implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomFieldIDs()
+    
+    public function getCustomFieldIDs(): string
     {
         return $this->customFieldIDs;
     }
 
-    /**
-     * @param string $customFieldIDs
-     *
-     * @return GetLearningActivityListEnrollments
-     */
-    public function withCustomFieldIDs($customFieldIDs)
+    
+    public function withCustomFieldIDs(string $customFieldIDs): static
     {
         $new = clone $this;
         $new->customFieldIDs = $customFieldIDs;

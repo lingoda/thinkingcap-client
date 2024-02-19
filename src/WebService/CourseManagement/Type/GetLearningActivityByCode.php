@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityByCode implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $learningActivityCode;
+    
+    private string $learningActivityCode;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $learningActivityCode
      */
-    public function __construct($apiKey, $learningActivityCode)
+    public function __construct(string $apiKey, string $learningActivityCode)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityCode = $learningActivityCode;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetLearningActivityByCode
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GetLearningActivityByCode implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCode()
+    
+    public function getLearningActivityCode(): string
     {
         return $this->learningActivityCode;
     }
 
-    /**
-     * @param string $learningActivityCode
-     *
-     * @return GetLearningActivityByCode
-     */
-    public function withLearningActivityCode($learningActivityCode)
+    
+    public function withLearningActivityCode(string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;

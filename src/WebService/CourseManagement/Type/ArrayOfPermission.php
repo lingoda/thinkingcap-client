@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfPermission
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission
-     */
-    private $Permission;
+    private Permission $Permission;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission
-     */
-    public function getPermission()
+    
+    public function getPermission(): Permission
     {
         return $this->Permission;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission $Permission
-     *
-     * @return ArrayOfPermission
-     */
-    public function withPermission($Permission)
+    
+    public function withPermission(Permission $Permission): static
     {
         $new = clone $this;
         $new->Permission = $Permission;

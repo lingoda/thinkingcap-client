@@ -1,50 +1,33 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Contact
 {
-    /**
-     * @var string
-     */
-    private $UserID;
+    private string $UserID;
 
-    /**
-     * @var string
-     */
-    private $ContactID;
+    
+    private string $ContactID;
 
-    /**
-     * @var string
-     */
-    private $ContactName;
+    
+    private string $ContactName;
 
-    /**
-     * @var string
-     */
-    private $ContactScreenName;
+    
+    private string $ContactScreenName;
 
-    /**
-     * @var string
-     */
-    private $ContactEmail;
+    
+    private string $ContactEmail;
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->UserID;
     }
 
-    /**
-     * @param string $UserID
-     *
-     * @return Contact
-     */
-    public function withUserID($UserID)
+    
+    public function withUserID(string $UserID): static
     {
         $new = clone $this;
         $new->UserID = $UserID;
@@ -52,20 +35,14 @@ class Contact
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContactID()
+    
+    public function getContactID(): string
     {
         return $this->ContactID;
     }
 
-    /**
-     * @param string $ContactID
-     *
-     * @return Contact
-     */
-    public function withContactID($ContactID)
+    
+    public function withContactID(string $ContactID): static
     {
         $new = clone $this;
         $new->ContactID = $ContactID;
@@ -73,20 +50,14 @@ class Contact
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContactName()
+    
+    public function getContactName(): string
     {
         return $this->ContactName;
     }
 
-    /**
-     * @param string $ContactName
-     *
-     * @return Contact
-     */
-    public function withContactName($ContactName)
+    
+    public function withContactName(string $ContactName): static
     {
         $new = clone $this;
         $new->ContactName = $ContactName;
@@ -94,20 +65,14 @@ class Contact
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContactScreenName()
+    
+    public function getContactScreenName(): string
     {
         return $this->ContactScreenName;
     }
 
-    /**
-     * @param string $ContactScreenName
-     *
-     * @return Contact
-     */
-    public function withContactScreenName($ContactScreenName)
+    
+    public function withContactScreenName(string $ContactScreenName): static
     {
         $new = clone $this;
         $new->ContactScreenName = $ContactScreenName;
@@ -115,20 +80,14 @@ class Contact
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContactEmail()
+    
+    public function getContactEmail(): string
     {
         return $this->ContactEmail;
     }
 
-    /**
-     * @param string $ContactEmail
-     *
-     * @return Contact
-     */
-    public function withContactEmail($ContactEmail)
+    
+    public function withContactEmail(string $ContactEmail): static
     {
         $new = clone $this;
         $new->ContactEmail = $ContactEmail;

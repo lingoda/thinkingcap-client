@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetUsersByCustomFieldResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfUserList
-     */
-    private $GetUsersByCustomFieldResult;
+    private ServiceResultOfUserList $GetUsersByCustomFieldResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfUserList
-     */
-    public function getGetUsersByCustomFieldResult()
+    
+    public function getGetUsersByCustomFieldResult(): ServiceResultOfUserList
     {
         return $this->GetUsersByCustomFieldResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfUserList $GetUsersByCustomFieldResult
-     *
-     * @return GetUsersByCustomFieldResponse
-     */
-    public function withGetUsersByCustomFieldResult($GetUsersByCustomFieldResult)
+    
+    public function withGetUsersByCustomFieldResult(ServiceResultOfUserList $GetUsersByCustomFieldResult): static
     {
         $new = clone $this;
         $new->GetUsersByCustomFieldResult = $GetUsersByCustomFieldResult;

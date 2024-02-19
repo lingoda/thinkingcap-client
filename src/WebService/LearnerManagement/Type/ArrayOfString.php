@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfString
 {
-    /**
-     * @var string
-     */
-    private $string;
+    private string $string;
 
-    /**
-     * @return string
-     */
-    public function getString()
+    
+    public function getString(): string
     {
         return $this->string;
     }
 
-    /**
-     * @param string $string
-     *
-     * @return ArrayOfString
-     */
-    public function withString($string)
+    
+    public function withString(string $string): static
     {
         $new = clone $this;
         $new->string = $string;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,53 +8,31 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class MarkStudentSession implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentID;
+    
+    private string $studentID;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
-    /**
-     * @var string
-     */
-    private $sessionID;
+    
+    private string $sessionID;
 
-    /**
-     * @var int
-     */
-    private $scorePercent;
+    
+    private int $scorePercent;
 
-    /**
-     * @var string
-     */
-    private $comments;
+    
+    private string $comments;
 
-    /**
-     * @var string
-     */
-    private $attendanceValue;
+    
+    private string $attendanceValue;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentID
-     * @param string $courseID
-     * @param string $sessionID
-     * @param int $scorePercent
-     * @param string $comments
-     * @param string $attendanceValue
      */
-    public function __construct($apiKey, $studentID, $courseID, $sessionID, $scorePercent, $comments, $attendanceValue)
+    public function __construct(string $apiKey, string $studentID, string $courseID, string $sessionID, int $scorePercent, string $comments, string $attendanceValue)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -65,20 +43,14 @@ class MarkStudentSession implements RequestInterface
         $this->attendanceValue = $attendanceValue;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return MarkStudentSession
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -86,20 +58,14 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->studentID;
     }
 
-    /**
-     * @param string $studentID
-     *
-     * @return MarkStudentSession
-     */
-    public function withStudentID($studentID)
+    
+    public function withStudentID(string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -107,20 +73,14 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return MarkStudentSession
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -128,20 +88,14 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSessionID()
+    
+    public function getSessionID(): string
     {
         return $this->sessionID;
     }
 
-    /**
-     * @param string $sessionID
-     *
-     * @return MarkStudentSession
-     */
-    public function withSessionID($sessionID)
+    
+    public function withSessionID(string $sessionID): static
     {
         $new = clone $this;
         $new->sessionID = $sessionID;
@@ -149,20 +103,14 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getScorePercent()
+    
+    public function getScorePercent(): int
     {
         return $this->scorePercent;
     }
 
-    /**
-     * @param int $scorePercent
-     *
-     * @return MarkStudentSession
-     */
-    public function withScorePercent($scorePercent)
+    
+    public function withScorePercent(int $scorePercent): static
     {
         $new = clone $this;
         $new->scorePercent = $scorePercent;
@@ -170,20 +118,14 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getComments()
+    
+    public function getComments(): string
     {
         return $this->comments;
     }
 
-    /**
-     * @param string $comments
-     *
-     * @return MarkStudentSession
-     */
-    public function withComments($comments)
+    
+    public function withComments(string $comments): static
     {
         $new = clone $this;
         $new->comments = $comments;
@@ -191,20 +133,14 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAttendanceValue()
+    
+    public function getAttendanceValue(): string
     {
         return $this->attendanceValue;
     }
 
-    /**
-     * @param string $attendanceValue
-     *
-     * @return MarkStudentSession
-     */
-    public function withAttendanceValue($attendanceValue)
+    
+    public function withAttendanceValue(string $attendanceValue): static
     {
         $new = clone $this;
         $new->attendanceValue = $attendanceValue;

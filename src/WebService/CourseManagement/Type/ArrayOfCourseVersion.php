@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfCourseVersion
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseVersion
-     */
-    private $CourseVersion;
+    private CourseVersion $CourseVersion;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseVersion
-     */
-    public function getCourseVersion()
+    
+    public function getCourseVersion(): CourseVersion
     {
         return $this->CourseVersion;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseVersion $CourseVersion
-     *
-     * @return ArrayOfCourseVersion
-     */
-    public function withCourseVersion($CourseVersion)
+    
+    public function withCourseVersion(CourseVersion $CourseVersion): static
     {
         $new = clone $this;
         $new->CourseVersion = $CourseVersion;

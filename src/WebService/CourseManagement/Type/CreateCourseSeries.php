@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,53 +8,31 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class CreateCourseSeries implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $programID;
+    
+    private string $programID;
 
-    /**
-     * @var string
-     */
-    private $code;
+    
+    private string $code;
 
-    /**
-     * @var string
-     */
-    private $name;
+    
+    private string $name;
 
-    /**
-     * @var string
-     */
-    private $description;
+    
+    private string $description;
 
-    /**
-     * @var string
-     */
-    private $tags;
+    
+    private string $tags;
 
-    /**
-     * @var bool
-     */
-    private $denyInheritance;
+    
+    private bool $denyInheritance;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $programID
-     * @param string $code
-     * @param string $name
-     * @param string $description
-     * @param string $tags
-     * @param bool $denyInheritance
      */
-    public function __construct($apiKey, $programID, $code, $name, $description, $tags, $denyInheritance)
+    public function __construct(string $apiKey, string $programID, string $code, string $name, string $description, string $tags, bool $denyInheritance)
     {
         $this->apiKey = $apiKey;
         $this->programID = $programID;
@@ -65,20 +43,14 @@ class CreateCourseSeries implements RequestInterface
         $this->denyInheritance = $denyInheritance;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return CreateCourseSeries
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -86,20 +58,14 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->programID;
     }
 
-    /**
-     * @param string $programID
-     *
-     * @return CreateCourseSeries
-     */
-    public function withProgramID($programID)
+    
+    public function withProgramID(string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;
@@ -107,20 +73,14 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->code;
     }
 
-    /**
-     * @param string $code
-     *
-     * @return CreateCourseSeries
-     */
-    public function withCode($code)
+    
+    public function withCode(string $code): static
     {
         $new = clone $this;
         $new->code = $code;
@@ -128,20 +88,14 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return CreateCourseSeries
-     */
-    public function withName($name)
+    
+    public function withName(string $name): static
     {
         $new = clone $this;
         $new->name = $name;
@@ -149,20 +103,14 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     *
-     * @return CreateCourseSeries
-     */
-    public function withDescription($description)
+    
+    public function withDescription(string $description): static
     {
         $new = clone $this;
         $new->description = $description;
@@ -170,20 +118,14 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTags()
+    
+    public function getTags(): string
     {
         return $this->tags;
     }
 
-    /**
-     * @param string $tags
-     *
-     * @return CreateCourseSeries
-     */
-    public function withTags($tags)
+    
+    public function withTags(string $tags): static
     {
         $new = clone $this;
         $new->tags = $tags;
@@ -191,20 +133,14 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDenyInheritance()
+    
+    public function getDenyInheritance(): bool
     {
         return $this->denyInheritance;
     }
 
-    /**
-     * @param bool $denyInheritance
-     *
-     * @return CreateCourseSeries
-     */
-    public function withDenyInheritance($denyInheritance)
+    
+    public function withDenyInheritance(bool $denyInheritance): static
     {
         $new = clone $this;
         $new->denyInheritance = $denyInheritance;

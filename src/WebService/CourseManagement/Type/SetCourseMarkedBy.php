@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetCourseMarkedBy implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
-    /**
-     * @var bool
-     */
-    private $moderator;
+    
+    private bool $moderator;
 
-    /**
-     * @var bool
-     */
-    private $ta;
+    
+    private bool $ta;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseID
-     * @param bool $moderator
-     * @param bool $ta
      */
-    public function __construct($apiKey, $courseID, $moderator, $ta)
+    public function __construct(string $apiKey, string $courseID, bool $moderator, bool $ta)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
@@ -44,20 +31,14 @@ class SetCourseMarkedBy implements RequestInterface
         $this->ta = $ta;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return SetCourseMarkedBy
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class SetCourseMarkedBy implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return SetCourseMarkedBy
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -86,20 +61,14 @@ class SetCourseMarkedBy implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getModerator()
+    
+    public function getModerator(): bool
     {
         return $this->moderator;
     }
 
-    /**
-     * @param bool $moderator
-     *
-     * @return SetCourseMarkedBy
-     */
-    public function withModerator($moderator)
+    
+    public function withModerator(bool $moderator): static
     {
         $new = clone $this;
         $new->moderator = $moderator;
@@ -107,20 +76,14 @@ class SetCourseMarkedBy implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getTa()
+    
+    public function getTa(): bool
     {
         return $this->ta;
     }
 
-    /**
-     * @param bool $ta
-     *
-     * @return SetCourseMarkedBy
-     */
-    public function withTa($ta)
+    
+    public function withTa(bool $ta): static
     {
         $new = clone $this;
         $new->ta = $ta;

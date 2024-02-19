@@ -1,105 +1,68 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
+use DateTimeInterface;
+
 class CourseVersion
 {
-    /**
-     * @var string
-     */
-    private $CourseID;
+    private string $CourseID;
 
-    /**
-     * @var string
-     */
-    private $CourseTitle;
+    
+    private string $CourseTitle;
 
-    /**
-     * @var int
-     */
-    private $VersionNumber;
+    
+    private int $VersionNumber;
 
-    /**
-     * @var float
-     */
-    private $LearningTime;
+    
+    private float $LearningTime;
 
-    /**
-     * @var bool
-     */
-    private $IsAssessment;
+    
+    private bool $IsAssessment;
 
-    /**
-     * @var bool
-     */
-    private $HasAssessment;
+    
+    private bool $HasAssessment;
 
-    /**
-     * @var bool
-     */
-    private $HasAssignment;
+    
+    private bool $HasAssignment;
 
-    /**
-     * @var float
-     */
-    private $CertificateMinTime;
+    
+    private float $CertificateMinTime;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $ImportDate;
+    
+    private DateTimeInterface $ImportDate;
 
-    /**
-     * @var string
-     */
-    private $ScormVersion;
+    
+    private string $ScormVersion;
 
-    /**
-     * @var string
-     */
-    private $Reason;
+    
+    private string $Reason;
 
-    /**
-     * @var string
-     */
-    private $Type;
+    
+    private string $Type;
 
-    /**
-     * @var bool
-     */
-    private $HasMinorVersions;
+    
+    private bool $HasMinorVersions;
 
-    /**
-     * @var string
-     */
-    private $UpdatedBy;
+    
+    private string $UpdatedBy;
 
-    /**
-     * @var string
-     */
-    private $SummaryXml;
+    
+    private string $SummaryXml;
 
-    /**
-     * @var string
-     */
-    private $ExternalLocation;
+    
+    private string $ExternalLocation;
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return CourseVersion
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -107,20 +70,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseTitle()
+    
+    public function getCourseTitle(): string
     {
         return $this->CourseTitle;
     }
 
-    /**
-     * @param string $CourseTitle
-     *
-     * @return CourseVersion
-     */
-    public function withCourseTitle($CourseTitle)
+    
+    public function withCourseTitle(string $CourseTitle): static
     {
         $new = clone $this;
         $new->CourseTitle = $CourseTitle;
@@ -128,20 +85,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getVersionNumber()
+    
+    public function getVersionNumber(): int
     {
         return $this->VersionNumber;
     }
 
-    /**
-     * @param int $VersionNumber
-     *
-     * @return CourseVersion
-     */
-    public function withVersionNumber($VersionNumber)
+    
+    public function withVersionNumber(int $VersionNumber): static
     {
         $new = clone $this;
         $new->VersionNumber = $VersionNumber;
@@ -149,20 +100,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getLearningTime()
+    
+    public function getLearningTime(): float
     {
         return $this->LearningTime;
     }
 
-    /**
-     * @param float $LearningTime
-     *
-     * @return CourseVersion
-     */
-    public function withLearningTime($LearningTime)
+    
+    public function withLearningTime(float $LearningTime): static
     {
         $new = clone $this;
         $new->LearningTime = $LearningTime;
@@ -170,20 +115,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsAssessment()
+    
+    public function getIsAssessment(): bool
     {
         return $this->IsAssessment;
     }
 
-    /**
-     * @param bool $IsAssessment
-     *
-     * @return CourseVersion
-     */
-    public function withIsAssessment($IsAssessment)
+    
+    public function withIsAssessment(bool $IsAssessment): static
     {
         $new = clone $this;
         $new->IsAssessment = $IsAssessment;
@@ -191,20 +130,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasAssessment()
+    
+    public function getHasAssessment(): bool
     {
         return $this->HasAssessment;
     }
 
-    /**
-     * @param bool $HasAssessment
-     *
-     * @return CourseVersion
-     */
-    public function withHasAssessment($HasAssessment)
+    
+    public function withHasAssessment(bool $HasAssessment): static
     {
         $new = clone $this;
         $new->HasAssessment = $HasAssessment;
@@ -212,20 +145,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasAssignment()
+    
+    public function getHasAssignment(): bool
     {
         return $this->HasAssignment;
     }
 
-    /**
-     * @param bool $HasAssignment
-     *
-     * @return CourseVersion
-     */
-    public function withHasAssignment($HasAssignment)
+    
+    public function withHasAssignment(bool $HasAssignment): static
     {
         $new = clone $this;
         $new->HasAssignment = $HasAssignment;
@@ -233,20 +160,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCertificateMinTime()
+    
+    public function getCertificateMinTime(): float
     {
         return $this->CertificateMinTime;
     }
 
-    /**
-     * @param float $CertificateMinTime
-     *
-     * @return CourseVersion
-     */
-    public function withCertificateMinTime($CertificateMinTime)
+    
+    public function withCertificateMinTime(float $CertificateMinTime): static
     {
         $new = clone $this;
         $new->CertificateMinTime = $CertificateMinTime;
@@ -254,20 +175,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getImportDate()
+    
+    public function getImportDate(): DateTimeInterface
     {
         return $this->ImportDate;
     }
 
-    /**
-     * @param \DateTimeInterface $ImportDate
-     *
-     * @return CourseVersion
-     */
-    public function withImportDate($ImportDate)
+    
+    public function withImportDate(DateTimeInterface $ImportDate): static
     {
         $new = clone $this;
         $new->ImportDate = $ImportDate;
@@ -275,20 +190,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getScormVersion()
+    
+    public function getScormVersion(): string
     {
         return $this->ScormVersion;
     }
 
-    /**
-     * @param string $ScormVersion
-     *
-     * @return CourseVersion
-     */
-    public function withScormVersion($ScormVersion)
+    
+    public function withScormVersion(string $ScormVersion): static
     {
         $new = clone $this;
         $new->ScormVersion = $ScormVersion;
@@ -296,20 +205,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReason()
+    
+    public function getReason(): string
     {
         return $this->Reason;
     }
 
-    /**
-     * @param string $Reason
-     *
-     * @return CourseVersion
-     */
-    public function withReason($Reason)
+    
+    public function withReason(string $Reason): static
     {
         $new = clone $this;
         $new->Reason = $Reason;
@@ -317,20 +220,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return CourseVersion
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -338,20 +235,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasMinorVersions()
+    
+    public function getHasMinorVersions(): bool
     {
         return $this->HasMinorVersions;
     }
 
-    /**
-     * @param bool $HasMinorVersions
-     *
-     * @return CourseVersion
-     */
-    public function withHasMinorVersions($HasMinorVersions)
+    
+    public function withHasMinorVersions(bool $HasMinorVersions): static
     {
         $new = clone $this;
         $new->HasMinorVersions = $HasMinorVersions;
@@ -359,20 +250,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUpdatedBy()
+    
+    public function getUpdatedBy(): string
     {
         return $this->UpdatedBy;
     }
 
-    /**
-     * @param string $UpdatedBy
-     *
-     * @return CourseVersion
-     */
-    public function withUpdatedBy($UpdatedBy)
+    
+    public function withUpdatedBy(string $UpdatedBy): static
     {
         $new = clone $this;
         $new->UpdatedBy = $UpdatedBy;
@@ -380,20 +265,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSummaryXml()
+    
+    public function getSummaryXml(): string
     {
         return $this->SummaryXml;
     }
 
-    /**
-     * @param string $SummaryXml
-     *
-     * @return CourseVersion
-     */
-    public function withSummaryXml($SummaryXml)
+    
+    public function withSummaryXml(string $SummaryXml): static
     {
         $new = clone $this;
         $new->SummaryXml = $SummaryXml;
@@ -401,20 +280,14 @@ class CourseVersion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getExternalLocation()
+    
+    public function getExternalLocation(): string
     {
         return $this->ExternalLocation;
     }
 
-    /**
-     * @param string $ExternalLocation
-     *
-     * @return CourseVersion
-     */
-    public function withExternalLocation($ExternalLocation)
+    
+    public function withExternalLocation(string $ExternalLocation): static
     {
         $new = clone $this;
         $new->ExternalLocation = $ExternalLocation;

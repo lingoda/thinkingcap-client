@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class ValidateTimedSeed implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $seed;
+    
+    private string $seed;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $seed
      */
-    public function __construct($apiKey, $seed)
+    public function __construct(string $apiKey, string $seed)
     {
         $this->apiKey = $apiKey;
         $this->seed = $seed;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return ValidateTimedSeed
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class ValidateTimedSeed implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeed()
+    
+    public function getSeed(): string
     {
         return $this->seed;
     }
 
-    /**
-     * @param string $seed
-     *
-     * @return ValidateTimedSeed
-     */
-    public function withSeed($seed)
+    
+    public function withSeed(string $seed): static
     {
         $new = clone $this;
         $new->seed = $seed;

@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfMail
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail
-     */
-    private $Mail;
+    private Mail $Mail;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail
-     */
-    public function getMail()
+    
+    public function getMail(): Mail
     {
         return $this->Mail;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail $Mail
-     *
-     * @return ArrayOfMail
-     */
-    public function withMail($Mail)
+    
+    public function withMail(Mail $Mail): static
     {
         $new = clone $this;
         $new->Mail = $Mail;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GenerateTimedSeedResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $GenerateTimedSeedResult;
+    private ServiceResultOfString $GenerateTimedSeedResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getGenerateTimedSeedResult()
+    
+    public function getGenerateTimedSeedResult(): ServiceResultOfString
     {
         return $this->GenerateTimedSeedResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $GenerateTimedSeedResult
-     *
-     * @return GenerateTimedSeedResponse
-     */
-    public function withGenerateTimedSeedResult($GenerateTimedSeedResult)
+    
+    public function withGenerateTimedSeedResult(ServiceResultOfString $GenerateTimedSeedResult): static
     {
         $new = clone $this;
         $new->GenerateTimedSeedResult = $GenerateTimedSeedResult;

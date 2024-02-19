@@ -22,7 +22,7 @@
         "nesbot/carbon": "^2.48",
         "pedrotroller/php-cs-custom-fixer": "^2.25",
         "phpstan/extension-installer": "^1.1",
-        "symplify/easy-coding-standard": "^11.1"
+        "symplify/easy-coding-standard": "^12.1.12"
     },
     "replace": {
         "symfony/polyfill-php70": "*",

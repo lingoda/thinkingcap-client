@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetTrainingLocationsListResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfListOfTrainingLocation
-     */
-    private $GetTrainingLocationsListResult;
+    private ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfListOfTrainingLocation
-     */
-    public function getGetTrainingLocationsListResult()
+    
+    public function getGetTrainingLocationsListResult(): ServiceResultOfListOfTrainingLocation
     {
         return $this->GetTrainingLocationsListResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult
-     *
-     * @return GetTrainingLocationsListResponse
-     */
-    public function withGetTrainingLocationsListResult($GetTrainingLocationsListResult)
+    
+    public function withGetTrainingLocationsListResult(ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult): static
     {
         $new = clone $this;
         $new->GetTrainingLocationsListResult = $GetTrainingLocationsListResult;

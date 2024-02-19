@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetILTCourseCurrentSessionResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfCourseSession
-     */
-    private $GetILTCourseCurrentSessionResult;
+    private ServiceResultOfCourseSession $GetILTCourseCurrentSessionResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfCourseSession
-     */
-    public function getGetILTCourseCurrentSessionResult()
+    
+    public function getGetILTCourseCurrentSessionResult(): ServiceResultOfCourseSession
     {
         return $this->GetILTCourseCurrentSessionResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfCourseSession $GetILTCourseCurrentSessionResult
-     *
-     * @return GetILTCourseCurrentSessionResponse
-     */
-    public function withGetILTCourseCurrentSessionResult($GetILTCourseCurrentSessionResult)
+    
+    public function withGetILTCourseCurrentSessionResult(ServiceResultOfCourseSession $GetILTCourseCurrentSessionResult): static
     {
         $new = clone $this;
         $new->GetILTCourseCurrentSessionResult = $GetILTCourseCurrentSessionResult;

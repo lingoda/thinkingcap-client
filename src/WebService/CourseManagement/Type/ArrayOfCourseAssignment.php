@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfCourseAssignment
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseAssignment
-     */
-    private $CourseAssignment;
+    private CourseAssignment $CourseAssignment;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseAssignment
-     */
-    public function getCourseAssignment()
+    
+    public function getCourseAssignment(): CourseAssignment
     {
         return $this->CourseAssignment;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseAssignment $CourseAssignment
-     *
-     * @return ArrayOfCourseAssignment
-     */
-    public function withCourseAssignment($CourseAssignment)
+    
+    public function withCourseAssignment(CourseAssignment $CourseAssignment): static
     {
         $new = clone $this;
         $new->CourseAssignment = $CourseAssignment;

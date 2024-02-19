@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,47 +8,28 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetSupervisorUsers implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $supervisorID;
+    
+    private string $supervisorID;
 
-    /**
-     * @var bool
-     */
-    private $includeInactive;
+    
+    private bool $includeInactive;
 
-    /**
-     * @var bool
-     */
-    private $includeMetadata;
+    
+    private bool $includeMetadata;
 
-    /**
-     * @var int
-     */
-    private $offset;
+    
+    private int $offset;
 
-    /**
-     * @var int
-     */
-    private $take;
+    
+    private int $take;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $supervisorID
-     * @param bool $includeInactive
-     * @param bool $includeMetadata
-     * @param int $offset
-     * @param int $take
      */
-    public function __construct($apiKey, $supervisorID, $includeInactive, $includeMetadata, $offset, $take)
+    public function __construct(string $apiKey, string $supervisorID, bool $includeInactive, bool $includeMetadata, int $offset, int $take)
     {
         $this->apiKey = $apiKey;
         $this->supervisorID = $supervisorID;
@@ -58,20 +39,14 @@ class GetSupervisorUsers implements RequestInterface
         $this->take = $take;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetSupervisorUsers
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -79,20 +54,14 @@ class GetSupervisorUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSupervisorID()
+    
+    public function getSupervisorID(): string
     {
         return $this->supervisorID;
     }
 
-    /**
-     * @param string $supervisorID
-     *
-     * @return GetSupervisorUsers
-     */
-    public function withSupervisorID($supervisorID)
+    
+    public function withSupervisorID(string $supervisorID): static
     {
         $new = clone $this;
         $new->supervisorID = $supervisorID;
@@ -100,20 +69,14 @@ class GetSupervisorUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeInactive()
+    
+    public function getIncludeInactive(): bool
     {
         return $this->includeInactive;
     }
 
-    /**
-     * @param bool $includeInactive
-     *
-     * @return GetSupervisorUsers
-     */
-    public function withIncludeInactive($includeInactive)
+    
+    public function withIncludeInactive(bool $includeInactive): static
     {
         $new = clone $this;
         $new->includeInactive = $includeInactive;
@@ -121,20 +84,14 @@ class GetSupervisorUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeMetadata()
+    
+    public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    /**
-     * @param bool $includeMetadata
-     *
-     * @return GetSupervisorUsers
-     */
-    public function withIncludeMetadata($includeMetadata)
+    
+    public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
@@ -142,20 +99,14 @@ class GetSupervisorUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getOffset()
+    
+    public function getOffset(): int
     {
         return $this->offset;
     }
 
-    /**
-     * @param int $offset
-     *
-     * @return GetSupervisorUsers
-     */
-    public function withOffset($offset)
+    
+    public function withOffset(int $offset): static
     {
         $new = clone $this;
         $new->offset = $offset;
@@ -163,20 +114,14 @@ class GetSupervisorUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTake()
+    
+    public function getTake(): int
     {
         return $this->take;
     }
 
-    /**
-     * @param int $take
-     *
-     * @return GetSupervisorUsers
-     */
-    public function withTake($take)
+    
+    public function withTake(int $take): static
     {
         $new = clone $this;
         $new->take = $take;

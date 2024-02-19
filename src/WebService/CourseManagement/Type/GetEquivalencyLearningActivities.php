@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetEquivalencyLearningActivities implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $equivalencyID;
+    
+    private string $equivalencyID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $equivalencyID
      */
-    public function __construct($apiKey, $equivalencyID)
+    public function __construct(string $apiKey, string $equivalencyID)
     {
         $this->apiKey = $apiKey;
         $this->equivalencyID = $equivalencyID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetEquivalencyLearningActivities
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GetEquivalencyLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEquivalencyID()
+    
+    public function getEquivalencyID(): string
     {
         return $this->equivalencyID;
     }
 
-    /**
-     * @param string $equivalencyID
-     *
-     * @return GetEquivalencyLearningActivities
-     */
-    public function withEquivalencyID($equivalencyID)
+    
+    public function withEquivalencyID(string $equivalencyID): static
     {
         $new = clone $this;
         $new->equivalencyID = $equivalencyID;

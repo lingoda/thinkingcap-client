@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class DeleteLearningActivity implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $learningActivityID;
+    
+    private string $learningActivityID;
 
-    /**
-     * @var bool
-     */
-    private $updateAdminCatalogs;
+    
+    private bool $updateAdminCatalogs;
 
-    /**
-     * @var bool
-     */
-    private $updateLearnerCatalogs;
+    
+    private bool $updateLearnerCatalogs;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $learningActivityID
-     * @param bool $updateAdminCatalogs
-     * @param bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningActivityID, $updateAdminCatalogs, $updateLearnerCatalogs)
+    public function __construct(string $apiKey, string $learningActivityID, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityID = $learningActivityID;
@@ -44,20 +31,14 @@ class DeleteLearningActivity implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return DeleteLearningActivity
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class DeleteLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityID()
+    
+    public function getLearningActivityID(): string
     {
         return $this->learningActivityID;
     }
 
-    /**
-     * @param string $learningActivityID
-     *
-     * @return DeleteLearningActivity
-     */
-    public function withLearningActivityID($learningActivityID)
+    
+    public function withLearningActivityID(string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;
@@ -86,20 +61,14 @@ class DeleteLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateAdminCatalogs()
+    
+    public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    /**
-     * @param bool $updateAdminCatalogs
-     *
-     * @return DeleteLearningActivity
-     */
-    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    
+    public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
         $new->updateAdminCatalogs = $updateAdminCatalogs;
@@ -107,20 +76,14 @@ class DeleteLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateLearnerCatalogs()
+    
+    public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    /**
-     * @param bool $updateLearnerCatalogs
-     *
-     * @return DeleteLearningActivity
-     */
-    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    
+    public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;
         $new->updateLearnerCatalogs = $updateLearnerCatalogs;

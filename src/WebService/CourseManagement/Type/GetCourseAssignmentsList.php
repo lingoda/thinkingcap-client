@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseAssignmentsList implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
-    /**
-     * @var string
-     */
-    private $programID;
+    
+    private string $programID;
 
-    /**
-     * @var string
-     */
-    private $status;
+    
+    private string $status;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseID
-     * @param string $programID
-     * @param string $status
      */
-    public function __construct($apiKey, $courseID, $programID, $status)
+    public function __construct(string $apiKey, string $courseID, string $programID, string $status)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
@@ -44,20 +31,14 @@ class GetCourseAssignmentsList implements RequestInterface
         $this->status = $status;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetCourseAssignmentsList
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class GetCourseAssignmentsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return GetCourseAssignmentsList
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -86,20 +61,14 @@ class GetCourseAssignmentsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->programID;
     }
 
-    /**
-     * @param string $programID
-     *
-     * @return GetCourseAssignmentsList
-     */
-    public function withProgramID($programID)
+    
+    public function withProgramID(string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;
@@ -107,20 +76,14 @@ class GetCourseAssignmentsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus()
+    
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     *
-     * @return GetCourseAssignmentsList
-     */
-    public function withStatus($status)
+    
+    public function withStatus(string $status): static
     {
         $new = clone $this;
         $new->status = $status;

@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class TimeIntervalsList
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfTimeInterval
-     */
-    private $IntervalsArray;
+    private ArrayOfTimeInterval $IntervalsArray;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfTimeInterval
-     */
-    public function getIntervalsArray()
+    
+    public function getIntervalsArray(): ArrayOfTimeInterval
     {
         return $this->IntervalsArray;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfTimeInterval $IntervalsArray
-     *
-     * @return TimeIntervalsList
-     */
-    public function withIntervalsArray($IntervalsArray)
+    
+    public function withIntervalsArray(ArrayOfTimeInterval $IntervalsArray): static
     {
         $new = clone $this;
         $new->IntervalsArray = $IntervalsArray;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetSCORMDetails implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $userLogin;
+    private string $userLogin;
 
-    /**
-     * @var string
-     */
-    private $userPassword;
+    
+    private string $userPassword;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
     /**
      * Constructor
      *
-     * @param string $userLogin
-     * @param string $userPassword
-     * @param string $courseID
      */
-    public function __construct($userLogin, $userPassword, $courseID)
+    public function __construct(string $userLogin, string $userPassword, string $courseID)
     {
         $this->userLogin = $userLogin;
         $this->userPassword = $userPassword;
         $this->courseID = $courseID;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserLogin()
+    
+    public function getUserLogin(): string
     {
         return $this->userLogin;
     }
 
-    /**
-     * @param string $userLogin
-     *
-     * @return GetSCORMDetails
-     */
-    public function withUserLogin($userLogin)
+    
+    public function withUserLogin(string $userLogin): static
     {
         $new = clone $this;
         $new->userLogin = $userLogin;
@@ -58,20 +42,14 @@ class GetSCORMDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserPassword()
+    
+    public function getUserPassword(): string
     {
         return $this->userPassword;
     }
 
-    /**
-     * @param string $userPassword
-     *
-     * @return GetSCORMDetails
-     */
-    public function withUserPassword($userPassword)
+    
+    public function withUserPassword(string $userPassword): static
     {
         $new = clone $this;
         $new->userPassword = $userPassword;
@@ -79,20 +57,14 @@ class GetSCORMDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return GetSCORMDetails
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,41 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLMSUserAutoLoginURL implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userLogin;
+    
+    private string $userLogin;
 
-    /**
-     * @var string
-     */
-    private $userPassword;
+    
+    private string $userPassword;
 
-    /**
-     * @var string
-     */
-    private $domainID;
+    
+    private string $domainID;
 
-    /**
-     * @var string
-     */
-    private $returnUrl;
+    
+    private string $returnUrl;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userLogin
-     * @param string $userPassword
-     * @param string $domainID
-     * @param string $returnUrl
      */
-    public function __construct($apiKey, $userLogin, $userPassword, $domainID, $returnUrl)
+    public function __construct(string $apiKey, string $userLogin, string $userPassword, string $domainID, string $returnUrl)
     {
         $this->apiKey = $apiKey;
         $this->userLogin = $userLogin;
@@ -51,20 +35,14 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         $this->returnUrl = $returnUrl;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetLMSUserAutoLoginURL
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -72,20 +50,14 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserLogin()
+    
+    public function getUserLogin(): string
     {
         return $this->userLogin;
     }
 
-    /**
-     * @param string $userLogin
-     *
-     * @return GetLMSUserAutoLoginURL
-     */
-    public function withUserLogin($userLogin)
+    
+    public function withUserLogin(string $userLogin): static
     {
         $new = clone $this;
         $new->userLogin = $userLogin;
@@ -93,20 +65,14 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserPassword()
+    
+    public function getUserPassword(): string
     {
         return $this->userPassword;
     }
 
-    /**
-     * @param string $userPassword
-     *
-     * @return GetLMSUserAutoLoginURL
-     */
-    public function withUserPassword($userPassword)
+    
+    public function withUserPassword(string $userPassword): static
     {
         $new = clone $this;
         $new->userPassword = $userPassword;
@@ -114,20 +80,14 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->domainID;
     }
 
-    /**
-     * @param string $domainID
-     *
-     * @return GetLMSUserAutoLoginURL
-     */
-    public function withDomainID($domainID)
+    
+    public function withDomainID(string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;
@@ -135,20 +95,14 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReturnUrl()
+    
+    public function getReturnUrl(): string
     {
         return $this->returnUrl;
     }
 
-    /**
-     * @param string $returnUrl
-     *
-     * @return GetLMSUserAutoLoginURL
-     */
-    public function withReturnUrl($returnUrl)
+    
+    public function withReturnUrl(string $returnUrl): static
     {
         $new = clone $this;
         $new->returnUrl = $returnUrl;

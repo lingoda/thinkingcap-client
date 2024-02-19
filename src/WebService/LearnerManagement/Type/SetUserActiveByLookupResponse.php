@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetUserActiveByLookupResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $SetUserActiveByLookupResult;
+    private ServiceResultOfString $SetUserActiveByLookupResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getSetUserActiveByLookupResult()
+    
+    public function getSetUserActiveByLookupResult(): ServiceResultOfString
     {
         return $this->SetUserActiveByLookupResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $SetUserActiveByLookupResult
-     *
-     * @return SetUserActiveByLookupResponse
-     */
-    public function withSetUserActiveByLookupResult($SetUserActiveByLookupResult)
+    
+    public function withSetUserActiveByLookupResult(ServiceResultOfString $SetUserActiveByLookupResult): static
     {
         $new = clone $this;
         $new->SetUserActiveByLookupResult = $SetUserActiveByLookupResult;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ReserveSpotILTResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString
-     */
-    private $ReserveSpotILTResult;
+    private ServiceResultOfString $ReserveSpotILTResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString
-     */
-    public function getReserveSpotILTResult()
+    
+    public function getReserveSpotILTResult(): ServiceResultOfString
     {
         return $this->ReserveSpotILTResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString $ReserveSpotILTResult
-     *
-     * @return ReserveSpotILTResponse
-     */
-    public function withReserveSpotILTResult($ReserveSpotILTResult)
+    
+    public function withReserveSpotILTResult(ServiceResultOfString $ReserveSpotILTResult): static
     {
         $new = clone $this;
         $new->ReserveSpotILTResult = $ReserveSpotILTResult;

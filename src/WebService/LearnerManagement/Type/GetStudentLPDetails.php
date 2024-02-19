@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetStudentLPDetails implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentID;
+    
+    private string $studentID;
 
-    /**
-     * @var string
-     */
-    private $learningPathID;
+    
+    private string $learningPathID;
 
-    /**
-     * @var string
-     */
-    private $language;
+    
+    private string $language;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentID
-     * @param string $learningPathID
-     * @param string $language
      */
-    public function __construct($apiKey, $studentID, $learningPathID, $language)
+    public function __construct(string $apiKey, string $studentID, string $learningPathID, string $language)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -44,20 +31,14 @@ class GetStudentLPDetails implements RequestInterface
         $this->language = $language;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetStudentLPDetails
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class GetStudentLPDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->studentID;
     }
 
-    /**
-     * @param string $studentID
-     *
-     * @return GetStudentLPDetails
-     */
-    public function withStudentID($studentID)
+    
+    public function withStudentID(string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -86,20 +61,14 @@ class GetStudentLPDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningPathID()
+    
+    public function getLearningPathID(): string
     {
         return $this->learningPathID;
     }
 
-    /**
-     * @param string $learningPathID
-     *
-     * @return GetStudentLPDetails
-     */
-    public function withLearningPathID($learningPathID)
+    
+    public function withLearningPathID(string $learningPathID): static
     {
         $new = clone $this;
         $new->learningPathID = $learningPathID;
@@ -107,20 +76,14 @@ class GetStudentLPDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
-    /**
-     * @param string $language
-     *
-     * @return GetStudentLPDetails
-     */
-    public function withLanguage($language)
+    
+    public function withLanguage(string $language): static
     {
         $new = clone $this;
         $new->language = $language;

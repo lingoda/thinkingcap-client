@@ -1195,6 +1195,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="IsSearchFilter" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowSelfRegistration" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationApproval" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationCodeForExistingAccounts" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresCode" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresRequest" type="s:boolean" />

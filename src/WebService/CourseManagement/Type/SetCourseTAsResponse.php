@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetCourseTAsResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString
-     */
-    private $SetCourseTAsResult;
+    private ServiceResultOfString $SetCourseTAsResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString
-     */
-    public function getSetCourseTAsResult()
+    
+    public function getSetCourseTAsResult(): ServiceResultOfString
     {
         return $this->SetCourseTAsResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString $SetCourseTAsResult
-     *
-     * @return SetCourseTAsResponse
-     */
-    public function withSetCourseTAsResult($SetCourseTAsResult)
+    
+    public function withSetCourseTAsResult(ServiceResultOfString $SetCourseTAsResult): static
     {
         $new = clone $this;
         $new->SetCourseTAsResult = $SetCourseTAsResult;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GenerateTimedSeed implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var int
-     */
-    private $expireSeconds;
+    
+    private int $expireSeconds;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param int $expireSeconds
      */
-    public function __construct($apiKey, $expireSeconds)
+    public function __construct(string $apiKey, int $expireSeconds)
     {
         $this->apiKey = $apiKey;
         $this->expireSeconds = $expireSeconds;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GenerateTimedSeed
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GenerateTimedSeed implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getExpireSeconds()
+    
+    public function getExpireSeconds(): int
     {
         return $this->expireSeconds;
     }
 
-    /**
-     * @param int $expireSeconds
-     *
-     * @return GenerateTimedSeed
-     */
-    public function withExpireSeconds($expireSeconds)
+    
+    public function withExpireSeconds(int $expireSeconds): static
     {
         $new = clone $this;
         $new->expireSeconds = $expireSeconds;

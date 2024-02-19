@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,53 +8,31 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetDomainLearningActivities implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $onlyDomainID;
+    
+    private string $onlyDomainID;
 
-    /**
-     * @var string
-     */
-    private $learningActivityTypeFilter;
+    
+    private string $learningActivityTypeFilter;
 
-    /**
-     * @var bool
-     */
-    private $includeInactive;
+    
+    private bool $includeInactive;
 
-    /**
-     * @var bool
-     */
-    private $includeMetadata;
+    
+    private bool $includeMetadata;
 
-    /**
-     * @var int
-     */
-    private $offset;
+    
+    private int $offset;
 
-    /**
-     * @var int
-     */
-    private $take;
+    
+    private int $take;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $onlyDomainID
-     * @param string $learningActivityTypeFilter
-     * @param bool $includeInactive
-     * @param bool $includeMetadata
-     * @param int $offset
-     * @param int $take
      */
-    public function __construct($apiKey, $onlyDomainID, $learningActivityTypeFilter, $includeInactive, $includeMetadata, $offset, $take)
+    public function __construct(string $apiKey, string $onlyDomainID, string $learningActivityTypeFilter, bool $includeInactive, bool $includeMetadata, int $offset, int $take)
     {
         $this->apiKey = $apiKey;
         $this->onlyDomainID = $onlyDomainID;
@@ -65,20 +43,14 @@ class GetDomainLearningActivities implements RequestInterface
         $this->take = $take;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -86,20 +58,14 @@ class GetDomainLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOnlyDomainID()
+    
+    public function getOnlyDomainID(): string
     {
         return $this->onlyDomainID;
     }
 
-    /**
-     * @param string $onlyDomainID
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withOnlyDomainID($onlyDomainID)
+    
+    public function withOnlyDomainID(string $onlyDomainID): static
     {
         $new = clone $this;
         $new->onlyDomainID = $onlyDomainID;
@@ -107,20 +73,14 @@ class GetDomainLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityTypeFilter()
+    
+    public function getLearningActivityTypeFilter(): string
     {
         return $this->learningActivityTypeFilter;
     }
 
-    /**
-     * @param string $learningActivityTypeFilter
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withLearningActivityTypeFilter($learningActivityTypeFilter)
+    
+    public function withLearningActivityTypeFilter(string $learningActivityTypeFilter): static
     {
         $new = clone $this;
         $new->learningActivityTypeFilter = $learningActivityTypeFilter;
@@ -128,20 +88,14 @@ class GetDomainLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeInactive()
+    
+    public function getIncludeInactive(): bool
     {
         return $this->includeInactive;
     }
 
-    /**
-     * @param bool $includeInactive
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withIncludeInactive($includeInactive)
+    
+    public function withIncludeInactive(bool $includeInactive): static
     {
         $new = clone $this;
         $new->includeInactive = $includeInactive;
@@ -149,20 +103,14 @@ class GetDomainLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeMetadata()
+    
+    public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    /**
-     * @param bool $includeMetadata
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withIncludeMetadata($includeMetadata)
+    
+    public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
@@ -170,20 +118,14 @@ class GetDomainLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getOffset()
+    
+    public function getOffset(): int
     {
         return $this->offset;
     }
 
-    /**
-     * @param int $offset
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withOffset($offset)
+    
+    public function withOffset(int $offset): static
     {
         $new = clone $this;
         $new->offset = $offset;
@@ -191,20 +133,14 @@ class GetDomainLearningActivities implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTake()
+    
+    public function getTake(): int
     {
         return $this->take;
     }
 
-    /**
-     * @param int $take
-     *
-     * @return GetDomainLearningActivities
-     */
-    public function withTake($take)
+    
+    public function withTake(int $take): static
     {
         $new = clone $this;
         $new->take = $take;

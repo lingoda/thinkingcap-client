@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class WithdrawStudent implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentID;
+    
+    private string $studentID;
 
-    /**
-     * @var string
-     */
-    private $learningObjectID;
+    
+    private string $learningObjectID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentID
-     * @param string $learningObjectID
      */
-    public function __construct($apiKey, $studentID, $learningObjectID)
+    public function __construct(string $apiKey, string $studentID, string $learningObjectID)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
         $this->learningObjectID = $learningObjectID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return WithdrawStudent
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class WithdrawStudent implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->studentID;
     }
 
-    /**
-     * @param string $studentID
-     *
-     * @return WithdrawStudent
-     */
-    public function withStudentID($studentID)
+    
+    public function withStudentID(string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -79,20 +57,14 @@ class WithdrawStudent implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningObjectID()
+    
+    public function getLearningObjectID(): string
     {
         return $this->learningObjectID;
     }
 
-    /**
-     * @param string $learningObjectID
-     *
-     * @return WithdrawStudent
-     */
-    public function withLearningObjectID($learningObjectID)
+    
+    public function withLearningObjectID(string $learningObjectID): static
     {
         $new = clone $this;
         $new->learningObjectID = $learningObjectID;

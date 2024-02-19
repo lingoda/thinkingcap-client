@@ -7,6 +7,7 @@ use PedroTroller\CS\Fixer\PhpspecFixer;
 use PhpCsFixer\Fixer\Alias\MbStrFunctionsFixer;
 use PhpCsFixer\Fixer\Alias\NoAliasFunctionsFixer;
 use PhpCsFixer\Fixer\ArrayNotation\NormalizeIndexBraceFixer;
+use PhpCsFixer\Fixer\Casing\ClassReferenceNameCasingFixer;
 use PhpCsFixer\Fixer\CastNotation\ShortScalarCastFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use PhpCsFixer\Fixer\Comment\CommentToPhpdocFixer;
@@ -41,6 +42,11 @@ use PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer;
 use Symplify\CodingStandard\Fixer\Spacing\StandaloneLinePromotedPropertyFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
+use PhpCsFixer\Fixer\Import\GlobalNamespaceImportFixer;
+use PhpCsFixer\Fixer\FunctionNotation\PhpdocToPropertyTypeFixer;
+use PhpCsFixer\Fixer\Import\FullyQualifiedStrictTypesFixer;
+use PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer;
+use PhpCsFixer\Fixer\Phpdoc\NoEmptyPhpdocFixer;
 
 return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->sets([
@@ -72,6 +78,11 @@ return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->ruleWithConfiguration(MultilineWhitespaceBeforeSemicolonsFixer::class, [
         'strategy' => 'new_line_for_chained_calls',
     ]);
+    $containerConfigurator->rule(NoEmptyPhpdocFixer::class);
+    $containerConfigurator->rule(FullyQualifiedStrictTypesFixer::class);
+    $containerConfigurator->rule(PhpdocToPropertyTypeFixer::class);
+    $containerConfigurator->rule(GlobalNamespaceImportFixer::class);
+    $containerConfigurator->rule(NoSuperfluousPhpdocTagsFixer::class);
     $containerConfigurator->rule(NoSuperfluousElseifFixer::class);
     $containerConfigurator->rule(NoUselessElseFixer::class);
     $containerConfigurator->rule(NullableTypeDeclarationForDefaultNullValueFixer::class);
@@ -104,6 +115,7 @@ return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->rule(DeclareStrictTypesFixer::class);
     $containerConfigurator->rule(NoUnusedImportsFixer::class);
     $containerConfigurator->rule(PhpdocSeparationFixer::class);
+    $containerConfigurator->rule(ClassReferenceNameCasingFixer::class);
     $containerConfigurator->skip([
         PhpdocAlignFixer::class,
         PhpdocSummaryFixer::class,

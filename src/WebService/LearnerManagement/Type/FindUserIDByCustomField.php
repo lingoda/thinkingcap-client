@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class FindUserIDByCustomField implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $customFieldID;
+    
+    private string $customFieldID;
 
-    /**
-     * @var string
-     */
-    private $customFieldValue;
+    
+    private string $customFieldValue;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $customFieldID
-     * @param string $customFieldValue
      */
-    public function __construct($apiKey, $customFieldID, $customFieldValue)
+    public function __construct(string $apiKey, string $customFieldID, string $customFieldValue)
     {
         $this->apiKey = $apiKey;
         $this->customFieldID = $customFieldID;
         $this->customFieldValue = $customFieldValue;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return FindUserIDByCustomField
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class FindUserIDByCustomField implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomFieldID()
+    
+    public function getCustomFieldID(): string
     {
         return $this->customFieldID;
     }
 
-    /**
-     * @param string $customFieldID
-     *
-     * @return FindUserIDByCustomField
-     */
-    public function withCustomFieldID($customFieldID)
+    
+    public function withCustomFieldID(string $customFieldID): static
     {
         $new = clone $this;
         $new->customFieldID = $customFieldID;
@@ -79,20 +57,14 @@ class FindUserIDByCustomField implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomFieldValue()
+    
+    public function getCustomFieldValue(): string
     {
         return $this->customFieldValue;
     }
 
-    /**
-     * @param string $customFieldValue
-     *
-     * @return FindUserIDByCustomField
-     */
-    public function withCustomFieldValue($customFieldValue)
+    
+    public function withCustomFieldValue(string $customFieldValue): static
     {
         $new = clone $this;
         $new->customFieldValue = $customFieldValue;

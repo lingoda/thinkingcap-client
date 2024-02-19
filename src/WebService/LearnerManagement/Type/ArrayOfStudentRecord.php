@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfStudentRecord
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentRecord
-     */
-    private $StudentRecord;
+    private StudentRecord $StudentRecord;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentRecord
-     */
-    public function getStudentRecord()
+    
+    public function getStudentRecord(): StudentRecord
     {
         return $this->StudentRecord;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\StudentRecord $StudentRecord
-     *
-     * @return ArrayOfStudentRecord
-     */
-    public function withStudentRecord($StudentRecord)
+    
+    public function withStudentRecord(StudentRecord $StudentRecord): static
     {
         $new = clone $this;
         $new->StudentRecord = $StudentRecord;

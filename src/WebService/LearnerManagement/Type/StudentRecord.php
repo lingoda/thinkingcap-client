@@ -1,560 +1,341 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
+use DateTimeInterface;
+
 class StudentRecord
 {
-    /**
-     * @var string
-     */
-    private $Type;
-
-    /**
-     * @var string
-     */
-    private $TypeName;
-
-    /**
-     * @var bool
-     */
-    private $IsOnline;
-
-    /**
-     * @var bool
-     */
-    private $IsAssessment;
-
-    /**
-     * @var bool
-     */
-    private $HasFeedBack;
-
-    /**
-     * @var string
-     */
-    private $FullScreen;
-
-    /**
-     * @var string
-     */
-    private $RecordID;
-
-    /**
-     * @var string
-     */
-    private $DomainID;
-
-    /**
-     * @var string
-     */
-    private $StudentID;
-
-    /**
-     * @var string
-     */
-    private $StudentDisplayID;
-
-    /**
-     * @var string
-     */
-    private $StudentName;
-
-    /**
-     * @var string
-     */
-    private $StudentEmail;
-
-    /**
-     * @var string
-     */
-    private $StudentCmiName;
-
-    /**
-     * @var string
-     */
-    private $StudentLanguage;
-
-    /**
-     * @var string
-     */
-    private $CourseID;
-
-    /**
-     * @var string
-     */
-    private $CourseTitle;
-
-    /**
-     * @var bool
-     */
-    private $IsAccesscodeValidated;
-
-    /**
-     * @var bool
-     */
-    private $FeedbackLoaded;
-
-    /**
-     * @var string
-     */
-    private $CourseDescription;
-
-    /**
-     * @var string
-     */
-    private $ContentType;
-
-    /**
-     * @var string
-     */
-    private $CourseCode;
-
-    /**
-     * @var string
-     */
-    private $CourseProgram;
-
-    /**
-     * @var string
-     */
-    private $CourseProgramID;
-
-    /**
-     * @var string
-     */
-    private $ProgramCode;
-
-    /**
-     * @var string
-     */
-    private $LastProgram;
-
-    /**
-     * @var string
-     */
-    private $EnrolledFromProgram;
-
-    /**
-     * @var string
-     */
-    private $CohortID;
-
-    /**
-     * @var string
-     */
-    private $LearningPathID;
-
-    /**
-     * @var bool
-     */
-    private $Archived;
-
-    /**
-     * @var bool
-     */
-    private $Anon;
-
-    /**
-     * @var bool
-     */
-    private $IsLocked;
-
-    /**
-     * @var string
-     */
-    private $LockReason;
-
-    /**
-     * @var int
-     */
-    private $CourseVersion;
-
-    /**
-     * @var string
-     */
-    private $ScormVersion;
-
-    /**
-     * @var float
-     */
-    private $CourseCredit;
-
-    /**
-     * @var bool
-     */
-    private $CreditOnlyOnPass;
-
-    /**
-     * @var bool
-     */
-    private $CanGrantCertificate;
-
-    /**
-     * @var string
-     */
-    private $CertificateType;
-
-    /**
-     * @var int
-     */
-    private $CertificateScore;
-
-    /**
-     * @var bool
-     */
-    private $DoNotGrandCertificateUnlessCreditIssued;
-
-    /**
-     * @var float
-     */
-    private $CertificateMinTime;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $CertificateExpiring;
-
-    /**
-     * @var bool
-     */
-    private $GrantCertificate;
-
-    /**
-     * @var bool
-     */
-    private $HasCertificate;
-
-    /**
-     * @var bool
-     */
-    private $GrantCredit;
-
-    /**
-     * @var int
-     */
-    private $Attempt;
-
-    /**
-     * @var string
-     */
-    private $PassID;
-
-    /**
-     * @var bool
-     */
-    private $LearningObjectIsActive;
-
-    /**
-     * @var bool
-     */
-    private $HasForum;
-
-    /**
-     * @var bool
-     */
-    private $HasChat;
-
-    /**
-     * @var string
-     */
-    private $TeachingAsstID;
-
-    /**
-     * @var string
-     */
-    private $Status;
-
-    /**
-     * @var string
-     */
-    private $CompletionStatus;
-
-    /**
-     * @var bool
-     */
-    private $RequiresCompletedStatusForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequiresFeedbackForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequireFeedbackPopUp;
-
-    /**
-     * @var bool
-     */
-    private $RequireAssignmentForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequireAssesmentForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $IsCompleted;
-
-    /**
-     * @var bool
-     */
-    private $ProcessUnknown;
-
-    /**
-     * @var bool
-     */
-    private $OverrideAPISuccess;
-
-    /**
-     * @var int
-     */
-    private $MinPassingScore;
-
-    /**
-     * @var bool
-     */
-    private $BarAccess;
-
-    /**
-     * @var string
-     */
-    private $Success;
-
-    /**
-     * @var string
-     */
-    private $EntrySuccess;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DateEnrolled;
-
-    /**
-     * @var string
-     */
-    private $EnrollmentNotes;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DateStarted;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DueDate;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $CompletedDate;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $OverallCompletedDate;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastDateAttempted;
-
-    /**
-     * @var int
-     */
-    private $TotalCourseAttempts;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $RecordStartDate;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $CourseStartDate;
-
-    /**
-     * @var bool
-     */
-    private $CourseImmediateStart;
-
-    /**
-     * @var string
-     */
-    private $LastModule;
-
-    /**
-     * @var string
-     */
-    private $LastModuleName;
-
-    /**
-     * @var string
-     */
-    private $ProctorComment;
-
-    /**
-     * @var int
-     */
-    private $Score;
-
-    /**
-     * @var int
-     */
-    private $EntryScore;
-
-    /**
-     * @var float
-     */
-    private $TotalAverageScore;
-
-    /**
-     * @var float
-     */
-    private $PartialScore;
-
-    /**
-     * @var float
-     */
-    private $PercentCompleted;
-
-    /**
-     * @var int
-     */
-    private $Timeout;
-
-    /**
-     * @var bool
-     */
-    private $CourseDisclaimerAgreed;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DisclaimerAgreedDate;
-
-    /**
-     * @var string
-     */
-    private $SummaryXml;
-
-    /**
-     * @var string
-     */
-    private $SummaryDuration;
-
-    /**
-     * @var bool
-     */
-    private $Enter;
-
-    /**
-     * @var bool
-     */
-    private $Exit;
-
-    /**
-     * @var bool
-     */
-    private $Feedback;
-
-    /**
-     * @var string
-     */
-    private $CoursePackageURL;
-
-    /**
-     * @var string
-     */
-    private $CourseMarqueeURL;
-
-    /**
-     * @var string
-     */
-    private $CertificateXml;
-
-    /**
-     * @var string
-     */
-    private $NotificationSettingXml;
-
-    /**
-     * @var string
-     */
-    private $Notes;
-
-    /**
-     * @var string
-     */
-    private $ManualUpdateNotes;
-
-    /**
-     * @var bool
-     */
-    private $ManualCompleted;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $AuditTimestamp;
-
-    /**
-     * @var string
-     */
-    private $ApprovalCode;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastModifiedTimestamp;
-
-    /**
-     * @var bool
-     */
-    private $UpdateInProgress;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $UpdateInProgressTimestamp;
-
-    /**
-     * @var string
-     */
-    private $PortfolioEvidenceText;
-
-    /**
-     * @var bool
-     */
-    private $CreditStatementAvailable;
-
-    /**
-     * @var string
-     */
-    private $OpenBadgeID;
-
-    /**
-     * @return string
-     */
-    public function getType()
+    private string $Type;
+
+    
+    private string $TypeName;
+
+    
+    private bool $IsOnline;
+
+    
+    private bool $IsAssessment;
+
+    
+    private bool $HasFeedBack;
+
+    
+    private string $FullScreen;
+
+    
+    private string $RecordID;
+
+    
+    private string $DomainID;
+
+    
+    private string $StudentID;
+
+    
+    private string $StudentDisplayID;
+
+    
+    private string $StudentName;
+
+    
+    private string $StudentEmail;
+
+    
+    private string $StudentCmiName;
+
+    
+    private string $StudentLanguage;
+
+    
+    private string $CourseID;
+
+    
+    private string $CourseTitle;
+
+    
+    private bool $IsAccesscodeValidated;
+
+    
+    private bool $FeedbackLoaded;
+
+    
+    private string $CourseDescription;
+
+    
+    private string $ContentType;
+
+    
+    private string $CourseCode;
+
+    
+    private string $CourseProgram;
+
+    
+    private string $CourseProgramID;
+
+    
+    private string $ProgramCode;
+
+    
+    private string $LastProgram;
+
+    
+    private string $EnrolledFromProgram;
+
+    
+    private string $CohortID;
+
+    
+    private string $LearningPathID;
+
+    
+    private bool $Archived;
+
+    
+    private bool $Anon;
+
+    
+    private bool $IsLocked;
+
+    
+    private string $LockReason;
+
+    
+    private int $CourseVersion;
+
+    
+    private string $ScormVersion;
+
+    
+    private float $CourseCredit;
+
+    
+    private bool $CreditOnlyOnPass;
+
+    
+    private bool $CanGrantCertificate;
+
+    
+    private string $CertificateType;
+
+    
+    private int $CertificateScore;
+
+    
+    private bool $DoNotGrandCertificateUnlessCreditIssued;
+
+    
+    private float $CertificateMinTime;
+
+    
+    private DateTimeInterface $CertificateExpiring;
+
+    
+    private bool $GrantCertificate;
+
+    
+    private bool $HasCertificate;
+
+    
+    private bool $GrantCredit;
+
+    
+    private int $Attempt;
+
+    
+    private string $PassID;
+
+    
+    private bool $LearningObjectIsActive;
+
+    
+    private bool $HasForum;
+
+    
+    private bool $HasChat;
+
+    
+    private string $TeachingAsstID;
+
+    
+    private string $Status;
+
+    
+    private string $CompletionStatus;
+
+    
+    private bool $RequiresCompletedStatusForCompletion;
+
+    
+    private bool $RequiresFeedbackForCompletion;
+
+    
+    private bool $RequireFeedbackPopUp;
+
+    
+    private bool $RequireAssignmentForCompletion;
+
+    
+    private bool $RequireAssesmentForCompletion;
+
+    
+    private bool $IsCompleted;
+
+    
+    private bool $ProcessUnknown;
+
+    
+    private bool $OverrideAPISuccess;
+
+    
+    private int $MinPassingScore;
+
+    
+    private bool $BarAccess;
+
+    
+    private string $Success;
+
+    
+    private string $EntrySuccess;
+
+    
+    private DateTimeInterface $DateEnrolled;
+
+    
+    private string $EnrollmentNotes;
+
+    
+    private DateTimeInterface $DateStarted;
+
+    
+    private DateTimeInterface $DueDate;
+
+    
+    private DateTimeInterface $CompletedDate;
+
+    
+    private DateTimeInterface $OverallCompletedDate;
+
+    
+    private DateTimeInterface $LastDateAttempted;
+
+    
+    private int $TotalCourseAttempts;
+
+    
+    private DateTimeInterface $RecordStartDate;
+
+    
+    private DateTimeInterface $CourseStartDate;
+
+    
+    private bool $CourseImmediateStart;
+
+    
+    private string $LastModule;
+
+    
+    private string $LastModuleName;
+
+    
+    private string $ProctorComment;
+
+    
+    private int $Score;
+
+    
+    private int $EntryScore;
+
+    
+    private float $TotalAverageScore;
+
+    
+    private float $PartialScore;
+
+    
+    private float $PercentCompleted;
+
+    
+    private int $Timeout;
+
+    
+    private bool $CourseDisclaimerAgreed;
+
+    
+    private DateTimeInterface $DisclaimerAgreedDate;
+
+    
+    private string $SummaryXml;
+
+    
+    private string $SummaryDuration;
+
+    
+    private bool $Enter;
+
+    
+    private bool $Exit;
+
+    
+    private bool $Feedback;
+
+    
+    private string $CoursePackageURL;
+
+    
+    private string $CourseMarqueeURL;
+
+    
+    private string $CertificateXml;
+
+    
+    private string $NotificationSettingXml;
+
+    
+    private string $Notes;
+
+    
+    private string $ManualUpdateNotes;
+
+    
+    private bool $ManualCompleted;
+
+    
+    private DateTimeInterface $AuditTimestamp;
+
+    
+    private string $ApprovalCode;
+
+    
+    private DateTimeInterface $LastModifiedTimestamp;
+
+    
+    private bool $UpdateInProgress;
+
+    
+    private DateTimeInterface $UpdateInProgressTimestamp;
+
+    
+    private string $PortfolioEvidenceText;
+
+    
+    private bool $CreditStatementAvailable;
+
+    
+    private string $OpenBadgeID;
+
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return StudentRecord
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -562,20 +343,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTypeName()
+    
+    public function getTypeName(): string
     {
         return $this->TypeName;
     }
 
-    /**
-     * @param string $TypeName
-     *
-     * @return StudentRecord
-     */
-    public function withTypeName($TypeName)
+    
+    public function withTypeName(string $TypeName): static
     {
         $new = clone $this;
         $new->TypeName = $TypeName;
@@ -583,20 +358,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsOnline()
+    
+    public function getIsOnline(): bool
     {
         return $this->IsOnline;
     }
 
-    /**
-     * @param bool $IsOnline
-     *
-     * @return StudentRecord
-     */
-    public function withIsOnline($IsOnline)
+    
+    public function withIsOnline(bool $IsOnline): static
     {
         $new = clone $this;
         $new->IsOnline = $IsOnline;
@@ -604,20 +373,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsAssessment()
+    
+    public function getIsAssessment(): bool
     {
         return $this->IsAssessment;
     }
 
-    /**
-     * @param bool $IsAssessment
-     *
-     * @return StudentRecord
-     */
-    public function withIsAssessment($IsAssessment)
+    
+    public function withIsAssessment(bool $IsAssessment): static
     {
         $new = clone $this;
         $new->IsAssessment = $IsAssessment;
@@ -625,20 +388,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasFeedBack()
+    
+    public function getHasFeedBack(): bool
     {
         return $this->HasFeedBack;
     }
 
-    /**
-     * @param bool $HasFeedBack
-     *
-     * @return StudentRecord
-     */
-    public function withHasFeedBack($HasFeedBack)
+    
+    public function withHasFeedBack(bool $HasFeedBack): static
     {
         $new = clone $this;
         $new->HasFeedBack = $HasFeedBack;
@@ -646,20 +403,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFullScreen()
+    
+    public function getFullScreen(): string
     {
         return $this->FullScreen;
     }
 
-    /**
-     * @param string $FullScreen
-     *
-     * @return StudentRecord
-     */
-    public function withFullScreen($FullScreen)
+    
+    public function withFullScreen(string $FullScreen): static
     {
         $new = clone $this;
         $new->FullScreen = $FullScreen;
@@ -667,20 +418,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRecordID()
+    
+    public function getRecordID(): string
     {
         return $this->RecordID;
     }
 
-    /**
-     * @param string $RecordID
-     *
-     * @return StudentRecord
-     */
-    public function withRecordID($RecordID)
+    
+    public function withRecordID(string $RecordID): static
     {
         $new = clone $this;
         $new->RecordID = $RecordID;
@@ -688,20 +433,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->DomainID;
     }
 
-    /**
-     * @param string $DomainID
-     *
-     * @return StudentRecord
-     */
-    public function withDomainID($DomainID)
+    
+    public function withDomainID(string $DomainID): static
     {
         $new = clone $this;
         $new->DomainID = $DomainID;
@@ -709,20 +448,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->StudentID;
     }
 
-    /**
-     * @param string $StudentID
-     *
-     * @return StudentRecord
-     */
-    public function withStudentID($StudentID)
+    
+    public function withStudentID(string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -730,20 +463,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentDisplayID()
+    
+    public function getStudentDisplayID(): string
     {
         return $this->StudentDisplayID;
     }
 
-    /**
-     * @param string $StudentDisplayID
-     *
-     * @return StudentRecord
-     */
-    public function withStudentDisplayID($StudentDisplayID)
+    
+    public function withStudentDisplayID(string $StudentDisplayID): static
     {
         $new = clone $this;
         $new->StudentDisplayID = $StudentDisplayID;
@@ -751,20 +478,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentName()
+    
+    public function getStudentName(): string
     {
         return $this->StudentName;
     }
 
-    /**
-     * @param string $StudentName
-     *
-     * @return StudentRecord
-     */
-    public function withStudentName($StudentName)
+    
+    public function withStudentName(string $StudentName): static
     {
         $new = clone $this;
         $new->StudentName = $StudentName;
@@ -772,20 +493,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentEmail()
+    
+    public function getStudentEmail(): string
     {
         return $this->StudentEmail;
     }
 
-    /**
-     * @param string $StudentEmail
-     *
-     * @return StudentRecord
-     */
-    public function withStudentEmail($StudentEmail)
+    
+    public function withStudentEmail(string $StudentEmail): static
     {
         $new = clone $this;
         $new->StudentEmail = $StudentEmail;
@@ -793,20 +508,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentCmiName()
+    
+    public function getStudentCmiName(): string
     {
         return $this->StudentCmiName;
     }
 
-    /**
-     * @param string $StudentCmiName
-     *
-     * @return StudentRecord
-     */
-    public function withStudentCmiName($StudentCmiName)
+    
+    public function withStudentCmiName(string $StudentCmiName): static
     {
         $new = clone $this;
         $new->StudentCmiName = $StudentCmiName;
@@ -814,20 +523,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentLanguage()
+    
+    public function getStudentLanguage(): string
     {
         return $this->StudentLanguage;
     }
 
-    /**
-     * @param string $StudentLanguage
-     *
-     * @return StudentRecord
-     */
-    public function withStudentLanguage($StudentLanguage)
+    
+    public function withStudentLanguage(string $StudentLanguage): static
     {
         $new = clone $this;
         $new->StudentLanguage = $StudentLanguage;
@@ -835,20 +538,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return StudentRecord
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -856,20 +553,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseTitle()
+    
+    public function getCourseTitle(): string
     {
         return $this->CourseTitle;
     }
 
-    /**
-     * @param string $CourseTitle
-     *
-     * @return StudentRecord
-     */
-    public function withCourseTitle($CourseTitle)
+    
+    public function withCourseTitle(string $CourseTitle): static
     {
         $new = clone $this;
         $new->CourseTitle = $CourseTitle;
@@ -877,20 +568,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsAccesscodeValidated()
+    
+    public function getIsAccesscodeValidated(): bool
     {
         return $this->IsAccesscodeValidated;
     }
 
-    /**
-     * @param bool $IsAccesscodeValidated
-     *
-     * @return StudentRecord
-     */
-    public function withIsAccesscodeValidated($IsAccesscodeValidated)
+    
+    public function withIsAccesscodeValidated(bool $IsAccesscodeValidated): static
     {
         $new = clone $this;
         $new->IsAccesscodeValidated = $IsAccesscodeValidated;
@@ -898,20 +583,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getFeedbackLoaded()
+    
+    public function getFeedbackLoaded(): bool
     {
         return $this->FeedbackLoaded;
     }
 
-    /**
-     * @param bool $FeedbackLoaded
-     *
-     * @return StudentRecord
-     */
-    public function withFeedbackLoaded($FeedbackLoaded)
+    
+    public function withFeedbackLoaded(bool $FeedbackLoaded): static
     {
         $new = clone $this;
         $new->FeedbackLoaded = $FeedbackLoaded;
@@ -919,20 +598,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseDescription()
+    
+    public function getCourseDescription(): string
     {
         return $this->CourseDescription;
     }
 
-    /**
-     * @param string $CourseDescription
-     *
-     * @return StudentRecord
-     */
-    public function withCourseDescription($CourseDescription)
+    
+    public function withCourseDescription(string $CourseDescription): static
     {
         $new = clone $this;
         $new->CourseDescription = $CourseDescription;
@@ -940,20 +613,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getContentType()
+    
+    public function getContentType(): string
     {
         return $this->ContentType;
     }
 
-    /**
-     * @param string $ContentType
-     *
-     * @return StudentRecord
-     */
-    public function withContentType($ContentType)
+    
+    public function withContentType(string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -961,20 +628,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseCode()
+    
+    public function getCourseCode(): string
     {
         return $this->CourseCode;
     }
 
-    /**
-     * @param string $CourseCode
-     *
-     * @return StudentRecord
-     */
-    public function withCourseCode($CourseCode)
+    
+    public function withCourseCode(string $CourseCode): static
     {
         $new = clone $this;
         $new->CourseCode = $CourseCode;
@@ -982,20 +643,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseProgram()
+    
+    public function getCourseProgram(): string
     {
         return $this->CourseProgram;
     }
 
-    /**
-     * @param string $CourseProgram
-     *
-     * @return StudentRecord
-     */
-    public function withCourseProgram($CourseProgram)
+    
+    public function withCourseProgram(string $CourseProgram): static
     {
         $new = clone $this;
         $new->CourseProgram = $CourseProgram;
@@ -1003,20 +658,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseProgramID()
+    
+    public function getCourseProgramID(): string
     {
         return $this->CourseProgramID;
     }
 
-    /**
-     * @param string $CourseProgramID
-     *
-     * @return StudentRecord
-     */
-    public function withCourseProgramID($CourseProgramID)
+    
+    public function withCourseProgramID(string $CourseProgramID): static
     {
         $new = clone $this;
         $new->CourseProgramID = $CourseProgramID;
@@ -1024,20 +673,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramCode()
+    
+    public function getProgramCode(): string
     {
         return $this->ProgramCode;
     }
 
-    /**
-     * @param string $ProgramCode
-     *
-     * @return StudentRecord
-     */
-    public function withProgramCode($ProgramCode)
+    
+    public function withProgramCode(string $ProgramCode): static
     {
         $new = clone $this;
         $new->ProgramCode = $ProgramCode;
@@ -1045,20 +688,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastProgram()
+    
+    public function getLastProgram(): string
     {
         return $this->LastProgram;
     }
 
-    /**
-     * @param string $LastProgram
-     *
-     * @return StudentRecord
-     */
-    public function withLastProgram($LastProgram)
+    
+    public function withLastProgram(string $LastProgram): static
     {
         $new = clone $this;
         $new->LastProgram = $LastProgram;
@@ -1066,20 +703,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEnrolledFromProgram()
+    
+    public function getEnrolledFromProgram(): string
     {
         return $this->EnrolledFromProgram;
     }
 
-    /**
-     * @param string $EnrolledFromProgram
-     *
-     * @return StudentRecord
-     */
-    public function withEnrolledFromProgram($EnrolledFromProgram)
+    
+    public function withEnrolledFromProgram(string $EnrolledFromProgram): static
     {
         $new = clone $this;
         $new->EnrolledFromProgram = $EnrolledFromProgram;
@@ -1087,20 +718,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCohortID()
+    
+    public function getCohortID(): string
     {
         return $this->CohortID;
     }
 
-    /**
-     * @param string $CohortID
-     *
-     * @return StudentRecord
-     */
-    public function withCohortID($CohortID)
+    
+    public function withCohortID(string $CohortID): static
     {
         $new = clone $this;
         $new->CohortID = $CohortID;
@@ -1108,20 +733,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningPathID()
+    
+    public function getLearningPathID(): string
     {
         return $this->LearningPathID;
     }
 
-    /**
-     * @param string $LearningPathID
-     *
-     * @return StudentRecord
-     */
-    public function withLearningPathID($LearningPathID)
+    
+    public function withLearningPathID(string $LearningPathID): static
     {
         $new = clone $this;
         $new->LearningPathID = $LearningPathID;
@@ -1129,20 +748,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getArchived()
+    
+    public function getArchived(): bool
     {
         return $this->Archived;
     }
 
-    /**
-     * @param bool $Archived
-     *
-     * @return StudentRecord
-     */
-    public function withArchived($Archived)
+    
+    public function withArchived(bool $Archived): static
     {
         $new = clone $this;
         $new->Archived = $Archived;
@@ -1150,20 +763,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAnon()
+    
+    public function getAnon(): bool
     {
         return $this->Anon;
     }
 
-    /**
-     * @param bool $Anon
-     *
-     * @return StudentRecord
-     */
-    public function withAnon($Anon)
+    
+    public function withAnon(bool $Anon): static
     {
         $new = clone $this;
         $new->Anon = $Anon;
@@ -1171,20 +778,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsLocked()
+    
+    public function getIsLocked(): bool
     {
         return $this->IsLocked;
     }
 
-    /**
-     * @param bool $IsLocked
-     *
-     * @return StudentRecord
-     */
-    public function withIsLocked($IsLocked)
+    
+    public function withIsLocked(bool $IsLocked): static
     {
         $new = clone $this;
         $new->IsLocked = $IsLocked;
@@ -1192,20 +793,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLockReason()
+    
+    public function getLockReason(): string
     {
         return $this->LockReason;
     }
 
-    /**
-     * @param string $LockReason
-     *
-     * @return StudentRecord
-     */
-    public function withLockReason($LockReason)
+    
+    public function withLockReason(string $LockReason): static
     {
         $new = clone $this;
         $new->LockReason = $LockReason;
@@ -1213,20 +808,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getCourseVersion()
+    
+    public function getCourseVersion(): int
     {
         return $this->CourseVersion;
     }
 
-    /**
-     * @param int $CourseVersion
-     *
-     * @return StudentRecord
-     */
-    public function withCourseVersion($CourseVersion)
+    
+    public function withCourseVersion(int $CourseVersion): static
     {
         $new = clone $this;
         $new->CourseVersion = $CourseVersion;
@@ -1234,20 +823,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getScormVersion()
+    
+    public function getScormVersion(): string
     {
         return $this->ScormVersion;
     }
 
-    /**
-     * @param string $ScormVersion
-     *
-     * @return StudentRecord
-     */
-    public function withScormVersion($ScormVersion)
+    
+    public function withScormVersion(string $ScormVersion): static
     {
         $new = clone $this;
         $new->ScormVersion = $ScormVersion;
@@ -1255,20 +838,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCourseCredit()
+    
+    public function getCourseCredit(): float
     {
         return $this->CourseCredit;
     }
 
-    /**
-     * @param float $CourseCredit
-     *
-     * @return StudentRecord
-     */
-    public function withCourseCredit($CourseCredit)
+    
+    public function withCourseCredit(float $CourseCredit): static
     {
         $new = clone $this;
         $new->CourseCredit = $CourseCredit;
@@ -1276,20 +853,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCreditOnlyOnPass()
+    
+    public function getCreditOnlyOnPass(): bool
     {
         return $this->CreditOnlyOnPass;
     }
 
-    /**
-     * @param bool $CreditOnlyOnPass
-     *
-     * @return StudentRecord
-     */
-    public function withCreditOnlyOnPass($CreditOnlyOnPass)
+    
+    public function withCreditOnlyOnPass(bool $CreditOnlyOnPass): static
     {
         $new = clone $this;
         $new->CreditOnlyOnPass = $CreditOnlyOnPass;
@@ -1297,20 +868,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanGrantCertificate()
+    
+    public function getCanGrantCertificate(): bool
     {
         return $this->CanGrantCertificate;
     }
 
-    /**
-     * @param bool $CanGrantCertificate
-     *
-     * @return StudentRecord
-     */
-    public function withCanGrantCertificate($CanGrantCertificate)
+    
+    public function withCanGrantCertificate(bool $CanGrantCertificate): static
     {
         $new = clone $this;
         $new->CanGrantCertificate = $CanGrantCertificate;
@@ -1318,20 +883,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCertificateType()
+    
+    public function getCertificateType(): string
     {
         return $this->CertificateType;
     }
 
-    /**
-     * @param string $CertificateType
-     *
-     * @return StudentRecord
-     */
-    public function withCertificateType($CertificateType)
+    
+    public function withCertificateType(string $CertificateType): static
     {
         $new = clone $this;
         $new->CertificateType = $CertificateType;
@@ -1339,20 +898,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getCertificateScore()
+    
+    public function getCertificateScore(): int
     {
         return $this->CertificateScore;
     }
 
-    /**
-     * @param int $CertificateScore
-     *
-     * @return StudentRecord
-     */
-    public function withCertificateScore($CertificateScore)
+    
+    public function withCertificateScore(int $CertificateScore): static
     {
         $new = clone $this;
         $new->CertificateScore = $CertificateScore;
@@ -1360,20 +913,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotGrandCertificateUnlessCreditIssued()
+    
+    public function getDoNotGrandCertificateUnlessCreditIssued(): bool
     {
         return $this->DoNotGrandCertificateUnlessCreditIssued;
     }
 
-    /**
-     * @param bool $DoNotGrandCertificateUnlessCreditIssued
-     *
-     * @return StudentRecord
-     */
-    public function withDoNotGrandCertificateUnlessCreditIssued($DoNotGrandCertificateUnlessCreditIssued)
+    
+    public function withDoNotGrandCertificateUnlessCreditIssued(bool $DoNotGrandCertificateUnlessCreditIssued): static
     {
         $new = clone $this;
         $new->DoNotGrandCertificateUnlessCreditIssued = $DoNotGrandCertificateUnlessCreditIssued;
@@ -1381,20 +928,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCertificateMinTime()
+    
+    public function getCertificateMinTime(): float
     {
         return $this->CertificateMinTime;
     }
 
-    /**
-     * @param float $CertificateMinTime
-     *
-     * @return StudentRecord
-     */
-    public function withCertificateMinTime($CertificateMinTime)
+    
+    public function withCertificateMinTime(float $CertificateMinTime): static
     {
         $new = clone $this;
         $new->CertificateMinTime = $CertificateMinTime;
@@ -1402,20 +943,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getCertificateExpiring()
+    
+    public function getCertificateExpiring(): DateTimeInterface
     {
         return $this->CertificateExpiring;
     }
 
-    /**
-     * @param \DateTimeInterface $CertificateExpiring
-     *
-     * @return StudentRecord
-     */
-    public function withCertificateExpiring($CertificateExpiring)
+    
+    public function withCertificateExpiring(DateTimeInterface $CertificateExpiring): static
     {
         $new = clone $this;
         $new->CertificateExpiring = $CertificateExpiring;
@@ -1423,20 +958,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantCertificate()
+    
+    public function getGrantCertificate(): bool
     {
         return $this->GrantCertificate;
     }
 
-    /**
-     * @param bool $GrantCertificate
-     *
-     * @return StudentRecord
-     */
-    public function withGrantCertificate($GrantCertificate)
+    
+    public function withGrantCertificate(bool $GrantCertificate): static
     {
         $new = clone $this;
         $new->GrantCertificate = $GrantCertificate;
@@ -1444,20 +973,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasCertificate()
+    
+    public function getHasCertificate(): bool
     {
         return $this->HasCertificate;
     }
 
-    /**
-     * @param bool $HasCertificate
-     *
-     * @return StudentRecord
-     */
-    public function withHasCertificate($HasCertificate)
+    
+    public function withHasCertificate(bool $HasCertificate): static
     {
         $new = clone $this;
         $new->HasCertificate = $HasCertificate;
@@ -1465,20 +988,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantCredit()
+    
+    public function getGrantCredit(): bool
     {
         return $this->GrantCredit;
     }
 
-    /**
-     * @param bool $GrantCredit
-     *
-     * @return StudentRecord
-     */
-    public function withGrantCredit($GrantCredit)
+    
+    public function withGrantCredit(bool $GrantCredit): static
     {
         $new = clone $this;
         $new->GrantCredit = $GrantCredit;
@@ -1486,20 +1003,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getAttempt()
+    
+    public function getAttempt(): int
     {
         return $this->Attempt;
     }
 
-    /**
-     * @param int $Attempt
-     *
-     * @return StudentRecord
-     */
-    public function withAttempt($Attempt)
+    
+    public function withAttempt(int $Attempt): static
     {
         $new = clone $this;
         $new->Attempt = $Attempt;
@@ -1507,20 +1018,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPassID()
+    
+    public function getPassID(): string
     {
         return $this->PassID;
     }
 
-    /**
-     * @param string $PassID
-     *
-     * @return StudentRecord
-     */
-    public function withPassID($PassID)
+    
+    public function withPassID(string $PassID): static
     {
         $new = clone $this;
         $new->PassID = $PassID;
@@ -1528,20 +1033,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLearningObjectIsActive()
+    
+    public function getLearningObjectIsActive(): bool
     {
         return $this->LearningObjectIsActive;
     }
 
-    /**
-     * @param bool $LearningObjectIsActive
-     *
-     * @return StudentRecord
-     */
-    public function withLearningObjectIsActive($LearningObjectIsActive)
+    
+    public function withLearningObjectIsActive(bool $LearningObjectIsActive): static
     {
         $new = clone $this;
         $new->LearningObjectIsActive = $LearningObjectIsActive;
@@ -1549,20 +1048,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasForum()
+    
+    public function getHasForum(): bool
     {
         return $this->HasForum;
     }
 
-    /**
-     * @param bool $HasForum
-     *
-     * @return StudentRecord
-     */
-    public function withHasForum($HasForum)
+    
+    public function withHasForum(bool $HasForum): static
     {
         $new = clone $this;
         $new->HasForum = $HasForum;
@@ -1570,20 +1063,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasChat()
+    
+    public function getHasChat(): bool
     {
         return $this->HasChat;
     }
 
-    /**
-     * @param bool $HasChat
-     *
-     * @return StudentRecord
-     */
-    public function withHasChat($HasChat)
+    
+    public function withHasChat(bool $HasChat): static
     {
         $new = clone $this;
         $new->HasChat = $HasChat;
@@ -1591,20 +1078,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTeachingAsstID()
+    
+    public function getTeachingAsstID(): string
     {
         return $this->TeachingAsstID;
     }
 
-    /**
-     * @param string $TeachingAsstID
-     *
-     * @return StudentRecord
-     */
-    public function withTeachingAsstID($TeachingAsstID)
+    
+    public function withTeachingAsstID(string $TeachingAsstID): static
     {
         $new = clone $this;
         $new->TeachingAsstID = $TeachingAsstID;
@@ -1612,20 +1093,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus()
+    
+    public function getStatus(): string
     {
         return $this->Status;
     }
 
-    /**
-     * @param string $Status
-     *
-     * @return StudentRecord
-     */
-    public function withStatus($Status)
+    
+    public function withStatus(string $Status): static
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -1633,20 +1108,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCompletionStatus()
+    
+    public function getCompletionStatus(): string
     {
         return $this->CompletionStatus;
     }
 
-    /**
-     * @param string $CompletionStatus
-     *
-     * @return StudentRecord
-     */
-    public function withCompletionStatus($CompletionStatus)
+    
+    public function withCompletionStatus(string $CompletionStatus): static
     {
         $new = clone $this;
         $new->CompletionStatus = $CompletionStatus;
@@ -1654,20 +1123,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequiresCompletedStatusForCompletion()
+    
+    public function getRequiresCompletedStatusForCompletion(): bool
     {
         return $this->RequiresCompletedStatusForCompletion;
     }
 
-    /**
-     * @param bool $RequiresCompletedStatusForCompletion
-     *
-     * @return StudentRecord
-     */
-    public function withRequiresCompletedStatusForCompletion($RequiresCompletedStatusForCompletion)
+    
+    public function withRequiresCompletedStatusForCompletion(bool $RequiresCompletedStatusForCompletion): static
     {
         $new = clone $this;
         $new->RequiresCompletedStatusForCompletion = $RequiresCompletedStatusForCompletion;
@@ -1675,20 +1138,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequiresFeedbackForCompletion()
+    
+    public function getRequiresFeedbackForCompletion(): bool
     {
         return $this->RequiresFeedbackForCompletion;
     }
 
-    /**
-     * @param bool $RequiresFeedbackForCompletion
-     *
-     * @return StudentRecord
-     */
-    public function withRequiresFeedbackForCompletion($RequiresFeedbackForCompletion)
+    
+    public function withRequiresFeedbackForCompletion(bool $RequiresFeedbackForCompletion): static
     {
         $new = clone $this;
         $new->RequiresFeedbackForCompletion = $RequiresFeedbackForCompletion;
@@ -1696,20 +1153,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireFeedbackPopUp()
+    
+    public function getRequireFeedbackPopUp(): bool
     {
         return $this->RequireFeedbackPopUp;
     }
 
-    /**
-     * @param bool $RequireFeedbackPopUp
-     *
-     * @return StudentRecord
-     */
-    public function withRequireFeedbackPopUp($RequireFeedbackPopUp)
+    
+    public function withRequireFeedbackPopUp(bool $RequireFeedbackPopUp): static
     {
         $new = clone $this;
         $new->RequireFeedbackPopUp = $RequireFeedbackPopUp;
@@ -1717,20 +1168,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireAssignmentForCompletion()
+    
+    public function getRequireAssignmentForCompletion(): bool
     {
         return $this->RequireAssignmentForCompletion;
     }
 
-    /**
-     * @param bool $RequireAssignmentForCompletion
-     *
-     * @return StudentRecord
-     */
-    public function withRequireAssignmentForCompletion($RequireAssignmentForCompletion)
+    
+    public function withRequireAssignmentForCompletion(bool $RequireAssignmentForCompletion): static
     {
         $new = clone $this;
         $new->RequireAssignmentForCompletion = $RequireAssignmentForCompletion;
@@ -1738,20 +1183,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireAssesmentForCompletion()
+    
+    public function getRequireAssesmentForCompletion(): bool
     {
         return $this->RequireAssesmentForCompletion;
     }
 
-    /**
-     * @param bool $RequireAssesmentForCompletion
-     *
-     * @return StudentRecord
-     */
-    public function withRequireAssesmentForCompletion($RequireAssesmentForCompletion)
+    
+    public function withRequireAssesmentForCompletion(bool $RequireAssesmentForCompletion): static
     {
         $new = clone $this;
         $new->RequireAssesmentForCompletion = $RequireAssesmentForCompletion;
@@ -1759,20 +1198,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsCompleted()
+    
+    public function getIsCompleted(): bool
     {
         return $this->IsCompleted;
     }
 
-    /**
-     * @param bool $IsCompleted
-     *
-     * @return StudentRecord
-     */
-    public function withIsCompleted($IsCompleted)
+    
+    public function withIsCompleted(bool $IsCompleted): static
     {
         $new = clone $this;
         $new->IsCompleted = $IsCompleted;
@@ -1780,20 +1213,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProcessUnknown()
+    
+    public function getProcessUnknown(): bool
     {
         return $this->ProcessUnknown;
     }
 
-    /**
-     * @param bool $ProcessUnknown
-     *
-     * @return StudentRecord
-     */
-    public function withProcessUnknown($ProcessUnknown)
+    
+    public function withProcessUnknown(bool $ProcessUnknown): static
     {
         $new = clone $this;
         $new->ProcessUnknown = $ProcessUnknown;
@@ -1801,20 +1228,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideAPISuccess()
+    
+    public function getOverrideAPISuccess(): bool
     {
         return $this->OverrideAPISuccess;
     }
 
-    /**
-     * @param bool $OverrideAPISuccess
-     *
-     * @return StudentRecord
-     */
-    public function withOverrideAPISuccess($OverrideAPISuccess)
+    
+    public function withOverrideAPISuccess(bool $OverrideAPISuccess): static
     {
         $new = clone $this;
         $new->OverrideAPISuccess = $OverrideAPISuccess;
@@ -1822,20 +1243,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMinPassingScore()
+    
+    public function getMinPassingScore(): int
     {
         return $this->MinPassingScore;
     }
 
-    /**
-     * @param int $MinPassingScore
-     *
-     * @return StudentRecord
-     */
-    public function withMinPassingScore($MinPassingScore)
+    
+    public function withMinPassingScore(int $MinPassingScore): static
     {
         $new = clone $this;
         $new->MinPassingScore = $MinPassingScore;
@@ -1843,20 +1258,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getBarAccess()
+    
+    public function getBarAccess(): bool
     {
         return $this->BarAccess;
     }
 
-    /**
-     * @param bool $BarAccess
-     *
-     * @return StudentRecord
-     */
-    public function withBarAccess($BarAccess)
+    
+    public function withBarAccess(bool $BarAccess): static
     {
         $new = clone $this;
         $new->BarAccess = $BarAccess;
@@ -1864,20 +1273,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSuccess()
+    
+    public function getSuccess(): string
     {
         return $this->Success;
     }
 
-    /**
-     * @param string $Success
-     *
-     * @return StudentRecord
-     */
-    public function withSuccess($Success)
+    
+    public function withSuccess(string $Success): static
     {
         $new = clone $this;
         $new->Success = $Success;
@@ -1885,20 +1288,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEntrySuccess()
+    
+    public function getEntrySuccess(): string
     {
         return $this->EntrySuccess;
     }
 
-    /**
-     * @param string $EntrySuccess
-     *
-     * @return StudentRecord
-     */
-    public function withEntrySuccess($EntrySuccess)
+    
+    public function withEntrySuccess(string $EntrySuccess): static
     {
         $new = clone $this;
         $new->EntrySuccess = $EntrySuccess;
@@ -1906,20 +1303,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDateEnrolled()
+    
+    public function getDateEnrolled(): DateTimeInterface
     {
         return $this->DateEnrolled;
     }
 
-    /**
-     * @param \DateTimeInterface $DateEnrolled
-     *
-     * @return StudentRecord
-     */
-    public function withDateEnrolled($DateEnrolled)
+    
+    public function withDateEnrolled(DateTimeInterface $DateEnrolled): static
     {
         $new = clone $this;
         $new->DateEnrolled = $DateEnrolled;
@@ -1927,20 +1318,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEnrollmentNotes()
+    
+    public function getEnrollmentNotes(): string
     {
         return $this->EnrollmentNotes;
     }
 
-    /**
-     * @param string $EnrollmentNotes
-     *
-     * @return StudentRecord
-     */
-    public function withEnrollmentNotes($EnrollmentNotes)
+    
+    public function withEnrollmentNotes(string $EnrollmentNotes): static
     {
         $new = clone $this;
         $new->EnrollmentNotes = $EnrollmentNotes;
@@ -1948,20 +1333,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDateStarted()
+    
+    public function getDateStarted(): DateTimeInterface
     {
         return $this->DateStarted;
     }
 
-    /**
-     * @param \DateTimeInterface $DateStarted
-     *
-     * @return StudentRecord
-     */
-    public function withDateStarted($DateStarted)
+    
+    public function withDateStarted(DateTimeInterface $DateStarted): static
     {
         $new = clone $this;
         $new->DateStarted = $DateStarted;
@@ -1969,20 +1348,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDueDate()
+    
+    public function getDueDate(): DateTimeInterface
     {
         return $this->DueDate;
     }
 
-    /**
-     * @param \DateTimeInterface $DueDate
-     *
-     * @return StudentRecord
-     */
-    public function withDueDate($DueDate)
+    
+    public function withDueDate(DateTimeInterface $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
@@ -1990,20 +1363,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getCompletedDate()
+    
+    public function getCompletedDate(): DateTimeInterface
     {
         return $this->CompletedDate;
     }
 
-    /**
-     * @param \DateTimeInterface $CompletedDate
-     *
-     * @return StudentRecord
-     */
-    public function withCompletedDate($CompletedDate)
+    
+    public function withCompletedDate(DateTimeInterface $CompletedDate): static
     {
         $new = clone $this;
         $new->CompletedDate = $CompletedDate;
@@ -2011,20 +1378,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getOverallCompletedDate()
+    
+    public function getOverallCompletedDate(): DateTimeInterface
     {
         return $this->OverallCompletedDate;
     }
 
-    /**
-     * @param \DateTimeInterface $OverallCompletedDate
-     *
-     * @return StudentRecord
-     */
-    public function withOverallCompletedDate($OverallCompletedDate)
+    
+    public function withOverallCompletedDate(DateTimeInterface $OverallCompletedDate): static
     {
         $new = clone $this;
         $new->OverallCompletedDate = $OverallCompletedDate;
@@ -2032,20 +1393,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastDateAttempted()
+    
+    public function getLastDateAttempted(): DateTimeInterface
     {
         return $this->LastDateAttempted;
     }
 
-    /**
-     * @param \DateTimeInterface $LastDateAttempted
-     *
-     * @return StudentRecord
-     */
-    public function withLastDateAttempted($LastDateAttempted)
+    
+    public function withLastDateAttempted(DateTimeInterface $LastDateAttempted): static
     {
         $new = clone $this;
         $new->LastDateAttempted = $LastDateAttempted;
@@ -2053,20 +1408,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotalCourseAttempts()
+    
+    public function getTotalCourseAttempts(): int
     {
         return $this->TotalCourseAttempts;
     }
 
-    /**
-     * @param int $TotalCourseAttempts
-     *
-     * @return StudentRecord
-     */
-    public function withTotalCourseAttempts($TotalCourseAttempts)
+    
+    public function withTotalCourseAttempts(int $TotalCourseAttempts): static
     {
         $new = clone $this;
         $new->TotalCourseAttempts = $TotalCourseAttempts;
@@ -2074,20 +1423,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getRecordStartDate()
+    
+    public function getRecordStartDate(): DateTimeInterface
     {
         return $this->RecordStartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $RecordStartDate
-     *
-     * @return StudentRecord
-     */
-    public function withRecordStartDate($RecordStartDate)
+    
+    public function withRecordStartDate(DateTimeInterface $RecordStartDate): static
     {
         $new = clone $this;
         $new->RecordStartDate = $RecordStartDate;
@@ -2095,20 +1438,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getCourseStartDate()
+    
+    public function getCourseStartDate(): DateTimeInterface
     {
         return $this->CourseStartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $CourseStartDate
-     *
-     * @return StudentRecord
-     */
-    public function withCourseStartDate($CourseStartDate)
+    
+    public function withCourseStartDate(DateTimeInterface $CourseStartDate): static
     {
         $new = clone $this;
         $new->CourseStartDate = $CourseStartDate;
@@ -2116,20 +1453,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCourseImmediateStart()
+    
+    public function getCourseImmediateStart(): bool
     {
         return $this->CourseImmediateStart;
     }
 
-    /**
-     * @param bool $CourseImmediateStart
-     *
-     * @return StudentRecord
-     */
-    public function withCourseImmediateStart($CourseImmediateStart)
+    
+    public function withCourseImmediateStart(bool $CourseImmediateStart): static
     {
         $new = clone $this;
         $new->CourseImmediateStart = $CourseImmediateStart;
@@ -2137,20 +1468,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastModule()
+    
+    public function getLastModule(): string
     {
         return $this->LastModule;
     }
 
-    /**
-     * @param string $LastModule
-     *
-     * @return StudentRecord
-     */
-    public function withLastModule($LastModule)
+    
+    public function withLastModule(string $LastModule): static
     {
         $new = clone $this;
         $new->LastModule = $LastModule;
@@ -2158,20 +1483,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastModuleName()
+    
+    public function getLastModuleName(): string
     {
         return $this->LastModuleName;
     }
 
-    /**
-     * @param string $LastModuleName
-     *
-     * @return StudentRecord
-     */
-    public function withLastModuleName($LastModuleName)
+    
+    public function withLastModuleName(string $LastModuleName): static
     {
         $new = clone $this;
         $new->LastModuleName = $LastModuleName;
@@ -2179,20 +1498,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProctorComment()
+    
+    public function getProctorComment(): string
     {
         return $this->ProctorComment;
     }
 
-    /**
-     * @param string $ProctorComment
-     *
-     * @return StudentRecord
-     */
-    public function withProctorComment($ProctorComment)
+    
+    public function withProctorComment(string $ProctorComment): static
     {
         $new = clone $this;
         $new->ProctorComment = $ProctorComment;
@@ -2200,20 +1513,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getScore()
+    
+    public function getScore(): int
     {
         return $this->Score;
     }
 
-    /**
-     * @param int $Score
-     *
-     * @return StudentRecord
-     */
-    public function withScore($Score)
+    
+    public function withScore(int $Score): static
     {
         $new = clone $this;
         $new->Score = $Score;
@@ -2221,20 +1528,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getEntryScore()
+    
+    public function getEntryScore(): int
     {
         return $this->EntryScore;
     }
 
-    /**
-     * @param int $EntryScore
-     *
-     * @return StudentRecord
-     */
-    public function withEntryScore($EntryScore)
+    
+    public function withEntryScore(int $EntryScore): static
     {
         $new = clone $this;
         $new->EntryScore = $EntryScore;
@@ -2242,20 +1543,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getTotalAverageScore()
+    
+    public function getTotalAverageScore(): float
     {
         return $this->TotalAverageScore;
     }
 
-    /**
-     * @param float $TotalAverageScore
-     *
-     * @return StudentRecord
-     */
-    public function withTotalAverageScore($TotalAverageScore)
+    
+    public function withTotalAverageScore(float $TotalAverageScore): static
     {
         $new = clone $this;
         $new->TotalAverageScore = $TotalAverageScore;
@@ -2263,20 +1558,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getPartialScore()
+    
+    public function getPartialScore(): float
     {
         return $this->PartialScore;
     }
 
-    /**
-     * @param float $PartialScore
-     *
-     * @return StudentRecord
-     */
-    public function withPartialScore($PartialScore)
+    
+    public function withPartialScore(float $PartialScore): static
     {
         $new = clone $this;
         $new->PartialScore = $PartialScore;
@@ -2284,20 +1573,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getPercentCompleted()
+    
+    public function getPercentCompleted(): float
     {
         return $this->PercentCompleted;
     }
 
-    /**
-     * @param float $PercentCompleted
-     *
-     * @return StudentRecord
-     */
-    public function withPercentCompleted($PercentCompleted)
+    
+    public function withPercentCompleted(float $PercentCompleted): static
     {
         $new = clone $this;
         $new->PercentCompleted = $PercentCompleted;
@@ -2305,20 +1588,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTimeout()
+    
+    public function getTimeout(): int
     {
         return $this->Timeout;
     }
 
-    /**
-     * @param int $Timeout
-     *
-     * @return StudentRecord
-     */
-    public function withTimeout($Timeout)
+    
+    public function withTimeout(int $Timeout): static
     {
         $new = clone $this;
         $new->Timeout = $Timeout;
@@ -2326,20 +1603,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCourseDisclaimerAgreed()
+    
+    public function getCourseDisclaimerAgreed(): bool
     {
         return $this->CourseDisclaimerAgreed;
     }
 
-    /**
-     * @param bool $CourseDisclaimerAgreed
-     *
-     * @return StudentRecord
-     */
-    public function withCourseDisclaimerAgreed($CourseDisclaimerAgreed)
+    
+    public function withCourseDisclaimerAgreed(bool $CourseDisclaimerAgreed): static
     {
         $new = clone $this;
         $new->CourseDisclaimerAgreed = $CourseDisclaimerAgreed;
@@ -2347,20 +1618,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDisclaimerAgreedDate()
+    
+    public function getDisclaimerAgreedDate(): DateTimeInterface
     {
         return $this->DisclaimerAgreedDate;
     }
 
-    /**
-     * @param \DateTimeInterface $DisclaimerAgreedDate
-     *
-     * @return StudentRecord
-     */
-    public function withDisclaimerAgreedDate($DisclaimerAgreedDate)
+    
+    public function withDisclaimerAgreedDate(DateTimeInterface $DisclaimerAgreedDate): static
     {
         $new = clone $this;
         $new->DisclaimerAgreedDate = $DisclaimerAgreedDate;
@@ -2368,20 +1633,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSummaryXml()
+    
+    public function getSummaryXml(): string
     {
         return $this->SummaryXml;
     }
 
-    /**
-     * @param string $SummaryXml
-     *
-     * @return StudentRecord
-     */
-    public function withSummaryXml($SummaryXml)
+    
+    public function withSummaryXml(string $SummaryXml): static
     {
         $new = clone $this;
         $new->SummaryXml = $SummaryXml;
@@ -2389,20 +1648,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSummaryDuration()
+    
+    public function getSummaryDuration(): string
     {
         return $this->SummaryDuration;
     }
 
-    /**
-     * @param string $SummaryDuration
-     *
-     * @return StudentRecord
-     */
-    public function withSummaryDuration($SummaryDuration)
+    
+    public function withSummaryDuration(string $SummaryDuration): static
     {
         $new = clone $this;
         $new->SummaryDuration = $SummaryDuration;
@@ -2410,20 +1663,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getEnter()
+    
+    public function getEnter(): bool
     {
         return $this->Enter;
     }
 
-    /**
-     * @param bool $Enter
-     *
-     * @return StudentRecord
-     */
-    public function withEnter($Enter)
+    
+    public function withEnter(bool $Enter): static
     {
         $new = clone $this;
         $new->Enter = $Enter;
@@ -2431,20 +1678,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getExit()
+    
+    public function getExit(): bool
     {
         return $this->Exit;
     }
 
-    /**
-     * @param bool $Exit
-     *
-     * @return StudentRecord
-     */
-    public function withExit($Exit)
+    
+    public function withExit(bool $Exit): static
     {
         $new = clone $this;
         $new->Exit = $Exit;
@@ -2452,20 +1693,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getFeedback()
+    
+    public function getFeedback(): bool
     {
         return $this->Feedback;
     }
 
-    /**
-     * @param bool $Feedback
-     *
-     * @return StudentRecord
-     */
-    public function withFeedback($Feedback)
+    
+    public function withFeedback(bool $Feedback): static
     {
         $new = clone $this;
         $new->Feedback = $Feedback;
@@ -2473,20 +1708,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCoursePackageURL()
+    
+    public function getCoursePackageURL(): string
     {
         return $this->CoursePackageURL;
     }
 
-    /**
-     * @param string $CoursePackageURL
-     *
-     * @return StudentRecord
-     */
-    public function withCoursePackageURL($CoursePackageURL)
+    
+    public function withCoursePackageURL(string $CoursePackageURL): static
     {
         $new = clone $this;
         $new->CoursePackageURL = $CoursePackageURL;
@@ -2494,20 +1723,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseMarqueeURL()
+    
+    public function getCourseMarqueeURL(): string
     {
         return $this->CourseMarqueeURL;
     }
 
-    /**
-     * @param string $CourseMarqueeURL
-     *
-     * @return StudentRecord
-     */
-    public function withCourseMarqueeURL($CourseMarqueeURL)
+    
+    public function withCourseMarqueeURL(string $CourseMarqueeURL): static
     {
         $new = clone $this;
         $new->CourseMarqueeURL = $CourseMarqueeURL;
@@ -2515,20 +1738,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCertificateXml()
+    
+    public function getCertificateXml(): string
     {
         return $this->CertificateXml;
     }
 
-    /**
-     * @param string $CertificateXml
-     *
-     * @return StudentRecord
-     */
-    public function withCertificateXml($CertificateXml)
+    
+    public function withCertificateXml(string $CertificateXml): static
     {
         $new = clone $this;
         $new->CertificateXml = $CertificateXml;
@@ -2536,20 +1753,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotificationSettingXml()
+    
+    public function getNotificationSettingXml(): string
     {
         return $this->NotificationSettingXml;
     }
 
-    /**
-     * @param string $NotificationSettingXml
-     *
-     * @return StudentRecord
-     */
-    public function withNotificationSettingXml($NotificationSettingXml)
+    
+    public function withNotificationSettingXml(string $NotificationSettingXml): static
     {
         $new = clone $this;
         $new->NotificationSettingXml = $NotificationSettingXml;
@@ -2557,20 +1768,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotes()
+    
+    public function getNotes(): string
     {
         return $this->Notes;
     }
 
-    /**
-     * @param string $Notes
-     *
-     * @return StudentRecord
-     */
-    public function withNotes($Notes)
+    
+    public function withNotes(string $Notes): static
     {
         $new = clone $this;
         $new->Notes = $Notes;
@@ -2578,20 +1783,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getManualUpdateNotes()
+    
+    public function getManualUpdateNotes(): string
     {
         return $this->ManualUpdateNotes;
     }
 
-    /**
-     * @param string $ManualUpdateNotes
-     *
-     * @return StudentRecord
-     */
-    public function withManualUpdateNotes($ManualUpdateNotes)
+    
+    public function withManualUpdateNotes(string $ManualUpdateNotes): static
     {
         $new = clone $this;
         $new->ManualUpdateNotes = $ManualUpdateNotes;
@@ -2599,20 +1798,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualCompleted()
+    
+    public function getManualCompleted(): bool
     {
         return $this->ManualCompleted;
     }
 
-    /**
-     * @param bool $ManualCompleted
-     *
-     * @return StudentRecord
-     */
-    public function withManualCompleted($ManualCompleted)
+    
+    public function withManualCompleted(bool $ManualCompleted): static
     {
         $new = clone $this;
         $new->ManualCompleted = $ManualCompleted;
@@ -2620,20 +1813,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getAuditTimestamp()
+    
+    public function getAuditTimestamp(): DateTimeInterface
     {
         return $this->AuditTimestamp;
     }
 
-    /**
-     * @param \DateTimeInterface $AuditTimestamp
-     *
-     * @return StudentRecord
-     */
-    public function withAuditTimestamp($AuditTimestamp)
+    
+    public function withAuditTimestamp(DateTimeInterface $AuditTimestamp): static
     {
         $new = clone $this;
         $new->AuditTimestamp = $AuditTimestamp;
@@ -2641,20 +1828,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getApprovalCode()
+    
+    public function getApprovalCode(): string
     {
         return $this->ApprovalCode;
     }
 
-    /**
-     * @param string $ApprovalCode
-     *
-     * @return StudentRecord
-     */
-    public function withApprovalCode($ApprovalCode)
+    
+    public function withApprovalCode(string $ApprovalCode): static
     {
         $new = clone $this;
         $new->ApprovalCode = $ApprovalCode;
@@ -2662,20 +1843,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastModifiedTimestamp()
+    
+    public function getLastModifiedTimestamp(): DateTimeInterface
     {
         return $this->LastModifiedTimestamp;
     }
 
-    /**
-     * @param \DateTimeInterface $LastModifiedTimestamp
-     *
-     * @return StudentRecord
-     */
-    public function withLastModifiedTimestamp($LastModifiedTimestamp)
+    
+    public function withLastModifiedTimestamp(DateTimeInterface $LastModifiedTimestamp): static
     {
         $new = clone $this;
         $new->LastModifiedTimestamp = $LastModifiedTimestamp;
@@ -2683,20 +1858,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateInProgress()
+    
+    public function getUpdateInProgress(): bool
     {
         return $this->UpdateInProgress;
     }
 
-    /**
-     * @param bool $UpdateInProgress
-     *
-     * @return StudentRecord
-     */
-    public function withUpdateInProgress($UpdateInProgress)
+    
+    public function withUpdateInProgress(bool $UpdateInProgress): static
     {
         $new = clone $this;
         $new->UpdateInProgress = $UpdateInProgress;
@@ -2704,20 +1873,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getUpdateInProgressTimestamp()
+    
+    public function getUpdateInProgressTimestamp(): DateTimeInterface
     {
         return $this->UpdateInProgressTimestamp;
     }
 
-    /**
-     * @param \DateTimeInterface $UpdateInProgressTimestamp
-     *
-     * @return StudentRecord
-     */
-    public function withUpdateInProgressTimestamp($UpdateInProgressTimestamp)
+    
+    public function withUpdateInProgressTimestamp(DateTimeInterface $UpdateInProgressTimestamp): static
     {
         $new = clone $this;
         $new->UpdateInProgressTimestamp = $UpdateInProgressTimestamp;
@@ -2725,20 +1888,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPortfolioEvidenceText()
+    
+    public function getPortfolioEvidenceText(): string
     {
         return $this->PortfolioEvidenceText;
     }
 
-    /**
-     * @param string $PortfolioEvidenceText
-     *
-     * @return StudentRecord
-     */
-    public function withPortfolioEvidenceText($PortfolioEvidenceText)
+    
+    public function withPortfolioEvidenceText(string $PortfolioEvidenceText): static
     {
         $new = clone $this;
         $new->PortfolioEvidenceText = $PortfolioEvidenceText;
@@ -2746,20 +1903,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCreditStatementAvailable()
+    
+    public function getCreditStatementAvailable(): bool
     {
         return $this->CreditStatementAvailable;
     }
 
-    /**
-     * @param bool $CreditStatementAvailable
-     *
-     * @return StudentRecord
-     */
-    public function withCreditStatementAvailable($CreditStatementAvailable)
+    
+    public function withCreditStatementAvailable(bool $CreditStatementAvailable): static
     {
         $new = clone $this;
         $new->CreditStatementAvailable = $CreditStatementAvailable;
@@ -2767,20 +1918,14 @@ class StudentRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOpenBadgeID()
+    
+    public function getOpenBadgeID(): string
     {
         return $this->OpenBadgeID;
     }
 
-    /**
-     * @param string $OpenBadgeID
-     *
-     * @return StudentRecord
-     */
-    public function withOpenBadgeID($OpenBadgeID)
+    
+    public function withOpenBadgeID(string $OpenBadgeID): static
     {
         $new = clone $this;
         $new->OpenBadgeID = $OpenBadgeID;

@@ -1,45 +1,30 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class MailFolder
 {
-    /**
-     * @var string
-     */
-    private $Description;
+    private string $Description;
 
-    /**
-     * @var string
-     */
-    private $ID;
+    
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $UserID;
+    
+    private string $UserID;
 
-    /**
-     * @var string
-     */
-    private $Name;
+    
+    private string $Name;
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return MailFolder
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -47,20 +32,14 @@ class MailFolder
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return MailFolder
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -68,20 +47,14 @@ class MailFolder
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->UserID;
     }
 
-    /**
-     * @param string $UserID
-     *
-     * @return MailFolder
-     */
-    public function withUserID($UserID)
+    
+    public function withUserID(string $UserID): static
     {
         $new = clone $this;
         $new->UserID = $UserID;
@@ -89,20 +62,14 @@ class MailFolder
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     *
-     * @return MailFolder
-     */
-    public function withName($Name)
+    
+    public function withName(string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;

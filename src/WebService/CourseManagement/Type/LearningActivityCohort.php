@@ -1,65 +1,44 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class LearningActivityCohort
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Code;
+    
+    private string $Code;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $Description;
+    
+    private string $Description;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $StartDate;
+    
+    private DateTimeInterface $StartDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DueDate;
+    
+    private DateTimeInterface $DueDate;
 
-    /**
-     * @var int
-     */
-    private $MaxEnrollments;
+    
+    private int $MaxEnrollments;
 
-    /**
-     * @var bool
-     */
-    private $AllowSelfEnroll;
+    
+    private bool $AllowSelfEnroll;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return LearningActivityCohort
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -67,20 +46,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return LearningActivityCohort
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -88,20 +61,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return LearningActivityCohort
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -109,20 +76,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return LearningActivityCohort
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -130,20 +91,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getStartDate()
+    
+    public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $StartDate
-     *
-     * @return LearningActivityCohort
-     */
-    public function withStartDate($StartDate)
+    
+    public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
         $new->StartDate = $StartDate;
@@ -151,20 +106,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDueDate()
+    
+    public function getDueDate(): DateTimeInterface
     {
         return $this->DueDate;
     }
 
-    /**
-     * @param \DateTimeInterface $DueDate
-     *
-     * @return LearningActivityCohort
-     */
-    public function withDueDate($DueDate)
+    
+    public function withDueDate(DateTimeInterface $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
@@ -172,20 +121,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxEnrollments()
+    
+    public function getMaxEnrollments(): int
     {
         return $this->MaxEnrollments;
     }
 
-    /**
-     * @param int $MaxEnrollments
-     *
-     * @return LearningActivityCohort
-     */
-    public function withMaxEnrollments($MaxEnrollments)
+    
+    public function withMaxEnrollments(int $MaxEnrollments): static
     {
         $new = clone $this;
         $new->MaxEnrollments = $MaxEnrollments;
@@ -193,20 +136,14 @@ class LearningActivityCohort
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowSelfEnroll()
+    
+    public function getAllowSelfEnroll(): bool
     {
         return $this->AllowSelfEnroll;
     }
 
-    /**
-     * @param bool $AllowSelfEnroll
-     *
-     * @return LearningActivityCohort
-     */
-    public function withAllowSelfEnroll($AllowSelfEnroll)
+    
+    public function withAllowSelfEnroll(bool $AllowSelfEnroll): static
     {
         $new = clone $this;
         $new->AllowSelfEnroll = $AllowSelfEnroll;

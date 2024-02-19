@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceSupervisor
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SupervisorType
-     */
-    private $SupervisorType;
+    private SupervisorType $SupervisorType;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SupervisorType
-     */
-    public function getSupervisorType()
+    
+    public function getSupervisorType(): SupervisorType
     {
         return $this->SupervisorType;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\SupervisorType $SupervisorType
-     *
-     * @return ServiceSupervisor
-     */
-    public function withSupervisorType($SupervisorType)
+    
+    public function withSupervisorType(SupervisorType $SupervisorType): static
     {
         $new = clone $this;
         $new->SupervisorType = $SupervisorType;

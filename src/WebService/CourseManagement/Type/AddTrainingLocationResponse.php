@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class AddTrainingLocationResponse
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString
-     */
-    private $AddTrainingLocationResult;
+    private ServiceResultOfString $AddTrainingLocationResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString
-     */
-    public function getAddTrainingLocationResult()
+    
+    public function getAddTrainingLocationResult(): ServiceResultOfString
     {
         return $this->AddTrainingLocationResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfString $AddTrainingLocationResult
-     *
-     * @return AddTrainingLocationResponse
-     */
-    public function withAddTrainingLocationResult($AddTrainingLocationResult)
+    
+    public function withAddTrainingLocationResult(ServiceResultOfString $AddTrainingLocationResult): static
     {
         $new = clone $this;
         $new->AddTrainingLocationResult = $AddTrainingLocationResult;

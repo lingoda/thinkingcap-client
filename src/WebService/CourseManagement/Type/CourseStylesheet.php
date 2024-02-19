@@ -1,50 +1,35 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class CourseStylesheet
 {
-    /**
-     * @var string
-     */
-    private $CourseID;
+    private string $CourseID;
 
-    /**
-     * @var string
-     */
-    private $StylesheetID;
+    
+    private string $StylesheetID;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $ServerUrl;
+    
+    private string $ServerUrl;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $ImportDate;
+    
+    private DateTimeInterface $ImportDate;
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return CourseStylesheet
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -52,20 +37,14 @@ class CourseStylesheet
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStylesheetID()
+    
+    public function getStylesheetID(): string
     {
         return $this->StylesheetID;
     }
 
-    /**
-     * @param string $StylesheetID
-     *
-     * @return CourseStylesheet
-     */
-    public function withStylesheetID($StylesheetID)
+    
+    public function withStylesheetID(string $StylesheetID): static
     {
         $new = clone $this;
         $new->StylesheetID = $StylesheetID;
@@ -73,20 +52,14 @@ class CourseStylesheet
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return CourseStylesheet
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -94,20 +67,14 @@ class CourseStylesheet
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getServerUrl()
+    
+    public function getServerUrl(): string
     {
         return $this->ServerUrl;
     }
 
-    /**
-     * @param string $ServerUrl
-     *
-     * @return CourseStylesheet
-     */
-    public function withServerUrl($ServerUrl)
+    
+    public function withServerUrl(string $ServerUrl): static
     {
         $new = clone $this;
         $new->ServerUrl = $ServerUrl;
@@ -115,20 +82,14 @@ class CourseStylesheet
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getImportDate()
+    
+    public function getImportDate(): DateTimeInterface
     {
         return $this->ImportDate;
     }
 
-    /**
-     * @param \DateTimeInterface $ImportDate
-     *
-     * @return CourseStylesheet
-     */
-    public function withImportDate($ImportDate)
+    
+    public function withImportDate(DateTimeInterface $ImportDate): static
     {
         $new = clone $this;
         $new->ImportDate = $ImportDate;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUserByEmail implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userEmail;
+    
+    private string $userEmail;
 
-    /**
-     * @var bool
-     */
-    private $includeMetadata;
+    
+    private bool $includeMetadata;
 
-    /**
-     * @var bool
-     */
-    private $includeDomains;
+    
+    private bool $includeDomains;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userEmail
-     * @param bool $includeMetadata
-     * @param bool $includeDomains
      */
-    public function __construct($apiKey, $userEmail, $includeMetadata, $includeDomains)
+    public function __construct(string $apiKey, string $userEmail, bool $includeMetadata, bool $includeDomains)
     {
         $this->apiKey = $apiKey;
         $this->userEmail = $userEmail;
@@ -44,20 +31,14 @@ class GetUserByEmail implements RequestInterface
         $this->includeDomains = $includeDomains;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetUserByEmail
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class GetUserByEmail implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserEmail()
+    
+    public function getUserEmail(): string
     {
         return $this->userEmail;
     }
 
-    /**
-     * @param string $userEmail
-     *
-     * @return GetUserByEmail
-     */
-    public function withUserEmail($userEmail)
+    
+    public function withUserEmail(string $userEmail): static
     {
         $new = clone $this;
         $new->userEmail = $userEmail;
@@ -86,20 +61,14 @@ class GetUserByEmail implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeMetadata()
+    
+    public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    /**
-     * @param bool $includeMetadata
-     *
-     * @return GetUserByEmail
-     */
-    public function withIncludeMetadata($includeMetadata)
+    
+    public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
@@ -107,20 +76,14 @@ class GetUserByEmail implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeDomains()
+    
+    public function getIncludeDomains(): bool
     {
         return $this->includeDomains;
     }
 
-    /**
-     * @param bool $includeDomains
-     *
-     * @return GetUserByEmail
-     */
-    public function withIncludeDomains($includeDomains)
+    
+    public function withIncludeDomains(bool $includeDomains): static
     {
         $new = clone $this;
         $new->includeDomains = $includeDomains;

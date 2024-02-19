@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetUserActiveByLookup implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $lookupValue;
+    
+    private string $lookupValue;
 
-    /**
-     * @var bool
-     */
-    private $active;
+    
+    private bool $active;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $lookupValue
-     * @param bool $active
      */
-    public function __construct($apiKey, $lookupValue, $active)
+    public function __construct(string $apiKey, string $lookupValue, bool $active)
     {
         $this->apiKey = $apiKey;
         $this->lookupValue = $lookupValue;
         $this->active = $active;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return SetUserActiveByLookup
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class SetUserActiveByLookup implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLookupValue()
+    
+    public function getLookupValue(): string
     {
         return $this->lookupValue;
     }
 
-    /**
-     * @param string $lookupValue
-     *
-     * @return SetUserActiveByLookup
-     */
-    public function withLookupValue($lookupValue)
+    
+    public function withLookupValue(string $lookupValue): static
     {
         $new = clone $this;
         $new->lookupValue = $lookupValue;
@@ -79,20 +57,14 @@ class SetUserActiveByLookup implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getActive()
+    
+    public function getActive(): bool
     {
         return $this->active;
     }
 
-    /**
-     * @param bool $active
-     *
-     * @return SetUserActiveByLookup
-     */
-    public function withActive($active)
+    
+    public function withActive(bool $active): static
     {
         $new = clone $this;
         $new->active = $active;

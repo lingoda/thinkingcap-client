@@ -1,120 +1,75 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class TrainingLocation
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $ProgramID;
+    
+    private string $ProgramID;
 
-    /**
-     * @var string
-     */
-    private $Country;
+    
+    private string $Country;
 
-    /**
-     * @var string
-     */
-    private $City;
+    
+    private string $City;
 
-    /**
-     * @var string
-     */
-    private $PostalCode;
+    
+    private string $PostalCode;
 
-    /**
-     * @var string
-     */
-    private $State;
+    
+    private string $State;
 
-    /**
-     * @var string
-     */
-    private $Address;
+    
+    private string $Address;
 
-    /**
-     * @var string
-     */
-    private $Room;
+    
+    private string $Room;
 
-    /**
-     * @var string
-     */
-    private $FieldsXml;
+    
+    private string $FieldsXml;
 
-    /**
-     * @var string
-     */
-    private $SeatingType;
+    
+    private string $SeatingType;
 
-    /**
-     * @var string
-     */
-    private $MeetingID;
+    
+    private string $MeetingID;
 
-    /**
-     * @var string
-     */
-    private $MeetingDetails;
+    
+    private string $MeetingDetails;
 
-    /**
-     * @var string
-     */
-    private $RecordingID;
+    
+    private string $RecordingID;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TimeZone
-     */
-    private $TimeZone;
+    
+    private TimeZone $TimeZone;
 
-    /**
-     * @var bool
-     */
-    private $UseDST;
+    
+    private bool $UseDST;
 
-    /**
-     * @var int
-     */
-    private $MaxLocSize;
+    
+    private int $MaxLocSize;
 
-    /**
-     * @var bool
-     */
-    private $DoNotInherit;
+    
+    private bool $DoNotInherit;
 
-    /**
-     * @var bool
-     */
-    private $IsOneTime;
+    
+    private bool $IsOneTime;
 
-    /**
-     * @var string
-     */
-    private $GoTo_Webcast;
+    
+    private string $GoTo_Webcast;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return TrainingLocation
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -122,20 +77,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->ProgramID;
     }
 
-    /**
-     * @param string $ProgramID
-     *
-     * @return TrainingLocation
-     */
-    public function withProgramID($ProgramID)
+    
+    public function withProgramID(string $ProgramID): static
     {
         $new = clone $this;
         $new->ProgramID = $ProgramID;
@@ -143,20 +92,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountry()
+    
+    public function getCountry(): string
     {
         return $this->Country;
     }
 
-    /**
-     * @param string $Country
-     *
-     * @return TrainingLocation
-     */
-    public function withCountry($Country)
+    
+    public function withCountry(string $Country): static
     {
         $new = clone $this;
         $new->Country = $Country;
@@ -164,20 +107,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCity()
+    
+    public function getCity(): string
     {
         return $this->City;
     }
 
-    /**
-     * @param string $City
-     *
-     * @return TrainingLocation
-     */
-    public function withCity($City)
+    
+    public function withCity(string $City): static
     {
         $new = clone $this;
         $new->City = $City;
@@ -185,20 +122,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPostalCode()
+    
+    public function getPostalCode(): string
     {
         return $this->PostalCode;
     }
 
-    /**
-     * @param string $PostalCode
-     *
-     * @return TrainingLocation
-     */
-    public function withPostalCode($PostalCode)
+    
+    public function withPostalCode(string $PostalCode): static
     {
         $new = clone $this;
         $new->PostalCode = $PostalCode;
@@ -206,20 +137,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getState()
+    
+    public function getState(): string
     {
         return $this->State;
     }
 
-    /**
-     * @param string $State
-     *
-     * @return TrainingLocation
-     */
-    public function withState($State)
+    
+    public function withState(string $State): static
     {
         $new = clone $this;
         $new->State = $State;
@@ -227,20 +152,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAddress()
+    
+    public function getAddress(): string
     {
         return $this->Address;
     }
 
-    /**
-     * @param string $Address
-     *
-     * @return TrainingLocation
-     */
-    public function withAddress($Address)
+    
+    public function withAddress(string $Address): static
     {
         $new = clone $this;
         $new->Address = $Address;
@@ -248,20 +167,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRoom()
+    
+    public function getRoom(): string
     {
         return $this->Room;
     }
 
-    /**
-     * @param string $Room
-     *
-     * @return TrainingLocation
-     */
-    public function withRoom($Room)
+    
+    public function withRoom(string $Room): static
     {
         $new = clone $this;
         $new->Room = $Room;
@@ -269,20 +182,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFieldsXml()
+    
+    public function getFieldsXml(): string
     {
         return $this->FieldsXml;
     }
 
-    /**
-     * @param string $FieldsXml
-     *
-     * @return TrainingLocation
-     */
-    public function withFieldsXml($FieldsXml)
+    
+    public function withFieldsXml(string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;
@@ -290,20 +197,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeatingType()
+    
+    public function getSeatingType(): string
     {
         return $this->SeatingType;
     }
 
-    /**
-     * @param string $SeatingType
-     *
-     * @return TrainingLocation
-     */
-    public function withSeatingType($SeatingType)
+    
+    public function withSeatingType(string $SeatingType): static
     {
         $new = clone $this;
         $new->SeatingType = $SeatingType;
@@ -311,20 +212,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMeetingID()
+    
+    public function getMeetingID(): string
     {
         return $this->MeetingID;
     }
 
-    /**
-     * @param string $MeetingID
-     *
-     * @return TrainingLocation
-     */
-    public function withMeetingID($MeetingID)
+    
+    public function withMeetingID(string $MeetingID): static
     {
         $new = clone $this;
         $new->MeetingID = $MeetingID;
@@ -332,20 +227,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMeetingDetails()
+    
+    public function getMeetingDetails(): string
     {
         return $this->MeetingDetails;
     }
 
-    /**
-     * @param string $MeetingDetails
-     *
-     * @return TrainingLocation
-     */
-    public function withMeetingDetails($MeetingDetails)
+    
+    public function withMeetingDetails(string $MeetingDetails): static
     {
         $new = clone $this;
         $new->MeetingDetails = $MeetingDetails;
@@ -353,20 +242,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRecordingID()
+    
+    public function getRecordingID(): string
     {
         return $this->RecordingID;
     }
 
-    /**
-     * @param string $RecordingID
-     *
-     * @return TrainingLocation
-     */
-    public function withRecordingID($RecordingID)
+    
+    public function withRecordingID(string $RecordingID): static
     {
         $new = clone $this;
         $new->RecordingID = $RecordingID;
@@ -374,20 +257,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TimeZone
-     */
-    public function getTimeZone()
+    
+    public function getTimeZone(): TimeZone
     {
         return $this->TimeZone;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TimeZone $TimeZone
-     *
-     * @return TrainingLocation
-     */
-    public function withTimeZone($TimeZone)
+    
+    public function withTimeZone(TimeZone $TimeZone): static
     {
         $new = clone $this;
         $new->TimeZone = $TimeZone;
@@ -395,20 +272,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseDST()
+    
+    public function getUseDST(): bool
     {
         return $this->UseDST;
     }
 
-    /**
-     * @param bool $UseDST
-     *
-     * @return TrainingLocation
-     */
-    public function withUseDST($UseDST)
+    
+    public function withUseDST(bool $UseDST): static
     {
         $new = clone $this;
         $new->UseDST = $UseDST;
@@ -416,20 +287,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxLocSize()
+    
+    public function getMaxLocSize(): int
     {
         return $this->MaxLocSize;
     }
 
-    /**
-     * @param int $MaxLocSize
-     *
-     * @return TrainingLocation
-     */
-    public function withMaxLocSize($MaxLocSize)
+    
+    public function withMaxLocSize(int $MaxLocSize): static
     {
         $new = clone $this;
         $new->MaxLocSize = $MaxLocSize;
@@ -437,20 +302,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotInherit()
+    
+    public function getDoNotInherit(): bool
     {
         return $this->DoNotInherit;
     }
 
-    /**
-     * @param bool $DoNotInherit
-     *
-     * @return TrainingLocation
-     */
-    public function withDoNotInherit($DoNotInherit)
+    
+    public function withDoNotInherit(bool $DoNotInherit): static
     {
         $new = clone $this;
         $new->DoNotInherit = $DoNotInherit;
@@ -458,20 +317,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsOneTime()
+    
+    public function getIsOneTime(): bool
     {
         return $this->IsOneTime;
     }
 
-    /**
-     * @param bool $IsOneTime
-     *
-     * @return TrainingLocation
-     */
-    public function withIsOneTime($IsOneTime)
+    
+    public function withIsOneTime(bool $IsOneTime): static
     {
         $new = clone $this;
         $new->IsOneTime = $IsOneTime;
@@ -479,20 +332,14 @@ class TrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getGoTo_Webcast()
+    
+    public function getGoToWebcast(): string
     {
         return $this->GoTo_Webcast;
     }
 
-    /**
-     * @param string $GoTo_Webcast
-     *
-     * @return TrainingLocation
-     */
-    public function withGoTo_Webcast($GoTo_Webcast)
+    
+    public function withGoToWebcast(string $GoTo_Webcast): static
     {
         $new = clone $this;
         $new->GoTo_Webcast = $GoTo_Webcast;

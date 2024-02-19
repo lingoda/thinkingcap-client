@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class DeleteUserResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $DeleteUserResult;
+    private ServiceResultOfString $DeleteUserResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getDeleteUserResult()
+    
+    public function getDeleteUserResult(): ServiceResultOfString
     {
         return $this->DeleteUserResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $DeleteUserResult
-     *
-     * @return DeleteUserResponse
-     */
-    public function withDeleteUserResult($DeleteUserResult)
+    
+    public function withDeleteUserResult(ServiceResultOfString $DeleteUserResult): static
     {
         $new = clone $this;
         $new->DeleteUserResult = $DeleteUserResult;
