@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class AddUserToDomain implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var string
-     */
-    private $domainID;
+    
+    private string $domainID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param string $domainID
      */
-    public function __construct($apiKey, $userID, $domainID)
+    public function __construct(string $apiKey, string $userID, string $domainID)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
         $this->domainID = $domainID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return AddUserToDomain
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class AddUserToDomain implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return AddUserToDomain
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -79,20 +57,14 @@ class AddUserToDomain implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->domainID;
     }
 
-    /**
-     * @param string $domainID
-     *
-     * @return AddUserToDomain
-     */
-    public function withDomainID($domainID)
+    
+    public function withDomainID(string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;

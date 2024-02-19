@@ -1,70 +1,45 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CourseAssignment
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Name;
+    
+    private string $Name;
 
-    /**
-     * @var string
-     */
-    private $Instructions;
+    
+    private string $Instructions;
 
-    /**
-     * @var string
-     */
-    private $CourseID;
+    
+    private string $CourseID;
 
-    /**
-     * @var bool
-     */
-    private $Mastery;
+    
+    private bool $Mastery;
 
-    /**
-     * @var int
-     */
-    private $MaxAttempts;
+    
+    private int $MaxAttempts;
 
-    /**
-     * @var bool
-     */
-    private $AllowTextSubmission;
+    
+    private bool $AllowTextSubmission;
 
-    /**
-     * @var bool
-     */
-    private $AllowFilesSubmission;
+    
+    private bool $AllowFilesSubmission;
 
-    /**
-     * @var bool
-     */
-    private $AllowAudioRecordingSubmission;
+    
+    private bool $AllowAudioRecordingSubmission;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return CourseAssignment
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -72,20 +47,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     *
-     * @return CourseAssignment
-     */
-    public function withName($Name)
+    
+    public function withName(string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -93,20 +62,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getInstructions()
+    
+    public function getInstructions(): string
     {
         return $this->Instructions;
     }
 
-    /**
-     * @param string $Instructions
-     *
-     * @return CourseAssignment
-     */
-    public function withInstructions($Instructions)
+    
+    public function withInstructions(string $Instructions): static
     {
         $new = clone $this;
         $new->Instructions = $Instructions;
@@ -114,20 +77,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return CourseAssignment
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -135,20 +92,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMastery()
+    
+    public function getMastery(): bool
     {
         return $this->Mastery;
     }
 
-    /**
-     * @param bool $Mastery
-     *
-     * @return CourseAssignment
-     */
-    public function withMastery($Mastery)
+    
+    public function withMastery(bool $Mastery): static
     {
         $new = clone $this;
         $new->Mastery = $Mastery;
@@ -156,20 +107,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxAttempts()
+    
+    public function getMaxAttempts(): int
     {
         return $this->MaxAttempts;
     }
 
-    /**
-     * @param int $MaxAttempts
-     *
-     * @return CourseAssignment
-     */
-    public function withMaxAttempts($MaxAttempts)
+    
+    public function withMaxAttempts(int $MaxAttempts): static
     {
         $new = clone $this;
         $new->MaxAttempts = $MaxAttempts;
@@ -177,20 +122,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowTextSubmission()
+    
+    public function getAllowTextSubmission(): bool
     {
         return $this->AllowTextSubmission;
     }
 
-    /**
-     * @param bool $AllowTextSubmission
-     *
-     * @return CourseAssignment
-     */
-    public function withAllowTextSubmission($AllowTextSubmission)
+    
+    public function withAllowTextSubmission(bool $AllowTextSubmission): static
     {
         $new = clone $this;
         $new->AllowTextSubmission = $AllowTextSubmission;
@@ -198,20 +137,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowFilesSubmission()
+    
+    public function getAllowFilesSubmission(): bool
     {
         return $this->AllowFilesSubmission;
     }
 
-    /**
-     * @param bool $AllowFilesSubmission
-     *
-     * @return CourseAssignment
-     */
-    public function withAllowFilesSubmission($AllowFilesSubmission)
+    
+    public function withAllowFilesSubmission(bool $AllowFilesSubmission): static
     {
         $new = clone $this;
         $new->AllowFilesSubmission = $AllowFilesSubmission;
@@ -219,20 +152,14 @@ class CourseAssignment
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAudioRecordingSubmission()
+    
+    public function getAllowAudioRecordingSubmission(): bool
     {
         return $this->AllowAudioRecordingSubmission;
     }
 
-    /**
-     * @param bool $AllowAudioRecordingSubmission
-     *
-     * @return CourseAssignment
-     */
-    public function withAllowAudioRecordingSubmission($AllowAudioRecordingSubmission)
+    
+    public function withAllowAudioRecordingSubmission(bool $AllowAudioRecordingSubmission): static
     {
         $new = clone $this;
         $new->AllowAudioRecordingSubmission = $AllowAudioRecordingSubmission;

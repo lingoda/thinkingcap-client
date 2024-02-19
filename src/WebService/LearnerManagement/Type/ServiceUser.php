@@ -1,110 +1,71 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
+use DateTimeInterface;
+
 class ServiceUser
 {
-    /**
-     * @var string
-     */
-    private $UserID;
+    private string $UserID;
 
-    /**
-     * @var string
-     */
-    private $FirstName;
+    
+    private string $FirstName;
 
-    /**
-     * @var string
-     */
-    private $LastName;
+    
+    private string $LastName;
 
-    /**
-     * @var string
-     */
-    private $Email;
+    
+    private string $Email;
 
-    /**
-     * @var string
-     */
-    private $OutsideEmail;
+    
+    private string $OutsideEmail;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $ScreenName;
+    
+    private string $ScreenName;
 
-    /**
-     * @var bool
-     */
-    private $Active;
+    
+    private bool $Active;
 
-    /**
-     * @var string
-     */
-    private $HomeDomainID;
+    
+    private string $HomeDomainID;
 
-    /**
-     * @var string
-     */
-    private $HomeDomainName;
+    
+    private string $HomeDomainName;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $CreationDate;
+    
+    private DateTimeInterface $CreationDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastModifiedDate;
+    
+    private DateTimeInterface $LastModifiedDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastLoginDate;
+    
+    private DateTimeInterface $LastLoginDate;
 
-    /**
-     * @var string
-     */
-    private $Language;
+    
+    private string $Language;
 
-    /**
-     * @var string
-     */
-    private $ProfilePhotoUrl;
+    
+    private string $ProfilePhotoUrl;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfCustomField
-     */
-    private $CustomFields;
+    
+    private ArrayOfCustomField $CustomFields;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfDomain
-     */
-    private $Domains;
+    
+    private ArrayOfDomain $Domains;
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->UserID;
     }
 
-    /**
-     * @param string $UserID
-     *
-     * @return ServiceUser
-     */
-    public function withUserID($UserID)
+    
+    public function withUserID(string $UserID): static
     {
         $new = clone $this;
         $new->UserID = $UserID;
@@ -112,20 +73,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFirstName()
+    
+    public function getFirstName(): string
     {
         return $this->FirstName;
     }
 
-    /**
-     * @param string $FirstName
-     *
-     * @return ServiceUser
-     */
-    public function withFirstName($FirstName)
+    
+    public function withFirstName(string $FirstName): static
     {
         $new = clone $this;
         $new->FirstName = $FirstName;
@@ -133,20 +88,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastName()
+    
+    public function getLastName(): string
     {
         return $this->LastName;
     }
 
-    /**
-     * @param string $LastName
-     *
-     * @return ServiceUser
-     */
-    public function withLastName($LastName)
+    
+    public function withLastName(string $LastName): static
     {
         $new = clone $this;
         $new->LastName = $LastName;
@@ -154,20 +103,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail()
+    
+    public function getEmail(): string
     {
         return $this->Email;
     }
 
-    /**
-     * @param string $Email
-     *
-     * @return ServiceUser
-     */
-    public function withEmail($Email)
+    
+    public function withEmail(string $Email): static
     {
         $new = clone $this;
         $new->Email = $Email;
@@ -175,20 +118,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOutsideEmail()
+    
+    public function getOutsideEmail(): string
     {
         return $this->OutsideEmail;
     }
 
-    /**
-     * @param string $OutsideEmail
-     *
-     * @return ServiceUser
-     */
-    public function withOutsideEmail($OutsideEmail)
+    
+    public function withOutsideEmail(string $OutsideEmail): static
     {
         $new = clone $this;
         $new->OutsideEmail = $OutsideEmail;
@@ -196,20 +133,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return ServiceUser
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -217,20 +148,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getScreenName()
+    
+    public function getScreenName(): string
     {
         return $this->ScreenName;
     }
 
-    /**
-     * @param string $ScreenName
-     *
-     * @return ServiceUser
-     */
-    public function withScreenName($ScreenName)
+    
+    public function withScreenName(string $ScreenName): static
     {
         $new = clone $this;
         $new->ScreenName = $ScreenName;
@@ -238,20 +163,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getActive()
+    
+    public function getActive(): bool
     {
         return $this->Active;
     }
 
-    /**
-     * @param bool $Active
-     *
-     * @return ServiceUser
-     */
-    public function withActive($Active)
+    
+    public function withActive(bool $Active): static
     {
         $new = clone $this;
         $new->Active = $Active;
@@ -259,20 +178,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomeDomainID()
+    
+    public function getHomeDomainID(): string
     {
         return $this->HomeDomainID;
     }
 
-    /**
-     * @param string $HomeDomainID
-     *
-     * @return ServiceUser
-     */
-    public function withHomeDomainID($HomeDomainID)
+    
+    public function withHomeDomainID(string $HomeDomainID): static
     {
         $new = clone $this;
         $new->HomeDomainID = $HomeDomainID;
@@ -280,20 +193,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomeDomainName()
+    
+    public function getHomeDomainName(): string
     {
         return $this->HomeDomainName;
     }
 
-    /**
-     * @param string $HomeDomainName
-     *
-     * @return ServiceUser
-     */
-    public function withHomeDomainName($HomeDomainName)
+    
+    public function withHomeDomainName(string $HomeDomainName): static
     {
         $new = clone $this;
         $new->HomeDomainName = $HomeDomainName;
@@ -301,20 +208,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getCreationDate()
+    
+    public function getCreationDate(): DateTimeInterface
     {
         return $this->CreationDate;
     }
 
-    /**
-     * @param \DateTimeInterface $CreationDate
-     *
-     * @return ServiceUser
-     */
-    public function withCreationDate($CreationDate)
+    
+    public function withCreationDate(DateTimeInterface $CreationDate): static
     {
         $new = clone $this;
         $new->CreationDate = $CreationDate;
@@ -322,20 +223,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastModifiedDate()
+    
+    public function getLastModifiedDate(): DateTimeInterface
     {
         return $this->LastModifiedDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastModifiedDate
-     *
-     * @return ServiceUser
-     */
-    public function withLastModifiedDate($LastModifiedDate)
+    
+    public function withLastModifiedDate(DateTimeInterface $LastModifiedDate): static
     {
         $new = clone $this;
         $new->LastModifiedDate = $LastModifiedDate;
@@ -343,20 +238,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastLoginDate()
+    
+    public function getLastLoginDate(): DateTimeInterface
     {
         return $this->LastLoginDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastLoginDate
-     *
-     * @return ServiceUser
-     */
-    public function withLastLoginDate($LastLoginDate)
+    
+    public function withLastLoginDate(DateTimeInterface $LastLoginDate): static
     {
         $new = clone $this;
         $new->LastLoginDate = $LastLoginDate;
@@ -364,20 +253,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->Language;
     }
 
-    /**
-     * @param string $Language
-     *
-     * @return ServiceUser
-     */
-    public function withLanguage($Language)
+    
+    public function withLanguage(string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -385,20 +268,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProfilePhotoUrl()
+    
+    public function getProfilePhotoUrl(): string
     {
         return $this->ProfilePhotoUrl;
     }
 
-    /**
-     * @param string $ProfilePhotoUrl
-     *
-     * @return ServiceUser
-     */
-    public function withProfilePhotoUrl($ProfilePhotoUrl)
+    
+    public function withProfilePhotoUrl(string $ProfilePhotoUrl): static
     {
         $new = clone $this;
         $new->ProfilePhotoUrl = $ProfilePhotoUrl;
@@ -406,20 +283,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfCustomField
-     */
-    public function getCustomFields()
+    
+    public function getCustomFields(): ArrayOfCustomField
     {
         return $this->CustomFields;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfCustomField $CustomFields
-     *
-     * @return ServiceUser
-     */
-    public function withCustomFields($CustomFields)
+    
+    public function withCustomFields(ArrayOfCustomField $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
@@ -427,20 +298,14 @@ class ServiceUser
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfDomain
-     */
-    public function getDomains()
+    
+    public function getDomains(): ArrayOfDomain
     {
         return $this->Domains;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfDomain $Domains
-     *
-     * @return ServiceUser
-     */
-    public function withDomains($Domains)
+    
+    public function withDomains(ArrayOfDomain $Domains): static
     {
         $new = clone $this;
         $new->Domains = $Domains;

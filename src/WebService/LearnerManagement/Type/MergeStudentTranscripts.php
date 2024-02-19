@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,35 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class MergeStudentTranscripts implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentToRemainID;
+    
+    private string $studentToRemainID;
 
-    /**
-     * @var string
-     */
-    private $studentToGoID;
+    
+    private string $studentToGoID;
 
-    /**
-     * @var bool
-     */
-    private $markMergedAccountsPending;
+    
+    private bool $markMergedAccountsPending;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentToRemainID
-     * @param string $studentToGoID
-     * @param bool $markMergedAccountsPending
      */
-    public function __construct($apiKey, $studentToRemainID, $studentToGoID, $markMergedAccountsPending)
+    public function __construct(string $apiKey, string $studentToRemainID, string $studentToGoID, bool $markMergedAccountsPending)
     {
         $this->apiKey = $apiKey;
         $this->studentToRemainID = $studentToRemainID;
@@ -44,20 +31,14 @@ class MergeStudentTranscripts implements RequestInterface
         $this->markMergedAccountsPending = $markMergedAccountsPending;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return MergeStudentTranscripts
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -65,20 +46,14 @@ class MergeStudentTranscripts implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentToRemainID()
+    
+    public function getStudentToRemainID(): string
     {
         return $this->studentToRemainID;
     }
 
-    /**
-     * @param string $studentToRemainID
-     *
-     * @return MergeStudentTranscripts
-     */
-    public function withStudentToRemainID($studentToRemainID)
+    
+    public function withStudentToRemainID(string $studentToRemainID): static
     {
         $new = clone $this;
         $new->studentToRemainID = $studentToRemainID;
@@ -86,20 +61,14 @@ class MergeStudentTranscripts implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentToGoID()
+    
+    public function getStudentToGoID(): string
     {
         return $this->studentToGoID;
     }
 
-    /**
-     * @param string $studentToGoID
-     *
-     * @return MergeStudentTranscripts
-     */
-    public function withStudentToGoID($studentToGoID)
+    
+    public function withStudentToGoID(string $studentToGoID): static
     {
         $new = clone $this;
         $new->studentToGoID = $studentToGoID;
@@ -107,20 +76,14 @@ class MergeStudentTranscripts implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMarkMergedAccountsPending()
+    
+    public function getMarkMergedAccountsPending(): bool
     {
         return $this->markMergedAccountsPending;
     }
 
-    /**
-     * @param bool $markMergedAccountsPending
-     *
-     * @return MergeStudentTranscripts
-     */
-    public function withMarkMergedAccountsPending($markMergedAccountsPending)
+    
+    public function withMarkMergedAccountsPending(bool $markMergedAccountsPending): static
     {
         $new = clone $this;
         $new->markMergedAccountsPending = $markMergedAccountsPending;

@@ -1,60 +1,39 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class AddTrainingLocation
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $country;
+    
+    private string $country;
 
-    /**
-     * @var string
-     */
-    private $state;
+    
+    private string $state;
 
-    /**
-     * @var string
-     */
-    private $city;
+    
+    private string $city;
 
-    /**
-     * @var string
-     */
-    private $address;
+    
+    private string $address;
 
-    /**
-     * @var string
-     */
-    private $postalCode;
+    
+    private string $postalCode;
 
-    /**
-     * @var string
-     */
-    private $room;
+    
+    private string $room;
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return AddTrainingLocation
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -62,20 +41,14 @@ class AddTrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountry()
+    
+    public function getCountry(): string
     {
         return $this->country;
     }
 
-    /**
-     * @param string $country
-     *
-     * @return AddTrainingLocation
-     */
-    public function withCountry($country)
+    
+    public function withCountry(string $country): static
     {
         $new = clone $this;
         $new->country = $country;
@@ -83,20 +56,14 @@ class AddTrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getState()
+    
+    public function getState(): string
     {
         return $this->state;
     }
 
-    /**
-     * @param string $state
-     *
-     * @return AddTrainingLocation
-     */
-    public function withState($state)
+    
+    public function withState(string $state): static
     {
         $new = clone $this;
         $new->state = $state;
@@ -104,20 +71,14 @@ class AddTrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCity()
+    
+    public function getCity(): string
     {
         return $this->city;
     }
 
-    /**
-     * @param string $city
-     *
-     * @return AddTrainingLocation
-     */
-    public function withCity($city)
+    
+    public function withCity(string $city): static
     {
         $new = clone $this;
         $new->city = $city;
@@ -125,20 +86,14 @@ class AddTrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAddress()
+    
+    public function getAddress(): string
     {
         return $this->address;
     }
 
-    /**
-     * @param string $address
-     *
-     * @return AddTrainingLocation
-     */
-    public function withAddress($address)
+    
+    public function withAddress(string $address): static
     {
         $new = clone $this;
         $new->address = $address;
@@ -146,20 +101,14 @@ class AddTrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPostalCode()
+    
+    public function getPostalCode(): string
     {
         return $this->postalCode;
     }
 
-    /**
-     * @param string $postalCode
-     *
-     * @return AddTrainingLocation
-     */
-    public function withPostalCode($postalCode)
+    
+    public function withPostalCode(string $postalCode): static
     {
         $new = clone $this;
         $new->postalCode = $postalCode;
@@ -167,20 +116,14 @@ class AddTrainingLocation
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRoom()
+    
+    public function getRoom(): string
     {
         return $this->room;
     }
 
-    /**
-     * @param string $room
-     *
-     * @return AddTrainingLocation
-     */
-    public function withRoom($room)
+    
+    public function withRoom(string $room): static
     {
         $new = clone $this;
         $new->room = $room;

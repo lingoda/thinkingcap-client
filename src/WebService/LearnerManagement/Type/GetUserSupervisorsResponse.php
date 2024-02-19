@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetUserSupervisorsResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfListOfServiceSupervisor
-     */
-    private $GetUserSupervisorsResult;
+    private ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfListOfServiceSupervisor
-     */
-    public function getGetUserSupervisorsResult()
+    
+    public function getGetUserSupervisorsResult(): ServiceResultOfListOfServiceSupervisor
     {
         return $this->GetUserSupervisorsResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult
-     *
-     * @return GetUserSupervisorsResponse
-     */
-    public function withGetUserSupervisorsResult($GetUserSupervisorsResult)
+    
+    public function withGetUserSupervisorsResult(ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult): static
     {
         $new = clone $this;
         $new->GetUserSupervisorsResult = $GetUserSupervisorsResult;

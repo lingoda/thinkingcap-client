@@ -1,40 +1,27 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfCourse
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Course
-     */
-    private $Result;
+    private Course $Result;
 
-    /**
-     * @var bool
-     */
-    private $Success;
+    
+    private bool $Success;
 
-    /**
-     * @var string
-     */
-    private $Message;
+    
+    private string $Message;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Course
-     */
-    public function getResult()
+    
+    public function getResult(): Course
     {
         return $this->Result;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Course $Result
-     *
-     * @return ServiceResultOfCourse
-     */
-    public function withResult($Result)
+    
+    public function withResult(Course $Result): static
     {
         $new = clone $this;
         $new->Result = $Result;
@@ -42,20 +29,14 @@ class ServiceResultOfCourse
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSuccess()
+    
+    public function getSuccess(): bool
     {
         return $this->Success;
     }
 
-    /**
-     * @param bool $Success
-     *
-     * @return ServiceResultOfCourse
-     */
-    public function withSuccess($Success)
+    
+    public function withSuccess(bool $Success): static
     {
         $new = clone $this;
         $new->Success = $Success;
@@ -63,20 +44,14 @@ class ServiceResultOfCourse
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMessage()
+    
+    public function getMessage(): string
     {
         return $this->Message;
     }
 
-    /**
-     * @param string $Message
-     *
-     * @return ServiceResultOfCourse
-     */
-    public function withMessage($Message)
+    
+    public function withMessage(string $Message): static
     {
         $new = clone $this;
         $new->Message = $Message;

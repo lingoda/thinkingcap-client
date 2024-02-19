@@ -1,80 +1,51 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CourseAlternativePrice
 {
-    /**
-     * @var string
-     */
-    private $AlternativeID;
+    private string $AlternativeID;
 
-    /**
-     * @var string
-     */
-    private $CourseID;
+    
+    private string $CourseID;
 
-    /**
-     * @var string
-     */
-    private $PriceTitle;
+    
+    private string $PriceTitle;
 
-    /**
-     * @var string
-     */
-    private $PriceOrder;
+    
+    private string $PriceOrder;
 
-    /**
-     * @var float
-     */
-    private $PriceValue;
+    
+    private float $PriceValue;
 
-    /**
-     * @var string
-     */
-    private $PriceValueType;
+    
+    private string $PriceValueType;
 
-    /**
-     * @var string
-     */
-    private $PriceValueSign;
+    
+    private string $PriceValueSign;
 
-    /**
-     * @var string
-     */
-    private $PriceConditionType;
+    
+    private string $PriceConditionType;
 
-    /**
-     * @var string
-     */
-    private $PriceConditionValues;
+    
+    private string $PriceConditionValues;
 
-    /**
-     * @var string
-     */
-    private $PriceConditionName;
+    
+    private string $PriceConditionName;
 
-    /**
-     * @var string
-     */
-    private $PriceConditionDetail;
+    
+    private string $PriceConditionDetail;
 
-    /**
-     * @return string
-     */
-    public function getAlternativeID()
+    
+    public function getAlternativeID(): string
     {
         return $this->AlternativeID;
     }
 
-    /**
-     * @param string $AlternativeID
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withAlternativeID($AlternativeID)
+    
+    public function withAlternativeID(string $AlternativeID): static
     {
         $new = clone $this;
         $new->AlternativeID = $AlternativeID;
@@ -82,20 +53,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->CourseID;
     }
 
-    /**
-     * @param string $CourseID
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withCourseID($CourseID)
+    
+    public function withCourseID(string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -103,20 +68,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceTitle()
+    
+    public function getPriceTitle(): string
     {
         return $this->PriceTitle;
     }
 
-    /**
-     * @param string $PriceTitle
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceTitle($PriceTitle)
+    
+    public function withPriceTitle(string $PriceTitle): static
     {
         $new = clone $this;
         $new->PriceTitle = $PriceTitle;
@@ -124,20 +83,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceOrder()
+    
+    public function getPriceOrder(): string
     {
         return $this->PriceOrder;
     }
 
-    /**
-     * @param string $PriceOrder
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceOrder($PriceOrder)
+    
+    public function withPriceOrder(string $PriceOrder): static
     {
         $new = clone $this;
         $new->PriceOrder = $PriceOrder;
@@ -145,20 +98,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getPriceValue()
+    
+    public function getPriceValue(): float
     {
         return $this->PriceValue;
     }
 
-    /**
-     * @param float $PriceValue
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceValue($PriceValue)
+    
+    public function withPriceValue(float $PriceValue): static
     {
         $new = clone $this;
         $new->PriceValue = $PriceValue;
@@ -166,20 +113,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceValueType()
+    
+    public function getPriceValueType(): string
     {
         return $this->PriceValueType;
     }
 
-    /**
-     * @param string $PriceValueType
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceValueType($PriceValueType)
+    
+    public function withPriceValueType(string $PriceValueType): static
     {
         $new = clone $this;
         $new->PriceValueType = $PriceValueType;
@@ -187,20 +128,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceValueSign()
+    
+    public function getPriceValueSign(): string
     {
         return $this->PriceValueSign;
     }
 
-    /**
-     * @param string $PriceValueSign
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceValueSign($PriceValueSign)
+    
+    public function withPriceValueSign(string $PriceValueSign): static
     {
         $new = clone $this;
         $new->PriceValueSign = $PriceValueSign;
@@ -208,20 +143,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceConditionType()
+    
+    public function getPriceConditionType(): string
     {
         return $this->PriceConditionType;
     }
 
-    /**
-     * @param string $PriceConditionType
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceConditionType($PriceConditionType)
+    
+    public function withPriceConditionType(string $PriceConditionType): static
     {
         $new = clone $this;
         $new->PriceConditionType = $PriceConditionType;
@@ -229,20 +158,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceConditionValues()
+    
+    public function getPriceConditionValues(): string
     {
         return $this->PriceConditionValues;
     }
 
-    /**
-     * @param string $PriceConditionValues
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceConditionValues($PriceConditionValues)
+    
+    public function withPriceConditionValues(string $PriceConditionValues): static
     {
         $new = clone $this;
         $new->PriceConditionValues = $PriceConditionValues;
@@ -250,20 +173,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceConditionName()
+    
+    public function getPriceConditionName(): string
     {
         return $this->PriceConditionName;
     }
 
-    /**
-     * @param string $PriceConditionName
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceConditionName($PriceConditionName)
+    
+    public function withPriceConditionName(string $PriceConditionName): static
     {
         $new = clone $this;
         $new->PriceConditionName = $PriceConditionName;
@@ -271,20 +188,14 @@ class CourseAlternativePrice
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPriceConditionDetail()
+    
+    public function getPriceConditionDetail(): string
     {
         return $this->PriceConditionDetail;
     }
 
-    /**
-     * @param string $PriceConditionDetail
-     *
-     * @return CourseAlternativePrice
-     */
-    public function withPriceConditionDetail($PriceConditionDetail)
+    
+    public function withPriceConditionDetail(string $PriceConditionDetail): static
     {
         $new = clone $this;
         $new->PriceConditionDetail = $PriceConditionDetail;

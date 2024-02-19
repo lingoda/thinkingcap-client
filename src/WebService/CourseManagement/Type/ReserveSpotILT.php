@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,47 +8,28 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class ReserveSpotILT implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $learningActivityCode;
+    
+    private string $learningActivityCode;
 
-    /**
-     * @var string
-     */
-    private $learningActivityID;
+    
+    private string $learningActivityID;
 
-    /**
-     * @var int
-     */
-    private $numberOfSeats;
+    
+    private int $numberOfSeats;
 
-    /**
-     * @var int
-     */
-    private $duration;
+    
+    private int $duration;
 
-    /**
-     * @var bool
-     */
-    private $checkWaitList;
+    
+    private bool $checkWaitList;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $learningActivityCode
-     * @param string $learningActivityID
-     * @param int $numberOfSeats
-     * @param int $duration
-     * @param bool $checkWaitList
      */
-    public function __construct($apiKey, $learningActivityCode, $learningActivityID, $numberOfSeats, $duration, $checkWaitList)
+    public function __construct(string $apiKey, string $learningActivityCode, string $learningActivityID, int $numberOfSeats, int $duration, bool $checkWaitList)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityCode = $learningActivityCode;
@@ -58,20 +39,14 @@ class ReserveSpotILT implements RequestInterface
         $this->checkWaitList = $checkWaitList;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return ReserveSpotILT
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -79,20 +54,14 @@ class ReserveSpotILT implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCode()
+    
+    public function getLearningActivityCode(): string
     {
         return $this->learningActivityCode;
     }
 
-    /**
-     * @param string $learningActivityCode
-     *
-     * @return ReserveSpotILT
-     */
-    public function withLearningActivityCode($learningActivityCode)
+    
+    public function withLearningActivityCode(string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;
@@ -100,20 +69,14 @@ class ReserveSpotILT implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityID()
+    
+    public function getLearningActivityID(): string
     {
         return $this->learningActivityID;
     }
 
-    /**
-     * @param string $learningActivityID
-     *
-     * @return ReserveSpotILT
-     */
-    public function withLearningActivityID($learningActivityID)
+    
+    public function withLearningActivityID(string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;
@@ -121,20 +84,14 @@ class ReserveSpotILT implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getNumberOfSeats()
+    
+    public function getNumberOfSeats(): int
     {
         return $this->numberOfSeats;
     }
 
-    /**
-     * @param int $numberOfSeats
-     *
-     * @return ReserveSpotILT
-     */
-    public function withNumberOfSeats($numberOfSeats)
+    
+    public function withNumberOfSeats(int $numberOfSeats): static
     {
         $new = clone $this;
         $new->numberOfSeats = $numberOfSeats;
@@ -142,20 +99,14 @@ class ReserveSpotILT implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getDuration()
+    
+    public function getDuration(): int
     {
         return $this->duration;
     }
 
-    /**
-     * @param int $duration
-     *
-     * @return ReserveSpotILT
-     */
-    public function withDuration($duration)
+    
+    public function withDuration(int $duration): static
     {
         $new = clone $this;
         $new->duration = $duration;
@@ -163,20 +114,14 @@ class ReserveSpotILT implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCheckWaitList()
+    
+    public function getCheckWaitList(): bool
     {
         return $this->checkWaitList;
     }
 
-    /**
-     * @param bool $checkWaitList
-     *
-     * @return ReserveSpotILT
-     */
-    public function withCheckWaitList($checkWaitList)
+    
+    public function withCheckWaitList(bool $checkWaitList): static
     {
         $new = clone $this;
         $new->checkWaitList = $checkWaitList;

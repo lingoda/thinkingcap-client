@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfString1
 {
-    /**
-     * @var string
-     */
-    private $Value;
+    private string $Value;
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    
+    public function getValue(): string
     {
         return $this->Value;
     }
 
-    /**
-     * @param string $Value
-     *
-     * @return ArrayOfString1
-     */
-    public function withValue($Value)
+    
+    public function withValue(string $Value): static
     {
         $new = clone $this;
         $new->Value = $Value;

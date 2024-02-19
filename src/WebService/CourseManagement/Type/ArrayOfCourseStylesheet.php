@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfCourseStylesheet
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseStylesheet
-     */
-    private $CourseStylesheet;
+    private CourseStylesheet $CourseStylesheet;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseStylesheet
-     */
-    public function getCourseStylesheet()
+    
+    public function getCourseStylesheet(): CourseStylesheet
     {
         return $this->CourseStylesheet;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseStylesheet $CourseStylesheet
-     *
-     * @return ArrayOfCourseStylesheet
-     */
-    public function withCourseStylesheet($CourseStylesheet)
+    
+    public function withCourseStylesheet(CourseStylesheet $CourseStylesheet): static
     {
         $new = clone $this;
         $new->CourseStylesheet = $CourseStylesheet;

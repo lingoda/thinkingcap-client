@@ -1,225 +1,140 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class LearningActivity
 {
-    /**
-     * @var string
-     */
-    private $Type;
+    private string $Type;
 
-    /**
-     * @var string
-     */
-    private $ID;
+    
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Code;
+    
+    private string $Code;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $Description;
+    
+    private string $Description;
 
-    /**
-     * @var string
-     */
-    private $Instructions;
+    
+    private string $Instructions;
 
-    /**
-     * @var string
-     */
-    private $Language;
+    
+    private string $Language;
 
-    /**
-     * @var bool
-     */
-    private $IsOnline;
+    
+    private bool $IsOnline;
 
-    /**
-     * @var bool
-     */
-    private $IsAssessment;
+    
+    private bool $IsAssessment;
 
-    /**
-     * @var string
-     */
-    private $OwnerDomainID;
+    
+    private string $OwnerDomainID;
 
-    /**
-     * @var string
-     */
-    private $OwnerDomainName;
+    
+    private string $OwnerDomainName;
 
-    /**
-     * @var string
-     */
-    private $EquivalencyID;
+    
+    private string $EquivalencyID;
 
-    /**
-     * @var string
-     */
-    private $EquivalencyName;
+    
+    private string $EquivalencyName;
 
-    /**
-     * @var bool
-     */
-    private $IsActive;
+    
+    private bool $IsActive;
 
-    /**
-     * @var string
-     */
-    private $Tags;
+    
+    private string $Tags;
 
-    /**
-     * @var string
-     */
-    private $LogoUrl;
+    
+    private string $LogoUrl;
 
-    /**
-     * @var bool
-     */
-    private $HasForum;
+    
+    private bool $HasForum;
 
-    /**
-     * @var bool
-     */
-    private $HasFeedback;
+    
+    private bool $HasFeedback;
 
-    /**
-     * @var bool
-     */
-    private $HasAssignments;
+    
+    private bool $HasAssignments;
 
-    /**
-     * @var bool
-     */
-    private $HasSample;
+    
+    private bool $HasSample;
 
-    /**
-     * @var float
-     */
-    private $LearningTime;
+    
+    private float $LearningTime;
 
-    /**
-     * @var bool
-     */
-    private $GrantCertificate;
+    
+    private bool $GrantCertificate;
 
-    /**
-     * @var float
-     */
-    private $CreditValue;
+    
+    private float $CreditValue;
 
-    /**
-     * @var bool
-     */
-    private $GrantBadge;
+    
+    private bool $GrantBadge;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $StartDate;
+    
+    private DateTimeInterface $StartDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $FirstEnrollmentDate;
+    
+    private DateTimeInterface $FirstEnrollmentDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastEnrollmentDate;
+    
+    private DateTimeInterface $LastEnrollmentDate;
 
-    /**
-     * @var string
-     */
-    private $DueDate;
+    
+    private string $DueDate;
 
-    /**
-     * @var bool
-     */
-    private $AccreditationExpires;
+    
+    private bool $AccreditationExpires;
 
-    /**
-     * @var int
-     */
-    private $AllowedReenrollmentsNumber;
+    
+    private int $AllowedReenrollmentsNumber;
 
-    /**
-     * @var bool
-     */
-    private $AccreditationExpiresBasedOnEnrollmentDate;
+    
+    private bool $AccreditationExpiresBasedOnEnrollmentDate;
 
-    /**
-     * @var int
-     */
-    private $AccreditationExpiresUnits;
+    
+    private int $AccreditationExpiresUnits;
 
-    /**
-     * @var string
-     */
-    private $AccreditationExpiresInterval;
+    
+    private string $AccreditationExpiresInterval;
 
-    /**
-     * @var int
-     */
-    private $ReenrollmentAllowedBeforeExpiringUnits;
+    
+    private int $ReenrollmentAllowedBeforeExpiringUnits;
 
-    /**
-     * @var string
-     */
-    private $ReenrollmentAllowedBeforeExpiringInterval;
+    
+    private string $ReenrollmentAllowedBeforeExpiringInterval;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCustomField
-     */
-    private $CustomFields;
+    
+    private ArrayOfCustomField $CustomFields;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseSession
-     */
-    private $Sessions;
+    
+    private ArrayOfCourseSession $Sessions;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfLearningActivityCohort
-     */
-    private $Cohorts;
+    
+    private ArrayOfLearningActivityCohort $Cohorts;
 
-    /**
-     * @var string
-     */
-    private $DetailsLink;
+    
+    private string $DetailsLink;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastModifiedTimestamp;
+    
+    private DateTimeInterface $LastModifiedTimestamp;
 
-    /**
-     * @return string
-     */
-    public function getType()
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return LearningActivity
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -227,20 +142,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return LearningActivity
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -248,20 +157,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return LearningActivity
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -269,20 +172,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return LearningActivity
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -290,20 +187,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return LearningActivity
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -311,20 +202,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getInstructions()
+    
+    public function getInstructions(): string
     {
         return $this->Instructions;
     }
 
-    /**
-     * @param string $Instructions
-     *
-     * @return LearningActivity
-     */
-    public function withInstructions($Instructions)
+    
+    public function withInstructions(string $Instructions): static
     {
         $new = clone $this;
         $new->Instructions = $Instructions;
@@ -332,20 +217,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->Language;
     }
 
-    /**
-     * @param string $Language
-     *
-     * @return LearningActivity
-     */
-    public function withLanguage($Language)
+    
+    public function withLanguage(string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -353,20 +232,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsOnline()
+    
+    public function getIsOnline(): bool
     {
         return $this->IsOnline;
     }
 
-    /**
-     * @param bool $IsOnline
-     *
-     * @return LearningActivity
-     */
-    public function withIsOnline($IsOnline)
+    
+    public function withIsOnline(bool $IsOnline): static
     {
         $new = clone $this;
         $new->IsOnline = $IsOnline;
@@ -374,20 +247,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsAssessment()
+    
+    public function getIsAssessment(): bool
     {
         return $this->IsAssessment;
     }
 
-    /**
-     * @param bool $IsAssessment
-     *
-     * @return LearningActivity
-     */
-    public function withIsAssessment($IsAssessment)
+    
+    public function withIsAssessment(bool $IsAssessment): static
     {
         $new = clone $this;
         $new->IsAssessment = $IsAssessment;
@@ -395,20 +262,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOwnerDomainID()
+    
+    public function getOwnerDomainID(): string
     {
         return $this->OwnerDomainID;
     }
 
-    /**
-     * @param string $OwnerDomainID
-     *
-     * @return LearningActivity
-     */
-    public function withOwnerDomainID($OwnerDomainID)
+    
+    public function withOwnerDomainID(string $OwnerDomainID): static
     {
         $new = clone $this;
         $new->OwnerDomainID = $OwnerDomainID;
@@ -416,20 +277,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOwnerDomainName()
+    
+    public function getOwnerDomainName(): string
     {
         return $this->OwnerDomainName;
     }
 
-    /**
-     * @param string $OwnerDomainName
-     *
-     * @return LearningActivity
-     */
-    public function withOwnerDomainName($OwnerDomainName)
+    
+    public function withOwnerDomainName(string $OwnerDomainName): static
     {
         $new = clone $this;
         $new->OwnerDomainName = $OwnerDomainName;
@@ -437,20 +292,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEquivalencyID()
+    
+    public function getEquivalencyID(): string
     {
         return $this->EquivalencyID;
     }
 
-    /**
-     * @param string $EquivalencyID
-     *
-     * @return LearningActivity
-     */
-    public function withEquivalencyID($EquivalencyID)
+    
+    public function withEquivalencyID(string $EquivalencyID): static
     {
         $new = clone $this;
         $new->EquivalencyID = $EquivalencyID;
@@ -458,20 +307,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEquivalencyName()
+    
+    public function getEquivalencyName(): string
     {
         return $this->EquivalencyName;
     }
 
-    /**
-     * @param string $EquivalencyName
-     *
-     * @return LearningActivity
-     */
-    public function withEquivalencyName($EquivalencyName)
+    
+    public function withEquivalencyName(string $EquivalencyName): static
     {
         $new = clone $this;
         $new->EquivalencyName = $EquivalencyName;
@@ -479,20 +322,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsActive()
+    
+    public function getIsActive(): bool
     {
         return $this->IsActive;
     }
 
-    /**
-     * @param bool $IsActive
-     *
-     * @return LearningActivity
-     */
-    public function withIsActive($IsActive)
+    
+    public function withIsActive(bool $IsActive): static
     {
         $new = clone $this;
         $new->IsActive = $IsActive;
@@ -500,20 +337,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTags()
+    
+    public function getTags(): string
     {
         return $this->Tags;
     }
 
-    /**
-     * @param string $Tags
-     *
-     * @return LearningActivity
-     */
-    public function withTags($Tags)
+    
+    public function withTags(string $Tags): static
     {
         $new = clone $this;
         $new->Tags = $Tags;
@@ -521,20 +352,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogoUrl()
+    
+    public function getLogoUrl(): string
     {
         return $this->LogoUrl;
     }
 
-    /**
-     * @param string $LogoUrl
-     *
-     * @return LearningActivity
-     */
-    public function withLogoUrl($LogoUrl)
+    
+    public function withLogoUrl(string $LogoUrl): static
     {
         $new = clone $this;
         $new->LogoUrl = $LogoUrl;
@@ -542,20 +367,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasForum()
+    
+    public function getHasForum(): bool
     {
         return $this->HasForum;
     }
 
-    /**
-     * @param bool $HasForum
-     *
-     * @return LearningActivity
-     */
-    public function withHasForum($HasForum)
+    
+    public function withHasForum(bool $HasForum): static
     {
         $new = clone $this;
         $new->HasForum = $HasForum;
@@ -563,20 +382,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasFeedback()
+    
+    public function getHasFeedback(): bool
     {
         return $this->HasFeedback;
     }
 
-    /**
-     * @param bool $HasFeedback
-     *
-     * @return LearningActivity
-     */
-    public function withHasFeedback($HasFeedback)
+    
+    public function withHasFeedback(bool $HasFeedback): static
     {
         $new = clone $this;
         $new->HasFeedback = $HasFeedback;
@@ -584,20 +397,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasAssignments()
+    
+    public function getHasAssignments(): bool
     {
         return $this->HasAssignments;
     }
 
-    /**
-     * @param bool $HasAssignments
-     *
-     * @return LearningActivity
-     */
-    public function withHasAssignments($HasAssignments)
+    
+    public function withHasAssignments(bool $HasAssignments): static
     {
         $new = clone $this;
         $new->HasAssignments = $HasAssignments;
@@ -605,20 +412,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasSample()
+    
+    public function getHasSample(): bool
     {
         return $this->HasSample;
     }
 
-    /**
-     * @param bool $HasSample
-     *
-     * @return LearningActivity
-     */
-    public function withHasSample($HasSample)
+    
+    public function withHasSample(bool $HasSample): static
     {
         $new = clone $this;
         $new->HasSample = $HasSample;
@@ -626,20 +427,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getLearningTime()
+    
+    public function getLearningTime(): float
     {
         return $this->LearningTime;
     }
 
-    /**
-     * @param float $LearningTime
-     *
-     * @return LearningActivity
-     */
-    public function withLearningTime($LearningTime)
+    
+    public function withLearningTime(float $LearningTime): static
     {
         $new = clone $this;
         $new->LearningTime = $LearningTime;
@@ -647,20 +442,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantCertificate()
+    
+    public function getGrantCertificate(): bool
     {
         return $this->GrantCertificate;
     }
 
-    /**
-     * @param bool $GrantCertificate
-     *
-     * @return LearningActivity
-     */
-    public function withGrantCertificate($GrantCertificate)
+    
+    public function withGrantCertificate(bool $GrantCertificate): static
     {
         $new = clone $this;
         $new->GrantCertificate = $GrantCertificate;
@@ -668,20 +457,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCreditValue()
+    
+    public function getCreditValue(): float
     {
         return $this->CreditValue;
     }
 
-    /**
-     * @param float $CreditValue
-     *
-     * @return LearningActivity
-     */
-    public function withCreditValue($CreditValue)
+    
+    public function withCreditValue(float $CreditValue): static
     {
         $new = clone $this;
         $new->CreditValue = $CreditValue;
@@ -689,20 +472,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantBadge()
+    
+    public function getGrantBadge(): bool
     {
         return $this->GrantBadge;
     }
 
-    /**
-     * @param bool $GrantBadge
-     *
-     * @return LearningActivity
-     */
-    public function withGrantBadge($GrantBadge)
+    
+    public function withGrantBadge(bool $GrantBadge): static
     {
         $new = clone $this;
         $new->GrantBadge = $GrantBadge;
@@ -710,20 +487,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getStartDate()
+    
+    public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $StartDate
-     *
-     * @return LearningActivity
-     */
-    public function withStartDate($StartDate)
+    
+    public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
         $new->StartDate = $StartDate;
@@ -731,20 +502,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getFirstEnrollmentDate()
+    
+    public function getFirstEnrollmentDate(): DateTimeInterface
     {
         return $this->FirstEnrollmentDate;
     }
 
-    /**
-     * @param \DateTimeInterface $FirstEnrollmentDate
-     *
-     * @return LearningActivity
-     */
-    public function withFirstEnrollmentDate($FirstEnrollmentDate)
+    
+    public function withFirstEnrollmentDate(DateTimeInterface $FirstEnrollmentDate): static
     {
         $new = clone $this;
         $new->FirstEnrollmentDate = $FirstEnrollmentDate;
@@ -752,20 +517,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastEnrollmentDate()
+    
+    public function getLastEnrollmentDate(): DateTimeInterface
     {
         return $this->LastEnrollmentDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastEnrollmentDate
-     *
-     * @return LearningActivity
-     */
-    public function withLastEnrollmentDate($LastEnrollmentDate)
+    
+    public function withLastEnrollmentDate(DateTimeInterface $LastEnrollmentDate): static
     {
         $new = clone $this;
         $new->LastEnrollmentDate = $LastEnrollmentDate;
@@ -773,20 +532,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDueDate()
+    
+    public function getDueDate(): string
     {
         return $this->DueDate;
     }
 
-    /**
-     * @param string $DueDate
-     *
-     * @return LearningActivity
-     */
-    public function withDueDate($DueDate)
+    
+    public function withDueDate(string $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
@@ -794,20 +547,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAccreditationExpires()
+    
+    public function getAccreditationExpires(): bool
     {
         return $this->AccreditationExpires;
     }
 
-    /**
-     * @param bool $AccreditationExpires
-     *
-     * @return LearningActivity
-     */
-    public function withAccreditationExpires($AccreditationExpires)
+    
+    public function withAccreditationExpires(bool $AccreditationExpires): static
     {
         $new = clone $this;
         $new->AccreditationExpires = $AccreditationExpires;
@@ -815,20 +562,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getAllowedReenrollmentsNumber()
+    
+    public function getAllowedReenrollmentsNumber(): int
     {
         return $this->AllowedReenrollmentsNumber;
     }
 
-    /**
-     * @param int $AllowedReenrollmentsNumber
-     *
-     * @return LearningActivity
-     */
-    public function withAllowedReenrollmentsNumber($AllowedReenrollmentsNumber)
+    
+    public function withAllowedReenrollmentsNumber(int $AllowedReenrollmentsNumber): static
     {
         $new = clone $this;
         $new->AllowedReenrollmentsNumber = $AllowedReenrollmentsNumber;
@@ -836,20 +577,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAccreditationExpiresBasedOnEnrollmentDate()
+    
+    public function getAccreditationExpiresBasedOnEnrollmentDate(): bool
     {
         return $this->AccreditationExpiresBasedOnEnrollmentDate;
     }
 
-    /**
-     * @param bool $AccreditationExpiresBasedOnEnrollmentDate
-     *
-     * @return LearningActivity
-     */
-    public function withAccreditationExpiresBasedOnEnrollmentDate($AccreditationExpiresBasedOnEnrollmentDate)
+    
+    public function withAccreditationExpiresBasedOnEnrollmentDate(bool $AccreditationExpiresBasedOnEnrollmentDate): static
     {
         $new = clone $this;
         $new->AccreditationExpiresBasedOnEnrollmentDate = $AccreditationExpiresBasedOnEnrollmentDate;
@@ -857,20 +592,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getAccreditationExpiresUnits()
+    
+    public function getAccreditationExpiresUnits(): int
     {
         return $this->AccreditationExpiresUnits;
     }
 
-    /**
-     * @param int $AccreditationExpiresUnits
-     *
-     * @return LearningActivity
-     */
-    public function withAccreditationExpiresUnits($AccreditationExpiresUnits)
+    
+    public function withAccreditationExpiresUnits(int $AccreditationExpiresUnits): static
     {
         $new = clone $this;
         $new->AccreditationExpiresUnits = $AccreditationExpiresUnits;
@@ -878,20 +607,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAccreditationExpiresInterval()
+    
+    public function getAccreditationExpiresInterval(): string
     {
         return $this->AccreditationExpiresInterval;
     }
 
-    /**
-     * @param string $AccreditationExpiresInterval
-     *
-     * @return LearningActivity
-     */
-    public function withAccreditationExpiresInterval($AccreditationExpiresInterval)
+    
+    public function withAccreditationExpiresInterval(string $AccreditationExpiresInterval): static
     {
         $new = clone $this;
         $new->AccreditationExpiresInterval = $AccreditationExpiresInterval;
@@ -899,20 +622,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getReenrollmentAllowedBeforeExpiringUnits()
+    
+    public function getReenrollmentAllowedBeforeExpiringUnits(): int
     {
         return $this->ReenrollmentAllowedBeforeExpiringUnits;
     }
 
-    /**
-     * @param int $ReenrollmentAllowedBeforeExpiringUnits
-     *
-     * @return LearningActivity
-     */
-    public function withReenrollmentAllowedBeforeExpiringUnits($ReenrollmentAllowedBeforeExpiringUnits)
+    
+    public function withReenrollmentAllowedBeforeExpiringUnits(int $ReenrollmentAllowedBeforeExpiringUnits): static
     {
         $new = clone $this;
         $new->ReenrollmentAllowedBeforeExpiringUnits = $ReenrollmentAllowedBeforeExpiringUnits;
@@ -920,20 +637,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReenrollmentAllowedBeforeExpiringInterval()
+    
+    public function getReenrollmentAllowedBeforeExpiringInterval(): string
     {
         return $this->ReenrollmentAllowedBeforeExpiringInterval;
     }
 
-    /**
-     * @param string $ReenrollmentAllowedBeforeExpiringInterval
-     *
-     * @return LearningActivity
-     */
-    public function withReenrollmentAllowedBeforeExpiringInterval($ReenrollmentAllowedBeforeExpiringInterval)
+    
+    public function withReenrollmentAllowedBeforeExpiringInterval(string $ReenrollmentAllowedBeforeExpiringInterval): static
     {
         $new = clone $this;
         $new->ReenrollmentAllowedBeforeExpiringInterval = $ReenrollmentAllowedBeforeExpiringInterval;
@@ -941,20 +652,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCustomField
-     */
-    public function getCustomFields()
+    
+    public function getCustomFields(): ArrayOfCustomField
     {
         return $this->CustomFields;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCustomField $CustomFields
-     *
-     * @return LearningActivity
-     */
-    public function withCustomFields($CustomFields)
+    
+    public function withCustomFields(ArrayOfCustomField $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
@@ -962,20 +667,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseSession
-     */
-    public function getSessions()
+    
+    public function getSessions(): ArrayOfCourseSession
     {
         return $this->Sessions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseSession $Sessions
-     *
-     * @return LearningActivity
-     */
-    public function withSessions($Sessions)
+    
+    public function withSessions(ArrayOfCourseSession $Sessions): static
     {
         $new = clone $this;
         $new->Sessions = $Sessions;
@@ -983,20 +682,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfLearningActivityCohort
-     */
-    public function getCohorts()
+    
+    public function getCohorts(): ArrayOfLearningActivityCohort
     {
         return $this->Cohorts;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfLearningActivityCohort $Cohorts
-     *
-     * @return LearningActivity
-     */
-    public function withCohorts($Cohorts)
+    
+    public function withCohorts(ArrayOfLearningActivityCohort $Cohorts): static
     {
         $new = clone $this;
         $new->Cohorts = $Cohorts;
@@ -1004,20 +697,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDetailsLink()
+    
+    public function getDetailsLink(): string
     {
         return $this->DetailsLink;
     }
 
-    /**
-     * @param string $DetailsLink
-     *
-     * @return LearningActivity
-     */
-    public function withDetailsLink($DetailsLink)
+    
+    public function withDetailsLink(string $DetailsLink): static
     {
         $new = clone $this;
         $new->DetailsLink = $DetailsLink;
@@ -1025,20 +712,14 @@ class LearningActivity
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastModifiedTimestamp()
+    
+    public function getLastModifiedTimestamp(): DateTimeInterface
     {
         return $this->LastModifiedTimestamp;
     }
 
-    /**
-     * @param \DateTimeInterface $LastModifiedTimestamp
-     *
-     * @return LearningActivity
-     */
-    public function withLastModifiedTimestamp($LastModifiedTimestamp)
+    
+    public function withLastModifiedTimestamp(DateTimeInterface $LastModifiedTimestamp): static
     {
         $new = clone $this;
         $new->LastModifiedTimestamp = $LastModifiedTimestamp;

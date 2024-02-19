@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement;
 
@@ -9,7 +9,7 @@ use Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection;
 
 class LearnerManagementClassmap
 {
-    public static function getCollection(): \Soap\ExtSoapEngine\Configuration\ClassMap\ClassMapCollection
+    public static function getCollection(): ClassMapCollection
     {
         return new ClassMapCollection(
             new ClassMap('GetAllUsers', Type\GetAllUsers::class),

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class DeleteUserByLookup implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $lookupValue;
+    
+    private string $lookupValue;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $lookupValue
      */
-    public function __construct($apiKey, $lookupValue)
+    public function __construct(string $apiKey, string $lookupValue)
     {
         $this->apiKey = $apiKey;
         $this->lookupValue = $lookupValue;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return DeleteUserByLookup
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class DeleteUserByLookup implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLookupValue()
+    
+    public function getLookupValue(): string
     {
         return $this->lookupValue;
     }
 
-    /**
-     * @param string $lookupValue
-     *
-     * @return DeleteUserByLookup
-     */
-    public function withLookupValue($lookupValue)
+    
+    public function withLookupValue(string $lookupValue): static
     {
         $new = clone $this;
         $new->lookupValue = $lookupValue;

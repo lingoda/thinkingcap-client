@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ValidateTimedSeedResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfBoolean
-     */
-    private $ValidateTimedSeedResult;
+    private ServiceResultOfBoolean $ValidateTimedSeedResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfBoolean
-     */
-    public function getValidateTimedSeedResult()
+    
+    public function getValidateTimedSeedResult(): ServiceResultOfBoolean
     {
         return $this->ValidateTimedSeedResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfBoolean $ValidateTimedSeedResult
-     *
-     * @return ValidateTimedSeedResponse
-     */
-    public function withValidateTimedSeedResult($ValidateTimedSeedResult)
+    
+    public function withValidateTimedSeedResult(ServiceResultOfBoolean $ValidateTimedSeedResult): static
     {
         $new = clone $this;
         $new->ValidateTimedSeedResult = $ValidateTimedSeedResult;

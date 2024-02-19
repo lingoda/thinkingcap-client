@@ -1,135 +1,84 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class FeedbackQuestion
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $SectionID;
+    
+    private string $SectionID;
 
-    /**
-     * @var string
-     */
-    private $Text;
+    
+    private string $Text;
 
-    /**
-     * @var string
-     */
-    private $TextEN;
+    
+    private string $TextEN;
 
-    /**
-     * @var int
-     */
-    private $Display;
+    
+    private int $Display;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType
-     */
-    private $ChoiceList;
+    
+    private ArrayOfAnyType $ChoiceList;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType
-     */
-    private $SubquestionList;
+    
+    private ArrayOfAnyType $SubquestionList;
 
-    /**
-     * @var string
-     */
-    private $ParentID;
+    
+    private string $ParentID;
 
-    /**
-     * @var string
-     */
-    private $ParentChoiceID;
+    
+    private string $ParentChoiceID;
 
-    /**
-     * @var string
-     */
-    private $Type;
+    
+    private string $Type;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToCourses;
+    
+    private bool $ApplyToCourses;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToLP;
+    
+    private bool $ApplyToLP;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToAssessments;
+    
+    private bool $ApplyToAssessments;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToIL;
+    
+    private bool $ApplyToIL;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToPortfolio;
+    
+    private bool $ApplyToPortfolio;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToDemonstration;
+    
+    private bool $ApplyToDemonstration;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToComprehension;
+    
+    private bool $ApplyToComprehension;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToExternalActivity;
+    
+    private bool $ApplyToExternalActivity;
 
-    /**
-     * @var bool
-     */
-    private $ApplyToLPGroups;
+    
+    private bool $ApplyToLPGroups;
 
-    /**
-     * @var bool
-     */
-    private $IsRequired;
+    
+    private bool $IsRequired;
 
-    /**
-     * @var bool
-     */
-    private $DisplaySlidingScale;
+    
+    private bool $DisplaySlidingScale;
 
-    /**
-     * @var string
-     */
-    private $DomainSurveyID;
+    
+    private string $DomainSurveyID;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return FeedbackQuestion
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -137,20 +86,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSectionID()
+    
+    public function getSectionID(): string
     {
         return $this->SectionID;
     }
 
-    /**
-     * @param string $SectionID
-     *
-     * @return FeedbackQuestion
-     */
-    public function withSectionID($SectionID)
+    
+    public function withSectionID(string $SectionID): static
     {
         $new = clone $this;
         $new->SectionID = $SectionID;
@@ -158,20 +101,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getText()
+    
+    public function getText(): string
     {
         return $this->Text;
     }
 
-    /**
-     * @param string $Text
-     *
-     * @return FeedbackQuestion
-     */
-    public function withText($Text)
+    
+    public function withText(string $Text): static
     {
         $new = clone $this;
         $new->Text = $Text;
@@ -179,20 +116,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTextEN()
+    
+    public function getTextEN(): string
     {
         return $this->TextEN;
     }
 
-    /**
-     * @param string $TextEN
-     *
-     * @return FeedbackQuestion
-     */
-    public function withTextEN($TextEN)
+    
+    public function withTextEN(string $TextEN): static
     {
         $new = clone $this;
         $new->TextEN = $TextEN;
@@ -200,20 +131,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getDisplay()
+    
+    public function getDisplay(): int
     {
         return $this->Display;
     }
 
-    /**
-     * @param int $Display
-     *
-     * @return FeedbackQuestion
-     */
-    public function withDisplay($Display)
+    
+    public function withDisplay(int $Display): static
     {
         $new = clone $this;
         $new->Display = $Display;
@@ -221,20 +146,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType
-     */
-    public function getChoiceList()
+    
+    public function getChoiceList(): ArrayOfAnyType
     {
         return $this->ChoiceList;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType $ChoiceList
-     *
-     * @return FeedbackQuestion
-     */
-    public function withChoiceList($ChoiceList)
+    
+    public function withChoiceList(ArrayOfAnyType $ChoiceList): static
     {
         $new = clone $this;
         $new->ChoiceList = $ChoiceList;
@@ -242,20 +161,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType
-     */
-    public function getSubquestionList()
+    
+    public function getSubquestionList(): ArrayOfAnyType
     {
         return $this->SubquestionList;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ArrayOfAnyType $SubquestionList
-     *
-     * @return FeedbackQuestion
-     */
-    public function withSubquestionList($SubquestionList)
+    
+    public function withSubquestionList(ArrayOfAnyType $SubquestionList): static
     {
         $new = clone $this;
         $new->SubquestionList = $SubquestionList;
@@ -263,20 +176,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getParentID()
+    
+    public function getParentID(): string
     {
         return $this->ParentID;
     }
 
-    /**
-     * @param string $ParentID
-     *
-     * @return FeedbackQuestion
-     */
-    public function withParentID($ParentID)
+    
+    public function withParentID(string $ParentID): static
     {
         $new = clone $this;
         $new->ParentID = $ParentID;
@@ -284,20 +191,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getParentChoiceID()
+    
+    public function getParentChoiceID(): string
     {
         return $this->ParentChoiceID;
     }
 
-    /**
-     * @param string $ParentChoiceID
-     *
-     * @return FeedbackQuestion
-     */
-    public function withParentChoiceID($ParentChoiceID)
+    
+    public function withParentChoiceID(string $ParentChoiceID): static
     {
         $new = clone $this;
         $new->ParentChoiceID = $ParentChoiceID;
@@ -305,20 +206,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return FeedbackQuestion
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -326,20 +221,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToCourses()
+    
+    public function getApplyToCourses(): bool
     {
         return $this->ApplyToCourses;
     }
 
-    /**
-     * @param bool $ApplyToCourses
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToCourses($ApplyToCourses)
+    
+    public function withApplyToCourses(bool $ApplyToCourses): static
     {
         $new = clone $this;
         $new->ApplyToCourses = $ApplyToCourses;
@@ -347,20 +236,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToLP()
+    
+    public function getApplyToLP(): bool
     {
         return $this->ApplyToLP;
     }
 
-    /**
-     * @param bool $ApplyToLP
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToLP($ApplyToLP)
+    
+    public function withApplyToLP(bool $ApplyToLP): static
     {
         $new = clone $this;
         $new->ApplyToLP = $ApplyToLP;
@@ -368,20 +251,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToAssessments()
+    
+    public function getApplyToAssessments(): bool
     {
         return $this->ApplyToAssessments;
     }
 
-    /**
-     * @param bool $ApplyToAssessments
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToAssessments($ApplyToAssessments)
+    
+    public function withApplyToAssessments(bool $ApplyToAssessments): static
     {
         $new = clone $this;
         $new->ApplyToAssessments = $ApplyToAssessments;
@@ -389,20 +266,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToIL()
+    
+    public function getApplyToIL(): bool
     {
         return $this->ApplyToIL;
     }
 
-    /**
-     * @param bool $ApplyToIL
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToIL($ApplyToIL)
+    
+    public function withApplyToIL(bool $ApplyToIL): static
     {
         $new = clone $this;
         $new->ApplyToIL = $ApplyToIL;
@@ -410,20 +281,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToPortfolio()
+    
+    public function getApplyToPortfolio(): bool
     {
         return $this->ApplyToPortfolio;
     }
 
-    /**
-     * @param bool $ApplyToPortfolio
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToPortfolio($ApplyToPortfolio)
+    
+    public function withApplyToPortfolio(bool $ApplyToPortfolio): static
     {
         $new = clone $this;
         $new->ApplyToPortfolio = $ApplyToPortfolio;
@@ -431,20 +296,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToDemonstration()
+    
+    public function getApplyToDemonstration(): bool
     {
         return $this->ApplyToDemonstration;
     }
 
-    /**
-     * @param bool $ApplyToDemonstration
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToDemonstration($ApplyToDemonstration)
+    
+    public function withApplyToDemonstration(bool $ApplyToDemonstration): static
     {
         $new = clone $this;
         $new->ApplyToDemonstration = $ApplyToDemonstration;
@@ -452,20 +311,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToComprehension()
+    
+    public function getApplyToComprehension(): bool
     {
         return $this->ApplyToComprehension;
     }
 
-    /**
-     * @param bool $ApplyToComprehension
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToComprehension($ApplyToComprehension)
+    
+    public function withApplyToComprehension(bool $ApplyToComprehension): static
     {
         $new = clone $this;
         $new->ApplyToComprehension = $ApplyToComprehension;
@@ -473,20 +326,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToExternalActivity()
+    
+    public function getApplyToExternalActivity(): bool
     {
         return $this->ApplyToExternalActivity;
     }
 
-    /**
-     * @param bool $ApplyToExternalActivity
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToExternalActivity($ApplyToExternalActivity)
+    
+    public function withApplyToExternalActivity(bool $ApplyToExternalActivity): static
     {
         $new = clone $this;
         $new->ApplyToExternalActivity = $ApplyToExternalActivity;
@@ -494,20 +341,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyToLPGroups()
+    
+    public function getApplyToLPGroups(): bool
     {
         return $this->ApplyToLPGroups;
     }
 
-    /**
-     * @param bool $ApplyToLPGroups
-     *
-     * @return FeedbackQuestion
-     */
-    public function withApplyToLPGroups($ApplyToLPGroups)
+    
+    public function withApplyToLPGroups(bool $ApplyToLPGroups): static
     {
         $new = clone $this;
         $new->ApplyToLPGroups = $ApplyToLPGroups;
@@ -515,20 +356,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsRequired()
+    
+    public function getIsRequired(): bool
     {
         return $this->IsRequired;
     }
 
-    /**
-     * @param bool $IsRequired
-     *
-     * @return FeedbackQuestion
-     */
-    public function withIsRequired($IsRequired)
+    
+    public function withIsRequired(bool $IsRequired): static
     {
         $new = clone $this;
         $new->IsRequired = $IsRequired;
@@ -536,20 +371,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDisplaySlidingScale()
+    
+    public function getDisplaySlidingScale(): bool
     {
         return $this->DisplaySlidingScale;
     }
 
-    /**
-     * @param bool $DisplaySlidingScale
-     *
-     * @return FeedbackQuestion
-     */
-    public function withDisplaySlidingScale($DisplaySlidingScale)
+    
+    public function withDisplaySlidingScale(bool $DisplaySlidingScale): static
     {
         $new = clone $this;
         $new->DisplaySlidingScale = $DisplaySlidingScale;
@@ -557,20 +386,14 @@ class FeedbackQuestion
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainSurveyID()
+    
+    public function getDomainSurveyID(): string
     {
         return $this->DomainSurveyID;
     }
 
-    /**
-     * @param string $DomainSurveyID
-     *
-     * @return FeedbackQuestion
-     */
-    public function withDomainSurveyID($DomainSurveyID)
+    
+    public function withDomainSurveyID(string $DomainSurveyID): static
     {
         $new = clone $this;
         $new->DomainSurveyID = $DomainSurveyID;

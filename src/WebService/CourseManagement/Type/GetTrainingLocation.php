@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetTrainingLocation implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $locationID;
+    
+    private string $locationID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $locationID
      */
-    public function __construct($apiKey, $locationID)
+    public function __construct(string $apiKey, string $locationID)
     {
         $this->apiKey = $apiKey;
         $this->locationID = $locationID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetTrainingLocation
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GetTrainingLocation implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLocationID()
+    
+    public function getLocationID(): string
     {
         return $this->locationID;
     }
 
-    /**
-     * @param string $locationID
-     *
-     * @return GetTrainingLocation
-     */
-    public function withLocationID($locationID)
+    
+    public function withLocationID(string $locationID): static
     {
         $new = clone $this;
         $new->locationID = $locationID;

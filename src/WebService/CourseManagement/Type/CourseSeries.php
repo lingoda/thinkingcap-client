@@ -1,90 +1,57 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CourseSeries
 {
-    /**
-     * @var string
-     */
-    private $SeriesID;
+    private string $SeriesID;
 
-    /**
-     * @var string
-     */
-    private $SeriesCode;
+    
+    private string $SeriesCode;
 
-    /**
-     * @var string
-     */
-    private $SeriesTitle;
+    
+    private string $SeriesTitle;
 
-    /**
-     * @var string
-     */
-    private $SeriesDescription;
+    
+    private string $SeriesDescription;
 
-    /**
-     * @var string
-     */
-    private $SeriesKeyword;
+    
+    private string $SeriesKeyword;
 
-    /**
-     * @var string
-     */
-    private $SeriesProgram;
+    
+    private string $SeriesProgram;
 
-    /**
-     * @var bool
-     */
-    private $AllowGlobalOnly;
+    
+    private bool $AllowGlobalOnly;
 
-    /**
-     * @var bool
-     */
-    private $WaitlistOnlyInOneMember;
+    
+    private bool $WaitlistOnlyInOneMember;
 
-    /**
-     * @var bool
-     */
-    private $DoNotInherit;
+    
+    private bool $DoNotInherit;
 
-    /**
-     * @var string
-     */
-    private $SeriesFieldsXml;
+    
+    private string $SeriesFieldsXml;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $CertificateRules;
+    
+    private ArrayOfAnyType $CertificateRules;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $EquivalencyLearningObjectsArray;
+    
+    private ArrayOfAnyType $EquivalencyLearningObjectsArray;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $EquivalencyActivityArray;
+    
+    private ArrayOfAnyType $EquivalencyActivityArray;
 
-    /**
-     * @return string
-     */
-    public function getSeriesID()
+    
+    public function getSeriesID(): string
     {
         return $this->SeriesID;
     }
 
-    /**
-     * @param string $SeriesID
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesID($SeriesID)
+    
+    public function withSeriesID(string $SeriesID): static
     {
         $new = clone $this;
         $new->SeriesID = $SeriesID;
@@ -92,20 +59,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesCode()
+    
+    public function getSeriesCode(): string
     {
         return $this->SeriesCode;
     }
 
-    /**
-     * @param string $SeriesCode
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesCode($SeriesCode)
+    
+    public function withSeriesCode(string $SeriesCode): static
     {
         $new = clone $this;
         $new->SeriesCode = $SeriesCode;
@@ -113,20 +74,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesTitle()
+    
+    public function getSeriesTitle(): string
     {
         return $this->SeriesTitle;
     }
 
-    /**
-     * @param string $SeriesTitle
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesTitle($SeriesTitle)
+    
+    public function withSeriesTitle(string $SeriesTitle): static
     {
         $new = clone $this;
         $new->SeriesTitle = $SeriesTitle;
@@ -134,20 +89,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesDescription()
+    
+    public function getSeriesDescription(): string
     {
         return $this->SeriesDescription;
     }
 
-    /**
-     * @param string $SeriesDescription
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesDescription($SeriesDescription)
+    
+    public function withSeriesDescription(string $SeriesDescription): static
     {
         $new = clone $this;
         $new->SeriesDescription = $SeriesDescription;
@@ -155,20 +104,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesKeyword()
+    
+    public function getSeriesKeyword(): string
     {
         return $this->SeriesKeyword;
     }
 
-    /**
-     * @param string $SeriesKeyword
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesKeyword($SeriesKeyword)
+    
+    public function withSeriesKeyword(string $SeriesKeyword): static
     {
         $new = clone $this;
         $new->SeriesKeyword = $SeriesKeyword;
@@ -176,20 +119,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesProgram()
+    
+    public function getSeriesProgram(): string
     {
         return $this->SeriesProgram;
     }
 
-    /**
-     * @param string $SeriesProgram
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesProgram($SeriesProgram)
+    
+    public function withSeriesProgram(string $SeriesProgram): static
     {
         $new = clone $this;
         $new->SeriesProgram = $SeriesProgram;
@@ -197,20 +134,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowGlobalOnly()
+    
+    public function getAllowGlobalOnly(): bool
     {
         return $this->AllowGlobalOnly;
     }
 
-    /**
-     * @param bool $AllowGlobalOnly
-     *
-     * @return CourseSeries
-     */
-    public function withAllowGlobalOnly($AllowGlobalOnly)
+    
+    public function withAllowGlobalOnly(bool $AllowGlobalOnly): static
     {
         $new = clone $this;
         $new->AllowGlobalOnly = $AllowGlobalOnly;
@@ -218,20 +149,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWaitlistOnlyInOneMember()
+    
+    public function getWaitlistOnlyInOneMember(): bool
     {
         return $this->WaitlistOnlyInOneMember;
     }
 
-    /**
-     * @param bool $WaitlistOnlyInOneMember
-     *
-     * @return CourseSeries
-     */
-    public function withWaitlistOnlyInOneMember($WaitlistOnlyInOneMember)
+    
+    public function withWaitlistOnlyInOneMember(bool $WaitlistOnlyInOneMember): static
     {
         $new = clone $this;
         $new->WaitlistOnlyInOneMember = $WaitlistOnlyInOneMember;
@@ -239,20 +164,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotInherit()
+    
+    public function getDoNotInherit(): bool
     {
         return $this->DoNotInherit;
     }
 
-    /**
-     * @param bool $DoNotInherit
-     *
-     * @return CourseSeries
-     */
-    public function withDoNotInherit($DoNotInherit)
+    
+    public function withDoNotInherit(bool $DoNotInherit): static
     {
         $new = clone $this;
         $new->DoNotInherit = $DoNotInherit;
@@ -260,20 +179,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesFieldsXml()
+    
+    public function getSeriesFieldsXml(): string
     {
         return $this->SeriesFieldsXml;
     }
 
-    /**
-     * @param string $SeriesFieldsXml
-     *
-     * @return CourseSeries
-     */
-    public function withSeriesFieldsXml($SeriesFieldsXml)
+    
+    public function withSeriesFieldsXml(string $SeriesFieldsXml): static
     {
         $new = clone $this;
         $new->SeriesFieldsXml = $SeriesFieldsXml;
@@ -281,20 +194,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getCertificateRules()
+    
+    public function getCertificateRules(): ArrayOfAnyType
     {
         return $this->CertificateRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $CertificateRules
-     *
-     * @return CourseSeries
-     */
-    public function withCertificateRules($CertificateRules)
+    
+    public function withCertificateRules(ArrayOfAnyType $CertificateRules): static
     {
         $new = clone $this;
         $new->CertificateRules = $CertificateRules;
@@ -302,20 +209,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getEquivalencyLearningObjectsArray()
+    
+    public function getEquivalencyLearningObjectsArray(): ArrayOfAnyType
     {
         return $this->EquivalencyLearningObjectsArray;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $EquivalencyLearningObjectsArray
-     *
-     * @return CourseSeries
-     */
-    public function withEquivalencyLearningObjectsArray($EquivalencyLearningObjectsArray)
+    
+    public function withEquivalencyLearningObjectsArray(ArrayOfAnyType $EquivalencyLearningObjectsArray): static
     {
         $new = clone $this;
         $new->EquivalencyLearningObjectsArray = $EquivalencyLearningObjectsArray;
@@ -323,20 +224,14 @@ class CourseSeries
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getEquivalencyActivityArray()
+    
+    public function getEquivalencyActivityArray(): ArrayOfAnyType
     {
         return $this->EquivalencyActivityArray;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $EquivalencyActivityArray
-     *
-     * @return CourseSeries
-     */
-    public function withEquivalencyActivityArray($EquivalencyActivityArray)
+    
+    public function withEquivalencyActivityArray(ArrayOfAnyType $EquivalencyActivityArray): static
     {
         $new = clone $this;
         $new->EquivalencyActivityArray = $EquivalencyActivityArray;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseByCode implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseCode;
+    
+    private string $courseCode;
 
-    /**
-     * @var string
-     */
-    private $language;
+    
+    private string $language;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseCode
-     * @param string $language
      */
-    public function __construct($apiKey, $courseCode, $language)
+    public function __construct(string $apiKey, string $courseCode, string $language)
     {
         $this->apiKey = $apiKey;
         $this->courseCode = $courseCode;
         $this->language = $language;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetCourseByCode
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetCourseByCode implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseCode()
+    
+    public function getCourseCode(): string
     {
         return $this->courseCode;
     }
 
-    /**
-     * @param string $courseCode
-     *
-     * @return GetCourseByCode
-     */
-    public function withCourseCode($courseCode)
+    
+    public function withCourseCode(string $courseCode): static
     {
         $new = clone $this;
         $new->courseCode = $courseCode;
@@ -79,20 +57,14 @@ class GetCourseByCode implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->language;
     }
 
-    /**
-     * @param string $language
-     *
-     * @return GetCourseByCode
-     */
-    public function withLanguage($language)
+    
+    public function withLanguage(string $language): static
     {
         $new = clone $this;
         $new->language = $language;

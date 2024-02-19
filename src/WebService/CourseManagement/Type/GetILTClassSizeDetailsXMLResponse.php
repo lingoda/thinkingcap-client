@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetILTClassSizeDetailsXMLResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfXmlDocument
-     */
-    private $GetILTClassSizeDetailsXMLResult;
+    private ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfXmlDocument
-     */
-    public function getGetILTClassSizeDetailsXMLResult()
+    
+    public function getGetILTClassSizeDetailsXMLResult(): ServiceResultOfXmlDocument
     {
         return $this->GetILTClassSizeDetailsXMLResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult
-     *
-     * @return GetILTClassSizeDetailsXMLResponse
-     */
-    public function withGetILTClassSizeDetailsXMLResult($GetILTClassSizeDetailsXMLResult)
+    
+    public function withGetILTClassSizeDetailsXMLResult(ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult): static
     {
         $new = clone $this;
         $new->GetILTClassSizeDetailsXMLResult = $GetILTClassSizeDetailsXMLResult;

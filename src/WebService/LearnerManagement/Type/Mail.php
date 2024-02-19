@@ -1,105 +1,68 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
+use DateTimeInterface;
+
 class Mail
 {
-    /**
-     * @var string
-     */
-    private $MailID;
+    private string $MailID;
 
-    /**
-     * @var string
-     */
-    private $UserID;
+    
+    private string $UserID;
 
-    /**
-     * @var string
-     */
-    private $FromID;
+    
+    private string $FromID;
 
-    /**
-     * @var string
-     */
-    private $FromMail;
+    
+    private string $FromMail;
 
-    /**
-     * @var string
-     */
-    private $FromName;
+    
+    private string $FromName;
 
-    /**
-     * @var string
-     */
-    private $FromScreenName;
+    
+    private string $FromScreenName;
 
-    /**
-     * @var string
-     */
-    private $UserName;
+    
+    private string $UserName;
 
-    /**
-     * @var string
-     */
-    private $ToEmail;
+    
+    private string $ToEmail;
 
-    /**
-     * @var string
-     */
-    private $CC;
+    
+    private string $CC;
 
-    /**
-     * @var string
-     */
-    private $BCC;
+    
+    private string $BCC;
 
-    /**
-     * @var string
-     */
-    private $Subject;
+    
+    private string $Subject;
 
-    /**
-     * @var string
-     */
-    private $Body;
+    
+    private string $Body;
 
-    /**
-     * @var string
-     */
-    private $Folder;
+    
+    private string $Folder;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $MailDate;
+    
+    private DateTimeInterface $MailDate;
 
-    /**
-     * @var int
-     */
-    private $NumReplies;
+    
+    private int $NumReplies;
 
-    /**
-     * @var bool
-     */
-    private $IsRead;
+    
+    private bool $IsRead;
 
-    /**
-     * @return string
-     */
-    public function getMailID()
+    
+    public function getMailID(): string
     {
         return $this->MailID;
     }
 
-    /**
-     * @param string $MailID
-     *
-     * @return Mail
-     */
-    public function withMailID($MailID)
+    
+    public function withMailID(string $MailID): static
     {
         $new = clone $this;
         $new->MailID = $MailID;
@@ -107,20 +70,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->UserID;
     }
 
-    /**
-     * @param string $UserID
-     *
-     * @return Mail
-     */
-    public function withUserID($UserID)
+    
+    public function withUserID(string $UserID): static
     {
         $new = clone $this;
         $new->UserID = $UserID;
@@ -128,20 +85,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFromID()
+    
+    public function getFromID(): string
     {
         return $this->FromID;
     }
 
-    /**
-     * @param string $FromID
-     *
-     * @return Mail
-     */
-    public function withFromID($FromID)
+    
+    public function withFromID(string $FromID): static
     {
         $new = clone $this;
         $new->FromID = $FromID;
@@ -149,20 +100,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFromMail()
+    
+    public function getFromMail(): string
     {
         return $this->FromMail;
     }
 
-    /**
-     * @param string $FromMail
-     *
-     * @return Mail
-     */
-    public function withFromMail($FromMail)
+    
+    public function withFromMail(string $FromMail): static
     {
         $new = clone $this;
         $new->FromMail = $FromMail;
@@ -170,20 +115,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFromName()
+    
+    public function getFromName(): string
     {
         return $this->FromName;
     }
 
-    /**
-     * @param string $FromName
-     *
-     * @return Mail
-     */
-    public function withFromName($FromName)
+    
+    public function withFromName(string $FromName): static
     {
         $new = clone $this;
         $new->FromName = $FromName;
@@ -191,20 +130,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFromScreenName()
+    
+    public function getFromScreenName(): string
     {
         return $this->FromScreenName;
     }
 
-    /**
-     * @param string $FromScreenName
-     *
-     * @return Mail
-     */
-    public function withFromScreenName($FromScreenName)
+    
+    public function withFromScreenName(string $FromScreenName): static
     {
         $new = clone $this;
         $new->FromScreenName = $FromScreenName;
@@ -212,20 +145,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserName()
+    
+    public function getUserName(): string
     {
         return $this->UserName;
     }
 
-    /**
-     * @param string $UserName
-     *
-     * @return Mail
-     */
-    public function withUserName($UserName)
+    
+    public function withUserName(string $UserName): static
     {
         $new = clone $this;
         $new->UserName = $UserName;
@@ -233,20 +160,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getToEmail()
+    
+    public function getToEmail(): string
     {
         return $this->ToEmail;
     }
 
-    /**
-     * @param string $ToEmail
-     *
-     * @return Mail
-     */
-    public function withToEmail($ToEmail)
+    
+    public function withToEmail(string $ToEmail): static
     {
         $new = clone $this;
         $new->ToEmail = $ToEmail;
@@ -254,20 +175,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCC()
+    
+    public function getCC(): string
     {
         return $this->CC;
     }
 
-    /**
-     * @param string $CC
-     *
-     * @return Mail
-     */
-    public function withCC($CC)
+    
+    public function withCC(string $CC): static
     {
         $new = clone $this;
         $new->CC = $CC;
@@ -275,20 +190,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getBCC()
+    
+    public function getBCC(): string
     {
         return $this->BCC;
     }
 
-    /**
-     * @param string $BCC
-     *
-     * @return Mail
-     */
-    public function withBCC($BCC)
+    
+    public function withBCC(string $BCC): static
     {
         $new = clone $this;
         $new->BCC = $BCC;
@@ -296,20 +205,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSubject()
+    
+    public function getSubject(): string
     {
         return $this->Subject;
     }
 
-    /**
-     * @param string $Subject
-     *
-     * @return Mail
-     */
-    public function withSubject($Subject)
+    
+    public function withSubject(string $Subject): static
     {
         $new = clone $this;
         $new->Subject = $Subject;
@@ -317,20 +220,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getBody()
+    
+    public function getBody(): string
     {
         return $this->Body;
     }
 
-    /**
-     * @param string $Body
-     *
-     * @return Mail
-     */
-    public function withBody($Body)
+    
+    public function withBody(string $Body): static
     {
         $new = clone $this;
         $new->Body = $Body;
@@ -338,20 +235,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFolder()
+    
+    public function getFolder(): string
     {
         return $this->Folder;
     }
 
-    /**
-     * @param string $Folder
-     *
-     * @return Mail
-     */
-    public function withFolder($Folder)
+    
+    public function withFolder(string $Folder): static
     {
         $new = clone $this;
         $new->Folder = $Folder;
@@ -359,20 +250,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getMailDate()
+    
+    public function getMailDate(): DateTimeInterface
     {
         return $this->MailDate;
     }
 
-    /**
-     * @param \DateTimeInterface $MailDate
-     *
-     * @return Mail
-     */
-    public function withMailDate($MailDate)
+    
+    public function withMailDate(DateTimeInterface $MailDate): static
     {
         $new = clone $this;
         $new->MailDate = $MailDate;
@@ -380,20 +265,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getNumReplies()
+    
+    public function getNumReplies(): int
     {
         return $this->NumReplies;
     }
 
-    /**
-     * @param int $NumReplies
-     *
-     * @return Mail
-     */
-    public function withNumReplies($NumReplies)
+    
+    public function withNumReplies(int $NumReplies): static
     {
         $new = clone $this;
         $new->NumReplies = $NumReplies;
@@ -401,20 +280,14 @@ class Mail
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsRead()
+    
+    public function getIsRead(): bool
     {
         return $this->IsRead;
     }
 
-    /**
-     * @param bool $IsRead
-     *
-     * @return Mail
-     */
-    public function withIsRead($IsRead)
+    
+    public function withIsRead(bool $IsRead): static
     {
         $new = clone $this;
         $new->IsRead = $IsRead;

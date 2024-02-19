@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetFeedbackCompleted implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentRecordID;
+    
+    private string $studentRecordID;
 
-    /**
-     * @var string
-     */
-    private $learningPathID;
+    
+    private string $learningPathID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentRecordID
-     * @param string $learningPathID
      */
-    public function __construct($apiKey, $studentRecordID, $learningPathID)
+    public function __construct(string $apiKey, string $studentRecordID, string $learningPathID)
     {
         $this->apiKey = $apiKey;
         $this->studentRecordID = $studentRecordID;
         $this->learningPathID = $learningPathID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return SetFeedbackCompleted
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class SetFeedbackCompleted implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentRecordID()
+    
+    public function getStudentRecordID(): string
     {
         return $this->studentRecordID;
     }
 
-    /**
-     * @param string $studentRecordID
-     *
-     * @return SetFeedbackCompleted
-     */
-    public function withStudentRecordID($studentRecordID)
+    
+    public function withStudentRecordID(string $studentRecordID): static
     {
         $new = clone $this;
         $new->studentRecordID = $studentRecordID;
@@ -79,20 +57,14 @@ class SetFeedbackCompleted implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningPathID()
+    
+    public function getLearningPathID(): string
     {
         return $this->learningPathID;
     }
 
-    /**
-     * @param string $learningPathID
-     *
-     * @return SetFeedbackCompleted
-     */
-    public function withLearningPathID($learningPathID)
+    
+    public function withLearningPathID(string $learningPathID): static
     {
         $new = clone $this;
         $new->learningPathID = $learningPathID;

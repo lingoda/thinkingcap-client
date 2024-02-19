@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class DeleteUser implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
      */
-    public function __construct($apiKey, $userID)
+    public function __construct(string $apiKey, string $userID)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return DeleteUser
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class DeleteUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return DeleteUser
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;

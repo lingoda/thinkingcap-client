@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class FindUserIDByUserNameResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $FindUserIDByUserNameResult;
+    private ServiceResultOfString $FindUserIDByUserNameResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getFindUserIDByUserNameResult()
+    
+    public function getFindUserIDByUserNameResult(): ServiceResultOfString
     {
         return $this->FindUserIDByUserNameResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $FindUserIDByUserNameResult
-     *
-     * @return FindUserIDByUserNameResponse
-     */
-    public function withFindUserIDByUserNameResult($FindUserIDByUserNameResult)
+    
+    public function withFindUserIDByUserNameResult(ServiceResultOfString $FindUserIDByUserNameResult): static
     {
         $new = clone $this;
         $new->FindUserIDByUserNameResult = $FindUserIDByUserNameResult;

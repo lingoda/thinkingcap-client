@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityCustomFieldValues implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $learningActivityID;
+    
+    private string $learningActivityID;
 
-    /**
-     * @var string
-     */
-    private $customFieldID;
+    
+    private string $customFieldID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $learningActivityID
-     * @param string $customFieldID
      */
-    public function __construct($apiKey, $learningActivityID, $customFieldID)
+    public function __construct(string $apiKey, string $learningActivityID, string $customFieldID)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityID = $learningActivityID;
         $this->customFieldID = $customFieldID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetLearningActivityCustomFieldValues
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetLearningActivityCustomFieldValues implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityID()
+    
+    public function getLearningActivityID(): string
     {
         return $this->learningActivityID;
     }
 
-    /**
-     * @param string $learningActivityID
-     *
-     * @return GetLearningActivityCustomFieldValues
-     */
-    public function withLearningActivityID($learningActivityID)
+    
+    public function withLearningActivityID(string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;
@@ -79,20 +57,14 @@ class GetLearningActivityCustomFieldValues implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomFieldID()
+    
+    public function getCustomFieldID(): string
     {
         return $this->customFieldID;
     }
 
-    /**
-     * @param string $customFieldID
-     *
-     * @return GetLearningActivityCustomFieldValues
-     */
-    public function withCustomFieldID($customFieldID)
+    
+    public function withCustomFieldID(string $customFieldID): static
     {
         $new = clone $this;
         $new->customFieldID = $customFieldID;

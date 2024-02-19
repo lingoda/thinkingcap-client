@@ -1,40 +1,27 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CustomField
 {
-    /**
-     * @var string
-     */
-    private $FieldID;
+    private string $FieldID;
 
-    /**
-     * @var string
-     */
-    private $FieldName;
+    
+    private string $FieldName;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString1
-     */
-    private $FieldValues;
+    
+    private ArrayOfString1 $FieldValues;
 
-    /**
-     * @return string
-     */
-    public function getFieldID()
+    
+    public function getFieldID(): string
     {
         return $this->FieldID;
     }
 
-    /**
-     * @param string $FieldID
-     *
-     * @return CustomField
-     */
-    public function withFieldID($FieldID)
+    
+    public function withFieldID(string $FieldID): static
     {
         $new = clone $this;
         $new->FieldID = $FieldID;
@@ -42,20 +29,14 @@ class CustomField
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFieldName()
+    
+    public function getFieldName(): string
     {
         return $this->FieldName;
     }
 
-    /**
-     * @param string $FieldName
-     *
-     * @return CustomField
-     */
-    public function withFieldName($FieldName)
+    
+    public function withFieldName(string $FieldName): static
     {
         $new = clone $this;
         $new->FieldName = $FieldName;
@@ -63,20 +44,14 @@ class CustomField
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString1
-     */
-    public function getFieldValues()
+    
+    public function getFieldValues(): ArrayOfString1
     {
         return $this->FieldValues;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString1 $FieldValues
-     *
-     * @return CustomField
-     */
-    public function withFieldValues($FieldValues)
+    
+    public function withFieldValues(ArrayOfString1 $FieldValues): static
     {
         $new = clone $this;
         $new->FieldValues = $FieldValues;

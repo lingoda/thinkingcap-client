@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,41 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class ChangeLearningActivityActiveStatus implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $learningObjectID;
+    
+    private string $learningObjectID;
 
-    /**
-     * @var bool
-     */
-    private $active;
+    
+    private bool $active;
 
-    /**
-     * @var bool
-     */
-    private $updateAdminCatalogs;
+    
+    private bool $updateAdminCatalogs;
 
-    /**
-     * @var bool
-     */
-    private $updateLearnerCatalogs;
+    
+    private bool $updateLearnerCatalogs;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $learningObjectID
-     * @param bool $active
-     * @param bool $updateAdminCatalogs
-     * @param bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningObjectID, $active, $updateAdminCatalogs, $updateLearnerCatalogs)
+    public function __construct(string $apiKey, string $learningObjectID, bool $active, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningObjectID = $learningObjectID;
@@ -51,20 +35,14 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return ChangeLearningActivityActiveStatus
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -72,20 +50,14 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningObjectID()
+    
+    public function getLearningObjectID(): string
     {
         return $this->learningObjectID;
     }
 
-    /**
-     * @param string $learningObjectID
-     *
-     * @return ChangeLearningActivityActiveStatus
-     */
-    public function withLearningObjectID($learningObjectID)
+    
+    public function withLearningObjectID(string $learningObjectID): static
     {
         $new = clone $this;
         $new->learningObjectID = $learningObjectID;
@@ -93,20 +65,14 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getActive()
+    
+    public function getActive(): bool
     {
         return $this->active;
     }
 
-    /**
-     * @param bool $active
-     *
-     * @return ChangeLearningActivityActiveStatus
-     */
-    public function withActive($active)
+    
+    public function withActive(bool $active): static
     {
         $new = clone $this;
         $new->active = $active;
@@ -114,20 +80,14 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateAdminCatalogs()
+    
+    public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    /**
-     * @param bool $updateAdminCatalogs
-     *
-     * @return ChangeLearningActivityActiveStatus
-     */
-    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    
+    public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
         $new->updateAdminCatalogs = $updateAdminCatalogs;
@@ -135,20 +95,14 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateLearnerCatalogs()
+    
+    public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    /**
-     * @param bool $updateLearnerCatalogs
-     *
-     * @return ChangeLearningActivityActiveStatus
-     */
-    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    
+    public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;
         $new->updateLearnerCatalogs = $updateLearnerCatalogs;

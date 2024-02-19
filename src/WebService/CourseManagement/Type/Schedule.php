@@ -1,115 +1,74 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class Schedule
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Period;
+    
+    private string $Period;
 
-    /**
-     * @var int
-     */
-    private $Frequency;
+    
+    private int $Frequency;
 
-    /**
-     * @var int
-     */
-    private $Day;
+    
+    private int $Day;
 
-    /**
-     * @var string
-     */
-    private $DayOfWeek;
+    
+    private string $DayOfWeek;
 
-    /**
-     * @var int
-     */
-    private $WeekNumber;
+    
+    private int $WeekNumber;
 
-    /**
-     * @var string
-     */
-    private $WeekNumberString;
+    
+    private string $WeekNumberString;
 
-    /**
-     * @var int
-     */
-    private $Month;
+    
+    private int $Month;
 
-    /**
-     * @var string
-     */
-    private $TimeZone;
+    
+    private string $TimeZone;
 
-    /**
-     * @var string
-     */
-    private $MonthString;
+    
+    private string $MonthString;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $StartDate;
+    
+    private DateTimeInterface $StartDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $EndDate;
+    
+    private DateTimeInterface $EndDate;
 
-    /**
-     * @var int
-     */
-    private $Occurences;
+    
+    private int $Occurences;
 
-    /**
-     * @var bool
-     */
-    private $Expired;
+    
+    private bool $Expired;
 
-    /**
-     * @var string
-     */
-    private $StartTime;
+    
+    private string $StartTime;
 
-    /**
-     * @var string
-     */
-    private $EndTime;
+    
+    private string $EndTime;
 
-    /**
-     * @var int
-     */
-    private $Duration;
+    
+    private int $Duration;
 
-    /**
-     * @var string
-     */
-    private $DurationString;
+    
+    private string $DurationString;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return Schedule
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -117,20 +76,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPeriod()
+    
+    public function getPeriod(): string
     {
         return $this->Period;
     }
 
-    /**
-     * @param string $Period
-     *
-     * @return Schedule
-     */
-    public function withPeriod($Period)
+    
+    public function withPeriod(string $Period): static
     {
         $new = clone $this;
         $new->Period = $Period;
@@ -138,20 +91,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getFrequency()
+    
+    public function getFrequency(): int
     {
         return $this->Frequency;
     }
 
-    /**
-     * @param int $Frequency
-     *
-     * @return Schedule
-     */
-    public function withFrequency($Frequency)
+    
+    public function withFrequency(int $Frequency): static
     {
         $new = clone $this;
         $new->Frequency = $Frequency;
@@ -159,20 +106,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getDay()
+    
+    public function getDay(): int
     {
         return $this->Day;
     }
 
-    /**
-     * @param int $Day
-     *
-     * @return Schedule
-     */
-    public function withDay($Day)
+    
+    public function withDay(int $Day): static
     {
         $new = clone $this;
         $new->Day = $Day;
@@ -180,20 +121,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDayOfWeek()
+    
+    public function getDayOfWeek(): string
     {
         return $this->DayOfWeek;
     }
 
-    /**
-     * @param string $DayOfWeek
-     *
-     * @return Schedule
-     */
-    public function withDayOfWeek($DayOfWeek)
+    
+    public function withDayOfWeek(string $DayOfWeek): static
     {
         $new = clone $this;
         $new->DayOfWeek = $DayOfWeek;
@@ -201,20 +136,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getWeekNumber()
+    
+    public function getWeekNumber(): int
     {
         return $this->WeekNumber;
     }
 
-    /**
-     * @param int $WeekNumber
-     *
-     * @return Schedule
-     */
-    public function withWeekNumber($WeekNumber)
+    
+    public function withWeekNumber(int $WeekNumber): static
     {
         $new = clone $this;
         $new->WeekNumber = $WeekNumber;
@@ -222,20 +151,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getWeekNumberString()
+    
+    public function getWeekNumberString(): string
     {
         return $this->WeekNumberString;
     }
 
-    /**
-     * @param string $WeekNumberString
-     *
-     * @return Schedule
-     */
-    public function withWeekNumberString($WeekNumberString)
+    
+    public function withWeekNumberString(string $WeekNumberString): static
     {
         $new = clone $this;
         $new->WeekNumberString = $WeekNumberString;
@@ -243,20 +166,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMonth()
+    
+    public function getMonth(): int
     {
         return $this->Month;
     }
 
-    /**
-     * @param int $Month
-     *
-     * @return Schedule
-     */
-    public function withMonth($Month)
+    
+    public function withMonth(int $Month): static
     {
         $new = clone $this;
         $new->Month = $Month;
@@ -264,20 +181,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTimeZone()
+    
+    public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
 
-    /**
-     * @param string $TimeZone
-     *
-     * @return Schedule
-     */
-    public function withTimeZone($TimeZone)
+    
+    public function withTimeZone(string $TimeZone): static
     {
         $new = clone $this;
         $new->TimeZone = $TimeZone;
@@ -285,20 +196,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMonthString()
+    
+    public function getMonthString(): string
     {
         return $this->MonthString;
     }
 
-    /**
-     * @param string $MonthString
-     *
-     * @return Schedule
-     */
-    public function withMonthString($MonthString)
+    
+    public function withMonthString(string $MonthString): static
     {
         $new = clone $this;
         $new->MonthString = $MonthString;
@@ -306,20 +211,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getStartDate()
+    
+    public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $StartDate
-     *
-     * @return Schedule
-     */
-    public function withStartDate($StartDate)
+    
+    public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
         $new->StartDate = $StartDate;
@@ -327,20 +226,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getEndDate()
+    
+    public function getEndDate(): DateTimeInterface
     {
         return $this->EndDate;
     }
 
-    /**
-     * @param \DateTimeInterface $EndDate
-     *
-     * @return Schedule
-     */
-    public function withEndDate($EndDate)
+    
+    public function withEndDate(DateTimeInterface $EndDate): static
     {
         $new = clone $this;
         $new->EndDate = $EndDate;
@@ -348,20 +241,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getOccurences()
+    
+    public function getOccurences(): int
     {
         return $this->Occurences;
     }
 
-    /**
-     * @param int $Occurences
-     *
-     * @return Schedule
-     */
-    public function withOccurences($Occurences)
+    
+    public function withOccurences(int $Occurences): static
     {
         $new = clone $this;
         $new->Occurences = $Occurences;
@@ -369,20 +256,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getExpired()
+    
+    public function getExpired(): bool
     {
         return $this->Expired;
     }
 
-    /**
-     * @param bool $Expired
-     *
-     * @return Schedule
-     */
-    public function withExpired($Expired)
+    
+    public function withExpired(bool $Expired): static
     {
         $new = clone $this;
         $new->Expired = $Expired;
@@ -390,20 +271,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStartTime()
+    
+    public function getStartTime(): string
     {
         return $this->StartTime;
     }
 
-    /**
-     * @param string $StartTime
-     *
-     * @return Schedule
-     */
-    public function withStartTime($StartTime)
+    
+    public function withStartTime(string $StartTime): static
     {
         $new = clone $this;
         $new->StartTime = $StartTime;
@@ -411,20 +286,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEndTime()
+    
+    public function getEndTime(): string
     {
         return $this->EndTime;
     }
 
-    /**
-     * @param string $EndTime
-     *
-     * @return Schedule
-     */
-    public function withEndTime($EndTime)
+    
+    public function withEndTime(string $EndTime): static
     {
         $new = clone $this;
         $new->EndTime = $EndTime;
@@ -432,20 +301,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getDuration()
+    
+    public function getDuration(): int
     {
         return $this->Duration;
     }
 
-    /**
-     * @param int $Duration
-     *
-     * @return Schedule
-     */
-    public function withDuration($Duration)
+    
+    public function withDuration(int $Duration): static
     {
         $new = clone $this;
         $new->Duration = $Duration;
@@ -453,20 +316,14 @@ class Schedule
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDurationString()
+    
+    public function getDurationString(): string
     {
         return $this->DurationString;
     }
 
-    /**
-     * @param string $DurationString
-     *
-     * @return Schedule
-     */
-    public function withDurationString($DurationString)
+    
+    public function withDurationString(string $DurationString): static
     {
         $new = clone $this;
         $new->DurationString = $DurationString;

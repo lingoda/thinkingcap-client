@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class FindUserIDByEmail implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentEmail;
+    
+    private string $studentEmail;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentEmail
      */
-    public function __construct($apiKey, $studentEmail)
+    public function __construct(string $apiKey, string $studentEmail)
     {
         $this->apiKey = $apiKey;
         $this->studentEmail = $studentEmail;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return FindUserIDByEmail
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class FindUserIDByEmail implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentEmail()
+    
+    public function getStudentEmail(): string
     {
         return $this->studentEmail;
     }
 
-    /**
-     * @param string $studentEmail
-     *
-     * @return FindUserIDByEmail
-     */
-    public function withStudentEmail($studentEmail)
+    
+    public function withStudentEmail(string $studentEmail): static
     {
         $new = clone $this;
         $new->studentEmail = $studentEmail;

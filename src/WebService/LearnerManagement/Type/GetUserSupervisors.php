@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUserSupervisors implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var bool
-     */
-    private $includeMetadata;
+    
+    private bool $includeMetadata;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param bool $includeMetadata
      */
-    public function __construct($apiKey, $userID, $includeMetadata)
+    public function __construct(string $apiKey, string $userID, bool $includeMetadata)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
         $this->includeMetadata = $includeMetadata;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetUserSupervisors
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetUserSupervisors implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return GetUserSupervisors
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -79,20 +57,14 @@ class GetUserSupervisors implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeMetadata()
+    
+    public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    /**
-     * @param bool $includeMetadata
-     *
-     * @return GetUserSupervisors
-     */
-    public function withIncludeMetadata($includeMetadata)
+    
+    public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;

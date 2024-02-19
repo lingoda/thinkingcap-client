@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfRole
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Role
-     */
-    private $Role;
+    private Role $Role;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Role
-     */
-    public function getRole()
+    
+    public function getRole(): Role
     {
         return $this->Role;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Role $Role
-     *
-     * @return ArrayOfRole
-     */
-    public function withRole($Role)
+    
+    public function withRole(Role $Role): static
     {
         $new = clone $this;
         $new->Role = $Role;

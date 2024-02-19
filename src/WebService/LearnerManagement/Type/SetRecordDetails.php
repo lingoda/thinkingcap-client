@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,65 +8,37 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetRecordDetails implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentRecordID;
+    
+    private string $studentRecordID;
 
-    /**
-     * @var string
-     */
-    private $status;
+    
+    private string $status;
 
-    /**
-     * @var string
-     */
-    private $lastModuleName;
+    
+    private string $lastModuleName;
 
-    /**
-     * @var string
-     */
-    private $dateCompleted;
+    
+    private string $dateCompleted;
 
-    /**
-     * @var string
-     */
-    private $percentCompleted;
+    
+    private string $percentCompleted;
 
-    /**
-     * @var string
-     */
-    private $score;
+    
+    private string $score;
 
-    /**
-     * @var string
-     */
-    private $credits;
+    
+    private string $credits;
 
-    /**
-     * @var string
-     */
-    private $timeSpent;
+    
+    private string $timeSpent;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentRecordID
-     * @param string $status
-     * @param string $lastModuleName
-     * @param string $dateCompleted
-     * @param string $percentCompleted
-     * @param string $score
-     * @param string $credits
-     * @param string $timeSpent
      */
-    public function __construct($apiKey, $studentRecordID, $status, $lastModuleName, $dateCompleted, $percentCompleted, $score, $credits, $timeSpent)
+    public function __construct(string $apiKey, string $studentRecordID, string $status, string $lastModuleName, string $dateCompleted, string $percentCompleted, string $score, string $credits, string $timeSpent)
     {
         $this->apiKey = $apiKey;
         $this->studentRecordID = $studentRecordID;
@@ -79,20 +51,14 @@ class SetRecordDetails implements RequestInterface
         $this->timeSpent = $timeSpent;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return SetRecordDetails
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -100,20 +66,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentRecordID()
+    
+    public function getStudentRecordID(): string
     {
         return $this->studentRecordID;
     }
 
-    /**
-     * @param string $studentRecordID
-     *
-     * @return SetRecordDetails
-     */
-    public function withStudentRecordID($studentRecordID)
+    
+    public function withStudentRecordID(string $studentRecordID): static
     {
         $new = clone $this;
         $new->studentRecordID = $studentRecordID;
@@ -121,20 +81,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus()
+    
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     *
-     * @return SetRecordDetails
-     */
-    public function withStatus($status)
+    
+    public function withStatus(string $status): static
     {
         $new = clone $this;
         $new->status = $status;
@@ -142,20 +96,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastModuleName()
+    
+    public function getLastModuleName(): string
     {
         return $this->lastModuleName;
     }
 
-    /**
-     * @param string $lastModuleName
-     *
-     * @return SetRecordDetails
-     */
-    public function withLastModuleName($lastModuleName)
+    
+    public function withLastModuleName(string $lastModuleName): static
     {
         $new = clone $this;
         $new->lastModuleName = $lastModuleName;
@@ -163,20 +111,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDateCompleted()
+    
+    public function getDateCompleted(): string
     {
         return $this->dateCompleted;
     }
 
-    /**
-     * @param string $dateCompleted
-     *
-     * @return SetRecordDetails
-     */
-    public function withDateCompleted($dateCompleted)
+    
+    public function withDateCompleted(string $dateCompleted): static
     {
         $new = clone $this;
         $new->dateCompleted = $dateCompleted;
@@ -184,20 +126,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPercentCompleted()
+    
+    public function getPercentCompleted(): string
     {
         return $this->percentCompleted;
     }
 
-    /**
-     * @param string $percentCompleted
-     *
-     * @return SetRecordDetails
-     */
-    public function withPercentCompleted($percentCompleted)
+    
+    public function withPercentCompleted(string $percentCompleted): static
     {
         $new = clone $this;
         $new->percentCompleted = $percentCompleted;
@@ -205,20 +141,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getScore()
+    
+    public function getScore(): string
     {
         return $this->score;
     }
 
-    /**
-     * @param string $score
-     *
-     * @return SetRecordDetails
-     */
-    public function withScore($score)
+    
+    public function withScore(string $score): static
     {
         $new = clone $this;
         $new->score = $score;
@@ -226,20 +156,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCredits()
+    
+    public function getCredits(): string
     {
         return $this->credits;
     }
 
-    /**
-     * @param string $credits
-     *
-     * @return SetRecordDetails
-     */
-    public function withCredits($credits)
+    
+    public function withCredits(string $credits): static
     {
         $new = clone $this;
         $new->credits = $credits;
@@ -247,20 +171,14 @@ class SetRecordDetails implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTimeSpent()
+    
+    public function getTimeSpent(): string
     {
         return $this->timeSpent;
     }
 
-    /**
-     * @param string $timeSpent
-     *
-     * @return SetRecordDetails
-     */
-    public function withTimeSpent($timeSpent)
+    
+    public function withTimeSpent(string $timeSpent): static
     {
         $new = clone $this;
         $new->timeSpent = $timeSpent;

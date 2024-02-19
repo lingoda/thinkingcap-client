@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLearningActivityEquivalencyByCodeResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfXmlDocument
-     */
-    private $GetLearningActivityEquivalencyByCodeResult;
+    private ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfXmlDocument
-     */
-    public function getGetLearningActivityEquivalencyByCodeResult()
+    
+    public function getGetLearningActivityEquivalencyByCodeResult(): ServiceResultOfXmlDocument
     {
         return $this->GetLearningActivityEquivalencyByCodeResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult
-     *
-     * @return GetLearningActivityEquivalencyByCodeResponse
-     */
-    public function withGetLearningActivityEquivalencyByCodeResult($GetLearningActivityEquivalencyByCodeResult)
+    
+    public function withGetLearningActivityEquivalencyByCodeResult(ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult): static
     {
         $new = clone $this;
         $new->GetLearningActivityEquivalencyByCodeResult = $GetLearningActivityEquivalencyByCodeResult;

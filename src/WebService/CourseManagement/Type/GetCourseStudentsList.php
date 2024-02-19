@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseStudentsList implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
-    /**
-     * @var string
-     */
-    private $programID;
+    
+    private string $programID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseID
-     * @param string $programID
      */
-    public function __construct($apiKey, $courseID, $programID)
+    public function __construct(string $apiKey, string $courseID, string $programID)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
         $this->programID = $programID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetCourseStudentsList
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetCourseStudentsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return GetCourseStudentsList
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -79,20 +57,14 @@ class GetCourseStudentsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->programID;
     }
 
-    /**
-     * @param string $programID
-     *
-     * @return GetCourseStudentsList
-     */
-    public function withProgramID($programID)
+    
+    public function withProgramID(string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement;
 
@@ -11,445 +11,622 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class CourseManagementSoapClient
 {
-    /**
-     * @var Caller
-     */
-    private $caller;
+    private Caller $caller;
 
-    public function __construct(\Phpro\SoapClient\Caller\Caller $caller)
+    public function __construct(Caller $caller)
     {
         $this->caller = $caller;
     }
 
     /**
-     * @param RequestInterface|Type\FindCourse $parameters
+     * @param RequestInterface & Type\FindCourse $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\FindCourseResponse
+     * @return ResultInterface & Type\FindCourseResponse
      */
-    public function findCourse(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FindCourse $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FindCourseResponse
+    public function findCourse(Type\FindCourse $parameters): Type\FindCourseResponse
     {
-        return ($this->caller)('FindCourse', $parameters);
+        $response = ($this->caller)('FindCourse', $parameters);
+
+        \Psl\Type\instance_of(Type\FindCourseResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityByID $parameters
+     * @param RequestInterface & Type\GetLearningActivityByID $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityByIDResponse
+     * @return ResultInterface & Type\GetLearningActivityByIDResponse
      */
-    public function getLearningActivityByID(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByID $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByIDResponse
+    public function getLearningActivityByID(Type\GetLearningActivityByID $parameters): Type\GetLearningActivityByIDResponse
     {
-        return ($this->caller)('GetLearningActivityByID', $parameters);
+        $response = ($this->caller)('GetLearningActivityByID', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityByIDResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseByCode $parameters
+     * @param RequestInterface & Type\GetCourseByCode $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseByCodeResponse
+     * @return ResultInterface & Type\GetCourseByCodeResponse
      */
-    public function getCourseByCode(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseByCode $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseByCodeResponse
+    public function getCourseByCode(Type\GetCourseByCode $parameters): Type\GetCourseByCodeResponse
     {
-        return ($this->caller)('GetCourseByCode', $parameters);
+        $response = ($this->caller)('GetCourseByCode', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseByCodeResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetILTClassSizeDetailsXML $parameters
+     * @param RequestInterface & Type\GetILTClassSizeDetailsXML $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetILTClassSizeDetailsXMLResponse
+     * @return ResultInterface & Type\GetILTClassSizeDetailsXMLResponse
      */
-    public function getILTClassSizeDetailsXML(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTClassSizeDetailsXML $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTClassSizeDetailsXMLResponse
+    public function getILTClassSizeDetailsXML(Type\GetILTClassSizeDetailsXML $parameters): Type\GetILTClassSizeDetailsXMLResponse
     {
-        return ($this->caller)('GetILTClassSizeDetailsXML', $parameters);
+        $response = ($this->caller)('GetILTClassSizeDetailsXML', $parameters);
+
+        \Psl\Type\instance_of(Type\GetILTClassSizeDetailsXMLResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityByCode $parameters
+     * @param RequestInterface & Type\GetLearningActivityByCode $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityByCodeResponse
+     * @return ResultInterface & Type\GetLearningActivityByCodeResponse
      */
-    public function getLearningActivityByCode(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByCode $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityByCodeResponse
+    public function getLearningActivityByCode(Type\GetLearningActivityByCode $parameters): Type\GetLearningActivityByCodeResponse
     {
-        return ($this->caller)('GetLearningActivityByCode', $parameters);
+        $response = ($this->caller)('GetLearningActivityByCode', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityByCodeResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetDomainLearningActivities $parameters
+     * @param RequestInterface & Type\GetDomainLearningActivities $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetDomainLearningActivitiesResponse
+     * @return ResultInterface & Type\GetDomainLearningActivitiesResponse
      */
-    public function getDomainLearningActivities(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetDomainLearningActivities $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetDomainLearningActivitiesResponse
+    public function getDomainLearningActivities(Type\GetDomainLearningActivities $parameters): Type\GetDomainLearningActivitiesResponse
     {
-        return ($this->caller)('GetDomainLearningActivities', $parameters);
+        $response = ($this->caller)('GetDomainLearningActivities', $parameters);
+
+        \Psl\Type\instance_of(Type\GetDomainLearningActivitiesResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\ReserveSpotILT $parameters
+     * @param RequestInterface & Type\ReserveSpotILT $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\ReserveSpotILTResponse
+     * @return ResultInterface & Type\ReserveSpotILTResponse
      */
-    public function reserveSpotILT(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ReserveSpotILT $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ReserveSpotILTResponse
+    public function reserveSpotILT(Type\ReserveSpotILT $parameters): Type\ReserveSpotILTResponse
     {
-        return ($this->caller)('ReserveSpotILT', $parameters);
+        $response = ($this->caller)('ReserveSpotILT', $parameters);
+
+        \Psl\Type\instance_of(Type\ReserveSpotILTResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\AddLearningActivity $parameters
+     * @param RequestInterface & Type\AddLearningActivity $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\AddLearningActivityResponse
+     * @return ResultInterface & Type\AddLearningActivityResponse
      */
-    public function addLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddLearningActivityResponse
+    public function addLearningActivity(Type\AddLearningActivity $parameters): Type\AddLearningActivityResponse
     {
-        return ($this->caller)('AddLearningActivity', $parameters);
+        $response = ($this->caller)('AddLearningActivity', $parameters);
+
+        \Psl\Type\instance_of(Type\AddLearningActivityResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\UpdateLearningActivity $parameters
+     * @param RequestInterface & Type\UpdateLearningActivity $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\UpdateLearningActivityResponse
+     * @return ResultInterface & Type\UpdateLearningActivityResponse
      */
-    public function updateLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityResponse
+    public function updateLearningActivity(Type\UpdateLearningActivity $parameters): Type\UpdateLearningActivityResponse
     {
-        return ($this->caller)('UpdateLearningActivity', $parameters);
+        $response = ($this->caller)('UpdateLearningActivity', $parameters);
+
+        \Psl\Type\instance_of(Type\UpdateLearningActivityResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\DeleteLearningActivity $parameters
+     * @param RequestInterface & Type\DeleteLearningActivity $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\DeleteLearningActivityResponse
+     * @return ResultInterface & Type\DeleteLearningActivityResponse
      */
-    public function deleteLearningActivity(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DeleteLearningActivity $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DeleteLearningActivityResponse
+    public function deleteLearningActivity(Type\DeleteLearningActivity $parameters): Type\DeleteLearningActivityResponse
     {
-        return ($this->caller)('DeleteLearningActivity', $parameters);
+        $response = ($this->caller)('DeleteLearningActivity', $parameters);
+
+        \Psl\Type\instance_of(Type\DeleteLearningActivityResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\UpdateLearningActivityInfo $parameters
+     * @param RequestInterface & Type\UpdateLearningActivityInfo $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\UpdateLearningActivityInfoResponse
+     * @return ResultInterface & Type\UpdateLearningActivityInfoResponse
      */
-    public function updateLearningActivityInfo(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityInfo $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateLearningActivityInfoResponse
+    public function updateLearningActivityInfo(Type\UpdateLearningActivityInfo $parameters): Type\UpdateLearningActivityInfoResponse
     {
-        return ($this->caller)('UpdateLearningActivityInfo', $parameters);
+        $response = ($this->caller)('UpdateLearningActivityInfo', $parameters);
+
+        \Psl\Type\instance_of(Type\UpdateLearningActivityInfoResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\SetCourseTAs $parameters
+     * @param RequestInterface & Type\SetCourseTAs $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\SetCourseTAsResponse
+     * @return ResultInterface & Type\SetCourseTAsResponse
      */
-    public function setCourseTAs(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseTAs $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseTAsResponse
+    public function setCourseTAs(Type\SetCourseTAs $parameters): Type\SetCourseTAsResponse
     {
-        return ($this->caller)('SetCourseTAs', $parameters);
+        $response = ($this->caller)('SetCourseTAs', $parameters);
+
+        \Psl\Type\instance_of(Type\SetCourseTAsResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\SetCourseMarkedBy $parameters
+     * @param RequestInterface & Type\SetCourseMarkedBy $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\SetCourseMarkedByResponse
+     * @return ResultInterface & Type\SetCourseMarkedByResponse
      */
-    public function setCourseMarkedBy(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseMarkedBy $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\SetCourseMarkedByResponse
+    public function setCourseMarkedBy(Type\SetCourseMarkedBy $parameters): Type\SetCourseMarkedByResponse
     {
-        return ($this->caller)('SetCourseMarkedBy', $parameters);
+        $response = ($this->caller)('SetCourseMarkedBy', $parameters);
+
+        \Psl\Type\instance_of(Type\SetCourseMarkedByResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseAssignmentsList $parameters
+     * @param RequestInterface & Type\GetCourseAssignmentsList $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseAssignmentsListResponse
+     * @return ResultInterface & Type\GetCourseAssignmentsListResponse
      */
-    public function getCourseAssignmentsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsListResponse
+    public function getCourseAssignmentsList(Type\GetCourseAssignmentsList $parameters): Type\GetCourseAssignmentsListResponse
     {
-        return ($this->caller)('GetCourseAssignmentsList', $parameters);
+        $response = ($this->caller)('GetCourseAssignmentsList', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseAssignmentsListResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseAssignmentsXml $parameters
+     * @param RequestInterface & Type\GetCourseAssignmentsXml $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseAssignmentsXmlResponse
+     * @return ResultInterface & Type\GetCourseAssignmentsXmlResponse
      */
-    public function getCourseAssignmentsXml(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsXml $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseAssignmentsXmlResponse
+    public function getCourseAssignmentsXml(Type\GetCourseAssignmentsXml $parameters): Type\GetCourseAssignmentsXmlResponse
     {
-        return ($this->caller)('GetCourseAssignmentsXml', $parameters);
+        $response = ($this->caller)('GetCourseAssignmentsXml', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseAssignmentsXmlResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseStudentsList $parameters
+     * @param RequestInterface & Type\GetCourseStudentsList $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseStudentsListResponse
+     * @return ResultInterface & Type\GetCourseStudentsListResponse
      */
-    public function getCourseStudentsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseStudentsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseStudentsListResponse
+    public function getCourseStudentsList(Type\GetCourseStudentsList $parameters): Type\GetCourseStudentsListResponse
     {
-        return ($this->caller)('GetCourseStudentsList', $parameters);
+        $response = ($this->caller)('GetCourseStudentsList', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseStudentsListResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityStudentRecords $parameters
+     * @param RequestInterface & Type\GetLearningActivityStudentRecords $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityStudentRecordsResponse
+     * @return ResultInterface & Type\GetLearningActivityStudentRecordsResponse
      */
-    public function getLearningActivityStudentRecords(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityStudentRecords $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityStudentRecordsResponse
+    public function getLearningActivityStudentRecords(Type\GetLearningActivityStudentRecords $parameters): Type\GetLearningActivityStudentRecordsResponse
     {
-        return ($this->caller)('GetLearningActivityStudentRecords', $parameters);
+        $response = ($this->caller)('GetLearningActivityStudentRecords', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityStudentRecordsResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityCustomFieldValues $parameters
+     * @param RequestInterface & Type\GetLearningActivityCustomFieldValues $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityCustomFieldValuesResponse
+     * @return ResultInterface & Type\GetLearningActivityCustomFieldValuesResponse
      */
-    public function getLearningActivityCustomFieldValues(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityCustomFieldValues $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityCustomFieldValuesResponse
+    public function getLearningActivityCustomFieldValues(Type\GetLearningActivityCustomFieldValues $parameters): Type\GetLearningActivityCustomFieldValuesResponse
     {
-        return ($this->caller)('GetLearningActivityCustomFieldValues', $parameters);
+        $response = ($this->caller)('GetLearningActivityCustomFieldValues', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityCustomFieldValuesResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\ChangeLearningActivityActiveStatus $parameters
+     * @param RequestInterface & Type\ChangeLearningActivityActiveStatus $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\ChangeLearningActivityActiveStatusResponse
+     * @return ResultInterface & Type\ChangeLearningActivityActiveStatusResponse
      */
-    public function changeLearningActivityActiveStatus(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ChangeLearningActivityActiveStatus $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ChangeLearningActivityActiveStatusResponse
+    public function changeLearningActivityActiveStatus(Type\ChangeLearningActivityActiveStatus $parameters): Type\ChangeLearningActivityActiveStatusResponse
     {
-        return ($this->caller)('ChangeLearningActivityActiveStatus', $parameters);
+        $response = ($this->caller)('ChangeLearningActivityActiveStatus', $parameters);
+
+        \Psl\Type\instance_of(Type\ChangeLearningActivityActiveStatusResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GenerateECommerceCourseToken $parameters
+     * @param RequestInterface & Type\GenerateECommerceCourseToken $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GenerateECommerceCourseTokenResponse
+     * @return ResultInterface & Type\GenerateECommerceCourseTokenResponse
      */
-    public function generateECommerceCourseToken(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GenerateECommerceCourseToken $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GenerateECommerceCourseTokenResponse
+    public function generateECommerceCourseToken(Type\GenerateECommerceCourseToken $parameters): Type\GenerateECommerceCourseTokenResponse
     {
-        return ($this->caller)('GenerateECommerceCourseToken', $parameters);
+        $response = ($this->caller)('GenerateECommerceCourseToken', $parameters);
+
+        \Psl\Type\instance_of(Type\GenerateECommerceCourseTokenResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\AddTrainingLocationWithTimeZone $parameters
+     * @param RequestInterface & Type\AddTrainingLocationWithTimeZone $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\AddTrainingLocationWithTimeZoneResponse
+     * @return ResultInterface & Type\AddTrainingLocationWithTimeZoneResponse
      */
-    public function addTrainingLocation(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddTrainingLocationWithTimeZone $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddTrainingLocationWithTimeZoneResponse
+    public function addTrainingLocation(Type\AddTrainingLocationWithTimeZone $parameters): Type\AddTrainingLocationWithTimeZoneResponse
     {
-        return ($this->caller)('AddTrainingLocation', $parameters);
+        $response = ($this->caller)('AddTrainingLocation', $parameters);
+
+        \Psl\Type\instance_of(Type\AddTrainingLocationWithTimeZoneResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetTrainingLocationsList $parameters
+     * @param RequestInterface & Type\GetTrainingLocationsList $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetTrainingLocationsListResponse
+     * @return ResultInterface & Type\GetTrainingLocationsListResponse
      */
-    public function getTrainingLocationsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocationsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocationsListResponse
+    public function getTrainingLocationsList(Type\GetTrainingLocationsList $parameters): Type\GetTrainingLocationsListResponse
     {
-        return ($this->caller)('GetTrainingLocationsList', $parameters);
+        $response = ($this->caller)('GetTrainingLocationsList', $parameters);
+
+        \Psl\Type\instance_of(Type\GetTrainingLocationsListResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetTrainingLocation $parameters
+     * @param RequestInterface & Type\GetTrainingLocation $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetTrainingLocationResponse
+     * @return ResultInterface & Type\GetTrainingLocationResponse
      */
-    public function getTrainingLocation(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocation $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetTrainingLocationResponse
+    public function getTrainingLocation(Type\GetTrainingLocation $parameters): Type\GetTrainingLocationResponse
     {
-        return ($this->caller)('GetTrainingLocation', $parameters);
+        $response = ($this->caller)('GetTrainingLocation', $parameters);
+
+        \Psl\Type\instance_of(Type\GetTrainingLocationResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\IsTrainingLocationAvailable $parameters
+     * @param RequestInterface & Type\IsTrainingLocationAvailable $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\IsTrainingLocationAvailableResponse
+     * @return ResultInterface & Type\IsTrainingLocationAvailableResponse
      */
-    public function isTrainingLocationAvailable(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\IsTrainingLocationAvailable $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\IsTrainingLocationAvailableResponse
+    public function isTrainingLocationAvailable(Type\IsTrainingLocationAvailable $parameters): Type\IsTrainingLocationAvailableResponse
     {
-        return ($this->caller)('IsTrainingLocationAvailable', $parameters);
+        $response = ($this->caller)('IsTrainingLocationAvailable', $parameters);
+
+        \Psl\Type\instance_of(Type\IsTrainingLocationAvailableResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseModeratorsList $parameters
+     * @param RequestInterface & Type\GetCourseModeratorsList $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseModeratorsListResponse
+     * @return ResultInterface & Type\GetCourseModeratorsListResponse
      */
-    public function getCourseModeratorsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseModeratorsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseModeratorsListResponse
+    public function getCourseModeratorsList(Type\GetCourseModeratorsList $parameters): Type\GetCourseModeratorsListResponse
     {
-        return ($this->caller)('GetCourseModeratorsList', $parameters);
+        $response = ($this->caller)('GetCourseModeratorsList', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseModeratorsListResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\AddCourseSession $parameters
+     * @param RequestInterface & Type\AddCourseSession $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\AddCourseSessionResponse
+     * @return ResultInterface & Type\AddCourseSessionResponse
      */
-    public function addCourseSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddCourseSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AddCourseSessionResponse
+    public function addCourseSession(Type\AddCourseSession $parameters): Type\AddCourseSessionResponse
     {
-        return ($this->caller)('AddCourseSession', $parameters);
+        $response = ($this->caller)('AddCourseSession', $parameters);
+
+        \Psl\Type\instance_of(Type\AddCourseSessionResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\UpdateCourseSession $parameters
+     * @param RequestInterface & Type\UpdateCourseSession $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\UpdateCourseSessionResponse
+     * @return ResultInterface & Type\UpdateCourseSessionResponse
      */
-    public function updateCourseSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateCourseSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\UpdateCourseSessionResponse
+    public function updateCourseSession(Type\UpdateCourseSession $parameters): Type\UpdateCourseSessionResponse
     {
-        return ($this->caller)('UpdateCourseSession', $parameters);
+        $response = ($this->caller)('UpdateCourseSession', $parameters);
+
+        \Psl\Type\instance_of(Type\UpdateCourseSessionResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseSessionsList $parameters
+     * @param RequestInterface & Type\GetCourseSessionsList $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseSessionsListResponse
+     * @return ResultInterface & Type\GetCourseSessionsListResponse
      */
-    public function getCourseSessionsList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSessionsList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSessionsListResponse
+    public function getCourseSessionsList(Type\GetCourseSessionsList $parameters): Type\GetCourseSessionsListResponse
     {
-        return ($this->caller)('GetCourseSessionsList', $parameters);
+        $response = ($this->caller)('GetCourseSessionsList', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseSessionsListResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetILTCourseCurrentSession $parameters
+     * @param RequestInterface & Type\GetILTCourseCurrentSession $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetILTCourseCurrentSessionResponse
+     * @return ResultInterface & Type\GetILTCourseCurrentSessionResponse
      */
-    public function getILTCourseCurrentSession(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTCourseCurrentSession $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetILTCourseCurrentSessionResponse
+    public function getILTCourseCurrentSession(Type\GetILTCourseCurrentSession $parameters): Type\GetILTCourseCurrentSessionResponse
     {
-        return ($this->caller)('GetILTCourseCurrentSession', $parameters);
+        $response = ($this->caller)('GetILTCourseCurrentSession', $parameters);
+
+        \Psl\Type\instance_of(Type\GetILTCourseCurrentSessionResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\CreateCourseSeries $parameters
+     * @param RequestInterface & Type\CreateCourseSeries $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\CreateCourseSeriesResponse
+     * @return ResultInterface & Type\CreateCourseSeriesResponse
      */
-    public function createCourseSeries(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CreateCourseSeries $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CreateCourseSeriesResponse
+    public function createCourseSeries(Type\CreateCourseSeries $parameters): Type\CreateCourseSeriesResponse
     {
-        return ($this->caller)('CreateCourseSeries', $parameters);
+        $response = ($this->caller)('CreateCourseSeries', $parameters);
+
+        \Psl\Type\instance_of(Type\CreateCourseSeriesResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityEquivalencyByID $parameters
+     * @param RequestInterface & Type\GetLearningActivityEquivalencyByID $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityEquivalencyByIDResponse
+     * @return ResultInterface & Type\GetLearningActivityEquivalencyByIDResponse
      */
-    public function getLearningActivityEquivalencyByID(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByID $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByIDResponse
+    public function getLearningActivityEquivalencyByID(Type\GetLearningActivityEquivalencyByID $parameters): Type\GetLearningActivityEquivalencyByIDResponse
     {
-        return ($this->caller)('GetLearningActivityEquivalencyByID', $parameters);
+        $response = ($this->caller)('GetLearningActivityEquivalencyByID', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityEquivalencyByIDResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityEquivalencyByCode $parameters
+     * @param RequestInterface & Type\GetLearningActivityEquivalencyByCode $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityEquivalencyByCodeResponse
+     * @return ResultInterface & Type\GetLearningActivityEquivalencyByCodeResponse
      */
-    public function getLearningActivityEquivalencyByCode(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByCode $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityEquivalencyByCodeResponse
+    public function getLearningActivityEquivalencyByCode(Type\GetLearningActivityEquivalencyByCode $parameters): Type\GetLearningActivityEquivalencyByCodeResponse
     {
-        return ($this->caller)('GetLearningActivityEquivalencyByCode', $parameters);
+        $response = ($this->caller)('GetLearningActivityEquivalencyByCode', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityEquivalencyByCodeResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetCourseSeriesList $parameters
+     * @param RequestInterface & Type\GetCourseSeriesList $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetCourseSeriesListResponse
+     * @return ResultInterface & Type\GetCourseSeriesListResponse
      */
-    public function getCourseSeriesList(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSeriesList $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetCourseSeriesListResponse
+    public function getCourseSeriesList(Type\GetCourseSeriesList $parameters): Type\GetCourseSeriesListResponse
     {
-        return ($this->caller)('GetCourseSeriesList', $parameters);
+        $response = ($this->caller)('GetCourseSeriesList', $parameters);
+
+        \Psl\Type\instance_of(Type\GetCourseSeriesListResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetEquivalencyLearningActivities $parameters
+     * @param RequestInterface & Type\GetEquivalencyLearningActivities $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetEquivalencyLearningActivitiesResponse
+     * @return ResultInterface & Type\GetEquivalencyLearningActivitiesResponse
      */
-    public function getEquivalencyLearningActivities(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetEquivalencyLearningActivities $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetEquivalencyLearningActivitiesResponse
+    public function getEquivalencyLearningActivities(Type\GetEquivalencyLearningActivities $parameters): Type\GetEquivalencyLearningActivitiesResponse
     {
-        return ($this->caller)('GetEquivalencyLearningActivities', $parameters);
+        $response = ($this->caller)('GetEquivalencyLearningActivities', $parameters);
+
+        \Psl\Type\instance_of(Type\GetEquivalencyLearningActivitiesResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetAvailableCourses $parameters
+     * @param RequestInterface & Type\GetAvailableCourses $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetAvailableCoursesResponse
+     * @return ResultInterface & Type\GetAvailableCoursesResponse
      */
-    public function getAvailableCourses(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetAvailableCourses $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetAvailableCoursesResponse
+    public function getAvailableCourses(Type\GetAvailableCourses $parameters): Type\GetAvailableCoursesResponse
     {
-        return ($this->caller)('GetAvailableCourses', $parameters);
+        $response = ($this->caller)('GetAvailableCourses', $parameters);
+
+        \Psl\Type\instance_of(Type\GetAvailableCoursesResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 
     /**
-     * @param RequestInterface|Type\GetLearningActivityDetails $parameters
+     * @param RequestInterface & Type\GetLearningActivityDetails $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface|Type\GetLearningActivityDetailsResponse
+     * @return ResultInterface & Type\GetLearningActivityDetailsResponse
      */
-    public function getLearningActivityDetails(\Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityDetails $parameters): \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\GetLearningActivityDetailsResponse
+    public function getLearningActivityDetails(Type\GetLearningActivityDetails $parameters): Type\GetLearningActivityDetailsResponse
     {
-        return ($this->caller)('getLearningActivityDetails', $parameters);
+        $response = ($this->caller)('getLearningActivityDetails', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityDetailsResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetAllStudentLearningActivityRecords implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $studentID;
+    
+    private string $studentID;
 
-    /**
-     * @var string
-     */
-    private $learningObjectTypeFilter;
+    
+    private string $learningObjectTypeFilter;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $studentID
-     * @param string $learningObjectTypeFilter
      */
-    public function __construct($apiKey, $studentID, $learningObjectTypeFilter)
+    public function __construct(string $apiKey, string $studentID, string $learningObjectTypeFilter)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
         $this->learningObjectTypeFilter = $learningObjectTypeFilter;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetAllStudentLearningActivityRecords
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetAllStudentLearningActivityRecords implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->studentID;
     }
 
-    /**
-     * @param string $studentID
-     *
-     * @return GetAllStudentLearningActivityRecords
-     */
-    public function withStudentID($studentID)
+    
+    public function withStudentID(string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -79,20 +57,14 @@ class GetAllStudentLearningActivityRecords implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningObjectTypeFilter()
+    
+    public function getLearningObjectTypeFilter(): string
     {
         return $this->learningObjectTypeFilter;
     }
 
-    /**
-     * @param string $learningObjectTypeFilter
-     *
-     * @return GetAllStudentLearningActivityRecords
-     */
-    public function withLearningObjectTypeFilter($learningObjectTypeFilter)
+    
+    public function withLearningObjectTypeFilter(string $learningObjectTypeFilter): static
     {
         $new = clone $this;
         $new->learningObjectTypeFilter = $learningObjectTypeFilter;

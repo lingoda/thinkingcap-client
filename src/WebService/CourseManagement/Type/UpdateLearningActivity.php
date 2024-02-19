@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,113 +8,61 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateLearningActivity implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $learningActivityID;
+    
+    private string $learningActivityID;
 
-    /**
-     * @var string
-     */
-    private $learningActivityType;
+    
+    private string $learningActivityType;
 
-    /**
-     * @var string
-     */
-    private $learningActivityTitle;
+    
+    private string $learningActivityTitle;
 
-    /**
-     * @var string
-     */
-    private $learningActivityCode;
+    
+    private string $learningActivityCode;
 
-    /**
-     * @var string
-     */
-    private $learningActivityDescription;
+    
+    private string $learningActivityDescription;
 
-    /**
-     * @var string
-     */
-    private $learningActivityLanguage;
+    
+    private string $learningActivityLanguage;
 
-    /**
-     * @var string
-     */
-    private $learningActivityEquivalencyCode;
+    
+    private string $learningActivityEquivalencyCode;
 
-    /**
-     * @var string
-     */
-    private $learningActivityTags;
+    
+    private string $learningActivityTags;
 
-    /**
-     * @var float
-     */
-    private $learningActivityEstimatedTimeMinutes;
+    
+    private float $learningActivityEstimatedTimeMinutes;
 
-    /**
-     * @var bool
-     */
-    private $learningActivityShowSupervisorLogin;
+    
+    private bool $learningActivityShowSupervisorLogin;
 
-    /**
-     * @var bool
-     */
-    private $learningActivityRequiresEvidence;
+    
+    private bool $learningActivityRequiresEvidence;
 
-    /**
-     * @var string
-     */
-    private $learningActivityCertificateTemplateName;
+    
+    private string $learningActivityCertificateTemplateName;
 
-    /**
-     * @var int
-     */
-    private $learningActivityCertificateMinScore;
+    
+    private int $learningActivityCertificateMinScore;
 
-    /**
-     * @var string
-     */
-    private $learningActivityCustomMetadata;
+    
+    private string $learningActivityCustomMetadata;
 
-    /**
-     * @var bool
-     */
-    private $updateAdminCatalogs;
+    
+    private bool $updateAdminCatalogs;
 
-    /**
-     * @var bool
-     */
-    private $updateLearnerCatalogs;
+    
+    private bool $updateLearnerCatalogs;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $learningActivityID
-     * @param string $learningActivityType
-     * @param string $learningActivityTitle
-     * @param string $learningActivityCode
-     * @param string $learningActivityDescription
-     * @param string $learningActivityLanguage
-     * @param string $learningActivityEquivalencyCode
-     * @param string $learningActivityTags
-     * @param float $learningActivityEstimatedTimeMinutes
-     * @param bool $learningActivityShowSupervisorLogin
-     * @param bool $learningActivityRequiresEvidence
-     * @param string $learningActivityCertificateTemplateName
-     * @param int $learningActivityCertificateMinScore
-     * @param string $learningActivityCustomMetadata
-     * @param bool $updateAdminCatalogs
-     * @param bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $learningActivityID, $learningActivityType, $learningActivityTitle, $learningActivityCode, $learningActivityDescription, $learningActivityLanguage, $learningActivityEquivalencyCode, $learningActivityTags, $learningActivityEstimatedTimeMinutes, $learningActivityShowSupervisorLogin, $learningActivityRequiresEvidence, $learningActivityCertificateTemplateName, $learningActivityCertificateMinScore, $learningActivityCustomMetadata, $updateAdminCatalogs, $updateLearnerCatalogs)
+    public function __construct(string $apiKey, string $learningActivityID, string $learningActivityType, string $learningActivityTitle, string $learningActivityCode, string $learningActivityDescription, string $learningActivityLanguage, string $learningActivityEquivalencyCode, string $learningActivityTags, float $learningActivityEstimatedTimeMinutes, bool $learningActivityShowSupervisorLogin, bool $learningActivityRequiresEvidence, string $learningActivityCertificateTemplateName, int $learningActivityCertificateMinScore, string $learningActivityCustomMetadata, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityID = $learningActivityID;
@@ -135,20 +83,14 @@ class UpdateLearningActivity implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -156,20 +98,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityID()
+    
+    public function getLearningActivityID(): string
     {
         return $this->learningActivityID;
     }
 
-    /**
-     * @param string $learningActivityID
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityID($learningActivityID)
+    
+    public function withLearningActivityID(string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;
@@ -177,20 +113,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityType()
+    
+    public function getLearningActivityType(): string
     {
         return $this->learningActivityType;
     }
 
-    /**
-     * @param string $learningActivityType
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityType($learningActivityType)
+    
+    public function withLearningActivityType(string $learningActivityType): static
     {
         $new = clone $this;
         $new->learningActivityType = $learningActivityType;
@@ -198,20 +128,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityTitle()
+    
+    public function getLearningActivityTitle(): string
     {
         return $this->learningActivityTitle;
     }
 
-    /**
-     * @param string $learningActivityTitle
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityTitle($learningActivityTitle)
+    
+    public function withLearningActivityTitle(string $learningActivityTitle): static
     {
         $new = clone $this;
         $new->learningActivityTitle = $learningActivityTitle;
@@ -219,20 +143,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCode()
+    
+    public function getLearningActivityCode(): string
     {
         return $this->learningActivityCode;
     }
 
-    /**
-     * @param string $learningActivityCode
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityCode($learningActivityCode)
+    
+    public function withLearningActivityCode(string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;
@@ -240,20 +158,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityDescription()
+    
+    public function getLearningActivityDescription(): string
     {
         return $this->learningActivityDescription;
     }
 
-    /**
-     * @param string $learningActivityDescription
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityDescription($learningActivityDescription)
+    
+    public function withLearningActivityDescription(string $learningActivityDescription): static
     {
         $new = clone $this;
         $new->learningActivityDescription = $learningActivityDescription;
@@ -261,20 +173,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityLanguage()
+    
+    public function getLearningActivityLanguage(): string
     {
         return $this->learningActivityLanguage;
     }
 
-    /**
-     * @param string $learningActivityLanguage
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityLanguage($learningActivityLanguage)
+    
+    public function withLearningActivityLanguage(string $learningActivityLanguage): static
     {
         $new = clone $this;
         $new->learningActivityLanguage = $learningActivityLanguage;
@@ -282,20 +188,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityEquivalencyCode()
+    
+    public function getLearningActivityEquivalencyCode(): string
     {
         return $this->learningActivityEquivalencyCode;
     }
 
-    /**
-     * @param string $learningActivityEquivalencyCode
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityEquivalencyCode($learningActivityEquivalencyCode)
+    
+    public function withLearningActivityEquivalencyCode(string $learningActivityEquivalencyCode): static
     {
         $new = clone $this;
         $new->learningActivityEquivalencyCode = $learningActivityEquivalencyCode;
@@ -303,20 +203,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityTags()
+    
+    public function getLearningActivityTags(): string
     {
         return $this->learningActivityTags;
     }
 
-    /**
-     * @param string $learningActivityTags
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityTags($learningActivityTags)
+    
+    public function withLearningActivityTags(string $learningActivityTags): static
     {
         $new = clone $this;
         $new->learningActivityTags = $learningActivityTags;
@@ -324,20 +218,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getLearningActivityEstimatedTimeMinutes()
+    
+    public function getLearningActivityEstimatedTimeMinutes(): float
     {
         return $this->learningActivityEstimatedTimeMinutes;
     }
 
-    /**
-     * @param float $learningActivityEstimatedTimeMinutes
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityEstimatedTimeMinutes($learningActivityEstimatedTimeMinutes)
+    
+    public function withLearningActivityEstimatedTimeMinutes(float $learningActivityEstimatedTimeMinutes): static
     {
         $new = clone $this;
         $new->learningActivityEstimatedTimeMinutes = $learningActivityEstimatedTimeMinutes;
@@ -345,20 +233,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLearningActivityShowSupervisorLogin()
+    
+    public function getLearningActivityShowSupervisorLogin(): bool
     {
         return $this->learningActivityShowSupervisorLogin;
     }
 
-    /**
-     * @param bool $learningActivityShowSupervisorLogin
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityShowSupervisorLogin($learningActivityShowSupervisorLogin)
+    
+    public function withLearningActivityShowSupervisorLogin(bool $learningActivityShowSupervisorLogin): static
     {
         $new = clone $this;
         $new->learningActivityShowSupervisorLogin = $learningActivityShowSupervisorLogin;
@@ -366,20 +248,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLearningActivityRequiresEvidence()
+    
+    public function getLearningActivityRequiresEvidence(): bool
     {
         return $this->learningActivityRequiresEvidence;
     }
 
-    /**
-     * @param bool $learningActivityRequiresEvidence
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityRequiresEvidence($learningActivityRequiresEvidence)
+    
+    public function withLearningActivityRequiresEvidence(bool $learningActivityRequiresEvidence): static
     {
         $new = clone $this;
         $new->learningActivityRequiresEvidence = $learningActivityRequiresEvidence;
@@ -387,20 +263,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCertificateTemplateName()
+    
+    public function getLearningActivityCertificateTemplateName(): string
     {
         return $this->learningActivityCertificateTemplateName;
     }
 
-    /**
-     * @param string $learningActivityCertificateTemplateName
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityCertificateTemplateName($learningActivityCertificateTemplateName)
+    
+    public function withLearningActivityCertificateTemplateName(string $learningActivityCertificateTemplateName): static
     {
         $new = clone $this;
         $new->learningActivityCertificateTemplateName = $learningActivityCertificateTemplateName;
@@ -408,20 +278,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getLearningActivityCertificateMinScore()
+    
+    public function getLearningActivityCertificateMinScore(): int
     {
         return $this->learningActivityCertificateMinScore;
     }
 
-    /**
-     * @param int $learningActivityCertificateMinScore
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityCertificateMinScore($learningActivityCertificateMinScore)
+    
+    public function withLearningActivityCertificateMinScore(int $learningActivityCertificateMinScore): static
     {
         $new = clone $this;
         $new->learningActivityCertificateMinScore = $learningActivityCertificateMinScore;
@@ -429,20 +293,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCustomMetadata()
+    
+    public function getLearningActivityCustomMetadata(): string
     {
         return $this->learningActivityCustomMetadata;
     }
 
-    /**
-     * @param string $learningActivityCustomMetadata
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withLearningActivityCustomMetadata($learningActivityCustomMetadata)
+    
+    public function withLearningActivityCustomMetadata(string $learningActivityCustomMetadata): static
     {
         $new = clone $this;
         $new->learningActivityCustomMetadata = $learningActivityCustomMetadata;
@@ -450,20 +308,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateAdminCatalogs()
+    
+    public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    /**
-     * @param bool $updateAdminCatalogs
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    
+    public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
         $new->updateAdminCatalogs = $updateAdminCatalogs;
@@ -471,20 +323,14 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateLearnerCatalogs()
+    
+    public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    /**
-     * @param bool $updateLearnerCatalogs
-     *
-     * @return UpdateLearningActivity
-     */
-    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    
+    public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;
         $new->updateLearnerCatalogs = $updateLearnerCatalogs;

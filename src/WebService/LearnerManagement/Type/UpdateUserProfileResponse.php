@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class UpdateUserProfileResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $UpdateUserProfileResult;
+    private ServiceResultOfString $UpdateUserProfileResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getUpdateUserProfileResult()
+    
+    public function getUpdateUserProfileResult(): ServiceResultOfString
     {
         return $this->UpdateUserProfileResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $UpdateUserProfileResult
-     *
-     * @return UpdateUserProfileResponse
-     */
-    public function withUpdateUserProfileResult($UpdateUserProfileResult)
+    
+    public function withUpdateUserProfileResult(ServiceResultOfString $UpdateUserProfileResult): static
     {
         $new = clone $this;
         $new->UpdateUserProfileResult = $UpdateUserProfileResult;

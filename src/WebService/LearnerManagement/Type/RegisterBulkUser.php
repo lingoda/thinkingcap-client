@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,89 +8,49 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class RegisterBulkUser implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var string
-     */
-    private $userFirstName;
+    
+    private string $userFirstName;
 
-    /**
-     * @var string
-     */
-    private $userLastName;
+    
+    private string $userLastName;
 
-    /**
-     * @var string
-     */
-    private $userTitle;
+    
+    private string $userTitle;
 
-    /**
-     * @var string
-     */
-    private $userEmail;
+    
+    private string $userEmail;
 
-    /**
-     * @var string
-     */
-    private $userPassword;
+    
+    private string $userPassword;
 
-    /**
-     * @var string
-     */
-    private $userScreenName;
+    
+    private string $userScreenName;
 
-    /**
-     * @var string
-     */
-    private $userLanguage;
+    
+    private string $userLanguage;
 
-    /**
-     * @var string
-     */
-    private $userCustomMetadata;
+    
+    private string $userCustomMetadata;
 
-    /**
-     * @var string
-     */
-    private $source;
+    
+    private string $source;
 
-    /**
-     * @var string
-     */
-    private $syncDomainID;
+    
+    private string $syncDomainID;
 
-    /**
-     * @var bool
-     */
-    private $protectFromManualChange;
+    
+    private bool $protectFromManualChange;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param string $userFirstName
-     * @param string $userLastName
-     * @param string $userTitle
-     * @param string $userEmail
-     * @param string $userPassword
-     * @param string $userScreenName
-     * @param string $userLanguage
-     * @param string $userCustomMetadata
-     * @param string $source
-     * @param string $syncDomainID
-     * @param bool $protectFromManualChange
      */
-    public function __construct($apiKey, $userID, $userFirstName, $userLastName, $userTitle, $userEmail, $userPassword, $userScreenName, $userLanguage, $userCustomMetadata, $source, $syncDomainID, $protectFromManualChange)
+    public function __construct(string $apiKey, string $userID, string $userFirstName, string $userLastName, string $userTitle, string $userEmail, string $userPassword, string $userScreenName, string $userLanguage, string $userCustomMetadata, string $source, string $syncDomainID, bool $protectFromManualChange)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
@@ -107,20 +67,14 @@ class RegisterBulkUser implements RequestInterface
         $this->protectFromManualChange = $protectFromManualChange;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return RegisterBulkUser
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -128,20 +82,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -149,20 +97,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserFirstName()
+    
+    public function getUserFirstName(): string
     {
         return $this->userFirstName;
     }
 
-    /**
-     * @param string $userFirstName
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserFirstName($userFirstName)
+    
+    public function withUserFirstName(string $userFirstName): static
     {
         $new = clone $this;
         $new->userFirstName = $userFirstName;
@@ -170,20 +112,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserLastName()
+    
+    public function getUserLastName(): string
     {
         return $this->userLastName;
     }
 
-    /**
-     * @param string $userLastName
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserLastName($userLastName)
+    
+    public function withUserLastName(string $userLastName): static
     {
         $new = clone $this;
         $new->userLastName = $userLastName;
@@ -191,20 +127,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserTitle()
+    
+    public function getUserTitle(): string
     {
         return $this->userTitle;
     }
 
-    /**
-     * @param string $userTitle
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserTitle($userTitle)
+    
+    public function withUserTitle(string $userTitle): static
     {
         $new = clone $this;
         $new->userTitle = $userTitle;
@@ -212,20 +142,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserEmail()
+    
+    public function getUserEmail(): string
     {
         return $this->userEmail;
     }
 
-    /**
-     * @param string $userEmail
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserEmail($userEmail)
+    
+    public function withUserEmail(string $userEmail): static
     {
         $new = clone $this;
         $new->userEmail = $userEmail;
@@ -233,20 +157,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserPassword()
+    
+    public function getUserPassword(): string
     {
         return $this->userPassword;
     }
 
-    /**
-     * @param string $userPassword
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserPassword($userPassword)
+    
+    public function withUserPassword(string $userPassword): static
     {
         $new = clone $this;
         $new->userPassword = $userPassword;
@@ -254,20 +172,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserScreenName()
+    
+    public function getUserScreenName(): string
     {
         return $this->userScreenName;
     }
 
-    /**
-     * @param string $userScreenName
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserScreenName($userScreenName)
+    
+    public function withUserScreenName(string $userScreenName): static
     {
         $new = clone $this;
         $new->userScreenName = $userScreenName;
@@ -275,20 +187,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserLanguage()
+    
+    public function getUserLanguage(): string
     {
         return $this->userLanguage;
     }
 
-    /**
-     * @param string $userLanguage
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserLanguage($userLanguage)
+    
+    public function withUserLanguage(string $userLanguage): static
     {
         $new = clone $this;
         $new->userLanguage = $userLanguage;
@@ -296,20 +202,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserCustomMetadata()
+    
+    public function getUserCustomMetadata(): string
     {
         return $this->userCustomMetadata;
     }
 
-    /**
-     * @param string $userCustomMetadata
-     *
-     * @return RegisterBulkUser
-     */
-    public function withUserCustomMetadata($userCustomMetadata)
+    
+    public function withUserCustomMetadata(string $userCustomMetadata): static
     {
         $new = clone $this;
         $new->userCustomMetadata = $userCustomMetadata;
@@ -317,20 +217,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSource()
+    
+    public function getSource(): string
     {
         return $this->source;
     }
 
-    /**
-     * @param string $source
-     *
-     * @return RegisterBulkUser
-     */
-    public function withSource($source)
+    
+    public function withSource(string $source): static
     {
         $new = clone $this;
         $new->source = $source;
@@ -338,20 +232,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSyncDomainID()
+    
+    public function getSyncDomainID(): string
     {
         return $this->syncDomainID;
     }
 
-    /**
-     * @param string $syncDomainID
-     *
-     * @return RegisterBulkUser
-     */
-    public function withSyncDomainID($syncDomainID)
+    
+    public function withSyncDomainID(string $syncDomainID): static
     {
         $new = clone $this;
         $new->syncDomainID = $syncDomainID;
@@ -359,20 +247,14 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProtectFromManualChange()
+    
+    public function getProtectFromManualChange(): bool
     {
         return $this->protectFromManualChange;
     }
 
-    /**
-     * @param bool $protectFromManualChange
-     *
-     * @return RegisterBulkUser
-     */
-    public function withProtectFromManualChange($protectFromManualChange)
+    
+    public function withProtectFromManualChange(bool $protectFromManualChange): static
     {
         $new = clone $this;
         $new->protectFromManualChange = $protectFromManualChange;

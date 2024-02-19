@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfAnyType
 {
-    /**
-     * @var mixed
-     */
-    private $anyType;
+    private mixed $anyType;
 
-    /**
-     * @return mixed
-     */
-    public function getAnyType()
+    
+    public function getAnyType(): mixed
     {
         return $this->anyType;
     }
 
-    /**
-     * @param mixed $anyType
-     *
-     * @return ArrayOfAnyType
-     */
-    public function withAnyType($anyType)
+    
+    public function withAnyType(mixed $anyType): static
     {
         $new = clone $this;
         $new->anyType = $anyType;

@@ -1,165 +1,104 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
+use DateTimeInterface;
+
 class AccreditationDetails
 {
-    /**
-     * @var string
-     */
-    private $Type;
+    private string $Type;
 
-    /**
-     * @var string
-     */
-    private $ID;
+    
+    private string $ID;
 
-    /**
-     * @var float
-     */
-    private $CreditValue;
+    
+    private float $CreditValue;
 
-    /**
-     * @var int
-     */
-    private $CertificateScore;
+    
+    private int $CertificateScore;
 
-    /**
-     * @var bool
-     */
-    private $DoNotGrandCertificateUnlessCreditIssued;
+    
+    private bool $DoNotGrandCertificateUnlessCreditIssued;
 
-    /**
-     * @var float
-     */
-    private $CertificateMinTime;
+    
+    private float $CertificateMinTime;
 
-    /**
-     * @var string
-     */
-    private $CertificateType;
+    
+    private string $CertificateType;
 
-    /**
-     * @var bool
-     */
-    private $CanPrintCertificate;
+    
+    private bool $CanPrintCertificate;
 
-    /**
-     * @var bool
-     */
-    private $GrantCertificate;
+    
+    private bool $GrantCertificate;
 
-    /**
-     * @var bool
-     */
-    private $CreditOnlyOnPass;
+    
+    private bool $CreditOnlyOnPass;
 
-    /**
-     * @var bool
-     */
-    private $CertificateExpires;
+    
+    private bool $CertificateExpires;
 
-    /**
-     * @var bool
-     */
-    private $CertificateExpireBasedOnEnrollmentDate;
+    
+    private bool $CertificateExpireBasedOnEnrollmentDate;
 
-    /**
-     * @var bool
-     */
-    private $CertificateExpireBasedOnCompletionDate;
+    
+    private bool $CertificateExpireBasedOnCompletionDate;
 
-    /**
-     * @var bool
-     */
-    private $CertificateExpireBasedOnFixedDate;
+    
+    private bool $CertificateExpireBasedOnFixedDate;
 
-    /**
-     * @var bool
-     */
-    private $CertificateExpireBasedOnMetadataField;
+    
+    private bool $CertificateExpireBasedOnMetadataField;
 
-    /**
-     * @var bool
-     */
-    private $LimitReenroll;
+    
+    private bool $LimitReenroll;
 
-    /**
-     * @var int
-     */
-    private $MaxReenrollment;
+    
+    private int $MaxReenrollment;
 
-    /**
-     * @var int
-     */
-    private $ExpireUnit;
+    
+    private int $ExpireUnit;
 
-    /**
-     * @var string
-     */
-    private $ExpireInterval;
+    
+    private string $ExpireInterval;
 
-    /**
-     * @var int
-     */
-    private $NotifyUnit;
+    
+    private int $NotifyUnit;
 
-    /**
-     * @var string
-     */
-    private $NotifyInterval;
+    
+    private string $NotifyInterval;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $ExpireDate;
+    
+    private DateTimeInterface $ExpireDate;
 
-    /**
-     * @var string
-     */
-    private $ExpireMetadataFieldID;
+    
+    private string $ExpireMetadataFieldID;
 
-    /**
-     * @var bool
-     */
-    private $CreditsAcrossVariousCategories;
+    
+    private bool $CreditsAcrossVariousCategories;
 
-    /**
-     * @var bool
-     */
-    private $GrantOpenBadge;
+    
+    private bool $GrantOpenBadge;
 
-    /**
-     * @var string
-     */
-    private $OpenBadgeType;
+    
+    private string $OpenBadgeType;
 
-    /**
-     * @var bool
-     */
-    private $GrantOpenBadgeCompletionPriorDueDate;
+    
+    private bool $GrantOpenBadgeCompletionPriorDueDate;
 
-    /**
-     * @var int
-     */
-    private $GrantOpenBadgeCompletionDayAfterEnroll;
+    
+    private int $GrantOpenBadgeCompletionDayAfterEnroll;
 
-    /**
-     * @return string
-     */
-    public function getType()
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return AccreditationDetails
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -167,20 +106,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return AccreditationDetails
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -188,20 +121,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCreditValue()
+    
+    public function getCreditValue(): float
     {
         return $this->CreditValue;
     }
 
-    /**
-     * @param float $CreditValue
-     *
-     * @return AccreditationDetails
-     */
-    public function withCreditValue($CreditValue)
+    
+    public function withCreditValue(float $CreditValue): static
     {
         $new = clone $this;
         $new->CreditValue = $CreditValue;
@@ -209,20 +136,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getCertificateScore()
+    
+    public function getCertificateScore(): int
     {
         return $this->CertificateScore;
     }
 
-    /**
-     * @param int $CertificateScore
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateScore($CertificateScore)
+    
+    public function withCertificateScore(int $CertificateScore): static
     {
         $new = clone $this;
         $new->CertificateScore = $CertificateScore;
@@ -230,20 +151,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDoNotGrandCertificateUnlessCreditIssued()
+    
+    public function getDoNotGrandCertificateUnlessCreditIssued(): bool
     {
         return $this->DoNotGrandCertificateUnlessCreditIssued;
     }
 
-    /**
-     * @param bool $DoNotGrandCertificateUnlessCreditIssued
-     *
-     * @return AccreditationDetails
-     */
-    public function withDoNotGrandCertificateUnlessCreditIssued($DoNotGrandCertificateUnlessCreditIssued)
+    
+    public function withDoNotGrandCertificateUnlessCreditIssued(bool $DoNotGrandCertificateUnlessCreditIssued): static
     {
         $new = clone $this;
         $new->DoNotGrandCertificateUnlessCreditIssued = $DoNotGrandCertificateUnlessCreditIssued;
@@ -251,20 +166,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCertificateMinTime()
+    
+    public function getCertificateMinTime(): float
     {
         return $this->CertificateMinTime;
     }
 
-    /**
-     * @param float $CertificateMinTime
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateMinTime($CertificateMinTime)
+    
+    public function withCertificateMinTime(float $CertificateMinTime): static
     {
         $new = clone $this;
         $new->CertificateMinTime = $CertificateMinTime;
@@ -272,20 +181,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCertificateType()
+    
+    public function getCertificateType(): string
     {
         return $this->CertificateType;
     }
 
-    /**
-     * @param string $CertificateType
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateType($CertificateType)
+    
+    public function withCertificateType(string $CertificateType): static
     {
         $new = clone $this;
         $new->CertificateType = $CertificateType;
@@ -293,20 +196,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanPrintCertificate()
+    
+    public function getCanPrintCertificate(): bool
     {
         return $this->CanPrintCertificate;
     }
 
-    /**
-     * @param bool $CanPrintCertificate
-     *
-     * @return AccreditationDetails
-     */
-    public function withCanPrintCertificate($CanPrintCertificate)
+    
+    public function withCanPrintCertificate(bool $CanPrintCertificate): static
     {
         $new = clone $this;
         $new->CanPrintCertificate = $CanPrintCertificate;
@@ -314,20 +211,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantCertificate()
+    
+    public function getGrantCertificate(): bool
     {
         return $this->GrantCertificate;
     }
 
-    /**
-     * @param bool $GrantCertificate
-     *
-     * @return AccreditationDetails
-     */
-    public function withGrantCertificate($GrantCertificate)
+    
+    public function withGrantCertificate(bool $GrantCertificate): static
     {
         $new = clone $this;
         $new->GrantCertificate = $GrantCertificate;
@@ -335,20 +226,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCreditOnlyOnPass()
+    
+    public function getCreditOnlyOnPass(): bool
     {
         return $this->CreditOnlyOnPass;
     }
 
-    /**
-     * @param bool $CreditOnlyOnPass
-     *
-     * @return AccreditationDetails
-     */
-    public function withCreditOnlyOnPass($CreditOnlyOnPass)
+    
+    public function withCreditOnlyOnPass(bool $CreditOnlyOnPass): static
     {
         $new = clone $this;
         $new->CreditOnlyOnPass = $CreditOnlyOnPass;
@@ -356,20 +241,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCertificateExpires()
+    
+    public function getCertificateExpires(): bool
     {
         return $this->CertificateExpires;
     }
 
-    /**
-     * @param bool $CertificateExpires
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateExpires($CertificateExpires)
+    
+    public function withCertificateExpires(bool $CertificateExpires): static
     {
         $new = clone $this;
         $new->CertificateExpires = $CertificateExpires;
@@ -377,20 +256,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCertificateExpireBasedOnEnrollmentDate()
+    
+    public function getCertificateExpireBasedOnEnrollmentDate(): bool
     {
         return $this->CertificateExpireBasedOnEnrollmentDate;
     }
 
-    /**
-     * @param bool $CertificateExpireBasedOnEnrollmentDate
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateExpireBasedOnEnrollmentDate($CertificateExpireBasedOnEnrollmentDate)
+    
+    public function withCertificateExpireBasedOnEnrollmentDate(bool $CertificateExpireBasedOnEnrollmentDate): static
     {
         $new = clone $this;
         $new->CertificateExpireBasedOnEnrollmentDate = $CertificateExpireBasedOnEnrollmentDate;
@@ -398,20 +271,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCertificateExpireBasedOnCompletionDate()
+    
+    public function getCertificateExpireBasedOnCompletionDate(): bool
     {
         return $this->CertificateExpireBasedOnCompletionDate;
     }
 
-    /**
-     * @param bool $CertificateExpireBasedOnCompletionDate
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateExpireBasedOnCompletionDate($CertificateExpireBasedOnCompletionDate)
+    
+    public function withCertificateExpireBasedOnCompletionDate(bool $CertificateExpireBasedOnCompletionDate): static
     {
         $new = clone $this;
         $new->CertificateExpireBasedOnCompletionDate = $CertificateExpireBasedOnCompletionDate;
@@ -419,20 +286,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCertificateExpireBasedOnFixedDate()
+    
+    public function getCertificateExpireBasedOnFixedDate(): bool
     {
         return $this->CertificateExpireBasedOnFixedDate;
     }
 
-    /**
-     * @param bool $CertificateExpireBasedOnFixedDate
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateExpireBasedOnFixedDate($CertificateExpireBasedOnFixedDate)
+    
+    public function withCertificateExpireBasedOnFixedDate(bool $CertificateExpireBasedOnFixedDate): static
     {
         $new = clone $this;
         $new->CertificateExpireBasedOnFixedDate = $CertificateExpireBasedOnFixedDate;
@@ -440,20 +301,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCertificateExpireBasedOnMetadataField()
+    
+    public function getCertificateExpireBasedOnMetadataField(): bool
     {
         return $this->CertificateExpireBasedOnMetadataField;
     }
 
-    /**
-     * @param bool $CertificateExpireBasedOnMetadataField
-     *
-     * @return AccreditationDetails
-     */
-    public function withCertificateExpireBasedOnMetadataField($CertificateExpireBasedOnMetadataField)
+    
+    public function withCertificateExpireBasedOnMetadataField(bool $CertificateExpireBasedOnMetadataField): static
     {
         $new = clone $this;
         $new->CertificateExpireBasedOnMetadataField = $CertificateExpireBasedOnMetadataField;
@@ -461,20 +316,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLimitReenroll()
+    
+    public function getLimitReenroll(): bool
     {
         return $this->LimitReenroll;
     }
 
-    /**
-     * @param bool $LimitReenroll
-     *
-     * @return AccreditationDetails
-     */
-    public function withLimitReenroll($LimitReenroll)
+    
+    public function withLimitReenroll(bool $LimitReenroll): static
     {
         $new = clone $this;
         $new->LimitReenroll = $LimitReenroll;
@@ -482,20 +331,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxReenrollment()
+    
+    public function getMaxReenrollment(): int
     {
         return $this->MaxReenrollment;
     }
 
-    /**
-     * @param int $MaxReenrollment
-     *
-     * @return AccreditationDetails
-     */
-    public function withMaxReenrollment($MaxReenrollment)
+    
+    public function withMaxReenrollment(int $MaxReenrollment): static
     {
         $new = clone $this;
         $new->MaxReenrollment = $MaxReenrollment;
@@ -503,20 +346,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getExpireUnit()
+    
+    public function getExpireUnit(): int
     {
         return $this->ExpireUnit;
     }
 
-    /**
-     * @param int $ExpireUnit
-     *
-     * @return AccreditationDetails
-     */
-    public function withExpireUnit($ExpireUnit)
+    
+    public function withExpireUnit(int $ExpireUnit): static
     {
         $new = clone $this;
         $new->ExpireUnit = $ExpireUnit;
@@ -524,20 +361,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getExpireInterval()
+    
+    public function getExpireInterval(): string
     {
         return $this->ExpireInterval;
     }
 
-    /**
-     * @param string $ExpireInterval
-     *
-     * @return AccreditationDetails
-     */
-    public function withExpireInterval($ExpireInterval)
+    
+    public function withExpireInterval(string $ExpireInterval): static
     {
         $new = clone $this;
         $new->ExpireInterval = $ExpireInterval;
@@ -545,20 +376,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getNotifyUnit()
+    
+    public function getNotifyUnit(): int
     {
         return $this->NotifyUnit;
     }
 
-    /**
-     * @param int $NotifyUnit
-     *
-     * @return AccreditationDetails
-     */
-    public function withNotifyUnit($NotifyUnit)
+    
+    public function withNotifyUnit(int $NotifyUnit): static
     {
         $new = clone $this;
         $new->NotifyUnit = $NotifyUnit;
@@ -566,20 +391,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotifyInterval()
+    
+    public function getNotifyInterval(): string
     {
         return $this->NotifyInterval;
     }
 
-    /**
-     * @param string $NotifyInterval
-     *
-     * @return AccreditationDetails
-     */
-    public function withNotifyInterval($NotifyInterval)
+    
+    public function withNotifyInterval(string $NotifyInterval): static
     {
         $new = clone $this;
         $new->NotifyInterval = $NotifyInterval;
@@ -587,20 +406,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getExpireDate()
+    
+    public function getExpireDate(): DateTimeInterface
     {
         return $this->ExpireDate;
     }
 
-    /**
-     * @param \DateTimeInterface $ExpireDate
-     *
-     * @return AccreditationDetails
-     */
-    public function withExpireDate($ExpireDate)
+    
+    public function withExpireDate(DateTimeInterface $ExpireDate): static
     {
         $new = clone $this;
         $new->ExpireDate = $ExpireDate;
@@ -608,20 +421,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getExpireMetadataFieldID()
+    
+    public function getExpireMetadataFieldID(): string
     {
         return $this->ExpireMetadataFieldID;
     }
 
-    /**
-     * @param string $ExpireMetadataFieldID
-     *
-     * @return AccreditationDetails
-     */
-    public function withExpireMetadataFieldID($ExpireMetadataFieldID)
+    
+    public function withExpireMetadataFieldID(string $ExpireMetadataFieldID): static
     {
         $new = clone $this;
         $new->ExpireMetadataFieldID = $ExpireMetadataFieldID;
@@ -629,20 +436,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCreditsAcrossVariousCategories()
+    
+    public function getCreditsAcrossVariousCategories(): bool
     {
         return $this->CreditsAcrossVariousCategories;
     }
 
-    /**
-     * @param bool $CreditsAcrossVariousCategories
-     *
-     * @return AccreditationDetails
-     */
-    public function withCreditsAcrossVariousCategories($CreditsAcrossVariousCategories)
+    
+    public function withCreditsAcrossVariousCategories(bool $CreditsAcrossVariousCategories): static
     {
         $new = clone $this;
         $new->CreditsAcrossVariousCategories = $CreditsAcrossVariousCategories;
@@ -650,20 +451,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantOpenBadge()
+    
+    public function getGrantOpenBadge(): bool
     {
         return $this->GrantOpenBadge;
     }
 
-    /**
-     * @param bool $GrantOpenBadge
-     *
-     * @return AccreditationDetails
-     */
-    public function withGrantOpenBadge($GrantOpenBadge)
+    
+    public function withGrantOpenBadge(bool $GrantOpenBadge): static
     {
         $new = clone $this;
         $new->GrantOpenBadge = $GrantOpenBadge;
@@ -671,20 +466,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOpenBadgeType()
+    
+    public function getOpenBadgeType(): string
     {
         return $this->OpenBadgeType;
     }
 
-    /**
-     * @param string $OpenBadgeType
-     *
-     * @return AccreditationDetails
-     */
-    public function withOpenBadgeType($OpenBadgeType)
+    
+    public function withOpenBadgeType(string $OpenBadgeType): static
     {
         $new = clone $this;
         $new->OpenBadgeType = $OpenBadgeType;
@@ -692,20 +481,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantOpenBadgeCompletionPriorDueDate()
+    
+    public function getGrantOpenBadgeCompletionPriorDueDate(): bool
     {
         return $this->GrantOpenBadgeCompletionPriorDueDate;
     }
 
-    /**
-     * @param bool $GrantOpenBadgeCompletionPriorDueDate
-     *
-     * @return AccreditationDetails
-     */
-    public function withGrantOpenBadgeCompletionPriorDueDate($GrantOpenBadgeCompletionPriorDueDate)
+    
+    public function withGrantOpenBadgeCompletionPriorDueDate(bool $GrantOpenBadgeCompletionPriorDueDate): static
     {
         $new = clone $this;
         $new->GrantOpenBadgeCompletionPriorDueDate = $GrantOpenBadgeCompletionPriorDueDate;
@@ -713,20 +496,14 @@ class AccreditationDetails
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getGrantOpenBadgeCompletionDayAfterEnroll()
+    
+    public function getGrantOpenBadgeCompletionDayAfterEnroll(): int
     {
         return $this->GrantOpenBadgeCompletionDayAfterEnroll;
     }
 
-    /**
-     * @param int $GrantOpenBadgeCompletionDayAfterEnroll
-     *
-     * @return AccreditationDetails
-     */
-    public function withGrantOpenBadgeCompletionDayAfterEnroll($GrantOpenBadgeCompletionDayAfterEnroll)
+    
+    public function withGrantOpenBadgeCompletionDayAfterEnroll(int $GrantOpenBadgeCompletionDayAfterEnroll): static
     {
         $new = clone $this;
         $new->GrantOpenBadgeCompletionDayAfterEnroll = $GrantOpenBadgeCompletionDayAfterEnroll;

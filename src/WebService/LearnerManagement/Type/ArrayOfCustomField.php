@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfCustomField
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CustomField
-     */
-    private $CustomField;
+    private CustomField $CustomField;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CustomField
-     */
-    public function getCustomField()
+    
+    public function getCustomField(): CustomField
     {
         return $this->CustomField;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CustomField $CustomField
-     *
-     * @return ArrayOfCustomField
-     */
-    public function withCustomField($CustomField)
+    
+    public function withCustomField(CustomField $CustomField): static
     {
         $new = clone $this;
         $new->CustomField = $CustomField;

@@ -1,35 +1,24 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class TimeZoneOffset
 {
-    /**
-     * @var int
-     */
-    private $OffsetHours;
+    private int $OffsetHours;
 
-    /**
-     * @var int
-     */
-    private $OffsetMinutes;
+    
+    private int $OffsetMinutes;
 
-    /**
-     * @return int
-     */
-    public function getOffsetHours()
+    
+    public function getOffsetHours(): int
     {
         return $this->OffsetHours;
     }
 
-    /**
-     * @param int $OffsetHours
-     *
-     * @return TimeZoneOffset
-     */
-    public function withOffsetHours($OffsetHours)
+    
+    public function withOffsetHours(int $OffsetHours): static
     {
         $new = clone $this;
         $new->OffsetHours = $OffsetHours;
@@ -37,20 +26,14 @@ class TimeZoneOffset
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getOffsetMinutes()
+    
+    public function getOffsetMinutes(): int
     {
         return $this->OffsetMinutes;
     }
 
-    /**
-     * @param int $OffsetMinutes
-     *
-     * @return TimeZoneOffset
-     */
-    public function withOffsetMinutes($OffsetMinutes)
+    
+    public function withOffsetMinutes(int $OffsetMinutes): static
     {
         $new = clone $this;
         $new->OffsetMinutes = $OffsetMinutes;

@@ -1,35 +1,24 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ActivityMap
 {
-    /**
-     * @var string
-     */
-    private $objectivesJson;
+    private string $objectivesJson;
 
-    /**
-     * @var string
-     */
-    private $ObjectivesJson;
+    
+    private string $ObjectivesJson;
 
-    /**
-     * @return string
-     */
-    public function getObjectivesJson()
+    
+    public function getObjectivesJson(): string
     {
         return $this->ObjectivesJson;
     }
 
-    /**
-     * @param string $ObjectivesJson
-     *
-     * @return ActivityMap
-     */
-    public function withObjectivesJson($ObjectivesJson)
+    
+    public function withObjectivesJson(string $ObjectivesJson): static
     {
         $new = clone $this;
         $new->ObjectivesJson = $ObjectivesJson;

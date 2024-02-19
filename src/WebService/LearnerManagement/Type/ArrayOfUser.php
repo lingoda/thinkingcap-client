@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfUser
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\User
-     */
-    private $User;
+    private User $User;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\User
-     */
-    public function getUser()
+    
+    public function getUser(): User
     {
         return $this->User;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\User $User
-     *
-     * @return ArrayOfUser
-     */
-    public function withUser($User)
+    
+    public function withUser(User $User): static
     {
         $new = clone $this;
         $new->User = $User;

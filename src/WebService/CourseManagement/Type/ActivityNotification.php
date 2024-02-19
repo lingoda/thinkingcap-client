@@ -1,85 +1,54 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ActivityNotification
 {
-    /**
-     * @var string
-     */
-    private $NotificationID;
+    private string $NotificationID;
 
-    /**
-     * @var string
-     */
-    private $NotificationType;
+    
+    private string $NotificationType;
 
-    /**
-     * @var string
-     */
-    private $NotificationText;
+    
+    private string $NotificationText;
 
-    /**
-     * @var string
-     */
-    private $NotificationSubject;
+    
+    private string $NotificationSubject;
 
-    /**
-     * @var string
-     */
-    private $ActivityID;
+    
+    private string $ActivityID;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Activity
-     */
-    private $ActivityInfo;
+    
+    private Activity $ActivityInfo;
 
-    /**
-     * @var int
-     */
-    private $DaysToComplete;
+    
+    private int $DaysToComplete;
 
-    /**
-     * @var bool
-     */
-    private $OverrideGlobal;
+    
+    private bool $OverrideGlobal;
 
-    /**
-     * @var string
-     */
-    private $Repeat;
+    
+    private string $Repeat;
 
-    /**
-     * @var string
-     */
-    private $LastSent;
+    
+    private string $LastSent;
 
-    /**
-     * @var string
-     */
-    private $Lang;
+    
+    private string $Lang;
 
-    /**
-     * @var string
-     */
-    private $SMSText;
+    
+    private string $SMSText;
 
-    /**
-     * @return string
-     */
-    public function getNotificationID()
+    
+    public function getNotificationID(): string
     {
         return $this->NotificationID;
     }
 
-    /**
-     * @param string $NotificationID
-     *
-     * @return ActivityNotification
-     */
-    public function withNotificationID($NotificationID)
+    
+    public function withNotificationID(string $NotificationID): static
     {
         $new = clone $this;
         $new->NotificationID = $NotificationID;
@@ -87,20 +56,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotificationType()
+    
+    public function getNotificationType(): string
     {
         return $this->NotificationType;
     }
 
-    /**
-     * @param string $NotificationType
-     *
-     * @return ActivityNotification
-     */
-    public function withNotificationType($NotificationType)
+    
+    public function withNotificationType(string $NotificationType): static
     {
         $new = clone $this;
         $new->NotificationType = $NotificationType;
@@ -108,20 +71,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotificationText()
+    
+    public function getNotificationText(): string
     {
         return $this->NotificationText;
     }
 
-    /**
-     * @param string $NotificationText
-     *
-     * @return ActivityNotification
-     */
-    public function withNotificationText($NotificationText)
+    
+    public function withNotificationText(string $NotificationText): static
     {
         $new = clone $this;
         $new->NotificationText = $NotificationText;
@@ -129,20 +86,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotificationSubject()
+    
+    public function getNotificationSubject(): string
     {
         return $this->NotificationSubject;
     }
 
-    /**
-     * @param string $NotificationSubject
-     *
-     * @return ActivityNotification
-     */
-    public function withNotificationSubject($NotificationSubject)
+    
+    public function withNotificationSubject(string $NotificationSubject): static
     {
         $new = clone $this;
         $new->NotificationSubject = $NotificationSubject;
@@ -150,20 +101,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getActivityID()
+    
+    public function getActivityID(): string
     {
         return $this->ActivityID;
     }
 
-    /**
-     * @param string $ActivityID
-     *
-     * @return ActivityNotification
-     */
-    public function withActivityID($ActivityID)
+    
+    public function withActivityID(string $ActivityID): static
     {
         $new = clone $this;
         $new->ActivityID = $ActivityID;
@@ -171,20 +116,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Activity
-     */
-    public function getActivityInfo()
+    
+    public function getActivityInfo(): Activity
     {
         return $this->ActivityInfo;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Activity $ActivityInfo
-     *
-     * @return ActivityNotification
-     */
-    public function withActivityInfo($ActivityInfo)
+    
+    public function withActivityInfo(Activity $ActivityInfo): static
     {
         $new = clone $this;
         $new->ActivityInfo = $ActivityInfo;
@@ -192,20 +131,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getDaysToComplete()
+    
+    public function getDaysToComplete(): int
     {
         return $this->DaysToComplete;
     }
 
-    /**
-     * @param int $DaysToComplete
-     *
-     * @return ActivityNotification
-     */
-    public function withDaysToComplete($DaysToComplete)
+    
+    public function withDaysToComplete(int $DaysToComplete): static
     {
         $new = clone $this;
         $new->DaysToComplete = $DaysToComplete;
@@ -213,20 +146,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideGlobal()
+    
+    public function getOverrideGlobal(): bool
     {
         return $this->OverrideGlobal;
     }
 
-    /**
-     * @param bool $OverrideGlobal
-     *
-     * @return ActivityNotification
-     */
-    public function withOverrideGlobal($OverrideGlobal)
+    
+    public function withOverrideGlobal(bool $OverrideGlobal): static
     {
         $new = clone $this;
         $new->OverrideGlobal = $OverrideGlobal;
@@ -234,20 +161,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRepeat()
+    
+    public function getRepeat(): string
     {
         return $this->Repeat;
     }
 
-    /**
-     * @param string $Repeat
-     *
-     * @return ActivityNotification
-     */
-    public function withRepeat($Repeat)
+    
+    public function withRepeat(string $Repeat): static
     {
         $new = clone $this;
         $new->Repeat = $Repeat;
@@ -255,20 +176,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastSent()
+    
+    public function getLastSent(): string
     {
         return $this->LastSent;
     }
 
-    /**
-     * @param string $LastSent
-     *
-     * @return ActivityNotification
-     */
-    public function withLastSent($LastSent)
+    
+    public function withLastSent(string $LastSent): static
     {
         $new = clone $this;
         $new->LastSent = $LastSent;
@@ -276,20 +191,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLang()
+    
+    public function getLang(): string
     {
         return $this->Lang;
     }
 
-    /**
-     * @param string $Lang
-     *
-     * @return ActivityNotification
-     */
-    public function withLang($Lang)
+    
+    public function withLang(string $Lang): static
     {
         $new = clone $this;
         $new->Lang = $Lang;
@@ -297,20 +206,14 @@ class ActivityNotification
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSMSText()
+    
+    public function getSMSText(): string
     {
         return $this->SMSText;
     }
 
-    /**
-     * @param string $SMSText
-     *
-     * @return ActivityNotification
-     */
-    public function withSMSText($SMSText)
+    
+    public function withSMSText(string $SMSText): static
     {
         $new = clone $this;
         $new->SMSText = $SMSText;

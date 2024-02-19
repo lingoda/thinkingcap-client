@@ -1,65 +1,42 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class TimeZone
 {
-    /**
-     * @var string
-     */
-    private $Code;
+    private string $Code;
 
-    /**
-     * @var string
-     */
-    private $DSTCode;
+    
+    private string $DSTCode;
 
-    /**
-     * @var string
-     */
-    private $Name;
+    
+    private string $Name;
 
-    /**
-     * @var string
-     */
-    private $CurrentLocation;
+    
+    private string $CurrentLocation;
 
-    /**
-     * @var bool
-     */
-    private $ApplyDaylightSavings;
+    
+    private bool $ApplyDaylightSavings;
 
-    /**
-     * @var bool
-     */
-    private $IsDaylightSaving;
+    
+    private bool $IsDaylightSaving;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TimeZoneOffset
-     */
-    private $Offset;
+    
+    private TimeZoneOffset $Offset;
 
-    /**
-     * @var int
-     */
-    private $CiscoCode;
+    
+    private int $CiscoCode;
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return TimeZone
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -67,20 +44,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDSTCode()
+    
+    public function getDSTCode(): string
     {
         return $this->DSTCode;
     }
 
-    /**
-     * @param string $DSTCode
-     *
-     * @return TimeZone
-     */
-    public function withDSTCode($DSTCode)
+    
+    public function withDSTCode(string $DSTCode): static
     {
         $new = clone $this;
         $new->DSTCode = $DSTCode;
@@ -88,20 +59,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     *
-     * @return TimeZone
-     */
-    public function withName($Name)
+    
+    public function withName(string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -109,20 +74,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrentLocation()
+    
+    public function getCurrentLocation(): string
     {
         return $this->CurrentLocation;
     }
 
-    /**
-     * @param string $CurrentLocation
-     *
-     * @return TimeZone
-     */
-    public function withCurrentLocation($CurrentLocation)
+    
+    public function withCurrentLocation(string $CurrentLocation): static
     {
         $new = clone $this;
         $new->CurrentLocation = $CurrentLocation;
@@ -130,20 +89,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getApplyDaylightSavings()
+    
+    public function getApplyDaylightSavings(): bool
     {
         return $this->ApplyDaylightSavings;
     }
 
-    /**
-     * @param bool $ApplyDaylightSavings
-     *
-     * @return TimeZone
-     */
-    public function withApplyDaylightSavings($ApplyDaylightSavings)
+    
+    public function withApplyDaylightSavings(bool $ApplyDaylightSavings): static
     {
         $new = clone $this;
         $new->ApplyDaylightSavings = $ApplyDaylightSavings;
@@ -151,20 +104,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsDaylightSaving()
+    
+    public function getIsDaylightSaving(): bool
     {
         return $this->IsDaylightSaving;
     }
 
-    /**
-     * @param bool $IsDaylightSaving
-     *
-     * @return TimeZone
-     */
-    public function withIsDaylightSaving($IsDaylightSaving)
+    
+    public function withIsDaylightSaving(bool $IsDaylightSaving): static
     {
         $new = clone $this;
         $new->IsDaylightSaving = $IsDaylightSaving;
@@ -172,20 +119,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TimeZoneOffset
-     */
-    public function getOffset()
+    
+    public function getOffset(): TimeZoneOffset
     {
         return $this->Offset;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\TimeZoneOffset $Offset
-     *
-     * @return TimeZone
-     */
-    public function withOffset($Offset)
+    
+    public function withOffset(TimeZoneOffset $Offset): static
     {
         $new = clone $this;
         $new->Offset = $Offset;
@@ -193,20 +134,14 @@ class TimeZone
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getCiscoCode()
+    
+    public function getCiscoCode(): int
     {
         return $this->CiscoCode;
     }
 
-    /**
-     * @param int $CiscoCode
-     *
-     * @return TimeZone
-     */
-    public function withCiscoCode($CiscoCode)
+    
+    public function withCiscoCode(int $CiscoCode): static
     {
         $new = clone $this;
         $new->CiscoCode = $CiscoCode;

@@ -1,40 +1,27 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Permission
 {
-    /**
-     * @var string
-     */
-    private $ID;
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $Code;
+    
+    private string $Code;
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return Permission
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -42,20 +29,14 @@ class Permission
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return Permission
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -63,20 +44,14 @@ class Permission
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return Permission
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;

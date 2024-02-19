@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,53 +8,31 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetDomainUsers implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $domainID;
+    
+    private string $domainID;
 
-    /**
-     * @var bool
-     */
-    private $includeInactive;
+    
+    private bool $includeInactive;
 
-    /**
-     * @var bool
-     */
-    private $includeMetadata;
+    
+    private bool $includeMetadata;
 
-    /**
-     * @var bool
-     */
-    private $includeDomains;
+    
+    private bool $includeDomains;
 
-    /**
-     * @var int
-     */
-    private $offset;
+    
+    private int $offset;
 
-    /**
-     * @var int
-     */
-    private $take;
+    
+    private int $take;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $domainID
-     * @param bool $includeInactive
-     * @param bool $includeMetadata
-     * @param bool $includeDomains
-     * @param int $offset
-     * @param int $take
      */
-    public function __construct($apiKey, $domainID, $includeInactive, $includeMetadata, $includeDomains, $offset, $take)
+    public function __construct(string $apiKey, string $domainID, bool $includeInactive, bool $includeMetadata, bool $includeDomains, int $offset, int $take)
     {
         $this->apiKey = $apiKey;
         $this->domainID = $domainID;
@@ -65,20 +43,14 @@ class GetDomainUsers implements RequestInterface
         $this->take = $take;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetDomainUsers
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -86,20 +58,14 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->domainID;
     }
 
-    /**
-     * @param string $domainID
-     *
-     * @return GetDomainUsers
-     */
-    public function withDomainID($domainID)
+    
+    public function withDomainID(string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;
@@ -107,20 +73,14 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeInactive()
+    
+    public function getIncludeInactive(): bool
     {
         return $this->includeInactive;
     }
 
-    /**
-     * @param bool $includeInactive
-     *
-     * @return GetDomainUsers
-     */
-    public function withIncludeInactive($includeInactive)
+    
+    public function withIncludeInactive(bool $includeInactive): static
     {
         $new = clone $this;
         $new->includeInactive = $includeInactive;
@@ -128,20 +88,14 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeMetadata()
+    
+    public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    /**
-     * @param bool $includeMetadata
-     *
-     * @return GetDomainUsers
-     */
-    public function withIncludeMetadata($includeMetadata)
+    
+    public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;
         $new->includeMetadata = $includeMetadata;
@@ -149,20 +103,14 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeDomains()
+    
+    public function getIncludeDomains(): bool
     {
         return $this->includeDomains;
     }
 
-    /**
-     * @param bool $includeDomains
-     *
-     * @return GetDomainUsers
-     */
-    public function withIncludeDomains($includeDomains)
+    
+    public function withIncludeDomains(bool $includeDomains): static
     {
         $new = clone $this;
         $new->includeDomains = $includeDomains;
@@ -170,20 +118,14 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getOffset()
+    
+    public function getOffset(): int
     {
         return $this->offset;
     }
 
-    /**
-     * @param int $offset
-     *
-     * @return GetDomainUsers
-     */
-    public function withOffset($offset)
+    
+    public function withOffset(int $offset): static
     {
         $new = clone $this;
         $new->offset = $offset;
@@ -191,20 +133,14 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTake()
+    
+    public function getTake(): int
     {
         return $this->take;
     }
 
-    /**
-     * @param int $take
-     *
-     * @return GetDomainUsers
-     */
-    public function withTake($take)
+    
+    public function withTake(int $take): static
     {
         $new = clone $this;
         $new->take = $take;

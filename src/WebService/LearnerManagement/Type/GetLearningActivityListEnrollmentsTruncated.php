@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,42 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityListEnrollmentsTruncated implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userCustomMetadata;
+    
+    private string $userCustomMetadata;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userCustomMetadata
      */
-    public function __construct($apiKey, $userCustomMetadata)
+    public function __construct(string $apiKey, string $userCustomMetadata)
     {
         $this->apiKey = $apiKey;
         $this->userCustomMetadata = $userCustomMetadata;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetLearningActivityListEnrollmentsTruncated
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,20 +38,14 @@ class GetLearningActivityListEnrollmentsTruncated implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserCustomMetadata()
+    
+    public function getUserCustomMetadata(): string
     {
         return $this->userCustomMetadata;
     }
 
-    /**
-     * @param string $userCustomMetadata
-     *
-     * @return GetLearningActivityListEnrollmentsTruncated
-     */
-    public function withUserCustomMetadata($userCustomMetadata)
+    
+    public function withUserCustomMetadata(string $userCustomMetadata): static
     {
         $new = clone $this;
         $new->userCustomMetadata = $userCustomMetadata;

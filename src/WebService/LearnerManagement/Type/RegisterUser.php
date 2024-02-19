@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,71 +8,40 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class RegisterUser implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $userID;
+    
+    private string $userID;
 
-    /**
-     * @var string
-     */
-    private $userFirstName;
+    
+    private string $userFirstName;
 
-    /**
-     * @var string
-     */
-    private $userLastName;
+    
+    private string $userLastName;
 
-    /**
-     * @var string
-     */
-    private $userTitle;
+    
+    private string $userTitle;
 
-    /**
-     * @var string
-     */
-    private $userEmail;
+    
+    private string $userEmail;
 
-    /**
-     * @var string
-     */
-    private $userPassword;
+    
+    private string $userPassword;
 
-    /**
-     * @var string
-     */
-    private $userScreenName;
+    
+    private string $userScreenName;
 
-    /**
-     * @var string
-     */
-    private $userLanguage;
+    
+    private string $userLanguage;
 
-    /**
-     * @var string
-     */
-    private $userCustomMetadata;
+    
+    private string $userCustomMetadata;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $userID
-     * @param string $userFirstName
-     * @param string $userLastName
-     * @param string $userTitle
-     * @param string $userEmail
-     * @param string $userPassword
-     * @param string $userScreenName
-     * @param string $userLanguage
-     * @param string $userCustomMetadata
      */
-    public function __construct($apiKey, $userID, $userFirstName, $userLastName, $userTitle, $userEmail, $userPassword, $userScreenName, $userLanguage, $userCustomMetadata)
+    public function __construct(string $apiKey, string $userID, string $userFirstName, string $userLastName, string $userTitle, string $userEmail, string $userPassword, string $userScreenName, string $userLanguage, string $userCustomMetadata)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
@@ -86,20 +55,14 @@ class RegisterUser implements RequestInterface
         $this->userCustomMetadata = $userCustomMetadata;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return RegisterUser
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -107,20 +70,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserID()
+    
+    public function getUserID(): string
     {
         return $this->userID;
     }
 
-    /**
-     * @param string $userID
-     *
-     * @return RegisterUser
-     */
-    public function withUserID($userID)
+    
+    public function withUserID(string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -128,20 +85,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserFirstName()
+    
+    public function getUserFirstName(): string
     {
         return $this->userFirstName;
     }
 
-    /**
-     * @param string $userFirstName
-     *
-     * @return RegisterUser
-     */
-    public function withUserFirstName($userFirstName)
+    
+    public function withUserFirstName(string $userFirstName): static
     {
         $new = clone $this;
         $new->userFirstName = $userFirstName;
@@ -149,20 +100,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserLastName()
+    
+    public function getUserLastName(): string
     {
         return $this->userLastName;
     }
 
-    /**
-     * @param string $userLastName
-     *
-     * @return RegisterUser
-     */
-    public function withUserLastName($userLastName)
+    
+    public function withUserLastName(string $userLastName): static
     {
         $new = clone $this;
         $new->userLastName = $userLastName;
@@ -170,20 +115,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserTitle()
+    
+    public function getUserTitle(): string
     {
         return $this->userTitle;
     }
 
-    /**
-     * @param string $userTitle
-     *
-     * @return RegisterUser
-     */
-    public function withUserTitle($userTitle)
+    
+    public function withUserTitle(string $userTitle): static
     {
         $new = clone $this;
         $new->userTitle = $userTitle;
@@ -191,20 +130,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserEmail()
+    
+    public function getUserEmail(): string
     {
         return $this->userEmail;
     }
 
-    /**
-     * @param string $userEmail
-     *
-     * @return RegisterUser
-     */
-    public function withUserEmail($userEmail)
+    
+    public function withUserEmail(string $userEmail): static
     {
         $new = clone $this;
         $new->userEmail = $userEmail;
@@ -212,20 +145,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserPassword()
+    
+    public function getUserPassword(): string
     {
         return $this->userPassword;
     }
 
-    /**
-     * @param string $userPassword
-     *
-     * @return RegisterUser
-     */
-    public function withUserPassword($userPassword)
+    
+    public function withUserPassword(string $userPassword): static
     {
         $new = clone $this;
         $new->userPassword = $userPassword;
@@ -233,20 +160,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserScreenName()
+    
+    public function getUserScreenName(): string
     {
         return $this->userScreenName;
     }
 
-    /**
-     * @param string $userScreenName
-     *
-     * @return RegisterUser
-     */
-    public function withUserScreenName($userScreenName)
+    
+    public function withUserScreenName(string $userScreenName): static
     {
         $new = clone $this;
         $new->userScreenName = $userScreenName;
@@ -254,20 +175,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserLanguage()
+    
+    public function getUserLanguage(): string
     {
         return $this->userLanguage;
     }
 
-    /**
-     * @param string $userLanguage
-     *
-     * @return RegisterUser
-     */
-    public function withUserLanguage($userLanguage)
+    
+    public function withUserLanguage(string $userLanguage): static
     {
         $new = clone $this;
         $new->userLanguage = $userLanguage;
@@ -275,20 +190,14 @@ class RegisterUser implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserCustomMetadata()
+    
+    public function getUserCustomMetadata(): string
     {
         return $this->userCustomMetadata;
     }
 
-    /**
-     * @param string $userCustomMetadata
-     *
-     * @return RegisterUser
-     */
-    public function withUserCustomMetadata($userCustomMetadata)
+    
+    public function withUserCustomMetadata(string $userCustomMetadata): static
     {
         $new = clone $this;
         $new->userCustomMetadata = $userCustomMetadata;

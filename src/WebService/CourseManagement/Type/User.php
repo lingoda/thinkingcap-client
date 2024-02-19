@@ -1,325 +1,200 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class User
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CustomFields
-     */
-    private $CustomFields;
+    private CustomFields $CustomFields;
 
-    /**
-     * @var string
-     */
-    private $ID;
+    
+    private string $ID;
 
-    /**
-     * @var string
-     */
-    private $DisplayID;
+    
+    private string $DisplayID;
 
-    /**
-     * @var string
-     */
-    private $HomeDomain;
+    
+    private string $HomeDomain;
 
-    /**
-     * @var string
-     */
-    private $HomeDomainName;
+    
+    private string $HomeDomainName;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfDomainURLsCollection
-     */
-    private $BaseURLs;
+    
+    private ArrayOfDomainURLsCollection $BaseURLs;
 
-    /**
-     * @var string
-     */
-    private $FirstName;
+    
+    private string $FirstName;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastLoginDate;
+    
+    private DateTimeInterface $LastLoginDate;
 
-    /**
-     * @var string
-     */
-    private $LastLoginBrowser;
+    
+    private string $LastLoginBrowser;
 
-    /**
-     * @var string
-     */
-    private $LastLoginDevice;
+    
+    private string $LastLoginDevice;
 
-    /**
-     * @var bool
-     */
-    private $IsLoginLocked;
+    
+    private bool $IsLoginLocked;
 
-    /**
-     * @var bool
-     */
-    private $IsMFACheck;
+    
+    private bool $IsMFACheck;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $MFACreatedDate;
+    
+    private DateTimeInterface $MFACreatedDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $MFACheckDate;
+    
+    private DateTimeInterface $MFACheckDate;
 
-    /**
-     * @var bool
-     */
-    private $CompletedUserSetup;
+    
+    private bool $CompletedUserSetup;
 
-    /**
-     * @var string
-     */
-    private $LastName;
+    
+    private string $LastName;
 
-    /**
-     * @var string
-     */
-    private $ScreenName;
+    
+    private string $ScreenName;
 
-    /**
-     * @var string
-     */
-    private $Title;
+    
+    private string $Title;
 
-    /**
-     * @var string
-     */
-    private $Email;
+    
+    private string $Email;
 
-    /**
-     * @var string
-     */
-    private $UserName;
+    
+    private string $UserName;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $CreationDate;
+    
+    private DateTimeInterface $CreationDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastModifiedDate;
+    
+    private DateTimeInterface $LastModifiedDate;
 
-    /**
-     * @var string
-     */
-    private $CreationMethod;
+    
+    private string $CreationMethod;
 
-    /**
-     * @var bool
-     */
-    private $ProtectFromManualChange;
+    
+    private bool $ProtectFromManualChange;
 
-    /**
-     * @var bool
-     */
-    private $ProtectFromManualDeletion;
+    
+    private bool $ProtectFromManualDeletion;
 
-    /**
-     * @var string
-     */
-    private $SyncDomain;
+    
+    private string $SyncDomain;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $PasswordChangeDate;
+    
+    private DateTimeInterface $PasswordChangeDate;
 
-    /**
-     * @var string
-     */
-    private $Password;
+    
+    private string $Password;
 
-    /**
-     * @var bool
-     */
-    private $MustChangePassword;
+    
+    private bool $MustChangePassword;
 
-    /**
-     * @var string
-     */
-    private $Language;
+    
+    private string $Language;
 
-    /**
-     * @var bool
-     */
-    private $Active;
+    
+    private bool $Active;
 
-    /**
-     * @var bool
-     */
-    private $StatusLocked;
+    
+    private bool $StatusLocked;
 
-    /**
-     * @var bool
-     */
-    private $Pending;
+    
+    private bool $Pending;
 
-    /**
-     * @var bool
-     */
-    private $SuperUser;
+    
+    private bool $SuperUser;
 
-    /**
-     * @var bool
-     */
-    private $CanUseLMSLogin;
+    
+    private bool $CanUseLMSLogin;
 
-    /**
-     * @var string
-     */
-    private $OutsideEmail;
+    
+    private string $OutsideEmail;
 
-    /**
-     * @var bool
-     */
-    private $NewsLetterEmailOptOutDisabled;
+    
+    private bool $NewsLetterEmailOptOutDisabled;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail
-     */
-    private $Mails;
+    
+    private ArrayOfMail $Mails;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder
-     */
-    private $PersonalFolders;
+    
+    private ArrayOfMailFolder $PersonalFolders;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact
-     */
-    private $Contacts;
+    
+    private ArrayOfContact $Contacts;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfRole
-     */
-    private $Roles;
+    
+    private ArrayOfRole $Roles;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfPermission
-     */
-    private $Permissions;
+    
+    private ArrayOfPermission $Permissions;
 
-    /**
-     * @var bool
-     */
-    private $BlockNotifications;
+    
+    private bool $BlockNotifications;
 
-    /**
-     * @var string
-     */
-    private $BlockNotificationsReason;
+    
+    private string $BlockNotificationsReason;
 
-    /**
-     * @var bool
-     */
-    private $BlockDomainAnnouncements;
+    
+    private bool $BlockDomainAnnouncements;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram
-     */
-    private $Programs;
+    
+    private ArrayOfProgram $Programs;
 
-    /**
-     * @var bool
-     */
-    private $ProgramMgr;
+    
+    private bool $ProgramMgr;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    private $Courses;
+    
+    private ArrayOfCourse $Courses;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $CourseTitles;
+    
+    private ArrayOfString $CourseTitles;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    private $ActivityMaps;
+    
+    private ArrayOfCourse $ActivityMaps;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $ActivityMapTitles;
+    
+    private ArrayOfString $ActivityMapTitles;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Course
-     */
-    private $CurrentCourse;
+    
+    private Course $CurrentCourse;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    private $TACourses;
+    
+    private ArrayOfCourse $TACourses;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $TACourseTitles;
+    
+    private ArrayOfString $TACourseTitles;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    private $TAActivityMaps;
+    
+    private ArrayOfCourse $TAActivityMaps;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $TAActivityMapTitles;
+    
+    private ArrayOfString $TAActivityMapTitles;
 
-    /**
-     * @var string
-     */
-    private $Impersonator;
+    
+    private string $Impersonator;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeZone
-     */
-    private $TimeZone;
+    
+    private TimeZone $TimeZone;
 
-    /**
-     * @var string
-     */
-    private $DateFormat;
+    
+    private string $DateFormat;
 
-    /**
-     * @var string
-     */
-    private $FieldsXml;
+    
+    private string $FieldsXml;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CustomFields
-     */
-    public function getCustomFields()
+    
+    public function getCustomFields(): CustomFields
     {
         return $this->CustomFields;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CustomFields $CustomFields
-     *
-     * @return User
-     */
-    public function withCustomFields($CustomFields)
+    
+    public function withCustomFields(CustomFields $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
@@ -327,20 +202,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return User
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -348,20 +217,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDisplayID()
+    
+    public function getDisplayID(): string
     {
         return $this->DisplayID;
     }
 
-    /**
-     * @param string $DisplayID
-     *
-     * @return User
-     */
-    public function withDisplayID($DisplayID)
+    
+    public function withDisplayID(string $DisplayID): static
     {
         $new = clone $this;
         $new->DisplayID = $DisplayID;
@@ -369,20 +232,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomeDomain()
+    
+    public function getHomeDomain(): string
     {
         return $this->HomeDomain;
     }
 
-    /**
-     * @param string $HomeDomain
-     *
-     * @return User
-     */
-    public function withHomeDomain($HomeDomain)
+    
+    public function withHomeDomain(string $HomeDomain): static
     {
         $new = clone $this;
         $new->HomeDomain = $HomeDomain;
@@ -390,20 +247,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomeDomainName()
+    
+    public function getHomeDomainName(): string
     {
         return $this->HomeDomainName;
     }
 
-    /**
-     * @param string $HomeDomainName
-     *
-     * @return User
-     */
-    public function withHomeDomainName($HomeDomainName)
+    
+    public function withHomeDomainName(string $HomeDomainName): static
     {
         $new = clone $this;
         $new->HomeDomainName = $HomeDomainName;
@@ -411,20 +262,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfDomainURLsCollection
-     */
-    public function getBaseURLs()
+    
+    public function getBaseURLs(): ArrayOfDomainURLsCollection
     {
         return $this->BaseURLs;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfDomainURLsCollection $BaseURLs
-     *
-     * @return User
-     */
-    public function withBaseURLs($BaseURLs)
+    
+    public function withBaseURLs(ArrayOfDomainURLsCollection $BaseURLs): static
     {
         $new = clone $this;
         $new->BaseURLs = $BaseURLs;
@@ -432,20 +277,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFirstName()
+    
+    public function getFirstName(): string
     {
         return $this->FirstName;
     }
 
-    /**
-     * @param string $FirstName
-     *
-     * @return User
-     */
-    public function withFirstName($FirstName)
+    
+    public function withFirstName(string $FirstName): static
     {
         $new = clone $this;
         $new->FirstName = $FirstName;
@@ -453,20 +292,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastLoginDate()
+    
+    public function getLastLoginDate(): DateTimeInterface
     {
         return $this->LastLoginDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastLoginDate
-     *
-     * @return User
-     */
-    public function withLastLoginDate($LastLoginDate)
+    
+    public function withLastLoginDate(DateTimeInterface $LastLoginDate): static
     {
         $new = clone $this;
         $new->LastLoginDate = $LastLoginDate;
@@ -474,20 +307,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastLoginBrowser()
+    
+    public function getLastLoginBrowser(): string
     {
         return $this->LastLoginBrowser;
     }
 
-    /**
-     * @param string $LastLoginBrowser
-     *
-     * @return User
-     */
-    public function withLastLoginBrowser($LastLoginBrowser)
+    
+    public function withLastLoginBrowser(string $LastLoginBrowser): static
     {
         $new = clone $this;
         $new->LastLoginBrowser = $LastLoginBrowser;
@@ -495,20 +322,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastLoginDevice()
+    
+    public function getLastLoginDevice(): string
     {
         return $this->LastLoginDevice;
     }
 
-    /**
-     * @param string $LastLoginDevice
-     *
-     * @return User
-     */
-    public function withLastLoginDevice($LastLoginDevice)
+    
+    public function withLastLoginDevice(string $LastLoginDevice): static
     {
         $new = clone $this;
         $new->LastLoginDevice = $LastLoginDevice;
@@ -516,20 +337,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsLoginLocked()
+    
+    public function getIsLoginLocked(): bool
     {
         return $this->IsLoginLocked;
     }
 
-    /**
-     * @param bool $IsLoginLocked
-     *
-     * @return User
-     */
-    public function withIsLoginLocked($IsLoginLocked)
+    
+    public function withIsLoginLocked(bool $IsLoginLocked): static
     {
         $new = clone $this;
         $new->IsLoginLocked = $IsLoginLocked;
@@ -537,20 +352,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsMFACheck()
+    
+    public function getIsMFACheck(): bool
     {
         return $this->IsMFACheck;
     }
 
-    /**
-     * @param bool $IsMFACheck
-     *
-     * @return User
-     */
-    public function withIsMFACheck($IsMFACheck)
+    
+    public function withIsMFACheck(bool $IsMFACheck): static
     {
         $new = clone $this;
         $new->IsMFACheck = $IsMFACheck;
@@ -558,20 +367,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getMFACreatedDate()
+    
+    public function getMFACreatedDate(): DateTimeInterface
     {
         return $this->MFACreatedDate;
     }
 
-    /**
-     * @param \DateTimeInterface $MFACreatedDate
-     *
-     * @return User
-     */
-    public function withMFACreatedDate($MFACreatedDate)
+    
+    public function withMFACreatedDate(DateTimeInterface $MFACreatedDate): static
     {
         $new = clone $this;
         $new->MFACreatedDate = $MFACreatedDate;
@@ -579,20 +382,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getMFACheckDate()
+    
+    public function getMFACheckDate(): DateTimeInterface
     {
         return $this->MFACheckDate;
     }
 
-    /**
-     * @param \DateTimeInterface $MFACheckDate
-     *
-     * @return User
-     */
-    public function withMFACheckDate($MFACheckDate)
+    
+    public function withMFACheckDate(DateTimeInterface $MFACheckDate): static
     {
         $new = clone $this;
         $new->MFACheckDate = $MFACheckDate;
@@ -600,20 +397,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCompletedUserSetup()
+    
+    public function getCompletedUserSetup(): bool
     {
         return $this->CompletedUserSetup;
     }
 
-    /**
-     * @param bool $CompletedUserSetup
-     *
-     * @return User
-     */
-    public function withCompletedUserSetup($CompletedUserSetup)
+    
+    public function withCompletedUserSetup(bool $CompletedUserSetup): static
     {
         $new = clone $this;
         $new->CompletedUserSetup = $CompletedUserSetup;
@@ -621,20 +412,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastName()
+    
+    public function getLastName(): string
     {
         return $this->LastName;
     }
 
-    /**
-     * @param string $LastName
-     *
-     * @return User
-     */
-    public function withLastName($LastName)
+    
+    public function withLastName(string $LastName): static
     {
         $new = clone $this;
         $new->LastName = $LastName;
@@ -642,20 +427,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getScreenName()
+    
+    public function getScreenName(): string
     {
         return $this->ScreenName;
     }
 
-    /**
-     * @param string $ScreenName
-     *
-     * @return User
-     */
-    public function withScreenName($ScreenName)
+    
+    public function withScreenName(string $ScreenName): static
     {
         $new = clone $this;
         $new->ScreenName = $ScreenName;
@@ -663,20 +442,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return User
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -684,20 +457,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail()
+    
+    public function getEmail(): string
     {
         return $this->Email;
     }
 
-    /**
-     * @param string $Email
-     *
-     * @return User
-     */
-    public function withEmail($Email)
+    
+    public function withEmail(string $Email): static
     {
         $new = clone $this;
         $new->Email = $Email;
@@ -705,20 +472,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUserName()
+    
+    public function getUserName(): string
     {
         return $this->UserName;
     }
 
-    /**
-     * @param string $UserName
-     *
-     * @return User
-     */
-    public function withUserName($UserName)
+    
+    public function withUserName(string $UserName): static
     {
         $new = clone $this;
         $new->UserName = $UserName;
@@ -726,20 +487,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getCreationDate()
+    
+    public function getCreationDate(): DateTimeInterface
     {
         return $this->CreationDate;
     }
 
-    /**
-     * @param \DateTimeInterface $CreationDate
-     *
-     * @return User
-     */
-    public function withCreationDate($CreationDate)
+    
+    public function withCreationDate(DateTimeInterface $CreationDate): static
     {
         $new = clone $this;
         $new->CreationDate = $CreationDate;
@@ -747,20 +502,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastModifiedDate()
+    
+    public function getLastModifiedDate(): DateTimeInterface
     {
         return $this->LastModifiedDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastModifiedDate
-     *
-     * @return User
-     */
-    public function withLastModifiedDate($LastModifiedDate)
+    
+    public function withLastModifiedDate(DateTimeInterface $LastModifiedDate): static
     {
         $new = clone $this;
         $new->LastModifiedDate = $LastModifiedDate;
@@ -768,20 +517,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCreationMethod()
+    
+    public function getCreationMethod(): string
     {
         return $this->CreationMethod;
     }
 
-    /**
-     * @param string $CreationMethod
-     *
-     * @return User
-     */
-    public function withCreationMethod($CreationMethod)
+    
+    public function withCreationMethod(string $CreationMethod): static
     {
         $new = clone $this;
         $new->CreationMethod = $CreationMethod;
@@ -789,20 +532,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProtectFromManualChange()
+    
+    public function getProtectFromManualChange(): bool
     {
         return $this->ProtectFromManualChange;
     }
 
-    /**
-     * @param bool $ProtectFromManualChange
-     *
-     * @return User
-     */
-    public function withProtectFromManualChange($ProtectFromManualChange)
+    
+    public function withProtectFromManualChange(bool $ProtectFromManualChange): static
     {
         $new = clone $this;
         $new->ProtectFromManualChange = $ProtectFromManualChange;
@@ -810,20 +547,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProtectFromManualDeletion()
+    
+    public function getProtectFromManualDeletion(): bool
     {
         return $this->ProtectFromManualDeletion;
     }
 
-    /**
-     * @param bool $ProtectFromManualDeletion
-     *
-     * @return User
-     */
-    public function withProtectFromManualDeletion($ProtectFromManualDeletion)
+    
+    public function withProtectFromManualDeletion(bool $ProtectFromManualDeletion): static
     {
         $new = clone $this;
         $new->ProtectFromManualDeletion = $ProtectFromManualDeletion;
@@ -831,20 +562,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSyncDomain()
+    
+    public function getSyncDomain(): string
     {
         return $this->SyncDomain;
     }
 
-    /**
-     * @param string $SyncDomain
-     *
-     * @return User
-     */
-    public function withSyncDomain($SyncDomain)
+    
+    public function withSyncDomain(string $SyncDomain): static
     {
         $new = clone $this;
         $new->SyncDomain = $SyncDomain;
@@ -852,20 +577,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getPasswordChangeDate()
+    
+    public function getPasswordChangeDate(): DateTimeInterface
     {
         return $this->PasswordChangeDate;
     }
 
-    /**
-     * @param \DateTimeInterface $PasswordChangeDate
-     *
-     * @return User
-     */
-    public function withPasswordChangeDate($PasswordChangeDate)
+    
+    public function withPasswordChangeDate(DateTimeInterface $PasswordChangeDate): static
     {
         $new = clone $this;
         $new->PasswordChangeDate = $PasswordChangeDate;
@@ -873,20 +592,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPassword()
+    
+    public function getPassword(): string
     {
         return $this->Password;
     }
 
-    /**
-     * @param string $Password
-     *
-     * @return User
-     */
-    public function withPassword($Password)
+    
+    public function withPassword(string $Password): static
     {
         $new = clone $this;
         $new->Password = $Password;
@@ -894,20 +607,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMustChangePassword()
+    
+    public function getMustChangePassword(): bool
     {
         return $this->MustChangePassword;
     }
 
-    /**
-     * @param bool $MustChangePassword
-     *
-     * @return User
-     */
-    public function withMustChangePassword($MustChangePassword)
+    
+    public function withMustChangePassword(bool $MustChangePassword): static
     {
         $new = clone $this;
         $new->MustChangePassword = $MustChangePassword;
@@ -915,20 +622,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->Language;
     }
 
-    /**
-     * @param string $Language
-     *
-     * @return User
-     */
-    public function withLanguage($Language)
+    
+    public function withLanguage(string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -936,20 +637,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getActive()
+    
+    public function getActive(): bool
     {
         return $this->Active;
     }
 
-    /**
-     * @param bool $Active
-     *
-     * @return User
-     */
-    public function withActive($Active)
+    
+    public function withActive(bool $Active): static
     {
         $new = clone $this;
         $new->Active = $Active;
@@ -957,20 +652,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getStatusLocked()
+    
+    public function getStatusLocked(): bool
     {
         return $this->StatusLocked;
     }
 
-    /**
-     * @param bool $StatusLocked
-     *
-     * @return User
-     */
-    public function withStatusLocked($StatusLocked)
+    
+    public function withStatusLocked(bool $StatusLocked): static
     {
         $new = clone $this;
         $new->StatusLocked = $StatusLocked;
@@ -978,20 +667,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPending()
+    
+    public function getPending(): bool
     {
         return $this->Pending;
     }
 
-    /**
-     * @param bool $Pending
-     *
-     * @return User
-     */
-    public function withPending($Pending)
+    
+    public function withPending(bool $Pending): static
     {
         $new = clone $this;
         $new->Pending = $Pending;
@@ -999,20 +682,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSuperUser()
+    
+    public function getSuperUser(): bool
     {
         return $this->SuperUser;
     }
 
-    /**
-     * @param bool $SuperUser
-     *
-     * @return User
-     */
-    public function withSuperUser($SuperUser)
+    
+    public function withSuperUser(bool $SuperUser): static
     {
         $new = clone $this;
         $new->SuperUser = $SuperUser;
@@ -1020,20 +697,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanUseLMSLogin()
+    
+    public function getCanUseLMSLogin(): bool
     {
         return $this->CanUseLMSLogin;
     }
 
-    /**
-     * @param bool $CanUseLMSLogin
-     *
-     * @return User
-     */
-    public function withCanUseLMSLogin($CanUseLMSLogin)
+    
+    public function withCanUseLMSLogin(bool $CanUseLMSLogin): static
     {
         $new = clone $this;
         $new->CanUseLMSLogin = $CanUseLMSLogin;
@@ -1041,20 +712,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOutsideEmail()
+    
+    public function getOutsideEmail(): string
     {
         return $this->OutsideEmail;
     }
 
-    /**
-     * @param string $OutsideEmail
-     *
-     * @return User
-     */
-    public function withOutsideEmail($OutsideEmail)
+    
+    public function withOutsideEmail(string $OutsideEmail): static
     {
         $new = clone $this;
         $new->OutsideEmail = $OutsideEmail;
@@ -1062,20 +727,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNewsLetterEmailOptOutDisabled()
+    
+    public function getNewsLetterEmailOptOutDisabled(): bool
     {
         return $this->NewsLetterEmailOptOutDisabled;
     }
 
-    /**
-     * @param bool $NewsLetterEmailOptOutDisabled
-     *
-     * @return User
-     */
-    public function withNewsLetterEmailOptOutDisabled($NewsLetterEmailOptOutDisabled)
+    
+    public function withNewsLetterEmailOptOutDisabled(bool $NewsLetterEmailOptOutDisabled): static
     {
         $new = clone $this;
         $new->NewsLetterEmailOptOutDisabled = $NewsLetterEmailOptOutDisabled;
@@ -1083,20 +742,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail
-     */
-    public function getMails()
+    
+    public function getMails(): ArrayOfMail
     {
         return $this->Mails;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMail $Mails
-     *
-     * @return User
-     */
-    public function withMails($Mails)
+    
+    public function withMails(ArrayOfMail $Mails): static
     {
         $new = clone $this;
         $new->Mails = $Mails;
@@ -1104,20 +757,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder
-     */
-    public function getPersonalFolders()
+    
+    public function getPersonalFolders(): ArrayOfMailFolder
     {
         return $this->PersonalFolders;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfMailFolder $PersonalFolders
-     *
-     * @return User
-     */
-    public function withPersonalFolders($PersonalFolders)
+    
+    public function withPersonalFolders(ArrayOfMailFolder $PersonalFolders): static
     {
         $new = clone $this;
         $new->PersonalFolders = $PersonalFolders;
@@ -1125,20 +772,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact
-     */
-    public function getContacts()
+    
+    public function getContacts(): ArrayOfContact
     {
         return $this->Contacts;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfContact $Contacts
-     *
-     * @return User
-     */
-    public function withContacts($Contacts)
+    
+    public function withContacts(ArrayOfContact $Contacts): static
     {
         $new = clone $this;
         $new->Contacts = $Contacts;
@@ -1146,20 +787,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfRole
-     */
-    public function getRoles()
+    
+    public function getRoles(): ArrayOfRole
     {
         return $this->Roles;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfRole $Roles
-     *
-     * @return User
-     */
-    public function withRoles($Roles)
+    
+    public function withRoles(ArrayOfRole $Roles): static
     {
         $new = clone $this;
         $new->Roles = $Roles;
@@ -1167,20 +802,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfPermission
-     */
-    public function getPermissions()
+    
+    public function getPermissions(): ArrayOfPermission
     {
         return $this->Permissions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfPermission $Permissions
-     *
-     * @return User
-     */
-    public function withPermissions($Permissions)
+    
+    public function withPermissions(ArrayOfPermission $Permissions): static
     {
         $new = clone $this;
         $new->Permissions = $Permissions;
@@ -1188,20 +817,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getBlockNotifications()
+    
+    public function getBlockNotifications(): bool
     {
         return $this->BlockNotifications;
     }
 
-    /**
-     * @param bool $BlockNotifications
-     *
-     * @return User
-     */
-    public function withBlockNotifications($BlockNotifications)
+    
+    public function withBlockNotifications(bool $BlockNotifications): static
     {
         $new = clone $this;
         $new->BlockNotifications = $BlockNotifications;
@@ -1209,20 +832,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getBlockNotificationsReason()
+    
+    public function getBlockNotificationsReason(): string
     {
         return $this->BlockNotificationsReason;
     }
 
-    /**
-     * @param string $BlockNotificationsReason
-     *
-     * @return User
-     */
-    public function withBlockNotificationsReason($BlockNotificationsReason)
+    
+    public function withBlockNotificationsReason(string $BlockNotificationsReason): static
     {
         $new = clone $this;
         $new->BlockNotificationsReason = $BlockNotificationsReason;
@@ -1230,20 +847,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getBlockDomainAnnouncements()
+    
+    public function getBlockDomainAnnouncements(): bool
     {
         return $this->BlockDomainAnnouncements;
     }
 
-    /**
-     * @param bool $BlockDomainAnnouncements
-     *
-     * @return User
-     */
-    public function withBlockDomainAnnouncements($BlockDomainAnnouncements)
+    
+    public function withBlockDomainAnnouncements(bool $BlockDomainAnnouncements): static
     {
         $new = clone $this;
         $new->BlockDomainAnnouncements = $BlockDomainAnnouncements;
@@ -1251,20 +862,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram
-     */
-    public function getPrograms()
+    
+    public function getPrograms(): ArrayOfProgram
     {
         return $this->Programs;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfProgram $Programs
-     *
-     * @return User
-     */
-    public function withPrograms($Programs)
+    
+    public function withPrograms(ArrayOfProgram $Programs): static
     {
         $new = clone $this;
         $new->Programs = $Programs;
@@ -1272,20 +877,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProgramMgr()
+    
+    public function getProgramMgr(): bool
     {
         return $this->ProgramMgr;
     }
 
-    /**
-     * @param bool $ProgramMgr
-     *
-     * @return User
-     */
-    public function withProgramMgr($ProgramMgr)
+    
+    public function withProgramMgr(bool $ProgramMgr): static
     {
         $new = clone $this;
         $new->ProgramMgr = $ProgramMgr;
@@ -1293,20 +892,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    public function getCourses()
+    
+    public function getCourses(): ArrayOfCourse
     {
         return $this->Courses;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse $Courses
-     *
-     * @return User
-     */
-    public function withCourses($Courses)
+    
+    public function withCourses(ArrayOfCourse $Courses): static
     {
         $new = clone $this;
         $new->Courses = $Courses;
@@ -1314,20 +907,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getCourseTitles()
+    
+    public function getCourseTitles(): ArrayOfString
     {
         return $this->CourseTitles;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $CourseTitles
-     *
-     * @return User
-     */
-    public function withCourseTitles($CourseTitles)
+    
+    public function withCourseTitles(ArrayOfString $CourseTitles): static
     {
         $new = clone $this;
         $new->CourseTitles = $CourseTitles;
@@ -1335,20 +922,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    public function getActivityMaps()
+    
+    public function getActivityMaps(): ArrayOfCourse
     {
         return $this->ActivityMaps;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse $ActivityMaps
-     *
-     * @return User
-     */
-    public function withActivityMaps($ActivityMaps)
+    
+    public function withActivityMaps(ArrayOfCourse $ActivityMaps): static
     {
         $new = clone $this;
         $new->ActivityMaps = $ActivityMaps;
@@ -1356,20 +937,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getActivityMapTitles()
+    
+    public function getActivityMapTitles(): ArrayOfString
     {
         return $this->ActivityMapTitles;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $ActivityMapTitles
-     *
-     * @return User
-     */
-    public function withActivityMapTitles($ActivityMapTitles)
+    
+    public function withActivityMapTitles(ArrayOfString $ActivityMapTitles): static
     {
         $new = clone $this;
         $new->ActivityMapTitles = $ActivityMapTitles;
@@ -1377,20 +952,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Course
-     */
-    public function getCurrentCourse()
+    
+    public function getCurrentCourse(): Course
     {
         return $this->CurrentCourse;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Course $CurrentCourse
-     *
-     * @return User
-     */
-    public function withCurrentCourse($CurrentCourse)
+    
+    public function withCurrentCourse(Course $CurrentCourse): static
     {
         $new = clone $this;
         $new->CurrentCourse = $CurrentCourse;
@@ -1398,20 +967,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    public function getTACourses()
+    
+    public function getTACourses(): ArrayOfCourse
     {
         return $this->TACourses;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse $TACourses
-     *
-     * @return User
-     */
-    public function withTACourses($TACourses)
+    
+    public function withTACourses(ArrayOfCourse $TACourses): static
     {
         $new = clone $this;
         $new->TACourses = $TACourses;
@@ -1419,20 +982,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getTACourseTitles()
+    
+    public function getTACourseTitles(): ArrayOfString
     {
         return $this->TACourseTitles;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $TACourseTitles
-     *
-     * @return User
-     */
-    public function withTACourseTitles($TACourseTitles)
+    
+    public function withTACourseTitles(ArrayOfString $TACourseTitles): static
     {
         $new = clone $this;
         $new->TACourseTitles = $TACourseTitles;
@@ -1440,20 +997,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse
-     */
-    public function getTAActivityMaps()
+    
+    public function getTAActivityMaps(): ArrayOfCourse
     {
         return $this->TAActivityMaps;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourse $TAActivityMaps
-     *
-     * @return User
-     */
-    public function withTAActivityMaps($TAActivityMaps)
+    
+    public function withTAActivityMaps(ArrayOfCourse $TAActivityMaps): static
     {
         $new = clone $this;
         $new->TAActivityMaps = $TAActivityMaps;
@@ -1461,20 +1012,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getTAActivityMapTitles()
+    
+    public function getTAActivityMapTitles(): ArrayOfString
     {
         return $this->TAActivityMapTitles;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $TAActivityMapTitles
-     *
-     * @return User
-     */
-    public function withTAActivityMapTitles($TAActivityMapTitles)
+    
+    public function withTAActivityMapTitles(ArrayOfString $TAActivityMapTitles): static
     {
         $new = clone $this;
         $new->TAActivityMapTitles = $TAActivityMapTitles;
@@ -1482,20 +1027,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getImpersonator()
+    
+    public function getImpersonator(): string
     {
         return $this->Impersonator;
     }
 
-    /**
-     * @param string $Impersonator
-     *
-     * @return User
-     */
-    public function withImpersonator($Impersonator)
+    
+    public function withImpersonator(string $Impersonator): static
     {
         $new = clone $this;
         $new->Impersonator = $Impersonator;
@@ -1503,20 +1042,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeZone
-     */
-    public function getTimeZone()
+    
+    public function getTimeZone(): TimeZone
     {
         return $this->TimeZone;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeZone $TimeZone
-     *
-     * @return User
-     */
-    public function withTimeZone($TimeZone)
+    
+    public function withTimeZone(TimeZone $TimeZone): static
     {
         $new = clone $this;
         $new->TimeZone = $TimeZone;
@@ -1524,20 +1057,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDateFormat()
+    
+    public function getDateFormat(): string
     {
         return $this->DateFormat;
     }
 
-    /**
-     * @param string $DateFormat
-     *
-     * @return User
-     */
-    public function withDateFormat($DateFormat)
+    
+    public function withDateFormat(string $DateFormat): static
     {
         $new = clone $this;
         $new->DateFormat = $DateFormat;
@@ -1545,20 +1072,14 @@ class User
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFieldsXml()
+    
+    public function getFieldsXml(): string
     {
         return $this->FieldsXml;
     }
 
-    /**
-     * @param string $FieldsXml
-     *
-     * @return User
-     */
-    public function withFieldsXml($FieldsXml)
+    
+    public function withFieldsXml(string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;

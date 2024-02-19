@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLMSUserAutoLoginURLByUsernameResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $GetLMSUserAutoLoginURLByUsernameResult;
+    private ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getGetLMSUserAutoLoginURLByUsernameResult()
+    
+    public function getGetLMSUserAutoLoginURLByUsernameResult(): ServiceResultOfString
     {
         return $this->GetLMSUserAutoLoginURLByUsernameResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult
-     *
-     * @return GetLMSUserAutoLoginURLByUsernameResponse
-     */
-    public function withGetLMSUserAutoLoginURLByUsernameResult($GetLMSUserAutoLoginURLByUsernameResult)
+    
+    public function withGetLMSUserAutoLoginURLByUsernameResult(ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult): static
     {
         $new = clone $this;
         $new->GetLMSUserAutoLoginURLByUsernameResult = $GetLMSUserAutoLoginURLByUsernameResult;

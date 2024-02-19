@@ -1,1520 +1,917 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class LearningType
 {
-    /**
-     * @var string
-     */
-    private $CourseType;
-
-    /**
-     * @var string
-     */
-    private $ID;
-
-    /**
-     * @var string
-     */
-    private $Code;
-
-    /**
-     * @var string
-     */
-    private $FullScreen;
-
-    /**
-     * @var string
-     */
-    private $Title;
-
-    /**
-     * @var string
-     */
-    private $Description;
-
-    /**
-     * @var string
-     */
-    private $Language;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastUpdatedTimestamp;
-
-    /**
-     * @var string
-     */
-    private $Logo;
-
-    /**
-     * @var string
-     */
-    private $LogoContentType;
-
-    /**
-     * @var string
-     */
-    private $LogoID;
-
-    /**
-     * @var string
-     */
-    private $SeriesID;
-
-    /**
-     * @var string
-     */
-    private $SeriesName;
-
-    /**
-     * @var string
-     */
-    private $ProgramID;
-
-    /**
-     * @var string
-     */
-    private $ProgramName;
-
-    /**
-     * @var bool
-     */
-    private $IsActive;
-
-    /**
-     * @var string
-     */
-    private $SKU;
-
-    /**
-     * @var float
-     */
-    private $Price;
-
-    /**
-     * @var float
-     */
-    private $SubsequentPrice;
-
-    /**
-     * @var int
-     */
-    private $TokensValue;
-
-    /**
-     * @var int
-     */
-    private $SubsequentTokensValue;
-
-    /**
-     * @var string
-     */
-    private $Currency;
-
-    /**
-     * @var string
-     */
-    private $PaymentProvider;
-
-    /**
-     * @var bool
-     */
-    private $GrantCertificate;
-
-    /**
-     * @var bool
-     */
-    private $CertificateExpires;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AccreditationDetails
-     */
-    private $AccreditationDetails;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfReference
-     */
-    private $References;
-
-    /**
-     * @var bool
-     */
-    private $IsShared;
-
-    /**
-     * @var string
-     */
-    private $ExclusionMode;
-
-    /**
-     * @var string
-     */
-    private $LeaningPathActivityLayout;
-
-    /**
-     * @var string
-     */
-    private $ShowLearnerProgressAs;
-
-    /**
-     * @var bool
-     */
-    private $ShowSharingLink;
-
-    /**
-     * @var bool
-     */
-    private $VideoShowScrubber;
-
-    /**
-     * @var bool
-     */
-    private $VideoBookmarkProgress;
-
-    /**
-     * @var bool
-     */
-    private $VideoStartAuto;
-
-    /**
-     * @var bool
-     */
-    private $VideoCompleteOnOpen;
-
-    /**
-     * @var bool
-     */
-    private $VideoCompleteOnEnd;
-
-    /**
-     * @var bool
-     */
-    private $VideoCompleteOnTime;
-
-    /**
-     * @var string
-     */
-    private $VideoCompleteOnTime_Minute;
-
-    /**
-     * @var string
-     */
-    private $VideoCompleteOnTime_Sec;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CaptionInfo
-     */
-    private $CaptionInfo;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnrollNoMatch;
-
-    /**
-     * @var bool
-     */
-    private $WaitlistEnrollAfterLastWithdrawDate;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastUnenrollmentDate;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $FirstEnrollmentDate;
-
-    /**
-     * @var bool
-     */
-    private $UnlimitedLastEnrollment;
-
-    /**
-     * @var bool
-     */
-    private $LastEnrollmentBasedFirstEnrollmentDate;
-
-    /**
-     * @var string
-     */
-    private $LastEnrollmentBasedFirstEnrollmentDateSetting;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $LastEnrollmentDate;
-
-    /**
-     * @var bool
-     */
-    private $AllowEnrollAfterLastEnrollDate;
-
-    /**
-     * @var int
-     */
-    private $LastEnrollmentCutOff;
-
-    /**
-     * @var bool
-     */
-    private $AllowSupervisorExtendDueDate;
-
-    /**
-     * @var int
-     */
-    private $SupervisorExtensionDaysLimit;
-
-    /**
-     * @var string
-     */
-    private $SupervisorExtensionDaysLimitStartFrom;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $StartDate;
-
-    /**
-     * @var string
-     */
-    private $DueDate;
-
-    /**
-     * @var bool
-     */
-    private $AllowEnrollmentCodeAfterEnrollmentDate;
-
-    /**
-     * @var int
-     */
-    private $EnrollmentCodeAfterEnrollmentDate_NoOfDays;
-
-    /**
-     * @var bool
-     */
-    private $BarAccessAfterDue;
-
-    /**
-     * @var bool
-     */
-    private $SuspendAccess;
-
-    /**
-     * @var string
-     */
-    private $SuspendAccessDays;
-
-    /**
-     * @var bool
-     */
-    private $EnrollFromLPOnly;
-
-    /**
-     * @var bool
-     */
-    private $AutoEnroll;
-
-    /**
-     * @var bool
-     */
-    private $AutoEnrollAllDomainMembers;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AutoenrollRules;
-
-    /**
-     * @var bool
-     */
-    private $AutoenrollRulesRequired;
-
-    /**
-     * @var string
-     */
-    private $AutoenrollRepeatType;
-
-    /**
-     * @var string
-     */
-    private $AutoenrollRepeatMonthCount;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $AutoenrollLastRunDate;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AutoenrollExcludeRules;
-
-    /**
-     * @var bool
-     */
-    private $AutoenrollExcludeRulesRequired;
-
-    /**
-     * @var bool
-     */
-    private $ReAutoEnroll;
-
-    /**
-     * @var bool
-     */
-    private $UseAutoEnrollmentRuleForReEnroll;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $RecertificationAutoEnrollRules;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $RecertificationAutoEnrollExcludeRules;
-
-    /**
-     * @var bool
-     */
-    private $ReAutoEnrollmentAllowAll;
-
-    /**
-     * @var string
-     */
-    private $ReAutoenrollRepeatType;
-
-    /**
-     * @var string
-     */
-    private $ReAutoenrollRepeatMonthCount;
-
-    /**
-     * @var bool
-     */
-    private $ReAutoenrollAllRulesRequired;
-
-    /**
-     * @var \DateTimeInterface
-     */
-    private $ReAutoenrollLastRunDate;
-
-    /**
-     * @var bool
-     */
-    private $ReAutoenrollAllExcludeRulesRequired;
-
-    /**
-     * @var bool
-     */
-    private $SelfEnroll;
-
-    /**
-     * @var bool
-     */
-    private $AllowTransfer;
-
-    /**
-     * @var bool
-     */
-    private $SelfEnrollAllDomainMembers;
-
-    /**
-     * @var bool
-     */
-    private $PermissionEnroll;
-
-    /**
-     * @var string
-     */
-    private $EnrollPermissionFrom;
-
-    /**
-     * @var bool
-     */
-    private $PaymentEnroll;
-
-    /**
-     * @var bool
-     */
-    private $TokensEnroll;
-
-    /**
-     * @var bool
-     */
-    private $AllowCoupons;
-
-    /**
-     * @var bool
-     */
-    private $GlobalTokensEnroll;
-
-    /**
-     * @var bool
-     */
-    private $PassEnroll;
-
-    /**
-     * @var bool
-     */
-    private $AllowPOPayment;
-
-    /**
-     * @var bool
-     */
-    private $AllowPass;
-
-    /**
-     * @var bool
-     */
-    private $AllowPurchaseForOthers;
-
-    /**
-     * @var bool
-     */
-    private $AllowAttendanceCodeToEnroll;
-
-    /**
-     * @var bool
-     */
-    private $NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate;
-
-    /**
-     * @var bool
-     */
-    private $AttendanceCodeEnrollFollowsRules;
-
-    /**
-     * @var bool
-     */
-    private $AllowAttendanceCode;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $SelfEnrollRules;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $SelfEnrollGroups;
-
-    /**
-     * @var bool
-     */
-    private $SelfEnrollGroupRequired;
-
-    /**
-     * @var bool
-     */
-    private $SelfEnrollRulesRequired;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $SelfEnrollExcludeRules;
-
-    /**
-     * @var bool
-     */
-    private $SelfEnrollExcludeRulesRequired;
-
-    /**
-     * @var bool
-     */
-    private $CanUnenroll;
-
-    /**
-     * @var bool
-     */
-    private $WithdrawAllDomainMembers;
-
-    /**
-     * @var bool
-     */
-    private $PermissionUnenroll;
-
-    /**
-     * @var string
-     */
-    private $UnenrollOption;
-
-    /**
-     * @var string
-     */
-    private $UnenrollPermissionFrom;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $WithdrawalRules;
-
-    /**
-     * @var bool
-     */
-    private $WithdrawalRulesRequired;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $WithdrawalExcludeRules;
-
-    /**
-     * @var bool
-     */
-    private $WithdrawalExcludeRulesRequired;
-
-    /**
-     * @var bool
-     */
-    private $AutoWithdraw;
-
-    /**
-     * @var bool
-     */
-    private $AutoWithdrawNotMatchingAutoRules;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AutoWithdrawalRules;
-
-    /**
-     * @var bool
-     */
-    private $AutoWithdrawalRulesRequired;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AutoWithdrawalExcludeRules;
-
-    /**
-     * @var bool
-     */
-    private $AutoWithdrawalExcludeRulesRequired;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AnnouncementRules;
-
-    /**
-     * @var bool
-     */
-    private $AnnouncementRulesRequired;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AnnouncementExcludeRules;
-
-    /**
-     * @var bool
-     */
-    private $AnnouncementExcludeRulesRequired;
-
-    /**
-     * @var bool
-     */
-    private $AutoEnrollSelfActivities;
-
-    /**
-     * @var bool
-     */
-    private $AutoEnrollManualActivities;
-
-    /**
-     * @var bool
-     */
-    private $IncludeAllInPrice;
-
-    /**
-     * @var bool
-     */
-    private $AutoEnrollLPActivities;
-
-    /**
-     * @var bool
-     */
-    private $ExcludeLPEnrollPurchaseActivities;
-
-    /**
-     * @var bool
-     */
-    private $ExcludeLPEnrollNotSelfEnrollActivities;
-
-    /**
-     * @var bool
-     */
-    private $WithdrawIncompleteLPActivitiesOnLPEnroll;
-
-    /**
-     * @var bool
-     */
-    private $FastStartLPActivities;
-
-    /**
-     * @var bool
-     */
-    private $StudentIsEnrolled;
-
-    /**
-     * @var bool
-     */
-    private $StudentHasPendingRequest;
-
-    /**
-     * @var bool
-     */
-    private $StudentHasPass;
-
-    /**
-     * @var bool
-     */
-    private $AllowAnonPreview;
-
-    /**
-     * @var string
-     */
-    private $FieldsXml;
-
-    /**
-     * @var string
-     */
-    private $BaseUrl;
-
-    /**
-     * @var bool
-     */
-    private $HasAccessCode;
-
-    /**
-     * @var string
-     */
-    private $AccessCode;
-
-    /**
-     * @var int
-     */
-    private $CourseSharingCount;
-
-    /**
-     * @var string
-     */
-    private $Disclaimer;
-
-    /**
-     * @var bool
-     */
-    private $ShowDisclaimerAlways;
-
-    /**
-     * @var bool
-     */
-    private $DisclaimerAgreed;
-
-    /**
-     * @var string
-     */
-    private $DisclaimerTextButton;
-
-    /**
-     * @var bool
-     */
-    private $HasDisclaimer;
-
-    /**
-     * @var bool
-     */
-    private $AllowMobileDownload;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $AltPrices;
-
-    /**
-     * @var string
-     */
-    private $InitialScormVersion;
-
-    /**
-     * @var string
-     */
-    private $ReviewStatus;
-
-    /**
-     * @var bool
-     */
-    private $SendAccreditationExpiryNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendSessionStartLearnerNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendSessionStartModeratorNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendEnrollmentConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $SendEnrollmentRequestNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendThresholdNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendStartDateNotificationLearner;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorEnroll;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorEnroll;
-
-    /**
-     * @var bool
-     */
-    private $NotifyStudentEnroll;
-
-    /**
-     * @var bool
-     */
-    private $SendEnrollmentRequestConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnEnrollRequestConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnEnrollRequestConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $NotifyLearnerOnEnrollRequestConfirmation;
-
-    /**
-     * @var bool
-     */
-    private $SendDueDateReminder1;
-
-    /**
-     * @var bool
-     */
-    private $SendDueDateReminder2;
-
-    /**
-     * @var bool
-     */
-    private $SendDueDateReminder3;
-
-    /**
-     * @var bool
-     */
-    private $SendUpcomingILTReminder1;
-
-    /**
-     * @var bool
-     */
-    private $SendUpcomingILTReminder2;
-
-    /**
-     * @var bool
-     */
-    private $SendUpcomingILTReminder3;
-
-    /**
-     * @var bool
-     */
-    private $SendEnrollmentReminderNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendLearningPathModificationNotification;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnEnrollmentReminder;
-
-    /**
-     * @var bool
-     */
-    private $SendWithdrawRequestNotification;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnWithdrawRequest;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnWithdrawRequest;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorCompletion;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorCompletion;
-
-    /**
-     * @var bool
-     */
-    private $NotifyLearnerCompletion;
-
-    /**
-     * @var bool
-     */
-    private $CompletionNotificationIncludeSuccess;
-
-    /**
-     * @var bool
-     */
-    private $CompletionNotificationIncludeScore;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnDue;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnDue;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnOverDue1;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnOverDue2;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnOverDue3;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorSupervisorOnOverDue1;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorSupervisorOnOverDue2;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorSupervisorOnOverDue3;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnOverDue1;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnOverDue2;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnOverDue3;
-
-    /**
-     * @var bool
-     */
-    private $NotifyLearnerOnOverDue1;
-
-    /**
-     * @var bool
-     */
-    private $NotifyLearnerOnOverDue2;
-
-    /**
-     * @var bool
-     */
-    private $NotifyLearnerOnOverDue3;
-
-    /**
-     * @var bool
-     */
-    private $SendDueDateNotification;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnMissedILTSession;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnMissedILTSession;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnWaitingList;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnWithdraw;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnWithdraw;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnWaitingList;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnDueDateReminder1;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnDueDateReminder2;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnDueDateReminder3;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnDueDateReminder1;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnDueDateReminder2;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnDueDateReminder3;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnUpcomingILTReminder1;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnUpcomingILTReminder2;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnUpcomingILTReminder3;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnUpcomingILTReminder1;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnUpcomingILTReminder2;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnUpcomingILTReminder3;
-
-    /**
-     * @var bool
-     */
-    private $SendOverDueNotification1;
-
-    /**
-     * @var bool
-     */
-    private $SendOverDueNotification2;
-
-    /**
-     * @var bool
-     */
-    private $SendOverDueNotification3;
-
-    /**
-     * @var bool
-     */
-    private $SendMissedSessionNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendMissedILTSessionNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendWaitingListNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendWithdrawNotifications;
-
-    /**
-     * @var bool
-     */
-    private $SendCourseModificationNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendCourseModificationNotificationToCompleted;
-
-    /**
-     * @var bool
-     */
-    private $SendCourseResourceModificationNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendWaitingListModificationNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendAssignmentReviewedNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendPerformanceNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendBadgeIssuedNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendPendingNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendFeedbackOverdueNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendfeedbackDueDateNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendAssignmentSubmittedNotification;
-
-    /**
-     * @var bool
-     */
-    private $SendActivityPeerReviewCancelled;
-
-    /**
-     * @var bool
-     */
-    private $SendActivityReviewApprovalExpiryReminder;
-
-    /**
-     * @var bool
-     */
-    private $SendExternalActivityApprovedAutomatically;
-
-    /**
-     * @var bool
-     */
-    private $SendExternalActivityRequiresApproval;
-
-    /**
-     * @var bool
-     */
-    private $SendForumPostApprovalRequired;
-
-    /**
-     * @var bool
-     */
-    private $SendForumPostApproved;
-
-    /**
-     * @var bool
-     */
-    private $SendForumPostDeclined;
-
-    /**
-     * @var bool
-     */
-    private $SendPasswordChanged;
-
-    /**
-     * @var bool
-     */
-    private $SendRecommendationInvitation;
-
-    /**
-     * @var bool
-     */
-    private $SendRecommendationOutCome;
-
-    /**
-     * @var bool
-     */
-    private $SendAccountVerification;
-
-    /**
-     * @var bool
-     */
-    private $SendSelfWithdraw;
-
-    /**
-     * @var bool
-     */
-    private $NotifySupervisorOnSelfWithdraw;
-
-    /**
-     * @var bool
-     */
-    private $NotifyModeratorOnSelfWithdraw;
-
-    /**
-     * @var bool
-     */
-    private $HasForum;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnollOverrideLastEnrollmentDate;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnollOverridePrerequisites;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnollOverrideNotificationPeriod;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnollOverrideMaxReEnrollments;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnollOverrideSingleNonExpiringEnrollments;
-
-    /**
-     * @var int
-     */
-    private $ClassroomHeight;
-
-    /**
-     * @var int
-     */
-    private $ClassroomWidth;
-
-    /**
-     * @var string
-     */
-    private $ClassroomTemplate;
-
-    /**
-     * @var bool
-     */
-    private $ForceIECompatibilityMode;
-
-    /**
-     * @var bool
-     */
-    private $AllowModal;
-
-    /**
-     * @var bool
-     */
-    private $FullScreenSize;
-
-    /**
-     * @var string
-     */
-    private $OpenCourseIn;
-
-    /**
-     * @var bool
-     */
-    private $HasThreshold;
-
-    /**
-     * @var int
-     */
-    private $ThresholdValue;
-
-    /**
-     * @var bool
-     */
-    private $LimitSecurityAccess;
-
-    /**
-     * @var string
-     */
-    private $CreatorID;
-
-    /**
-     * @var bool
-     */
-    private $RequirePackageForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequireFeedbackForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequireFeedbackPopUp;
-
-    /**
-     * @var bool
-     */
-    private $RequireAssignmentForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequireAssesmentForCompletion;
-
-    /**
-     * @var bool
-     */
-    private $RequireStatusSuccessPassed;
-
-    /**
-     * @var bool
-     */
-    private $ProcessUnknown;
-
-    /**
-     * @var bool
-     */
-    private $OverrideAPISucces;
-
-    /**
-     * @var int
-     */
-    private $MinPassingScore;
-
-    /**
-     * @var string
-     */
-    private $PreventCompletionSettings;
-
-    /**
-     * @var bool
-     */
-    private $HasAssessment;
-
-    /**
-     * @var int
-     */
-    private $AssessmentWeight;
-
-    /**
-     * @var int
-     */
-    private $AssignmentWeight;
-
-    /**
-     * @var bool
-     */
-    private $HasFeedback;
-
-    /**
-     * @var int
-     */
-    private $PackageWeight;
-
-    /**
-     * @var string
-     */
-    private $DeploymentType;
-
-    /**
-     * @var string
-     */
-    private $AzureRunMode;
-
-    /**
-     * @var bool
-     */
-    private $DynamicProgram;
-
-    /**
-     * @var float
-     */
-    private $LearningTime;
-
-    /**
-     * @var string
-     */
-    private $EditorXML;
-
-    /**
-     * @var string
-     */
-    private $TranscriptPrintMode;
-
-    /**
-     * @var bool
-     */
-    private $HideTranscriptScore;
-
-    /**
-     * @var bool
-     */
-    private $ShowCustomScoreFeedback;
-
-    /**
-     * @var bool
-     */
-    private $HideInteractionsFromUser;
-
-    /**
-     * @var bool
-     */
-    private $HideInteractionsFromSupervisor;
-
-    /**
-     * @var bool
-     */
-    private $Log;
-
-    /**
-     * @var string
-     */
-    private $CustomScoreFeedbackXml;
-
-    /**
-     * @var string
-     */
-    private $CustomActivityTypeID;
-
-    /**
-     * @var bool
-     */
-    private $ShowHiddenSettings;
-
-    /**
-     * @var int
-     */
-    private $PortfolioEvidenceNumber;
-
-    /**
-     * @var int
-     */
-    private $PortfolioEvidenceMinumumNumber;
-
-    /**
-     * @var bool
-     */
-    private $AllowLearnerNotes;
-
-    /**
-     * @var bool
-     */
-    private $ShowRecommendation;
-
-    /**
-     * @var bool
-     */
-    private $MarkByTA;
-
-    /**
-     * @var bool
-     */
-    private $MarkByModerator;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $Assessments;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $CertificateRules;
-
-    /**
-     * @return string
-     */
-    public function getCourseType()
+    private string $CourseType;
+
+    
+    private string $ID;
+
+    
+    private string $Code;
+
+    
+    private string $FullScreen;
+
+    
+    private string $Title;
+
+    
+    private string $Description;
+
+    
+    private string $Language;
+
+    
+    private DateTimeInterface $LastUpdatedTimestamp;
+
+    
+    private Base64Binary $Logo;
+
+    
+    private string $LogoContentType;
+
+    
+    private string $LogoID;
+
+    
+    private string $SeriesID;
+
+    
+    private string $SeriesName;
+
+    
+    private string $ProgramID;
+
+    
+    private string $ProgramName;
+
+    
+    private bool $IsActive;
+
+    
+    private string $SKU;
+
+    
+    private float $Price;
+
+    
+    private float $SubsequentPrice;
+
+    
+    private int $TokensValue;
+
+    
+    private int $SubsequentTokensValue;
+
+    
+    private string $Currency;
+
+    
+    private string $PaymentProvider;
+
+    
+    private bool $GrantCertificate;
+
+    
+    private bool $CertificateExpires;
+
+    
+    private AccreditationDetails $AccreditationDetails;
+
+    
+    private ArrayOfReference $References;
+
+    
+    private bool $IsShared;
+
+    
+    private string $ExclusionMode;
+
+    
+    private string $LeaningPathActivityLayout;
+
+    
+    private string $ShowLearnerProgressAs;
+
+    
+    private bool $ShowSharingLink;
+
+    
+    private bool $VideoShowScrubber;
+
+    
+    private bool $VideoBookmarkProgress;
+
+    
+    private bool $VideoStartAuto;
+
+    
+    private bool $VideoCompleteOnOpen;
+
+    
+    private bool $VideoCompleteOnEnd;
+
+    
+    private bool $VideoCompleteOnTime;
+
+    
+    private string $VideoCompleteOnTime_Minute;
+
+    
+    private string $VideoCompleteOnTime_Sec;
+
+    
+    private CaptionInfo $CaptionInfo;
+
+    
+    private bool $ManualEnrollNoMatch;
+
+    
+    private bool $WaitlistEnrollAfterLastWithdrawDate;
+
+    
+    private DateTimeInterface $LastUnenrollmentDate;
+
+    
+    private DateTimeInterface $FirstEnrollmentDate;
+
+    
+    private bool $UnlimitedLastEnrollment;
+
+    
+    private bool $LastEnrollmentBasedFirstEnrollmentDate;
+
+    
+    private string $LastEnrollmentBasedFirstEnrollmentDateSetting;
+
+    
+    private DateTimeInterface $LastEnrollmentDate;
+
+    
+    private bool $AllowEnrollAfterLastEnrollDate;
+
+    
+    private int $LastEnrollmentCutOff;
+
+    
+    private bool $AllowSupervisorExtendDueDate;
+
+    
+    private int $SupervisorExtensionDaysLimit;
+
+    
+    private string $SupervisorExtensionDaysLimitStartFrom;
+
+    
+    private DateTimeInterface $StartDate;
+
+    
+    private string $DueDate;
+
+    
+    private bool $AllowEnrollmentCodeAfterEnrollmentDate;
+
+    
+    private int $EnrollmentCodeAfterEnrollmentDate_NoOfDays;
+
+    
+    private bool $BarAccessAfterDue;
+
+    
+    private bool $SuspendAccess;
+
+    
+    private string $SuspendAccessDays;
+
+    
+    private bool $EnrollFromLPOnly;
+
+    
+    private bool $AutoEnroll;
+
+    
+    private bool $AutoEnrollAllDomainMembers;
+
+    
+    private ArrayOfAnyType $AutoenrollRules;
+
+    
+    private bool $AutoenrollRulesRequired;
+
+    
+    private string $AutoenrollRepeatType;
+
+    
+    private string $AutoenrollRepeatMonthCount;
+
+    
+    private DateTimeInterface $AutoenrollLastRunDate;
+
+    
+    private ArrayOfAnyType $AutoenrollExcludeRules;
+
+    
+    private bool $AutoenrollExcludeRulesRequired;
+
+    
+    private bool $ReAutoEnroll;
+
+    
+    private bool $UseAutoEnrollmentRuleForReEnroll;
+
+    
+    private ArrayOfAnyType $RecertificationAutoEnrollRules;
+
+    
+    private ArrayOfAnyType $RecertificationAutoEnrollExcludeRules;
+
+    
+    private bool $ReAutoEnrollmentAllowAll;
+
+    
+    private string $ReAutoenrollRepeatType;
+
+    
+    private string $ReAutoenrollRepeatMonthCount;
+
+    
+    private bool $ReAutoenrollAllRulesRequired;
+
+    
+    private DateTimeInterface $ReAutoenrollLastRunDate;
+
+    
+    private bool $ReAutoenrollAllExcludeRulesRequired;
+
+    
+    private bool $SelfEnroll;
+
+    
+    private bool $AllowTransfer;
+
+    
+    private bool $SelfEnrollAllDomainMembers;
+
+    
+    private bool $PermissionEnroll;
+
+    
+    private string $EnrollPermissionFrom;
+
+    
+    private bool $PaymentEnroll;
+
+    
+    private bool $TokensEnroll;
+
+    
+    private bool $AllowCoupons;
+
+    
+    private bool $GlobalTokensEnroll;
+
+    
+    private bool $PassEnroll;
+
+    
+    private bool $AllowPOPayment;
+
+    
+    private bool $AllowPass;
+
+    
+    private bool $AllowPurchaseForOthers;
+
+    
+    private bool $AllowAttendanceCodeToEnroll;
+
+    
+    private bool $NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate;
+
+    
+    private bool $AttendanceCodeEnrollFollowsRules;
+
+    
+    private bool $AllowAttendanceCode;
+
+    
+    private ArrayOfAnyType $SelfEnrollRules;
+
+    
+    private ArrayOfAnyType $SelfEnrollGroups;
+
+    
+    private bool $SelfEnrollGroupRequired;
+
+    
+    private bool $SelfEnrollRulesRequired;
+
+    
+    private ArrayOfAnyType $SelfEnrollExcludeRules;
+
+    
+    private bool $SelfEnrollExcludeRulesRequired;
+
+    
+    private bool $CanUnenroll;
+
+    
+    private bool $WithdrawAllDomainMembers;
+
+    
+    private bool $PermissionUnenroll;
+
+    
+    private string $UnenrollOption;
+
+    
+    private string $UnenrollPermissionFrom;
+
+    
+    private ArrayOfAnyType $WithdrawalRules;
+
+    
+    private bool $WithdrawalRulesRequired;
+
+    
+    private ArrayOfAnyType $WithdrawalExcludeRules;
+
+    
+    private bool $WithdrawalExcludeRulesRequired;
+
+    
+    private bool $AutoWithdraw;
+
+    
+    private bool $AutoWithdrawNotMatchingAutoRules;
+
+    
+    private ArrayOfAnyType $AutoWithdrawalRules;
+
+    
+    private bool $AutoWithdrawalRulesRequired;
+
+    
+    private ArrayOfAnyType $AutoWithdrawalExcludeRules;
+
+    
+    private bool $AutoWithdrawalExcludeRulesRequired;
+
+    
+    private ArrayOfAnyType $AnnouncementRules;
+
+    
+    private bool $AnnouncementRulesRequired;
+
+    
+    private ArrayOfAnyType $AnnouncementExcludeRules;
+
+    
+    private bool $AnnouncementExcludeRulesRequired;
+
+    
+    private bool $AutoEnrollSelfActivities;
+
+    
+    private bool $AutoEnrollManualActivities;
+
+    
+    private bool $IncludeAllInPrice;
+
+    
+    private bool $AutoEnrollLPActivities;
+
+    
+    private bool $ExcludeLPEnrollPurchaseActivities;
+
+    
+    private bool $ExcludeLPEnrollNotSelfEnrollActivities;
+
+    
+    private bool $WithdrawIncompleteLPActivitiesOnLPEnroll;
+
+    
+    private bool $FastStartLPActivities;
+
+    
+    private bool $StudentIsEnrolled;
+
+    
+    private bool $StudentHasPendingRequest;
+
+    
+    private bool $StudentHasPass;
+
+    
+    private bool $AllowAnonPreview;
+
+    
+    private string $FieldsXml;
+
+    
+    private string $BaseUrl;
+
+    
+    private bool $HasAccessCode;
+
+    
+    private string $AccessCode;
+
+    
+    private int $CourseSharingCount;
+
+    
+    private string $Disclaimer;
+
+    
+    private bool $ShowDisclaimerAlways;
+
+    
+    private bool $DisclaimerAgreed;
+
+    
+    private string $DisclaimerTextButton;
+
+    
+    private bool $HasDisclaimer;
+
+    
+    private bool $AllowMobileDownload;
+
+    
+    private ArrayOfAnyType $AltPrices;
+
+    
+    private string $InitialScormVersion;
+
+    
+    private string $ReviewStatus;
+
+    
+    private bool $SendAccreditationExpiryNotification;
+
+    
+    private bool $SendSessionStartLearnerNotification;
+
+    
+    private bool $SendSessionStartModeratorNotification;
+
+    
+    private bool $SendEnrollmentConfirmation;
+
+    
+    private bool $SendEnrollmentRequestNotification;
+
+    
+    private bool $SendThresholdNotification;
+
+    
+    private bool $SendStartDateNotificationLearner;
+
+    
+    private bool $NotifyModeratorEnroll;
+
+    
+    private bool $NotifySupervisorEnroll;
+
+    
+    private bool $NotifyStudentEnroll;
+
+    
+    private bool $SendEnrollmentRequestConfirmation;
+
+    
+    private bool $NotifyModeratorOnEnrollRequestConfirmation;
+
+    
+    private bool $NotifySupervisorOnEnrollRequestConfirmation;
+
+    
+    private bool $NotifyLearnerOnEnrollRequestConfirmation;
+
+    
+    private bool $SendDueDateReminder1;
+
+    
+    private bool $SendDueDateReminder2;
+
+    
+    private bool $SendDueDateReminder3;
+
+    
+    private bool $SendUpcomingILTReminder1;
+
+    
+    private bool $SendUpcomingILTReminder2;
+
+    
+    private bool $SendUpcomingILTReminder3;
+
+    
+    private bool $SendEnrollmentReminderNotification;
+
+    
+    private bool $SendLearningPathModificationNotification;
+
+    
+    private bool $NotifySupervisorOnEnrollmentReminder;
+
+    
+    private bool $SendWithdrawRequestNotification;
+
+    
+    private bool $NotifyModeratorOnWithdrawRequest;
+
+    
+    private bool $NotifySupervisorOnWithdrawRequest;
+
+    
+    private bool $NotifyModeratorCompletion;
+
+    
+    private bool $NotifySupervisorCompletion;
+
+    
+    private bool $NotifyLearnerCompletion;
+
+    
+    private bool $CompletionNotificationIncludeSuccess;
+
+    
+    private bool $CompletionNotificationIncludeScore;
+
+    
+    private bool $NotifyModeratorOnDue;
+
+    
+    private bool $NotifySupervisorOnDue;
+
+    
+    private bool $NotifySupervisorOnOverDue1;
+
+    
+    private bool $NotifySupervisorOnOverDue2;
+
+    
+    private bool $NotifySupervisorOnOverDue3;
+
+    
+    private bool $NotifySupervisorSupervisorOnOverDue1;
+
+    
+    private bool $NotifySupervisorSupervisorOnOverDue2;
+
+    
+    private bool $NotifySupervisorSupervisorOnOverDue3;
+
+    
+    private bool $NotifyModeratorOnOverDue1;
+
+    
+    private bool $NotifyModeratorOnOverDue2;
+
+    
+    private bool $NotifyModeratorOnOverDue3;
+
+    
+    private bool $NotifyLearnerOnOverDue1;
+
+    
+    private bool $NotifyLearnerOnOverDue2;
+
+    
+    private bool $NotifyLearnerOnOverDue3;
+
+    
+    private bool $SendDueDateNotification;
+
+    
+    private bool $NotifySupervisorOnMissedILTSession;
+
+    
+    private bool $NotifyModeratorOnMissedILTSession;
+
+    
+    private bool $NotifySupervisorOnWaitingList;
+
+    
+    private bool $NotifySupervisorOnWithdraw;
+
+    
+    private bool $NotifyModeratorOnWithdraw;
+
+    
+    private bool $NotifyModeratorOnWaitingList;
+
+    
+    private bool $NotifyModeratorOnDueDateReminder1;
+
+    
+    private bool $NotifyModeratorOnDueDateReminder2;
+
+    
+    private bool $NotifyModeratorOnDueDateReminder3;
+
+    
+    private bool $NotifySupervisorOnDueDateReminder1;
+
+    
+    private bool $NotifySupervisorOnDueDateReminder2;
+
+    
+    private bool $NotifySupervisorOnDueDateReminder3;
+
+    
+    private bool $NotifySupervisorOnUpcomingILTReminder1;
+
+    
+    private bool $NotifySupervisorOnUpcomingILTReminder2;
+
+    
+    private bool $NotifySupervisorOnUpcomingILTReminder3;
+
+    
+    private bool $NotifyModeratorOnUpcomingILTReminder1;
+
+    
+    private bool $NotifyModeratorOnUpcomingILTReminder2;
+
+    
+    private bool $NotifyModeratorOnUpcomingILTReminder3;
+
+    
+    private bool $SendOverDueNotification1;
+
+    
+    private bool $SendOverDueNotification2;
+
+    
+    private bool $SendOverDueNotification3;
+
+    
+    private bool $SendMissedSessionNotification;
+
+    
+    private bool $SendMissedILTSessionNotification;
+
+    
+    private bool $SendWaitingListNotification;
+
+    
+    private bool $SendWithdrawNotifications;
+
+    
+    private bool $SendCourseModificationNotification;
+
+    
+    private bool $SendCourseModificationNotificationToCompleted;
+
+    
+    private bool $SendCourseResourceModificationNotification;
+
+    
+    private bool $SendWaitingListModificationNotification;
+
+    
+    private bool $SendAssignmentReviewedNotification;
+
+    
+    private bool $SendPerformanceNotification;
+
+    
+    private bool $SendBadgeIssuedNotification;
+
+    
+    private bool $SendPendingNotification;
+
+    
+    private bool $SendFeedbackOverdueNotification;
+
+    
+    private bool $SendfeedbackDueDateNotification;
+
+    
+    private bool $SendAssignmentSubmittedNotification;
+
+    
+    private bool $SendActivityPeerReviewCancelled;
+
+    
+    private bool $SendActivityReviewApprovalExpiryReminder;
+
+    
+    private bool $SendExternalActivityApprovedAutomatically;
+
+    
+    private bool $SendExternalActivityRequiresApproval;
+
+    
+    private bool $SendForumPostApprovalRequired;
+
+    
+    private bool $SendForumPostApproved;
+
+    
+    private bool $SendForumPostDeclined;
+
+    
+    private bool $SendPasswordChanged;
+
+    
+    private bool $SendRecommendationInvitation;
+
+    
+    private bool $SendRecommendationOutCome;
+
+    
+    private bool $SendAccountVerification;
+
+    
+    private bool $SendSelfWithdraw;
+
+    
+    private bool $NotifySupervisorOnSelfWithdraw;
+
+    
+    private bool $NotifyModeratorOnSelfWithdraw;
+
+    
+    private bool $HasForum;
+
+    
+    private bool $ManualEnollOverrideLastEnrollmentDate;
+
+    
+    private bool $ManualEnollOverridePrerequisites;
+
+    
+    private bool $ManualEnollOverrideNotificationPeriod;
+
+    
+    private bool $ManualEnollOverrideMaxReEnrollments;
+
+    
+    private bool $ManualEnollOverrideSingleNonExpiringEnrollments;
+
+    
+    private int $ClassroomHeight;
+
+    
+    private int $ClassroomWidth;
+
+    
+    private string $ClassroomTemplate;
+
+    
+    private bool $ForceIECompatibilityMode;
+
+    
+    private bool $AllowModal;
+
+    
+    private bool $FullScreenSize;
+
+    
+    private string $OpenCourseIn;
+
+    
+    private bool $HasThreshold;
+
+    
+    private int $ThresholdValue;
+
+    
+    private bool $LimitSecurityAccess;
+
+    
+    private string $CreatorID;
+
+    
+    private bool $RequirePackageForCompletion;
+
+    
+    private bool $RequireFeedbackForCompletion;
+
+    
+    private bool $RequireFeedbackPopUp;
+
+    
+    private bool $RequireAssignmentForCompletion;
+
+    
+    private bool $RequireAssesmentForCompletion;
+
+    
+    private bool $RequireStatusSuccessPassed;
+
+    
+    private bool $ProcessUnknown;
+
+    
+    private bool $OverrideAPISucces;
+
+    
+    private int $MinPassingScore;
+
+    
+    private string $PreventCompletionSettings;
+
+    
+    private bool $HasAssessment;
+
+    
+    private int $AssessmentWeight;
+
+    
+    private int $AssignmentWeight;
+
+    
+    private bool $HasFeedback;
+
+    
+    private int $PackageWeight;
+
+    
+    private string $DeploymentType;
+
+    
+    private string $AzureRunMode;
+
+    
+    private bool $DynamicProgram;
+
+    
+    private float $LearningTime;
+
+    
+    private string $EditorXML;
+
+    
+    private string $TranscriptPrintMode;
+
+    
+    private bool $HideTranscriptScore;
+
+    
+    private bool $ShowCustomScoreFeedback;
+
+    
+    private bool $HideInteractionsFromUser;
+
+    
+    private bool $HideInteractionsFromSupervisor;
+
+    
+    private bool $Log;
+
+    
+    private string $CustomScoreFeedbackXml;
+
+    
+    private string $CustomActivityTypeID;
+
+    
+    private bool $ShowHiddenSettings;
+
+    
+    private int $PortfolioEvidenceNumber;
+
+    
+    private int $PortfolioEvidenceMinumumNumber;
+
+    
+    private bool $AllowLearnerNotes;
+
+    
+    private bool $ShowRecommendation;
+
+    
+    private bool $MarkByTA;
+
+    
+    private bool $MarkByModerator;
+
+    
+    private ArrayOfAnyType $Assessments;
+
+    
+    private ArrayOfAnyType $CertificateRules;
+
+    
+    public function getCourseType(): string
     {
         return $this->CourseType;
     }
 
-    /**
-     * @param string $CourseType
-     *
-     * @return LearningType
-     */
-    public function withCourseType($CourseType)
+    
+    public function withCourseType(string $CourseType): static
     {
         $new = clone $this;
         $new->CourseType = $CourseType;
@@ -1522,20 +919,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getID()
+    
+    public function getID(): string
     {
         return $this->ID;
     }
 
-    /**
-     * @param string $ID
-     *
-     * @return LearningType
-     */
-    public function withID($ID)
+    
+    public function withID(string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -1543,20 +934,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     *
-     * @return LearningType
-     */
-    public function withCode($Code)
+    
+    public function withCode(string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -1564,20 +949,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFullScreen()
+    
+    public function getFullScreen(): string
     {
         return $this->FullScreen;
     }
 
-    /**
-     * @param string $FullScreen
-     *
-     * @return LearningType
-     */
-    public function withFullScreen($FullScreen)
+    
+    public function withFullScreen(string $FullScreen): static
     {
         $new = clone $this;
         $new->FullScreen = $FullScreen;
@@ -1585,20 +964,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    
+    public function getTitle(): string
     {
         return $this->Title;
     }
 
-    /**
-     * @param string $Title
-     *
-     * @return LearningType
-     */
-    public function withTitle($Title)
+    
+    public function withTitle(string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -1606,20 +979,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     *
-     * @return LearningType
-     */
-    public function withDescription($Description)
+    
+    public function withDescription(string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -1627,20 +994,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLanguage()
+    
+    public function getLanguage(): string
     {
         return $this->Language;
     }
 
-    /**
-     * @param string $Language
-     *
-     * @return LearningType
-     */
-    public function withLanguage($Language)
+    
+    public function withLanguage(string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -1648,20 +1009,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastUpdatedTimestamp()
+    
+    public function getLastUpdatedTimestamp(): DateTimeInterface
     {
         return $this->LastUpdatedTimestamp;
     }
 
-    /**
-     * @param \DateTimeInterface $LastUpdatedTimestamp
-     *
-     * @return LearningType
-     */
-    public function withLastUpdatedTimestamp($LastUpdatedTimestamp)
+    
+    public function withLastUpdatedTimestamp(DateTimeInterface $LastUpdatedTimestamp): static
     {
         $new = clone $this;
         $new->LastUpdatedTimestamp = $LastUpdatedTimestamp;
@@ -1669,20 +1024,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogo()
+    
+    public function getLogo(): Base64Binary
     {
         return $this->Logo;
     }
 
-    /**
-     * @param string $Logo
-     *
-     * @return LearningType
-     */
-    public function withLogo($Logo)
+    
+    public function withLogo(Base64Binary $Logo): static
     {
         $new = clone $this;
         $new->Logo = $Logo;
@@ -1690,20 +1039,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogoContentType()
+    
+    public function getLogoContentType(): string
     {
         return $this->LogoContentType;
     }
 
-    /**
-     * @param string $LogoContentType
-     *
-     * @return LearningType
-     */
-    public function withLogoContentType($LogoContentType)
+    
+    public function withLogoContentType(string $LogoContentType): static
     {
         $new = clone $this;
         $new->LogoContentType = $LogoContentType;
@@ -1711,20 +1054,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLogoID()
+    
+    public function getLogoID(): string
     {
         return $this->LogoID;
     }
 
-    /**
-     * @param string $LogoID
-     *
-     * @return LearningType
-     */
-    public function withLogoID($LogoID)
+    
+    public function withLogoID(string $LogoID): static
     {
         $new = clone $this;
         $new->LogoID = $LogoID;
@@ -1732,20 +1069,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesID()
+    
+    public function getSeriesID(): string
     {
         return $this->SeriesID;
     }
 
-    /**
-     * @param string $SeriesID
-     *
-     * @return LearningType
-     */
-    public function withSeriesID($SeriesID)
+    
+    public function withSeriesID(string $SeriesID): static
     {
         $new = clone $this;
         $new->SeriesID = $SeriesID;
@@ -1753,20 +1084,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeriesName()
+    
+    public function getSeriesName(): string
     {
         return $this->SeriesName;
     }
 
-    /**
-     * @param string $SeriesName
-     *
-     * @return LearningType
-     */
-    public function withSeriesName($SeriesName)
+    
+    public function withSeriesName(string $SeriesName): static
     {
         $new = clone $this;
         $new->SeriesName = $SeriesName;
@@ -1774,20 +1099,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->ProgramID;
     }
 
-    /**
-     * @param string $ProgramID
-     *
-     * @return LearningType
-     */
-    public function withProgramID($ProgramID)
+    
+    public function withProgramID(string $ProgramID): static
     {
         $new = clone $this;
         $new->ProgramID = $ProgramID;
@@ -1795,20 +1114,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramName()
+    
+    public function getProgramName(): string
     {
         return $this->ProgramName;
     }
 
-    /**
-     * @param string $ProgramName
-     *
-     * @return LearningType
-     */
-    public function withProgramName($ProgramName)
+    
+    public function withProgramName(string $ProgramName): static
     {
         $new = clone $this;
         $new->ProgramName = $ProgramName;
@@ -1816,20 +1129,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsActive()
+    
+    public function getIsActive(): bool
     {
         return $this->IsActive;
     }
 
-    /**
-     * @param bool $IsActive
-     *
-     * @return LearningType
-     */
-    public function withIsActive($IsActive)
+    
+    public function withIsActive(bool $IsActive): static
     {
         $new = clone $this;
         $new->IsActive = $IsActive;
@@ -1837,20 +1144,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSKU()
+    
+    public function getSKU(): string
     {
         return $this->SKU;
     }
 
-    /**
-     * @param string $SKU
-     *
-     * @return LearningType
-     */
-    public function withSKU($SKU)
+    
+    public function withSKU(string $SKU): static
     {
         $new = clone $this;
         $new->SKU = $SKU;
@@ -1858,20 +1159,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getPrice()
+    
+    public function getPrice(): float
     {
         return $this->Price;
     }
 
-    /**
-     * @param float $Price
-     *
-     * @return LearningType
-     */
-    public function withPrice($Price)
+    
+    public function withPrice(float $Price): static
     {
         $new = clone $this;
         $new->Price = $Price;
@@ -1879,20 +1174,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getSubsequentPrice()
+    
+    public function getSubsequentPrice(): float
     {
         return $this->SubsequentPrice;
     }
 
-    /**
-     * @param float $SubsequentPrice
-     *
-     * @return LearningType
-     */
-    public function withSubsequentPrice($SubsequentPrice)
+    
+    public function withSubsequentPrice(float $SubsequentPrice): static
     {
         $new = clone $this;
         $new->SubsequentPrice = $SubsequentPrice;
@@ -1900,20 +1189,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTokensValue()
+    
+    public function getTokensValue(): int
     {
         return $this->TokensValue;
     }
 
-    /**
-     * @param int $TokensValue
-     *
-     * @return LearningType
-     */
-    public function withTokensValue($TokensValue)
+    
+    public function withTokensValue(int $TokensValue): static
     {
         $new = clone $this;
         $new->TokensValue = $TokensValue;
@@ -1921,20 +1204,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getSubsequentTokensValue()
+    
+    public function getSubsequentTokensValue(): int
     {
         return $this->SubsequentTokensValue;
     }
 
-    /**
-     * @param int $SubsequentTokensValue
-     *
-     * @return LearningType
-     */
-    public function withSubsequentTokensValue($SubsequentTokensValue)
+    
+    public function withSubsequentTokensValue(int $SubsequentTokensValue): static
     {
         $new = clone $this;
         $new->SubsequentTokensValue = $SubsequentTokensValue;
@@ -1942,20 +1219,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrency()
+    
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
 
-    /**
-     * @param string $Currency
-     *
-     * @return LearningType
-     */
-    public function withCurrency($Currency)
+    
+    public function withCurrency(string $Currency): static
     {
         $new = clone $this;
         $new->Currency = $Currency;
@@ -1963,20 +1234,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPaymentProvider()
+    
+    public function getPaymentProvider(): string
     {
         return $this->PaymentProvider;
     }
 
-    /**
-     * @param string $PaymentProvider
-     *
-     * @return LearningType
-     */
-    public function withPaymentProvider($PaymentProvider)
+    
+    public function withPaymentProvider(string $PaymentProvider): static
     {
         $new = clone $this;
         $new->PaymentProvider = $PaymentProvider;
@@ -1984,20 +1249,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGrantCertificate()
+    
+    public function getGrantCertificate(): bool
     {
         return $this->GrantCertificate;
     }
 
-    /**
-     * @param bool $GrantCertificate
-     *
-     * @return LearningType
-     */
-    public function withGrantCertificate($GrantCertificate)
+    
+    public function withGrantCertificate(bool $GrantCertificate): static
     {
         $new = clone $this;
         $new->GrantCertificate = $GrantCertificate;
@@ -2005,20 +1264,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCertificateExpires()
+    
+    public function getCertificateExpires(): bool
     {
         return $this->CertificateExpires;
     }
 
-    /**
-     * @param bool $CertificateExpires
-     *
-     * @return LearningType
-     */
-    public function withCertificateExpires($CertificateExpires)
+    
+    public function withCertificateExpires(bool $CertificateExpires): static
     {
         $new = clone $this;
         $new->CertificateExpires = $CertificateExpires;
@@ -2026,20 +1279,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AccreditationDetails
-     */
-    public function getAccreditationDetails()
+    
+    public function getAccreditationDetails(): AccreditationDetails
     {
         return $this->AccreditationDetails;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\AccreditationDetails $AccreditationDetails
-     *
-     * @return LearningType
-     */
-    public function withAccreditationDetails($AccreditationDetails)
+    
+    public function withAccreditationDetails(AccreditationDetails $AccreditationDetails): static
     {
         $new = clone $this;
         $new->AccreditationDetails = $AccreditationDetails;
@@ -2047,20 +1294,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfReference
-     */
-    public function getReferences()
+    
+    public function getReferences(): ArrayOfReference
     {
         return $this->References;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfReference $References
-     *
-     * @return LearningType
-     */
-    public function withReferences($References)
+    
+    public function withReferences(ArrayOfReference $References): static
     {
         $new = clone $this;
         $new->References = $References;
@@ -2068,20 +1309,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsShared()
+    
+    public function getIsShared(): bool
     {
         return $this->IsShared;
     }
 
-    /**
-     * @param bool $IsShared
-     *
-     * @return LearningType
-     */
-    public function withIsShared($IsShared)
+    
+    public function withIsShared(bool $IsShared): static
     {
         $new = clone $this;
         $new->IsShared = $IsShared;
@@ -2089,20 +1324,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getExclusionMode()
+    
+    public function getExclusionMode(): string
     {
         return $this->ExclusionMode;
     }
 
-    /**
-     * @param string $ExclusionMode
-     *
-     * @return LearningType
-     */
-    public function withExclusionMode($ExclusionMode)
+    
+    public function withExclusionMode(string $ExclusionMode): static
     {
         $new = clone $this;
         $new->ExclusionMode = $ExclusionMode;
@@ -2110,20 +1339,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLeaningPathActivityLayout()
+    
+    public function getLeaningPathActivityLayout(): string
     {
         return $this->LeaningPathActivityLayout;
     }
 
-    /**
-     * @param string $LeaningPathActivityLayout
-     *
-     * @return LearningType
-     */
-    public function withLeaningPathActivityLayout($LeaningPathActivityLayout)
+    
+    public function withLeaningPathActivityLayout(string $LeaningPathActivityLayout): static
     {
         $new = clone $this;
         $new->LeaningPathActivityLayout = $LeaningPathActivityLayout;
@@ -2131,20 +1354,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getShowLearnerProgressAs()
+    
+    public function getShowLearnerProgressAs(): string
     {
         return $this->ShowLearnerProgressAs;
     }
 
-    /**
-     * @param string $ShowLearnerProgressAs
-     *
-     * @return LearningType
-     */
-    public function withShowLearnerProgressAs($ShowLearnerProgressAs)
+    
+    public function withShowLearnerProgressAs(string $ShowLearnerProgressAs): static
     {
         $new = clone $this;
         $new->ShowLearnerProgressAs = $ShowLearnerProgressAs;
@@ -2152,20 +1369,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSharingLink()
+    
+    public function getShowSharingLink(): bool
     {
         return $this->ShowSharingLink;
     }
 
-    /**
-     * @param bool $ShowSharingLink
-     *
-     * @return LearningType
-     */
-    public function withShowSharingLink($ShowSharingLink)
+    
+    public function withShowSharingLink(bool $ShowSharingLink): static
     {
         $new = clone $this;
         $new->ShowSharingLink = $ShowSharingLink;
@@ -2173,20 +1384,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getVideoShowScrubber()
+    
+    public function getVideoShowScrubber(): bool
     {
         return $this->VideoShowScrubber;
     }
 
-    /**
-     * @param bool $VideoShowScrubber
-     *
-     * @return LearningType
-     */
-    public function withVideoShowScrubber($VideoShowScrubber)
+    
+    public function withVideoShowScrubber(bool $VideoShowScrubber): static
     {
         $new = clone $this;
         $new->VideoShowScrubber = $VideoShowScrubber;
@@ -2194,20 +1399,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getVideoBookmarkProgress()
+    
+    public function getVideoBookmarkProgress(): bool
     {
         return $this->VideoBookmarkProgress;
     }
 
-    /**
-     * @param bool $VideoBookmarkProgress
-     *
-     * @return LearningType
-     */
-    public function withVideoBookmarkProgress($VideoBookmarkProgress)
+    
+    public function withVideoBookmarkProgress(bool $VideoBookmarkProgress): static
     {
         $new = clone $this;
         $new->VideoBookmarkProgress = $VideoBookmarkProgress;
@@ -2215,20 +1414,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getVideoStartAuto()
+    
+    public function getVideoStartAuto(): bool
     {
         return $this->VideoStartAuto;
     }
 
-    /**
-     * @param bool $VideoStartAuto
-     *
-     * @return LearningType
-     */
-    public function withVideoStartAuto($VideoStartAuto)
+    
+    public function withVideoStartAuto(bool $VideoStartAuto): static
     {
         $new = clone $this;
         $new->VideoStartAuto = $VideoStartAuto;
@@ -2236,20 +1429,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getVideoCompleteOnOpen()
+    
+    public function getVideoCompleteOnOpen(): bool
     {
         return $this->VideoCompleteOnOpen;
     }
 
-    /**
-     * @param bool $VideoCompleteOnOpen
-     *
-     * @return LearningType
-     */
-    public function withVideoCompleteOnOpen($VideoCompleteOnOpen)
+    
+    public function withVideoCompleteOnOpen(bool $VideoCompleteOnOpen): static
     {
         $new = clone $this;
         $new->VideoCompleteOnOpen = $VideoCompleteOnOpen;
@@ -2257,20 +1444,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getVideoCompleteOnEnd()
+    
+    public function getVideoCompleteOnEnd(): bool
     {
         return $this->VideoCompleteOnEnd;
     }
 
-    /**
-     * @param bool $VideoCompleteOnEnd
-     *
-     * @return LearningType
-     */
-    public function withVideoCompleteOnEnd($VideoCompleteOnEnd)
+    
+    public function withVideoCompleteOnEnd(bool $VideoCompleteOnEnd): static
     {
         $new = clone $this;
         $new->VideoCompleteOnEnd = $VideoCompleteOnEnd;
@@ -2278,20 +1459,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getVideoCompleteOnTime()
+    
+    public function getVideoCompleteOnTime(): bool
     {
         return $this->VideoCompleteOnTime;
     }
 
-    /**
-     * @param bool $VideoCompleteOnTime
-     *
-     * @return LearningType
-     */
-    public function withVideoCompleteOnTime($VideoCompleteOnTime)
+    
+    public function withVideoCompleteOnTime(bool $VideoCompleteOnTime): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime = $VideoCompleteOnTime;
@@ -2299,20 +1474,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getVideoCompleteOnTime_Minute()
+    
+    public function getVideoCompleteOnTimeMinute(): string
     {
         return $this->VideoCompleteOnTime_Minute;
     }
 
-    /**
-     * @param string $VideoCompleteOnTime_Minute
-     *
-     * @return LearningType
-     */
-    public function withVideoCompleteOnTime_Minute($VideoCompleteOnTime_Minute)
+    
+    public function withVideoCompleteOnTimeMinute(string $VideoCompleteOnTime_Minute): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime_Minute = $VideoCompleteOnTime_Minute;
@@ -2320,20 +1489,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getVideoCompleteOnTime_Sec()
+    
+    public function getVideoCompleteOnTimeSec(): string
     {
         return $this->VideoCompleteOnTime_Sec;
     }
 
-    /**
-     * @param string $VideoCompleteOnTime_Sec
-     *
-     * @return LearningType
-     */
-    public function withVideoCompleteOnTime_Sec($VideoCompleteOnTime_Sec)
+    
+    public function withVideoCompleteOnTimeSec(string $VideoCompleteOnTime_Sec): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime_Sec = $VideoCompleteOnTime_Sec;
@@ -2341,20 +1504,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CaptionInfo
-     */
-    public function getCaptionInfo()
+    
+    public function getCaptionInfo(): CaptionInfo
     {
         return $this->CaptionInfo;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CaptionInfo $CaptionInfo
-     *
-     * @return LearningType
-     */
-    public function withCaptionInfo($CaptionInfo)
+    
+    public function withCaptionInfo(CaptionInfo $CaptionInfo): static
     {
         $new = clone $this;
         $new->CaptionInfo = $CaptionInfo;
@@ -2362,20 +1519,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnrollNoMatch()
+    
+    public function getManualEnrollNoMatch(): bool
     {
         return $this->ManualEnrollNoMatch;
     }
 
-    /**
-     * @param bool $ManualEnrollNoMatch
-     *
-     * @return LearningType
-     */
-    public function withManualEnrollNoMatch($ManualEnrollNoMatch)
+    
+    public function withManualEnrollNoMatch(bool $ManualEnrollNoMatch): static
     {
         $new = clone $this;
         $new->ManualEnrollNoMatch = $ManualEnrollNoMatch;
@@ -2383,20 +1534,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWaitlistEnrollAfterLastWithdrawDate()
+    
+    public function getWaitlistEnrollAfterLastWithdrawDate(): bool
     {
         return $this->WaitlistEnrollAfterLastWithdrawDate;
     }
 
-    /**
-     * @param bool $WaitlistEnrollAfterLastWithdrawDate
-     *
-     * @return LearningType
-     */
-    public function withWaitlistEnrollAfterLastWithdrawDate($WaitlistEnrollAfterLastWithdrawDate)
+    
+    public function withWaitlistEnrollAfterLastWithdrawDate(bool $WaitlistEnrollAfterLastWithdrawDate): static
     {
         $new = clone $this;
         $new->WaitlistEnrollAfterLastWithdrawDate = $WaitlistEnrollAfterLastWithdrawDate;
@@ -2404,20 +1549,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastUnenrollmentDate()
+    
+    public function getLastUnenrollmentDate(): DateTimeInterface
     {
         return $this->LastUnenrollmentDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastUnenrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withLastUnenrollmentDate($LastUnenrollmentDate)
+    
+    public function withLastUnenrollmentDate(DateTimeInterface $LastUnenrollmentDate): static
     {
         $new = clone $this;
         $new->LastUnenrollmentDate = $LastUnenrollmentDate;
@@ -2425,20 +1564,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getFirstEnrollmentDate()
+    
+    public function getFirstEnrollmentDate(): DateTimeInterface
     {
         return $this->FirstEnrollmentDate;
     }
 
-    /**
-     * @param \DateTimeInterface $FirstEnrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withFirstEnrollmentDate($FirstEnrollmentDate)
+    
+    public function withFirstEnrollmentDate(DateTimeInterface $FirstEnrollmentDate): static
     {
         $new = clone $this;
         $new->FirstEnrollmentDate = $FirstEnrollmentDate;
@@ -2446,20 +1579,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUnlimitedLastEnrollment()
+    
+    public function getUnlimitedLastEnrollment(): bool
     {
         return $this->UnlimitedLastEnrollment;
     }
 
-    /**
-     * @param bool $UnlimitedLastEnrollment
-     *
-     * @return LearningType
-     */
-    public function withUnlimitedLastEnrollment($UnlimitedLastEnrollment)
+    
+    public function withUnlimitedLastEnrollment(bool $UnlimitedLastEnrollment): static
     {
         $new = clone $this;
         $new->UnlimitedLastEnrollment = $UnlimitedLastEnrollment;
@@ -2467,20 +1594,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLastEnrollmentBasedFirstEnrollmentDate()
+    
+    public function getLastEnrollmentBasedFirstEnrollmentDate(): bool
     {
         return $this->LastEnrollmentBasedFirstEnrollmentDate;
     }
 
-    /**
-     * @param bool $LastEnrollmentBasedFirstEnrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withLastEnrollmentBasedFirstEnrollmentDate($LastEnrollmentBasedFirstEnrollmentDate)
+    
+    public function withLastEnrollmentBasedFirstEnrollmentDate(bool $LastEnrollmentBasedFirstEnrollmentDate): static
     {
         $new = clone $this;
         $new->LastEnrollmentBasedFirstEnrollmentDate = $LastEnrollmentBasedFirstEnrollmentDate;
@@ -2488,20 +1609,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastEnrollmentBasedFirstEnrollmentDateSetting()
+    
+    public function getLastEnrollmentBasedFirstEnrollmentDateSetting(): string
     {
         return $this->LastEnrollmentBasedFirstEnrollmentDateSetting;
     }
 
-    /**
-     * @param string $LastEnrollmentBasedFirstEnrollmentDateSetting
-     *
-     * @return LearningType
-     */
-    public function withLastEnrollmentBasedFirstEnrollmentDateSetting($LastEnrollmentBasedFirstEnrollmentDateSetting)
+    
+    public function withLastEnrollmentBasedFirstEnrollmentDateSetting(string $LastEnrollmentBasedFirstEnrollmentDateSetting): static
     {
         $new = clone $this;
         $new->LastEnrollmentBasedFirstEnrollmentDateSetting = $LastEnrollmentBasedFirstEnrollmentDateSetting;
@@ -2509,20 +1624,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getLastEnrollmentDate()
+    
+    public function getLastEnrollmentDate(): DateTimeInterface
     {
         return $this->LastEnrollmentDate;
     }
 
-    /**
-     * @param \DateTimeInterface $LastEnrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withLastEnrollmentDate($LastEnrollmentDate)
+    
+    public function withLastEnrollmentDate(DateTimeInterface $LastEnrollmentDate): static
     {
         $new = clone $this;
         $new->LastEnrollmentDate = $LastEnrollmentDate;
@@ -2530,20 +1639,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowEnrollAfterLastEnrollDate()
+    
+    public function getAllowEnrollAfterLastEnrollDate(): bool
     {
         return $this->AllowEnrollAfterLastEnrollDate;
     }
 
-    /**
-     * @param bool $AllowEnrollAfterLastEnrollDate
-     *
-     * @return LearningType
-     */
-    public function withAllowEnrollAfterLastEnrollDate($AllowEnrollAfterLastEnrollDate)
+    
+    public function withAllowEnrollAfterLastEnrollDate(bool $AllowEnrollAfterLastEnrollDate): static
     {
         $new = clone $this;
         $new->AllowEnrollAfterLastEnrollDate = $AllowEnrollAfterLastEnrollDate;
@@ -2551,20 +1654,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getLastEnrollmentCutOff()
+    
+    public function getLastEnrollmentCutOff(): int
     {
         return $this->LastEnrollmentCutOff;
     }
 
-    /**
-     * @param int $LastEnrollmentCutOff
-     *
-     * @return LearningType
-     */
-    public function withLastEnrollmentCutOff($LastEnrollmentCutOff)
+    
+    public function withLastEnrollmentCutOff(int $LastEnrollmentCutOff): static
     {
         $new = clone $this;
         $new->LastEnrollmentCutOff = $LastEnrollmentCutOff;
@@ -2572,20 +1669,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowSupervisorExtendDueDate()
+    
+    public function getAllowSupervisorExtendDueDate(): bool
     {
         return $this->AllowSupervisorExtendDueDate;
     }
 
-    /**
-     * @param bool $AllowSupervisorExtendDueDate
-     *
-     * @return LearningType
-     */
-    public function withAllowSupervisorExtendDueDate($AllowSupervisorExtendDueDate)
+    
+    public function withAllowSupervisorExtendDueDate(bool $AllowSupervisorExtendDueDate): static
     {
         $new = clone $this;
         $new->AllowSupervisorExtendDueDate = $AllowSupervisorExtendDueDate;
@@ -2593,20 +1684,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getSupervisorExtensionDaysLimit()
+    
+    public function getSupervisorExtensionDaysLimit(): int
     {
         return $this->SupervisorExtensionDaysLimit;
     }
 
-    /**
-     * @param int $SupervisorExtensionDaysLimit
-     *
-     * @return LearningType
-     */
-    public function withSupervisorExtensionDaysLimit($SupervisorExtensionDaysLimit)
+    
+    public function withSupervisorExtensionDaysLimit(int $SupervisorExtensionDaysLimit): static
     {
         $new = clone $this;
         $new->SupervisorExtensionDaysLimit = $SupervisorExtensionDaysLimit;
@@ -2614,20 +1699,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSupervisorExtensionDaysLimitStartFrom()
+    
+    public function getSupervisorExtensionDaysLimitStartFrom(): string
     {
         return $this->SupervisorExtensionDaysLimitStartFrom;
     }
 
-    /**
-     * @param string $SupervisorExtensionDaysLimitStartFrom
-     *
-     * @return LearningType
-     */
-    public function withSupervisorExtensionDaysLimitStartFrom($SupervisorExtensionDaysLimitStartFrom)
+    
+    public function withSupervisorExtensionDaysLimitStartFrom(string $SupervisorExtensionDaysLimitStartFrom): static
     {
         $new = clone $this;
         $new->SupervisorExtensionDaysLimitStartFrom = $SupervisorExtensionDaysLimitStartFrom;
@@ -2635,20 +1714,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getStartDate()
+    
+    public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $StartDate
-     *
-     * @return LearningType
-     */
-    public function withStartDate($StartDate)
+    
+    public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
         $new->StartDate = $StartDate;
@@ -2656,20 +1729,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDueDate()
+    
+    public function getDueDate(): string
     {
         return $this->DueDate;
     }
 
-    /**
-     * @param string $DueDate
-     *
-     * @return LearningType
-     */
-    public function withDueDate($DueDate)
+    
+    public function withDueDate(string $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
@@ -2677,20 +1744,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowEnrollmentCodeAfterEnrollmentDate()
+    
+    public function getAllowEnrollmentCodeAfterEnrollmentDate(): bool
     {
         return $this->AllowEnrollmentCodeAfterEnrollmentDate;
     }
 
-    /**
-     * @param bool $AllowEnrollmentCodeAfterEnrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withAllowEnrollmentCodeAfterEnrollmentDate($AllowEnrollmentCodeAfterEnrollmentDate)
+    
+    public function withAllowEnrollmentCodeAfterEnrollmentDate(bool $AllowEnrollmentCodeAfterEnrollmentDate): static
     {
         $new = clone $this;
         $new->AllowEnrollmentCodeAfterEnrollmentDate = $AllowEnrollmentCodeAfterEnrollmentDate;
@@ -2698,20 +1759,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getEnrollmentCodeAfterEnrollmentDate_NoOfDays()
+    
+    public function getEnrollmentCodeAfterEnrollmentDateNoOfDays(): int
     {
         return $this->EnrollmentCodeAfterEnrollmentDate_NoOfDays;
     }
 
-    /**
-     * @param int $EnrollmentCodeAfterEnrollmentDate_NoOfDays
-     *
-     * @return LearningType
-     */
-    public function withEnrollmentCodeAfterEnrollmentDate_NoOfDays($EnrollmentCodeAfterEnrollmentDate_NoOfDays)
+    
+    public function withEnrollmentCodeAfterEnrollmentDateNoOfDays(int $EnrollmentCodeAfterEnrollmentDate_NoOfDays): static
     {
         $new = clone $this;
         $new->EnrollmentCodeAfterEnrollmentDate_NoOfDays = $EnrollmentCodeAfterEnrollmentDate_NoOfDays;
@@ -2719,20 +1774,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getBarAccessAfterDue()
+    
+    public function getBarAccessAfterDue(): bool
     {
         return $this->BarAccessAfterDue;
     }
 
-    /**
-     * @param bool $BarAccessAfterDue
-     *
-     * @return LearningType
-     */
-    public function withBarAccessAfterDue($BarAccessAfterDue)
+    
+    public function withBarAccessAfterDue(bool $BarAccessAfterDue): static
     {
         $new = clone $this;
         $new->BarAccessAfterDue = $BarAccessAfterDue;
@@ -2740,20 +1789,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSuspendAccess()
+    
+    public function getSuspendAccess(): bool
     {
         return $this->SuspendAccess;
     }
 
-    /**
-     * @param bool $SuspendAccess
-     *
-     * @return LearningType
-     */
-    public function withSuspendAccess($SuspendAccess)
+    
+    public function withSuspendAccess(bool $SuspendAccess): static
     {
         $new = clone $this;
         $new->SuspendAccess = $SuspendAccess;
@@ -2761,20 +1804,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSuspendAccessDays()
+    
+    public function getSuspendAccessDays(): string
     {
         return $this->SuspendAccessDays;
     }
 
-    /**
-     * @param string $SuspendAccessDays
-     *
-     * @return LearningType
-     */
-    public function withSuspendAccessDays($SuspendAccessDays)
+    
+    public function withSuspendAccessDays(string $SuspendAccessDays): static
     {
         $new = clone $this;
         $new->SuspendAccessDays = $SuspendAccessDays;
@@ -2782,20 +1819,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getEnrollFromLPOnly()
+    
+    public function getEnrollFromLPOnly(): bool
     {
         return $this->EnrollFromLPOnly;
     }
 
-    /**
-     * @param bool $EnrollFromLPOnly
-     *
-     * @return LearningType
-     */
-    public function withEnrollFromLPOnly($EnrollFromLPOnly)
+    
+    public function withEnrollFromLPOnly(bool $EnrollFromLPOnly): static
     {
         $new = clone $this;
         $new->EnrollFromLPOnly = $EnrollFromLPOnly;
@@ -2803,20 +1834,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoEnroll()
+    
+    public function getAutoEnroll(): bool
     {
         return $this->AutoEnroll;
     }
 
-    /**
-     * @param bool $AutoEnroll
-     *
-     * @return LearningType
-     */
-    public function withAutoEnroll($AutoEnroll)
+    
+    public function withAutoEnroll(bool $AutoEnroll): static
     {
         $new = clone $this;
         $new->AutoEnroll = $AutoEnroll;
@@ -2824,20 +1849,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoEnrollAllDomainMembers()
+    
+    public function getAutoEnrollAllDomainMembers(): bool
     {
         return $this->AutoEnrollAllDomainMembers;
     }
 
-    /**
-     * @param bool $AutoEnrollAllDomainMembers
-     *
-     * @return LearningType
-     */
-    public function withAutoEnrollAllDomainMembers($AutoEnrollAllDomainMembers)
+    
+    public function withAutoEnrollAllDomainMembers(bool $AutoEnrollAllDomainMembers): static
     {
         $new = clone $this;
         $new->AutoEnrollAllDomainMembers = $AutoEnrollAllDomainMembers;
@@ -2845,20 +1864,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAutoenrollRules()
+    
+    public function getAutoenrollRules(): ArrayOfAnyType
     {
         return $this->AutoenrollRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AutoenrollRules
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollRules($AutoenrollRules)
+    
+    public function withAutoenrollRules(ArrayOfAnyType $AutoenrollRules): static
     {
         $new = clone $this;
         $new->AutoenrollRules = $AutoenrollRules;
@@ -2866,20 +1879,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoenrollRulesRequired()
+    
+    public function getAutoenrollRulesRequired(): bool
     {
         return $this->AutoenrollRulesRequired;
     }
 
-    /**
-     * @param bool $AutoenrollRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollRulesRequired($AutoenrollRulesRequired)
+    
+    public function withAutoenrollRulesRequired(bool $AutoenrollRulesRequired): static
     {
         $new = clone $this;
         $new->AutoenrollRulesRequired = $AutoenrollRulesRequired;
@@ -2887,20 +1894,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoenrollRepeatType()
+    
+    public function getAutoenrollRepeatType(): string
     {
         return $this->AutoenrollRepeatType;
     }
 
-    /**
-     * @param string $AutoenrollRepeatType
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollRepeatType($AutoenrollRepeatType)
+    
+    public function withAutoenrollRepeatType(string $AutoenrollRepeatType): static
     {
         $new = clone $this;
         $new->AutoenrollRepeatType = $AutoenrollRepeatType;
@@ -2908,20 +1909,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoenrollRepeatMonthCount()
+    
+    public function getAutoenrollRepeatMonthCount(): string
     {
         return $this->AutoenrollRepeatMonthCount;
     }
 
-    /**
-     * @param string $AutoenrollRepeatMonthCount
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollRepeatMonthCount($AutoenrollRepeatMonthCount)
+    
+    public function withAutoenrollRepeatMonthCount(string $AutoenrollRepeatMonthCount): static
     {
         $new = clone $this;
         $new->AutoenrollRepeatMonthCount = $AutoenrollRepeatMonthCount;
@@ -2929,20 +1924,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getAutoenrollLastRunDate()
+    
+    public function getAutoenrollLastRunDate(): DateTimeInterface
     {
         return $this->AutoenrollLastRunDate;
     }
 
-    /**
-     * @param \DateTimeInterface $AutoenrollLastRunDate
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollLastRunDate($AutoenrollLastRunDate)
+    
+    public function withAutoenrollLastRunDate(DateTimeInterface $AutoenrollLastRunDate): static
     {
         $new = clone $this;
         $new->AutoenrollLastRunDate = $AutoenrollLastRunDate;
@@ -2950,20 +1939,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAutoenrollExcludeRules()
+    
+    public function getAutoenrollExcludeRules(): ArrayOfAnyType
     {
         return $this->AutoenrollExcludeRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AutoenrollExcludeRules
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollExcludeRules($AutoenrollExcludeRules)
+    
+    public function withAutoenrollExcludeRules(ArrayOfAnyType $AutoenrollExcludeRules): static
     {
         $new = clone $this;
         $new->AutoenrollExcludeRules = $AutoenrollExcludeRules;
@@ -2971,20 +1954,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoenrollExcludeRulesRequired()
+    
+    public function getAutoenrollExcludeRulesRequired(): bool
     {
         return $this->AutoenrollExcludeRulesRequired;
     }
 
-    /**
-     * @param bool $AutoenrollExcludeRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withAutoenrollExcludeRulesRequired($AutoenrollExcludeRulesRequired)
+    
+    public function withAutoenrollExcludeRulesRequired(bool $AutoenrollExcludeRulesRequired): static
     {
         $new = clone $this;
         $new->AutoenrollExcludeRulesRequired = $AutoenrollExcludeRulesRequired;
@@ -2992,20 +1969,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getReAutoEnroll()
+    
+    public function getReAutoEnroll(): bool
     {
         return $this->ReAutoEnroll;
     }
 
-    /**
-     * @param bool $ReAutoEnroll
-     *
-     * @return LearningType
-     */
-    public function withReAutoEnroll($ReAutoEnroll)
+    
+    public function withReAutoEnroll(bool $ReAutoEnroll): static
     {
         $new = clone $this;
         $new->ReAutoEnroll = $ReAutoEnroll;
@@ -3013,20 +1984,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseAutoEnrollmentRuleForReEnroll()
+    
+    public function getUseAutoEnrollmentRuleForReEnroll(): bool
     {
         return $this->UseAutoEnrollmentRuleForReEnroll;
     }
 
-    /**
-     * @param bool $UseAutoEnrollmentRuleForReEnroll
-     *
-     * @return LearningType
-     */
-    public function withUseAutoEnrollmentRuleForReEnroll($UseAutoEnrollmentRuleForReEnroll)
+    
+    public function withUseAutoEnrollmentRuleForReEnroll(bool $UseAutoEnrollmentRuleForReEnroll): static
     {
         $new = clone $this;
         $new->UseAutoEnrollmentRuleForReEnroll = $UseAutoEnrollmentRuleForReEnroll;
@@ -3034,20 +1999,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getRecertificationAutoEnrollRules()
+    
+    public function getRecertificationAutoEnrollRules(): ArrayOfAnyType
     {
         return $this->RecertificationAutoEnrollRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $RecertificationAutoEnrollRules
-     *
-     * @return LearningType
-     */
-    public function withRecertificationAutoEnrollRules($RecertificationAutoEnrollRules)
+    
+    public function withRecertificationAutoEnrollRules(ArrayOfAnyType $RecertificationAutoEnrollRules): static
     {
         $new = clone $this;
         $new->RecertificationAutoEnrollRules = $RecertificationAutoEnrollRules;
@@ -3055,20 +2014,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getRecertificationAutoEnrollExcludeRules()
+    
+    public function getRecertificationAutoEnrollExcludeRules(): ArrayOfAnyType
     {
         return $this->RecertificationAutoEnrollExcludeRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $RecertificationAutoEnrollExcludeRules
-     *
-     * @return LearningType
-     */
-    public function withRecertificationAutoEnrollExcludeRules($RecertificationAutoEnrollExcludeRules)
+    
+    public function withRecertificationAutoEnrollExcludeRules(ArrayOfAnyType $RecertificationAutoEnrollExcludeRules): static
     {
         $new = clone $this;
         $new->RecertificationAutoEnrollExcludeRules = $RecertificationAutoEnrollExcludeRules;
@@ -3076,20 +2029,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getReAutoEnrollmentAllowAll()
+    
+    public function getReAutoEnrollmentAllowAll(): bool
     {
         return $this->ReAutoEnrollmentAllowAll;
     }
 
-    /**
-     * @param bool $ReAutoEnrollmentAllowAll
-     *
-     * @return LearningType
-     */
-    public function withReAutoEnrollmentAllowAll($ReAutoEnrollmentAllowAll)
+    
+    public function withReAutoEnrollmentAllowAll(bool $ReAutoEnrollmentAllowAll): static
     {
         $new = clone $this;
         $new->ReAutoEnrollmentAllowAll = $ReAutoEnrollmentAllowAll;
@@ -3097,20 +2044,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReAutoenrollRepeatType()
+    
+    public function getReAutoenrollRepeatType(): string
     {
         return $this->ReAutoenrollRepeatType;
     }
 
-    /**
-     * @param string $ReAutoenrollRepeatType
-     *
-     * @return LearningType
-     */
-    public function withReAutoenrollRepeatType($ReAutoenrollRepeatType)
+    
+    public function withReAutoenrollRepeatType(string $ReAutoenrollRepeatType): static
     {
         $new = clone $this;
         $new->ReAutoenrollRepeatType = $ReAutoenrollRepeatType;
@@ -3118,20 +2059,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReAutoenrollRepeatMonthCount()
+    
+    public function getReAutoenrollRepeatMonthCount(): string
     {
         return $this->ReAutoenrollRepeatMonthCount;
     }
 
-    /**
-     * @param string $ReAutoenrollRepeatMonthCount
-     *
-     * @return LearningType
-     */
-    public function withReAutoenrollRepeatMonthCount($ReAutoenrollRepeatMonthCount)
+    
+    public function withReAutoenrollRepeatMonthCount(string $ReAutoenrollRepeatMonthCount): static
     {
         $new = clone $this;
         $new->ReAutoenrollRepeatMonthCount = $ReAutoenrollRepeatMonthCount;
@@ -3139,20 +2074,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getReAutoenrollAllRulesRequired()
+    
+    public function getReAutoenrollAllRulesRequired(): bool
     {
         return $this->ReAutoenrollAllRulesRequired;
     }
 
-    /**
-     * @param bool $ReAutoenrollAllRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withReAutoenrollAllRulesRequired($ReAutoenrollAllRulesRequired)
+    
+    public function withReAutoenrollAllRulesRequired(bool $ReAutoenrollAllRulesRequired): static
     {
         $new = clone $this;
         $new->ReAutoenrollAllRulesRequired = $ReAutoenrollAllRulesRequired;
@@ -3160,20 +2089,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getReAutoenrollLastRunDate()
+    
+    public function getReAutoenrollLastRunDate(): DateTimeInterface
     {
         return $this->ReAutoenrollLastRunDate;
     }
 
-    /**
-     * @param \DateTimeInterface $ReAutoenrollLastRunDate
-     *
-     * @return LearningType
-     */
-    public function withReAutoenrollLastRunDate($ReAutoenrollLastRunDate)
+    
+    public function withReAutoenrollLastRunDate(DateTimeInterface $ReAutoenrollLastRunDate): static
     {
         $new = clone $this;
         $new->ReAutoenrollLastRunDate = $ReAutoenrollLastRunDate;
@@ -3181,20 +2104,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getReAutoenrollAllExcludeRulesRequired()
+    
+    public function getReAutoenrollAllExcludeRulesRequired(): bool
     {
         return $this->ReAutoenrollAllExcludeRulesRequired;
     }
 
-    /**
-     * @param bool $ReAutoenrollAllExcludeRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withReAutoenrollAllExcludeRulesRequired($ReAutoenrollAllExcludeRulesRequired)
+    
+    public function withReAutoenrollAllExcludeRulesRequired(bool $ReAutoenrollAllExcludeRulesRequired): static
     {
         $new = clone $this;
         $new->ReAutoenrollAllExcludeRulesRequired = $ReAutoenrollAllExcludeRulesRequired;
@@ -3202,20 +2119,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSelfEnroll()
+    
+    public function getSelfEnroll(): bool
     {
         return $this->SelfEnroll;
     }
 
-    /**
-     * @param bool $SelfEnroll
-     *
-     * @return LearningType
-     */
-    public function withSelfEnroll($SelfEnroll)
+    
+    public function withSelfEnroll(bool $SelfEnroll): static
     {
         $new = clone $this;
         $new->SelfEnroll = $SelfEnroll;
@@ -3223,20 +2134,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowTransfer()
+    
+    public function getAllowTransfer(): bool
     {
         return $this->AllowTransfer;
     }
 
-    /**
-     * @param bool $AllowTransfer
-     *
-     * @return LearningType
-     */
-    public function withAllowTransfer($AllowTransfer)
+    
+    public function withAllowTransfer(bool $AllowTransfer): static
     {
         $new = clone $this;
         $new->AllowTransfer = $AllowTransfer;
@@ -3244,20 +2149,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSelfEnrollAllDomainMembers()
+    
+    public function getSelfEnrollAllDomainMembers(): bool
     {
         return $this->SelfEnrollAllDomainMembers;
     }
 
-    /**
-     * @param bool $SelfEnrollAllDomainMembers
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollAllDomainMembers($SelfEnrollAllDomainMembers)
+    
+    public function withSelfEnrollAllDomainMembers(bool $SelfEnrollAllDomainMembers): static
     {
         $new = clone $this;
         $new->SelfEnrollAllDomainMembers = $SelfEnrollAllDomainMembers;
@@ -3265,20 +2164,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPermissionEnroll()
+    
+    public function getPermissionEnroll(): bool
     {
         return $this->PermissionEnroll;
     }
 
-    /**
-     * @param bool $PermissionEnroll
-     *
-     * @return LearningType
-     */
-    public function withPermissionEnroll($PermissionEnroll)
+    
+    public function withPermissionEnroll(bool $PermissionEnroll): static
     {
         $new = clone $this;
         $new->PermissionEnroll = $PermissionEnroll;
@@ -3286,20 +2179,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEnrollPermissionFrom()
+    
+    public function getEnrollPermissionFrom(): string
     {
         return $this->EnrollPermissionFrom;
     }
 
-    /**
-     * @param string $EnrollPermissionFrom
-     *
-     * @return LearningType
-     */
-    public function withEnrollPermissionFrom($EnrollPermissionFrom)
+    
+    public function withEnrollPermissionFrom(string $EnrollPermissionFrom): static
     {
         $new = clone $this;
         $new->EnrollPermissionFrom = $EnrollPermissionFrom;
@@ -3307,20 +2194,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPaymentEnroll()
+    
+    public function getPaymentEnroll(): bool
     {
         return $this->PaymentEnroll;
     }
 
-    /**
-     * @param bool $PaymentEnroll
-     *
-     * @return LearningType
-     */
-    public function withPaymentEnroll($PaymentEnroll)
+    
+    public function withPaymentEnroll(bool $PaymentEnroll): static
     {
         $new = clone $this;
         $new->PaymentEnroll = $PaymentEnroll;
@@ -3328,20 +2209,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getTokensEnroll()
+    
+    public function getTokensEnroll(): bool
     {
         return $this->TokensEnroll;
     }
 
-    /**
-     * @param bool $TokensEnroll
-     *
-     * @return LearningType
-     */
-    public function withTokensEnroll($TokensEnroll)
+    
+    public function withTokensEnroll(bool $TokensEnroll): static
     {
         $new = clone $this;
         $new->TokensEnroll = $TokensEnroll;
@@ -3349,20 +2224,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowCoupons()
+    
+    public function getAllowCoupons(): bool
     {
         return $this->AllowCoupons;
     }
 
-    /**
-     * @param bool $AllowCoupons
-     *
-     * @return LearningType
-     */
-    public function withAllowCoupons($AllowCoupons)
+    
+    public function withAllowCoupons(bool $AllowCoupons): static
     {
         $new = clone $this;
         $new->AllowCoupons = $AllowCoupons;
@@ -3370,20 +2239,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getGlobalTokensEnroll()
+    
+    public function getGlobalTokensEnroll(): bool
     {
         return $this->GlobalTokensEnroll;
     }
 
-    /**
-     * @param bool $GlobalTokensEnroll
-     *
-     * @return LearningType
-     */
-    public function withGlobalTokensEnroll($GlobalTokensEnroll)
+    
+    public function withGlobalTokensEnroll(bool $GlobalTokensEnroll): static
     {
         $new = clone $this;
         $new->GlobalTokensEnroll = $GlobalTokensEnroll;
@@ -3391,20 +2254,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPassEnroll()
+    
+    public function getPassEnroll(): bool
     {
         return $this->PassEnroll;
     }
 
-    /**
-     * @param bool $PassEnroll
-     *
-     * @return LearningType
-     */
-    public function withPassEnroll($PassEnroll)
+    
+    public function withPassEnroll(bool $PassEnroll): static
     {
         $new = clone $this;
         $new->PassEnroll = $PassEnroll;
@@ -3412,20 +2269,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowPOPayment()
+    
+    public function getAllowPOPayment(): bool
     {
         return $this->AllowPOPayment;
     }
 
-    /**
-     * @param bool $AllowPOPayment
-     *
-     * @return LearningType
-     */
-    public function withAllowPOPayment($AllowPOPayment)
+    
+    public function withAllowPOPayment(bool $AllowPOPayment): static
     {
         $new = clone $this;
         $new->AllowPOPayment = $AllowPOPayment;
@@ -3433,20 +2284,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowPass()
+    
+    public function getAllowPass(): bool
     {
         return $this->AllowPass;
     }
 
-    /**
-     * @param bool $AllowPass
-     *
-     * @return LearningType
-     */
-    public function withAllowPass($AllowPass)
+    
+    public function withAllowPass(bool $AllowPass): static
     {
         $new = clone $this;
         $new->AllowPass = $AllowPass;
@@ -3454,20 +2299,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowPurchaseForOthers()
+    
+    public function getAllowPurchaseForOthers(): bool
     {
         return $this->AllowPurchaseForOthers;
     }
 
-    /**
-     * @param bool $AllowPurchaseForOthers
-     *
-     * @return LearningType
-     */
-    public function withAllowPurchaseForOthers($AllowPurchaseForOthers)
+    
+    public function withAllowPurchaseForOthers(bool $AllowPurchaseForOthers): static
     {
         $new = clone $this;
         $new->AllowPurchaseForOthers = $AllowPurchaseForOthers;
@@ -3475,20 +2314,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAttendanceCodeToEnroll()
+    
+    public function getAllowAttendanceCodeToEnroll(): bool
     {
         return $this->AllowAttendanceCodeToEnroll;
     }
 
-    /**
-     * @param bool $AllowAttendanceCodeToEnroll
-     *
-     * @return LearningType
-     */
-    public function withAllowAttendanceCodeToEnroll($AllowAttendanceCodeToEnroll)
+    
+    public function withAllowAttendanceCodeToEnroll(bool $AllowAttendanceCodeToEnroll): static
     {
         $new = clone $this;
         $new->AllowAttendanceCodeToEnroll = $AllowAttendanceCodeToEnroll;
@@ -3496,20 +2329,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate()
+    
+    public function getNotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate(): bool
     {
         return $this->NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate;
     }
 
-    /**
-     * @param bool $NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withNotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate($NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate)
+    
+    public function withNotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate(bool $NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate): static
     {
         $new = clone $this;
         $new->NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate = $NotAllowAttendanceCodeToEnrollAfterLastEnrollmentDate;
@@ -3517,20 +2344,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAttendanceCodeEnrollFollowsRules()
+    
+    public function getAttendanceCodeEnrollFollowsRules(): bool
     {
         return $this->AttendanceCodeEnrollFollowsRules;
     }
 
-    /**
-     * @param bool $AttendanceCodeEnrollFollowsRules
-     *
-     * @return LearningType
-     */
-    public function withAttendanceCodeEnrollFollowsRules($AttendanceCodeEnrollFollowsRules)
+    
+    public function withAttendanceCodeEnrollFollowsRules(bool $AttendanceCodeEnrollFollowsRules): static
     {
         $new = clone $this;
         $new->AttendanceCodeEnrollFollowsRules = $AttendanceCodeEnrollFollowsRules;
@@ -3538,20 +2359,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAttendanceCode()
+    
+    public function getAllowAttendanceCode(): bool
     {
         return $this->AllowAttendanceCode;
     }
 
-    /**
-     * @param bool $AllowAttendanceCode
-     *
-     * @return LearningType
-     */
-    public function withAllowAttendanceCode($AllowAttendanceCode)
+    
+    public function withAllowAttendanceCode(bool $AllowAttendanceCode): static
     {
         $new = clone $this;
         $new->AllowAttendanceCode = $AllowAttendanceCode;
@@ -3559,20 +2374,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getSelfEnrollRules()
+    
+    public function getSelfEnrollRules(): ArrayOfAnyType
     {
         return $this->SelfEnrollRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $SelfEnrollRules
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollRules($SelfEnrollRules)
+    
+    public function withSelfEnrollRules(ArrayOfAnyType $SelfEnrollRules): static
     {
         $new = clone $this;
         $new->SelfEnrollRules = $SelfEnrollRules;
@@ -3580,20 +2389,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getSelfEnrollGroups()
+    
+    public function getSelfEnrollGroups(): ArrayOfAnyType
     {
         return $this->SelfEnrollGroups;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $SelfEnrollGroups
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollGroups($SelfEnrollGroups)
+    
+    public function withSelfEnrollGroups(ArrayOfAnyType $SelfEnrollGroups): static
     {
         $new = clone $this;
         $new->SelfEnrollGroups = $SelfEnrollGroups;
@@ -3601,20 +2404,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSelfEnrollGroupRequired()
+    
+    public function getSelfEnrollGroupRequired(): bool
     {
         return $this->SelfEnrollGroupRequired;
     }
 
-    /**
-     * @param bool $SelfEnrollGroupRequired
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollGroupRequired($SelfEnrollGroupRequired)
+    
+    public function withSelfEnrollGroupRequired(bool $SelfEnrollGroupRequired): static
     {
         $new = clone $this;
         $new->SelfEnrollGroupRequired = $SelfEnrollGroupRequired;
@@ -3622,20 +2419,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSelfEnrollRulesRequired()
+    
+    public function getSelfEnrollRulesRequired(): bool
     {
         return $this->SelfEnrollRulesRequired;
     }
 
-    /**
-     * @param bool $SelfEnrollRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollRulesRequired($SelfEnrollRulesRequired)
+    
+    public function withSelfEnrollRulesRequired(bool $SelfEnrollRulesRequired): static
     {
         $new = clone $this;
         $new->SelfEnrollRulesRequired = $SelfEnrollRulesRequired;
@@ -3643,20 +2434,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getSelfEnrollExcludeRules()
+    
+    public function getSelfEnrollExcludeRules(): ArrayOfAnyType
     {
         return $this->SelfEnrollExcludeRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $SelfEnrollExcludeRules
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollExcludeRules($SelfEnrollExcludeRules)
+    
+    public function withSelfEnrollExcludeRules(ArrayOfAnyType $SelfEnrollExcludeRules): static
     {
         $new = clone $this;
         $new->SelfEnrollExcludeRules = $SelfEnrollExcludeRules;
@@ -3664,20 +2449,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSelfEnrollExcludeRulesRequired()
+    
+    public function getSelfEnrollExcludeRulesRequired(): bool
     {
         return $this->SelfEnrollExcludeRulesRequired;
     }
 
-    /**
-     * @param bool $SelfEnrollExcludeRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withSelfEnrollExcludeRulesRequired($SelfEnrollExcludeRulesRequired)
+    
+    public function withSelfEnrollExcludeRulesRequired(bool $SelfEnrollExcludeRulesRequired): static
     {
         $new = clone $this;
         $new->SelfEnrollExcludeRulesRequired = $SelfEnrollExcludeRulesRequired;
@@ -3685,20 +2464,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanUnenroll()
+    
+    public function getCanUnenroll(): bool
     {
         return $this->CanUnenroll;
     }
 
-    /**
-     * @param bool $CanUnenroll
-     *
-     * @return LearningType
-     */
-    public function withCanUnenroll($CanUnenroll)
+    
+    public function withCanUnenroll(bool $CanUnenroll): static
     {
         $new = clone $this;
         $new->CanUnenroll = $CanUnenroll;
@@ -3706,20 +2479,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWithdrawAllDomainMembers()
+    
+    public function getWithdrawAllDomainMembers(): bool
     {
         return $this->WithdrawAllDomainMembers;
     }
 
-    /**
-     * @param bool $WithdrawAllDomainMembers
-     *
-     * @return LearningType
-     */
-    public function withWithdrawAllDomainMembers($WithdrawAllDomainMembers)
+    
+    public function withWithdrawAllDomainMembers(bool $WithdrawAllDomainMembers): static
     {
         $new = clone $this;
         $new->WithdrawAllDomainMembers = $WithdrawAllDomainMembers;
@@ -3727,20 +2494,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPermissionUnenroll()
+    
+    public function getPermissionUnenroll(): bool
     {
         return $this->PermissionUnenroll;
     }
 
-    /**
-     * @param bool $PermissionUnenroll
-     *
-     * @return LearningType
-     */
-    public function withPermissionUnenroll($PermissionUnenroll)
+    
+    public function withPermissionUnenroll(bool $PermissionUnenroll): static
     {
         $new = clone $this;
         $new->PermissionUnenroll = $PermissionUnenroll;
@@ -3748,20 +2509,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUnenrollOption()
+    
+    public function getUnenrollOption(): string
     {
         return $this->UnenrollOption;
     }
 
-    /**
-     * @param string $UnenrollOption
-     *
-     * @return LearningType
-     */
-    public function withUnenrollOption($UnenrollOption)
+    
+    public function withUnenrollOption(string $UnenrollOption): static
     {
         $new = clone $this;
         $new->UnenrollOption = $UnenrollOption;
@@ -3769,20 +2524,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUnenrollPermissionFrom()
+    
+    public function getUnenrollPermissionFrom(): string
     {
         return $this->UnenrollPermissionFrom;
     }
 
-    /**
-     * @param string $UnenrollPermissionFrom
-     *
-     * @return LearningType
-     */
-    public function withUnenrollPermissionFrom($UnenrollPermissionFrom)
+    
+    public function withUnenrollPermissionFrom(string $UnenrollPermissionFrom): static
     {
         $new = clone $this;
         $new->UnenrollPermissionFrom = $UnenrollPermissionFrom;
@@ -3790,20 +2539,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getWithdrawalRules()
+    
+    public function getWithdrawalRules(): ArrayOfAnyType
     {
         return $this->WithdrawalRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $WithdrawalRules
-     *
-     * @return LearningType
-     */
-    public function withWithdrawalRules($WithdrawalRules)
+    
+    public function withWithdrawalRules(ArrayOfAnyType $WithdrawalRules): static
     {
         $new = clone $this;
         $new->WithdrawalRules = $WithdrawalRules;
@@ -3811,20 +2554,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWithdrawalRulesRequired()
+    
+    public function getWithdrawalRulesRequired(): bool
     {
         return $this->WithdrawalRulesRequired;
     }
 
-    /**
-     * @param bool $WithdrawalRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withWithdrawalRulesRequired($WithdrawalRulesRequired)
+    
+    public function withWithdrawalRulesRequired(bool $WithdrawalRulesRequired): static
     {
         $new = clone $this;
         $new->WithdrawalRulesRequired = $WithdrawalRulesRequired;
@@ -3832,20 +2569,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getWithdrawalExcludeRules()
+    
+    public function getWithdrawalExcludeRules(): ArrayOfAnyType
     {
         return $this->WithdrawalExcludeRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $WithdrawalExcludeRules
-     *
-     * @return LearningType
-     */
-    public function withWithdrawalExcludeRules($WithdrawalExcludeRules)
+    
+    public function withWithdrawalExcludeRules(ArrayOfAnyType $WithdrawalExcludeRules): static
     {
         $new = clone $this;
         $new->WithdrawalExcludeRules = $WithdrawalExcludeRules;
@@ -3853,20 +2584,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWithdrawalExcludeRulesRequired()
+    
+    public function getWithdrawalExcludeRulesRequired(): bool
     {
         return $this->WithdrawalExcludeRulesRequired;
     }
 
-    /**
-     * @param bool $WithdrawalExcludeRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withWithdrawalExcludeRulesRequired($WithdrawalExcludeRulesRequired)
+    
+    public function withWithdrawalExcludeRulesRequired(bool $WithdrawalExcludeRulesRequired): static
     {
         $new = clone $this;
         $new->WithdrawalExcludeRulesRequired = $WithdrawalExcludeRulesRequired;
@@ -3874,20 +2599,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoWithdraw()
+    
+    public function getAutoWithdraw(): bool
     {
         return $this->AutoWithdraw;
     }
 
-    /**
-     * @param bool $AutoWithdraw
-     *
-     * @return LearningType
-     */
-    public function withAutoWithdraw($AutoWithdraw)
+    
+    public function withAutoWithdraw(bool $AutoWithdraw): static
     {
         $new = clone $this;
         $new->AutoWithdraw = $AutoWithdraw;
@@ -3895,20 +2614,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoWithdrawNotMatchingAutoRules()
+    
+    public function getAutoWithdrawNotMatchingAutoRules(): bool
     {
         return $this->AutoWithdrawNotMatchingAutoRules;
     }
 
-    /**
-     * @param bool $AutoWithdrawNotMatchingAutoRules
-     *
-     * @return LearningType
-     */
-    public function withAutoWithdrawNotMatchingAutoRules($AutoWithdrawNotMatchingAutoRules)
+    
+    public function withAutoWithdrawNotMatchingAutoRules(bool $AutoWithdrawNotMatchingAutoRules): static
     {
         $new = clone $this;
         $new->AutoWithdrawNotMatchingAutoRules = $AutoWithdrawNotMatchingAutoRules;
@@ -3916,20 +2629,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAutoWithdrawalRules()
+    
+    public function getAutoWithdrawalRules(): ArrayOfAnyType
     {
         return $this->AutoWithdrawalRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AutoWithdrawalRules
-     *
-     * @return LearningType
-     */
-    public function withAutoWithdrawalRules($AutoWithdrawalRules)
+    
+    public function withAutoWithdrawalRules(ArrayOfAnyType $AutoWithdrawalRules): static
     {
         $new = clone $this;
         $new->AutoWithdrawalRules = $AutoWithdrawalRules;
@@ -3937,20 +2644,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoWithdrawalRulesRequired()
+    
+    public function getAutoWithdrawalRulesRequired(): bool
     {
         return $this->AutoWithdrawalRulesRequired;
     }
 
-    /**
-     * @param bool $AutoWithdrawalRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withAutoWithdrawalRulesRequired($AutoWithdrawalRulesRequired)
+    
+    public function withAutoWithdrawalRulesRequired(bool $AutoWithdrawalRulesRequired): static
     {
         $new = clone $this;
         $new->AutoWithdrawalRulesRequired = $AutoWithdrawalRulesRequired;
@@ -3958,20 +2659,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAutoWithdrawalExcludeRules()
+    
+    public function getAutoWithdrawalExcludeRules(): ArrayOfAnyType
     {
         return $this->AutoWithdrawalExcludeRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AutoWithdrawalExcludeRules
-     *
-     * @return LearningType
-     */
-    public function withAutoWithdrawalExcludeRules($AutoWithdrawalExcludeRules)
+    
+    public function withAutoWithdrawalExcludeRules(ArrayOfAnyType $AutoWithdrawalExcludeRules): static
     {
         $new = clone $this;
         $new->AutoWithdrawalExcludeRules = $AutoWithdrawalExcludeRules;
@@ -3979,20 +2674,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoWithdrawalExcludeRulesRequired()
+    
+    public function getAutoWithdrawalExcludeRulesRequired(): bool
     {
         return $this->AutoWithdrawalExcludeRulesRequired;
     }
 
-    /**
-     * @param bool $AutoWithdrawalExcludeRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withAutoWithdrawalExcludeRulesRequired($AutoWithdrawalExcludeRulesRequired)
+    
+    public function withAutoWithdrawalExcludeRulesRequired(bool $AutoWithdrawalExcludeRulesRequired): static
     {
         $new = clone $this;
         $new->AutoWithdrawalExcludeRulesRequired = $AutoWithdrawalExcludeRulesRequired;
@@ -4000,20 +2689,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAnnouncementRules()
+    
+    public function getAnnouncementRules(): ArrayOfAnyType
     {
         return $this->AnnouncementRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AnnouncementRules
-     *
-     * @return LearningType
-     */
-    public function withAnnouncementRules($AnnouncementRules)
+    
+    public function withAnnouncementRules(ArrayOfAnyType $AnnouncementRules): static
     {
         $new = clone $this;
         $new->AnnouncementRules = $AnnouncementRules;
@@ -4021,20 +2704,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAnnouncementRulesRequired()
+    
+    public function getAnnouncementRulesRequired(): bool
     {
         return $this->AnnouncementRulesRequired;
     }
 
-    /**
-     * @param bool $AnnouncementRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withAnnouncementRulesRequired($AnnouncementRulesRequired)
+    
+    public function withAnnouncementRulesRequired(bool $AnnouncementRulesRequired): static
     {
         $new = clone $this;
         $new->AnnouncementRulesRequired = $AnnouncementRulesRequired;
@@ -4042,20 +2719,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAnnouncementExcludeRules()
+    
+    public function getAnnouncementExcludeRules(): ArrayOfAnyType
     {
         return $this->AnnouncementExcludeRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AnnouncementExcludeRules
-     *
-     * @return LearningType
-     */
-    public function withAnnouncementExcludeRules($AnnouncementExcludeRules)
+    
+    public function withAnnouncementExcludeRules(ArrayOfAnyType $AnnouncementExcludeRules): static
     {
         $new = clone $this;
         $new->AnnouncementExcludeRules = $AnnouncementExcludeRules;
@@ -4063,20 +2734,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAnnouncementExcludeRulesRequired()
+    
+    public function getAnnouncementExcludeRulesRequired(): bool
     {
         return $this->AnnouncementExcludeRulesRequired;
     }
 
-    /**
-     * @param bool $AnnouncementExcludeRulesRequired
-     *
-     * @return LearningType
-     */
-    public function withAnnouncementExcludeRulesRequired($AnnouncementExcludeRulesRequired)
+    
+    public function withAnnouncementExcludeRulesRequired(bool $AnnouncementExcludeRulesRequired): static
     {
         $new = clone $this;
         $new->AnnouncementExcludeRulesRequired = $AnnouncementExcludeRulesRequired;
@@ -4084,20 +2749,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoEnrollSelfActivities()
+    
+    public function getAutoEnrollSelfActivities(): bool
     {
         return $this->AutoEnrollSelfActivities;
     }
 
-    /**
-     * @param bool $AutoEnrollSelfActivities
-     *
-     * @return LearningType
-     */
-    public function withAutoEnrollSelfActivities($AutoEnrollSelfActivities)
+    
+    public function withAutoEnrollSelfActivities(bool $AutoEnrollSelfActivities): static
     {
         $new = clone $this;
         $new->AutoEnrollSelfActivities = $AutoEnrollSelfActivities;
@@ -4105,20 +2764,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoEnrollManualActivities()
+    
+    public function getAutoEnrollManualActivities(): bool
     {
         return $this->AutoEnrollManualActivities;
     }
 
-    /**
-     * @param bool $AutoEnrollManualActivities
-     *
-     * @return LearningType
-     */
-    public function withAutoEnrollManualActivities($AutoEnrollManualActivities)
+    
+    public function withAutoEnrollManualActivities(bool $AutoEnrollManualActivities): static
     {
         $new = clone $this;
         $new->AutoEnrollManualActivities = $AutoEnrollManualActivities;
@@ -4126,20 +2779,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIncludeAllInPrice()
+    
+    public function getIncludeAllInPrice(): bool
     {
         return $this->IncludeAllInPrice;
     }
 
-    /**
-     * @param bool $IncludeAllInPrice
-     *
-     * @return LearningType
-     */
-    public function withIncludeAllInPrice($IncludeAllInPrice)
+    
+    public function withIncludeAllInPrice(bool $IncludeAllInPrice): static
     {
         $new = clone $this;
         $new->IncludeAllInPrice = $IncludeAllInPrice;
@@ -4147,20 +2794,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAutoEnrollLPActivities()
+    
+    public function getAutoEnrollLPActivities(): bool
     {
         return $this->AutoEnrollLPActivities;
     }
 
-    /**
-     * @param bool $AutoEnrollLPActivities
-     *
-     * @return LearningType
-     */
-    public function withAutoEnrollLPActivities($AutoEnrollLPActivities)
+    
+    public function withAutoEnrollLPActivities(bool $AutoEnrollLPActivities): static
     {
         $new = clone $this;
         $new->AutoEnrollLPActivities = $AutoEnrollLPActivities;
@@ -4168,20 +2809,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getExcludeLPEnrollPurchaseActivities()
+    
+    public function getExcludeLPEnrollPurchaseActivities(): bool
     {
         return $this->ExcludeLPEnrollPurchaseActivities;
     }
 
-    /**
-     * @param bool $ExcludeLPEnrollPurchaseActivities
-     *
-     * @return LearningType
-     */
-    public function withExcludeLPEnrollPurchaseActivities($ExcludeLPEnrollPurchaseActivities)
+    
+    public function withExcludeLPEnrollPurchaseActivities(bool $ExcludeLPEnrollPurchaseActivities): static
     {
         $new = clone $this;
         $new->ExcludeLPEnrollPurchaseActivities = $ExcludeLPEnrollPurchaseActivities;
@@ -4189,20 +2824,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getExcludeLPEnrollNotSelfEnrollActivities()
+    
+    public function getExcludeLPEnrollNotSelfEnrollActivities(): bool
     {
         return $this->ExcludeLPEnrollNotSelfEnrollActivities;
     }
 
-    /**
-     * @param bool $ExcludeLPEnrollNotSelfEnrollActivities
-     *
-     * @return LearningType
-     */
-    public function withExcludeLPEnrollNotSelfEnrollActivities($ExcludeLPEnrollNotSelfEnrollActivities)
+    
+    public function withExcludeLPEnrollNotSelfEnrollActivities(bool $ExcludeLPEnrollNotSelfEnrollActivities): static
     {
         $new = clone $this;
         $new->ExcludeLPEnrollNotSelfEnrollActivities = $ExcludeLPEnrollNotSelfEnrollActivities;
@@ -4210,20 +2839,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getWithdrawIncompleteLPActivitiesOnLPEnroll()
+    
+    public function getWithdrawIncompleteLPActivitiesOnLPEnroll(): bool
     {
         return $this->WithdrawIncompleteLPActivitiesOnLPEnroll;
     }
 
-    /**
-     * @param bool $WithdrawIncompleteLPActivitiesOnLPEnroll
-     *
-     * @return LearningType
-     */
-    public function withWithdrawIncompleteLPActivitiesOnLPEnroll($WithdrawIncompleteLPActivitiesOnLPEnroll)
+    
+    public function withWithdrawIncompleteLPActivitiesOnLPEnroll(bool $WithdrawIncompleteLPActivitiesOnLPEnroll): static
     {
         $new = clone $this;
         $new->WithdrawIncompleteLPActivitiesOnLPEnroll = $WithdrawIncompleteLPActivitiesOnLPEnroll;
@@ -4231,20 +2854,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getFastStartLPActivities()
+    
+    public function getFastStartLPActivities(): bool
     {
         return $this->FastStartLPActivities;
     }
 
-    /**
-     * @param bool $FastStartLPActivities
-     *
-     * @return LearningType
-     */
-    public function withFastStartLPActivities($FastStartLPActivities)
+    
+    public function withFastStartLPActivities(bool $FastStartLPActivities): static
     {
         $new = clone $this;
         $new->FastStartLPActivities = $FastStartLPActivities;
@@ -4252,20 +2869,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getStudentIsEnrolled()
+    
+    public function getStudentIsEnrolled(): bool
     {
         return $this->StudentIsEnrolled;
     }
 
-    /**
-     * @param bool $StudentIsEnrolled
-     *
-     * @return LearningType
-     */
-    public function withStudentIsEnrolled($StudentIsEnrolled)
+    
+    public function withStudentIsEnrolled(bool $StudentIsEnrolled): static
     {
         $new = clone $this;
         $new->StudentIsEnrolled = $StudentIsEnrolled;
@@ -4273,20 +2884,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getStudentHasPendingRequest()
+    
+    public function getStudentHasPendingRequest(): bool
     {
         return $this->StudentHasPendingRequest;
     }
 
-    /**
-     * @param bool $StudentHasPendingRequest
-     *
-     * @return LearningType
-     */
-    public function withStudentHasPendingRequest($StudentHasPendingRequest)
+    
+    public function withStudentHasPendingRequest(bool $StudentHasPendingRequest): static
     {
         $new = clone $this;
         $new->StudentHasPendingRequest = $StudentHasPendingRequest;
@@ -4294,20 +2899,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getStudentHasPass()
+    
+    public function getStudentHasPass(): bool
     {
         return $this->StudentHasPass;
     }
 
-    /**
-     * @param bool $StudentHasPass
-     *
-     * @return LearningType
-     */
-    public function withStudentHasPass($StudentHasPass)
+    
+    public function withStudentHasPass(bool $StudentHasPass): static
     {
         $new = clone $this;
         $new->StudentHasPass = $StudentHasPass;
@@ -4315,20 +2914,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowAnonPreview()
+    
+    public function getAllowAnonPreview(): bool
     {
         return $this->AllowAnonPreview;
     }
 
-    /**
-     * @param bool $AllowAnonPreview
-     *
-     * @return LearningType
-     */
-    public function withAllowAnonPreview($AllowAnonPreview)
+    
+    public function withAllowAnonPreview(bool $AllowAnonPreview): static
     {
         $new = clone $this;
         $new->AllowAnonPreview = $AllowAnonPreview;
@@ -4336,20 +2929,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getFieldsXml()
+    
+    public function getFieldsXml(): string
     {
         return $this->FieldsXml;
     }
 
-    /**
-     * @param string $FieldsXml
-     *
-     * @return LearningType
-     */
-    public function withFieldsXml($FieldsXml)
+    
+    public function withFieldsXml(string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;
@@ -4357,20 +2944,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getBaseUrl()
+    
+    public function getBaseUrl(): string
     {
         return $this->BaseUrl;
     }
 
-    /**
-     * @param string $BaseUrl
-     *
-     * @return LearningType
-     */
-    public function withBaseUrl($BaseUrl)
+    
+    public function withBaseUrl(string $BaseUrl): static
     {
         $new = clone $this;
         $new->BaseUrl = $BaseUrl;
@@ -4378,20 +2959,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasAccessCode()
+    
+    public function getHasAccessCode(): bool
     {
         return $this->HasAccessCode;
     }
 
-    /**
-     * @param bool $HasAccessCode
-     *
-     * @return LearningType
-     */
-    public function withHasAccessCode($HasAccessCode)
+    
+    public function withHasAccessCode(bool $HasAccessCode): static
     {
         $new = clone $this;
         $new->HasAccessCode = $HasAccessCode;
@@ -4399,20 +2974,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAccessCode()
+    
+    public function getAccessCode(): string
     {
         return $this->AccessCode;
     }
 
-    /**
-     * @param string $AccessCode
-     *
-     * @return LearningType
-     */
-    public function withAccessCode($AccessCode)
+    
+    public function withAccessCode(string $AccessCode): static
     {
         $new = clone $this;
         $new->AccessCode = $AccessCode;
@@ -4420,20 +2989,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getCourseSharingCount()
+    
+    public function getCourseSharingCount(): int
     {
         return $this->CourseSharingCount;
     }
 
-    /**
-     * @param int $CourseSharingCount
-     *
-     * @return LearningType
-     */
-    public function withCourseSharingCount($CourseSharingCount)
+    
+    public function withCourseSharingCount(int $CourseSharingCount): static
     {
         $new = clone $this;
         $new->CourseSharingCount = $CourseSharingCount;
@@ -4441,20 +3004,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDisclaimer()
+    
+    public function getDisclaimer(): string
     {
         return $this->Disclaimer;
     }
 
-    /**
-     * @param string $Disclaimer
-     *
-     * @return LearningType
-     */
-    public function withDisclaimer($Disclaimer)
+    
+    public function withDisclaimer(string $Disclaimer): static
     {
         $new = clone $this;
         $new->Disclaimer = $Disclaimer;
@@ -4462,20 +3019,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowDisclaimerAlways()
+    
+    public function getShowDisclaimerAlways(): bool
     {
         return $this->ShowDisclaimerAlways;
     }
 
-    /**
-     * @param bool $ShowDisclaimerAlways
-     *
-     * @return LearningType
-     */
-    public function withShowDisclaimerAlways($ShowDisclaimerAlways)
+    
+    public function withShowDisclaimerAlways(bool $ShowDisclaimerAlways): static
     {
         $new = clone $this;
         $new->ShowDisclaimerAlways = $ShowDisclaimerAlways;
@@ -4483,20 +3034,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDisclaimerAgreed()
+    
+    public function getDisclaimerAgreed(): bool
     {
         return $this->DisclaimerAgreed;
     }
 
-    /**
-     * @param bool $DisclaimerAgreed
-     *
-     * @return LearningType
-     */
-    public function withDisclaimerAgreed($DisclaimerAgreed)
+    
+    public function withDisclaimerAgreed(bool $DisclaimerAgreed): static
     {
         $new = clone $this;
         $new->DisclaimerAgreed = $DisclaimerAgreed;
@@ -4504,20 +3049,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDisclaimerTextButton()
+    
+    public function getDisclaimerTextButton(): string
     {
         return $this->DisclaimerTextButton;
     }
 
-    /**
-     * @param string $DisclaimerTextButton
-     *
-     * @return LearningType
-     */
-    public function withDisclaimerTextButton($DisclaimerTextButton)
+    
+    public function withDisclaimerTextButton(string $DisclaimerTextButton): static
     {
         $new = clone $this;
         $new->DisclaimerTextButton = $DisclaimerTextButton;
@@ -4525,20 +3064,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasDisclaimer()
+    
+    public function getHasDisclaimer(): bool
     {
         return $this->HasDisclaimer;
     }
 
-    /**
-     * @param bool $HasDisclaimer
-     *
-     * @return LearningType
-     */
-    public function withHasDisclaimer($HasDisclaimer)
+    
+    public function withHasDisclaimer(bool $HasDisclaimer): static
     {
         $new = clone $this;
         $new->HasDisclaimer = $HasDisclaimer;
@@ -4546,20 +3079,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowMobileDownload()
+    
+    public function getAllowMobileDownload(): bool
     {
         return $this->AllowMobileDownload;
     }
 
-    /**
-     * @param bool $AllowMobileDownload
-     *
-     * @return LearningType
-     */
-    public function withAllowMobileDownload($AllowMobileDownload)
+    
+    public function withAllowMobileDownload(bool $AllowMobileDownload): static
     {
         $new = clone $this;
         $new->AllowMobileDownload = $AllowMobileDownload;
@@ -4567,20 +3094,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAltPrices()
+    
+    public function getAltPrices(): ArrayOfAnyType
     {
         return $this->AltPrices;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $AltPrices
-     *
-     * @return LearningType
-     */
-    public function withAltPrices($AltPrices)
+    
+    public function withAltPrices(ArrayOfAnyType $AltPrices): static
     {
         $new = clone $this;
         $new->AltPrices = $AltPrices;
@@ -4588,20 +3109,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getInitialScormVersion()
+    
+    public function getInitialScormVersion(): string
     {
         return $this->InitialScormVersion;
     }
 
-    /**
-     * @param string $InitialScormVersion
-     *
-     * @return LearningType
-     */
-    public function withInitialScormVersion($InitialScormVersion)
+    
+    public function withInitialScormVersion(string $InitialScormVersion): static
     {
         $new = clone $this;
         $new->InitialScormVersion = $InitialScormVersion;
@@ -4609,20 +3124,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getReviewStatus()
+    
+    public function getReviewStatus(): string
     {
         return $this->ReviewStatus;
     }
 
-    /**
-     * @param string $ReviewStatus
-     *
-     * @return LearningType
-     */
-    public function withReviewStatus($ReviewStatus)
+    
+    public function withReviewStatus(string $ReviewStatus): static
     {
         $new = clone $this;
         $new->ReviewStatus = $ReviewStatus;
@@ -4630,20 +3139,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendAccreditationExpiryNotification()
+    
+    public function getSendAccreditationExpiryNotification(): bool
     {
         return $this->SendAccreditationExpiryNotification;
     }
 
-    /**
-     * @param bool $SendAccreditationExpiryNotification
-     *
-     * @return LearningType
-     */
-    public function withSendAccreditationExpiryNotification($SendAccreditationExpiryNotification)
+    
+    public function withSendAccreditationExpiryNotification(bool $SendAccreditationExpiryNotification): static
     {
         $new = clone $this;
         $new->SendAccreditationExpiryNotification = $SendAccreditationExpiryNotification;
@@ -4651,20 +3154,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendSessionStartLearnerNotification()
+    
+    public function getSendSessionStartLearnerNotification(): bool
     {
         return $this->SendSessionStartLearnerNotification;
     }
 
-    /**
-     * @param bool $SendSessionStartLearnerNotification
-     *
-     * @return LearningType
-     */
-    public function withSendSessionStartLearnerNotification($SendSessionStartLearnerNotification)
+    
+    public function withSendSessionStartLearnerNotification(bool $SendSessionStartLearnerNotification): static
     {
         $new = clone $this;
         $new->SendSessionStartLearnerNotification = $SendSessionStartLearnerNotification;
@@ -4672,20 +3169,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendSessionStartModeratorNotification()
+    
+    public function getSendSessionStartModeratorNotification(): bool
     {
         return $this->SendSessionStartModeratorNotification;
     }
 
-    /**
-     * @param bool $SendSessionStartModeratorNotification
-     *
-     * @return LearningType
-     */
-    public function withSendSessionStartModeratorNotification($SendSessionStartModeratorNotification)
+    
+    public function withSendSessionStartModeratorNotification(bool $SendSessionStartModeratorNotification): static
     {
         $new = clone $this;
         $new->SendSessionStartModeratorNotification = $SendSessionStartModeratorNotification;
@@ -4693,20 +3184,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendEnrollmentConfirmation()
+    
+    public function getSendEnrollmentConfirmation(): bool
     {
         return $this->SendEnrollmentConfirmation;
     }
 
-    /**
-     * @param bool $SendEnrollmentConfirmation
-     *
-     * @return LearningType
-     */
-    public function withSendEnrollmentConfirmation($SendEnrollmentConfirmation)
+    
+    public function withSendEnrollmentConfirmation(bool $SendEnrollmentConfirmation): static
     {
         $new = clone $this;
         $new->SendEnrollmentConfirmation = $SendEnrollmentConfirmation;
@@ -4714,20 +3199,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendEnrollmentRequestNotification()
+    
+    public function getSendEnrollmentRequestNotification(): bool
     {
         return $this->SendEnrollmentRequestNotification;
     }
 
-    /**
-     * @param bool $SendEnrollmentRequestNotification
-     *
-     * @return LearningType
-     */
-    public function withSendEnrollmentRequestNotification($SendEnrollmentRequestNotification)
+    
+    public function withSendEnrollmentRequestNotification(bool $SendEnrollmentRequestNotification): static
     {
         $new = clone $this;
         $new->SendEnrollmentRequestNotification = $SendEnrollmentRequestNotification;
@@ -4735,20 +3214,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendThresholdNotification()
+    
+    public function getSendThresholdNotification(): bool
     {
         return $this->SendThresholdNotification;
     }
 
-    /**
-     * @param bool $SendThresholdNotification
-     *
-     * @return LearningType
-     */
-    public function withSendThresholdNotification($SendThresholdNotification)
+    
+    public function withSendThresholdNotification(bool $SendThresholdNotification): static
     {
         $new = clone $this;
         $new->SendThresholdNotification = $SendThresholdNotification;
@@ -4756,20 +3229,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendStartDateNotificationLearner()
+    
+    public function getSendStartDateNotificationLearner(): bool
     {
         return $this->SendStartDateNotificationLearner;
     }
 
-    /**
-     * @param bool $SendStartDateNotificationLearner
-     *
-     * @return LearningType
-     */
-    public function withSendStartDateNotificationLearner($SendStartDateNotificationLearner)
+    
+    public function withSendStartDateNotificationLearner(bool $SendStartDateNotificationLearner): static
     {
         $new = clone $this;
         $new->SendStartDateNotificationLearner = $SendStartDateNotificationLearner;
@@ -4777,20 +3244,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorEnroll()
+    
+    public function getNotifyModeratorEnroll(): bool
     {
         return $this->NotifyModeratorEnroll;
     }
 
-    /**
-     * @param bool $NotifyModeratorEnroll
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorEnroll($NotifyModeratorEnroll)
+    
+    public function withNotifyModeratorEnroll(bool $NotifyModeratorEnroll): static
     {
         $new = clone $this;
         $new->NotifyModeratorEnroll = $NotifyModeratorEnroll;
@@ -4798,20 +3259,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorEnroll()
+    
+    public function getNotifySupervisorEnroll(): bool
     {
         return $this->NotifySupervisorEnroll;
     }
 
-    /**
-     * @param bool $NotifySupervisorEnroll
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorEnroll($NotifySupervisorEnroll)
+    
+    public function withNotifySupervisorEnroll(bool $NotifySupervisorEnroll): static
     {
         $new = clone $this;
         $new->NotifySupervisorEnroll = $NotifySupervisorEnroll;
@@ -4819,20 +3274,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyStudentEnroll()
+    
+    public function getNotifyStudentEnroll(): bool
     {
         return $this->NotifyStudentEnroll;
     }
 
-    /**
-     * @param bool $NotifyStudentEnroll
-     *
-     * @return LearningType
-     */
-    public function withNotifyStudentEnroll($NotifyStudentEnroll)
+    
+    public function withNotifyStudentEnroll(bool $NotifyStudentEnroll): static
     {
         $new = clone $this;
         $new->NotifyStudentEnroll = $NotifyStudentEnroll;
@@ -4840,20 +3289,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendEnrollmentRequestConfirmation()
+    
+    public function getSendEnrollmentRequestConfirmation(): bool
     {
         return $this->SendEnrollmentRequestConfirmation;
     }
 
-    /**
-     * @param bool $SendEnrollmentRequestConfirmation
-     *
-     * @return LearningType
-     */
-    public function withSendEnrollmentRequestConfirmation($SendEnrollmentRequestConfirmation)
+    
+    public function withSendEnrollmentRequestConfirmation(bool $SendEnrollmentRequestConfirmation): static
     {
         $new = clone $this;
         $new->SendEnrollmentRequestConfirmation = $SendEnrollmentRequestConfirmation;
@@ -4861,20 +3304,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnEnrollRequestConfirmation()
+    
+    public function getNotifyModeratorOnEnrollRequestConfirmation(): bool
     {
         return $this->NotifyModeratorOnEnrollRequestConfirmation;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnEnrollRequestConfirmation
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnEnrollRequestConfirmation($NotifyModeratorOnEnrollRequestConfirmation)
+    
+    public function withNotifyModeratorOnEnrollRequestConfirmation(bool $NotifyModeratorOnEnrollRequestConfirmation): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnEnrollRequestConfirmation = $NotifyModeratorOnEnrollRequestConfirmation;
@@ -4882,20 +3319,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnEnrollRequestConfirmation()
+    
+    public function getNotifySupervisorOnEnrollRequestConfirmation(): bool
     {
         return $this->NotifySupervisorOnEnrollRequestConfirmation;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnEnrollRequestConfirmation
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnEnrollRequestConfirmation($NotifySupervisorOnEnrollRequestConfirmation)
+    
+    public function withNotifySupervisorOnEnrollRequestConfirmation(bool $NotifySupervisorOnEnrollRequestConfirmation): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnEnrollRequestConfirmation = $NotifySupervisorOnEnrollRequestConfirmation;
@@ -4903,20 +3334,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyLearnerOnEnrollRequestConfirmation()
+    
+    public function getNotifyLearnerOnEnrollRequestConfirmation(): bool
     {
         return $this->NotifyLearnerOnEnrollRequestConfirmation;
     }
 
-    /**
-     * @param bool $NotifyLearnerOnEnrollRequestConfirmation
-     *
-     * @return LearningType
-     */
-    public function withNotifyLearnerOnEnrollRequestConfirmation($NotifyLearnerOnEnrollRequestConfirmation)
+    
+    public function withNotifyLearnerOnEnrollRequestConfirmation(bool $NotifyLearnerOnEnrollRequestConfirmation): static
     {
         $new = clone $this;
         $new->NotifyLearnerOnEnrollRequestConfirmation = $NotifyLearnerOnEnrollRequestConfirmation;
@@ -4924,20 +3349,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendDueDateReminder1()
+    
+    public function getSendDueDateReminder1(): bool
     {
         return $this->SendDueDateReminder1;
     }
 
-    /**
-     * @param bool $SendDueDateReminder1
-     *
-     * @return LearningType
-     */
-    public function withSendDueDateReminder1($SendDueDateReminder1)
+    
+    public function withSendDueDateReminder1(bool $SendDueDateReminder1): static
     {
         $new = clone $this;
         $new->SendDueDateReminder1 = $SendDueDateReminder1;
@@ -4945,20 +3364,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendDueDateReminder2()
+    
+    public function getSendDueDateReminder2(): bool
     {
         return $this->SendDueDateReminder2;
     }
 
-    /**
-     * @param bool $SendDueDateReminder2
-     *
-     * @return LearningType
-     */
-    public function withSendDueDateReminder2($SendDueDateReminder2)
+    
+    public function withSendDueDateReminder2(bool $SendDueDateReminder2): static
     {
         $new = clone $this;
         $new->SendDueDateReminder2 = $SendDueDateReminder2;
@@ -4966,20 +3379,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendDueDateReminder3()
+    
+    public function getSendDueDateReminder3(): bool
     {
         return $this->SendDueDateReminder3;
     }
 
-    /**
-     * @param bool $SendDueDateReminder3
-     *
-     * @return LearningType
-     */
-    public function withSendDueDateReminder3($SendDueDateReminder3)
+    
+    public function withSendDueDateReminder3(bool $SendDueDateReminder3): static
     {
         $new = clone $this;
         $new->SendDueDateReminder3 = $SendDueDateReminder3;
@@ -4987,20 +3394,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendUpcomingILTReminder1()
+    
+    public function getSendUpcomingILTReminder1(): bool
     {
         return $this->SendUpcomingILTReminder1;
     }
 
-    /**
-     * @param bool $SendUpcomingILTReminder1
-     *
-     * @return LearningType
-     */
-    public function withSendUpcomingILTReminder1($SendUpcomingILTReminder1)
+    
+    public function withSendUpcomingILTReminder1(bool $SendUpcomingILTReminder1): static
     {
         $new = clone $this;
         $new->SendUpcomingILTReminder1 = $SendUpcomingILTReminder1;
@@ -5008,20 +3409,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendUpcomingILTReminder2()
+    
+    public function getSendUpcomingILTReminder2(): bool
     {
         return $this->SendUpcomingILTReminder2;
     }
 
-    /**
-     * @param bool $SendUpcomingILTReminder2
-     *
-     * @return LearningType
-     */
-    public function withSendUpcomingILTReminder2($SendUpcomingILTReminder2)
+    
+    public function withSendUpcomingILTReminder2(bool $SendUpcomingILTReminder2): static
     {
         $new = clone $this;
         $new->SendUpcomingILTReminder2 = $SendUpcomingILTReminder2;
@@ -5029,20 +3424,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendUpcomingILTReminder3()
+    
+    public function getSendUpcomingILTReminder3(): bool
     {
         return $this->SendUpcomingILTReminder3;
     }
 
-    /**
-     * @param bool $SendUpcomingILTReminder3
-     *
-     * @return LearningType
-     */
-    public function withSendUpcomingILTReminder3($SendUpcomingILTReminder3)
+    
+    public function withSendUpcomingILTReminder3(bool $SendUpcomingILTReminder3): static
     {
         $new = clone $this;
         $new->SendUpcomingILTReminder3 = $SendUpcomingILTReminder3;
@@ -5050,20 +3439,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendEnrollmentReminderNotification()
+    
+    public function getSendEnrollmentReminderNotification(): bool
     {
         return $this->SendEnrollmentReminderNotification;
     }
 
-    /**
-     * @param bool $SendEnrollmentReminderNotification
-     *
-     * @return LearningType
-     */
-    public function withSendEnrollmentReminderNotification($SendEnrollmentReminderNotification)
+    
+    public function withSendEnrollmentReminderNotification(bool $SendEnrollmentReminderNotification): static
     {
         $new = clone $this;
         $new->SendEnrollmentReminderNotification = $SendEnrollmentReminderNotification;
@@ -5071,20 +3454,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendLearningPathModificationNotification()
+    
+    public function getSendLearningPathModificationNotification(): bool
     {
         return $this->SendLearningPathModificationNotification;
     }
 
-    /**
-     * @param bool $SendLearningPathModificationNotification
-     *
-     * @return LearningType
-     */
-    public function withSendLearningPathModificationNotification($SendLearningPathModificationNotification)
+    
+    public function withSendLearningPathModificationNotification(bool $SendLearningPathModificationNotification): static
     {
         $new = clone $this;
         $new->SendLearningPathModificationNotification = $SendLearningPathModificationNotification;
@@ -5092,20 +3469,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnEnrollmentReminder()
+    
+    public function getNotifySupervisorOnEnrollmentReminder(): bool
     {
         return $this->NotifySupervisorOnEnrollmentReminder;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnEnrollmentReminder
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnEnrollmentReminder($NotifySupervisorOnEnrollmentReminder)
+    
+    public function withNotifySupervisorOnEnrollmentReminder(bool $NotifySupervisorOnEnrollmentReminder): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnEnrollmentReminder = $NotifySupervisorOnEnrollmentReminder;
@@ -5113,20 +3484,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendWithdrawRequestNotification()
+    
+    public function getSendWithdrawRequestNotification(): bool
     {
         return $this->SendWithdrawRequestNotification;
     }
 
-    /**
-     * @param bool $SendWithdrawRequestNotification
-     *
-     * @return LearningType
-     */
-    public function withSendWithdrawRequestNotification($SendWithdrawRequestNotification)
+    
+    public function withSendWithdrawRequestNotification(bool $SendWithdrawRequestNotification): static
     {
         $new = clone $this;
         $new->SendWithdrawRequestNotification = $SendWithdrawRequestNotification;
@@ -5134,20 +3499,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnWithdrawRequest()
+    
+    public function getNotifyModeratorOnWithdrawRequest(): bool
     {
         return $this->NotifyModeratorOnWithdrawRequest;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnWithdrawRequest
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnWithdrawRequest($NotifyModeratorOnWithdrawRequest)
+    
+    public function withNotifyModeratorOnWithdrawRequest(bool $NotifyModeratorOnWithdrawRequest): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnWithdrawRequest = $NotifyModeratorOnWithdrawRequest;
@@ -5155,20 +3514,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnWithdrawRequest()
+    
+    public function getNotifySupervisorOnWithdrawRequest(): bool
     {
         return $this->NotifySupervisorOnWithdrawRequest;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnWithdrawRequest
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnWithdrawRequest($NotifySupervisorOnWithdrawRequest)
+    
+    public function withNotifySupervisorOnWithdrawRequest(bool $NotifySupervisorOnWithdrawRequest): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnWithdrawRequest = $NotifySupervisorOnWithdrawRequest;
@@ -5176,20 +3529,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorCompletion()
+    
+    public function getNotifyModeratorCompletion(): bool
     {
         return $this->NotifyModeratorCompletion;
     }
 
-    /**
-     * @param bool $NotifyModeratorCompletion
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorCompletion($NotifyModeratorCompletion)
+    
+    public function withNotifyModeratorCompletion(bool $NotifyModeratorCompletion): static
     {
         $new = clone $this;
         $new->NotifyModeratorCompletion = $NotifyModeratorCompletion;
@@ -5197,20 +3544,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorCompletion()
+    
+    public function getNotifySupervisorCompletion(): bool
     {
         return $this->NotifySupervisorCompletion;
     }
 
-    /**
-     * @param bool $NotifySupervisorCompletion
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorCompletion($NotifySupervisorCompletion)
+    
+    public function withNotifySupervisorCompletion(bool $NotifySupervisorCompletion): static
     {
         $new = clone $this;
         $new->NotifySupervisorCompletion = $NotifySupervisorCompletion;
@@ -5218,20 +3559,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyLearnerCompletion()
+    
+    public function getNotifyLearnerCompletion(): bool
     {
         return $this->NotifyLearnerCompletion;
     }
 
-    /**
-     * @param bool $NotifyLearnerCompletion
-     *
-     * @return LearningType
-     */
-    public function withNotifyLearnerCompletion($NotifyLearnerCompletion)
+    
+    public function withNotifyLearnerCompletion(bool $NotifyLearnerCompletion): static
     {
         $new = clone $this;
         $new->NotifyLearnerCompletion = $NotifyLearnerCompletion;
@@ -5239,20 +3574,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCompletionNotificationIncludeSuccess()
+    
+    public function getCompletionNotificationIncludeSuccess(): bool
     {
         return $this->CompletionNotificationIncludeSuccess;
     }
 
-    /**
-     * @param bool $CompletionNotificationIncludeSuccess
-     *
-     * @return LearningType
-     */
-    public function withCompletionNotificationIncludeSuccess($CompletionNotificationIncludeSuccess)
+    
+    public function withCompletionNotificationIncludeSuccess(bool $CompletionNotificationIncludeSuccess): static
     {
         $new = clone $this;
         $new->CompletionNotificationIncludeSuccess = $CompletionNotificationIncludeSuccess;
@@ -5260,20 +3589,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCompletionNotificationIncludeScore()
+    
+    public function getCompletionNotificationIncludeScore(): bool
     {
         return $this->CompletionNotificationIncludeScore;
     }
 
-    /**
-     * @param bool $CompletionNotificationIncludeScore
-     *
-     * @return LearningType
-     */
-    public function withCompletionNotificationIncludeScore($CompletionNotificationIncludeScore)
+    
+    public function withCompletionNotificationIncludeScore(bool $CompletionNotificationIncludeScore): static
     {
         $new = clone $this;
         $new->CompletionNotificationIncludeScore = $CompletionNotificationIncludeScore;
@@ -5281,20 +3604,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnDue()
+    
+    public function getNotifyModeratorOnDue(): bool
     {
         return $this->NotifyModeratorOnDue;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnDue
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnDue($NotifyModeratorOnDue)
+    
+    public function withNotifyModeratorOnDue(bool $NotifyModeratorOnDue): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnDue = $NotifyModeratorOnDue;
@@ -5302,20 +3619,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnDue()
+    
+    public function getNotifySupervisorOnDue(): bool
     {
         return $this->NotifySupervisorOnDue;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnDue
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnDue($NotifySupervisorOnDue)
+    
+    public function withNotifySupervisorOnDue(bool $NotifySupervisorOnDue): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnDue = $NotifySupervisorOnDue;
@@ -5323,20 +3634,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnOverDue1()
+    
+    public function getNotifySupervisorOnOverDue1(): bool
     {
         return $this->NotifySupervisorOnOverDue1;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnOverDue1
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnOverDue1($NotifySupervisorOnOverDue1)
+    
+    public function withNotifySupervisorOnOverDue1(bool $NotifySupervisorOnOverDue1): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnOverDue1 = $NotifySupervisorOnOverDue1;
@@ -5344,20 +3649,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnOverDue2()
+    
+    public function getNotifySupervisorOnOverDue2(): bool
     {
         return $this->NotifySupervisorOnOverDue2;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnOverDue2
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnOverDue2($NotifySupervisorOnOverDue2)
+    
+    public function withNotifySupervisorOnOverDue2(bool $NotifySupervisorOnOverDue2): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnOverDue2 = $NotifySupervisorOnOverDue2;
@@ -5365,20 +3664,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnOverDue3()
+    
+    public function getNotifySupervisorOnOverDue3(): bool
     {
         return $this->NotifySupervisorOnOverDue3;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnOverDue3
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnOverDue3($NotifySupervisorOnOverDue3)
+    
+    public function withNotifySupervisorOnOverDue3(bool $NotifySupervisorOnOverDue3): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnOverDue3 = $NotifySupervisorOnOverDue3;
@@ -5386,20 +3679,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorSupervisorOnOverDue1()
+    
+    public function getNotifySupervisorSupervisorOnOverDue1(): bool
     {
         return $this->NotifySupervisorSupervisorOnOverDue1;
     }
 
-    /**
-     * @param bool $NotifySupervisorSupervisorOnOverDue1
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorSupervisorOnOverDue1($NotifySupervisorSupervisorOnOverDue1)
+    
+    public function withNotifySupervisorSupervisorOnOverDue1(bool $NotifySupervisorSupervisorOnOverDue1): static
     {
         $new = clone $this;
         $new->NotifySupervisorSupervisorOnOverDue1 = $NotifySupervisorSupervisorOnOverDue1;
@@ -5407,20 +3694,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorSupervisorOnOverDue2()
+    
+    public function getNotifySupervisorSupervisorOnOverDue2(): bool
     {
         return $this->NotifySupervisorSupervisorOnOverDue2;
     }
 
-    /**
-     * @param bool $NotifySupervisorSupervisorOnOverDue2
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorSupervisorOnOverDue2($NotifySupervisorSupervisorOnOverDue2)
+    
+    public function withNotifySupervisorSupervisorOnOverDue2(bool $NotifySupervisorSupervisorOnOverDue2): static
     {
         $new = clone $this;
         $new->NotifySupervisorSupervisorOnOverDue2 = $NotifySupervisorSupervisorOnOverDue2;
@@ -5428,20 +3709,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorSupervisorOnOverDue3()
+    
+    public function getNotifySupervisorSupervisorOnOverDue3(): bool
     {
         return $this->NotifySupervisorSupervisorOnOverDue3;
     }
 
-    /**
-     * @param bool $NotifySupervisorSupervisorOnOverDue3
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorSupervisorOnOverDue3($NotifySupervisorSupervisorOnOverDue3)
+    
+    public function withNotifySupervisorSupervisorOnOverDue3(bool $NotifySupervisorSupervisorOnOverDue3): static
     {
         $new = clone $this;
         $new->NotifySupervisorSupervisorOnOverDue3 = $NotifySupervisorSupervisorOnOverDue3;
@@ -5449,20 +3724,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnOverDue1()
+    
+    public function getNotifyModeratorOnOverDue1(): bool
     {
         return $this->NotifyModeratorOnOverDue1;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnOverDue1
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnOverDue1($NotifyModeratorOnOverDue1)
+    
+    public function withNotifyModeratorOnOverDue1(bool $NotifyModeratorOnOverDue1): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnOverDue1 = $NotifyModeratorOnOverDue1;
@@ -5470,20 +3739,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnOverDue2()
+    
+    public function getNotifyModeratorOnOverDue2(): bool
     {
         return $this->NotifyModeratorOnOverDue2;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnOverDue2
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnOverDue2($NotifyModeratorOnOverDue2)
+    
+    public function withNotifyModeratorOnOverDue2(bool $NotifyModeratorOnOverDue2): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnOverDue2 = $NotifyModeratorOnOverDue2;
@@ -5491,20 +3754,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnOverDue3()
+    
+    public function getNotifyModeratorOnOverDue3(): bool
     {
         return $this->NotifyModeratorOnOverDue3;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnOverDue3
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnOverDue3($NotifyModeratorOnOverDue3)
+    
+    public function withNotifyModeratorOnOverDue3(bool $NotifyModeratorOnOverDue3): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnOverDue3 = $NotifyModeratorOnOverDue3;
@@ -5512,20 +3769,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyLearnerOnOverDue1()
+    
+    public function getNotifyLearnerOnOverDue1(): bool
     {
         return $this->NotifyLearnerOnOverDue1;
     }
 
-    /**
-     * @param bool $NotifyLearnerOnOverDue1
-     *
-     * @return LearningType
-     */
-    public function withNotifyLearnerOnOverDue1($NotifyLearnerOnOverDue1)
+    
+    public function withNotifyLearnerOnOverDue1(bool $NotifyLearnerOnOverDue1): static
     {
         $new = clone $this;
         $new->NotifyLearnerOnOverDue1 = $NotifyLearnerOnOverDue1;
@@ -5533,20 +3784,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyLearnerOnOverDue2()
+    
+    public function getNotifyLearnerOnOverDue2(): bool
     {
         return $this->NotifyLearnerOnOverDue2;
     }
 
-    /**
-     * @param bool $NotifyLearnerOnOverDue2
-     *
-     * @return LearningType
-     */
-    public function withNotifyLearnerOnOverDue2($NotifyLearnerOnOverDue2)
+    
+    public function withNotifyLearnerOnOverDue2(bool $NotifyLearnerOnOverDue2): static
     {
         $new = clone $this;
         $new->NotifyLearnerOnOverDue2 = $NotifyLearnerOnOverDue2;
@@ -5554,20 +3799,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyLearnerOnOverDue3()
+    
+    public function getNotifyLearnerOnOverDue3(): bool
     {
         return $this->NotifyLearnerOnOverDue3;
     }
 
-    /**
-     * @param bool $NotifyLearnerOnOverDue3
-     *
-     * @return LearningType
-     */
-    public function withNotifyLearnerOnOverDue3($NotifyLearnerOnOverDue3)
+    
+    public function withNotifyLearnerOnOverDue3(bool $NotifyLearnerOnOverDue3): static
     {
         $new = clone $this;
         $new->NotifyLearnerOnOverDue3 = $NotifyLearnerOnOverDue3;
@@ -5575,20 +3814,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendDueDateNotification()
+    
+    public function getSendDueDateNotification(): bool
     {
         return $this->SendDueDateNotification;
     }
 
-    /**
-     * @param bool $SendDueDateNotification
-     *
-     * @return LearningType
-     */
-    public function withSendDueDateNotification($SendDueDateNotification)
+    
+    public function withSendDueDateNotification(bool $SendDueDateNotification): static
     {
         $new = clone $this;
         $new->SendDueDateNotification = $SendDueDateNotification;
@@ -5596,20 +3829,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnMissedILTSession()
+    
+    public function getNotifySupervisorOnMissedILTSession(): bool
     {
         return $this->NotifySupervisorOnMissedILTSession;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnMissedILTSession
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnMissedILTSession($NotifySupervisorOnMissedILTSession)
+    
+    public function withNotifySupervisorOnMissedILTSession(bool $NotifySupervisorOnMissedILTSession): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnMissedILTSession = $NotifySupervisorOnMissedILTSession;
@@ -5617,20 +3844,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnMissedILTSession()
+    
+    public function getNotifyModeratorOnMissedILTSession(): bool
     {
         return $this->NotifyModeratorOnMissedILTSession;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnMissedILTSession
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnMissedILTSession($NotifyModeratorOnMissedILTSession)
+    
+    public function withNotifyModeratorOnMissedILTSession(bool $NotifyModeratorOnMissedILTSession): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnMissedILTSession = $NotifyModeratorOnMissedILTSession;
@@ -5638,20 +3859,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnWaitingList()
+    
+    public function getNotifySupervisorOnWaitingList(): bool
     {
         return $this->NotifySupervisorOnWaitingList;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnWaitingList
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnWaitingList($NotifySupervisorOnWaitingList)
+    
+    public function withNotifySupervisorOnWaitingList(bool $NotifySupervisorOnWaitingList): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnWaitingList = $NotifySupervisorOnWaitingList;
@@ -5659,20 +3874,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnWithdraw()
+    
+    public function getNotifySupervisorOnWithdraw(): bool
     {
         return $this->NotifySupervisorOnWithdraw;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnWithdraw
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnWithdraw($NotifySupervisorOnWithdraw)
+    
+    public function withNotifySupervisorOnWithdraw(bool $NotifySupervisorOnWithdraw): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnWithdraw = $NotifySupervisorOnWithdraw;
@@ -5680,20 +3889,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnWithdraw()
+    
+    public function getNotifyModeratorOnWithdraw(): bool
     {
         return $this->NotifyModeratorOnWithdraw;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnWithdraw
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnWithdraw($NotifyModeratorOnWithdraw)
+    
+    public function withNotifyModeratorOnWithdraw(bool $NotifyModeratorOnWithdraw): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnWithdraw = $NotifyModeratorOnWithdraw;
@@ -5701,20 +3904,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnWaitingList()
+    
+    public function getNotifyModeratorOnWaitingList(): bool
     {
         return $this->NotifyModeratorOnWaitingList;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnWaitingList
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnWaitingList($NotifyModeratorOnWaitingList)
+    
+    public function withNotifyModeratorOnWaitingList(bool $NotifyModeratorOnWaitingList): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnWaitingList = $NotifyModeratorOnWaitingList;
@@ -5722,20 +3919,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnDueDateReminder1()
+    
+    public function getNotifyModeratorOnDueDateReminder1(): bool
     {
         return $this->NotifyModeratorOnDueDateReminder1;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnDueDateReminder1
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnDueDateReminder1($NotifyModeratorOnDueDateReminder1)
+    
+    public function withNotifyModeratorOnDueDateReminder1(bool $NotifyModeratorOnDueDateReminder1): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnDueDateReminder1 = $NotifyModeratorOnDueDateReminder1;
@@ -5743,20 +3934,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnDueDateReminder2()
+    
+    public function getNotifyModeratorOnDueDateReminder2(): bool
     {
         return $this->NotifyModeratorOnDueDateReminder2;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnDueDateReminder2
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnDueDateReminder2($NotifyModeratorOnDueDateReminder2)
+    
+    public function withNotifyModeratorOnDueDateReminder2(bool $NotifyModeratorOnDueDateReminder2): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnDueDateReminder2 = $NotifyModeratorOnDueDateReminder2;
@@ -5764,20 +3949,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnDueDateReminder3()
+    
+    public function getNotifyModeratorOnDueDateReminder3(): bool
     {
         return $this->NotifyModeratorOnDueDateReminder3;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnDueDateReminder3
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnDueDateReminder3($NotifyModeratorOnDueDateReminder3)
+    
+    public function withNotifyModeratorOnDueDateReminder3(bool $NotifyModeratorOnDueDateReminder3): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnDueDateReminder3 = $NotifyModeratorOnDueDateReminder3;
@@ -5785,20 +3964,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnDueDateReminder1()
+    
+    public function getNotifySupervisorOnDueDateReminder1(): bool
     {
         return $this->NotifySupervisorOnDueDateReminder1;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnDueDateReminder1
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnDueDateReminder1($NotifySupervisorOnDueDateReminder1)
+    
+    public function withNotifySupervisorOnDueDateReminder1(bool $NotifySupervisorOnDueDateReminder1): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnDueDateReminder1 = $NotifySupervisorOnDueDateReminder1;
@@ -5806,20 +3979,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnDueDateReminder2()
+    
+    public function getNotifySupervisorOnDueDateReminder2(): bool
     {
         return $this->NotifySupervisorOnDueDateReminder2;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnDueDateReminder2
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnDueDateReminder2($NotifySupervisorOnDueDateReminder2)
+    
+    public function withNotifySupervisorOnDueDateReminder2(bool $NotifySupervisorOnDueDateReminder2): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnDueDateReminder2 = $NotifySupervisorOnDueDateReminder2;
@@ -5827,20 +3994,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnDueDateReminder3()
+    
+    public function getNotifySupervisorOnDueDateReminder3(): bool
     {
         return $this->NotifySupervisorOnDueDateReminder3;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnDueDateReminder3
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnDueDateReminder3($NotifySupervisorOnDueDateReminder3)
+    
+    public function withNotifySupervisorOnDueDateReminder3(bool $NotifySupervisorOnDueDateReminder3): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnDueDateReminder3 = $NotifySupervisorOnDueDateReminder3;
@@ -5848,20 +4009,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnUpcomingILTReminder1()
+    
+    public function getNotifySupervisorOnUpcomingILTReminder1(): bool
     {
         return $this->NotifySupervisorOnUpcomingILTReminder1;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnUpcomingILTReminder1
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnUpcomingILTReminder1($NotifySupervisorOnUpcomingILTReminder1)
+    
+    public function withNotifySupervisorOnUpcomingILTReminder1(bool $NotifySupervisorOnUpcomingILTReminder1): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnUpcomingILTReminder1 = $NotifySupervisorOnUpcomingILTReminder1;
@@ -5869,20 +4024,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnUpcomingILTReminder2()
+    
+    public function getNotifySupervisorOnUpcomingILTReminder2(): bool
     {
         return $this->NotifySupervisorOnUpcomingILTReminder2;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnUpcomingILTReminder2
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnUpcomingILTReminder2($NotifySupervisorOnUpcomingILTReminder2)
+    
+    public function withNotifySupervisorOnUpcomingILTReminder2(bool $NotifySupervisorOnUpcomingILTReminder2): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnUpcomingILTReminder2 = $NotifySupervisorOnUpcomingILTReminder2;
@@ -5890,20 +4039,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnUpcomingILTReminder3()
+    
+    public function getNotifySupervisorOnUpcomingILTReminder3(): bool
     {
         return $this->NotifySupervisorOnUpcomingILTReminder3;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnUpcomingILTReminder3
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnUpcomingILTReminder3($NotifySupervisorOnUpcomingILTReminder3)
+    
+    public function withNotifySupervisorOnUpcomingILTReminder3(bool $NotifySupervisorOnUpcomingILTReminder3): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnUpcomingILTReminder3 = $NotifySupervisorOnUpcomingILTReminder3;
@@ -5911,20 +4054,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnUpcomingILTReminder1()
+    
+    public function getNotifyModeratorOnUpcomingILTReminder1(): bool
     {
         return $this->NotifyModeratorOnUpcomingILTReminder1;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnUpcomingILTReminder1
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnUpcomingILTReminder1($NotifyModeratorOnUpcomingILTReminder1)
+    
+    public function withNotifyModeratorOnUpcomingILTReminder1(bool $NotifyModeratorOnUpcomingILTReminder1): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnUpcomingILTReminder1 = $NotifyModeratorOnUpcomingILTReminder1;
@@ -5932,20 +4069,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnUpcomingILTReminder2()
+    
+    public function getNotifyModeratorOnUpcomingILTReminder2(): bool
     {
         return $this->NotifyModeratorOnUpcomingILTReminder2;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnUpcomingILTReminder2
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnUpcomingILTReminder2($NotifyModeratorOnUpcomingILTReminder2)
+    
+    public function withNotifyModeratorOnUpcomingILTReminder2(bool $NotifyModeratorOnUpcomingILTReminder2): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnUpcomingILTReminder2 = $NotifyModeratorOnUpcomingILTReminder2;
@@ -5953,20 +4084,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnUpcomingILTReminder3()
+    
+    public function getNotifyModeratorOnUpcomingILTReminder3(): bool
     {
         return $this->NotifyModeratorOnUpcomingILTReminder3;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnUpcomingILTReminder3
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnUpcomingILTReminder3($NotifyModeratorOnUpcomingILTReminder3)
+    
+    public function withNotifyModeratorOnUpcomingILTReminder3(bool $NotifyModeratorOnUpcomingILTReminder3): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnUpcomingILTReminder3 = $NotifyModeratorOnUpcomingILTReminder3;
@@ -5974,20 +4099,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendOverDueNotification1()
+    
+    public function getSendOverDueNotification1(): bool
     {
         return $this->SendOverDueNotification1;
     }
 
-    /**
-     * @param bool $SendOverDueNotification1
-     *
-     * @return LearningType
-     */
-    public function withSendOverDueNotification1($SendOverDueNotification1)
+    
+    public function withSendOverDueNotification1(bool $SendOverDueNotification1): static
     {
         $new = clone $this;
         $new->SendOverDueNotification1 = $SendOverDueNotification1;
@@ -5995,20 +4114,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendOverDueNotification2()
+    
+    public function getSendOverDueNotification2(): bool
     {
         return $this->SendOverDueNotification2;
     }
 
-    /**
-     * @param bool $SendOverDueNotification2
-     *
-     * @return LearningType
-     */
-    public function withSendOverDueNotification2($SendOverDueNotification2)
+    
+    public function withSendOverDueNotification2(bool $SendOverDueNotification2): static
     {
         $new = clone $this;
         $new->SendOverDueNotification2 = $SendOverDueNotification2;
@@ -6016,20 +4129,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendOverDueNotification3()
+    
+    public function getSendOverDueNotification3(): bool
     {
         return $this->SendOverDueNotification3;
     }
 
-    /**
-     * @param bool $SendOverDueNotification3
-     *
-     * @return LearningType
-     */
-    public function withSendOverDueNotification3($SendOverDueNotification3)
+    
+    public function withSendOverDueNotification3(bool $SendOverDueNotification3): static
     {
         $new = clone $this;
         $new->SendOverDueNotification3 = $SendOverDueNotification3;
@@ -6037,20 +4144,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendMissedSessionNotification()
+    
+    public function getSendMissedSessionNotification(): bool
     {
         return $this->SendMissedSessionNotification;
     }
 
-    /**
-     * @param bool $SendMissedSessionNotification
-     *
-     * @return LearningType
-     */
-    public function withSendMissedSessionNotification($SendMissedSessionNotification)
+    
+    public function withSendMissedSessionNotification(bool $SendMissedSessionNotification): static
     {
         $new = clone $this;
         $new->SendMissedSessionNotification = $SendMissedSessionNotification;
@@ -6058,20 +4159,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendMissedILTSessionNotification()
+    
+    public function getSendMissedILTSessionNotification(): bool
     {
         return $this->SendMissedILTSessionNotification;
     }
 
-    /**
-     * @param bool $SendMissedILTSessionNotification
-     *
-     * @return LearningType
-     */
-    public function withSendMissedILTSessionNotification($SendMissedILTSessionNotification)
+    
+    public function withSendMissedILTSessionNotification(bool $SendMissedILTSessionNotification): static
     {
         $new = clone $this;
         $new->SendMissedILTSessionNotification = $SendMissedILTSessionNotification;
@@ -6079,20 +4174,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendWaitingListNotification()
+    
+    public function getSendWaitingListNotification(): bool
     {
         return $this->SendWaitingListNotification;
     }
 
-    /**
-     * @param bool $SendWaitingListNotification
-     *
-     * @return LearningType
-     */
-    public function withSendWaitingListNotification($SendWaitingListNotification)
+    
+    public function withSendWaitingListNotification(bool $SendWaitingListNotification): static
     {
         $new = clone $this;
         $new->SendWaitingListNotification = $SendWaitingListNotification;
@@ -6100,20 +4189,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendWithdrawNotifications()
+    
+    public function getSendWithdrawNotifications(): bool
     {
         return $this->SendWithdrawNotifications;
     }
 
-    /**
-     * @param bool $SendWithdrawNotifications
-     *
-     * @return LearningType
-     */
-    public function withSendWithdrawNotifications($SendWithdrawNotifications)
+    
+    public function withSendWithdrawNotifications(bool $SendWithdrawNotifications): static
     {
         $new = clone $this;
         $new->SendWithdrawNotifications = $SendWithdrawNotifications;
@@ -6121,20 +4204,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendCourseModificationNotification()
+    
+    public function getSendCourseModificationNotification(): bool
     {
         return $this->SendCourseModificationNotification;
     }
 
-    /**
-     * @param bool $SendCourseModificationNotification
-     *
-     * @return LearningType
-     */
-    public function withSendCourseModificationNotification($SendCourseModificationNotification)
+    
+    public function withSendCourseModificationNotification(bool $SendCourseModificationNotification): static
     {
         $new = clone $this;
         $new->SendCourseModificationNotification = $SendCourseModificationNotification;
@@ -6142,20 +4219,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendCourseModificationNotificationToCompleted()
+    
+    public function getSendCourseModificationNotificationToCompleted(): bool
     {
         return $this->SendCourseModificationNotificationToCompleted;
     }
 
-    /**
-     * @param bool $SendCourseModificationNotificationToCompleted
-     *
-     * @return LearningType
-     */
-    public function withSendCourseModificationNotificationToCompleted($SendCourseModificationNotificationToCompleted)
+    
+    public function withSendCourseModificationNotificationToCompleted(bool $SendCourseModificationNotificationToCompleted): static
     {
         $new = clone $this;
         $new->SendCourseModificationNotificationToCompleted = $SendCourseModificationNotificationToCompleted;
@@ -6163,20 +4234,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendCourseResourceModificationNotification()
+    
+    public function getSendCourseResourceModificationNotification(): bool
     {
         return $this->SendCourseResourceModificationNotification;
     }
 
-    /**
-     * @param bool $SendCourseResourceModificationNotification
-     *
-     * @return LearningType
-     */
-    public function withSendCourseResourceModificationNotification($SendCourseResourceModificationNotification)
+    
+    public function withSendCourseResourceModificationNotification(bool $SendCourseResourceModificationNotification): static
     {
         $new = clone $this;
         $new->SendCourseResourceModificationNotification = $SendCourseResourceModificationNotification;
@@ -6184,20 +4249,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendWaitingListModificationNotification()
+    
+    public function getSendWaitingListModificationNotification(): bool
     {
         return $this->SendWaitingListModificationNotification;
     }
 
-    /**
-     * @param bool $SendWaitingListModificationNotification
-     *
-     * @return LearningType
-     */
-    public function withSendWaitingListModificationNotification($SendWaitingListModificationNotification)
+    
+    public function withSendWaitingListModificationNotification(bool $SendWaitingListModificationNotification): static
     {
         $new = clone $this;
         $new->SendWaitingListModificationNotification = $SendWaitingListModificationNotification;
@@ -6205,20 +4264,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendAssignmentReviewedNotification()
+    
+    public function getSendAssignmentReviewedNotification(): bool
     {
         return $this->SendAssignmentReviewedNotification;
     }
 
-    /**
-     * @param bool $SendAssignmentReviewedNotification
-     *
-     * @return LearningType
-     */
-    public function withSendAssignmentReviewedNotification($SendAssignmentReviewedNotification)
+    
+    public function withSendAssignmentReviewedNotification(bool $SendAssignmentReviewedNotification): static
     {
         $new = clone $this;
         $new->SendAssignmentReviewedNotification = $SendAssignmentReviewedNotification;
@@ -6226,20 +4279,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendPerformanceNotification()
+    
+    public function getSendPerformanceNotification(): bool
     {
         return $this->SendPerformanceNotification;
     }
 
-    /**
-     * @param bool $SendPerformanceNotification
-     *
-     * @return LearningType
-     */
-    public function withSendPerformanceNotification($SendPerformanceNotification)
+    
+    public function withSendPerformanceNotification(bool $SendPerformanceNotification): static
     {
         $new = clone $this;
         $new->SendPerformanceNotification = $SendPerformanceNotification;
@@ -6247,20 +4294,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendBadgeIssuedNotification()
+    
+    public function getSendBadgeIssuedNotification(): bool
     {
         return $this->SendBadgeIssuedNotification;
     }
 
-    /**
-     * @param bool $SendBadgeIssuedNotification
-     *
-     * @return LearningType
-     */
-    public function withSendBadgeIssuedNotification($SendBadgeIssuedNotification)
+    
+    public function withSendBadgeIssuedNotification(bool $SendBadgeIssuedNotification): static
     {
         $new = clone $this;
         $new->SendBadgeIssuedNotification = $SendBadgeIssuedNotification;
@@ -6268,20 +4309,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendPendingNotification()
+    
+    public function getSendPendingNotification(): bool
     {
         return $this->SendPendingNotification;
     }
 
-    /**
-     * @param bool $SendPendingNotification
-     *
-     * @return LearningType
-     */
-    public function withSendPendingNotification($SendPendingNotification)
+    
+    public function withSendPendingNotification(bool $SendPendingNotification): static
     {
         $new = clone $this;
         $new->SendPendingNotification = $SendPendingNotification;
@@ -6289,20 +4324,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendFeedbackOverdueNotification()
+    
+    public function getSendFeedbackOverdueNotification(): bool
     {
         return $this->SendFeedbackOverdueNotification;
     }
 
-    /**
-     * @param bool $SendFeedbackOverdueNotification
-     *
-     * @return LearningType
-     */
-    public function withSendFeedbackOverdueNotification($SendFeedbackOverdueNotification)
+    
+    public function withSendFeedbackOverdueNotification(bool $SendFeedbackOverdueNotification): static
     {
         $new = clone $this;
         $new->SendFeedbackOverdueNotification = $SendFeedbackOverdueNotification;
@@ -6310,20 +4339,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendfeedbackDueDateNotification()
+    
+    public function getSendfeedbackDueDateNotification(): bool
     {
         return $this->SendfeedbackDueDateNotification;
     }
 
-    /**
-     * @param bool $SendfeedbackDueDateNotification
-     *
-     * @return LearningType
-     */
-    public function withSendfeedbackDueDateNotification($SendfeedbackDueDateNotification)
+    
+    public function withSendfeedbackDueDateNotification(bool $SendfeedbackDueDateNotification): static
     {
         $new = clone $this;
         $new->SendfeedbackDueDateNotification = $SendfeedbackDueDateNotification;
@@ -6331,20 +4354,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendAssignmentSubmittedNotification()
+    
+    public function getSendAssignmentSubmittedNotification(): bool
     {
         return $this->SendAssignmentSubmittedNotification;
     }
 
-    /**
-     * @param bool $SendAssignmentSubmittedNotification
-     *
-     * @return LearningType
-     */
-    public function withSendAssignmentSubmittedNotification($SendAssignmentSubmittedNotification)
+    
+    public function withSendAssignmentSubmittedNotification(bool $SendAssignmentSubmittedNotification): static
     {
         $new = clone $this;
         $new->SendAssignmentSubmittedNotification = $SendAssignmentSubmittedNotification;
@@ -6352,20 +4369,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendActivityPeerReviewCancelled()
+    
+    public function getSendActivityPeerReviewCancelled(): bool
     {
         return $this->SendActivityPeerReviewCancelled;
     }
 
-    /**
-     * @param bool $SendActivityPeerReviewCancelled
-     *
-     * @return LearningType
-     */
-    public function withSendActivityPeerReviewCancelled($SendActivityPeerReviewCancelled)
+    
+    public function withSendActivityPeerReviewCancelled(bool $SendActivityPeerReviewCancelled): static
     {
         $new = clone $this;
         $new->SendActivityPeerReviewCancelled = $SendActivityPeerReviewCancelled;
@@ -6373,20 +4384,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendActivityReviewApprovalExpiryReminder()
+    
+    public function getSendActivityReviewApprovalExpiryReminder(): bool
     {
         return $this->SendActivityReviewApprovalExpiryReminder;
     }
 
-    /**
-     * @param bool $SendActivityReviewApprovalExpiryReminder
-     *
-     * @return LearningType
-     */
-    public function withSendActivityReviewApprovalExpiryReminder($SendActivityReviewApprovalExpiryReminder)
+    
+    public function withSendActivityReviewApprovalExpiryReminder(bool $SendActivityReviewApprovalExpiryReminder): static
     {
         $new = clone $this;
         $new->SendActivityReviewApprovalExpiryReminder = $SendActivityReviewApprovalExpiryReminder;
@@ -6394,20 +4399,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendExternalActivityApprovedAutomatically()
+    
+    public function getSendExternalActivityApprovedAutomatically(): bool
     {
         return $this->SendExternalActivityApprovedAutomatically;
     }
 
-    /**
-     * @param bool $SendExternalActivityApprovedAutomatically
-     *
-     * @return LearningType
-     */
-    public function withSendExternalActivityApprovedAutomatically($SendExternalActivityApprovedAutomatically)
+    
+    public function withSendExternalActivityApprovedAutomatically(bool $SendExternalActivityApprovedAutomatically): static
     {
         $new = clone $this;
         $new->SendExternalActivityApprovedAutomatically = $SendExternalActivityApprovedAutomatically;
@@ -6415,20 +4414,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendExternalActivityRequiresApproval()
+    
+    public function getSendExternalActivityRequiresApproval(): bool
     {
         return $this->SendExternalActivityRequiresApproval;
     }
 
-    /**
-     * @param bool $SendExternalActivityRequiresApproval
-     *
-     * @return LearningType
-     */
-    public function withSendExternalActivityRequiresApproval($SendExternalActivityRequiresApproval)
+    
+    public function withSendExternalActivityRequiresApproval(bool $SendExternalActivityRequiresApproval): static
     {
         $new = clone $this;
         $new->SendExternalActivityRequiresApproval = $SendExternalActivityRequiresApproval;
@@ -6436,20 +4429,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendForumPostApprovalRequired()
+    
+    public function getSendForumPostApprovalRequired(): bool
     {
         return $this->SendForumPostApprovalRequired;
     }
 
-    /**
-     * @param bool $SendForumPostApprovalRequired
-     *
-     * @return LearningType
-     */
-    public function withSendForumPostApprovalRequired($SendForumPostApprovalRequired)
+    
+    public function withSendForumPostApprovalRequired(bool $SendForumPostApprovalRequired): static
     {
         $new = clone $this;
         $new->SendForumPostApprovalRequired = $SendForumPostApprovalRequired;
@@ -6457,20 +4444,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendForumPostApproved()
+    
+    public function getSendForumPostApproved(): bool
     {
         return $this->SendForumPostApproved;
     }
 
-    /**
-     * @param bool $SendForumPostApproved
-     *
-     * @return LearningType
-     */
-    public function withSendForumPostApproved($SendForumPostApproved)
+    
+    public function withSendForumPostApproved(bool $SendForumPostApproved): static
     {
         $new = clone $this;
         $new->SendForumPostApproved = $SendForumPostApproved;
@@ -6478,20 +4459,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendForumPostDeclined()
+    
+    public function getSendForumPostDeclined(): bool
     {
         return $this->SendForumPostDeclined;
     }
 
-    /**
-     * @param bool $SendForumPostDeclined
-     *
-     * @return LearningType
-     */
-    public function withSendForumPostDeclined($SendForumPostDeclined)
+    
+    public function withSendForumPostDeclined(bool $SendForumPostDeclined): static
     {
         $new = clone $this;
         $new->SendForumPostDeclined = $SendForumPostDeclined;
@@ -6499,20 +4474,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendPasswordChanged()
+    
+    public function getSendPasswordChanged(): bool
     {
         return $this->SendPasswordChanged;
     }
 
-    /**
-     * @param bool $SendPasswordChanged
-     *
-     * @return LearningType
-     */
-    public function withSendPasswordChanged($SendPasswordChanged)
+    
+    public function withSendPasswordChanged(bool $SendPasswordChanged): static
     {
         $new = clone $this;
         $new->SendPasswordChanged = $SendPasswordChanged;
@@ -6520,20 +4489,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendRecommendationInvitation()
+    
+    public function getSendRecommendationInvitation(): bool
     {
         return $this->SendRecommendationInvitation;
     }
 
-    /**
-     * @param bool $SendRecommendationInvitation
-     *
-     * @return LearningType
-     */
-    public function withSendRecommendationInvitation($SendRecommendationInvitation)
+    
+    public function withSendRecommendationInvitation(bool $SendRecommendationInvitation): static
     {
         $new = clone $this;
         $new->SendRecommendationInvitation = $SendRecommendationInvitation;
@@ -6541,20 +4504,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendRecommendationOutCome()
+    
+    public function getSendRecommendationOutCome(): bool
     {
         return $this->SendRecommendationOutCome;
     }
 
-    /**
-     * @param bool $SendRecommendationOutCome
-     *
-     * @return LearningType
-     */
-    public function withSendRecommendationOutCome($SendRecommendationOutCome)
+    
+    public function withSendRecommendationOutCome(bool $SendRecommendationOutCome): static
     {
         $new = clone $this;
         $new->SendRecommendationOutCome = $SendRecommendationOutCome;
@@ -6562,20 +4519,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendAccountVerification()
+    
+    public function getSendAccountVerification(): bool
     {
         return $this->SendAccountVerification;
     }
 
-    /**
-     * @param bool $SendAccountVerification
-     *
-     * @return LearningType
-     */
-    public function withSendAccountVerification($SendAccountVerification)
+    
+    public function withSendAccountVerification(bool $SendAccountVerification): static
     {
         $new = clone $this;
         $new->SendAccountVerification = $SendAccountVerification;
@@ -6583,20 +4534,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSendSelfWithdraw()
+    
+    public function getSendSelfWithdraw(): bool
     {
         return $this->SendSelfWithdraw;
     }
 
-    /**
-     * @param bool $SendSelfWithdraw
-     *
-     * @return LearningType
-     */
-    public function withSendSelfWithdraw($SendSelfWithdraw)
+    
+    public function withSendSelfWithdraw(bool $SendSelfWithdraw): static
     {
         $new = clone $this;
         $new->SendSelfWithdraw = $SendSelfWithdraw;
@@ -6604,20 +4549,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifySupervisorOnSelfWithdraw()
+    
+    public function getNotifySupervisorOnSelfWithdraw(): bool
     {
         return $this->NotifySupervisorOnSelfWithdraw;
     }
 
-    /**
-     * @param bool $NotifySupervisorOnSelfWithdraw
-     *
-     * @return LearningType
-     */
-    public function withNotifySupervisorOnSelfWithdraw($NotifySupervisorOnSelfWithdraw)
+    
+    public function withNotifySupervisorOnSelfWithdraw(bool $NotifySupervisorOnSelfWithdraw): static
     {
         $new = clone $this;
         $new->NotifySupervisorOnSelfWithdraw = $NotifySupervisorOnSelfWithdraw;
@@ -6625,20 +4564,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getNotifyModeratorOnSelfWithdraw()
+    
+    public function getNotifyModeratorOnSelfWithdraw(): bool
     {
         return $this->NotifyModeratorOnSelfWithdraw;
     }
 
-    /**
-     * @param bool $NotifyModeratorOnSelfWithdraw
-     *
-     * @return LearningType
-     */
-    public function withNotifyModeratorOnSelfWithdraw($NotifyModeratorOnSelfWithdraw)
+    
+    public function withNotifyModeratorOnSelfWithdraw(bool $NotifyModeratorOnSelfWithdraw): static
     {
         $new = clone $this;
         $new->NotifyModeratorOnSelfWithdraw = $NotifyModeratorOnSelfWithdraw;
@@ -6646,20 +4579,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasForum()
+    
+    public function getHasForum(): bool
     {
         return $this->HasForum;
     }
 
-    /**
-     * @param bool $HasForum
-     *
-     * @return LearningType
-     */
-    public function withHasForum($HasForum)
+    
+    public function withHasForum(bool $HasForum): static
     {
         $new = clone $this;
         $new->HasForum = $HasForum;
@@ -6667,20 +4594,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnollOverrideLastEnrollmentDate()
+    
+    public function getManualEnollOverrideLastEnrollmentDate(): bool
     {
         return $this->ManualEnollOverrideLastEnrollmentDate;
     }
 
-    /**
-     * @param bool $ManualEnollOverrideLastEnrollmentDate
-     *
-     * @return LearningType
-     */
-    public function withManualEnollOverrideLastEnrollmentDate($ManualEnollOverrideLastEnrollmentDate)
+    
+    public function withManualEnollOverrideLastEnrollmentDate(bool $ManualEnollOverrideLastEnrollmentDate): static
     {
         $new = clone $this;
         $new->ManualEnollOverrideLastEnrollmentDate = $ManualEnollOverrideLastEnrollmentDate;
@@ -6688,20 +4609,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnollOverridePrerequisites()
+    
+    public function getManualEnollOverridePrerequisites(): bool
     {
         return $this->ManualEnollOverridePrerequisites;
     }
 
-    /**
-     * @param bool $ManualEnollOverridePrerequisites
-     *
-     * @return LearningType
-     */
-    public function withManualEnollOverridePrerequisites($ManualEnollOverridePrerequisites)
+    
+    public function withManualEnollOverridePrerequisites(bool $ManualEnollOverridePrerequisites): static
     {
         $new = clone $this;
         $new->ManualEnollOverridePrerequisites = $ManualEnollOverridePrerequisites;
@@ -6709,20 +4624,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnollOverrideNotificationPeriod()
+    
+    public function getManualEnollOverrideNotificationPeriod(): bool
     {
         return $this->ManualEnollOverrideNotificationPeriod;
     }
 
-    /**
-     * @param bool $ManualEnollOverrideNotificationPeriod
-     *
-     * @return LearningType
-     */
-    public function withManualEnollOverrideNotificationPeriod($ManualEnollOverrideNotificationPeriod)
+    
+    public function withManualEnollOverrideNotificationPeriod(bool $ManualEnollOverrideNotificationPeriod): static
     {
         $new = clone $this;
         $new->ManualEnollOverrideNotificationPeriod = $ManualEnollOverrideNotificationPeriod;
@@ -6730,20 +4639,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnollOverrideMaxReEnrollments()
+    
+    public function getManualEnollOverrideMaxReEnrollments(): bool
     {
         return $this->ManualEnollOverrideMaxReEnrollments;
     }
 
-    /**
-     * @param bool $ManualEnollOverrideMaxReEnrollments
-     *
-     * @return LearningType
-     */
-    public function withManualEnollOverrideMaxReEnrollments($ManualEnollOverrideMaxReEnrollments)
+    
+    public function withManualEnollOverrideMaxReEnrollments(bool $ManualEnollOverrideMaxReEnrollments): static
     {
         $new = clone $this;
         $new->ManualEnollOverrideMaxReEnrollments = $ManualEnollOverrideMaxReEnrollments;
@@ -6751,20 +4654,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnollOverrideSingleNonExpiringEnrollments()
+    
+    public function getManualEnollOverrideSingleNonExpiringEnrollments(): bool
     {
         return $this->ManualEnollOverrideSingleNonExpiringEnrollments;
     }
 
-    /**
-     * @param bool $ManualEnollOverrideSingleNonExpiringEnrollments
-     *
-     * @return LearningType
-     */
-    public function withManualEnollOverrideSingleNonExpiringEnrollments($ManualEnollOverrideSingleNonExpiringEnrollments)
+    
+    public function withManualEnollOverrideSingleNonExpiringEnrollments(bool $ManualEnollOverrideSingleNonExpiringEnrollments): static
     {
         $new = clone $this;
         $new->ManualEnollOverrideSingleNonExpiringEnrollments = $ManualEnollOverrideSingleNonExpiringEnrollments;
@@ -6772,20 +4669,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getClassroomHeight()
+    
+    public function getClassroomHeight(): int
     {
         return $this->ClassroomHeight;
     }
 
-    /**
-     * @param int $ClassroomHeight
-     *
-     * @return LearningType
-     */
-    public function withClassroomHeight($ClassroomHeight)
+    
+    public function withClassroomHeight(int $ClassroomHeight): static
     {
         $new = clone $this;
         $new->ClassroomHeight = $ClassroomHeight;
@@ -6793,20 +4684,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getClassroomWidth()
+    
+    public function getClassroomWidth(): int
     {
         return $this->ClassroomWidth;
     }
 
-    /**
-     * @param int $ClassroomWidth
-     *
-     * @return LearningType
-     */
-    public function withClassroomWidth($ClassroomWidth)
+    
+    public function withClassroomWidth(int $ClassroomWidth): static
     {
         $new = clone $this;
         $new->ClassroomWidth = $ClassroomWidth;
@@ -6814,20 +4699,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getClassroomTemplate()
+    
+    public function getClassroomTemplate(): string
     {
         return $this->ClassroomTemplate;
     }
 
-    /**
-     * @param string $ClassroomTemplate
-     *
-     * @return LearningType
-     */
-    public function withClassroomTemplate($ClassroomTemplate)
+    
+    public function withClassroomTemplate(string $ClassroomTemplate): static
     {
         $new = clone $this;
         $new->ClassroomTemplate = $ClassroomTemplate;
@@ -6835,20 +4714,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getForceIECompatibilityMode()
+    
+    public function getForceIECompatibilityMode(): bool
     {
         return $this->ForceIECompatibilityMode;
     }
 
-    /**
-     * @param bool $ForceIECompatibilityMode
-     *
-     * @return LearningType
-     */
-    public function withForceIECompatibilityMode($ForceIECompatibilityMode)
+    
+    public function withForceIECompatibilityMode(bool $ForceIECompatibilityMode): static
     {
         $new = clone $this;
         $new->ForceIECompatibilityMode = $ForceIECompatibilityMode;
@@ -6856,20 +4729,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowModal()
+    
+    public function getAllowModal(): bool
     {
         return $this->AllowModal;
     }
 
-    /**
-     * @param bool $AllowModal
-     *
-     * @return LearningType
-     */
-    public function withAllowModal($AllowModal)
+    
+    public function withAllowModal(bool $AllowModal): static
     {
         $new = clone $this;
         $new->AllowModal = $AllowModal;
@@ -6877,20 +4744,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getFullScreenSize()
+    
+    public function getFullScreenSize(): bool
     {
         return $this->FullScreenSize;
     }
 
-    /**
-     * @param bool $FullScreenSize
-     *
-     * @return LearningType
-     */
-    public function withFullScreenSize($FullScreenSize)
+    
+    public function withFullScreenSize(bool $FullScreenSize): static
     {
         $new = clone $this;
         $new->FullScreenSize = $FullScreenSize;
@@ -6898,20 +4759,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getOpenCourseIn()
+    
+    public function getOpenCourseIn(): string
     {
         return $this->OpenCourseIn;
     }
 
-    /**
-     * @param string $OpenCourseIn
-     *
-     * @return LearningType
-     */
-    public function withOpenCourseIn($OpenCourseIn)
+    
+    public function withOpenCourseIn(string $OpenCourseIn): static
     {
         $new = clone $this;
         $new->OpenCourseIn = $OpenCourseIn;
@@ -6919,20 +4774,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasThreshold()
+    
+    public function getHasThreshold(): bool
     {
         return $this->HasThreshold;
     }
 
-    /**
-     * @param bool $HasThreshold
-     *
-     * @return LearningType
-     */
-    public function withHasThreshold($HasThreshold)
+    
+    public function withHasThreshold(bool $HasThreshold): static
     {
         $new = clone $this;
         $new->HasThreshold = $HasThreshold;
@@ -6940,20 +4789,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getThresholdValue()
+    
+    public function getThresholdValue(): int
     {
         return $this->ThresholdValue;
     }
 
-    /**
-     * @param int $ThresholdValue
-     *
-     * @return LearningType
-     */
-    public function withThresholdValue($ThresholdValue)
+    
+    public function withThresholdValue(int $ThresholdValue): static
     {
         $new = clone $this;
         $new->ThresholdValue = $ThresholdValue;
@@ -6961,20 +4804,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLimitSecurityAccess()
+    
+    public function getLimitSecurityAccess(): bool
     {
         return $this->LimitSecurityAccess;
     }
 
-    /**
-     * @param bool $LimitSecurityAccess
-     *
-     * @return LearningType
-     */
-    public function withLimitSecurityAccess($LimitSecurityAccess)
+    
+    public function withLimitSecurityAccess(bool $LimitSecurityAccess): static
     {
         $new = clone $this;
         $new->LimitSecurityAccess = $LimitSecurityAccess;
@@ -6982,20 +4819,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCreatorID()
+    
+    public function getCreatorID(): string
     {
         return $this->CreatorID;
     }
 
-    /**
-     * @param string $CreatorID
-     *
-     * @return LearningType
-     */
-    public function withCreatorID($CreatorID)
+    
+    public function withCreatorID(string $CreatorID): static
     {
         $new = clone $this;
         $new->CreatorID = $CreatorID;
@@ -7003,20 +4834,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequirePackageForCompletion()
+    
+    public function getRequirePackageForCompletion(): bool
     {
         return $this->RequirePackageForCompletion;
     }
 
-    /**
-     * @param bool $RequirePackageForCompletion
-     *
-     * @return LearningType
-     */
-    public function withRequirePackageForCompletion($RequirePackageForCompletion)
+    
+    public function withRequirePackageForCompletion(bool $RequirePackageForCompletion): static
     {
         $new = clone $this;
         $new->RequirePackageForCompletion = $RequirePackageForCompletion;
@@ -7024,20 +4849,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireFeedbackForCompletion()
+    
+    public function getRequireFeedbackForCompletion(): bool
     {
         return $this->RequireFeedbackForCompletion;
     }
 
-    /**
-     * @param bool $RequireFeedbackForCompletion
-     *
-     * @return LearningType
-     */
-    public function withRequireFeedbackForCompletion($RequireFeedbackForCompletion)
+    
+    public function withRequireFeedbackForCompletion(bool $RequireFeedbackForCompletion): static
     {
         $new = clone $this;
         $new->RequireFeedbackForCompletion = $RequireFeedbackForCompletion;
@@ -7045,20 +4864,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireFeedbackPopUp()
+    
+    public function getRequireFeedbackPopUp(): bool
     {
         return $this->RequireFeedbackPopUp;
     }
 
-    /**
-     * @param bool $RequireFeedbackPopUp
-     *
-     * @return LearningType
-     */
-    public function withRequireFeedbackPopUp($RequireFeedbackPopUp)
+    
+    public function withRequireFeedbackPopUp(bool $RequireFeedbackPopUp): static
     {
         $new = clone $this;
         $new->RequireFeedbackPopUp = $RequireFeedbackPopUp;
@@ -7066,20 +4879,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireAssignmentForCompletion()
+    
+    public function getRequireAssignmentForCompletion(): bool
     {
         return $this->RequireAssignmentForCompletion;
     }
 
-    /**
-     * @param bool $RequireAssignmentForCompletion
-     *
-     * @return LearningType
-     */
-    public function withRequireAssignmentForCompletion($RequireAssignmentForCompletion)
+    
+    public function withRequireAssignmentForCompletion(bool $RequireAssignmentForCompletion): static
     {
         $new = clone $this;
         $new->RequireAssignmentForCompletion = $RequireAssignmentForCompletion;
@@ -7087,20 +4894,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireAssesmentForCompletion()
+    
+    public function getRequireAssesmentForCompletion(): bool
     {
         return $this->RequireAssesmentForCompletion;
     }
 
-    /**
-     * @param bool $RequireAssesmentForCompletion
-     *
-     * @return LearningType
-     */
-    public function withRequireAssesmentForCompletion($RequireAssesmentForCompletion)
+    
+    public function withRequireAssesmentForCompletion(bool $RequireAssesmentForCompletion): static
     {
         $new = clone $this;
         $new->RequireAssesmentForCompletion = $RequireAssesmentForCompletion;
@@ -7108,20 +4909,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequireStatusSuccessPassed()
+    
+    public function getRequireStatusSuccessPassed(): bool
     {
         return $this->RequireStatusSuccessPassed;
     }
 
-    /**
-     * @param bool $RequireStatusSuccessPassed
-     *
-     * @return LearningType
-     */
-    public function withRequireStatusSuccessPassed($RequireStatusSuccessPassed)
+    
+    public function withRequireStatusSuccessPassed(bool $RequireStatusSuccessPassed): static
     {
         $new = clone $this;
         $new->RequireStatusSuccessPassed = $RequireStatusSuccessPassed;
@@ -7129,20 +4924,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProcessUnknown()
+    
+    public function getProcessUnknown(): bool
     {
         return $this->ProcessUnknown;
     }
 
-    /**
-     * @param bool $ProcessUnknown
-     *
-     * @return LearningType
-     */
-    public function withProcessUnknown($ProcessUnknown)
+    
+    public function withProcessUnknown(bool $ProcessUnknown): static
     {
         $new = clone $this;
         $new->ProcessUnknown = $ProcessUnknown;
@@ -7150,20 +4939,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getOverrideAPISucces()
+    
+    public function getOverrideAPISucces(): bool
     {
         return $this->OverrideAPISucces;
     }
 
-    /**
-     * @param bool $OverrideAPISucces
-     *
-     * @return LearningType
-     */
-    public function withOverrideAPISucces($OverrideAPISucces)
+    
+    public function withOverrideAPISucces(bool $OverrideAPISucces): static
     {
         $new = clone $this;
         $new->OverrideAPISucces = $OverrideAPISucces;
@@ -7171,20 +4954,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMinPassingScore()
+    
+    public function getMinPassingScore(): int
     {
         return $this->MinPassingScore;
     }
 
-    /**
-     * @param int $MinPassingScore
-     *
-     * @return LearningType
-     */
-    public function withMinPassingScore($MinPassingScore)
+    
+    public function withMinPassingScore(int $MinPassingScore): static
     {
         $new = clone $this;
         $new->MinPassingScore = $MinPassingScore;
@@ -7192,20 +4969,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getPreventCompletionSettings()
+    
+    public function getPreventCompletionSettings(): string
     {
         return $this->PreventCompletionSettings;
     }
 
-    /**
-     * @param string $PreventCompletionSettings
-     *
-     * @return LearningType
-     */
-    public function withPreventCompletionSettings($PreventCompletionSettings)
+    
+    public function withPreventCompletionSettings(string $PreventCompletionSettings): static
     {
         $new = clone $this;
         $new->PreventCompletionSettings = $PreventCompletionSettings;
@@ -7213,20 +4984,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasAssessment()
+    
+    public function getHasAssessment(): bool
     {
         return $this->HasAssessment;
     }
 
-    /**
-     * @param bool $HasAssessment
-     *
-     * @return LearningType
-     */
-    public function withHasAssessment($HasAssessment)
+    
+    public function withHasAssessment(bool $HasAssessment): static
     {
         $new = clone $this;
         $new->HasAssessment = $HasAssessment;
@@ -7234,20 +4999,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getAssessmentWeight()
+    
+    public function getAssessmentWeight(): int
     {
         return $this->AssessmentWeight;
     }
 
-    /**
-     * @param int $AssessmentWeight
-     *
-     * @return LearningType
-     */
-    public function withAssessmentWeight($AssessmentWeight)
+    
+    public function withAssessmentWeight(int $AssessmentWeight): static
     {
         $new = clone $this;
         $new->AssessmentWeight = $AssessmentWeight;
@@ -7255,20 +5014,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getAssignmentWeight()
+    
+    public function getAssignmentWeight(): int
     {
         return $this->AssignmentWeight;
     }
 
-    /**
-     * @param int $AssignmentWeight
-     *
-     * @return LearningType
-     */
-    public function withAssignmentWeight($AssignmentWeight)
+    
+    public function withAssignmentWeight(int $AssignmentWeight): static
     {
         $new = clone $this;
         $new->AssignmentWeight = $AssignmentWeight;
@@ -7276,20 +5029,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasFeedback()
+    
+    public function getHasFeedback(): bool
     {
         return $this->HasFeedback;
     }
 
-    /**
-     * @param bool $HasFeedback
-     *
-     * @return LearningType
-     */
-    public function withHasFeedback($HasFeedback)
+    
+    public function withHasFeedback(bool $HasFeedback): static
     {
         $new = clone $this;
         $new->HasFeedback = $HasFeedback;
@@ -7297,20 +5044,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getPackageWeight()
+    
+    public function getPackageWeight(): int
     {
         return $this->PackageWeight;
     }
 
-    /**
-     * @param int $PackageWeight
-     *
-     * @return LearningType
-     */
-    public function withPackageWeight($PackageWeight)
+    
+    public function withPackageWeight(int $PackageWeight): static
     {
         $new = clone $this;
         $new->PackageWeight = $PackageWeight;
@@ -7318,20 +5059,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDeploymentType()
+    
+    public function getDeploymentType(): string
     {
         return $this->DeploymentType;
     }
 
-    /**
-     * @param string $DeploymentType
-     *
-     * @return LearningType
-     */
-    public function withDeploymentType($DeploymentType)
+    
+    public function withDeploymentType(string $DeploymentType): static
     {
         $new = clone $this;
         $new->DeploymentType = $DeploymentType;
@@ -7339,20 +5074,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAzureRunMode()
+    
+    public function getAzureRunMode(): string
     {
         return $this->AzureRunMode;
     }
 
-    /**
-     * @param string $AzureRunMode
-     *
-     * @return LearningType
-     */
-    public function withAzureRunMode($AzureRunMode)
+    
+    public function withAzureRunMode(string $AzureRunMode): static
     {
         $new = clone $this;
         $new->AzureRunMode = $AzureRunMode;
@@ -7360,20 +5089,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getDynamicProgram()
+    
+    public function getDynamicProgram(): bool
     {
         return $this->DynamicProgram;
     }
 
-    /**
-     * @param bool $DynamicProgram
-     *
-     * @return LearningType
-     */
-    public function withDynamicProgram($DynamicProgram)
+    
+    public function withDynamicProgram(bool $DynamicProgram): static
     {
         $new = clone $this;
         $new->DynamicProgram = $DynamicProgram;
@@ -7381,20 +5104,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getLearningTime()
+    
+    public function getLearningTime(): float
     {
         return $this->LearningTime;
     }
 
-    /**
-     * @param float $LearningTime
-     *
-     * @return LearningType
-     */
-    public function withLearningTime($LearningTime)
+    
+    public function withLearningTime(float $LearningTime): static
     {
         $new = clone $this;
         $new->LearningTime = $LearningTime;
@@ -7402,20 +5119,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getEditorXML()
+    
+    public function getEditorXML(): string
     {
         return $this->EditorXML;
     }
 
-    /**
-     * @param string $EditorXML
-     *
-     * @return LearningType
-     */
-    public function withEditorXML($EditorXML)
+    
+    public function withEditorXML(string $EditorXML): static
     {
         $new = clone $this;
         $new->EditorXML = $EditorXML;
@@ -7423,20 +5134,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTranscriptPrintMode()
+    
+    public function getTranscriptPrintMode(): string
     {
         return $this->TranscriptPrintMode;
     }
 
-    /**
-     * @param string $TranscriptPrintMode
-     *
-     * @return LearningType
-     */
-    public function withTranscriptPrintMode($TranscriptPrintMode)
+    
+    public function withTranscriptPrintMode(string $TranscriptPrintMode): static
     {
         $new = clone $this;
         $new->TranscriptPrintMode = $TranscriptPrintMode;
@@ -7444,20 +5149,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHideTranscriptScore()
+    
+    public function getHideTranscriptScore(): bool
     {
         return $this->HideTranscriptScore;
     }
 
-    /**
-     * @param bool $HideTranscriptScore
-     *
-     * @return LearningType
-     */
-    public function withHideTranscriptScore($HideTranscriptScore)
+    
+    public function withHideTranscriptScore(bool $HideTranscriptScore): static
     {
         $new = clone $this;
         $new->HideTranscriptScore = $HideTranscriptScore;
@@ -7465,20 +5164,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowCustomScoreFeedback()
+    
+    public function getShowCustomScoreFeedback(): bool
     {
         return $this->ShowCustomScoreFeedback;
     }
 
-    /**
-     * @param bool $ShowCustomScoreFeedback
-     *
-     * @return LearningType
-     */
-    public function withShowCustomScoreFeedback($ShowCustomScoreFeedback)
+    
+    public function withShowCustomScoreFeedback(bool $ShowCustomScoreFeedback): static
     {
         $new = clone $this;
         $new->ShowCustomScoreFeedback = $ShowCustomScoreFeedback;
@@ -7486,20 +5179,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHideInteractionsFromUser()
+    
+    public function getHideInteractionsFromUser(): bool
     {
         return $this->HideInteractionsFromUser;
     }
 
-    /**
-     * @param bool $HideInteractionsFromUser
-     *
-     * @return LearningType
-     */
-    public function withHideInteractionsFromUser($HideInteractionsFromUser)
+    
+    public function withHideInteractionsFromUser(bool $HideInteractionsFromUser): static
     {
         $new = clone $this;
         $new->HideInteractionsFromUser = $HideInteractionsFromUser;
@@ -7507,20 +5194,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHideInteractionsFromSupervisor()
+    
+    public function getHideInteractionsFromSupervisor(): bool
     {
         return $this->HideInteractionsFromSupervisor;
     }
 
-    /**
-     * @param bool $HideInteractionsFromSupervisor
-     *
-     * @return LearningType
-     */
-    public function withHideInteractionsFromSupervisor($HideInteractionsFromSupervisor)
+    
+    public function withHideInteractionsFromSupervisor(bool $HideInteractionsFromSupervisor): static
     {
         $new = clone $this;
         $new->HideInteractionsFromSupervisor = $HideInteractionsFromSupervisor;
@@ -7528,20 +5209,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLog()
+    
+    public function getLog(): bool
     {
         return $this->Log;
     }
 
-    /**
-     * @param bool $Log
-     *
-     * @return LearningType
-     */
-    public function withLog($Log)
+    
+    public function withLog(bool $Log): static
     {
         $new = clone $this;
         $new->Log = $Log;
@@ -7549,20 +5224,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomScoreFeedbackXml()
+    
+    public function getCustomScoreFeedbackXml(): string
     {
         return $this->CustomScoreFeedbackXml;
     }
 
-    /**
-     * @param string $CustomScoreFeedbackXml
-     *
-     * @return LearningType
-     */
-    public function withCustomScoreFeedbackXml($CustomScoreFeedbackXml)
+    
+    public function withCustomScoreFeedbackXml(string $CustomScoreFeedbackXml): static
     {
         $new = clone $this;
         $new->CustomScoreFeedbackXml = $CustomScoreFeedbackXml;
@@ -7570,20 +5239,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomActivityTypeID()
+    
+    public function getCustomActivityTypeID(): string
     {
         return $this->CustomActivityTypeID;
     }
 
-    /**
-     * @param string $CustomActivityTypeID
-     *
-     * @return LearningType
-     */
-    public function withCustomActivityTypeID($CustomActivityTypeID)
+    
+    public function withCustomActivityTypeID(string $CustomActivityTypeID): static
     {
         $new = clone $this;
         $new->CustomActivityTypeID = $CustomActivityTypeID;
@@ -7591,20 +5254,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowHiddenSettings()
+    
+    public function getShowHiddenSettings(): bool
     {
         return $this->ShowHiddenSettings;
     }
 
-    /**
-     * @param bool $ShowHiddenSettings
-     *
-     * @return LearningType
-     */
-    public function withShowHiddenSettings($ShowHiddenSettings)
+    
+    public function withShowHiddenSettings(bool $ShowHiddenSettings): static
     {
         $new = clone $this;
         $new->ShowHiddenSettings = $ShowHiddenSettings;
@@ -7612,20 +5269,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getPortfolioEvidenceNumber()
+    
+    public function getPortfolioEvidenceNumber(): int
     {
         return $this->PortfolioEvidenceNumber;
     }
 
-    /**
-     * @param int $PortfolioEvidenceNumber
-     *
-     * @return LearningType
-     */
-    public function withPortfolioEvidenceNumber($PortfolioEvidenceNumber)
+    
+    public function withPortfolioEvidenceNumber(int $PortfolioEvidenceNumber): static
     {
         $new = clone $this;
         $new->PortfolioEvidenceNumber = $PortfolioEvidenceNumber;
@@ -7633,20 +5284,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getPortfolioEvidenceMinumumNumber()
+    
+    public function getPortfolioEvidenceMinumumNumber(): int
     {
         return $this->PortfolioEvidenceMinumumNumber;
     }
 
-    /**
-     * @param int $PortfolioEvidenceMinumumNumber
-     *
-     * @return LearningType
-     */
-    public function withPortfolioEvidenceMinumumNumber($PortfolioEvidenceMinumumNumber)
+    
+    public function withPortfolioEvidenceMinumumNumber(int $PortfolioEvidenceMinumumNumber): static
     {
         $new = clone $this;
         $new->PortfolioEvidenceMinumumNumber = $PortfolioEvidenceMinumumNumber;
@@ -7654,20 +5299,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowLearnerNotes()
+    
+    public function getAllowLearnerNotes(): bool
     {
         return $this->AllowLearnerNotes;
     }
 
-    /**
-     * @param bool $AllowLearnerNotes
-     *
-     * @return LearningType
-     */
-    public function withAllowLearnerNotes($AllowLearnerNotes)
+    
+    public function withAllowLearnerNotes(bool $AllowLearnerNotes): static
     {
         $new = clone $this;
         $new->AllowLearnerNotes = $AllowLearnerNotes;
@@ -7675,20 +5314,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowRecommendation()
+    
+    public function getShowRecommendation(): bool
     {
         return $this->ShowRecommendation;
     }
 
-    /**
-     * @param bool $ShowRecommendation
-     *
-     * @return LearningType
-     */
-    public function withShowRecommendation($ShowRecommendation)
+    
+    public function withShowRecommendation(bool $ShowRecommendation): static
     {
         $new = clone $this;
         $new->ShowRecommendation = $ShowRecommendation;
@@ -7696,20 +5329,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMarkByTA()
+    
+    public function getMarkByTA(): bool
     {
         return $this->MarkByTA;
     }
 
-    /**
-     * @param bool $MarkByTA
-     *
-     * @return LearningType
-     */
-    public function withMarkByTA($MarkByTA)
+    
+    public function withMarkByTA(bool $MarkByTA): static
     {
         $new = clone $this;
         $new->MarkByTA = $MarkByTA;
@@ -7717,20 +5344,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMarkByModerator()
+    
+    public function getMarkByModerator(): bool
     {
         return $this->MarkByModerator;
     }
 
-    /**
-     * @param bool $MarkByModerator
-     *
-     * @return LearningType
-     */
-    public function withMarkByModerator($MarkByModerator)
+    
+    public function withMarkByModerator(bool $MarkByModerator): static
     {
         $new = clone $this;
         $new->MarkByModerator = $MarkByModerator;
@@ -7738,20 +5359,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getAssessments()
+    
+    public function getAssessments(): ArrayOfAnyType
     {
         return $this->Assessments;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $Assessments
-     *
-     * @return LearningType
-     */
-    public function withAssessments($Assessments)
+    
+    public function withAssessments(ArrayOfAnyType $Assessments): static
     {
         $new = clone $this;
         $new->Assessments = $Assessments;
@@ -7759,20 +5374,14 @@ class LearningType
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getCertificateRules()
+    
+    public function getCertificateRules(): ArrayOfAnyType
     {
         return $this->CertificateRules;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $CertificateRules
-     *
-     * @return LearningType
-     */
-    public function withCertificateRules($CertificateRules)
+    
+    public function withCertificateRules(ArrayOfAnyType $CertificateRules): static
     {
         $new = clone $this;
         $new->CertificateRules = $CertificateRules;

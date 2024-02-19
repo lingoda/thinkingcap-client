@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class RegisterBulkUserResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $RegisterBulkUserResult;
+    private ServiceResultOfString $RegisterBulkUserResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getRegisterBulkUserResult()
+    
+    public function getRegisterBulkUserResult(): ServiceResultOfString
     {
         return $this->RegisterBulkUserResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $RegisterBulkUserResult
-     *
-     * @return RegisterBulkUserResponse
-     */
-    public function withRegisterBulkUserResult($RegisterBulkUserResult)
+    
+    public function withRegisterBulkUserResult(ServiceResultOfString $RegisterBulkUserResult): static
     {
         $new = clone $this;
         $new->RegisterBulkUserResult = $RegisterBulkUserResult;

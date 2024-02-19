@@ -1,35 +1,26 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
+use DateTimeInterface;
+
 class TimeInterval
 {
-    /**
-     * @var \DateTimeInterface
-     */
-    private $StartDate;
+    private DateTimeInterface $StartDate;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $EndDate;
+    
+    private DateTimeInterface $EndDate;
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getStartDate()
+    
+    public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    /**
-     * @param \DateTimeInterface $StartDate
-     *
-     * @return TimeInterval
-     */
-    public function withStartDate($StartDate)
+    
+    public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
         $new->StartDate = $StartDate;
@@ -37,20 +28,14 @@ class TimeInterval
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getEndDate()
+    
+    public function getEndDate(): DateTimeInterface
     {
         return $this->EndDate;
     }
 
-    /**
-     * @param \DateTimeInterface $EndDate
-     *
-     * @return TimeInterval
-     */
-    public function withEndDate($EndDate)
+    
+    public function withEndDate(DateTimeInterface $EndDate): static
     {
         $new = clone $this;
         $new->EndDate = $EndDate;

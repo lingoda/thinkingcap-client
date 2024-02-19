@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,25 +8,16 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class MarkStudentSessionResponse implements ResultInterface
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    private $MarkStudentSessionResult;
+    private ServiceResultOfString $MarkStudentSessionResult;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString
-     */
-    public function getMarkStudentSessionResult()
+    
+    public function getMarkStudentSessionResult(): ServiceResultOfString
     {
         return $this->MarkStudentSessionResult;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceResultOfString $MarkStudentSessionResult
-     *
-     * @return MarkStudentSessionResponse
-     */
-    public function withMarkStudentSessionResult($MarkStudentSessionResult)
+    
+    public function withMarkStudentSessionResult(ServiceResultOfString $MarkStudentSessionResult): static
     {
         $new = clone $this;
         $new->MarkStudentSessionResult = $MarkStudentSessionResult;

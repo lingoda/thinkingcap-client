@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,125 +8,67 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class AddCourseSession implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
-    /**
-     * @var string
-     */
-    private $sessionTitle;
+    
+    private string $sessionTitle;
 
-    /**
-     * @var string
-     */
-    private $sessionDescription;
+    
+    private string $sessionDescription;
 
-    /**
-     * @var bool
-     */
-    private $sessionIsRequired;
+    
+    private bool $sessionIsRequired;
 
-    /**
-     * @var bool
-     */
-    private $timeIsTDB;
+    
+    private bool $timeIsTDB;
 
-    /**
-     * @var string
-     */
-    private $sessionStartDateTime;
+    
+    private string $sessionStartDateTime;
 
-    /**
-     * @var string
-     */
-    private $sessionEndDateTime;
+    
+    private string $sessionEndDateTime;
 
-    /**
-     * @var bool
-     */
-    private $locationIsTBD;
+    
+    private bool $locationIsTBD;
 
-    /**
-     * @var string
-     */
-    private $sessionLocationID;
+    
+    private string $sessionLocationID;
 
-    /**
-     * @var string
-     */
-    private $webinarProviderID;
+    
+    private string $webinarProviderID;
 
-    /**
-     * @var string
-     */
-    private $zoomSubAccountHostID;
+    
+    private string $zoomSubAccountHostID;
 
-    /**
-     * @var string
-     */
-    private $customMeetingURL;
+    
+    private string $customMeetingURL;
 
-    /**
-     * @var bool
-     */
-    private $isRecurringSession;
+    
+    private bool $isRecurringSession;
 
-    /**
-     * @var string
-     */
-    private $recurringCadence;
+    
+    private string $recurringCadence;
 
-    /**
-     * @var int
-     */
-    private $recurringNo;
+    
+    private int $recurringNo;
 
-    /**
-     * @var string
-     */
-    private $attendanceCode;
+    
+    private string $attendanceCode;
 
-    /**
-     * @var bool
-     */
-    private $updateAdminCatalogs;
+    
+    private bool $updateAdminCatalogs;
 
-    /**
-     * @var bool
-     */
-    private $updateLearnerCatalogs;
+    
+    private bool $updateLearnerCatalogs;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseID
-     * @param string $sessionTitle
-     * @param string $sessionDescription
-     * @param bool $sessionIsRequired
-     * @param bool $timeIsTDB
-     * @param string $sessionStartDateTime
-     * @param string $sessionEndDateTime
-     * @param bool $locationIsTBD
-     * @param string $sessionLocationID
-     * @param string $webinarProviderID
-     * @param string $zoomSubAccountHostID
-     * @param string $customMeetingURL
-     * @param bool $isRecurringSession
-     * @param string $recurringCadence
-     * @param int $recurringNo
-     * @param string $attendanceCode
-     * @param bool $updateAdminCatalogs
-     * @param bool $updateLearnerCatalogs
      */
-    public function __construct($apiKey, $courseID, $sessionTitle, $sessionDescription, $sessionIsRequired, $timeIsTDB, $sessionStartDateTime, $sessionEndDateTime, $locationIsTBD, $sessionLocationID, $webinarProviderID, $zoomSubAccountHostID, $customMeetingURL, $isRecurringSession, $recurringCadence, $recurringNo, $attendanceCode, $updateAdminCatalogs, $updateLearnerCatalogs)
+    public function __construct(string $apiKey, string $courseID, string $sessionTitle, string $sessionDescription, bool $sessionIsRequired, bool $timeIsTDB, string $sessionStartDateTime, string $sessionEndDateTime, bool $locationIsTBD, string $sessionLocationID, string $webinarProviderID, string $zoomSubAccountHostID, string $customMeetingURL, bool $isRecurringSession, string $recurringCadence, int $recurringNo, string $attendanceCode, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
@@ -149,20 +91,14 @@ class AddCourseSession implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return AddCourseSession
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -170,20 +106,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return AddCourseSession
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -191,20 +121,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSessionTitle()
+    
+    public function getSessionTitle(): string
     {
         return $this->sessionTitle;
     }
 
-    /**
-     * @param string $sessionTitle
-     *
-     * @return AddCourseSession
-     */
-    public function withSessionTitle($sessionTitle)
+    
+    public function withSessionTitle(string $sessionTitle): static
     {
         $new = clone $this;
         $new->sessionTitle = $sessionTitle;
@@ -212,20 +136,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSessionDescription()
+    
+    public function getSessionDescription(): string
     {
         return $this->sessionDescription;
     }
 
-    /**
-     * @param string $sessionDescription
-     *
-     * @return AddCourseSession
-     */
-    public function withSessionDescription($sessionDescription)
+    
+    public function withSessionDescription(string $sessionDescription): static
     {
         $new = clone $this;
         $new->sessionDescription = $sessionDescription;
@@ -233,20 +151,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSessionIsRequired()
+    
+    public function getSessionIsRequired(): bool
     {
         return $this->sessionIsRequired;
     }
 
-    /**
-     * @param bool $sessionIsRequired
-     *
-     * @return AddCourseSession
-     */
-    public function withSessionIsRequired($sessionIsRequired)
+    
+    public function withSessionIsRequired(bool $sessionIsRequired): static
     {
         $new = clone $this;
         $new->sessionIsRequired = $sessionIsRequired;
@@ -254,20 +166,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getTimeIsTDB()
+    
+    public function getTimeIsTDB(): bool
     {
         return $this->timeIsTDB;
     }
 
-    /**
-     * @param bool $timeIsTDB
-     *
-     * @return AddCourseSession
-     */
-    public function withTimeIsTDB($timeIsTDB)
+    
+    public function withTimeIsTDB(bool $timeIsTDB): static
     {
         $new = clone $this;
         $new->timeIsTDB = $timeIsTDB;
@@ -275,20 +181,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSessionStartDateTime()
+    
+    public function getSessionStartDateTime(): string
     {
         return $this->sessionStartDateTime;
     }
 
-    /**
-     * @param string $sessionStartDateTime
-     *
-     * @return AddCourseSession
-     */
-    public function withSessionStartDateTime($sessionStartDateTime)
+    
+    public function withSessionStartDateTime(string $sessionStartDateTime): static
     {
         $new = clone $this;
         $new->sessionStartDateTime = $sessionStartDateTime;
@@ -296,20 +196,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSessionEndDateTime()
+    
+    public function getSessionEndDateTime(): string
     {
         return $this->sessionEndDateTime;
     }
 
-    /**
-     * @param string $sessionEndDateTime
-     *
-     * @return AddCourseSession
-     */
-    public function withSessionEndDateTime($sessionEndDateTime)
+    
+    public function withSessionEndDateTime(string $sessionEndDateTime): static
     {
         $new = clone $this;
         $new->sessionEndDateTime = $sessionEndDateTime;
@@ -317,20 +211,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLocationIsTBD()
+    
+    public function getLocationIsTBD(): bool
     {
         return $this->locationIsTBD;
     }
 
-    /**
-     * @param bool $locationIsTBD
-     *
-     * @return AddCourseSession
-     */
-    public function withLocationIsTBD($locationIsTBD)
+    
+    public function withLocationIsTBD(bool $locationIsTBD): static
     {
         $new = clone $this;
         $new->locationIsTBD = $locationIsTBD;
@@ -338,20 +226,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSessionLocationID()
+    
+    public function getSessionLocationID(): string
     {
         return $this->sessionLocationID;
     }
 
-    /**
-     * @param string $sessionLocationID
-     *
-     * @return AddCourseSession
-     */
-    public function withSessionLocationID($sessionLocationID)
+    
+    public function withSessionLocationID(string $sessionLocationID): static
     {
         $new = clone $this;
         $new->sessionLocationID = $sessionLocationID;
@@ -359,20 +241,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getWebinarProviderID()
+    
+    public function getWebinarProviderID(): string
     {
         return $this->webinarProviderID;
     }
 
-    /**
-     * @param string $webinarProviderID
-     *
-     * @return AddCourseSession
-     */
-    public function withWebinarProviderID($webinarProviderID)
+    
+    public function withWebinarProviderID(string $webinarProviderID): static
     {
         $new = clone $this;
         $new->webinarProviderID = $webinarProviderID;
@@ -380,20 +256,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getZoomSubAccountHostID()
+    
+    public function getZoomSubAccountHostID(): string
     {
         return $this->zoomSubAccountHostID;
     }
 
-    /**
-     * @param string $zoomSubAccountHostID
-     *
-     * @return AddCourseSession
-     */
-    public function withZoomSubAccountHostID($zoomSubAccountHostID)
+    
+    public function withZoomSubAccountHostID(string $zoomSubAccountHostID): static
     {
         $new = clone $this;
         $new->zoomSubAccountHostID = $zoomSubAccountHostID;
@@ -401,20 +271,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomMeetingURL()
+    
+    public function getCustomMeetingURL(): string
     {
         return $this->customMeetingURL;
     }
 
-    /**
-     * @param string $customMeetingURL
-     *
-     * @return AddCourseSession
-     */
-    public function withCustomMeetingURL($customMeetingURL)
+    
+    public function withCustomMeetingURL(string $customMeetingURL): static
     {
         $new = clone $this;
         $new->customMeetingURL = $customMeetingURL;
@@ -422,20 +286,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsRecurringSession()
+    
+    public function getIsRecurringSession(): bool
     {
         return $this->isRecurringSession;
     }
 
-    /**
-     * @param bool $isRecurringSession
-     *
-     * @return AddCourseSession
-     */
-    public function withIsRecurringSession($isRecurringSession)
+    
+    public function withIsRecurringSession(bool $isRecurringSession): static
     {
         $new = clone $this;
         $new->isRecurringSession = $isRecurringSession;
@@ -443,20 +301,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRecurringCadence()
+    
+    public function getRecurringCadence(): string
     {
         return $this->recurringCadence;
     }
 
-    /**
-     * @param string $recurringCadence
-     *
-     * @return AddCourseSession
-     */
-    public function withRecurringCadence($recurringCadence)
+    
+    public function withRecurringCadence(string $recurringCadence): static
     {
         $new = clone $this;
         $new->recurringCadence = $recurringCadence;
@@ -464,20 +316,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getRecurringNo()
+    
+    public function getRecurringNo(): int
     {
         return $this->recurringNo;
     }
 
-    /**
-     * @param int $recurringNo
-     *
-     * @return AddCourseSession
-     */
-    public function withRecurringNo($recurringNo)
+    
+    public function withRecurringNo(int $recurringNo): static
     {
         $new = clone $this;
         $new->recurringNo = $recurringNo;
@@ -485,20 +331,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAttendanceCode()
+    
+    public function getAttendanceCode(): string
     {
         return $this->attendanceCode;
     }
 
-    /**
-     * @param string $attendanceCode
-     *
-     * @return AddCourseSession
-     */
-    public function withAttendanceCode($attendanceCode)
+    
+    public function withAttendanceCode(string $attendanceCode): static
     {
         $new = clone $this;
         $new->attendanceCode = $attendanceCode;
@@ -506,20 +346,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateAdminCatalogs()
+    
+    public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    /**
-     * @param bool $updateAdminCatalogs
-     *
-     * @return AddCourseSession
-     */
-    public function withUpdateAdminCatalogs($updateAdminCatalogs)
+    
+    public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
         $new->updateAdminCatalogs = $updateAdminCatalogs;
@@ -527,20 +361,14 @@ class AddCourseSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUpdateLearnerCatalogs()
+    
+    public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    /**
-     * @param bool $updateLearnerCatalogs
-     *
-     * @return AddCourseSession
-     */
-    public function withUpdateLearnerCatalogs($updateLearnerCatalogs)
+    
+    public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;
         $new->updateLearnerCatalogs = $updateLearnerCatalogs;

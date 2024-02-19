@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class IsTrainingLocationAvailable implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $locationID;
+    
+    private string $locationID;
 
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeIntervalsList
-     */
-    private $timeIntervalsList;
+    
+    private TimeIntervalsList $timeIntervalsList;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $locationID
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeIntervalsList $timeIntervalsList
      */
-    public function __construct($apiKey, $locationID, $timeIntervalsList)
+    public function __construct(string $apiKey, string $locationID, TimeIntervalsList $timeIntervalsList)
     {
         $this->apiKey = $apiKey;
         $this->locationID = $locationID;
         $this->timeIntervalsList = $timeIntervalsList;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return IsTrainingLocationAvailable
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class IsTrainingLocationAvailable implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLocationID()
+    
+    public function getLocationID(): string
     {
         return $this->locationID;
     }
 
-    /**
-     * @param string $locationID
-     *
-     * @return IsTrainingLocationAvailable
-     */
-    public function withLocationID($locationID)
+    
+    public function withLocationID(string $locationID): static
     {
         $new = clone $this;
         $new->locationID = $locationID;
@@ -79,20 +57,14 @@ class IsTrainingLocationAvailable implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeIntervalsList
-     */
-    public function getTimeIntervalsList()
+    
+    public function getTimeIntervalsList(): TimeIntervalsList
     {
         return $this->timeIntervalsList;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeIntervalsList $timeIntervalsList
-     *
-     * @return IsTrainingLocationAvailable
-     */
-    public function withTimeIntervalsList($timeIntervalsList)
+    
+    public function withTimeIntervalsList(TimeIntervalsList $timeIntervalsList): static
     {
         $new = clone $this;
         $new->timeIntervalsList = $timeIntervalsList;

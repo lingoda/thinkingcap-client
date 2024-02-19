@@ -1,50 +1,33 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Domain
 {
-    /**
-     * @var string
-     */
-    private $DomainID;
+    private string $DomainID;
 
-    /**
-     * @var string
-     */
-    private $DomainName;
+    
+    private string $DomainName;
 
-    /**
-     * @var string
-     */
-    private $DomainCode;
+    
+    private string $DomainCode;
 
-    /**
-     * @var string
-     */
-    private $ParentDomainID;
+    
+    private string $ParentDomainID;
 
-    /**
-     * @var bool
-     */
-    private $MembershipPending;
+    
+    private bool $MembershipPending;
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->DomainID;
     }
 
-    /**
-     * @param string $DomainID
-     *
-     * @return Domain
-     */
-    public function withDomainID($DomainID)
+    
+    public function withDomainID(string $DomainID): static
     {
         $new = clone $this;
         $new->DomainID = $DomainID;
@@ -52,20 +35,14 @@ class Domain
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainName()
+    
+    public function getDomainName(): string
     {
         return $this->DomainName;
     }
 
-    /**
-     * @param string $DomainName
-     *
-     * @return Domain
-     */
-    public function withDomainName($DomainName)
+    
+    public function withDomainName(string $DomainName): static
     {
         $new = clone $this;
         $new->DomainName = $DomainName;
@@ -73,20 +50,14 @@ class Domain
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainCode()
+    
+    public function getDomainCode(): string
     {
         return $this->DomainCode;
     }
 
-    /**
-     * @param string $DomainCode
-     *
-     * @return Domain
-     */
-    public function withDomainCode($DomainCode)
+    
+    public function withDomainCode(string $DomainCode): static
     {
         $new = clone $this;
         $new->DomainCode = $DomainCode;
@@ -94,20 +65,14 @@ class Domain
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getParentDomainID()
+    
+    public function getParentDomainID(): string
     {
         return $this->ParentDomainID;
     }
 
-    /**
-     * @param string $ParentDomainID
-     *
-     * @return Domain
-     */
-    public function withParentDomainID($ParentDomainID)
+    
+    public function withParentDomainID(string $ParentDomainID): static
     {
         $new = clone $this;
         $new->ParentDomainID = $ParentDomainID;
@@ -115,20 +80,14 @@ class Domain
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMembershipPending()
+    
+    public function getMembershipPending(): bool
     {
         return $this->MembershipPending;
     }
 
-    /**
-     * @param bool $MembershipPending
-     *
-     * @return Domain
-     */
-    public function withMembershipPending($MembershipPending)
+    
+    public function withMembershipPending(bool $MembershipPending): static
     {
         $new = clone $this;
         $new->MembershipPending = $MembershipPending;

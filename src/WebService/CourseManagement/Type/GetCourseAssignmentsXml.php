@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseAssignmentsXml implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $user;
+    
+    private string $user;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $user
-     * @param string $courseID
      */
-    public function __construct($apiKey, $user, $courseID)
+    public function __construct(string $apiKey, string $user, string $courseID)
     {
         $this->apiKey = $apiKey;
         $this->user = $user;
         $this->courseID = $courseID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetCourseAssignmentsXml
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetCourseAssignmentsXml implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getUser()
+    
+    public function getUser(): string
     {
         return $this->user;
     }
 
-    /**
-     * @param string $user
-     *
-     * @return GetCourseAssignmentsXml
-     */
-    public function withUser($user)
+    
+    public function withUser(string $user): static
     {
         $new = clone $this;
         $new->user = $user;
@@ -79,20 +57,14 @@ class GetCourseAssignmentsXml implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return GetCourseAssignmentsXml
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;

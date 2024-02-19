@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetActiveDirectorySynchSettings implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $clientKey;
+    
+    private string $clientKey;
 
-    /**
-     * @var string
-     */
-    private $domainID;
+    
+    private string $domainID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $clientKey
-     * @param string $domainID
      */
-    public function __construct($apiKey, $clientKey, $domainID)
+    public function __construct(string $apiKey, string $clientKey, string $domainID)
     {
         $this->apiKey = $apiKey;
         $this->clientKey = $clientKey;
         $this->domainID = $domainID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetActiveDirectorySynchSettings
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetActiveDirectorySynchSettings implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getClientKey()
+    
+    public function getClientKey(): string
     {
         return $this->clientKey;
     }
 
-    /**
-     * @param string $clientKey
-     *
-     * @return GetActiveDirectorySynchSettings
-     */
-    public function withClientKey($clientKey)
+    
+    public function withClientKey(string $clientKey): static
     {
         $new = clone $this;
         $new->clientKey = $clientKey;
@@ -79,20 +57,14 @@ class GetActiveDirectorySynchSettings implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getDomainID()
+    
+    public function getDomainID(): string
     {
         return $this->domainID;
     }
 
-    /**
-     * @param string $domainID
-     *
-     * @return GetActiveDirectorySynchSettings
-     */
-    public function withDomainID($domainID)
+    
+    public function withDomainID(string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;

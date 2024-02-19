@@ -1,40 +1,27 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfCourseSeries
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSeries
-     */
-    private $Result;
+    private CourseSeries $Result;
 
-    /**
-     * @var bool
-     */
-    private $Success;
+    
+    private bool $Success;
 
-    /**
-     * @var string
-     */
-    private $Message;
+    
+    private string $Message;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSeries
-     */
-    public function getResult()
+    
+    public function getResult(): CourseSeries
     {
         return $this->Result;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSeries $Result
-     *
-     * @return ServiceResultOfCourseSeries
-     */
-    public function withResult($Result)
+    
+    public function withResult(CourseSeries $Result): static
     {
         $new = clone $this;
         $new->Result = $Result;
@@ -42,20 +29,14 @@ class ServiceResultOfCourseSeries
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSuccess()
+    
+    public function getSuccess(): bool
     {
         return $this->Success;
     }
 
-    /**
-     * @param bool $Success
-     *
-     * @return ServiceResultOfCourseSeries
-     */
-    public function withSuccess($Success)
+    
+    public function withSuccess(bool $Success): static
     {
         $new = clone $this;
         $new->Success = $Success;
@@ -63,20 +44,14 @@ class ServiceResultOfCourseSeries
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getMessage()
+    
+    public function getMessage(): string
     {
         return $this->Message;
     }
 
-    /**
-     * @param string $Message
-     *
-     * @return ServiceResultOfCourseSeries
-     */
-    public function withMessage($Message)
+    
+    public function withMessage(string $Message): static
     {
         $new = clone $this;
         $new->Message = $Message;

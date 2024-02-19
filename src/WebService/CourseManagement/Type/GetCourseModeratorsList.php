@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseModeratorsList implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $type;
+    
+    private string $type;
 
-    /**
-     * @var string
-     */
-    private $programID;
+    
+    private string $programID;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $type
-     * @param string $programID
      */
-    public function __construct($apiKey, $type, $programID)
+    public function __construct(string $apiKey, string $type, string $programID)
     {
         $this->apiKey = $apiKey;
         $this->type = $type;
         $this->programID = $programID;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetCourseModeratorsList
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetCourseModeratorsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    
+    public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     *
-     * @return GetCourseModeratorsList
-     */
-    public function withType($type)
+    
+    public function withType(string $type): static
     {
         $new = clone $this;
         $new->type = $type;
@@ -79,20 +57,14 @@ class GetCourseModeratorsList implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramID()
+    
+    public function getProgramID(): string
     {
         return $this->programID;
     }
 
-    /**
-     * @param string $programID
-     *
-     * @return GetCourseModeratorsList
-     */
-    public function withProgramID($programID)
+    
+    public function withProgramID(string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;

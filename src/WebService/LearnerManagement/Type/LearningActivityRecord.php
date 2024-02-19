@@ -1,100 +1,65 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
+use DateTimeInterface;
+
 class LearningActivityRecord
 {
-    /**
-     * @var string
-     */
-    private $StudentID;
+    private string $StudentID;
 
-    /**
-     * @var string
-     */
-    private $StudentName;
+    
+    private string $StudentName;
 
-    /**
-     * @var string
-     */
-    private $StudentEmail;
+    
+    private string $StudentEmail;
 
-    /**
-     * @var string
-     */
-    private $LearningActivityID;
+    
+    private string $LearningActivityID;
 
-    /**
-     * @var string
-     */
-    private $LearningActivityTitle;
+    
+    private string $LearningActivityTitle;
 
-    /**
-     * @var string
-     */
-    private $LearningActivityCode;
+    
+    private string $LearningActivityCode;
 
-    /**
-     * @var int
-     */
-    private $EnrollmentNumber;
+    
+    private int $EnrollmentNumber;
 
-    /**
-     * @var string
-     */
-    private $Status;
+    
+    private string $Status;
 
-    /**
-     * @var string
-     */
-    private $Success;
+    
+    private string $Success;
 
-    /**
-     * @var int
-     */
-    private $Score;
+    
+    private int $Score;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DateEnrolled;
+    
+    private DateTimeInterface $DateEnrolled;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DateStarted;
+    
+    private DateTimeInterface $DateStarted;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DateCompleted;
+    
+    private DateTimeInterface $DateCompleted;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $AccreditationExpiring;
+    
+    private DateTimeInterface $AccreditationExpiring;
 
-    /**
-     * @var \DateTimeInterface
-     */
-    private $DueDate;
+    
+    private DateTimeInterface $DueDate;
 
-    /**
-     * @return string
-     */
-    public function getStudentID()
+    
+    public function getStudentID(): string
     {
         return $this->StudentID;
     }
 
-    /**
-     * @param string $StudentID
-     *
-     * @return LearningActivityRecord
-     */
-    public function withStudentID($StudentID)
+    
+    public function withStudentID(string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -102,20 +67,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentName()
+    
+    public function getStudentName(): string
     {
         return $this->StudentName;
     }
 
-    /**
-     * @param string $StudentName
-     *
-     * @return LearningActivityRecord
-     */
-    public function withStudentName($StudentName)
+    
+    public function withStudentName(string $StudentName): static
     {
         $new = clone $this;
         $new->StudentName = $StudentName;
@@ -123,20 +82,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStudentEmail()
+    
+    public function getStudentEmail(): string
     {
         return $this->StudentEmail;
     }
 
-    /**
-     * @param string $StudentEmail
-     *
-     * @return LearningActivityRecord
-     */
-    public function withStudentEmail($StudentEmail)
+    
+    public function withStudentEmail(string $StudentEmail): static
     {
         $new = clone $this;
         $new->StudentEmail = $StudentEmail;
@@ -144,20 +97,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityID()
+    
+    public function getLearningActivityID(): string
     {
         return $this->LearningActivityID;
     }
 
-    /**
-     * @param string $LearningActivityID
-     *
-     * @return LearningActivityRecord
-     */
-    public function withLearningActivityID($LearningActivityID)
+    
+    public function withLearningActivityID(string $LearningActivityID): static
     {
         $new = clone $this;
         $new->LearningActivityID = $LearningActivityID;
@@ -165,20 +112,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityTitle()
+    
+    public function getLearningActivityTitle(): string
     {
         return $this->LearningActivityTitle;
     }
 
-    /**
-     * @param string $LearningActivityTitle
-     *
-     * @return LearningActivityRecord
-     */
-    public function withLearningActivityTitle($LearningActivityTitle)
+    
+    public function withLearningActivityTitle(string $LearningActivityTitle): static
     {
         $new = clone $this;
         $new->LearningActivityTitle = $LearningActivityTitle;
@@ -186,20 +127,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLearningActivityCode()
+    
+    public function getLearningActivityCode(): string
     {
         return $this->LearningActivityCode;
     }
 
-    /**
-     * @param string $LearningActivityCode
-     *
-     * @return LearningActivityRecord
-     */
-    public function withLearningActivityCode($LearningActivityCode)
+    
+    public function withLearningActivityCode(string $LearningActivityCode): static
     {
         $new = clone $this;
         $new->LearningActivityCode = $LearningActivityCode;
@@ -207,20 +142,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getEnrollmentNumber()
+    
+    public function getEnrollmentNumber(): int
     {
         return $this->EnrollmentNumber;
     }
 
-    /**
-     * @param int $EnrollmentNumber
-     *
-     * @return LearningActivityRecord
-     */
-    public function withEnrollmentNumber($EnrollmentNumber)
+    
+    public function withEnrollmentNumber(int $EnrollmentNumber): static
     {
         $new = clone $this;
         $new->EnrollmentNumber = $EnrollmentNumber;
@@ -228,20 +157,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus()
+    
+    public function getStatus(): string
     {
         return $this->Status;
     }
 
-    /**
-     * @param string $Status
-     *
-     * @return LearningActivityRecord
-     */
-    public function withStatus($Status)
+    
+    public function withStatus(string $Status): static
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -249,20 +172,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getSuccess()
+    
+    public function getSuccess(): string
     {
         return $this->Success;
     }
 
-    /**
-     * @param string $Success
-     *
-     * @return LearningActivityRecord
-     */
-    public function withSuccess($Success)
+    
+    public function withSuccess(string $Success): static
     {
         $new = clone $this;
         $new->Success = $Success;
@@ -270,20 +187,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getScore()
+    
+    public function getScore(): int
     {
         return $this->Score;
     }
 
-    /**
-     * @param int $Score
-     *
-     * @return LearningActivityRecord
-     */
-    public function withScore($Score)
+    
+    public function withScore(int $Score): static
     {
         $new = clone $this;
         $new->Score = $Score;
@@ -291,20 +202,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDateEnrolled()
+    
+    public function getDateEnrolled(): DateTimeInterface
     {
         return $this->DateEnrolled;
     }
 
-    /**
-     * @param \DateTimeInterface $DateEnrolled
-     *
-     * @return LearningActivityRecord
-     */
-    public function withDateEnrolled($DateEnrolled)
+    
+    public function withDateEnrolled(DateTimeInterface $DateEnrolled): static
     {
         $new = clone $this;
         $new->DateEnrolled = $DateEnrolled;
@@ -312,20 +217,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDateStarted()
+    
+    public function getDateStarted(): DateTimeInterface
     {
         return $this->DateStarted;
     }
 
-    /**
-     * @param \DateTimeInterface $DateStarted
-     *
-     * @return LearningActivityRecord
-     */
-    public function withDateStarted($DateStarted)
+    
+    public function withDateStarted(DateTimeInterface $DateStarted): static
     {
         $new = clone $this;
         $new->DateStarted = $DateStarted;
@@ -333,20 +232,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDateCompleted()
+    
+    public function getDateCompleted(): DateTimeInterface
     {
         return $this->DateCompleted;
     }
 
-    /**
-     * @param \DateTimeInterface $DateCompleted
-     *
-     * @return LearningActivityRecord
-     */
-    public function withDateCompleted($DateCompleted)
+    
+    public function withDateCompleted(DateTimeInterface $DateCompleted): static
     {
         $new = clone $this;
         $new->DateCompleted = $DateCompleted;
@@ -354,20 +247,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getAccreditationExpiring()
+    
+    public function getAccreditationExpiring(): DateTimeInterface
     {
         return $this->AccreditationExpiring;
     }
 
-    /**
-     * @param \DateTimeInterface $AccreditationExpiring
-     *
-     * @return LearningActivityRecord
-     */
-    public function withAccreditationExpiring($AccreditationExpiring)
+    
+    public function withAccreditationExpiring(DateTimeInterface $AccreditationExpiring): static
     {
         $new = clone $this;
         $new->AccreditationExpiring = $AccreditationExpiring;
@@ -375,20 +262,14 @@ class LearningActivityRecord
         return $new;
     }
 
-    /**
-     * @return \DateTimeInterface
-     */
-    public function getDueDate()
+    
+    public function getDueDate(): DateTimeInterface
     {
         return $this->DueDate;
     }
 
-    /**
-     * @param \DateTimeInterface $DueDate
-     *
-     * @return LearningActivityRecord
-     */
-    public function withDueDate($DueDate)
+    
+    public function withDueDate(DateTimeInterface $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;

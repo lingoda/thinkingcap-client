@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
@@ -8,49 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetILTCourseCurrentSession implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
-    /**
-     * @var string
-     */
-    private $courseID;
+    
+    private string $courseID;
 
-    /**
-     * @var string
-     */
-    private $timestamp;
+    
+    private string $timestamp;
 
     /**
      * Constructor
      *
-     * @param string $apiKey
-     * @param string $courseID
-     * @param string $timestamp
      */
-    public function __construct($apiKey, $courseID, $timestamp)
+    public function __construct(string $apiKey, string $courseID, string $timestamp)
     {
         $this->apiKey = $apiKey;
         $this->courseID = $courseID;
         $this->timestamp = $timestamp;
     }
 
-    /**
-     * @return string
-     */
-    public function getApiKey()
+    
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string $apiKey
-     *
-     * @return GetILTCourseCurrentSession
-     */
-    public function withApiKey($apiKey)
+    
+    public function withApiKey(string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -58,20 +42,14 @@ class GetILTCourseCurrentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCourseID()
+    
+    public function getCourseID(): string
     {
         return $this->courseID;
     }
 
-    /**
-     * @param string $courseID
-     *
-     * @return GetILTCourseCurrentSession
-     */
-    public function withCourseID($courseID)
+    
+    public function withCourseID(string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -79,20 +57,14 @@ class GetILTCourseCurrentSession implements RequestInterface
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTimestamp()
+    
+    public function getTimestamp(): string
     {
         return $this->timestamp;
     }
 
-    /**
-     * @param string $timestamp
-     *
-     * @return GetILTCourseCurrentSession
-     */
-    public function withTimestamp($timestamp)
+    
+    public function withTimestamp(string $timestamp): static
     {
         $new = clone $this;
         $new->timestamp = $timestamp;

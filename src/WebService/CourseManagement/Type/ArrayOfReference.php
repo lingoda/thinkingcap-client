@@ -1,30 +1,21 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfReference
 {
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Reference
-     */
-    private $Reference;
+    private Reference $Reference;
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Reference
-     */
-    public function getReference()
+    
+    public function getReference(): Reference
     {
         return $this->Reference;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Reference $Reference
-     *
-     * @return ArrayOfReference
-     */
-    public function withReference($Reference)
+    
+    public function withReference(Reference $Reference): static
     {
         $new = clone $this;
         $new->Reference = $Reference;

@@ -1,415 +1,252 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Course
 {
-    /**
-     * @var string
-     */
-    private $Type;
-
-    /**
-     * @var bool
-     */
-    private $IsOnline;
-
-    /**
-     * @var string
-     */
-    private $Keywords;
-
-    /**
-     * @var float
-     */
-    private $CreditValue;
-
-    /**
-     * @var int
-     */
-    private $CertificateScore;
-
-    /**
-     * @var float
-     */
-    private $CertificateMinTime;
-
-    /**
-     * @var string
-     */
-    private $CertificateType;
-
-    /**
-     * @var bool
-     */
-    private $CanPrintCertificate;
-
-    /**
-     * @var bool
-     */
-    private $LimitReenroll;
-
-    /**
-     * @var int
-     */
-    private $MaxReenrollment;
-
-    /**
-     * @var int
-     */
-    private $ExpireUnit;
-
-    /**
-     * @var string
-     */
-    private $ExpireInterval;
-
-    /**
-     * @var int
-     */
-    private $NotifyUnit;
-
-    /**
-     * @var string
-     */
-    private $NotifyInterval;
-
-    /**
-     * @var bool
-     */
-    private $ProctorSignIn;
-
-    /**
-     * @var string
-     */
-    private $ShowModule;
-
-    /**
-     * @var string
-     */
-    private $ShowMenu;
-
-    /**
-     * @var string
-     */
-    private $LastProgramID;
-
-    /**
-     * @var string
-     */
-    private $ProgramPath;
-
-    /**
-     * @var string
-     */
-    private $ModeratorID;
-
-    /**
-     * @var string
-     */
-    private $ModeratorName;
-
-    /**
-     * @var string
-     */
-    private $ModeratorUserName;
-
-    /**
-     * @var string
-     */
-    private $AutoEnrollFields;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    private $TeachingAssts;
-
-    /**
-     * @var string
-     */
-    private $TeachingAssistantList;
-
-    /**
-     * @var bool
-     */
-    private $HasAssignments;
-
-    /**
-     * @var bool
-     */
-    private $AllowReviewAfterAttemptEnd;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAssignment
-     */
-    private $Assignments;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseAssignment
-     */
-    private $CourseAssignments;
-
-    /**
-     * @var bool
-     */
-    private $MasterGlossary;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $Sessions;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    private $PendingApprovalSessions;
-
-    /**
-     * @var int
-     */
-    private $TotalEnrolled;
-
-    /**
-     * @var int
-     */
-    private $TotalCompleted;
-
-    /**
-     * @var int
-     */
-    private $TotalActive;
-
-    /**
-     * @var int
-     */
-    private $TeachingAsstActive;
-
-    /**
-     * @var bool
-     */
-    private $StudentPrerequisites;
-
-    /**
-     * @var int
-     */
-    private $AssignmentCount;
-
-    /**
-     * @var bool
-     */
-    private $ProxyAzure;
-
-    /**
-     * @var bool
-     */
-    private $ProxyImages;
-
-    /**
-     * @var bool
-     */
-    private $RunDirect;
-
-    /**
-     * @var bool
-     */
-    private $RunDirectAlways;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseStylesheet
-     */
-    private $Stylesheets;
-
-    /**
-     * @var bool
-     */
-    private $Published;
-
-    /**
-     * @var bool
-     */
-    private $AllowCollaboration;
-
-    /**
-     * @var bool
-     */
-    private $EndCollaborationOnCompletion;
-
-    /**
-     * @var string
-     */
-    private $CollaborationTitle;
-
-    /**
-     * @var string
-     */
-    private $CollaborationDescription;
-
-    /**
-     * @var string
-     */
-    private $CollaborationCustomFields;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseVersion
-     */
-    private $Versions;
-
-    /**
-     * @var bool
-     */
-    private $HasChat;
-
-    /**
-     * @var bool
-     */
-    private $ForceUserFeedback;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FeedbackSection
-     */
-    private $Feedback;
-
-    /**
-     * @var bool
-     */
-    private $IsAssessment;
-
-    /**
-     * @var bool
-     */
-    private $HasSample;
-
-    /**
-     * @var bool
-     */
-    private $UseOwnerSettingsForShared;
-
-    /**
-     * @var \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseNotification
-     */
-    private $CourseNotifications;
-
-    /**
-     * @var int
-     */
-    private $ClassSize;
-
-    /**
-     * @var bool
-     */
-    private $ManualEnrollOverClassSize;
-
-    /**
-     * @var int
-     */
-    private $WaitlistCutoffUnit;
-
-    /**
-     * @var string
-     */
-    private $WailtistCutoffInterval;
-
-    /**
-     * @var bool
-     */
-    private $AllowWaitlist;
-
-    /**
-     * @var int
-     */
-    private $WaitlistMaxNo;
-
-    /**
-     * @var int
-     */
-    private $MinOptionalSessions;
-
-    /**
-     * @var bool
-     */
-    private $RecordAttendance;
-
-    /**
-     * @var string
-     */
-    private $RecordAttendanceMode;
-
-    /**
-     * @var bool
-     */
-    private $ShowSignInRelatedContent;
-
-    /**
-     * @var bool
-     */
-    private $ShowSignInLearners;
-
-    /**
-     * @var bool
-     */
-    private $SignInWithBadge;
-
-    /**
-     * @var bool
-     */
-    private $CompleteSessionWhenJoinByLearner;
-
-    /**
-     * @var bool
-     */
-    private $RecordScore;
-
-    /**
-     * @var bool
-     */
-    private $RecordComments;
-
-    /**
-     * @var bool
-     */
-    private $RequiresChallenge;
-
-    /**
-     * @var int
-     */
-    private $ChallengeMaxAttempt;
-
-    /**
-     * @var bool
-     */
-    private $LockChallengeFailed;
-
-    /**
-     * @var int
-     */
-    private $ChallengeFrequency;
-
-    /**
-     * @var bool
-     */
-    private $AddTimeInReadOnly;
-
-    /**
-     * @var int
-     */
-    private $Timeout;
-
-    /**
-     * @return string
-     */
-    public function getType()
+    private string $Type;
+
+    
+    private bool $IsOnline;
+
+    
+    private string $Keywords;
+
+    
+    private float $CreditValue;
+
+    
+    private int $CertificateScore;
+
+    
+    private float $CertificateMinTime;
+
+    
+    private string $CertificateType;
+
+    
+    private bool $CanPrintCertificate;
+
+    
+    private bool $LimitReenroll;
+
+    
+    private int $MaxReenrollment;
+
+    
+    private int $ExpireUnit;
+
+    
+    private string $ExpireInterval;
+
+    
+    private int $NotifyUnit;
+
+    
+    private string $NotifyInterval;
+
+    
+    private bool $ProctorSignIn;
+
+    
+    private string $ShowModule;
+
+    
+    private string $ShowMenu;
+
+    
+    private string $LastProgramID;
+
+    
+    private string $ProgramPath;
+
+    
+    private string $ModeratorID;
+
+    
+    private string $ModeratorName;
+
+    
+    private string $ModeratorUserName;
+
+    
+    private string $AutoEnrollFields;
+
+    
+    private ArrayOfString $TeachingAssts;
+
+    
+    private string $TeachingAssistantList;
+
+    
+    private bool $HasAssignments;
+
+    
+    private bool $AllowReviewAfterAttemptEnd;
+
+    
+    private ArrayOfAssignment $Assignments;
+
+    
+    private ArrayOfCourseAssignment $CourseAssignments;
+
+    
+    private bool $MasterGlossary;
+
+    
+    private ArrayOfAnyType $Sessions;
+
+    
+    private ArrayOfAnyType $PendingApprovalSessions;
+
+    
+    private int $TotalEnrolled;
+
+    
+    private int $TotalCompleted;
+
+    
+    private int $TotalActive;
+
+    
+    private int $TeachingAsstActive;
+
+    
+    private bool $StudentPrerequisites;
+
+    
+    private int $AssignmentCount;
+
+    
+    private bool $ProxyAzure;
+
+    
+    private bool $ProxyImages;
+
+    
+    private bool $RunDirect;
+
+    
+    private bool $RunDirectAlways;
+
+    
+    private ArrayOfCourseStylesheet $Stylesheets;
+
+    
+    private bool $Published;
+
+    
+    private bool $AllowCollaboration;
+
+    
+    private bool $EndCollaborationOnCompletion;
+
+    
+    private string $CollaborationTitle;
+
+    
+    private string $CollaborationDescription;
+
+    
+    private string $CollaborationCustomFields;
+
+    
+    private ArrayOfCourseVersion $Versions;
+
+    
+    private bool $HasChat;
+
+    
+    private bool $ForceUserFeedback;
+
+    
+    private FeedbackSection $Feedback;
+
+    
+    private bool $IsAssessment;
+
+    
+    private bool $HasSample;
+
+    
+    private bool $UseOwnerSettingsForShared;
+
+    
+    private ArrayOfCourseNotification $CourseNotifications;
+
+    
+    private int $ClassSize;
+
+    
+    private bool $ManualEnrollOverClassSize;
+
+    
+    private int $WaitlistCutoffUnit;
+
+    
+    private string $WailtistCutoffInterval;
+
+    
+    private bool $AllowWaitlist;
+
+    
+    private int $WaitlistMaxNo;
+
+    
+    private int $MinOptionalSessions;
+
+    
+    private bool $RecordAttendance;
+
+    
+    private string $RecordAttendanceMode;
+
+    
+    private bool $ShowSignInRelatedContent;
+
+    
+    private bool $ShowSignInLearners;
+
+    
+    private bool $SignInWithBadge;
+
+    
+    private bool $CompleteSessionWhenJoinByLearner;
+
+    
+    private bool $RecordScore;
+
+    
+    private bool $RecordComments;
+
+    
+    private bool $RequiresChallenge;
+
+    
+    private int $ChallengeMaxAttempt;
+
+    
+    private bool $LockChallengeFailed;
+
+    
+    private int $ChallengeFrequency;
+
+    
+    private bool $AddTimeInReadOnly;
+
+    
+    private int $Timeout;
+
+    
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     *
-     * @return Course
-     */
-    public function withType($Type)
+    
+    public function withType(string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -417,20 +254,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsOnline()
+    
+    public function getIsOnline(): bool
     {
         return $this->IsOnline;
     }
 
-    /**
-     * @param bool $IsOnline
-     *
-     * @return Course
-     */
-    public function withIsOnline($IsOnline)
+    
+    public function withIsOnline(bool $IsOnline): static
     {
         $new = clone $this;
         $new->IsOnline = $IsOnline;
@@ -438,20 +269,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getKeywords()
+    
+    public function getKeywords(): string
     {
         return $this->Keywords;
     }
 
-    /**
-     * @param string $Keywords
-     *
-     * @return Course
-     */
-    public function withKeywords($Keywords)
+    
+    public function withKeywords(string $Keywords): static
     {
         $new = clone $this;
         $new->Keywords = $Keywords;
@@ -459,20 +284,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCreditValue()
+    
+    public function getCreditValue(): float
     {
         return $this->CreditValue;
     }
 
-    /**
-     * @param float $CreditValue
-     *
-     * @return Course
-     */
-    public function withCreditValue($CreditValue)
+    
+    public function withCreditValue(float $CreditValue): static
     {
         $new = clone $this;
         $new->CreditValue = $CreditValue;
@@ -480,20 +299,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getCertificateScore()
+    
+    public function getCertificateScore(): int
     {
         return $this->CertificateScore;
     }
 
-    /**
-     * @param int $CertificateScore
-     *
-     * @return Course
-     */
-    public function withCertificateScore($CertificateScore)
+    
+    public function withCertificateScore(int $CertificateScore): static
     {
         $new = clone $this;
         $new->CertificateScore = $CertificateScore;
@@ -501,20 +314,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return float
-     */
-    public function getCertificateMinTime()
+    
+    public function getCertificateMinTime(): float
     {
         return $this->CertificateMinTime;
     }
 
-    /**
-     * @param float $CertificateMinTime
-     *
-     * @return Course
-     */
-    public function withCertificateMinTime($CertificateMinTime)
+    
+    public function withCertificateMinTime(float $CertificateMinTime): static
     {
         $new = clone $this;
         $new->CertificateMinTime = $CertificateMinTime;
@@ -522,20 +329,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCertificateType()
+    
+    public function getCertificateType(): string
     {
         return $this->CertificateType;
     }
 
-    /**
-     * @param string $CertificateType
-     *
-     * @return Course
-     */
-    public function withCertificateType($CertificateType)
+    
+    public function withCertificateType(string $CertificateType): static
     {
         $new = clone $this;
         $new->CertificateType = $CertificateType;
@@ -543,20 +344,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCanPrintCertificate()
+    
+    public function getCanPrintCertificate(): bool
     {
         return $this->CanPrintCertificate;
     }
 
-    /**
-     * @param bool $CanPrintCertificate
-     *
-     * @return Course
-     */
-    public function withCanPrintCertificate($CanPrintCertificate)
+    
+    public function withCanPrintCertificate(bool $CanPrintCertificate): static
     {
         $new = clone $this;
         $new->CanPrintCertificate = $CanPrintCertificate;
@@ -564,20 +359,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLimitReenroll()
+    
+    public function getLimitReenroll(): bool
     {
         return $this->LimitReenroll;
     }
 
-    /**
-     * @param bool $LimitReenroll
-     *
-     * @return Course
-     */
-    public function withLimitReenroll($LimitReenroll)
+    
+    public function withLimitReenroll(bool $LimitReenroll): static
     {
         $new = clone $this;
         $new->LimitReenroll = $LimitReenroll;
@@ -585,20 +374,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxReenrollment()
+    
+    public function getMaxReenrollment(): int
     {
         return $this->MaxReenrollment;
     }
 
-    /**
-     * @param int $MaxReenrollment
-     *
-     * @return Course
-     */
-    public function withMaxReenrollment($MaxReenrollment)
+    
+    public function withMaxReenrollment(int $MaxReenrollment): static
     {
         $new = clone $this;
         $new->MaxReenrollment = $MaxReenrollment;
@@ -606,20 +389,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getExpireUnit()
+    
+    public function getExpireUnit(): int
     {
         return $this->ExpireUnit;
     }
 
-    /**
-     * @param int $ExpireUnit
-     *
-     * @return Course
-     */
-    public function withExpireUnit($ExpireUnit)
+    
+    public function withExpireUnit(int $ExpireUnit): static
     {
         $new = clone $this;
         $new->ExpireUnit = $ExpireUnit;
@@ -627,20 +404,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getExpireInterval()
+    
+    public function getExpireInterval(): string
     {
         return $this->ExpireInterval;
     }
 
-    /**
-     * @param string $ExpireInterval
-     *
-     * @return Course
-     */
-    public function withExpireInterval($ExpireInterval)
+    
+    public function withExpireInterval(string $ExpireInterval): static
     {
         $new = clone $this;
         $new->ExpireInterval = $ExpireInterval;
@@ -648,20 +419,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getNotifyUnit()
+    
+    public function getNotifyUnit(): int
     {
         return $this->NotifyUnit;
     }
 
-    /**
-     * @param int $NotifyUnit
-     *
-     * @return Course
-     */
-    public function withNotifyUnit($NotifyUnit)
+    
+    public function withNotifyUnit(int $NotifyUnit): static
     {
         $new = clone $this;
         $new->NotifyUnit = $NotifyUnit;
@@ -669,20 +434,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getNotifyInterval()
+    
+    public function getNotifyInterval(): string
     {
         return $this->NotifyInterval;
     }
 
-    /**
-     * @param string $NotifyInterval
-     *
-     * @return Course
-     */
-    public function withNotifyInterval($NotifyInterval)
+    
+    public function withNotifyInterval(string $NotifyInterval): static
     {
         $new = clone $this;
         $new->NotifyInterval = $NotifyInterval;
@@ -690,20 +449,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProctorSignIn()
+    
+    public function getProctorSignIn(): bool
     {
         return $this->ProctorSignIn;
     }
 
-    /**
-     * @param bool $ProctorSignIn
-     *
-     * @return Course
-     */
-    public function withProctorSignIn($ProctorSignIn)
+    
+    public function withProctorSignIn(bool $ProctorSignIn): static
     {
         $new = clone $this;
         $new->ProctorSignIn = $ProctorSignIn;
@@ -711,20 +464,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getShowModule()
+    
+    public function getShowModule(): string
     {
         return $this->ShowModule;
     }
 
-    /**
-     * @param string $ShowModule
-     *
-     * @return Course
-     */
-    public function withShowModule($ShowModule)
+    
+    public function withShowModule(string $ShowModule): static
     {
         $new = clone $this;
         $new->ShowModule = $ShowModule;
@@ -732,20 +479,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getShowMenu()
+    
+    public function getShowMenu(): string
     {
         return $this->ShowMenu;
     }
 
-    /**
-     * @param string $ShowMenu
-     *
-     * @return Course
-     */
-    public function withShowMenu($ShowMenu)
+    
+    public function withShowMenu(string $ShowMenu): static
     {
         $new = clone $this;
         $new->ShowMenu = $ShowMenu;
@@ -753,20 +494,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getLastProgramID()
+    
+    public function getLastProgramID(): string
     {
         return $this->LastProgramID;
     }
 
-    /**
-     * @param string $LastProgramID
-     *
-     * @return Course
-     */
-    public function withLastProgramID($LastProgramID)
+    
+    public function withLastProgramID(string $LastProgramID): static
     {
         $new = clone $this;
         $new->LastProgramID = $LastProgramID;
@@ -774,20 +509,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getProgramPath()
+    
+    public function getProgramPath(): string
     {
         return $this->ProgramPath;
     }
 
-    /**
-     * @param string $ProgramPath
-     *
-     * @return Course
-     */
-    public function withProgramPath($ProgramPath)
+    
+    public function withProgramPath(string $ProgramPath): static
     {
         $new = clone $this;
         $new->ProgramPath = $ProgramPath;
@@ -795,20 +524,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getModeratorID()
+    
+    public function getModeratorID(): string
     {
         return $this->ModeratorID;
     }
 
-    /**
-     * @param string $ModeratorID
-     *
-     * @return Course
-     */
-    public function withModeratorID($ModeratorID)
+    
+    public function withModeratorID(string $ModeratorID): static
     {
         $new = clone $this;
         $new->ModeratorID = $ModeratorID;
@@ -816,20 +539,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getModeratorName()
+    
+    public function getModeratorName(): string
     {
         return $this->ModeratorName;
     }
 
-    /**
-     * @param string $ModeratorName
-     *
-     * @return Course
-     */
-    public function withModeratorName($ModeratorName)
+    
+    public function withModeratorName(string $ModeratorName): static
     {
         $new = clone $this;
         $new->ModeratorName = $ModeratorName;
@@ -837,20 +554,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getModeratorUserName()
+    
+    public function getModeratorUserName(): string
     {
         return $this->ModeratorUserName;
     }
 
-    /**
-     * @param string $ModeratorUserName
-     *
-     * @return Course
-     */
-    public function withModeratorUserName($ModeratorUserName)
+    
+    public function withModeratorUserName(string $ModeratorUserName): static
     {
         $new = clone $this;
         $new->ModeratorUserName = $ModeratorUserName;
@@ -858,20 +569,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getAutoEnrollFields()
+    
+    public function getAutoEnrollFields(): string
     {
         return $this->AutoEnrollFields;
     }
 
-    /**
-     * @param string $AutoEnrollFields
-     *
-     * @return Course
-     */
-    public function withAutoEnrollFields($AutoEnrollFields)
+    
+    public function withAutoEnrollFields(string $AutoEnrollFields): static
     {
         $new = clone $this;
         $new->AutoEnrollFields = $AutoEnrollFields;
@@ -879,20 +584,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString
-     */
-    public function getTeachingAssts()
+    
+    public function getTeachingAssts(): ArrayOfString
     {
         return $this->TeachingAssts;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfString $TeachingAssts
-     *
-     * @return Course
-     */
-    public function withTeachingAssts($TeachingAssts)
+    
+    public function withTeachingAssts(ArrayOfString $TeachingAssts): static
     {
         $new = clone $this;
         $new->TeachingAssts = $TeachingAssts;
@@ -900,20 +599,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getTeachingAssistantList()
+    
+    public function getTeachingAssistantList(): string
     {
         return $this->TeachingAssistantList;
     }
 
-    /**
-     * @param string $TeachingAssistantList
-     *
-     * @return Course
-     */
-    public function withTeachingAssistantList($TeachingAssistantList)
+    
+    public function withTeachingAssistantList(string $TeachingAssistantList): static
     {
         $new = clone $this;
         $new->TeachingAssistantList = $TeachingAssistantList;
@@ -921,20 +614,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasAssignments()
+    
+    public function getHasAssignments(): bool
     {
         return $this->HasAssignments;
     }
 
-    /**
-     * @param bool $HasAssignments
-     *
-     * @return Course
-     */
-    public function withHasAssignments($HasAssignments)
+    
+    public function withHasAssignments(bool $HasAssignments): static
     {
         $new = clone $this;
         $new->HasAssignments = $HasAssignments;
@@ -942,20 +629,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowReviewAfterAttemptEnd()
+    
+    public function getAllowReviewAfterAttemptEnd(): bool
     {
         return $this->AllowReviewAfterAttemptEnd;
     }
 
-    /**
-     * @param bool $AllowReviewAfterAttemptEnd
-     *
-     * @return Course
-     */
-    public function withAllowReviewAfterAttemptEnd($AllowReviewAfterAttemptEnd)
+    
+    public function withAllowReviewAfterAttemptEnd(bool $AllowReviewAfterAttemptEnd): static
     {
         $new = clone $this;
         $new->AllowReviewAfterAttemptEnd = $AllowReviewAfterAttemptEnd;
@@ -963,20 +644,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAssignment
-     */
-    public function getAssignments()
+    
+    public function getAssignments(): ArrayOfAssignment
     {
         return $this->Assignments;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAssignment $Assignments
-     *
-     * @return Course
-     */
-    public function withAssignments($Assignments)
+    
+    public function withAssignments(ArrayOfAssignment $Assignments): static
     {
         $new = clone $this;
         $new->Assignments = $Assignments;
@@ -984,20 +659,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseAssignment
-     */
-    public function getCourseAssignments()
+    
+    public function getCourseAssignments(): ArrayOfCourseAssignment
     {
         return $this->CourseAssignments;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseAssignment $CourseAssignments
-     *
-     * @return Course
-     */
-    public function withCourseAssignments($CourseAssignments)
+    
+    public function withCourseAssignments(ArrayOfCourseAssignment $CourseAssignments): static
     {
         $new = clone $this;
         $new->CourseAssignments = $CourseAssignments;
@@ -1005,20 +674,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getMasterGlossary()
+    
+    public function getMasterGlossary(): bool
     {
         return $this->MasterGlossary;
     }
 
-    /**
-     * @param bool $MasterGlossary
-     *
-     * @return Course
-     */
-    public function withMasterGlossary($MasterGlossary)
+    
+    public function withMasterGlossary(bool $MasterGlossary): static
     {
         $new = clone $this;
         $new->MasterGlossary = $MasterGlossary;
@@ -1026,20 +689,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getSessions()
+    
+    public function getSessions(): ArrayOfAnyType
     {
         return $this->Sessions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $Sessions
-     *
-     * @return Course
-     */
-    public function withSessions($Sessions)
+    
+    public function withSessions(ArrayOfAnyType $Sessions): static
     {
         $new = clone $this;
         $new->Sessions = $Sessions;
@@ -1047,20 +704,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType
-     */
-    public function getPendingApprovalSessions()
+    
+    public function getPendingApprovalSessions(): ArrayOfAnyType
     {
         return $this->PendingApprovalSessions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfAnyType $PendingApprovalSessions
-     *
-     * @return Course
-     */
-    public function withPendingApprovalSessions($PendingApprovalSessions)
+    
+    public function withPendingApprovalSessions(ArrayOfAnyType $PendingApprovalSessions): static
     {
         $new = clone $this;
         $new->PendingApprovalSessions = $PendingApprovalSessions;
@@ -1068,20 +719,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotalEnrolled()
+    
+    public function getTotalEnrolled(): int
     {
         return $this->TotalEnrolled;
     }
 
-    /**
-     * @param int $TotalEnrolled
-     *
-     * @return Course
-     */
-    public function withTotalEnrolled($TotalEnrolled)
+    
+    public function withTotalEnrolled(int $TotalEnrolled): static
     {
         $new = clone $this;
         $new->TotalEnrolled = $TotalEnrolled;
@@ -1089,20 +734,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotalCompleted()
+    
+    public function getTotalCompleted(): int
     {
         return $this->TotalCompleted;
     }
 
-    /**
-     * @param int $TotalCompleted
-     *
-     * @return Course
-     */
-    public function withTotalCompleted($TotalCompleted)
+    
+    public function withTotalCompleted(int $TotalCompleted): static
     {
         $new = clone $this;
         $new->TotalCompleted = $TotalCompleted;
@@ -1110,20 +749,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTotalActive()
+    
+    public function getTotalActive(): int
     {
         return $this->TotalActive;
     }
 
-    /**
-     * @param int $TotalActive
-     *
-     * @return Course
-     */
-    public function withTotalActive($TotalActive)
+    
+    public function withTotalActive(int $TotalActive): static
     {
         $new = clone $this;
         $new->TotalActive = $TotalActive;
@@ -1131,20 +764,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTeachingAsstActive()
+    
+    public function getTeachingAsstActive(): int
     {
         return $this->TeachingAsstActive;
     }
 
-    /**
-     * @param int $TeachingAsstActive
-     *
-     * @return Course
-     */
-    public function withTeachingAsstActive($TeachingAsstActive)
+    
+    public function withTeachingAsstActive(int $TeachingAsstActive): static
     {
         $new = clone $this;
         $new->TeachingAsstActive = $TeachingAsstActive;
@@ -1152,20 +779,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getStudentPrerequisites()
+    
+    public function getStudentPrerequisites(): bool
     {
         return $this->StudentPrerequisites;
     }
 
-    /**
-     * @param bool $StudentPrerequisites
-     *
-     * @return Course
-     */
-    public function withStudentPrerequisites($StudentPrerequisites)
+    
+    public function withStudentPrerequisites(bool $StudentPrerequisites): static
     {
         $new = clone $this;
         $new->StudentPrerequisites = $StudentPrerequisites;
@@ -1173,20 +794,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getAssignmentCount()
+    
+    public function getAssignmentCount(): int
     {
         return $this->AssignmentCount;
     }
 
-    /**
-     * @param int $AssignmentCount
-     *
-     * @return Course
-     */
-    public function withAssignmentCount($AssignmentCount)
+    
+    public function withAssignmentCount(int $AssignmentCount): static
     {
         $new = clone $this;
         $new->AssignmentCount = $AssignmentCount;
@@ -1194,20 +809,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProxyAzure()
+    
+    public function getProxyAzure(): bool
     {
         return $this->ProxyAzure;
     }
 
-    /**
-     * @param bool $ProxyAzure
-     *
-     * @return Course
-     */
-    public function withProxyAzure($ProxyAzure)
+    
+    public function withProxyAzure(bool $ProxyAzure): static
     {
         $new = clone $this;
         $new->ProxyAzure = $ProxyAzure;
@@ -1215,20 +824,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getProxyImages()
+    
+    public function getProxyImages(): bool
     {
         return $this->ProxyImages;
     }
 
-    /**
-     * @param bool $ProxyImages
-     *
-     * @return Course
-     */
-    public function withProxyImages($ProxyImages)
+    
+    public function withProxyImages(bool $ProxyImages): static
     {
         $new = clone $this;
         $new->ProxyImages = $ProxyImages;
@@ -1236,20 +839,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRunDirect()
+    
+    public function getRunDirect(): bool
     {
         return $this->RunDirect;
     }
 
-    /**
-     * @param bool $RunDirect
-     *
-     * @return Course
-     */
-    public function withRunDirect($RunDirect)
+    
+    public function withRunDirect(bool $RunDirect): static
     {
         $new = clone $this;
         $new->RunDirect = $RunDirect;
@@ -1257,20 +854,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRunDirectAlways()
+    
+    public function getRunDirectAlways(): bool
     {
         return $this->RunDirectAlways;
     }
 
-    /**
-     * @param bool $RunDirectAlways
-     *
-     * @return Course
-     */
-    public function withRunDirectAlways($RunDirectAlways)
+    
+    public function withRunDirectAlways(bool $RunDirectAlways): static
     {
         $new = clone $this;
         $new->RunDirectAlways = $RunDirectAlways;
@@ -1278,20 +869,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseStylesheet
-     */
-    public function getStylesheets()
+    
+    public function getStylesheets(): ArrayOfCourseStylesheet
     {
         return $this->Stylesheets;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseStylesheet $Stylesheets
-     *
-     * @return Course
-     */
-    public function withStylesheets($Stylesheets)
+    
+    public function withStylesheets(ArrayOfCourseStylesheet $Stylesheets): static
     {
         $new = clone $this;
         $new->Stylesheets = $Stylesheets;
@@ -1299,20 +884,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getPublished()
+    
+    public function getPublished(): bool
     {
         return $this->Published;
     }
 
-    /**
-     * @param bool $Published
-     *
-     * @return Course
-     */
-    public function withPublished($Published)
+    
+    public function withPublished(bool $Published): static
     {
         $new = clone $this;
         $new->Published = $Published;
@@ -1320,20 +899,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowCollaboration()
+    
+    public function getAllowCollaboration(): bool
     {
         return $this->AllowCollaboration;
     }
 
-    /**
-     * @param bool $AllowCollaboration
-     *
-     * @return Course
-     */
-    public function withAllowCollaboration($AllowCollaboration)
+    
+    public function withAllowCollaboration(bool $AllowCollaboration): static
     {
         $new = clone $this;
         $new->AllowCollaboration = $AllowCollaboration;
@@ -1341,20 +914,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getEndCollaborationOnCompletion()
+    
+    public function getEndCollaborationOnCompletion(): bool
     {
         return $this->EndCollaborationOnCompletion;
     }
 
-    /**
-     * @param bool $EndCollaborationOnCompletion
-     *
-     * @return Course
-     */
-    public function withEndCollaborationOnCompletion($EndCollaborationOnCompletion)
+    
+    public function withEndCollaborationOnCompletion(bool $EndCollaborationOnCompletion): static
     {
         $new = clone $this;
         $new->EndCollaborationOnCompletion = $EndCollaborationOnCompletion;
@@ -1362,20 +929,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCollaborationTitle()
+    
+    public function getCollaborationTitle(): string
     {
         return $this->CollaborationTitle;
     }
 
-    /**
-     * @param string $CollaborationTitle
-     *
-     * @return Course
-     */
-    public function withCollaborationTitle($CollaborationTitle)
+    
+    public function withCollaborationTitle(string $CollaborationTitle): static
     {
         $new = clone $this;
         $new->CollaborationTitle = $CollaborationTitle;
@@ -1383,20 +944,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCollaborationDescription()
+    
+    public function getCollaborationDescription(): string
     {
         return $this->CollaborationDescription;
     }
 
-    /**
-     * @param string $CollaborationDescription
-     *
-     * @return Course
-     */
-    public function withCollaborationDescription($CollaborationDescription)
+    
+    public function withCollaborationDescription(string $CollaborationDescription): static
     {
         $new = clone $this;
         $new->CollaborationDescription = $CollaborationDescription;
@@ -1404,20 +959,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getCollaborationCustomFields()
+    
+    public function getCollaborationCustomFields(): string
     {
         return $this->CollaborationCustomFields;
     }
 
-    /**
-     * @param string $CollaborationCustomFields
-     *
-     * @return Course
-     */
-    public function withCollaborationCustomFields($CollaborationCustomFields)
+    
+    public function withCollaborationCustomFields(string $CollaborationCustomFields): static
     {
         $new = clone $this;
         $new->CollaborationCustomFields = $CollaborationCustomFields;
@@ -1425,20 +974,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseVersion
-     */
-    public function getVersions()
+    
+    public function getVersions(): ArrayOfCourseVersion
     {
         return $this->Versions;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseVersion $Versions
-     *
-     * @return Course
-     */
-    public function withVersions($Versions)
+    
+    public function withVersions(ArrayOfCourseVersion $Versions): static
     {
         $new = clone $this;
         $new->Versions = $Versions;
@@ -1446,20 +989,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasChat()
+    
+    public function getHasChat(): bool
     {
         return $this->HasChat;
     }
 
-    /**
-     * @param bool $HasChat
-     *
-     * @return Course
-     */
-    public function withHasChat($HasChat)
+    
+    public function withHasChat(bool $HasChat): static
     {
         $new = clone $this;
         $new->HasChat = $HasChat;
@@ -1467,20 +1004,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getForceUserFeedback()
+    
+    public function getForceUserFeedback(): bool
     {
         return $this->ForceUserFeedback;
     }
 
-    /**
-     * @param bool $ForceUserFeedback
-     *
-     * @return Course
-     */
-    public function withForceUserFeedback($ForceUserFeedback)
+    
+    public function withForceUserFeedback(bool $ForceUserFeedback): static
     {
         $new = clone $this;
         $new->ForceUserFeedback = $ForceUserFeedback;
@@ -1488,20 +1019,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FeedbackSection
-     */
-    public function getFeedback()
+    
+    public function getFeedback(): FeedbackSection
     {
         return $this->Feedback;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\FeedbackSection $Feedback
-     *
-     * @return Course
-     */
-    public function withFeedback($Feedback)
+    
+    public function withFeedback(FeedbackSection $Feedback): static
     {
         $new = clone $this;
         $new->Feedback = $Feedback;
@@ -1509,20 +1034,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getIsAssessment()
+    
+    public function getIsAssessment(): bool
     {
         return $this->IsAssessment;
     }
 
-    /**
-     * @param bool $IsAssessment
-     *
-     * @return Course
-     */
-    public function withIsAssessment($IsAssessment)
+    
+    public function withIsAssessment(bool $IsAssessment): static
     {
         $new = clone $this;
         $new->IsAssessment = $IsAssessment;
@@ -1530,20 +1049,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getHasSample()
+    
+    public function getHasSample(): bool
     {
         return $this->HasSample;
     }
 
-    /**
-     * @param bool $HasSample
-     *
-     * @return Course
-     */
-    public function withHasSample($HasSample)
+    
+    public function withHasSample(bool $HasSample): static
     {
         $new = clone $this;
         $new->HasSample = $HasSample;
@@ -1551,20 +1064,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getUseOwnerSettingsForShared()
+    
+    public function getUseOwnerSettingsForShared(): bool
     {
         return $this->UseOwnerSettingsForShared;
     }
 
-    /**
-     * @param bool $UseOwnerSettingsForShared
-     *
-     * @return Course
-     */
-    public function withUseOwnerSettingsForShared($UseOwnerSettingsForShared)
+    
+    public function withUseOwnerSettingsForShared(bool $UseOwnerSettingsForShared): static
     {
         $new = clone $this;
         $new->UseOwnerSettingsForShared = $UseOwnerSettingsForShared;
@@ -1572,20 +1079,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseNotification
-     */
-    public function getCourseNotifications()
+    
+    public function getCourseNotifications(): ArrayOfCourseNotification
     {
         return $this->CourseNotifications;
     }
 
-    /**
-     * @param \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ArrayOfCourseNotification $CourseNotifications
-     *
-     * @return Course
-     */
-    public function withCourseNotifications($CourseNotifications)
+    
+    public function withCourseNotifications(ArrayOfCourseNotification $CourseNotifications): static
     {
         $new = clone $this;
         $new->CourseNotifications = $CourseNotifications;
@@ -1593,20 +1094,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getClassSize()
+    
+    public function getClassSize(): int
     {
         return $this->ClassSize;
     }
 
-    /**
-     * @param int $ClassSize
-     *
-     * @return Course
-     */
-    public function withClassSize($ClassSize)
+    
+    public function withClassSize(int $ClassSize): static
     {
         $new = clone $this;
         $new->ClassSize = $ClassSize;
@@ -1614,20 +1109,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getManualEnrollOverClassSize()
+    
+    public function getManualEnrollOverClassSize(): bool
     {
         return $this->ManualEnrollOverClassSize;
     }
 
-    /**
-     * @param bool $ManualEnrollOverClassSize
-     *
-     * @return Course
-     */
-    public function withManualEnrollOverClassSize($ManualEnrollOverClassSize)
+    
+    public function withManualEnrollOverClassSize(bool $ManualEnrollOverClassSize): static
     {
         $new = clone $this;
         $new->ManualEnrollOverClassSize = $ManualEnrollOverClassSize;
@@ -1635,20 +1124,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getWaitlistCutoffUnit()
+    
+    public function getWaitlistCutoffUnit(): int
     {
         return $this->WaitlistCutoffUnit;
     }
 
-    /**
-     * @param int $WaitlistCutoffUnit
-     *
-     * @return Course
-     */
-    public function withWaitlistCutoffUnit($WaitlistCutoffUnit)
+    
+    public function withWaitlistCutoffUnit(int $WaitlistCutoffUnit): static
     {
         $new = clone $this;
         $new->WaitlistCutoffUnit = $WaitlistCutoffUnit;
@@ -1656,20 +1139,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getWailtistCutoffInterval()
+    
+    public function getWailtistCutoffInterval(): string
     {
         return $this->WailtistCutoffInterval;
     }
 
-    /**
-     * @param string $WailtistCutoffInterval
-     *
-     * @return Course
-     */
-    public function withWailtistCutoffInterval($WailtistCutoffInterval)
+    
+    public function withWailtistCutoffInterval(string $WailtistCutoffInterval): static
     {
         $new = clone $this;
         $new->WailtistCutoffInterval = $WailtistCutoffInterval;
@@ -1677,20 +1154,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAllowWaitlist()
+    
+    public function getAllowWaitlist(): bool
     {
         return $this->AllowWaitlist;
     }
 
-    /**
-     * @param bool $AllowWaitlist
-     *
-     * @return Course
-     */
-    public function withAllowWaitlist($AllowWaitlist)
+    
+    public function withAllowWaitlist(bool $AllowWaitlist): static
     {
         $new = clone $this;
         $new->AllowWaitlist = $AllowWaitlist;
@@ -1698,20 +1169,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getWaitlistMaxNo()
+    
+    public function getWaitlistMaxNo(): int
     {
         return $this->WaitlistMaxNo;
     }
 
-    /**
-     * @param int $WaitlistMaxNo
-     *
-     * @return Course
-     */
-    public function withWaitlistMaxNo($WaitlistMaxNo)
+    
+    public function withWaitlistMaxNo(int $WaitlistMaxNo): static
     {
         $new = clone $this;
         $new->WaitlistMaxNo = $WaitlistMaxNo;
@@ -1719,20 +1184,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getMinOptionalSessions()
+    
+    public function getMinOptionalSessions(): int
     {
         return $this->MinOptionalSessions;
     }
 
-    /**
-     * @param int $MinOptionalSessions
-     *
-     * @return Course
-     */
-    public function withMinOptionalSessions($MinOptionalSessions)
+    
+    public function withMinOptionalSessions(int $MinOptionalSessions): static
     {
         $new = clone $this;
         $new->MinOptionalSessions = $MinOptionalSessions;
@@ -1740,20 +1199,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRecordAttendance()
+    
+    public function getRecordAttendance(): bool
     {
         return $this->RecordAttendance;
     }
 
-    /**
-     * @param bool $RecordAttendance
-     *
-     * @return Course
-     */
-    public function withRecordAttendance($RecordAttendance)
+    
+    public function withRecordAttendance(bool $RecordAttendance): static
     {
         $new = clone $this;
         $new->RecordAttendance = $RecordAttendance;
@@ -1761,20 +1214,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return string
-     */
-    public function getRecordAttendanceMode()
+    
+    public function getRecordAttendanceMode(): string
     {
         return $this->RecordAttendanceMode;
     }
 
-    /**
-     * @param string $RecordAttendanceMode
-     *
-     * @return Course
-     */
-    public function withRecordAttendanceMode($RecordAttendanceMode)
+    
+    public function withRecordAttendanceMode(string $RecordAttendanceMode): static
     {
         $new = clone $this;
         $new->RecordAttendanceMode = $RecordAttendanceMode;
@@ -1782,20 +1229,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSignInRelatedContent()
+    
+    public function getShowSignInRelatedContent(): bool
     {
         return $this->ShowSignInRelatedContent;
     }
 
-    /**
-     * @param bool $ShowSignInRelatedContent
-     *
-     * @return Course
-     */
-    public function withShowSignInRelatedContent($ShowSignInRelatedContent)
+    
+    public function withShowSignInRelatedContent(bool $ShowSignInRelatedContent): static
     {
         $new = clone $this;
         $new->ShowSignInRelatedContent = $ShowSignInRelatedContent;
@@ -1803,20 +1244,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getShowSignInLearners()
+    
+    public function getShowSignInLearners(): bool
     {
         return $this->ShowSignInLearners;
     }
 
-    /**
-     * @param bool $ShowSignInLearners
-     *
-     * @return Course
-     */
-    public function withShowSignInLearners($ShowSignInLearners)
+    
+    public function withShowSignInLearners(bool $ShowSignInLearners): static
     {
         $new = clone $this;
         $new->ShowSignInLearners = $ShowSignInLearners;
@@ -1824,20 +1259,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getSignInWithBadge()
+    
+    public function getSignInWithBadge(): bool
     {
         return $this->SignInWithBadge;
     }
 
-    /**
-     * @param bool $SignInWithBadge
-     *
-     * @return Course
-     */
-    public function withSignInWithBadge($SignInWithBadge)
+    
+    public function withSignInWithBadge(bool $SignInWithBadge): static
     {
         $new = clone $this;
         $new->SignInWithBadge = $SignInWithBadge;
@@ -1845,20 +1274,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getCompleteSessionWhenJoinByLearner()
+    
+    public function getCompleteSessionWhenJoinByLearner(): bool
     {
         return $this->CompleteSessionWhenJoinByLearner;
     }
 
-    /**
-     * @param bool $CompleteSessionWhenJoinByLearner
-     *
-     * @return Course
-     */
-    public function withCompleteSessionWhenJoinByLearner($CompleteSessionWhenJoinByLearner)
+    
+    public function withCompleteSessionWhenJoinByLearner(bool $CompleteSessionWhenJoinByLearner): static
     {
         $new = clone $this;
         $new->CompleteSessionWhenJoinByLearner = $CompleteSessionWhenJoinByLearner;
@@ -1866,20 +1289,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRecordScore()
+    
+    public function getRecordScore(): bool
     {
         return $this->RecordScore;
     }
 
-    /**
-     * @param bool $RecordScore
-     *
-     * @return Course
-     */
-    public function withRecordScore($RecordScore)
+    
+    public function withRecordScore(bool $RecordScore): static
     {
         $new = clone $this;
         $new->RecordScore = $RecordScore;
@@ -1887,20 +1304,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRecordComments()
+    
+    public function getRecordComments(): bool
     {
         return $this->RecordComments;
     }
 
-    /**
-     * @param bool $RecordComments
-     *
-     * @return Course
-     */
-    public function withRecordComments($RecordComments)
+    
+    public function withRecordComments(bool $RecordComments): static
     {
         $new = clone $this;
         $new->RecordComments = $RecordComments;
@@ -1908,20 +1319,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getRequiresChallenge()
+    
+    public function getRequiresChallenge(): bool
     {
         return $this->RequiresChallenge;
     }
 
-    /**
-     * @param bool $RequiresChallenge
-     *
-     * @return Course
-     */
-    public function withRequiresChallenge($RequiresChallenge)
+    
+    public function withRequiresChallenge(bool $RequiresChallenge): static
     {
         $new = clone $this;
         $new->RequiresChallenge = $RequiresChallenge;
@@ -1929,20 +1334,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getChallengeMaxAttempt()
+    
+    public function getChallengeMaxAttempt(): int
     {
         return $this->ChallengeMaxAttempt;
     }
 
-    /**
-     * @param int $ChallengeMaxAttempt
-     *
-     * @return Course
-     */
-    public function withChallengeMaxAttempt($ChallengeMaxAttempt)
+    
+    public function withChallengeMaxAttempt(int $ChallengeMaxAttempt): static
     {
         $new = clone $this;
         $new->ChallengeMaxAttempt = $ChallengeMaxAttempt;
@@ -1950,20 +1349,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getLockChallengeFailed()
+    
+    public function getLockChallengeFailed(): bool
     {
         return $this->LockChallengeFailed;
     }
 
-    /**
-     * @param bool $LockChallengeFailed
-     *
-     * @return Course
-     */
-    public function withLockChallengeFailed($LockChallengeFailed)
+    
+    public function withLockChallengeFailed(bool $LockChallengeFailed): static
     {
         $new = clone $this;
         $new->LockChallengeFailed = $LockChallengeFailed;
@@ -1971,20 +1364,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getChallengeFrequency()
+    
+    public function getChallengeFrequency(): int
     {
         return $this->ChallengeFrequency;
     }
 
-    /**
-     * @param int $ChallengeFrequency
-     *
-     * @return Course
-     */
-    public function withChallengeFrequency($ChallengeFrequency)
+    
+    public function withChallengeFrequency(int $ChallengeFrequency): static
     {
         $new = clone $this;
         $new->ChallengeFrequency = $ChallengeFrequency;
@@ -1992,20 +1379,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return bool
-     */
-    public function getAddTimeInReadOnly()
+    
+    public function getAddTimeInReadOnly(): bool
     {
         return $this->AddTimeInReadOnly;
     }
 
-    /**
-     * @param bool $AddTimeInReadOnly
-     *
-     * @return Course
-     */
-    public function withAddTimeInReadOnly($AddTimeInReadOnly)
+    
+    public function withAddTimeInReadOnly(bool $AddTimeInReadOnly): static
     {
         $new = clone $this;
         $new->AddTimeInReadOnly = $AddTimeInReadOnly;
@@ -2013,20 +1394,14 @@ class Course
         return $new;
     }
 
-    /**
-     * @return int
-     */
-    public function getTimeout()
+    
+    public function getTimeout(): int
     {
         return $this->Timeout;
     }
 
-    /**
-     * @param int $Timeout
-     *
-     * @return Course
-     */
-    public function withTimeout($Timeout)
+    
+    public function withTimeout(int $Timeout): static
     {
         $new = clone $this;
         $new->Timeout = $Timeout;
