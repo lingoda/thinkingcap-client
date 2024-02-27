@@ -10,13 +10,11 @@ class RegisterBulkUserResponse implements ResultInterface
 {
     private ServiceResultOfString $RegisterBulkUserResult;
 
-    
     public function getRegisterBulkUserResult(): ServiceResultOfString
     {
         return $this->RegisterBulkUserResult;
     }
 
-    
     public function withRegisterBulkUserResult(ServiceResultOfString $RegisterBulkUserResult): static
     {
         $new = clone $this;

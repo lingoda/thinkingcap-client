@@ -10,13 +10,11 @@ class GetCourseModeratorsListResponse implements ResultInterface
 {
     private ServiceResultOfListOfUser $GetCourseModeratorsListResult;
 
-    
     public function getGetCourseModeratorsListResult(): ServiceResultOfListOfUser
     {
         return $this->GetCourseModeratorsListResult;
     }
 
-    
     public function withGetCourseModeratorsListResult(ServiceResultOfListOfUser $GetCourseModeratorsListResult): static
     {
         $new = clone $this;

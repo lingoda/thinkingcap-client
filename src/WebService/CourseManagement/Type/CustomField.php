@@ -6,22 +6,22 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CustomField
 {
-    private string $FieldID;
+    private ?string $FieldID;
 
     
-    private string $FieldName;
+    private ?string $FieldName;
 
     
-    private ArrayOfString1 $FieldValues;
+    private ?ArrayOfString1 $FieldValues;
 
     
-    public function getFieldID(): string
+    public function getFieldID(): ?string
     {
         return $this->FieldID;
     }
 
     
-    public function withFieldID(string $FieldID): static
+    public function withFieldID(?string $FieldID): static
     {
         $new = clone $this;
         $new->FieldID = $FieldID;
@@ -30,13 +30,13 @@ class CustomField
     }
 
     
-    public function getFieldName(): string
+    public function getFieldName(): ?string
     {
         return $this->FieldName;
     }
 
     
-    public function withFieldName(string $FieldName): static
+    public function withFieldName(?string $FieldName): static
     {
         $new = clone $this;
         $new->FieldName = $FieldName;
@@ -45,13 +45,13 @@ class CustomField
     }
 
     
-    public function getFieldValues(): ArrayOfString1
+    public function getFieldValues(): ?ArrayOfString1
     {
         return $this->FieldValues;
     }
 
     
-    public function withFieldValues(ArrayOfString1 $FieldValues): static
+    public function withFieldValues(?ArrayOfString1 $FieldValues): static
     {
         $new = clone $this;
         $new->FieldValues = $FieldValues;

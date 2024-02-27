@@ -8,37 +8,37 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseCompletionStatusByDateRange implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $domainID;
+    private ?string $domainID;
 
     
-    private string $learningActivityCode;
+    private ?string $learningActivityCode;
 
     
-    private string $learningActivityType;
+    private ?string $learningActivityType;
 
     
-    private string $learnerID;
+    private ?string $learnerID;
 
     
-    private string $startDateTime;
+    private ?string $startDateTime;
 
     
-    private string $endDateTime;
+    private ?string $endDateTime;
 
     
     private bool $useLastDateAttendanceTakenForILT;
 
     
-    private string $timezoneCode;
+    private ?string $timezoneCode;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $domainID, string $learningActivityCode, string $learningActivityType, string $learnerID, string $startDateTime, string $endDateTime, bool $useLastDateAttendanceTakenForILT, string $timezoneCode)
+    public function __construct(?string $apiKey, ?string $domainID, ?string $learningActivityCode, ?string $learningActivityType, ?string $learnerID, ?string $startDateTime, ?string $endDateTime, bool $useLastDateAttendanceTakenForILT, ?string $timezoneCode)
     {
         $this->apiKey = $apiKey;
         $this->domainID = $domainID;
@@ -52,13 +52,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -67,13 +67,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
     
-    public function withDomainID(string $domainID): static
+    public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;
@@ -82,13 +82,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getLearningActivityCode(): string
+    public function getLearningActivityCode(): ?string
     {
         return $this->learningActivityCode;
     }
 
     
-    public function withLearningActivityCode(string $learningActivityCode): static
+    public function withLearningActivityCode(?string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;
@@ -97,13 +97,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getLearningActivityType(): string
+    public function getLearningActivityType(): ?string
     {
         return $this->learningActivityType;
     }
 
     
-    public function withLearningActivityType(string $learningActivityType): static
+    public function withLearningActivityType(?string $learningActivityType): static
     {
         $new = clone $this;
         $new->learningActivityType = $learningActivityType;
@@ -112,13 +112,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getLearnerID(): string
+    public function getLearnerID(): ?string
     {
         return $this->learnerID;
     }
 
     
-    public function withLearnerID(string $learnerID): static
+    public function withLearnerID(?string $learnerID): static
     {
         $new = clone $this;
         $new->learnerID = $learnerID;
@@ -127,13 +127,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getStartDateTime(): string
+    public function getStartDateTime(): ?string
     {
         return $this->startDateTime;
     }
 
     
-    public function withStartDateTime(string $startDateTime): static
+    public function withStartDateTime(?string $startDateTime): static
     {
         $new = clone $this;
         $new->startDateTime = $startDateTime;
@@ -142,13 +142,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getEndDateTime(): string
+    public function getEndDateTime(): ?string
     {
         return $this->endDateTime;
     }
 
     
-    public function withEndDateTime(string $endDateTime): static
+    public function withEndDateTime(?string $endDateTime): static
     {
         $new = clone $this;
         $new->endDateTime = $endDateTime;
@@ -172,13 +172,13 @@ class GetCourseCompletionStatusByDateRange implements RequestInterface
     }
 
     
-    public function getTimezoneCode(): string
+    public function getTimezoneCode(): ?string
     {
         return $this->timezoneCode;
     }
 
     
-    public function withTimezoneCode(string $timezoneCode): static
+    public function withTimezoneCode(?string $timezoneCode): static
     {
         $new = clone $this;
         $new->timezoneCode = $timezoneCode;

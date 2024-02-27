@@ -10,13 +10,11 @@ class GetDomainLearningActivitiesResponse implements ResultInterface
 {
     private ServiceResultOfListOfLearningActivity $GetDomainLearningActivitiesResult;
 
-    
     public function getGetDomainLearningActivitiesResult(): ServiceResultOfListOfLearningActivity
     {
         return $this->GetDomainLearningActivitiesResult;
     }
 
-    
     public function withGetDomainLearningActivitiesResult(ServiceResultOfListOfLearningActivity $GetDomainLearningActivitiesResult): static
     {
         $new = clone $this;

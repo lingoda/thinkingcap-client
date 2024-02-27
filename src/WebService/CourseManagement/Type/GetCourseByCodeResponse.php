@@ -10,13 +10,11 @@ class GetCourseByCodeResponse implements ResultInterface
 {
     private ServiceResultOfCourse $GetCourseByCodeResult;
 
-    
     public function getGetCourseByCodeResult(): ServiceResultOfCourse
     {
         return $this->GetCourseByCodeResult;
     }
 
-    
     public function withGetCourseByCodeResult(ServiceResultOfCourse $GetCourseByCodeResult): static
     {
         $new = clone $this;

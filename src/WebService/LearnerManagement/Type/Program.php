@@ -6,46 +6,46 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Program
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Name;
+    private ?string $Name;
 
     
-    private string $Code;
+    private ?string $Code;
 
     
-    private string $Description;
+    private ?string $Description;
 
     
-    private string $ParentID;
+    private ?string $ParentID;
 
     
-    private string $ParentPath;
+    private ?string $ParentPath;
 
     
-    private string $ProgramPath;
+    private ?string $ProgramPath;
 
     
     private bool $AutoEnrollSubprograms;
 
     
-    private string $AutoIncludeUsersType;
+    private ?string $AutoIncludeUsersType;
 
     
     private bool $AutoIncludeUsers;
 
     
-    private string $AutoIncludeUsersFields;
+    private ?string $AutoIncludeUsersFields;
 
     
-    private string $AutoIncludeCoursesType;
+    private ?string $AutoIncludeCoursesType;
 
     
     private bool $AutoIncludeCourses;
 
     
-    private string $AutoIncludeCoursesFields;
+    private ?string $AutoIncludeCoursesFields;
 
     
     private bool $IsSearchFilter;
@@ -69,28 +69,28 @@ class Program
     private bool $RegistrationRequiresRequest;
 
     
-    private ArrayOfAnyType $AltPrices;
+    private ?ArrayOfAnyType $AltPrices;
 
     
-    private string $RegistrationAccessCodes;
+    private ?string $RegistrationAccessCodes;
 
     
-    private string $RegistrationAccessCode;
+    private ?string $RegistrationAccessCode;
 
     
-    private string $RegistrationInstruction;
+    private ?string $RegistrationInstruction;
 
     
     private bool $RegistrationAutomaticApproval_Domain;
 
     
-    private string $AutomaticApproveRegistrationDomain;
+    private ?string $AutomaticApproveRegistrationDomain;
 
     
-    private string $RegistrationFields;
+    private ?string $RegistrationFields;
 
     
-    private string $RegistrationSubdomains;
+    private ?string $RegistrationSubdomains;
 
     
     private bool $AllowUserDomainSelection;
@@ -102,34 +102,34 @@ class Program
     private bool $UserDomainSelectAll;
 
     
-    private string $UserDomainDisplayLabel;
+    private ?string $UserDomainDisplayLabel;
 
     
-    private string $UserRegistrationDomains;
+    private ?string $UserRegistrationDomains;
 
     
-    private ArrayOfProgram $UserRegistrationDomainsList;
+    private ?ArrayOfProgram $UserRegistrationDomainsList;
 
     
-    private string $UserRegistrationDomainsDisplay;
+    private ?string $UserRegistrationDomainsDisplay;
 
     
-    private string $UserRegistrationDomainsMode;
+    private ?string $UserRegistrationDomainsMode;
 
     
-    private string $RegistrationConfirmationText;
+    private ?string $RegistrationConfirmationText;
 
     
-    private string $RegistrationIntroText;
+    private ?string $RegistrationIntroText;
 
     
-    private string $RegistrationToDomainIntroText;
+    private ?string $RegistrationToDomainIntroText;
 
     
-    private string $RegistrationRequestConfirmationText;
+    private ?string $RegistrationRequestConfirmationText;
 
     
-    private string $RegistrationDisclaimerText;
+    private ?string $RegistrationDisclaimerText;
 
     
     private bool $RequiresRegistrationDisclaimerAck;
@@ -141,10 +141,10 @@ class Program
     private bool $RegistrationRequiresVerification;
 
     
-    private string $RegistrationSubscription;
+    private ?string $RegistrationSubscription;
 
     
-    private string $RegistrationPasses;
+    private ?string $RegistrationPasses;
 
     
     private bool $CollectLoginMetadataOnce;
@@ -180,34 +180,34 @@ class Program
     private bool $OverrideGlobalRegistrationDenial;
 
     
-    private string $RegistrationConfirmationEmailText;
+    private ?string $RegistrationConfirmationEmailText;
 
     
-    private string $RegistrationRequestEmailText;
+    private ?string $RegistrationRequestEmailText;
 
     
-    private string $RegistrationApprovalEmailText;
+    private ?string $RegistrationApprovalEmailText;
 
     
-    private string $RegistrationDenialEmailText;
+    private ?string $RegistrationDenialEmailText;
 
     
-    private string $RegistrationCaptchaMode;
+    private ?string $RegistrationCaptchaMode;
 
     
-    private string $RegistrationCaptchaType;
+    private ?string $RegistrationCaptchaType;
 
     
-    private string $ForumCaptchaType;
+    private ?string $ForumCaptchaType;
 
     
-    private string $ForumDisclaimerText;
+    private ?string $ForumDisclaimerText;
 
     
-    private string $ShowForumDisclaimerWhen;
+    private ?string $ShowForumDisclaimerWhen;
 
     
-    private string $ForumDisclaimerButtonText;
+    private ?string $ForumDisclaimerButtonText;
 
     
     private bool $ForumHasDisclaimer;
@@ -219,16 +219,18 @@ class Program
     private bool $RegistrationAutoFillDefaultFields;
 
     
-    private ArrayOfProgram $SubPrograms;
+    private ?ArrayOfProgram $SubPrograms;
 
     
-    private string $ClassroomTemplate;
+    private ?string $ClassroomTemplate;
+
+    /**
+     * @var null | mixed
+     */
+    private mixed $Logo;
 
     
-    private Base64Binary $Logo;
-
-    
-    private string $LogoContentType;
+    private ?string $LogoContentType;
 
     
     private bool $UseCustomLearnerUrl;
@@ -246,7 +248,7 @@ class Program
     private bool $UseMFA;
 
     
-    private string $MFAMethod;
+    private ?string $MFAMethod;
 
     
     private bool $UseMFAForLearner;
@@ -318,28 +320,28 @@ class Program
     private bool $OverrideSessionCertificate;
 
     
-    private ArrayOfString $AllowedLearningActivities;
+    private ?ArrayOfString $AllowedLearningActivities;
 
     
-    private ArrayOfString $ParentAllowedLearningActivities;
+    private ?ArrayOfString $ParentAllowedLearningActivities;
 
     
-    private ArrayOfString $LearningActivityTypeOffFilters;
+    private ?ArrayOfString $LearningActivityTypeOffFilters;
 
     
-    private ArrayOfString $ParentLearningActivityTypeOffFilters;
+    private ?ArrayOfString $ParentLearningActivityTypeOffFilters;
 
     
-    private ArrayOfString $LearningActivityStatusOffFilters;
+    private ?ArrayOfString $LearningActivityStatusOffFilters;
 
     
-    private ArrayOfString $ParentLearningActivityStatusOffFilters;
+    private ?ArrayOfString $ParentLearningActivityStatusOffFilters;
 
     
-    private ArrayOfString $LearningActivityOriginOffFilters;
+    private ?ArrayOfString $LearningActivityOriginOffFilters;
 
     
-    private ArrayOfString $ParentLearningActivityOriginOffFilters;
+    private ?ArrayOfString $ParentLearningActivityOriginOffFilters;
 
     
     private bool $LearningActivityHideFilters;
@@ -348,7 +350,7 @@ class Program
     private bool $ParentLearningActivityHideFilters;
 
     
-    private string $LearningActivitiesSortSettings;
+    private ?string $LearningActivitiesSortSettings;
 
     
     private bool $DenyChildLearningObjects;
@@ -366,37 +368,37 @@ class Program
     private bool $IsParent;
 
     
-    private ArrayOfAnyType $SubscriptionRules;
+    private ?ArrayOfAnyType $SubscriptionRules;
 
     
-    private RegistrationIntroXmlNode $RegistrationIntroXmlNode;
+    private ?RegistrationIntroXmlNode $RegistrationIntroXmlNode;
 
     
-    private RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode;
+    private ?RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode;
 
     
-    private RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode;
+    private ?RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode;
 
     
-    private RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode;
+    private ?RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode;
 
     
-    private RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode;
+    private ?RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode;
 
     
-    private RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode;
+    private ?RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode;
 
     
-    private RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode;
+    private ?RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode;
 
     
-    private RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode;
+    private ?RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode;
 
     
-    private RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode;
+    private ?RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode;
 
     
-    private UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode;
+    private ?UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode;
 
     
     private bool $CapLicenseTotal;
@@ -411,10 +413,10 @@ class Program
     private int $LicenseActiveUsers;
 
     
-    private string $LicenseContact;
+    private ?string $LicenseContact;
 
     
-    private string $LicenseAniversary;
+    private ?string $LicenseAniversary;
 
     
     private int $LicenseCycleDay;
@@ -423,13 +425,13 @@ class Program
     private int $MonthlyUniqueLogins;
 
     
-    private string $OwnerID;
+    private ?string $OwnerID;
 
     
-    private string $FromName;
+    private ?string $FromName;
 
     
-    private string $FromEmail;
+    private ?string $FromEmail;
 
     
     private bool $UseParentEmail;
@@ -513,16 +515,16 @@ class Program
     private bool $LearningActivityDetailsPrivate;
 
     
-    private ArrayOfAnyType $SupervisorRules;
+    private ?ArrayOfAnyType $SupervisorRules;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -531,13 +533,13 @@ class Program
     }
 
     
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
 
     
-    public function withName(string $Name): static
+    public function withName(?string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -546,13 +548,13 @@ class Program
     }
 
     
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
 
     
-    public function withCode(string $Code): static
+    public function withCode(?string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -561,13 +563,13 @@ class Program
     }
 
     
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
 
     
-    public function withDescription(string $Description): static
+    public function withDescription(?string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -576,13 +578,13 @@ class Program
     }
 
     
-    public function getParentID(): string
+    public function getParentID(): ?string
     {
         return $this->ParentID;
     }
 
     
-    public function withParentID(string $ParentID): static
+    public function withParentID(?string $ParentID): static
     {
         $new = clone $this;
         $new->ParentID = $ParentID;
@@ -591,13 +593,13 @@ class Program
     }
 
     
-    public function getParentPath(): string
+    public function getParentPath(): ?string
     {
         return $this->ParentPath;
     }
 
     
-    public function withParentPath(string $ParentPath): static
+    public function withParentPath(?string $ParentPath): static
     {
         $new = clone $this;
         $new->ParentPath = $ParentPath;
@@ -606,13 +608,13 @@ class Program
     }
 
     
-    public function getProgramPath(): string
+    public function getProgramPath(): ?string
     {
         return $this->ProgramPath;
     }
 
     
-    public function withProgramPath(string $ProgramPath): static
+    public function withProgramPath(?string $ProgramPath): static
     {
         $new = clone $this;
         $new->ProgramPath = $ProgramPath;
@@ -636,13 +638,13 @@ class Program
     }
 
     
-    public function getAutoIncludeUsersType(): string
+    public function getAutoIncludeUsersType(): ?string
     {
         return $this->AutoIncludeUsersType;
     }
 
     
-    public function withAutoIncludeUsersType(string $AutoIncludeUsersType): static
+    public function withAutoIncludeUsersType(?string $AutoIncludeUsersType): static
     {
         $new = clone $this;
         $new->AutoIncludeUsersType = $AutoIncludeUsersType;
@@ -666,13 +668,13 @@ class Program
     }
 
     
-    public function getAutoIncludeUsersFields(): string
+    public function getAutoIncludeUsersFields(): ?string
     {
         return $this->AutoIncludeUsersFields;
     }
 
     
-    public function withAutoIncludeUsersFields(string $AutoIncludeUsersFields): static
+    public function withAutoIncludeUsersFields(?string $AutoIncludeUsersFields): static
     {
         $new = clone $this;
         $new->AutoIncludeUsersFields = $AutoIncludeUsersFields;
@@ -681,13 +683,13 @@ class Program
     }
 
     
-    public function getAutoIncludeCoursesType(): string
+    public function getAutoIncludeCoursesType(): ?string
     {
         return $this->AutoIncludeCoursesType;
     }
 
     
-    public function withAutoIncludeCoursesType(string $AutoIncludeCoursesType): static
+    public function withAutoIncludeCoursesType(?string $AutoIncludeCoursesType): static
     {
         $new = clone $this;
         $new->AutoIncludeCoursesType = $AutoIncludeCoursesType;
@@ -711,13 +713,13 @@ class Program
     }
 
     
-    public function getAutoIncludeCoursesFields(): string
+    public function getAutoIncludeCoursesFields(): ?string
     {
         return $this->AutoIncludeCoursesFields;
     }
 
     
-    public function withAutoIncludeCoursesFields(string $AutoIncludeCoursesFields): static
+    public function withAutoIncludeCoursesFields(?string $AutoIncludeCoursesFields): static
     {
         $new = clone $this;
         $new->AutoIncludeCoursesFields = $AutoIncludeCoursesFields;
@@ -831,13 +833,13 @@ class Program
     }
 
     
-    public function getAltPrices(): ArrayOfAnyType
+    public function getAltPrices(): ?ArrayOfAnyType
     {
         return $this->AltPrices;
     }
 
     
-    public function withAltPrices(ArrayOfAnyType $AltPrices): static
+    public function withAltPrices(?ArrayOfAnyType $AltPrices): static
     {
         $new = clone $this;
         $new->AltPrices = $AltPrices;
@@ -846,13 +848,13 @@ class Program
     }
 
     
-    public function getRegistrationAccessCodes(): string
+    public function getRegistrationAccessCodes(): ?string
     {
         return $this->RegistrationAccessCodes;
     }
 
     
-    public function withRegistrationAccessCodes(string $RegistrationAccessCodes): static
+    public function withRegistrationAccessCodes(?string $RegistrationAccessCodes): static
     {
         $new = clone $this;
         $new->RegistrationAccessCodes = $RegistrationAccessCodes;
@@ -861,13 +863,13 @@ class Program
     }
 
     
-    public function getRegistrationAccessCode(): string
+    public function getRegistrationAccessCode(): ?string
     {
         return $this->RegistrationAccessCode;
     }
 
     
-    public function withRegistrationAccessCode(string $RegistrationAccessCode): static
+    public function withRegistrationAccessCode(?string $RegistrationAccessCode): static
     {
         $new = clone $this;
         $new->RegistrationAccessCode = $RegistrationAccessCode;
@@ -876,13 +878,13 @@ class Program
     }
 
     
-    public function getRegistrationInstruction(): string
+    public function getRegistrationInstruction(): ?string
     {
         return $this->RegistrationInstruction;
     }
 
     
-    public function withRegistrationInstruction(string $RegistrationInstruction): static
+    public function withRegistrationInstruction(?string $RegistrationInstruction): static
     {
         $new = clone $this;
         $new->RegistrationInstruction = $RegistrationInstruction;
@@ -906,13 +908,13 @@ class Program
     }
 
     
-    public function getAutomaticApproveRegistrationDomain(): string
+    public function getAutomaticApproveRegistrationDomain(): ?string
     {
         return $this->AutomaticApproveRegistrationDomain;
     }
 
     
-    public function withAutomaticApproveRegistrationDomain(string $AutomaticApproveRegistrationDomain): static
+    public function withAutomaticApproveRegistrationDomain(?string $AutomaticApproveRegistrationDomain): static
     {
         $new = clone $this;
         $new->AutomaticApproveRegistrationDomain = $AutomaticApproveRegistrationDomain;
@@ -921,13 +923,13 @@ class Program
     }
 
     
-    public function getRegistrationFields(): string
+    public function getRegistrationFields(): ?string
     {
         return $this->RegistrationFields;
     }
 
     
-    public function withRegistrationFields(string $RegistrationFields): static
+    public function withRegistrationFields(?string $RegistrationFields): static
     {
         $new = clone $this;
         $new->RegistrationFields = $RegistrationFields;
@@ -936,13 +938,13 @@ class Program
     }
 
     
-    public function getRegistrationSubdomains(): string
+    public function getRegistrationSubdomains(): ?string
     {
         return $this->RegistrationSubdomains;
     }
 
     
-    public function withRegistrationSubdomains(string $RegistrationSubdomains): static
+    public function withRegistrationSubdomains(?string $RegistrationSubdomains): static
     {
         $new = clone $this;
         $new->RegistrationSubdomains = $RegistrationSubdomains;
@@ -996,13 +998,13 @@ class Program
     }
 
     
-    public function getUserDomainDisplayLabel(): string
+    public function getUserDomainDisplayLabel(): ?string
     {
         return $this->UserDomainDisplayLabel;
     }
 
     
-    public function withUserDomainDisplayLabel(string $UserDomainDisplayLabel): static
+    public function withUserDomainDisplayLabel(?string $UserDomainDisplayLabel): static
     {
         $new = clone $this;
         $new->UserDomainDisplayLabel = $UserDomainDisplayLabel;
@@ -1011,13 +1013,13 @@ class Program
     }
 
     
-    public function getUserRegistrationDomains(): string
+    public function getUserRegistrationDomains(): ?string
     {
         return $this->UserRegistrationDomains;
     }
 
     
-    public function withUserRegistrationDomains(string $UserRegistrationDomains): static
+    public function withUserRegistrationDomains(?string $UserRegistrationDomains): static
     {
         $new = clone $this;
         $new->UserRegistrationDomains = $UserRegistrationDomains;
@@ -1026,13 +1028,13 @@ class Program
     }
 
     
-    public function getUserRegistrationDomainsList(): ArrayOfProgram
+    public function getUserRegistrationDomainsList(): ?ArrayOfProgram
     {
         return $this->UserRegistrationDomainsList;
     }
 
     
-    public function withUserRegistrationDomainsList(ArrayOfProgram $UserRegistrationDomainsList): static
+    public function withUserRegistrationDomainsList(?ArrayOfProgram $UserRegistrationDomainsList): static
     {
         $new = clone $this;
         $new->UserRegistrationDomainsList = $UserRegistrationDomainsList;
@@ -1041,13 +1043,13 @@ class Program
     }
 
     
-    public function getUserRegistrationDomainsDisplay(): string
+    public function getUserRegistrationDomainsDisplay(): ?string
     {
         return $this->UserRegistrationDomainsDisplay;
     }
 
     
-    public function withUserRegistrationDomainsDisplay(string $UserRegistrationDomainsDisplay): static
+    public function withUserRegistrationDomainsDisplay(?string $UserRegistrationDomainsDisplay): static
     {
         $new = clone $this;
         $new->UserRegistrationDomainsDisplay = $UserRegistrationDomainsDisplay;
@@ -1056,13 +1058,13 @@ class Program
     }
 
     
-    public function getUserRegistrationDomainsMode(): string
+    public function getUserRegistrationDomainsMode(): ?string
     {
         return $this->UserRegistrationDomainsMode;
     }
 
     
-    public function withUserRegistrationDomainsMode(string $UserRegistrationDomainsMode): static
+    public function withUserRegistrationDomainsMode(?string $UserRegistrationDomainsMode): static
     {
         $new = clone $this;
         $new->UserRegistrationDomainsMode = $UserRegistrationDomainsMode;
@@ -1071,13 +1073,13 @@ class Program
     }
 
     
-    public function getRegistrationConfirmationText(): string
+    public function getRegistrationConfirmationText(): ?string
     {
         return $this->RegistrationConfirmationText;
     }
 
     
-    public function withRegistrationConfirmationText(string $RegistrationConfirmationText): static
+    public function withRegistrationConfirmationText(?string $RegistrationConfirmationText): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationText = $RegistrationConfirmationText;
@@ -1086,13 +1088,13 @@ class Program
     }
 
     
-    public function getRegistrationIntroText(): string
+    public function getRegistrationIntroText(): ?string
     {
         return $this->RegistrationIntroText;
     }
 
     
-    public function withRegistrationIntroText(string $RegistrationIntroText): static
+    public function withRegistrationIntroText(?string $RegistrationIntroText): static
     {
         $new = clone $this;
         $new->RegistrationIntroText = $RegistrationIntroText;
@@ -1101,13 +1103,13 @@ class Program
     }
 
     
-    public function getRegistrationToDomainIntroText(): string
+    public function getRegistrationToDomainIntroText(): ?string
     {
         return $this->RegistrationToDomainIntroText;
     }
 
     
-    public function withRegistrationToDomainIntroText(string $RegistrationToDomainIntroText): static
+    public function withRegistrationToDomainIntroText(?string $RegistrationToDomainIntroText): static
     {
         $new = clone $this;
         $new->RegistrationToDomainIntroText = $RegistrationToDomainIntroText;
@@ -1116,13 +1118,13 @@ class Program
     }
 
     
-    public function getRegistrationRequestConfirmationText(): string
+    public function getRegistrationRequestConfirmationText(): ?string
     {
         return $this->RegistrationRequestConfirmationText;
     }
 
     
-    public function withRegistrationRequestConfirmationText(string $RegistrationRequestConfirmationText): static
+    public function withRegistrationRequestConfirmationText(?string $RegistrationRequestConfirmationText): static
     {
         $new = clone $this;
         $new->RegistrationRequestConfirmationText = $RegistrationRequestConfirmationText;
@@ -1131,13 +1133,13 @@ class Program
     }
 
     
-    public function getRegistrationDisclaimerText(): string
+    public function getRegistrationDisclaimerText(): ?string
     {
         return $this->RegistrationDisclaimerText;
     }
 
     
-    public function withRegistrationDisclaimerText(string $RegistrationDisclaimerText): static
+    public function withRegistrationDisclaimerText(?string $RegistrationDisclaimerText): static
     {
         $new = clone $this;
         $new->RegistrationDisclaimerText = $RegistrationDisclaimerText;
@@ -1191,13 +1193,13 @@ class Program
     }
 
     
-    public function getRegistrationSubscription(): string
+    public function getRegistrationSubscription(): ?string
     {
         return $this->RegistrationSubscription;
     }
 
     
-    public function withRegistrationSubscription(string $RegistrationSubscription): static
+    public function withRegistrationSubscription(?string $RegistrationSubscription): static
     {
         $new = clone $this;
         $new->RegistrationSubscription = $RegistrationSubscription;
@@ -1206,13 +1208,13 @@ class Program
     }
 
     
-    public function getRegistrationPasses(): string
+    public function getRegistrationPasses(): ?string
     {
         return $this->RegistrationPasses;
     }
 
     
-    public function withRegistrationPasses(string $RegistrationPasses): static
+    public function withRegistrationPasses(?string $RegistrationPasses): static
     {
         $new = clone $this;
         $new->RegistrationPasses = $RegistrationPasses;
@@ -1386,13 +1388,13 @@ class Program
     }
 
     
-    public function getRegistrationConfirmationEmailText(): string
+    public function getRegistrationConfirmationEmailText(): ?string
     {
         return $this->RegistrationConfirmationEmailText;
     }
 
     
-    public function withRegistrationConfirmationEmailText(string $RegistrationConfirmationEmailText): static
+    public function withRegistrationConfirmationEmailText(?string $RegistrationConfirmationEmailText): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationEmailText = $RegistrationConfirmationEmailText;
@@ -1401,13 +1403,13 @@ class Program
     }
 
     
-    public function getRegistrationRequestEmailText(): string
+    public function getRegistrationRequestEmailText(): ?string
     {
         return $this->RegistrationRequestEmailText;
     }
 
     
-    public function withRegistrationRequestEmailText(string $RegistrationRequestEmailText): static
+    public function withRegistrationRequestEmailText(?string $RegistrationRequestEmailText): static
     {
         $new = clone $this;
         $new->RegistrationRequestEmailText = $RegistrationRequestEmailText;
@@ -1416,13 +1418,13 @@ class Program
     }
 
     
-    public function getRegistrationApprovalEmailText(): string
+    public function getRegistrationApprovalEmailText(): ?string
     {
         return $this->RegistrationApprovalEmailText;
     }
 
     
-    public function withRegistrationApprovalEmailText(string $RegistrationApprovalEmailText): static
+    public function withRegistrationApprovalEmailText(?string $RegistrationApprovalEmailText): static
     {
         $new = clone $this;
         $new->RegistrationApprovalEmailText = $RegistrationApprovalEmailText;
@@ -1431,13 +1433,13 @@ class Program
     }
 
     
-    public function getRegistrationDenialEmailText(): string
+    public function getRegistrationDenialEmailText(): ?string
     {
         return $this->RegistrationDenialEmailText;
     }
 
     
-    public function withRegistrationDenialEmailText(string $RegistrationDenialEmailText): static
+    public function withRegistrationDenialEmailText(?string $RegistrationDenialEmailText): static
     {
         $new = clone $this;
         $new->RegistrationDenialEmailText = $RegistrationDenialEmailText;
@@ -1446,13 +1448,13 @@ class Program
     }
 
     
-    public function getRegistrationCaptchaMode(): string
+    public function getRegistrationCaptchaMode(): ?string
     {
         return $this->RegistrationCaptchaMode;
     }
 
     
-    public function withRegistrationCaptchaMode(string $RegistrationCaptchaMode): static
+    public function withRegistrationCaptchaMode(?string $RegistrationCaptchaMode): static
     {
         $new = clone $this;
         $new->RegistrationCaptchaMode = $RegistrationCaptchaMode;
@@ -1461,13 +1463,13 @@ class Program
     }
 
     
-    public function getRegistrationCaptchaType(): string
+    public function getRegistrationCaptchaType(): ?string
     {
         return $this->RegistrationCaptchaType;
     }
 
     
-    public function withRegistrationCaptchaType(string $RegistrationCaptchaType): static
+    public function withRegistrationCaptchaType(?string $RegistrationCaptchaType): static
     {
         $new = clone $this;
         $new->RegistrationCaptchaType = $RegistrationCaptchaType;
@@ -1476,13 +1478,13 @@ class Program
     }
 
     
-    public function getForumCaptchaType(): string
+    public function getForumCaptchaType(): ?string
     {
         return $this->ForumCaptchaType;
     }
 
     
-    public function withForumCaptchaType(string $ForumCaptchaType): static
+    public function withForumCaptchaType(?string $ForumCaptchaType): static
     {
         $new = clone $this;
         $new->ForumCaptchaType = $ForumCaptchaType;
@@ -1491,13 +1493,13 @@ class Program
     }
 
     
-    public function getForumDisclaimerText(): string
+    public function getForumDisclaimerText(): ?string
     {
         return $this->ForumDisclaimerText;
     }
 
     
-    public function withForumDisclaimerText(string $ForumDisclaimerText): static
+    public function withForumDisclaimerText(?string $ForumDisclaimerText): static
     {
         $new = clone $this;
         $new->ForumDisclaimerText = $ForumDisclaimerText;
@@ -1506,13 +1508,13 @@ class Program
     }
 
     
-    public function getShowForumDisclaimerWhen(): string
+    public function getShowForumDisclaimerWhen(): ?string
     {
         return $this->ShowForumDisclaimerWhen;
     }
 
     
-    public function withShowForumDisclaimerWhen(string $ShowForumDisclaimerWhen): static
+    public function withShowForumDisclaimerWhen(?string $ShowForumDisclaimerWhen): static
     {
         $new = clone $this;
         $new->ShowForumDisclaimerWhen = $ShowForumDisclaimerWhen;
@@ -1521,13 +1523,13 @@ class Program
     }
 
     
-    public function getForumDisclaimerButtonText(): string
+    public function getForumDisclaimerButtonText(): ?string
     {
         return $this->ForumDisclaimerButtonText;
     }
 
     
-    public function withForumDisclaimerButtonText(string $ForumDisclaimerButtonText): static
+    public function withForumDisclaimerButtonText(?string $ForumDisclaimerButtonText): static
     {
         $new = clone $this;
         $new->ForumDisclaimerButtonText = $ForumDisclaimerButtonText;
@@ -1581,13 +1583,13 @@ class Program
     }
 
     
-    public function getSubPrograms(): ArrayOfProgram
+    public function getSubPrograms(): ?ArrayOfProgram
     {
         return $this->SubPrograms;
     }
 
     
-    public function withSubPrograms(ArrayOfProgram $SubPrograms): static
+    public function withSubPrograms(?ArrayOfProgram $SubPrograms): static
     {
         $new = clone $this;
         $new->SubPrograms = $SubPrograms;
@@ -1596,13 +1598,13 @@ class Program
     }
 
     
-    public function getClassroomTemplate(): string
+    public function getClassroomTemplate(): ?string
     {
         return $this->ClassroomTemplate;
     }
 
     
-    public function withClassroomTemplate(string $ClassroomTemplate): static
+    public function withClassroomTemplate(?string $ClassroomTemplate): static
     {
         $new = clone $this;
         $new->ClassroomTemplate = $ClassroomTemplate;
@@ -1610,14 +1612,18 @@ class Program
         return $new;
     }
 
-    
-    public function getLogo(): Base64Binary
+    /**
+     * @return null | mixed
+     */
+    public function getLogo(): mixed
     {
         return $this->Logo;
     }
 
-    
-    public function withLogo(Base64Binary $Logo): static
+    /**
+     * @param null | mixed $Logo
+     */
+    public function withLogo(mixed $Logo): static
     {
         $new = clone $this;
         $new->Logo = $Logo;
@@ -1626,13 +1632,13 @@ class Program
     }
 
     
-    public function getLogoContentType(): string
+    public function getLogoContentType(): ?string
     {
         return $this->LogoContentType;
     }
 
     
-    public function withLogoContentType(string $LogoContentType): static
+    public function withLogoContentType(?string $LogoContentType): static
     {
         $new = clone $this;
         $new->LogoContentType = $LogoContentType;
@@ -1716,13 +1722,13 @@ class Program
     }
 
     
-    public function getMFAMethod(): string
+    public function getMFAMethod(): ?string
     {
         return $this->MFAMethod;
     }
 
     
-    public function withMFAMethod(string $MFAMethod): static
+    public function withMFAMethod(?string $MFAMethod): static
     {
         $new = clone $this;
         $new->MFAMethod = $MFAMethod;
@@ -2076,13 +2082,13 @@ class Program
     }
 
     
-    public function getAllowedLearningActivities(): ArrayOfString
+    public function getAllowedLearningActivities(): ?ArrayOfString
     {
         return $this->AllowedLearningActivities;
     }
 
     
-    public function withAllowedLearningActivities(ArrayOfString $AllowedLearningActivities): static
+    public function withAllowedLearningActivities(?ArrayOfString $AllowedLearningActivities): static
     {
         $new = clone $this;
         $new->AllowedLearningActivities = $AllowedLearningActivities;
@@ -2091,13 +2097,13 @@ class Program
     }
 
     
-    public function getParentAllowedLearningActivities(): ArrayOfString
+    public function getParentAllowedLearningActivities(): ?ArrayOfString
     {
         return $this->ParentAllowedLearningActivities;
     }
 
     
-    public function withParentAllowedLearningActivities(ArrayOfString $ParentAllowedLearningActivities): static
+    public function withParentAllowedLearningActivities(?ArrayOfString $ParentAllowedLearningActivities): static
     {
         $new = clone $this;
         $new->ParentAllowedLearningActivities = $ParentAllowedLearningActivities;
@@ -2106,13 +2112,13 @@ class Program
     }
 
     
-    public function getLearningActivityTypeOffFilters(): ArrayOfString
+    public function getLearningActivityTypeOffFilters(): ?ArrayOfString
     {
         return $this->LearningActivityTypeOffFilters;
     }
 
     
-    public function withLearningActivityTypeOffFilters(ArrayOfString $LearningActivityTypeOffFilters): static
+    public function withLearningActivityTypeOffFilters(?ArrayOfString $LearningActivityTypeOffFilters): static
     {
         $new = clone $this;
         $new->LearningActivityTypeOffFilters = $LearningActivityTypeOffFilters;
@@ -2121,13 +2127,13 @@ class Program
     }
 
     
-    public function getParentLearningActivityTypeOffFilters(): ArrayOfString
+    public function getParentLearningActivityTypeOffFilters(): ?ArrayOfString
     {
         return $this->ParentLearningActivityTypeOffFilters;
     }
 
     
-    public function withParentLearningActivityTypeOffFilters(ArrayOfString $ParentLearningActivityTypeOffFilters): static
+    public function withParentLearningActivityTypeOffFilters(?ArrayOfString $ParentLearningActivityTypeOffFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityTypeOffFilters = $ParentLearningActivityTypeOffFilters;
@@ -2136,13 +2142,13 @@ class Program
     }
 
     
-    public function getLearningActivityStatusOffFilters(): ArrayOfString
+    public function getLearningActivityStatusOffFilters(): ?ArrayOfString
     {
         return $this->LearningActivityStatusOffFilters;
     }
 
     
-    public function withLearningActivityStatusOffFilters(ArrayOfString $LearningActivityStatusOffFilters): static
+    public function withLearningActivityStatusOffFilters(?ArrayOfString $LearningActivityStatusOffFilters): static
     {
         $new = clone $this;
         $new->LearningActivityStatusOffFilters = $LearningActivityStatusOffFilters;
@@ -2151,13 +2157,13 @@ class Program
     }
 
     
-    public function getParentLearningActivityStatusOffFilters(): ArrayOfString
+    public function getParentLearningActivityStatusOffFilters(): ?ArrayOfString
     {
         return $this->ParentLearningActivityStatusOffFilters;
     }
 
     
-    public function withParentLearningActivityStatusOffFilters(ArrayOfString $ParentLearningActivityStatusOffFilters): static
+    public function withParentLearningActivityStatusOffFilters(?ArrayOfString $ParentLearningActivityStatusOffFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityStatusOffFilters = $ParentLearningActivityStatusOffFilters;
@@ -2166,13 +2172,13 @@ class Program
     }
 
     
-    public function getLearningActivityOriginOffFilters(): ArrayOfString
+    public function getLearningActivityOriginOffFilters(): ?ArrayOfString
     {
         return $this->LearningActivityOriginOffFilters;
     }
 
     
-    public function withLearningActivityOriginOffFilters(ArrayOfString $LearningActivityOriginOffFilters): static
+    public function withLearningActivityOriginOffFilters(?ArrayOfString $LearningActivityOriginOffFilters): static
     {
         $new = clone $this;
         $new->LearningActivityOriginOffFilters = $LearningActivityOriginOffFilters;
@@ -2181,13 +2187,13 @@ class Program
     }
 
     
-    public function getParentLearningActivityOriginOffFilters(): ArrayOfString
+    public function getParentLearningActivityOriginOffFilters(): ?ArrayOfString
     {
         return $this->ParentLearningActivityOriginOffFilters;
     }
 
     
-    public function withParentLearningActivityOriginOffFilters(ArrayOfString $ParentLearningActivityOriginOffFilters): static
+    public function withParentLearningActivityOriginOffFilters(?ArrayOfString $ParentLearningActivityOriginOffFilters): static
     {
         $new = clone $this;
         $new->ParentLearningActivityOriginOffFilters = $ParentLearningActivityOriginOffFilters;
@@ -2226,13 +2232,13 @@ class Program
     }
 
     
-    public function getLearningActivitiesSortSettings(): string
+    public function getLearningActivitiesSortSettings(): ?string
     {
         return $this->LearningActivitiesSortSettings;
     }
 
     
-    public function withLearningActivitiesSortSettings(string $LearningActivitiesSortSettings): static
+    public function withLearningActivitiesSortSettings(?string $LearningActivitiesSortSettings): static
     {
         $new = clone $this;
         $new->LearningActivitiesSortSettings = $LearningActivitiesSortSettings;
@@ -2316,13 +2322,13 @@ class Program
     }
 
     
-    public function getSubscriptionRules(): ArrayOfAnyType
+    public function getSubscriptionRules(): ?ArrayOfAnyType
     {
         return $this->SubscriptionRules;
     }
 
     
-    public function withSubscriptionRules(ArrayOfAnyType $SubscriptionRules): static
+    public function withSubscriptionRules(?ArrayOfAnyType $SubscriptionRules): static
     {
         $new = clone $this;
         $new->SubscriptionRules = $SubscriptionRules;
@@ -2331,13 +2337,13 @@ class Program
     }
 
     
-    public function getRegistrationIntroXmlNode(): RegistrationIntroXmlNode
+    public function getRegistrationIntroXmlNode(): ?RegistrationIntroXmlNode
     {
         return $this->RegistrationIntroXmlNode;
     }
 
     
-    public function withRegistrationIntroXmlNode(RegistrationIntroXmlNode $RegistrationIntroXmlNode): static
+    public function withRegistrationIntroXmlNode(?RegistrationIntroXmlNode $RegistrationIntroXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationIntroXmlNode = $RegistrationIntroXmlNode;
@@ -2346,13 +2352,13 @@ class Program
     }
 
     
-    public function getRegistrationDuplicateAccountInstrXmlNode(): RegistrationDuplicateAccountInstrXmlNode
+    public function getRegistrationDuplicateAccountInstrXmlNode(): ?RegistrationDuplicateAccountInstrXmlNode
     {
         return $this->RegistrationDuplicateAccountInstrXmlNode;
     }
 
     
-    public function withRegistrationDuplicateAccountInstrXmlNode(RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode): static
+    public function withRegistrationDuplicateAccountInstrXmlNode(?RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationDuplicateAccountInstrXmlNode = $RegistrationDuplicateAccountInstrXmlNode;
@@ -2361,13 +2367,13 @@ class Program
     }
 
     
-    public function getRegistrationDisclaimerXmlNode(): RegistrationDisclaimerXmlNode
+    public function getRegistrationDisclaimerXmlNode(): ?RegistrationDisclaimerXmlNode
     {
         return $this->RegistrationDisclaimerXmlNode;
     }
 
     
-    public function withRegistrationDisclaimerXmlNode(RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode): static
+    public function withRegistrationDisclaimerXmlNode(?RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationDisclaimerXmlNode = $RegistrationDisclaimerXmlNode;
@@ -2376,13 +2382,13 @@ class Program
     }
 
     
-    public function getRegistrationConfirmationTextXmlNode(): RegistrationConfirmationTextXmlNode
+    public function getRegistrationConfirmationTextXmlNode(): ?RegistrationConfirmationTextXmlNode
     {
         return $this->RegistrationConfirmationTextXmlNode;
     }
 
     
-    public function withRegistrationConfirmationTextXmlNode(RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode): static
+    public function withRegistrationConfirmationTextXmlNode(?RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationTextXmlNode = $RegistrationConfirmationTextXmlNode;
@@ -2391,13 +2397,13 @@ class Program
     }
 
     
-    public function getRegistrationRequestConfirmationTextXmlNode(): RegistrationRequestConfirmationTextXmlNode
+    public function getRegistrationRequestConfirmationTextXmlNode(): ?RegistrationRequestConfirmationTextXmlNode
     {
         return $this->RegistrationRequestConfirmationTextXmlNode;
     }
 
     
-    public function withRegistrationRequestConfirmationTextXmlNode(RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode): static
+    public function withRegistrationRequestConfirmationTextXmlNode(?RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestConfirmationTextXmlNode = $RegistrationRequestConfirmationTextXmlNode;
@@ -2406,13 +2412,13 @@ class Program
     }
 
     
-    public function getRegistrationConfirmationEmailXmlNode(): RegistrationConfirmationEmailXmlNode
+    public function getRegistrationConfirmationEmailXmlNode(): ?RegistrationConfirmationEmailXmlNode
     {
         return $this->RegistrationConfirmationEmailXmlNode;
     }
 
     
-    public function withRegistrationConfirmationEmailXmlNode(RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode): static
+    public function withRegistrationConfirmationEmailXmlNode(?RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationEmailXmlNode = $RegistrationConfirmationEmailXmlNode;
@@ -2421,13 +2427,13 @@ class Program
     }
 
     
-    public function getRegistrationRequestEmailXmlNode(): RegistrationRequestEmailXmlNode
+    public function getRegistrationRequestEmailXmlNode(): ?RegistrationRequestEmailXmlNode
     {
         return $this->RegistrationRequestEmailXmlNode;
     }
 
     
-    public function withRegistrationRequestEmailXmlNode(RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode): static
+    public function withRegistrationRequestEmailXmlNode(?RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestEmailXmlNode = $RegistrationRequestEmailXmlNode;
@@ -2436,13 +2442,13 @@ class Program
     }
 
     
-    public function getRegistrationRequestApprovalEmailXmlNode(): RegistrationRequestApprovalEmailXmlNode
+    public function getRegistrationRequestApprovalEmailXmlNode(): ?RegistrationRequestApprovalEmailXmlNode
     {
         return $this->RegistrationRequestApprovalEmailXmlNode;
     }
 
     
-    public function withRegistrationRequestApprovalEmailXmlNode(RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode): static
+    public function withRegistrationRequestApprovalEmailXmlNode(?RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestApprovalEmailXmlNode = $RegistrationRequestApprovalEmailXmlNode;
@@ -2451,13 +2457,13 @@ class Program
     }
 
     
-    public function getRegistrationRequestDenialEmailXmlNode(): RegistrationRequestDenialEmailXmlNode
+    public function getRegistrationRequestDenialEmailXmlNode(): ?RegistrationRequestDenialEmailXmlNode
     {
         return $this->RegistrationRequestDenialEmailXmlNode;
     }
 
     
-    public function withRegistrationRequestDenialEmailXmlNode(RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode): static
+    public function withRegistrationRequestDenialEmailXmlNode(?RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestDenialEmailXmlNode = $RegistrationRequestDenialEmailXmlNode;
@@ -2466,13 +2472,13 @@ class Program
     }
 
     
-    public function getUserDomainDisplayLabelXmlNode(): UserDomainDisplayLabelXmlNode
+    public function getUserDomainDisplayLabelXmlNode(): ?UserDomainDisplayLabelXmlNode
     {
         return $this->UserDomainDisplayLabelXmlNode;
     }
 
     
-    public function withUserDomainDisplayLabelXmlNode(UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode): static
+    public function withUserDomainDisplayLabelXmlNode(?UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode): static
     {
         $new = clone $this;
         $new->UserDomainDisplayLabelXmlNode = $UserDomainDisplayLabelXmlNode;
@@ -2541,13 +2547,13 @@ class Program
     }
 
     
-    public function getLicenseContact(): string
+    public function getLicenseContact(): ?string
     {
         return $this->LicenseContact;
     }
 
     
-    public function withLicenseContact(string $LicenseContact): static
+    public function withLicenseContact(?string $LicenseContact): static
     {
         $new = clone $this;
         $new->LicenseContact = $LicenseContact;
@@ -2556,13 +2562,13 @@ class Program
     }
 
     
-    public function getLicenseAniversary(): string
+    public function getLicenseAniversary(): ?string
     {
         return $this->LicenseAniversary;
     }
 
     
-    public function withLicenseAniversary(string $LicenseAniversary): static
+    public function withLicenseAniversary(?string $LicenseAniversary): static
     {
         $new = clone $this;
         $new->LicenseAniversary = $LicenseAniversary;
@@ -2601,13 +2607,13 @@ class Program
     }
 
     
-    public function getOwnerID(): string
+    public function getOwnerID(): ?string
     {
         return $this->OwnerID;
     }
 
     
-    public function withOwnerID(string $OwnerID): static
+    public function withOwnerID(?string $OwnerID): static
     {
         $new = clone $this;
         $new->OwnerID = $OwnerID;
@@ -2616,13 +2622,13 @@ class Program
     }
 
     
-    public function getFromName(): string
+    public function getFromName(): ?string
     {
         return $this->FromName;
     }
 
     
-    public function withFromName(string $FromName): static
+    public function withFromName(?string $FromName): static
     {
         $new = clone $this;
         $new->FromName = $FromName;
@@ -2631,13 +2637,13 @@ class Program
     }
 
     
-    public function getFromEmail(): string
+    public function getFromEmail(): ?string
     {
         return $this->FromEmail;
     }
 
     
-    public function withFromEmail(string $FromEmail): static
+    public function withFromEmail(?string $FromEmail): static
     {
         $new = clone $this;
         $new->FromEmail = $FromEmail;
@@ -3051,13 +3057,13 @@ class Program
     }
 
     
-    public function getSupervisorRules(): ArrayOfAnyType
+    public function getSupervisorRules(): ?ArrayOfAnyType
     {
         return $this->SupervisorRules;
     }
 
     
-    public function withSupervisorRules(ArrayOfAnyType $SupervisorRules): static
+    public function withSupervisorRules(?ArrayOfAnyType $SupervisorRules): static
     {
         $new = clone $this;
         $new->SupervisorRules = $SupervisorRules;

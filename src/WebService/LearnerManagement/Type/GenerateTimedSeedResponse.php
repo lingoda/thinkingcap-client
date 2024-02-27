@@ -10,13 +10,11 @@ class GenerateTimedSeedResponse implements ResultInterface
 {
     private ServiceResultOfString $GenerateTimedSeedResult;
 
-    
     public function getGenerateTimedSeedResult(): ServiceResultOfString
     {
         return $this->GenerateTimedSeedResult;
     }
 
-    
     public function withGenerateTimedSeedResult(ServiceResultOfString $GenerateTimedSeedResult): static
     {
         $new = clone $this;

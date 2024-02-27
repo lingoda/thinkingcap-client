@@ -10,13 +10,11 @@ class SetUserActiveResponse implements ResultInterface
 {
     private ServiceResultOfString $SetUserActiveResult;
 
-    
     public function getSetUserActiveResult(): ServiceResultOfString
     {
         return $this->SetUserActiveResult;
     }
 
-    
     public function withSetUserActiveResult(ServiceResultOfString $SetUserActiveResult): static
     {
         $new = clone $this;

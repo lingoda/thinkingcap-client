@@ -8,63 +8,60 @@ use DateTimeInterface;
 
 class ServiceUser
 {
-    private string $UserID;
+    protected string $UserID;
 
     
-    private string $FirstName;
+    protected ?string $FirstName;
 
     
-    private string $LastName;
+    protected ?string $LastName;
+
+    protected string $Email;
 
     
-    private string $Email;
+    protected ?string $OutsideEmail;
 
     
-    private string $OutsideEmail;
+    protected bool $Active;
 
     
-    private string $Title;
+    protected ?string $HomeDomainID;
 
     
-    private string $ScreenName;
+    protected ?string $HomeDomainName;
 
     
-    private bool $Active;
+    protected DateTimeInterface $CreationDate;
 
     
-    private string $HomeDomainID;
+    protected DateTimeInterface $LastModifiedDate;
 
     
-    private string $HomeDomainName;
+    protected DateTimeInterface $LastLoginDate;
 
     
-    private DateTimeInterface $CreationDate;
+    protected ?string $ProfilePhotoUrl;
 
     
-    private DateTimeInterface $LastModifiedDate;
+    protected ?ArrayOfCustomField $CustomFields;
 
     
-    private DateTimeInterface $LastLoginDate;
+    protected ?ArrayOfDomain $Domains;
 
     
-    private string $Language;
+    private ?string $Title = null;
 
     
-    private string $ProfilePhotoUrl;
+    private ?string $ScreenName = null;
 
     
-    private ArrayOfCustomField $CustomFields;
+    private ?string $Language = null;
 
-    
-    private ArrayOfDomain $Domains;
-
-    
     public function getUserID(): string
     {
         return $this->UserID;
     }
 
-    
     public function withUserID(string $UserID): static
     {
         $new = clone $this;
@@ -74,13 +71,13 @@ class ServiceUser
     }
 
     
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->FirstName;
     }
 
     
-    public function withFirstName(string $FirstName): static
+    public function withFirstName(?string $FirstName): static
     {
         $new = clone $this;
         $new->FirstName = $FirstName;
@@ -89,13 +86,13 @@ class ServiceUser
     }
 
     
-    public function getLastName(): string
+    public function getLastName(): ?string
     {
         return $this->LastName;
     }
 
     
-    public function withLastName(string $LastName): static
+    public function withLastName(?string $LastName): static
     {
         $new = clone $this;
         $new->LastName = $LastName;
@@ -103,13 +100,11 @@ class ServiceUser
         return $new;
     }
 
-    
     public function getEmail(): string
     {
         return $this->Email;
     }
 
-    
     public function withEmail(string $Email): static
     {
         $new = clone $this;
@@ -119,13 +114,13 @@ class ServiceUser
     }
 
     
-    public function getOutsideEmail(): string
+    public function getOutsideEmail(): ?string
     {
         return $this->OutsideEmail;
     }
 
     
-    public function withOutsideEmail(string $OutsideEmail): static
+    public function withOutsideEmail(?string $OutsideEmail): static
     {
         $new = clone $this;
         $new->OutsideEmail = $OutsideEmail;
@@ -134,13 +129,13 @@ class ServiceUser
     }
 
     
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
 
     
-    public function withTitle(string $Title): static
+    public function withTitle(?string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -149,13 +144,13 @@ class ServiceUser
     }
 
     
-    public function getScreenName(): string
+    public function getScreenName(): ?string
     {
         return $this->ScreenName;
     }
 
     
-    public function withScreenName(string $ScreenName): static
+    public function withScreenName(?string $ScreenName): static
     {
         $new = clone $this;
         $new->ScreenName = $ScreenName;
@@ -179,13 +174,13 @@ class ServiceUser
     }
 
     
-    public function getHomeDomainID(): string
+    public function getHomeDomainID(): ?string
     {
         return $this->HomeDomainID;
     }
 
     
-    public function withHomeDomainID(string $HomeDomainID): static
+    public function withHomeDomainID(?string $HomeDomainID): static
     {
         $new = clone $this;
         $new->HomeDomainID = $HomeDomainID;
@@ -194,13 +189,13 @@ class ServiceUser
     }
 
     
-    public function getHomeDomainName(): string
+    public function getHomeDomainName(): ?string
     {
         return $this->HomeDomainName;
     }
 
     
-    public function withHomeDomainName(string $HomeDomainName): static
+    public function withHomeDomainName(?string $HomeDomainName): static
     {
         $new = clone $this;
         $new->HomeDomainName = $HomeDomainName;
@@ -254,13 +249,13 @@ class ServiceUser
     }
 
     
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->Language;
     }
 
     
-    public function withLanguage(string $Language): static
+    public function withLanguage(?string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -269,13 +264,13 @@ class ServiceUser
     }
 
     
-    public function getProfilePhotoUrl(): string
+    public function getProfilePhotoUrl(): ?string
     {
         return $this->ProfilePhotoUrl;
     }
 
     
-    public function withProfilePhotoUrl(string $ProfilePhotoUrl): static
+    public function withProfilePhotoUrl(?string $ProfilePhotoUrl): static
     {
         $new = clone $this;
         $new->ProfilePhotoUrl = $ProfilePhotoUrl;
@@ -284,13 +279,13 @@ class ServiceUser
     }
 
     
-    public function getCustomFields(): ArrayOfCustomField
+    public function getCustomFields(): ?ArrayOfCustomField
     {
         return $this->CustomFields;
     }
 
     
-    public function withCustomFields(ArrayOfCustomField $CustomFields): static
+    public function withCustomFields(?ArrayOfCustomField $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
@@ -299,13 +294,13 @@ class ServiceUser
     }
 
     
-    public function getDomains(): ArrayOfDomain
+    public function getDomains(): ?ArrayOfDomain
     {
         return $this->Domains;
     }
 
     
-    public function withDomains(ArrayOfDomain $Domains): static
+    public function withDomains(?ArrayOfDomain $Domains): static
     {
         $new = clone $this;
         $new->Domains = $Domains;

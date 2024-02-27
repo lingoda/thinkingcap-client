@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfStudentRecord
 {
-    private StudentRecord $StudentRecord;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\StudentRecord>
+     */
+    private ?array $StudentRecord;
 
-    
-    public function getStudentRecord(): StudentRecord
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\StudentRecord>
+     */
+    public function getStudentRecord(): ?array
     {
         return $this->StudentRecord;
     }
 
-    
-    public function withStudentRecord(StudentRecord $StudentRecord): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\StudentRecord> $StudentRecord
+     */
+    public function withStudentRecord(?array $StudentRecord): static
     {
         $new = clone $this;
         $new->StudentRecord = $StudentRecord;

@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfServiceUser
 {
-    private ServiceUser $ServiceUser;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceUser>
+     */
+    private ?array $ServiceUser;
 
-    
-    public function getServiceUser(): ServiceUser
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceUser>
+     */
+    public function getServiceUser(): ?array
     {
         return $this->ServiceUser;
     }
 
-    
-    public function withServiceUser(ServiceUser $ServiceUser): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceUser> $ServiceUser
+     */
+    public function withServiceUser(?array $ServiceUser): static
     {
         $new = clone $this;
         $new->ServiceUser = $ServiceUser;

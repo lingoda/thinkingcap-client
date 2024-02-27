@@ -10,13 +10,11 @@ class GetUsersByScreenNameResponse implements ResultInterface
 {
     private ServiceResultOfUserList $GetUsersByScreenNameResult;
 
-    
     public function getGetUsersByScreenNameResult(): ServiceResultOfUserList
     {
         return $this->GetUsersByScreenNameResult;
     }
 
-    
     public function withGetUsersByScreenNameResult(ServiceResultOfUserList $GetUsersByScreenNameResult): static
     {
         $new = clone $this;

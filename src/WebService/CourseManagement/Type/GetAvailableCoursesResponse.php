@@ -10,13 +10,11 @@ class GetAvailableCoursesResponse implements ResultInterface
 {
     private string $GetAvailableCoursesResult;
 
-    
     public function getGetAvailableCoursesResult(): string
     {
         return $this->GetAvailableCoursesResult;
     }
 
-    
     public function withGetAvailableCoursesResult(string $GetAvailableCoursesResult): static
     {
         $new = clone $this;

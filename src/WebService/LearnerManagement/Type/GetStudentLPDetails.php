@@ -8,22 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetStudentLPDetails implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $studentID;
+    private ?string $studentID;
 
     
-    private string $learningPathID;
+    private ?string $learningPathID;
 
     
-    private string $language;
+    private ?string $language;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $studentID, string $learningPathID, string $language)
+    public function __construct(?string $apiKey, ?string $studentID, ?string $learningPathID, ?string $language)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -32,13 +32,13 @@ class GetStudentLPDetails implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class GetStudentLPDetails implements RequestInterface
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
     
-    public function withStudentID(string $studentID): static
+    public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -62,13 +62,13 @@ class GetStudentLPDetails implements RequestInterface
     }
 
     
-    public function getLearningPathID(): string
+    public function getLearningPathID(): ?string
     {
         return $this->learningPathID;
     }
 
     
-    public function withLearningPathID(string $learningPathID): static
+    public function withLearningPathID(?string $learningPathID): static
     {
         $new = clone $this;
         $new->learningPathID = $learningPathID;
@@ -77,13 +77,13 @@ class GetStudentLPDetails implements RequestInterface
     }
 
     
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
     
-    public function withLanguage(string $language): static
+    public function withLanguage(?string $language): static
     {
         $new = clone $this;
         $new->language = $language;

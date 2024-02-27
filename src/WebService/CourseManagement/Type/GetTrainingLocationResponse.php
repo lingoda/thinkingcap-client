@@ -10,13 +10,11 @@ class GetTrainingLocationResponse implements ResultInterface
 {
     private ServiceResultOfTrainingLocation $GetTrainingLocationResult;
 
-    
     public function getGetTrainingLocationResult(): ServiceResultOfTrainingLocation
     {
         return $this->GetTrainingLocationResult;
     }
 
-    
     public function withGetTrainingLocationResult(ServiceResultOfTrainingLocation $GetTrainingLocationResult): static
     {
         $new = clone $this;

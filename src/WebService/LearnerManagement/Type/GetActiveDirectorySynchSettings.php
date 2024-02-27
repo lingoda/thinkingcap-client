@@ -8,19 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetActiveDirectorySynchSettings implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $clientKey;
+    private ?string $clientKey;
 
     
-    private string $domainID;
+    private ?string $domainID;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $clientKey, string $domainID)
+    public function __construct(?string $apiKey, ?string $clientKey, ?string $domainID)
     {
         $this->apiKey = $apiKey;
         $this->clientKey = $clientKey;
@@ -28,13 +28,13 @@ class GetActiveDirectorySynchSettings implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -43,13 +43,13 @@ class GetActiveDirectorySynchSettings implements RequestInterface
     }
 
     
-    public function getClientKey(): string
+    public function getClientKey(): ?string
     {
         return $this->clientKey;
     }
 
     
-    public function withClientKey(string $clientKey): static
+    public function withClientKey(?string $clientKey): static
     {
         $new = clone $this;
         $new->clientKey = $clientKey;
@@ -58,13 +58,13 @@ class GetActiveDirectorySynchSettings implements RequestInterface
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
     
-    public function withDomainID(string $domainID): static
+    public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
         $new->domainID = $domainID;

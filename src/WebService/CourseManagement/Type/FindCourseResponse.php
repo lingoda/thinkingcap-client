@@ -10,13 +10,11 @@ class FindCourseResponse implements ResultInterface
 {
     private ServiceResultOfCourse $FindCourseResult;
 
-    
     public function getFindCourseResult(): ServiceResultOfCourse
     {
         return $this->FindCourseResult;
     }
 
-    
     public function withFindCourseResult(ServiceResultOfCourse $FindCourseResult): static
     {
         $new = clone $this;

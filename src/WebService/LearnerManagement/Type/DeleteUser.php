@@ -8,29 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class DeleteUser implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userID;
+    private ?string $userID;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $userID)
+    public function __construct(?string $apiKey, ?string $userID)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -39,13 +39,13 @@ class DeleteUser implements RequestInterface
     }
 
     
-    public function getUserID(): string
+    public function getUserID(): ?string
     {
         return $this->userID;
     }
 
     
-    public function withUserID(string $userID): static
+    public function withUserID(?string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;

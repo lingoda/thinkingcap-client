@@ -8,34 +8,34 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class AddLearningActivity implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $learningActivityDomainID;
+    private ?string $learningActivityDomainID;
 
     
-    private string $learningActivityType;
+    private ?string $learningActivityType;
 
     
-    private string $learningActivityID;
+    private ?string $learningActivityID;
 
     
-    private string $learningActivityTitle;
+    private ?string $learningActivityTitle;
 
     
-    private string $learningActivityCode;
+    private ?string $learningActivityCode;
 
     
-    private string $learningActivityDescription;
+    private ?string $learningActivityDescription;
 
     
-    private string $learningActivityLanguage;
+    private ?string $learningActivityLanguage;
 
     
-    private string $learningActivityEquivalencyCode;
+    private ?string $learningActivityEquivalencyCode;
 
     
-    private string $learningActivityTags;
+    private ?string $learningActivityTags;
 
     
     private float $learningActivityEstimatedTimeMinutes;
@@ -47,13 +47,13 @@ class AddLearningActivity implements RequestInterface
     private bool $learningActivityRequiresEvidence;
 
     
-    private string $learningActivityCertificateTemplateName;
+    private ?string $learningActivityCertificateTemplateName;
 
     
     private int $learningActivityCertificateMinScore;
 
     
-    private string $learningActivityCustomMetadata;
+    private ?string $learningActivityCustomMetadata;
 
     
     private bool $updateAdminCatalogs;
@@ -65,7 +65,7 @@ class AddLearningActivity implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $learningActivityDomainID, string $learningActivityType, string $learningActivityID, string $learningActivityTitle, string $learningActivityCode, string $learningActivityDescription, string $learningActivityLanguage, string $learningActivityEquivalencyCode, string $learningActivityTags, float $learningActivityEstimatedTimeMinutes, bool $learningActivityShowSupervisorLogin, bool $learningActivityRequiresEvidence, string $learningActivityCertificateTemplateName, int $learningActivityCertificateMinScore, string $learningActivityCustomMetadata, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
+    public function __construct(?string $apiKey, ?string $learningActivityDomainID, ?string $learningActivityType, ?string $learningActivityID, ?string $learningActivityTitle, ?string $learningActivityCode, ?string $learningActivityDescription, ?string $learningActivityLanguage, ?string $learningActivityEquivalencyCode, ?string $learningActivityTags, float $learningActivityEstimatedTimeMinutes, bool $learningActivityShowSupervisorLogin, bool $learningActivityRequiresEvidence, ?string $learningActivityCertificateTemplateName, int $learningActivityCertificateMinScore, ?string $learningActivityCustomMetadata, bool $updateAdminCatalogs, bool $updateLearnerCatalogs)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityDomainID = $learningActivityDomainID;
@@ -88,13 +88,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -103,13 +103,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityDomainID(): string
+    public function getLearningActivityDomainID(): ?string
     {
         return $this->learningActivityDomainID;
     }
 
     
-    public function withLearningActivityDomainID(string $learningActivityDomainID): static
+    public function withLearningActivityDomainID(?string $learningActivityDomainID): static
     {
         $new = clone $this;
         $new->learningActivityDomainID = $learningActivityDomainID;
@@ -118,13 +118,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityType(): string
+    public function getLearningActivityType(): ?string
     {
         return $this->learningActivityType;
     }
 
     
-    public function withLearningActivityType(string $learningActivityType): static
+    public function withLearningActivityType(?string $learningActivityType): static
     {
         $new = clone $this;
         $new->learningActivityType = $learningActivityType;
@@ -133,13 +133,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityID(): string
+    public function getLearningActivityID(): ?string
     {
         return $this->learningActivityID;
     }
 
     
-    public function withLearningActivityID(string $learningActivityID): static
+    public function withLearningActivityID(?string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;
@@ -148,13 +148,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityTitle(): string
+    public function getLearningActivityTitle(): ?string
     {
         return $this->learningActivityTitle;
     }
 
     
-    public function withLearningActivityTitle(string $learningActivityTitle): static
+    public function withLearningActivityTitle(?string $learningActivityTitle): static
     {
         $new = clone $this;
         $new->learningActivityTitle = $learningActivityTitle;
@@ -163,13 +163,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityCode(): string
+    public function getLearningActivityCode(): ?string
     {
         return $this->learningActivityCode;
     }
 
     
-    public function withLearningActivityCode(string $learningActivityCode): static
+    public function withLearningActivityCode(?string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;
@@ -178,13 +178,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityDescription(): string
+    public function getLearningActivityDescription(): ?string
     {
         return $this->learningActivityDescription;
     }
 
     
-    public function withLearningActivityDescription(string $learningActivityDescription): static
+    public function withLearningActivityDescription(?string $learningActivityDescription): static
     {
         $new = clone $this;
         $new->learningActivityDescription = $learningActivityDescription;
@@ -193,13 +193,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityLanguage(): string
+    public function getLearningActivityLanguage(): ?string
     {
         return $this->learningActivityLanguage;
     }
 
     
-    public function withLearningActivityLanguage(string $learningActivityLanguage): static
+    public function withLearningActivityLanguage(?string $learningActivityLanguage): static
     {
         $new = clone $this;
         $new->learningActivityLanguage = $learningActivityLanguage;
@@ -208,13 +208,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityEquivalencyCode(): string
+    public function getLearningActivityEquivalencyCode(): ?string
     {
         return $this->learningActivityEquivalencyCode;
     }
 
     
-    public function withLearningActivityEquivalencyCode(string $learningActivityEquivalencyCode): static
+    public function withLearningActivityEquivalencyCode(?string $learningActivityEquivalencyCode): static
     {
         $new = clone $this;
         $new->learningActivityEquivalencyCode = $learningActivityEquivalencyCode;
@@ -223,13 +223,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityTags(): string
+    public function getLearningActivityTags(): ?string
     {
         return $this->learningActivityTags;
     }
 
     
-    public function withLearningActivityTags(string $learningActivityTags): static
+    public function withLearningActivityTags(?string $learningActivityTags): static
     {
         $new = clone $this;
         $new->learningActivityTags = $learningActivityTags;
@@ -283,13 +283,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityCertificateTemplateName(): string
+    public function getLearningActivityCertificateTemplateName(): ?string
     {
         return $this->learningActivityCertificateTemplateName;
     }
 
     
-    public function withLearningActivityCertificateTemplateName(string $learningActivityCertificateTemplateName): static
+    public function withLearningActivityCertificateTemplateName(?string $learningActivityCertificateTemplateName): static
     {
         $new = clone $this;
         $new->learningActivityCertificateTemplateName = $learningActivityCertificateTemplateName;
@@ -313,13 +313,13 @@ class AddLearningActivity implements RequestInterface
     }
 
     
-    public function getLearningActivityCustomMetadata(): string
+    public function getLearningActivityCustomMetadata(): ?string
     {
         return $this->learningActivityCustomMetadata;
     }
 
     
-    public function withLearningActivityCustomMetadata(string $learningActivityCustomMetadata): static
+    public function withLearningActivityCustomMetadata(?string $learningActivityCustomMetadata): static
     {
         $new = clone $this;
         $new->learningActivityCustomMetadata = $learningActivityCustomMetadata;

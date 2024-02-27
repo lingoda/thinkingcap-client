@@ -8,10 +8,10 @@ use DateTimeInterface;
 
 class AccreditationDetails
 {
-    private string $Type;
+    private ?string $Type;
 
     
-    private string $ID;
+    private ?string $ID;
 
     
     private float $CreditValue;
@@ -26,7 +26,7 @@ class AccreditationDetails
     private float $CertificateMinTime;
 
     
-    private string $CertificateType;
+    private ?string $CertificateType;
 
     
     private bool $CanPrintCertificate;
@@ -62,19 +62,19 @@ class AccreditationDetails
     private int $ExpireUnit;
 
     
-    private string $ExpireInterval;
+    private ?string $ExpireInterval;
 
     
     private int $NotifyUnit;
 
     
-    private string $NotifyInterval;
+    private ?string $NotifyInterval;
 
     
     private DateTimeInterface $ExpireDate;
 
     
-    private string $ExpireMetadataFieldID;
+    private ?string $ExpireMetadataFieldID;
 
     
     private bool $CreditsAcrossVariousCategories;
@@ -83,7 +83,7 @@ class AccreditationDetails
     private bool $GrantOpenBadge;
 
     
-    private string $OpenBadgeType;
+    private ?string $OpenBadgeType;
 
     
     private bool $GrantOpenBadgeCompletionPriorDueDate;
@@ -92,13 +92,13 @@ class AccreditationDetails
     private int $GrantOpenBadgeCompletionDayAfterEnroll;
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
 
     
-    public function withType(string $Type): static
+    public function withType(?string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -107,13 +107,13 @@ class AccreditationDetails
     }
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -182,13 +182,13 @@ class AccreditationDetails
     }
 
     
-    public function getCertificateType(): string
+    public function getCertificateType(): ?string
     {
         return $this->CertificateType;
     }
 
     
-    public function withCertificateType(string $CertificateType): static
+    public function withCertificateType(?string $CertificateType): static
     {
         $new = clone $this;
         $new->CertificateType = $CertificateType;
@@ -362,13 +362,13 @@ class AccreditationDetails
     }
 
     
-    public function getExpireInterval(): string
+    public function getExpireInterval(): ?string
     {
         return $this->ExpireInterval;
     }
 
     
-    public function withExpireInterval(string $ExpireInterval): static
+    public function withExpireInterval(?string $ExpireInterval): static
     {
         $new = clone $this;
         $new->ExpireInterval = $ExpireInterval;
@@ -392,13 +392,13 @@ class AccreditationDetails
     }
 
     
-    public function getNotifyInterval(): string
+    public function getNotifyInterval(): ?string
     {
         return $this->NotifyInterval;
     }
 
     
-    public function withNotifyInterval(string $NotifyInterval): static
+    public function withNotifyInterval(?string $NotifyInterval): static
     {
         $new = clone $this;
         $new->NotifyInterval = $NotifyInterval;
@@ -422,13 +422,13 @@ class AccreditationDetails
     }
 
     
-    public function getExpireMetadataFieldID(): string
+    public function getExpireMetadataFieldID(): ?string
     {
         return $this->ExpireMetadataFieldID;
     }
 
     
-    public function withExpireMetadataFieldID(string $ExpireMetadataFieldID): static
+    public function withExpireMetadataFieldID(?string $ExpireMetadataFieldID): static
     {
         $new = clone $this;
         $new->ExpireMetadataFieldID = $ExpireMetadataFieldID;
@@ -467,13 +467,13 @@ class AccreditationDetails
     }
 
     
-    public function getOpenBadgeType(): string
+    public function getOpenBadgeType(): ?string
     {
         return $this->OpenBadgeType;
     }
 
     
-    public function withOpenBadgeType(string $OpenBadgeType): static
+    public function withOpenBadgeType(?string $OpenBadgeType): static
     {
         $new = clone $this;
         $new->OpenBadgeType = $OpenBadgeType;

@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfPermission
 {
-    private Permission $Permission;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission>
+     */
+    private ?array $Permission;
 
-    
-    public function getPermission(): Permission
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission>
+     */
+    public function getPermission(): ?array
     {
         return $this->Permission;
     }
 
-    
-    public function withPermission(Permission $Permission): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission> $Permission
+     */
+    public function withPermission(?array $Permission): static
     {
         $new = clone $this;
         $new->Permission = $Permission;

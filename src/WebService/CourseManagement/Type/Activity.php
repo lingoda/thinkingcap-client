@@ -6,24 +6,24 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 use DateTimeInterface;
 
-class Activity
+class Activity extends LearningType
 {
-    private string $TypeName;
+    private ?string $TypeName;
 
     
-    private TitleNode $TitleNode;
+    private ?TitleNode $TitleNode;
 
     
-    private DescriptionNode $DescriptionNode;
+    private ?DescriptionNode $DescriptionNode;
 
     
-    private string $Folder;
+    private ?string $Folder;
 
     
-    private Schedule $Schedule;
+    private ?Schedule $Schedule;
 
     
-    private ArrayOfString $StudentList;
+    private ?ArrayOfString $StudentList;
 
     
     private bool $FixedTime;
@@ -59,22 +59,22 @@ class Activity
     private bool $SendSupervisorSignOffEmailOnLogin;
 
     
-    private string $AuthenticationTypeName;
+    private ?string $AuthenticationTypeName;
 
     
-    private string $AuthenticationTypeCode;
+    private ?string $AuthenticationTypeCode;
 
     
-    private string $HasLogo;
+    private ?string $HasLogo;
 
     
-    private string $AuthCode;
+    private ?string $AuthCode;
 
     
-    private string $StudentID;
+    private ?string $StudentID;
 
     
-    private string $ProctorID;
+    private ?string $ProctorID;
 
     
     private DateTimeInterface $LastCompletionDate;
@@ -86,16 +86,18 @@ class Activity
     private bool $IsCompleted;
 
     
-    private string $ContentType;
+    private ?string $ContentType;
 
-    
-    private Base64Binary $DocumentFile;
+    /**
+     * @var null | mixed
+     */
+    private mixed $DocumentFile;
 
     
     private int $Step;
 
     
-    private string $Instructions;
+    private ?string $Instructions;
 
     
     private bool $Published;
@@ -104,16 +106,16 @@ class Activity
     private bool $IsPortfolioEvidence;
 
     
-    private string $PortfolioEvidenceType;
+    private ?string $PortfolioEvidenceType;
 
     
-    private string $AttestationType;
+    private ?string $AttestationType;
 
     
-    private string $SurveyContentType;
+    private ?string $SurveyContentType;
 
     
-    private string $CustomTypeName;
+    private ?string $CustomTypeName;
 
     
     private bool $IsCompletedTrainingDate;
@@ -122,46 +124,46 @@ class Activity
     private DateTimeInterface $TrainingCompletionDate;
 
     
-    private string $ComprehensionDocumentID;
+    private ?string $ComprehensionDocumentID;
 
     
-    private string $ComprehensionDocumentTitle;
+    private ?string $ComprehensionDocumentTitle;
 
     
-    private string $ComprehensionDocumentComments;
+    private ?string $ComprehensionDocumentComments;
 
     
-    private string $ComprehensionDocumentExtension;
+    private ?string $ComprehensionDocumentExtension;
 
     
-    private string $ComprehensionDocumentContentType;
+    private ?string $ComprehensionDocumentContentType;
 
     
     private bool $SendActivityResourceModificationNotification;
 
     
-    private ArrayOfActivityNotification $ActivityNotifications;
+    private ?ArrayOfActivityNotification $ActivityNotifications;
 
     
-    private ArrayOfAnyType $ActCertificateRules;
+    private ?ArrayOfAnyType $ActCertificateRules;
 
     
-    private string $FileName;
+    private ?string $FileName;
 
     
-    private string $OriginalFileName;
+    private ?string $OriginalFileName;
 
     
     private float $CourseCredit;
 
     
-    private string $RecordCreditValue;
+    private ?string $RecordCreditValue;
 
     
-    private string $RecordID;
+    private ?string $RecordID;
 
     
-    private string $LastRosterFilePath;
+    private ?string $LastRosterFilePath;
 
     
     private bool $AllowCollaboration;
@@ -170,19 +172,19 @@ class Activity
     private bool $EndCollaborationOnCompletion;
 
     
-    private string $CollaborationTitle;
+    private ?string $CollaborationTitle;
 
     
-    private string $CollaborationDescription;
+    private ?string $CollaborationDescription;
 
     
-    public function getTypeName(): string
+    public function getTypeName(): ?string
     {
         return $this->TypeName;
     }
 
     
-    public function withTypeName(string $TypeName): static
+    public function withTypeName(?string $TypeName): static
     {
         $new = clone $this;
         $new->TypeName = $TypeName;
@@ -191,13 +193,13 @@ class Activity
     }
 
     
-    public function getTitleNode(): TitleNode
+    public function getTitleNode(): ?TitleNode
     {
         return $this->TitleNode;
     }
 
     
-    public function withTitleNode(TitleNode $TitleNode): static
+    public function withTitleNode(?TitleNode $TitleNode): static
     {
         $new = clone $this;
         $new->TitleNode = $TitleNode;
@@ -206,13 +208,13 @@ class Activity
     }
 
     
-    public function getDescriptionNode(): DescriptionNode
+    public function getDescriptionNode(): ?DescriptionNode
     {
         return $this->DescriptionNode;
     }
 
     
-    public function withDescriptionNode(DescriptionNode $DescriptionNode): static
+    public function withDescriptionNode(?DescriptionNode $DescriptionNode): static
     {
         $new = clone $this;
         $new->DescriptionNode = $DescriptionNode;
@@ -221,13 +223,13 @@ class Activity
     }
 
     
-    public function getFolder(): string
+    public function getFolder(): ?string
     {
         return $this->Folder;
     }
 
     
-    public function withFolder(string $Folder): static
+    public function withFolder(?string $Folder): static
     {
         $new = clone $this;
         $new->Folder = $Folder;
@@ -236,13 +238,13 @@ class Activity
     }
 
     
-    public function getSchedule(): Schedule
+    public function getSchedule(): ?Schedule
     {
         return $this->Schedule;
     }
 
     
-    public function withSchedule(Schedule $Schedule): static
+    public function withSchedule(?Schedule $Schedule): static
     {
         $new = clone $this;
         $new->Schedule = $Schedule;
@@ -251,13 +253,13 @@ class Activity
     }
 
     
-    public function getStudentList(): ArrayOfString
+    public function getStudentList(): ?ArrayOfString
     {
         return $this->StudentList;
     }
 
     
-    public function withStudentList(ArrayOfString $StudentList): static
+    public function withStudentList(?ArrayOfString $StudentList): static
     {
         $new = clone $this;
         $new->StudentList = $StudentList;
@@ -431,13 +433,13 @@ class Activity
     }
 
     
-    public function getAuthenticationTypeName(): string
+    public function getAuthenticationTypeName(): ?string
     {
         return $this->AuthenticationTypeName;
     }
 
     
-    public function withAuthenticationTypeName(string $AuthenticationTypeName): static
+    public function withAuthenticationTypeName(?string $AuthenticationTypeName): static
     {
         $new = clone $this;
         $new->AuthenticationTypeName = $AuthenticationTypeName;
@@ -446,13 +448,13 @@ class Activity
     }
 
     
-    public function getAuthenticationTypeCode(): string
+    public function getAuthenticationTypeCode(): ?string
     {
         return $this->AuthenticationTypeCode;
     }
 
     
-    public function withAuthenticationTypeCode(string $AuthenticationTypeCode): static
+    public function withAuthenticationTypeCode(?string $AuthenticationTypeCode): static
     {
         $new = clone $this;
         $new->AuthenticationTypeCode = $AuthenticationTypeCode;
@@ -461,13 +463,13 @@ class Activity
     }
 
     
-    public function getHasLogo(): string
+    public function getHasLogo(): ?string
     {
         return $this->HasLogo;
     }
 
     
-    public function withHasLogo(string $HasLogo): static
+    public function withHasLogo(?string $HasLogo): static
     {
         $new = clone $this;
         $new->HasLogo = $HasLogo;
@@ -476,13 +478,13 @@ class Activity
     }
 
     
-    public function getAuthCode(): string
+    public function getAuthCode(): ?string
     {
         return $this->AuthCode;
     }
 
     
-    public function withAuthCode(string $AuthCode): static
+    public function withAuthCode(?string $AuthCode): static
     {
         $new = clone $this;
         $new->AuthCode = $AuthCode;
@@ -491,13 +493,13 @@ class Activity
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
     
-    public function withStudentID(string $StudentID): static
+    public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -506,13 +508,13 @@ class Activity
     }
 
     
-    public function getProctorID(): string
+    public function getProctorID(): ?string
     {
         return $this->ProctorID;
     }
 
     
-    public function withProctorID(string $ProctorID): static
+    public function withProctorID(?string $ProctorID): static
     {
         $new = clone $this;
         $new->ProctorID = $ProctorID;
@@ -566,13 +568,13 @@ class Activity
     }
 
     
-    public function getContentType(): string
+    public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
     
-    public function withContentType(string $ContentType): static
+    public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -580,14 +582,18 @@ class Activity
         return $new;
     }
 
-    
-    public function getDocumentFile(): Base64Binary
+    /**
+     * @return null | mixed
+     */
+    public function getDocumentFile(): mixed
     {
         return $this->DocumentFile;
     }
 
-    
-    public function withDocumentFile(Base64Binary $DocumentFile): static
+    /**
+     * @param null | mixed $DocumentFile
+     */
+    public function withDocumentFile(mixed $DocumentFile): static
     {
         $new = clone $this;
         $new->DocumentFile = $DocumentFile;
@@ -611,13 +617,13 @@ class Activity
     }
 
     
-    public function getInstructions(): string
+    public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
     
-    public function withInstructions(string $Instructions): static
+    public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
         $new->Instructions = $Instructions;
@@ -656,13 +662,13 @@ class Activity
     }
 
     
-    public function getPortfolioEvidenceType(): string
+    public function getPortfolioEvidenceType(): ?string
     {
         return $this->PortfolioEvidenceType;
     }
 
     
-    public function withPortfolioEvidenceType(string $PortfolioEvidenceType): static
+    public function withPortfolioEvidenceType(?string $PortfolioEvidenceType): static
     {
         $new = clone $this;
         $new->PortfolioEvidenceType = $PortfolioEvidenceType;
@@ -671,13 +677,13 @@ class Activity
     }
 
     
-    public function getAttestationType(): string
+    public function getAttestationType(): ?string
     {
         return $this->AttestationType;
     }
 
     
-    public function withAttestationType(string $AttestationType): static
+    public function withAttestationType(?string $AttestationType): static
     {
         $new = clone $this;
         $new->AttestationType = $AttestationType;
@@ -686,13 +692,13 @@ class Activity
     }
 
     
-    public function getSurveyContentType(): string
+    public function getSurveyContentType(): ?string
     {
         return $this->SurveyContentType;
     }
 
     
-    public function withSurveyContentType(string $SurveyContentType): static
+    public function withSurveyContentType(?string $SurveyContentType): static
     {
         $new = clone $this;
         $new->SurveyContentType = $SurveyContentType;
@@ -701,13 +707,13 @@ class Activity
     }
 
     
-    public function getCustomTypeName(): string
+    public function getCustomTypeName(): ?string
     {
         return $this->CustomTypeName;
     }
 
     
-    public function withCustomTypeName(string $CustomTypeName): static
+    public function withCustomTypeName(?string $CustomTypeName): static
     {
         $new = clone $this;
         $new->CustomTypeName = $CustomTypeName;
@@ -746,13 +752,13 @@ class Activity
     }
 
     
-    public function getComprehensionDocumentID(): string
+    public function getComprehensionDocumentID(): ?string
     {
         return $this->ComprehensionDocumentID;
     }
 
     
-    public function withComprehensionDocumentID(string $ComprehensionDocumentID): static
+    public function withComprehensionDocumentID(?string $ComprehensionDocumentID): static
     {
         $new = clone $this;
         $new->ComprehensionDocumentID = $ComprehensionDocumentID;
@@ -761,13 +767,13 @@ class Activity
     }
 
     
-    public function getComprehensionDocumentTitle(): string
+    public function getComprehensionDocumentTitle(): ?string
     {
         return $this->ComprehensionDocumentTitle;
     }
 
     
-    public function withComprehensionDocumentTitle(string $ComprehensionDocumentTitle): static
+    public function withComprehensionDocumentTitle(?string $ComprehensionDocumentTitle): static
     {
         $new = clone $this;
         $new->ComprehensionDocumentTitle = $ComprehensionDocumentTitle;
@@ -776,13 +782,13 @@ class Activity
     }
 
     
-    public function getComprehensionDocumentComments(): string
+    public function getComprehensionDocumentComments(): ?string
     {
         return $this->ComprehensionDocumentComments;
     }
 
     
-    public function withComprehensionDocumentComments(string $ComprehensionDocumentComments): static
+    public function withComprehensionDocumentComments(?string $ComprehensionDocumentComments): static
     {
         $new = clone $this;
         $new->ComprehensionDocumentComments = $ComprehensionDocumentComments;
@@ -791,13 +797,13 @@ class Activity
     }
 
     
-    public function getComprehensionDocumentExtension(): string
+    public function getComprehensionDocumentExtension(): ?string
     {
         return $this->ComprehensionDocumentExtension;
     }
 
     
-    public function withComprehensionDocumentExtension(string $ComprehensionDocumentExtension): static
+    public function withComprehensionDocumentExtension(?string $ComprehensionDocumentExtension): static
     {
         $new = clone $this;
         $new->ComprehensionDocumentExtension = $ComprehensionDocumentExtension;
@@ -806,13 +812,13 @@ class Activity
     }
 
     
-    public function getComprehensionDocumentContentType(): string
+    public function getComprehensionDocumentContentType(): ?string
     {
         return $this->ComprehensionDocumentContentType;
     }
 
     
-    public function withComprehensionDocumentContentType(string $ComprehensionDocumentContentType): static
+    public function withComprehensionDocumentContentType(?string $ComprehensionDocumentContentType): static
     {
         $new = clone $this;
         $new->ComprehensionDocumentContentType = $ComprehensionDocumentContentType;
@@ -836,13 +842,13 @@ class Activity
     }
 
     
-    public function getActivityNotifications(): ArrayOfActivityNotification
+    public function getActivityNotifications(): ?ArrayOfActivityNotification
     {
         return $this->ActivityNotifications;
     }
 
     
-    public function withActivityNotifications(ArrayOfActivityNotification $ActivityNotifications): static
+    public function withActivityNotifications(?ArrayOfActivityNotification $ActivityNotifications): static
     {
         $new = clone $this;
         $new->ActivityNotifications = $ActivityNotifications;
@@ -851,13 +857,13 @@ class Activity
     }
 
     
-    public function getActCertificateRules(): ArrayOfAnyType
+    public function getActCertificateRules(): ?ArrayOfAnyType
     {
         return $this->ActCertificateRules;
     }
 
     
-    public function withActCertificateRules(ArrayOfAnyType $ActCertificateRules): static
+    public function withActCertificateRules(?ArrayOfAnyType $ActCertificateRules): static
     {
         $new = clone $this;
         $new->ActCertificateRules = $ActCertificateRules;
@@ -866,13 +872,13 @@ class Activity
     }
 
     
-    public function getFileName(): string
+    public function getFileName(): ?string
     {
         return $this->FileName;
     }
 
     
-    public function withFileName(string $FileName): static
+    public function withFileName(?string $FileName): static
     {
         $new = clone $this;
         $new->FileName = $FileName;
@@ -881,13 +887,13 @@ class Activity
     }
 
     
-    public function getOriginalFileName(): string
+    public function getOriginalFileName(): ?string
     {
         return $this->OriginalFileName;
     }
 
     
-    public function withOriginalFileName(string $OriginalFileName): static
+    public function withOriginalFileName(?string $OriginalFileName): static
     {
         $new = clone $this;
         $new->OriginalFileName = $OriginalFileName;
@@ -911,13 +917,13 @@ class Activity
     }
 
     
-    public function getRecordCreditValue(): string
+    public function getRecordCreditValue(): ?string
     {
         return $this->RecordCreditValue;
     }
 
     
-    public function withRecordCreditValue(string $RecordCreditValue): static
+    public function withRecordCreditValue(?string $RecordCreditValue): static
     {
         $new = clone $this;
         $new->RecordCreditValue = $RecordCreditValue;
@@ -926,13 +932,13 @@ class Activity
     }
 
     
-    public function getRecordID(): string
+    public function getRecordID(): ?string
     {
         return $this->RecordID;
     }
 
     
-    public function withRecordID(string $RecordID): static
+    public function withRecordID(?string $RecordID): static
     {
         $new = clone $this;
         $new->RecordID = $RecordID;
@@ -941,13 +947,13 @@ class Activity
     }
 
     
-    public function getLastRosterFilePath(): string
+    public function getLastRosterFilePath(): ?string
     {
         return $this->LastRosterFilePath;
     }
 
     
-    public function withLastRosterFilePath(string $LastRosterFilePath): static
+    public function withLastRosterFilePath(?string $LastRosterFilePath): static
     {
         $new = clone $this;
         $new->LastRosterFilePath = $LastRosterFilePath;
@@ -986,13 +992,13 @@ class Activity
     }
 
     
-    public function getCollaborationTitle(): string
+    public function getCollaborationTitle(): ?string
     {
         return $this->CollaborationTitle;
     }
 
     
-    public function withCollaborationTitle(string $CollaborationTitle): static
+    public function withCollaborationTitle(?string $CollaborationTitle): static
     {
         $new = clone $this;
         $new->CollaborationTitle = $CollaborationTitle;
@@ -1001,13 +1007,13 @@ class Activity
     }
 
     
-    public function getCollaborationDescription(): string
+    public function getCollaborationDescription(): ?string
     {
         return $this->CollaborationDescription;
     }
 
     
-    public function withCollaborationDescription(string $CollaborationDescription): static
+    public function withCollaborationDescription(?string $CollaborationDescription): static
     {
         $new = clone $this;
         $new->CollaborationDescription = $CollaborationDescription;

@@ -8,29 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityListEnrollmentsTruncated implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userCustomMetadata;
+    private ?string $userCustomMetadata;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $userCustomMetadata)
+    public function __construct(?string $apiKey, ?string $userCustomMetadata)
     {
         $this->apiKey = $apiKey;
         $this->userCustomMetadata = $userCustomMetadata;
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -39,13 +39,13 @@ class GetLearningActivityListEnrollmentsTruncated implements RequestInterface
     }
 
     
-    public function getUserCustomMetadata(): string
+    public function getUserCustomMetadata(): ?string
     {
         return $this->userCustomMetadata;
     }
 
     
-    public function withUserCustomMetadata(string $userCustomMetadata): static
+    public function withUserCustomMetadata(?string $userCustomMetadata): static
     {
         $new = clone $this;
         $new->userCustomMetadata = $userCustomMetadata;

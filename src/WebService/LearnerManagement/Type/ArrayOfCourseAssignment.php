@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfCourseAssignment
 {
-    private CourseAssignment $CourseAssignment;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CourseAssignment>
+     */
+    private ?array $CourseAssignment;
 
-    
-    public function getCourseAssignment(): CourseAssignment
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CourseAssignment>
+     */
+    public function getCourseAssignment(): ?array
     {
         return $this->CourseAssignment;
     }
 
-    
-    public function withCourseAssignment(CourseAssignment $CourseAssignment): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CourseAssignment> $CourseAssignment
+     */
+    public function withCourseAssignment(?array $CourseAssignment): static
     {
         $new = clone $this;
         $new->CourseAssignment = $CourseAssignment;

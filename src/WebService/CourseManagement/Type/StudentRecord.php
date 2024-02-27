@@ -8,10 +8,10 @@ use DateTimeInterface;
 
 class StudentRecord
 {
-    private string $Type;
+    private ?string $Type;
 
     
-    private string $TypeName;
+    private ?string $TypeName;
 
     
     private bool $IsOnline;
@@ -23,37 +23,37 @@ class StudentRecord
     private bool $HasFeedBack;
 
     
-    private string $FullScreen;
+    private ?string $FullScreen;
 
     
-    private string $RecordID;
+    private ?string $RecordID;
 
     
-    private string $DomainID;
+    private ?string $DomainID;
 
     
-    private string $StudentID;
+    private ?string $StudentID;
 
     
-    private string $StudentDisplayID;
+    private ?string $StudentDisplayID;
 
     
-    private string $StudentName;
+    private ?string $StudentName;
 
     
-    private string $StudentEmail;
+    private ?string $StudentEmail;
 
     
-    private string $StudentCmiName;
+    private ?string $StudentCmiName;
 
     
-    private string $StudentLanguage;
+    private ?string $StudentLanguage;
 
     
-    private string $CourseID;
+    private ?string $CourseID;
 
     
-    private string $CourseTitle;
+    private ?string $CourseTitle;
 
     
     private bool $IsAccesscodeValidated;
@@ -62,34 +62,34 @@ class StudentRecord
     private bool $FeedbackLoaded;
 
     
-    private string $CourseDescription;
+    private ?string $CourseDescription;
 
     
-    private string $ContentType;
+    private ?string $ContentType;
 
     
-    private string $CourseCode;
+    private ?string $CourseCode;
 
     
-    private string $CourseProgram;
+    private ?string $CourseProgram;
 
     
-    private string $CourseProgramID;
+    private ?string $CourseProgramID;
 
     
-    private string $ProgramCode;
+    private ?string $ProgramCode;
 
     
-    private string $LastProgram;
+    private ?string $LastProgram;
 
     
-    private string $EnrolledFromProgram;
+    private ?string $EnrolledFromProgram;
 
     
-    private string $CohortID;
+    private ?string $CohortID;
 
     
-    private string $LearningPathID;
+    private ?string $LearningPathID;
 
     
     private bool $Archived;
@@ -101,13 +101,13 @@ class StudentRecord
     private bool $IsLocked;
 
     
-    private string $LockReason;
+    private ?string $LockReason;
 
     
     private int $CourseVersion;
 
     
-    private string $ScormVersion;
+    private ?string $ScormVersion;
 
     
     private float $CourseCredit;
@@ -119,7 +119,7 @@ class StudentRecord
     private bool $CanGrantCertificate;
 
     
-    private string $CertificateType;
+    private ?string $CertificateType;
 
     
     private int $CertificateScore;
@@ -146,7 +146,7 @@ class StudentRecord
     private int $Attempt;
 
     
-    private string $PassID;
+    private ?string $PassID;
 
     
     private bool $LearningObjectIsActive;
@@ -158,13 +158,13 @@ class StudentRecord
     private bool $HasChat;
 
     
-    private string $TeachingAsstID;
+    private ?string $TeachingAsstID;
 
     
-    private string $Status;
+    private ?string $Status;
 
     
-    private string $CompletionStatus;
+    private ?string $CompletionStatus;
 
     
     private bool $RequiresCompletedStatusForCompletion;
@@ -197,16 +197,16 @@ class StudentRecord
     private bool $BarAccess;
 
     
-    private string $Success;
+    private ?string $Success;
 
     
-    private string $EntrySuccess;
+    private ?string $EntrySuccess;
 
     
     private DateTimeInterface $DateEnrolled;
 
     
-    private string $EnrollmentNotes;
+    private ?string $EnrollmentNotes;
 
     
     private DateTimeInterface $DateStarted;
@@ -236,13 +236,13 @@ class StudentRecord
     private bool $CourseImmediateStart;
 
     
-    private string $LastModule;
+    private ?string $LastModule;
 
     
-    private string $LastModuleName;
+    private ?string $LastModuleName;
 
     
-    private string $ProctorComment;
+    private ?string $ProctorComment;
 
     
     private int $Score;
@@ -269,10 +269,10 @@ class StudentRecord
     private DateTimeInterface $DisclaimerAgreedDate;
 
     
-    private string $SummaryXml;
+    private ?string $SummaryXml;
 
     
-    private string $SummaryDuration;
+    private ?string $SummaryDuration;
 
     
     private bool $Enter;
@@ -284,22 +284,22 @@ class StudentRecord
     private bool $Feedback;
 
     
-    private string $CoursePackageURL;
+    private ?string $CoursePackageURL;
 
     
-    private string $CourseMarqueeURL;
+    private ?string $CourseMarqueeURL;
 
     
-    private string $CertificateXml;
+    private ?string $CertificateXml;
 
     
-    private string $NotificationSettingXml;
+    private ?string $NotificationSettingXml;
 
     
-    private string $Notes;
+    private ?string $Notes;
 
     
-    private string $ManualUpdateNotes;
+    private ?string $ManualUpdateNotes;
 
     
     private bool $ManualCompleted;
@@ -308,7 +308,7 @@ class StudentRecord
     private DateTimeInterface $AuditTimestamp;
 
     
-    private string $ApprovalCode;
+    private ?string $ApprovalCode;
 
     
     private DateTimeInterface $LastModifiedTimestamp;
@@ -320,22 +320,22 @@ class StudentRecord
     private DateTimeInterface $UpdateInProgressTimestamp;
 
     
-    private string $PortfolioEvidenceText;
+    private ?string $PortfolioEvidenceText;
 
     
     private bool $CreditStatementAvailable;
 
     
-    private string $OpenBadgeID;
+    private ?string $OpenBadgeID;
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
 
     
-    public function withType(string $Type): static
+    public function withType(?string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -344,13 +344,13 @@ class StudentRecord
     }
 
     
-    public function getTypeName(): string
+    public function getTypeName(): ?string
     {
         return $this->TypeName;
     }
 
     
-    public function withTypeName(string $TypeName): static
+    public function withTypeName(?string $TypeName): static
     {
         $new = clone $this;
         $new->TypeName = $TypeName;
@@ -404,13 +404,13 @@ class StudentRecord
     }
 
     
-    public function getFullScreen(): string
+    public function getFullScreen(): ?string
     {
         return $this->FullScreen;
     }
 
     
-    public function withFullScreen(string $FullScreen): static
+    public function withFullScreen(?string $FullScreen): static
     {
         $new = clone $this;
         $new->FullScreen = $FullScreen;
@@ -419,13 +419,13 @@ class StudentRecord
     }
 
     
-    public function getRecordID(): string
+    public function getRecordID(): ?string
     {
         return $this->RecordID;
     }
 
     
-    public function withRecordID(string $RecordID): static
+    public function withRecordID(?string $RecordID): static
     {
         $new = clone $this;
         $new->RecordID = $RecordID;
@@ -434,13 +434,13 @@ class StudentRecord
     }
 
     
-    public function getDomainID(): string
+    public function getDomainID(): ?string
     {
         return $this->DomainID;
     }
 
     
-    public function withDomainID(string $DomainID): static
+    public function withDomainID(?string $DomainID): static
     {
         $new = clone $this;
         $new->DomainID = $DomainID;
@@ -449,13 +449,13 @@ class StudentRecord
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
     
-    public function withStudentID(string $StudentID): static
+    public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -464,13 +464,13 @@ class StudentRecord
     }
 
     
-    public function getStudentDisplayID(): string
+    public function getStudentDisplayID(): ?string
     {
         return $this->StudentDisplayID;
     }
 
     
-    public function withStudentDisplayID(string $StudentDisplayID): static
+    public function withStudentDisplayID(?string $StudentDisplayID): static
     {
         $new = clone $this;
         $new->StudentDisplayID = $StudentDisplayID;
@@ -479,13 +479,13 @@ class StudentRecord
     }
 
     
-    public function getStudentName(): string
+    public function getStudentName(): ?string
     {
         return $this->StudentName;
     }
 
     
-    public function withStudentName(string $StudentName): static
+    public function withStudentName(?string $StudentName): static
     {
         $new = clone $this;
         $new->StudentName = $StudentName;
@@ -494,13 +494,13 @@ class StudentRecord
     }
 
     
-    public function getStudentEmail(): string
+    public function getStudentEmail(): ?string
     {
         return $this->StudentEmail;
     }
 
     
-    public function withStudentEmail(string $StudentEmail): static
+    public function withStudentEmail(?string $StudentEmail): static
     {
         $new = clone $this;
         $new->StudentEmail = $StudentEmail;
@@ -509,13 +509,13 @@ class StudentRecord
     }
 
     
-    public function getStudentCmiName(): string
+    public function getStudentCmiName(): ?string
     {
         return $this->StudentCmiName;
     }
 
     
-    public function withStudentCmiName(string $StudentCmiName): static
+    public function withStudentCmiName(?string $StudentCmiName): static
     {
         $new = clone $this;
         $new->StudentCmiName = $StudentCmiName;
@@ -524,13 +524,13 @@ class StudentRecord
     }
 
     
-    public function getStudentLanguage(): string
+    public function getStudentLanguage(): ?string
     {
         return $this->StudentLanguage;
     }
 
     
-    public function withStudentLanguage(string $StudentLanguage): static
+    public function withStudentLanguage(?string $StudentLanguage): static
     {
         $new = clone $this;
         $new->StudentLanguage = $StudentLanguage;
@@ -539,13 +539,13 @@ class StudentRecord
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
     
-    public function withCourseID(string $CourseID): static
+    public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -554,13 +554,13 @@ class StudentRecord
     }
 
     
-    public function getCourseTitle(): string
+    public function getCourseTitle(): ?string
     {
         return $this->CourseTitle;
     }
 
     
-    public function withCourseTitle(string $CourseTitle): static
+    public function withCourseTitle(?string $CourseTitle): static
     {
         $new = clone $this;
         $new->CourseTitle = $CourseTitle;
@@ -599,13 +599,13 @@ class StudentRecord
     }
 
     
-    public function getCourseDescription(): string
+    public function getCourseDescription(): ?string
     {
         return $this->CourseDescription;
     }
 
     
-    public function withCourseDescription(string $CourseDescription): static
+    public function withCourseDescription(?string $CourseDescription): static
     {
         $new = clone $this;
         $new->CourseDescription = $CourseDescription;
@@ -614,13 +614,13 @@ class StudentRecord
     }
 
     
-    public function getContentType(): string
+    public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
     
-    public function withContentType(string $ContentType): static
+    public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
         $new->ContentType = $ContentType;
@@ -629,13 +629,13 @@ class StudentRecord
     }
 
     
-    public function getCourseCode(): string
+    public function getCourseCode(): ?string
     {
         return $this->CourseCode;
     }
 
     
-    public function withCourseCode(string $CourseCode): static
+    public function withCourseCode(?string $CourseCode): static
     {
         $new = clone $this;
         $new->CourseCode = $CourseCode;
@@ -644,13 +644,13 @@ class StudentRecord
     }
 
     
-    public function getCourseProgram(): string
+    public function getCourseProgram(): ?string
     {
         return $this->CourseProgram;
     }
 
     
-    public function withCourseProgram(string $CourseProgram): static
+    public function withCourseProgram(?string $CourseProgram): static
     {
         $new = clone $this;
         $new->CourseProgram = $CourseProgram;
@@ -659,13 +659,13 @@ class StudentRecord
     }
 
     
-    public function getCourseProgramID(): string
+    public function getCourseProgramID(): ?string
     {
         return $this->CourseProgramID;
     }
 
     
-    public function withCourseProgramID(string $CourseProgramID): static
+    public function withCourseProgramID(?string $CourseProgramID): static
     {
         $new = clone $this;
         $new->CourseProgramID = $CourseProgramID;
@@ -674,13 +674,13 @@ class StudentRecord
     }
 
     
-    public function getProgramCode(): string
+    public function getProgramCode(): ?string
     {
         return $this->ProgramCode;
     }
 
     
-    public function withProgramCode(string $ProgramCode): static
+    public function withProgramCode(?string $ProgramCode): static
     {
         $new = clone $this;
         $new->ProgramCode = $ProgramCode;
@@ -689,13 +689,13 @@ class StudentRecord
     }
 
     
-    public function getLastProgram(): string
+    public function getLastProgram(): ?string
     {
         return $this->LastProgram;
     }
 
     
-    public function withLastProgram(string $LastProgram): static
+    public function withLastProgram(?string $LastProgram): static
     {
         $new = clone $this;
         $new->LastProgram = $LastProgram;
@@ -704,13 +704,13 @@ class StudentRecord
     }
 
     
-    public function getEnrolledFromProgram(): string
+    public function getEnrolledFromProgram(): ?string
     {
         return $this->EnrolledFromProgram;
     }
 
     
-    public function withEnrolledFromProgram(string $EnrolledFromProgram): static
+    public function withEnrolledFromProgram(?string $EnrolledFromProgram): static
     {
         $new = clone $this;
         $new->EnrolledFromProgram = $EnrolledFromProgram;
@@ -719,13 +719,13 @@ class StudentRecord
     }
 
     
-    public function getCohortID(): string
+    public function getCohortID(): ?string
     {
         return $this->CohortID;
     }
 
     
-    public function withCohortID(string $CohortID): static
+    public function withCohortID(?string $CohortID): static
     {
         $new = clone $this;
         $new->CohortID = $CohortID;
@@ -734,13 +734,13 @@ class StudentRecord
     }
 
     
-    public function getLearningPathID(): string
+    public function getLearningPathID(): ?string
     {
         return $this->LearningPathID;
     }
 
     
-    public function withLearningPathID(string $LearningPathID): static
+    public function withLearningPathID(?string $LearningPathID): static
     {
         $new = clone $this;
         $new->LearningPathID = $LearningPathID;
@@ -794,13 +794,13 @@ class StudentRecord
     }
 
     
-    public function getLockReason(): string
+    public function getLockReason(): ?string
     {
         return $this->LockReason;
     }
 
     
-    public function withLockReason(string $LockReason): static
+    public function withLockReason(?string $LockReason): static
     {
         $new = clone $this;
         $new->LockReason = $LockReason;
@@ -824,13 +824,13 @@ class StudentRecord
     }
 
     
-    public function getScormVersion(): string
+    public function getScormVersion(): ?string
     {
         return $this->ScormVersion;
     }
 
     
-    public function withScormVersion(string $ScormVersion): static
+    public function withScormVersion(?string $ScormVersion): static
     {
         $new = clone $this;
         $new->ScormVersion = $ScormVersion;
@@ -884,13 +884,13 @@ class StudentRecord
     }
 
     
-    public function getCertificateType(): string
+    public function getCertificateType(): ?string
     {
         return $this->CertificateType;
     }
 
     
-    public function withCertificateType(string $CertificateType): static
+    public function withCertificateType(?string $CertificateType): static
     {
         $new = clone $this;
         $new->CertificateType = $CertificateType;
@@ -1019,13 +1019,13 @@ class StudentRecord
     }
 
     
-    public function getPassID(): string
+    public function getPassID(): ?string
     {
         return $this->PassID;
     }
 
     
-    public function withPassID(string $PassID): static
+    public function withPassID(?string $PassID): static
     {
         $new = clone $this;
         $new->PassID = $PassID;
@@ -1079,13 +1079,13 @@ class StudentRecord
     }
 
     
-    public function getTeachingAsstID(): string
+    public function getTeachingAsstID(): ?string
     {
         return $this->TeachingAsstID;
     }
 
     
-    public function withTeachingAsstID(string $TeachingAsstID): static
+    public function withTeachingAsstID(?string $TeachingAsstID): static
     {
         $new = clone $this;
         $new->TeachingAsstID = $TeachingAsstID;
@@ -1094,13 +1094,13 @@ class StudentRecord
     }
 
     
-    public function getStatus(): string
+    public function getStatus(): ?string
     {
         return $this->Status;
     }
 
     
-    public function withStatus(string $Status): static
+    public function withStatus(?string $Status): static
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -1109,13 +1109,13 @@ class StudentRecord
     }
 
     
-    public function getCompletionStatus(): string
+    public function getCompletionStatus(): ?string
     {
         return $this->CompletionStatus;
     }
 
     
-    public function withCompletionStatus(string $CompletionStatus): static
+    public function withCompletionStatus(?string $CompletionStatus): static
     {
         $new = clone $this;
         $new->CompletionStatus = $CompletionStatus;
@@ -1274,13 +1274,13 @@ class StudentRecord
     }
 
     
-    public function getSuccess(): string
+    public function getSuccess(): ?string
     {
         return $this->Success;
     }
 
     
-    public function withSuccess(string $Success): static
+    public function withSuccess(?string $Success): static
     {
         $new = clone $this;
         $new->Success = $Success;
@@ -1289,13 +1289,13 @@ class StudentRecord
     }
 
     
-    public function getEntrySuccess(): string
+    public function getEntrySuccess(): ?string
     {
         return $this->EntrySuccess;
     }
 
     
-    public function withEntrySuccess(string $EntrySuccess): static
+    public function withEntrySuccess(?string $EntrySuccess): static
     {
         $new = clone $this;
         $new->EntrySuccess = $EntrySuccess;
@@ -1319,13 +1319,13 @@ class StudentRecord
     }
 
     
-    public function getEnrollmentNotes(): string
+    public function getEnrollmentNotes(): ?string
     {
         return $this->EnrollmentNotes;
     }
 
     
-    public function withEnrollmentNotes(string $EnrollmentNotes): static
+    public function withEnrollmentNotes(?string $EnrollmentNotes): static
     {
         $new = clone $this;
         $new->EnrollmentNotes = $EnrollmentNotes;
@@ -1469,13 +1469,13 @@ class StudentRecord
     }
 
     
-    public function getLastModule(): string
+    public function getLastModule(): ?string
     {
         return $this->LastModule;
     }
 
     
-    public function withLastModule(string $LastModule): static
+    public function withLastModule(?string $LastModule): static
     {
         $new = clone $this;
         $new->LastModule = $LastModule;
@@ -1484,13 +1484,13 @@ class StudentRecord
     }
 
     
-    public function getLastModuleName(): string
+    public function getLastModuleName(): ?string
     {
         return $this->LastModuleName;
     }
 
     
-    public function withLastModuleName(string $LastModuleName): static
+    public function withLastModuleName(?string $LastModuleName): static
     {
         $new = clone $this;
         $new->LastModuleName = $LastModuleName;
@@ -1499,13 +1499,13 @@ class StudentRecord
     }
 
     
-    public function getProctorComment(): string
+    public function getProctorComment(): ?string
     {
         return $this->ProctorComment;
     }
 
     
-    public function withProctorComment(string $ProctorComment): static
+    public function withProctorComment(?string $ProctorComment): static
     {
         $new = clone $this;
         $new->ProctorComment = $ProctorComment;
@@ -1634,13 +1634,13 @@ class StudentRecord
     }
 
     
-    public function getSummaryXml(): string
+    public function getSummaryXml(): ?string
     {
         return $this->SummaryXml;
     }
 
     
-    public function withSummaryXml(string $SummaryXml): static
+    public function withSummaryXml(?string $SummaryXml): static
     {
         $new = clone $this;
         $new->SummaryXml = $SummaryXml;
@@ -1649,13 +1649,13 @@ class StudentRecord
     }
 
     
-    public function getSummaryDuration(): string
+    public function getSummaryDuration(): ?string
     {
         return $this->SummaryDuration;
     }
 
     
-    public function withSummaryDuration(string $SummaryDuration): static
+    public function withSummaryDuration(?string $SummaryDuration): static
     {
         $new = clone $this;
         $new->SummaryDuration = $SummaryDuration;
@@ -1709,13 +1709,13 @@ class StudentRecord
     }
 
     
-    public function getCoursePackageURL(): string
+    public function getCoursePackageURL(): ?string
     {
         return $this->CoursePackageURL;
     }
 
     
-    public function withCoursePackageURL(string $CoursePackageURL): static
+    public function withCoursePackageURL(?string $CoursePackageURL): static
     {
         $new = clone $this;
         $new->CoursePackageURL = $CoursePackageURL;
@@ -1724,13 +1724,13 @@ class StudentRecord
     }
 
     
-    public function getCourseMarqueeURL(): string
+    public function getCourseMarqueeURL(): ?string
     {
         return $this->CourseMarqueeURL;
     }
 
     
-    public function withCourseMarqueeURL(string $CourseMarqueeURL): static
+    public function withCourseMarqueeURL(?string $CourseMarqueeURL): static
     {
         $new = clone $this;
         $new->CourseMarqueeURL = $CourseMarqueeURL;
@@ -1739,13 +1739,13 @@ class StudentRecord
     }
 
     
-    public function getCertificateXml(): string
+    public function getCertificateXml(): ?string
     {
         return $this->CertificateXml;
     }
 
     
-    public function withCertificateXml(string $CertificateXml): static
+    public function withCertificateXml(?string $CertificateXml): static
     {
         $new = clone $this;
         $new->CertificateXml = $CertificateXml;
@@ -1754,13 +1754,13 @@ class StudentRecord
     }
 
     
-    public function getNotificationSettingXml(): string
+    public function getNotificationSettingXml(): ?string
     {
         return $this->NotificationSettingXml;
     }
 
     
-    public function withNotificationSettingXml(string $NotificationSettingXml): static
+    public function withNotificationSettingXml(?string $NotificationSettingXml): static
     {
         $new = clone $this;
         $new->NotificationSettingXml = $NotificationSettingXml;
@@ -1769,13 +1769,13 @@ class StudentRecord
     }
 
     
-    public function getNotes(): string
+    public function getNotes(): ?string
     {
         return $this->Notes;
     }
 
     
-    public function withNotes(string $Notes): static
+    public function withNotes(?string $Notes): static
     {
         $new = clone $this;
         $new->Notes = $Notes;
@@ -1784,13 +1784,13 @@ class StudentRecord
     }
 
     
-    public function getManualUpdateNotes(): string
+    public function getManualUpdateNotes(): ?string
     {
         return $this->ManualUpdateNotes;
     }
 
     
-    public function withManualUpdateNotes(string $ManualUpdateNotes): static
+    public function withManualUpdateNotes(?string $ManualUpdateNotes): static
     {
         $new = clone $this;
         $new->ManualUpdateNotes = $ManualUpdateNotes;
@@ -1829,13 +1829,13 @@ class StudentRecord
     }
 
     
-    public function getApprovalCode(): string
+    public function getApprovalCode(): ?string
     {
         return $this->ApprovalCode;
     }
 
     
-    public function withApprovalCode(string $ApprovalCode): static
+    public function withApprovalCode(?string $ApprovalCode): static
     {
         $new = clone $this;
         $new->ApprovalCode = $ApprovalCode;
@@ -1889,13 +1889,13 @@ class StudentRecord
     }
 
     
-    public function getPortfolioEvidenceText(): string
+    public function getPortfolioEvidenceText(): ?string
     {
         return $this->PortfolioEvidenceText;
     }
 
     
-    public function withPortfolioEvidenceText(string $PortfolioEvidenceText): static
+    public function withPortfolioEvidenceText(?string $PortfolioEvidenceText): static
     {
         $new = clone $this;
         $new->PortfolioEvidenceText = $PortfolioEvidenceText;
@@ -1919,13 +1919,13 @@ class StudentRecord
     }
 
     
-    public function getOpenBadgeID(): string
+    public function getOpenBadgeID(): ?string
     {
         return $this->OpenBadgeID;
     }
 
     
-    public function withOpenBadgeID(string $OpenBadgeID): static
+    public function withOpenBadgeID(?string $OpenBadgeID): static
     {
         $new = clone $this;
         $new->OpenBadgeID = $OpenBadgeID;

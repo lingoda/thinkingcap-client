@@ -10,13 +10,11 @@ class IsTrainingLocationAvailableResponse implements ResultInterface
 {
     private ServiceResultOfBoolean $IsTrainingLocationAvailableResult;
 
-    
     public function getIsTrainingLocationAvailableResult(): ServiceResultOfBoolean
     {
         return $this->IsTrainingLocationAvailableResult;
     }
 
-    
     public function withIsTrainingLocationAvailableResult(ServiceResultOfBoolean $IsTrainingLocationAvailableResult): static
     {
         $new = clone $this;

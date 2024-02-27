@@ -8,22 +8,22 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class CreateCourseSeries implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $programID;
+    private ?string $programID;
 
     
-    private string $code;
+    private ?string $code;
 
     
-    private string $name;
+    private ?string $name;
 
     
-    private string $description;
+    private ?string $description;
 
     
-    private string $tags;
+    private ?string $tags;
 
     
     private bool $denyInheritance;
@@ -32,7 +32,7 @@ class CreateCourseSeries implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $programID, string $code, string $name, string $description, string $tags, bool $denyInheritance)
+    public function __construct(?string $apiKey, ?string $programID, ?string $code, ?string $name, ?string $description, ?string $tags, bool $denyInheritance)
     {
         $this->apiKey = $apiKey;
         $this->programID = $programID;
@@ -44,13 +44,13 @@ class CreateCourseSeries implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -59,13 +59,13 @@ class CreateCourseSeries implements RequestInterface
     }
 
     
-    public function getProgramID(): string
+    public function getProgramID(): ?string
     {
         return $this->programID;
     }
 
     
-    public function withProgramID(string $programID): static
+    public function withProgramID(?string $programID): static
     {
         $new = clone $this;
         $new->programID = $programID;
@@ -74,13 +74,13 @@ class CreateCourseSeries implements RequestInterface
     }
 
     
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
     
-    public function withCode(string $code): static
+    public function withCode(?string $code): static
     {
         $new = clone $this;
         $new->code = $code;
@@ -89,13 +89,13 @@ class CreateCourseSeries implements RequestInterface
     }
 
     
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     
-    public function withName(string $name): static
+    public function withName(?string $name): static
     {
         $new = clone $this;
         $new->name = $name;
@@ -104,13 +104,13 @@ class CreateCourseSeries implements RequestInterface
     }
 
     
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
     
-    public function withDescription(string $description): static
+    public function withDescription(?string $description): static
     {
         $new = clone $this;
         $new->description = $description;
@@ -119,13 +119,13 @@ class CreateCourseSeries implements RequestInterface
     }
 
     
-    public function getTags(): string
+    public function getTags(): ?string
     {
         return $this->tags;
     }
 
     
-    public function withTags(string $tags): static
+    public function withTags(?string $tags): static
     {
         $new = clone $this;
         $new->tags = $tags;

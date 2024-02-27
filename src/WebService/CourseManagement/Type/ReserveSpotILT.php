@@ -8,13 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class ReserveSpotILT implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $learningActivityCode;
+    private ?string $learningActivityCode;
 
     
-    private string $learningActivityID;
+    private ?string $learningActivityID;
 
     
     private int $numberOfSeats;
@@ -29,7 +29,7 @@ class ReserveSpotILT implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $learningActivityCode, string $learningActivityID, int $numberOfSeats, int $duration, bool $checkWaitList)
+    public function __construct(?string $apiKey, ?string $learningActivityCode, ?string $learningActivityID, int $numberOfSeats, int $duration, bool $checkWaitList)
     {
         $this->apiKey = $apiKey;
         $this->learningActivityCode = $learningActivityCode;
@@ -40,13 +40,13 @@ class ReserveSpotILT implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -55,13 +55,13 @@ class ReserveSpotILT implements RequestInterface
     }
 
     
-    public function getLearningActivityCode(): string
+    public function getLearningActivityCode(): ?string
     {
         return $this->learningActivityCode;
     }
 
     
-    public function withLearningActivityCode(string $learningActivityCode): static
+    public function withLearningActivityCode(?string $learningActivityCode): static
     {
         $new = clone $this;
         $new->learningActivityCode = $learningActivityCode;
@@ -70,13 +70,13 @@ class ReserveSpotILT implements RequestInterface
     }
 
     
-    public function getLearningActivityID(): string
+    public function getLearningActivityID(): ?string
     {
         return $this->learningActivityID;
     }
 
     
-    public function withLearningActivityID(string $learningActivityID): static
+    public function withLearningActivityID(?string $learningActivityID): static
     {
         $new = clone $this;
         $new->learningActivityID = $learningActivityID;

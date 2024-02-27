@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfMailFolder
 {
-    private MailFolder $MailFolder;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MailFolder>
+     */
+    private ?array $MailFolder;
 
-    
-    public function getMailFolder(): MailFolder
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MailFolder>
+     */
+    public function getMailFolder(): ?array
     {
         return $this->MailFolder;
     }
 
-    
-    public function withMailFolder(MailFolder $MailFolder): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\MailFolder> $MailFolder
+     */
+    public function withMailFolder(?array $MailFolder): static
     {
         $new = clone $this;
         $new->MailFolder = $MailFolder;

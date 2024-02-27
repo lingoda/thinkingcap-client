@@ -8,10 +8,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUserByEmail implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userEmail;
+    private ?string $userEmail;
 
     
     private bool $includeMetadata;
@@ -23,7 +23,7 @@ class GetUserByEmail implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $userEmail, bool $includeMetadata, bool $includeDomains)
+    public function __construct(?string $apiKey, ?string $userEmail, bool $includeMetadata, bool $includeDomains)
     {
         $this->apiKey = $apiKey;
         $this->userEmail = $userEmail;
@@ -32,13 +32,13 @@ class GetUserByEmail implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -47,13 +47,13 @@ class GetUserByEmail implements RequestInterface
     }
 
     
-    public function getUserEmail(): string
+    public function getUserEmail(): ?string
     {
         return $this->userEmail;
     }
 
     
-    public function withUserEmail(string $userEmail): static
+    public function withUserEmail(?string $userEmail): static
     {
         $new = clone $this;
         $new->userEmail = $userEmail;

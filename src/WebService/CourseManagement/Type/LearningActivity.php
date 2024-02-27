@@ -8,25 +8,20 @@ use DateTimeInterface;
 
 class LearningActivity
 {
-    private string $Type;
+    protected string $Type;
+
+    protected string $ID;
+
+    protected string $Code;
+
+    protected string $Title;
+
+    protected string $Description;
+
+    protected string $Language;
 
     
-    private string $ID;
-
-    
-    private string $Code;
-
-    
-    private string $Title;
-
-    
-    private string $Description;
-
-    
-    private string $Instructions;
-
-    
-    private string $Language;
+    private ?string $Instructions;
 
     
     private bool $IsOnline;
@@ -35,25 +30,25 @@ class LearningActivity
     private bool $IsAssessment;
 
     
-    private string $OwnerDomainID;
+    private ?string $OwnerDomainID;
 
     
-    private string $OwnerDomainName;
+    private ?string $OwnerDomainName;
 
     
-    private string $EquivalencyID;
+    private ?string $EquivalencyID;
 
     
-    private string $EquivalencyName;
+    private ?string $EquivalencyName;
 
     
     private bool $IsActive;
 
     
-    private string $Tags;
+    private ?string $Tags = null;
 
     
-    private string $LogoUrl;
+    private ?string $LogoUrl;
 
     
     private bool $HasForum;
@@ -89,7 +84,7 @@ class LearningActivity
     private DateTimeInterface $LastEnrollmentDate;
 
     
-    private string $DueDate;
+    private ?string $DueDate;
 
     
     private bool $AccreditationExpires;
@@ -104,36 +99,34 @@ class LearningActivity
     private int $AccreditationExpiresUnits;
 
     
-    private string $AccreditationExpiresInterval;
+    private ?string $AccreditationExpiresInterval;
 
     
     private int $ReenrollmentAllowedBeforeExpiringUnits;
 
     
-    private string $ReenrollmentAllowedBeforeExpiringInterval;
+    private ?string $ReenrollmentAllowedBeforeExpiringInterval;
 
     
-    private ArrayOfCustomField $CustomFields;
+    private ?ArrayOfCustomField $CustomFields;
 
     
-    private ArrayOfCourseSession $Sessions;
+    private ?ArrayOfCourseSession $Sessions = null;
 
     
-    private ArrayOfLearningActivityCohort $Cohorts;
+    private ?ArrayOfLearningActivityCohort $Cohorts;
 
     
-    private string $DetailsLink;
+    private ?string $DetailsLink;
 
     
     private DateTimeInterface $LastModifiedTimestamp;
 
-    
     public function getType(): string
     {
         return $this->Type;
     }
 
-    
     public function withType(string $Type): static
     {
         $new = clone $this;
@@ -142,13 +135,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getID(): string
     {
         return $this->ID;
     }
 
-    
     public function withID(string $ID): static
     {
         $new = clone $this;
@@ -157,13 +148,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getCode(): string
     {
         return $this->Code;
     }
 
-    
     public function withCode(string $Code): static
     {
         $new = clone $this;
@@ -172,13 +161,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getTitle(): string
     {
         return $this->Title;
     }
 
-    
     public function withTitle(string $Title): static
     {
         $new = clone $this;
@@ -187,13 +174,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getDescription(): string
     {
         return $this->Description;
     }
 
-    
     public function withDescription(string $Description): static
     {
         $new = clone $this;
@@ -203,13 +188,13 @@ class LearningActivity
     }
 
     
-    public function getInstructions(): string
+    public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
     
-    public function withInstructions(string $Instructions): static
+    public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
         $new->Instructions = $Instructions;
@@ -217,13 +202,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getLanguage(): string
     {
         return $this->Language;
     }
 
-    
     public function withLanguage(string $Language): static
     {
         $new = clone $this;
@@ -263,13 +246,13 @@ class LearningActivity
     }
 
     
-    public function getOwnerDomainID(): string
+    public function getOwnerDomainID(): ?string
     {
         return $this->OwnerDomainID;
     }
 
     
-    public function withOwnerDomainID(string $OwnerDomainID): static
+    public function withOwnerDomainID(?string $OwnerDomainID): static
     {
         $new = clone $this;
         $new->OwnerDomainID = $OwnerDomainID;
@@ -278,13 +261,13 @@ class LearningActivity
     }
 
     
-    public function getOwnerDomainName(): string
+    public function getOwnerDomainName(): ?string
     {
         return $this->OwnerDomainName;
     }
 
     
-    public function withOwnerDomainName(string $OwnerDomainName): static
+    public function withOwnerDomainName(?string $OwnerDomainName): static
     {
         $new = clone $this;
         $new->OwnerDomainName = $OwnerDomainName;
@@ -293,13 +276,13 @@ class LearningActivity
     }
 
     
-    public function getEquivalencyID(): string
+    public function getEquivalencyID(): ?string
     {
         return $this->EquivalencyID;
     }
 
     
-    public function withEquivalencyID(string $EquivalencyID): static
+    public function withEquivalencyID(?string $EquivalencyID): static
     {
         $new = clone $this;
         $new->EquivalencyID = $EquivalencyID;
@@ -308,13 +291,13 @@ class LearningActivity
     }
 
     
-    public function getEquivalencyName(): string
+    public function getEquivalencyName(): ?string
     {
         return $this->EquivalencyName;
     }
 
     
-    public function withEquivalencyName(string $EquivalencyName): static
+    public function withEquivalencyName(?string $EquivalencyName): static
     {
         $new = clone $this;
         $new->EquivalencyName = $EquivalencyName;
@@ -338,13 +321,13 @@ class LearningActivity
     }
 
     
-    public function getTags(): string
+    public function getTags(): ?string
     {
         return $this->Tags;
     }
 
     
-    public function withTags(string $Tags): static
+    public function withTags(?string $Tags): static
     {
         $new = clone $this;
         $new->Tags = $Tags;
@@ -353,13 +336,13 @@ class LearningActivity
     }
 
     
-    public function getLogoUrl(): string
+    public function getLogoUrl(): ?string
     {
         return $this->LogoUrl;
     }
 
     
-    public function withLogoUrl(string $LogoUrl): static
+    public function withLogoUrl(?string $LogoUrl): static
     {
         $new = clone $this;
         $new->LogoUrl = $LogoUrl;
@@ -533,13 +516,13 @@ class LearningActivity
     }
 
     
-    public function getDueDate(): string
+    public function getDueDate(): ?string
     {
         return $this->DueDate;
     }
 
     
-    public function withDueDate(string $DueDate): static
+    public function withDueDate(?string $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
@@ -608,13 +591,13 @@ class LearningActivity
     }
 
     
-    public function getAccreditationExpiresInterval(): string
+    public function getAccreditationExpiresInterval(): ?string
     {
         return $this->AccreditationExpiresInterval;
     }
 
     
-    public function withAccreditationExpiresInterval(string $AccreditationExpiresInterval): static
+    public function withAccreditationExpiresInterval(?string $AccreditationExpiresInterval): static
     {
         $new = clone $this;
         $new->AccreditationExpiresInterval = $AccreditationExpiresInterval;
@@ -638,13 +621,13 @@ class LearningActivity
     }
 
     
-    public function getReenrollmentAllowedBeforeExpiringInterval(): string
+    public function getReenrollmentAllowedBeforeExpiringInterval(): ?string
     {
         return $this->ReenrollmentAllowedBeforeExpiringInterval;
     }
 
     
-    public function withReenrollmentAllowedBeforeExpiringInterval(string $ReenrollmentAllowedBeforeExpiringInterval): static
+    public function withReenrollmentAllowedBeforeExpiringInterval(?string $ReenrollmentAllowedBeforeExpiringInterval): static
     {
         $new = clone $this;
         $new->ReenrollmentAllowedBeforeExpiringInterval = $ReenrollmentAllowedBeforeExpiringInterval;
@@ -653,13 +636,13 @@ class LearningActivity
     }
 
     
-    public function getCustomFields(): ArrayOfCustomField
+    public function getCustomFields(): ?ArrayOfCustomField
     {
         return $this->CustomFields;
     }
 
     
-    public function withCustomFields(ArrayOfCustomField $CustomFields): static
+    public function withCustomFields(?ArrayOfCustomField $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;
@@ -668,13 +651,13 @@ class LearningActivity
     }
 
     
-    public function getSessions(): ArrayOfCourseSession
+    public function getSessions(): ?ArrayOfCourseSession
     {
         return $this->Sessions;
     }
 
     
-    public function withSessions(ArrayOfCourseSession $Sessions): static
+    public function withSessions(?ArrayOfCourseSession $Sessions): static
     {
         $new = clone $this;
         $new->Sessions = $Sessions;
@@ -683,13 +666,13 @@ class LearningActivity
     }
 
     
-    public function getCohorts(): ArrayOfLearningActivityCohort
+    public function getCohorts(): ?ArrayOfLearningActivityCohort
     {
         return $this->Cohorts;
     }
 
     
-    public function withCohorts(ArrayOfLearningActivityCohort $Cohorts): static
+    public function withCohorts(?ArrayOfLearningActivityCohort $Cohorts): static
     {
         $new = clone $this;
         $new->Cohorts = $Cohorts;
@@ -698,13 +681,13 @@ class LearningActivity
     }
 
     
-    public function getDetailsLink(): string
+    public function getDetailsLink(): ?string
     {
         return $this->DetailsLink;
     }
 
     
-    public function withDetailsLink(string $DetailsLink): static
+    public function withDetailsLink(?string $DetailsLink): static
     {
         $new = clone $this;
         $new->DetailsLink = $DetailsLink;

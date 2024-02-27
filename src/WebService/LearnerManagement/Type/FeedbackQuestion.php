@@ -6,34 +6,34 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class FeedbackQuestion
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $SectionID;
+    private ?string $SectionID;
 
     
-    private string $Text;
+    private ?string $Text;
 
     
-    private string $TextEN;
+    private ?string $TextEN;
 
     
     private int $Display;
 
     
-    private ArrayOfAnyType $ChoiceList;
+    private ?ArrayOfAnyType $ChoiceList;
 
     
-    private ArrayOfAnyType $SubquestionList;
+    private ?ArrayOfAnyType $SubquestionList;
 
     
-    private string $ParentID;
+    private ?string $ParentID;
 
     
-    private string $ParentChoiceID;
+    private ?string $ParentChoiceID;
 
     
-    private string $Type;
+    private ?string $Type;
 
     
     private bool $ApplyToCourses;
@@ -69,16 +69,16 @@ class FeedbackQuestion
     private bool $DisplaySlidingScale;
 
     
-    private string $DomainSurveyID;
+    private ?string $DomainSurveyID;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -87,13 +87,13 @@ class FeedbackQuestion
     }
 
     
-    public function getSectionID(): string
+    public function getSectionID(): ?string
     {
         return $this->SectionID;
     }
 
     
-    public function withSectionID(string $SectionID): static
+    public function withSectionID(?string $SectionID): static
     {
         $new = clone $this;
         $new->SectionID = $SectionID;
@@ -102,13 +102,13 @@ class FeedbackQuestion
     }
 
     
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->Text;
     }
 
     
-    public function withText(string $Text): static
+    public function withText(?string $Text): static
     {
         $new = clone $this;
         $new->Text = $Text;
@@ -117,13 +117,13 @@ class FeedbackQuestion
     }
 
     
-    public function getTextEN(): string
+    public function getTextEN(): ?string
     {
         return $this->TextEN;
     }
 
     
-    public function withTextEN(string $TextEN): static
+    public function withTextEN(?string $TextEN): static
     {
         $new = clone $this;
         $new->TextEN = $TextEN;
@@ -147,13 +147,13 @@ class FeedbackQuestion
     }
 
     
-    public function getChoiceList(): ArrayOfAnyType
+    public function getChoiceList(): ?ArrayOfAnyType
     {
         return $this->ChoiceList;
     }
 
     
-    public function withChoiceList(ArrayOfAnyType $ChoiceList): static
+    public function withChoiceList(?ArrayOfAnyType $ChoiceList): static
     {
         $new = clone $this;
         $new->ChoiceList = $ChoiceList;
@@ -162,13 +162,13 @@ class FeedbackQuestion
     }
 
     
-    public function getSubquestionList(): ArrayOfAnyType
+    public function getSubquestionList(): ?ArrayOfAnyType
     {
         return $this->SubquestionList;
     }
 
     
-    public function withSubquestionList(ArrayOfAnyType $SubquestionList): static
+    public function withSubquestionList(?ArrayOfAnyType $SubquestionList): static
     {
         $new = clone $this;
         $new->SubquestionList = $SubquestionList;
@@ -177,13 +177,13 @@ class FeedbackQuestion
     }
 
     
-    public function getParentID(): string
+    public function getParentID(): ?string
     {
         return $this->ParentID;
     }
 
     
-    public function withParentID(string $ParentID): static
+    public function withParentID(?string $ParentID): static
     {
         $new = clone $this;
         $new->ParentID = $ParentID;
@@ -192,13 +192,13 @@ class FeedbackQuestion
     }
 
     
-    public function getParentChoiceID(): string
+    public function getParentChoiceID(): ?string
     {
         return $this->ParentChoiceID;
     }
 
     
-    public function withParentChoiceID(string $ParentChoiceID): static
+    public function withParentChoiceID(?string $ParentChoiceID): static
     {
         $new = clone $this;
         $new->ParentChoiceID = $ParentChoiceID;
@@ -207,13 +207,13 @@ class FeedbackQuestion
     }
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
 
     
-    public function withType(string $Type): static
+    public function withType(?string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -387,13 +387,13 @@ class FeedbackQuestion
     }
 
     
-    public function getDomainSurveyID(): string
+    public function getDomainSurveyID(): ?string
     {
         return $this->DomainSurveyID;
     }
 
     
-    public function withDomainSurveyID(string $DomainSurveyID): static
+    public function withDomainSurveyID(?string $DomainSurveyID): static
     {
         $new = clone $this;
         $new->DomainSurveyID = $DomainSurveyID;

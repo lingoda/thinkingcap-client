@@ -8,13 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetDomainLearningActivities implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $onlyDomainID;
+    private ?string $onlyDomainID;
 
     
-    private string $learningActivityTypeFilter;
+    private ?string $learningActivityTypeFilter;
 
     
     private bool $includeInactive;
@@ -32,7 +32,7 @@ class GetDomainLearningActivities implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $onlyDomainID, string $learningActivityTypeFilter, bool $includeInactive, bool $includeMetadata, int $offset, int $take)
+    public function __construct(?string $apiKey, ?string $onlyDomainID, ?string $learningActivityTypeFilter, bool $includeInactive, bool $includeMetadata, int $offset, int $take)
     {
         $this->apiKey = $apiKey;
         $this->onlyDomainID = $onlyDomainID;
@@ -44,13 +44,13 @@ class GetDomainLearningActivities implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -59,13 +59,13 @@ class GetDomainLearningActivities implements RequestInterface
     }
 
     
-    public function getOnlyDomainID(): string
+    public function getOnlyDomainID(): ?string
     {
         return $this->onlyDomainID;
     }
 
     
-    public function withOnlyDomainID(string $onlyDomainID): static
+    public function withOnlyDomainID(?string $onlyDomainID): static
     {
         $new = clone $this;
         $new->onlyDomainID = $onlyDomainID;
@@ -74,13 +74,13 @@ class GetDomainLearningActivities implements RequestInterface
     }
 
     
-    public function getLearningActivityTypeFilter(): string
+    public function getLearningActivityTypeFilter(): ?string
     {
         return $this->learningActivityTypeFilter;
     }
 
     
-    public function withLearningActivityTypeFilter(string $learningActivityTypeFilter): static
+    public function withLearningActivityTypeFilter(?string $learningActivityTypeFilter): static
     {
         $new = clone $this;
         $new->learningActivityTypeFilter = $learningActivityTypeFilter;

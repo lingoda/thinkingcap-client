@@ -10,13 +10,11 @@ class GetRecordDetailsResponse implements ResultInterface
 {
     private ServiceResultOfStudentRecord $GetRecordDetailsResult;
 
-    
     public function getGetRecordDetailsResult(): ServiceResultOfStudentRecord
     {
         return $this->GetRecordDetailsResult;
     }
 
-    
     public function withGetRecordDetailsResult(ServiceResultOfStudentRecord $GetRecordDetailsResult): static
     {
         $new = clone $this;

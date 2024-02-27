@@ -6,16 +6,16 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class TimeZone
 {
-    private string $Code;
+    private ?string $Code;
 
     
-    private string $DSTCode;
+    private ?string $DSTCode;
 
     
-    private string $Name;
+    private ?string $Name;
 
     
-    private string $CurrentLocation;
+    private ?string $CurrentLocation;
 
     
     private bool $ApplyDaylightSavings;
@@ -24,19 +24,19 @@ class TimeZone
     private bool $IsDaylightSaving;
 
     
-    private TimeZoneOffset $Offset;
+    private ?TimeZoneOffset $Offset;
 
     
     private int $CiscoCode;
 
     
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
 
     
-    public function withCode(string $Code): static
+    public function withCode(?string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -45,13 +45,13 @@ class TimeZone
     }
 
     
-    public function getDSTCode(): string
+    public function getDSTCode(): ?string
     {
         return $this->DSTCode;
     }
 
     
-    public function withDSTCode(string $DSTCode): static
+    public function withDSTCode(?string $DSTCode): static
     {
         $new = clone $this;
         $new->DSTCode = $DSTCode;
@@ -60,13 +60,13 @@ class TimeZone
     }
 
     
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
 
     
-    public function withName(string $Name): static
+    public function withName(?string $Name): static
     {
         $new = clone $this;
         $new->Name = $Name;
@@ -75,13 +75,13 @@ class TimeZone
     }
 
     
-    public function getCurrentLocation(): string
+    public function getCurrentLocation(): ?string
     {
         return $this->CurrentLocation;
     }
 
     
-    public function withCurrentLocation(string $CurrentLocation): static
+    public function withCurrentLocation(?string $CurrentLocation): static
     {
         $new = clone $this;
         $new->CurrentLocation = $CurrentLocation;
@@ -120,13 +120,13 @@ class TimeZone
     }
 
     
-    public function getOffset(): TimeZoneOffset
+    public function getOffset(): ?TimeZoneOffset
     {
         return $this->Offset;
     }
 
     
-    public function withOffset(TimeZoneOffset $Offset): static
+    public function withOffset(?TimeZoneOffset $Offset): static
     {
         $new = clone $this;
         $new->Offset = $Offset;

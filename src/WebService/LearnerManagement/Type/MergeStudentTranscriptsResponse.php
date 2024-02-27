@@ -10,13 +10,11 @@ class MergeStudentTranscriptsResponse implements ResultInterface
 {
     private ServiceResultOfString $MergeStudentTranscriptsResult;
 
-    
     public function getMergeStudentTranscriptsResult(): ServiceResultOfString
     {
         return $this->MergeStudentTranscriptsResult;
     }
 
-    
     public function withMergeStudentTranscriptsResult(ServiceResultOfString $MergeStudentTranscriptsResult): static
     {
         $new = clone $this;

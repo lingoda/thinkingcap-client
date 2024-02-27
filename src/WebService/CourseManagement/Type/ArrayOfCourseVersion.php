@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfCourseVersion
 {
-    private CourseVersion $CourseVersion;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseVersion>
+     */
+    private ?array $CourseVersion;
 
-    
-    public function getCourseVersion(): CourseVersion
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseVersion>
+     */
+    public function getCourseVersion(): ?array
     {
         return $this->CourseVersion;
     }
 
-    
-    public function withCourseVersion(CourseVersion $CourseVersion): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseVersion> $CourseVersion
+     */
+    public function withCourseVersion(?array $CourseVersion): static
     {
         $new = clone $this;
         $new->CourseVersion = $CourseVersion;

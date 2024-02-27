@@ -10,13 +10,11 @@ class GetUserByIDResponse implements ResultInterface
 {
     private ServiceResultOfServiceUser $GetUserByIDResult;
 
-    
     public function getGetUserByIDResult(): ServiceResultOfServiceUser
     {
         return $this->GetUserByIDResult;
     }
 
-    
     public function withGetUserByIDResult(ServiceResultOfServiceUser $GetUserByIDResult): static
     {
         $new = clone $this;

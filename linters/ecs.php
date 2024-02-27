@@ -22,7 +22,6 @@ use PhpCsFixer\Fixer\FunctionNotation\UseArrowFunctionsFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveIssetsFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveUnsetsFixer;
-use PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer;
 use PhpCsFixer\Fixer\ListNotation\ListSyntaxFixer;
 use PhpCsFixer\Fixer\Operator\AssignNullCoalescingToCoalesceEqualFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
@@ -60,9 +59,6 @@ return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->rule(CombineConsecutiveUnsetsFixer::class);
     $containerConfigurator->ruleWithConfiguration(ConcatSpaceFixer::class, [
         'spacing' => 'one',
-    ]);
-    $containerConfigurator->ruleWithConfiguration(DeclareEqualNormalizeFixer::class, [
-        'space' => 'none',
     ]);
     $containerConfigurator->ruleWithConfiguration(ListSyntaxFixer::class, [
         'syntax' => 'long',

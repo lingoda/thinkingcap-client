@@ -10,13 +10,11 @@ class GetCourseAssignmentsXmlResponse implements ResultInterface
 {
     private ServiceResultOfString $GetCourseAssignmentsXmlResult;
 
-    
     public function getGetCourseAssignmentsXmlResult(): ServiceResultOfString
     {
         return $this->GetCourseAssignmentsXmlResult;
     }
 
-    
     public function withGetCourseAssignmentsXmlResult(ServiceResultOfString $GetCourseAssignmentsXmlResult): static
     {
         $new = clone $this;

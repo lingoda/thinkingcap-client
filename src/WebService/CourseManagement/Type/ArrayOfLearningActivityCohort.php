@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfLearningActivityCohort
 {
-    private LearningActivityCohort $LearningActivityCohort;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\LearningActivityCohort>
+     */
+    private ?array $LearningActivityCohort;
 
-    
-    public function getLearningActivityCohort(): LearningActivityCohort
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\LearningActivityCohort>
+     */
+    public function getLearningActivityCohort(): ?array
     {
         return $this->LearningActivityCohort;
     }
 
-    
-    public function withLearningActivityCohort(LearningActivityCohort $LearningActivityCohort): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\LearningActivityCohort> $LearningActivityCohort
+     */
+    public function withLearningActivityCohort(?array $LearningActivityCohort): static
     {
         $new = clone $this;
         $new->LearningActivityCohort = $LearningActivityCohort;

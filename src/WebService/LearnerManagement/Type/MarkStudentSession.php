@@ -8,31 +8,31 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class MarkStudentSession implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $studentID;
+    private ?string $studentID;
 
     
-    private string $courseID;
+    private ?string $courseID;
 
     
-    private string $sessionID;
+    private ?string $sessionID;
 
     
     private int $scorePercent;
 
     
-    private string $comments;
+    private ?string $comments;
 
     
-    private string $attendanceValue;
+    private ?string $attendanceValue;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $studentID, string $courseID, string $sessionID, int $scorePercent, string $comments, string $attendanceValue)
+    public function __construct(?string $apiKey, ?string $studentID, ?string $courseID, ?string $sessionID, int $scorePercent, ?string $comments, ?string $attendanceValue)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -44,13 +44,13 @@ class MarkStudentSession implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -59,13 +59,13 @@ class MarkStudentSession implements RequestInterface
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
     
-    public function withStudentID(string $studentID): static
+    public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -74,13 +74,13 @@ class MarkStudentSession implements RequestInterface
     }
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
     
-    public function withCourseID(string $courseID): static
+    public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
         $new->courseID = $courseID;
@@ -89,13 +89,13 @@ class MarkStudentSession implements RequestInterface
     }
 
     
-    public function getSessionID(): string
+    public function getSessionID(): ?string
     {
         return $this->sessionID;
     }
 
     
-    public function withSessionID(string $sessionID): static
+    public function withSessionID(?string $sessionID): static
     {
         $new = clone $this;
         $new->sessionID = $sessionID;
@@ -119,13 +119,13 @@ class MarkStudentSession implements RequestInterface
     }
 
     
-    public function getComments(): string
+    public function getComments(): ?string
     {
         return $this->comments;
     }
 
     
-    public function withComments(string $comments): static
+    public function withComments(?string $comments): static
     {
         $new = clone $this;
         $new->comments = $comments;
@@ -134,13 +134,13 @@ class MarkStudentSession implements RequestInterface
     }
 
     
-    public function getAttendanceValue(): string
+    public function getAttendanceValue(): ?string
     {
         return $this->attendanceValue;
     }
 
     
-    public function withAttendanceValue(string $attendanceValue): static
+    public function withAttendanceValue(?string $attendanceValue): static
     {
         $new = clone $this;
         $new->attendanceValue = $attendanceValue;

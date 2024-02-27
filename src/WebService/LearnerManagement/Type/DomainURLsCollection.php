@@ -6,19 +6,19 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class DomainURLsCollection
 {
-    private string $language;
+    private ?string $language;
 
     
-    private ArrayOfString $languageURLs;
+    private ?ArrayOfString $languageURLs;
 
     
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
 
     
-    public function withLanguage(string $language): static
+    public function withLanguage(?string $language): static
     {
         $new = clone $this;
         $new->language = $language;
@@ -27,13 +27,13 @@ class DomainURLsCollection
     }
 
     
-    public function getLanguageURLs(): ArrayOfString
+    public function getLanguageURLs(): ?ArrayOfString
     {
         return $this->languageURLs;
     }
 
     
-    public function withLanguageURLs(ArrayOfString $languageURLs): static
+    public function withLanguageURLs(?ArrayOfString $languageURLs): static
     {
         $new = clone $this;
         $new->languageURLs = $languageURLs;

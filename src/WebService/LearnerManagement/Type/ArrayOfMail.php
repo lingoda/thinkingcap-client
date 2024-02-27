@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ArrayOfMail
 {
-    private Mail $Mail;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail>
+     */
+    private ?array $Mail;
 
-    
-    public function getMail(): Mail
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail>
+     */
+    public function getMail(): ?array
     {
         return $this->Mail;
     }
 
-    
-    public function withMail(Mail $Mail): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail> $Mail
+     */
+    public function withMail(?array $Mail): static
     {
         $new = clone $this;
         $new->Mail = $Mail;

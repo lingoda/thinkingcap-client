@@ -6,16 +6,16 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class TimeIntervalsList
 {
-    private ArrayOfTimeInterval $IntervalsArray;
+    private ?ArrayOfTimeInterval $IntervalsArray;
 
     
-    public function getIntervalsArray(): ArrayOfTimeInterval
+    public function getIntervalsArray(): ?ArrayOfTimeInterval
     {
         return $this->IntervalsArray;
     }
 
     
-    public function withIntervalsArray(ArrayOfTimeInterval $IntervalsArray): static
+    public function withIntervalsArray(?ArrayOfTimeInterval $IntervalsArray): static
     {
         $new = clone $this;
         $new->IntervalsArray = $IntervalsArray;

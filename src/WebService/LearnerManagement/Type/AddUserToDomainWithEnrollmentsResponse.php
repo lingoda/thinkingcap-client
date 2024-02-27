@@ -10,13 +10,11 @@ class AddUserToDomainWithEnrollmentsResponse implements ResultInterface
 {
     private ServiceResultOfString $AddUserToDomainWithEnrollmentsResult;
 
-    
     public function getAddUserToDomainWithEnrollmentsResult(): ServiceResultOfString
     {
         return $this->AddUserToDomainWithEnrollmentsResult;
     }
 
-    
     public function withAddUserToDomainWithEnrollmentsResult(ServiceResultOfString $AddUserToDomainWithEnrollmentsResult): static
     {
         $new = clone $this;

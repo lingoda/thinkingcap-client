@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfCourseSession
 {
-    private CourseSession $CourseSession;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSession>
+     */
+    private ?array $CourseSession = null;
 
-    
-    public function getCourseSession(): CourseSession
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSession>
+     */
+    public function getCourseSession(): ?array
     {
         return $this->CourseSession;
     }
 
-    
-    public function withCourseSession(CourseSession $CourseSession): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSession> $CourseSession
+     */
+    public function withCourseSession(?array $CourseSession): static
     {
         $new = clone $this;
         $new->CourseSession = $CourseSession;

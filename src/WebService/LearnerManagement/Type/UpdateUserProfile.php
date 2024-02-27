@@ -8,25 +8,28 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateUserProfile implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userID;
+    private ?string $userID;
 
     
-    private string $biography;
+    private ?string $biography;
 
     
-    private string $contentType;
+    private ?string $contentType;
 
-    
-    private Base64Binary $photo;
+    /**
+     * @var null | mixed
+     */
+    private mixed $photo;
 
     /**
      * Constructor
      *
+     * @param null | mixed $photo
      */
-    public function __construct(string $apiKey, string $userID, string $biography, string $contentType, Base64Binary $photo)
+    public function __construct(?string $apiKey, ?string $userID, ?string $biography, ?string $contentType, mixed $photo)
     {
         $this->apiKey = $apiKey;
         $this->userID = $userID;
@@ -36,13 +39,13 @@ class UpdateUserProfile implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,13 +54,13 @@ class UpdateUserProfile implements RequestInterface
     }
 
     
-    public function getUserID(): string
+    public function getUserID(): ?string
     {
         return $this->userID;
     }
 
     
-    public function withUserID(string $userID): static
+    public function withUserID(?string $userID): static
     {
         $new = clone $this;
         $new->userID = $userID;
@@ -66,13 +69,13 @@ class UpdateUserProfile implements RequestInterface
     }
 
     
-    public function getBiography(): string
+    public function getBiography(): ?string
     {
         return $this->biography;
     }
 
     
-    public function withBiography(string $biography): static
+    public function withBiography(?string $biography): static
     {
         $new = clone $this;
         $new->biography = $biography;
@@ -81,13 +84,13 @@ class UpdateUserProfile implements RequestInterface
     }
 
     
-    public function getContentType(): string
+    public function getContentType(): ?string
     {
         return $this->contentType;
     }
 
     
-    public function withContentType(string $contentType): static
+    public function withContentType(?string $contentType): static
     {
         $new = clone $this;
         $new->contentType = $contentType;
@@ -95,14 +98,18 @@ class UpdateUserProfile implements RequestInterface
         return $new;
     }
 
-    
-    public function getPhoto(): Base64Binary
+    /**
+     * @return null | mixed
+     */
+    public function getPhoto(): mixed
     {
         return $this->photo;
     }
 
-    
-    public function withPhoto(Base64Binary $photo): static
+    /**
+     * @param null | mixed $photo
+     */
+    public function withPhoto(mixed $photo): static
     {
         $new = clone $this;
         $new->photo = $photo;

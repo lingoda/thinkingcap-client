@@ -10,13 +10,11 @@ class GetLearningActivityByIDResponse implements ResultInterface
 {
     private ServiceResultOfLearningActivity $GetLearningActivityByIDResult;
 
-    
     public function getGetLearningActivityByIDResult(): ServiceResultOfLearningActivity
     {
         return $this->GetLearningActivityByIDResult;
     }
 
-    
     public function withGetLearningActivityByIDResult(ServiceResultOfLearningActivity $GetLearningActivityByIDResult): static
     {
         $new = clone $this;

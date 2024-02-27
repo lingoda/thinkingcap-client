@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfProgram
 {
-    private Program $Program;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Program>
+     */
+    private ?array $Program;
 
-    
-    public function getProgram(): Program
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Program>
+     */
+    public function getProgram(): ?array
     {
         return $this->Program;
     }
 
-    
-    public function withProgram(Program $Program): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Program> $Program
+     */
+    public function withProgram(?array $Program): static
     {
         $new = clone $this;
         $new->Program = $Program;

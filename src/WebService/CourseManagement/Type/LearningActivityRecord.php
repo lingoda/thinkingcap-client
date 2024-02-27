@@ -8,19 +8,19 @@ use DateTimeInterface;
 
 class LearningActivityRecord
 {
-    private string $StudentID;
+    private ?string $StudentID;
 
     
-    private string $StudentName;
+    private ?string $StudentName;
 
     
-    private string $StudentEmail;
+    private ?string $StudentEmail;
 
     
-    private string $Status;
+    private ?string $Status;
 
     
-    private string $Success;
+    private ?string $Success;
 
     
     private int $Score;
@@ -38,13 +38,13 @@ class LearningActivityRecord
     private DateTimeInterface $DueDate;
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
     
-    public function withStudentID(string $StudentID): static
+    public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
         $new->StudentID = $StudentID;
@@ -53,13 +53,13 @@ class LearningActivityRecord
     }
 
     
-    public function getStudentName(): string
+    public function getStudentName(): ?string
     {
         return $this->StudentName;
     }
 
     
-    public function withStudentName(string $StudentName): static
+    public function withStudentName(?string $StudentName): static
     {
         $new = clone $this;
         $new->StudentName = $StudentName;
@@ -68,13 +68,13 @@ class LearningActivityRecord
     }
 
     
-    public function getStudentEmail(): string
+    public function getStudentEmail(): ?string
     {
         return $this->StudentEmail;
     }
 
     
-    public function withStudentEmail(string $StudentEmail): static
+    public function withStudentEmail(?string $StudentEmail): static
     {
         $new = clone $this;
         $new->StudentEmail = $StudentEmail;
@@ -83,13 +83,13 @@ class LearningActivityRecord
     }
 
     
-    public function getStatus(): string
+    public function getStatus(): ?string
     {
         return $this->Status;
     }
 
     
-    public function withStatus(string $Status): static
+    public function withStatus(?string $Status): static
     {
         $new = clone $this;
         $new->Status = $Status;
@@ -98,13 +98,13 @@ class LearningActivityRecord
     }
 
     
-    public function getSuccess(): string
+    public function getSuccess(): ?string
     {
         return $this->Success;
     }
 
     
-    public function withSuccess(string $Success): static
+    public function withSuccess(?string $Success): static
     {
         $new = clone $this;
         $new->Success = $Success;

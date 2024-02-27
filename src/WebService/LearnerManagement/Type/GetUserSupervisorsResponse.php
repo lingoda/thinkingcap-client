@@ -10,13 +10,11 @@ class GetUserSupervisorsResponse implements ResultInterface
 {
     private ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult;
 
-    
     public function getGetUserSupervisorsResult(): ServiceResultOfListOfServiceSupervisor
     {
         return $this->GetUserSupervisorsResult;
     }
 
-    
     public function withGetUserSupervisorsResult(ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult): static
     {
         $new = clone $this;

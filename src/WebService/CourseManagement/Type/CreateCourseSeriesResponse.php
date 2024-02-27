@@ -10,13 +10,11 @@ class CreateCourseSeriesResponse implements ResultInterface
 {
     private ServiceResultOfString $CreateCourseSeriesResult;
 
-    
     public function getCreateCourseSeriesResult(): ServiceResultOfString
     {
         return $this->CreateCourseSeriesResult;
     }
 
-    
     public function withCreateCourseSeriesResult(ServiceResultOfString $CreateCourseSeriesResult): static
     {
         $new = clone $this;

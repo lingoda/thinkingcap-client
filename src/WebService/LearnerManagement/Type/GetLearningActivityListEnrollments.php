@@ -8,19 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityListEnrollments implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $userCustomMetadata;
+    private ?string $userCustomMetadata;
 
     
-    private string $customFieldIDs;
+    private ?string $customFieldIDs;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $userCustomMetadata, string $customFieldIDs)
+    public function __construct(?string $apiKey, ?string $userCustomMetadata, ?string $customFieldIDs)
     {
         $this->apiKey = $apiKey;
         $this->userCustomMetadata = $userCustomMetadata;
@@ -28,13 +28,13 @@ class GetLearningActivityListEnrollments implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -43,13 +43,13 @@ class GetLearningActivityListEnrollments implements RequestInterface
     }
 
     
-    public function getUserCustomMetadata(): string
+    public function getUserCustomMetadata(): ?string
     {
         return $this->userCustomMetadata;
     }
 
     
-    public function withUserCustomMetadata(string $userCustomMetadata): static
+    public function withUserCustomMetadata(?string $userCustomMetadata): static
     {
         $new = clone $this;
         $new->userCustomMetadata = $userCustomMetadata;
@@ -58,13 +58,13 @@ class GetLearningActivityListEnrollments implements RequestInterface
     }
 
     
-    public function getCustomFieldIDs(): string
+    public function getCustomFieldIDs(): ?string
     {
         return $this->customFieldIDs;
     }
 
     
-    public function withCustomFieldIDs(string $customFieldIDs): static
+    public function withCustomFieldIDs(?string $customFieldIDs): static
     {
         $new = clone $this;
         $new->customFieldIDs = $customFieldIDs;

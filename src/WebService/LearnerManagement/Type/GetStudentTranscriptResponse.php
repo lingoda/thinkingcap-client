@@ -10,13 +10,11 @@ class GetStudentTranscriptResponse implements ResultInterface
 {
     private ServiceResultOfStudentRecordList $GetStudentTranscriptResult;
 
-    
     public function getGetStudentTranscriptResult(): ServiceResultOfStudentRecordList
     {
         return $this->GetStudentTranscriptResult;
     }
 
-    
     public function withGetStudentTranscriptResult(ServiceResultOfStudentRecordList $GetStudentTranscriptResult): static
     {
         $new = clone $this;

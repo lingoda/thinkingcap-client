@@ -8,25 +8,25 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class EnrollStudentReservation implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $studentID;
+    private ?string $studentID;
 
     
-    private string $learningObjectID;
+    private ?string $learningObjectID;
 
     
-    private string $enrollmentDomainID;
+    private ?string $enrollmentDomainID;
 
     
-    private string $reserVationID;
+    private ?string $reserVationID;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $studentID, string $learningObjectID, string $enrollmentDomainID, string $reserVationID)
+    public function __construct(?string $apiKey, ?string $studentID, ?string $learningObjectID, ?string $enrollmentDomainID, ?string $reserVationID)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -36,13 +36,13 @@ class EnrollStudentReservation implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -51,13 +51,13 @@ class EnrollStudentReservation implements RequestInterface
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
     
-    public function withStudentID(string $studentID): static
+    public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -66,13 +66,13 @@ class EnrollStudentReservation implements RequestInterface
     }
 
     
-    public function getLearningObjectID(): string
+    public function getLearningObjectID(): ?string
     {
         return $this->learningObjectID;
     }
 
     
-    public function withLearningObjectID(string $learningObjectID): static
+    public function withLearningObjectID(?string $learningObjectID): static
     {
         $new = clone $this;
         $new->learningObjectID = $learningObjectID;
@@ -81,13 +81,13 @@ class EnrollStudentReservation implements RequestInterface
     }
 
     
-    public function getEnrollmentDomainID(): string
+    public function getEnrollmentDomainID(): ?string
     {
         return $this->enrollmentDomainID;
     }
 
     
-    public function withEnrollmentDomainID(string $enrollmentDomainID): static
+    public function withEnrollmentDomainID(?string $enrollmentDomainID): static
     {
         $new = clone $this;
         $new->enrollmentDomainID = $enrollmentDomainID;
@@ -96,13 +96,13 @@ class EnrollStudentReservation implements RequestInterface
     }
 
     
-    public function getReserVationID(): string
+    public function getReserVationID(): ?string
     {
         return $this->reserVationID;
     }
 
     
-    public function withReserVationID(string $reserVationID): static
+    public function withReserVationID(?string $reserVationID): static
     {
         $new = clone $this;
         $new->reserVationID = $reserVationID;

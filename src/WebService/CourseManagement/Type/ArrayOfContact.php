@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfContact
 {
-    private Contact $Contact;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Contact>
+     */
+    private ?array $Contact;
 
-    
-    public function getContact(): Contact
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Contact>
+     */
+    public function getContact(): ?array
     {
         return $this->Contact;
     }
 
-    
-    public function withContact(Contact $Contact): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Contact> $Contact
+     */
+    public function withContact(?array $Contact): static
     {
         $new = clone $this;
         $new->Contact = $Contact;

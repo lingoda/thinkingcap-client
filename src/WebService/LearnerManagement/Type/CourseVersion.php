@@ -8,10 +8,10 @@ use DateTimeInterface;
 
 class CourseVersion
 {
-    private string $CourseID;
+    private ?string $CourseID;
 
     
-    private string $CourseTitle;
+    private ?string $CourseTitle;
 
     
     private int $VersionNumber;
@@ -35,34 +35,34 @@ class CourseVersion
     private DateTimeInterface $ImportDate;
 
     
-    private string $ScormVersion;
+    private ?string $ScormVersion;
 
     
-    private string $Reason;
+    private ?string $Reason;
 
     
-    private string $Type;
+    private ?string $Type;
 
     
     private bool $HasMinorVersions;
 
     
-    private string $UpdatedBy;
+    private ?string $UpdatedBy;
 
     
-    private string $SummaryXml;
+    private ?string $SummaryXml;
 
     
-    private string $ExternalLocation;
+    private ?string $ExternalLocation;
 
     
-    public function getCourseID(): string
+    public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
     
-    public function withCourseID(string $CourseID): static
+    public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
         $new->CourseID = $CourseID;
@@ -71,13 +71,13 @@ class CourseVersion
     }
 
     
-    public function getCourseTitle(): string
+    public function getCourseTitle(): ?string
     {
         return $this->CourseTitle;
     }
 
     
-    public function withCourseTitle(string $CourseTitle): static
+    public function withCourseTitle(?string $CourseTitle): static
     {
         $new = clone $this;
         $new->CourseTitle = $CourseTitle;
@@ -191,13 +191,13 @@ class CourseVersion
     }
 
     
-    public function getScormVersion(): string
+    public function getScormVersion(): ?string
     {
         return $this->ScormVersion;
     }
 
     
-    public function withScormVersion(string $ScormVersion): static
+    public function withScormVersion(?string $ScormVersion): static
     {
         $new = clone $this;
         $new->ScormVersion = $ScormVersion;
@@ -206,13 +206,13 @@ class CourseVersion
     }
 
     
-    public function getReason(): string
+    public function getReason(): ?string
     {
         return $this->Reason;
     }
 
     
-    public function withReason(string $Reason): static
+    public function withReason(?string $Reason): static
     {
         $new = clone $this;
         $new->Reason = $Reason;
@@ -221,13 +221,13 @@ class CourseVersion
     }
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
 
     
-    public function withType(string $Type): static
+    public function withType(?string $Type): static
     {
         $new = clone $this;
         $new->Type = $Type;
@@ -251,13 +251,13 @@ class CourseVersion
     }
 
     
-    public function getUpdatedBy(): string
+    public function getUpdatedBy(): ?string
     {
         return $this->UpdatedBy;
     }
 
     
-    public function withUpdatedBy(string $UpdatedBy): static
+    public function withUpdatedBy(?string $UpdatedBy): static
     {
         $new = clone $this;
         $new->UpdatedBy = $UpdatedBy;
@@ -266,13 +266,13 @@ class CourseVersion
     }
 
     
-    public function getSummaryXml(): string
+    public function getSummaryXml(): ?string
     {
         return $this->SummaryXml;
     }
 
     
-    public function withSummaryXml(string $SummaryXml): static
+    public function withSummaryXml(?string $SummaryXml): static
     {
         $new = clone $this;
         $new->SummaryXml = $SummaryXml;
@@ -281,13 +281,13 @@ class CourseVersion
     }
 
     
-    public function getExternalLocation(): string
+    public function getExternalLocation(): ?string
     {
         return $this->ExternalLocation;
     }
 
     
-    public function withExternalLocation(string $ExternalLocation): static
+    public function withExternalLocation(?string $ExternalLocation): static
     {
         $new = clone $this;
         $new->ExternalLocation = $ExternalLocation;

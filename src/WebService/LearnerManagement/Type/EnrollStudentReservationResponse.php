@@ -10,13 +10,11 @@ class EnrollStudentReservationResponse implements ResultInterface
 {
     private ServiceResultOfString $EnrollStudentReservationResult;
 
-    
     public function getEnrollStudentReservationResult(): ServiceResultOfString
     {
         return $this->EnrollStudentReservationResult;
     }
 
-    
     public function withEnrollStudentReservationResult(ServiceResultOfString $EnrollStudentReservationResult): static
     {
         $new = clone $this;

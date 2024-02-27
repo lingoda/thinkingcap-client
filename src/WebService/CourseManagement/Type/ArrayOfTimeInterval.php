@@ -6,16 +6,23 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ArrayOfTimeInterval
 {
-    private TimeInterval $TimeInterval;
+    /**
+     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeInterval>
+     */
+    private ?array $TimeInterval;
 
-    
-    public function getTimeInterval(): TimeInterval
+    /**
+     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeInterval>
+     */
+    public function getTimeInterval(): ?array
     {
         return $this->TimeInterval;
     }
 
-    
-    public function withTimeInterval(TimeInterval $TimeInterval): static
+    /**
+     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\TimeInterval> $TimeInterval
+     */
+    public function withTimeInterval(?array $TimeInterval): static
     {
         $new = clone $this;
         $new->TimeInterval = $TimeInterval;

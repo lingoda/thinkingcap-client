@@ -10,13 +10,11 @@ class GetDomainUsersResponse implements ResultInterface
 {
     private ServiceResultOfListOfServiceUser $GetDomainUsersResult;
 
-    
     public function getGetDomainUsersResult(): ServiceResultOfListOfServiceUser
     {
         return $this->GetDomainUsersResult;
     }
 
-    
     public function withGetDomainUsersResult(ServiceResultOfListOfServiceUser $GetDomainUsersResult): static
     {
         $new = clone $this;

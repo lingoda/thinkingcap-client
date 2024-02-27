@@ -6,46 +6,46 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class TrainingLocation
 {
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $ProgramID;
+    private ?string $ProgramID;
 
     
-    private string $Country;
+    private ?string $Country;
 
     
-    private string $City;
+    private ?string $City;
 
     
-    private string $PostalCode;
+    private ?string $PostalCode;
 
     
-    private string $State;
+    private ?string $State;
 
     
-    private string $Address;
+    private ?string $Address;
 
     
-    private string $Room;
+    private ?string $Room;
 
     
-    private string $FieldsXml;
+    private ?string $FieldsXml;
 
     
-    private string $SeatingType;
+    private ?string $SeatingType;
 
     
-    private string $MeetingID;
+    private ?string $MeetingID;
 
     
-    private string $MeetingDetails;
+    private ?string $MeetingDetails;
 
     
-    private string $RecordingID;
+    private ?string $RecordingID;
 
     
-    private TimeZone $TimeZone;
+    private ?TimeZone $TimeZone;
 
     
     private bool $UseDST;
@@ -60,16 +60,16 @@ class TrainingLocation
     private bool $IsOneTime;
 
     
-    private string $GoTo_Webcast;
+    private ?string $GoTo_Webcast;
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -78,13 +78,13 @@ class TrainingLocation
     }
 
     
-    public function getProgramID(): string
+    public function getProgramID(): ?string
     {
         return $this->ProgramID;
     }
 
     
-    public function withProgramID(string $ProgramID): static
+    public function withProgramID(?string $ProgramID): static
     {
         $new = clone $this;
         $new->ProgramID = $ProgramID;
@@ -93,13 +93,13 @@ class TrainingLocation
     }
 
     
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->Country;
     }
 
     
-    public function withCountry(string $Country): static
+    public function withCountry(?string $Country): static
     {
         $new = clone $this;
         $new->Country = $Country;
@@ -108,13 +108,13 @@ class TrainingLocation
     }
 
     
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->City;
     }
 
     
-    public function withCity(string $City): static
+    public function withCity(?string $City): static
     {
         $new = clone $this;
         $new->City = $City;
@@ -123,13 +123,13 @@ class TrainingLocation
     }
 
     
-    public function getPostalCode(): string
+    public function getPostalCode(): ?string
     {
         return $this->PostalCode;
     }
 
     
-    public function withPostalCode(string $PostalCode): static
+    public function withPostalCode(?string $PostalCode): static
     {
         $new = clone $this;
         $new->PostalCode = $PostalCode;
@@ -138,13 +138,13 @@ class TrainingLocation
     }
 
     
-    public function getState(): string
+    public function getState(): ?string
     {
         return $this->State;
     }
 
     
-    public function withState(string $State): static
+    public function withState(?string $State): static
     {
         $new = clone $this;
         $new->State = $State;
@@ -153,13 +153,13 @@ class TrainingLocation
     }
 
     
-    public function getAddress(): string
+    public function getAddress(): ?string
     {
         return $this->Address;
     }
 
     
-    public function withAddress(string $Address): static
+    public function withAddress(?string $Address): static
     {
         $new = clone $this;
         $new->Address = $Address;
@@ -168,13 +168,13 @@ class TrainingLocation
     }
 
     
-    public function getRoom(): string
+    public function getRoom(): ?string
     {
         return $this->Room;
     }
 
     
-    public function withRoom(string $Room): static
+    public function withRoom(?string $Room): static
     {
         $new = clone $this;
         $new->Room = $Room;
@@ -183,13 +183,13 @@ class TrainingLocation
     }
 
     
-    public function getFieldsXml(): string
+    public function getFieldsXml(): ?string
     {
         return $this->FieldsXml;
     }
 
     
-    public function withFieldsXml(string $FieldsXml): static
+    public function withFieldsXml(?string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;
@@ -198,13 +198,13 @@ class TrainingLocation
     }
 
     
-    public function getSeatingType(): string
+    public function getSeatingType(): ?string
     {
         return $this->SeatingType;
     }
 
     
-    public function withSeatingType(string $SeatingType): static
+    public function withSeatingType(?string $SeatingType): static
     {
         $new = clone $this;
         $new->SeatingType = $SeatingType;
@@ -213,13 +213,13 @@ class TrainingLocation
     }
 
     
-    public function getMeetingID(): string
+    public function getMeetingID(): ?string
     {
         return $this->MeetingID;
     }
 
     
-    public function withMeetingID(string $MeetingID): static
+    public function withMeetingID(?string $MeetingID): static
     {
         $new = clone $this;
         $new->MeetingID = $MeetingID;
@@ -228,13 +228,13 @@ class TrainingLocation
     }
 
     
-    public function getMeetingDetails(): string
+    public function getMeetingDetails(): ?string
     {
         return $this->MeetingDetails;
     }
 
     
-    public function withMeetingDetails(string $MeetingDetails): static
+    public function withMeetingDetails(?string $MeetingDetails): static
     {
         $new = clone $this;
         $new->MeetingDetails = $MeetingDetails;
@@ -243,13 +243,13 @@ class TrainingLocation
     }
 
     
-    public function getRecordingID(): string
+    public function getRecordingID(): ?string
     {
         return $this->RecordingID;
     }
 
     
-    public function withRecordingID(string $RecordingID): static
+    public function withRecordingID(?string $RecordingID): static
     {
         $new = clone $this;
         $new->RecordingID = $RecordingID;
@@ -258,13 +258,13 @@ class TrainingLocation
     }
 
     
-    public function getTimeZone(): TimeZone
+    public function getTimeZone(): ?TimeZone
     {
         return $this->TimeZone;
     }
 
     
-    public function withTimeZone(TimeZone $TimeZone): static
+    public function withTimeZone(?TimeZone $TimeZone): static
     {
         $new = clone $this;
         $new->TimeZone = $TimeZone;
@@ -333,13 +333,13 @@ class TrainingLocation
     }
 
     
-    public function getGoToWebcast(): string
+    public function getGoToWebcast(): ?string
     {
         return $this->GoTo_Webcast;
     }
 
     
-    public function withGoToWebcast(string $GoTo_Webcast): static
+    public function withGoToWebcast(?string $GoTo_Webcast): static
     {
         $new = clone $this;
         $new->GoTo_Webcast = $GoTo_Webcast;

@@ -10,13 +10,11 @@ class GetLMSUserAutoLoginURLByUsernameResponse implements ResultInterface
 {
     private ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult;
 
-    
     public function getGetLMSUserAutoLoginURLByUsernameResult(): ServiceResultOfString
     {
         return $this->GetLMSUserAutoLoginURLByUsernameResult;
     }
 
-    
     public function withGetLMSUserAutoLoginURLByUsernameResult(ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult): static
     {
         $new = clone $this;

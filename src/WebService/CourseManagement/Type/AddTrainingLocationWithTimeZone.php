@@ -8,37 +8,37 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class AddTrainingLocationWithTimeZone implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $country;
+    private ?string $country;
 
     
-    private string $state;
+    private ?string $state;
 
     
-    private string $city;
+    private ?string $city;
 
     
-    private string $address;
+    private ?string $address;
 
     
-    private string $postalCode;
+    private ?string $postalCode;
 
     
-    private string $room;
+    private ?string $room;
 
     
-    private string $timezoneCode;
+    private ?string $timezoneCode;
 
     
-    private string $useDST;
+    private ?string $useDST;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $country, string $state, string $city, string $address, string $postalCode, string $room, string $timezoneCode, string $useDST)
+    public function __construct(?string $apiKey, ?string $country, ?string $state, ?string $city, ?string $address, ?string $postalCode, ?string $room, ?string $timezoneCode, ?string $useDST)
     {
         $this->apiKey = $apiKey;
         $this->country = $country;
@@ -52,13 +52,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -67,13 +67,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->country;
     }
 
     
-    public function withCountry(string $country): static
+    public function withCountry(?string $country): static
     {
         $new = clone $this;
         $new->country = $country;
@@ -82,13 +82,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getState(): string
+    public function getState(): ?string
     {
         return $this->state;
     }
 
     
-    public function withState(string $state): static
+    public function withState(?string $state): static
     {
         $new = clone $this;
         $new->state = $state;
@@ -97,13 +97,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->city;
     }
 
     
-    public function withCity(string $city): static
+    public function withCity(?string $city): static
     {
         $new = clone $this;
         $new->city = $city;
@@ -112,13 +112,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getAddress(): string
+    public function getAddress(): ?string
     {
         return $this->address;
     }
 
     
-    public function withAddress(string $address): static
+    public function withAddress(?string $address): static
     {
         $new = clone $this;
         $new->address = $address;
@@ -127,13 +127,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getPostalCode(): string
+    public function getPostalCode(): ?string
     {
         return $this->postalCode;
     }
 
     
-    public function withPostalCode(string $postalCode): static
+    public function withPostalCode(?string $postalCode): static
     {
         $new = clone $this;
         $new->postalCode = $postalCode;
@@ -142,13 +142,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getRoom(): string
+    public function getRoom(): ?string
     {
         return $this->room;
     }
 
     
-    public function withRoom(string $room): static
+    public function withRoom(?string $room): static
     {
         $new = clone $this;
         $new->room = $room;
@@ -157,13 +157,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getTimezoneCode(): string
+    public function getTimezoneCode(): ?string
     {
         return $this->timezoneCode;
     }
 
     
-    public function withTimezoneCode(string $timezoneCode): static
+    public function withTimezoneCode(?string $timezoneCode): static
     {
         $new = clone $this;
         $new->timezoneCode = $timezoneCode;
@@ -172,13 +172,13 @@ class AddTrainingLocationWithTimeZone implements RequestInterface
     }
 
     
-    public function getUseDST(): string
+    public function getUseDST(): ?string
     {
         return $this->useDST;
     }
 
     
-    public function withUseDST(string $useDST): static
+    public function withUseDST(?string $useDST): static
     {
         $new = clone $this;
         $new->useDST = $useDST;

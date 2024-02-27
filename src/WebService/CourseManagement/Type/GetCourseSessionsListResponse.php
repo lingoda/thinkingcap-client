@@ -10,13 +10,11 @@ class GetCourseSessionsListResponse implements ResultInterface
 {
     private ServiceResultOfListOfCourseSession $GetCourseSessionsListResult;
 
-    
     public function getGetCourseSessionsListResult(): ServiceResultOfListOfCourseSession
     {
         return $this->GetCourseSessionsListResult;
     }
 
-    
     public function withGetCourseSessionsListResult(ServiceResultOfListOfCourseSession $GetCourseSessionsListResult): static
     {
         $new = clone $this;

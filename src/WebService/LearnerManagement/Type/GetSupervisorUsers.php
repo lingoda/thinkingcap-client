@@ -8,10 +8,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetSupervisorUsers implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $supervisorID;
+    private ?string $supervisorID;
 
     
     private bool $includeInactive;
@@ -29,7 +29,7 @@ class GetSupervisorUsers implements RequestInterface
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $supervisorID, bool $includeInactive, bool $includeMetadata, int $offset, int $take)
+    public function __construct(?string $apiKey, ?string $supervisorID, bool $includeInactive, bool $includeMetadata, int $offset, int $take)
     {
         $this->apiKey = $apiKey;
         $this->supervisorID = $supervisorID;
@@ -40,13 +40,13 @@ class GetSupervisorUsers implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -55,13 +55,13 @@ class GetSupervisorUsers implements RequestInterface
     }
 
     
-    public function getSupervisorID(): string
+    public function getSupervisorID(): ?string
     {
         return $this->supervisorID;
     }
 
     
-    public function withSupervisorID(string $supervisorID): static
+    public function withSupervisorID(?string $supervisorID): static
     {
         $new = clone $this;
         $new->supervisorID = $supervisorID;

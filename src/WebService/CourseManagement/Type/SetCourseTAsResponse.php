@@ -10,13 +10,11 @@ class SetCourseTAsResponse implements ResultInterface
 {
     private ServiceResultOfString $SetCourseTAsResult;
 
-    
     public function getSetCourseTAsResult(): ServiceResultOfString
     {
         return $this->SetCourseTAsResult;
     }
 
-    
     public function withSetCourseTAsResult(ServiceResultOfString $SetCourseTAsResult): static
     {
         $new = clone $this;

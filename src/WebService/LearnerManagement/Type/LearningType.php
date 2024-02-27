@@ -8,55 +8,57 @@ use DateTimeInterface;
 
 class LearningType
 {
-    private string $CourseType;
+    private ?string $CourseType;
 
     
-    private string $ID;
+    private ?string $ID;
 
     
-    private string $Code;
+    private ?string $Code;
 
     
-    private string $FullScreen;
+    private ?string $FullScreen;
 
     
-    private string $Title;
+    private ?string $Title;
 
     
-    private string $Description;
+    private ?string $Description;
 
     
-    private string $Language;
+    private ?string $Language;
 
     
     private DateTimeInterface $LastUpdatedTimestamp;
 
-    
-    private Base64Binary $Logo;
+    /**
+     * @var null | mixed
+     */
+    private mixed $Logo;
 
     
-    private string $LogoContentType;
+    private ?string $LogoContentType;
 
     
-    private string $LogoID;
+    private ?string $LogoID;
 
     
-    private string $SeriesID;
+    private ?string $SeriesID;
 
     
-    private string $SeriesName;
+    private ?string $SeriesName;
 
     
-    private string $ProgramID;
+    private ?string $ProgramID;
 
     
-    private string $ProgramName;
+    private ?string $ProgramName;
 
     
     private bool $IsActive;
 
     
-    private string $SKU;
+    private ?string $SKU;
 
     
     private float $Price;
@@ -71,10 +73,10 @@ class LearningType
     private int $SubsequentTokensValue;
 
     
-    private string $Currency;
+    private ?string $Currency;
 
     
-    private string $PaymentProvider;
+    private ?string $PaymentProvider;
 
     
     private bool $GrantCertificate;
@@ -83,22 +85,22 @@ class LearningType
     private bool $CertificateExpires;
 
     
-    private AccreditationDetails $AccreditationDetails;
+    private ?AccreditationDetails $AccreditationDetails;
 
     
-    private ArrayOfReference $References;
+    private ?ArrayOfReference $References;
 
     
     private bool $IsShared;
 
     
-    private string $ExclusionMode;
+    private ?string $ExclusionMode;
 
     
-    private string $LeaningPathActivityLayout;
+    private ?string $LeaningPathActivityLayout;
 
     
-    private string $ShowLearnerProgressAs;
+    private ?string $ShowLearnerProgressAs;
 
     
     private bool $ShowSharingLink;
@@ -122,13 +124,13 @@ class LearningType
     private bool $VideoCompleteOnTime;
 
     
-    private string $VideoCompleteOnTime_Minute;
+    private ?string $VideoCompleteOnTime_Minute;
 
     
-    private string $VideoCompleteOnTime_Sec;
+    private ?string $VideoCompleteOnTime_Sec;
 
     
-    private CaptionInfo $CaptionInfo;
+    private ?CaptionInfo $CaptionInfo;
 
     
     private bool $ManualEnrollNoMatch;
@@ -149,7 +151,7 @@ class LearningType
     private bool $LastEnrollmentBasedFirstEnrollmentDate;
 
     
-    private string $LastEnrollmentBasedFirstEnrollmentDateSetting;
+    private ?string $LastEnrollmentBasedFirstEnrollmentDateSetting;
 
     
     private DateTimeInterface $LastEnrollmentDate;
@@ -167,13 +169,13 @@ class LearningType
     private int $SupervisorExtensionDaysLimit;
 
     
-    private string $SupervisorExtensionDaysLimitStartFrom;
+    private ?string $SupervisorExtensionDaysLimitStartFrom;
 
     
     private DateTimeInterface $StartDate;
 
     
-    private string $DueDate;
+    private ?string $DueDate;
 
     
     private bool $AllowEnrollmentCodeAfterEnrollmentDate;
@@ -188,7 +190,7 @@ class LearningType
     private bool $SuspendAccess;
 
     
-    private string $SuspendAccessDays;
+    private ?string $SuspendAccessDays;
 
     
     private bool $EnrollFromLPOnly;
@@ -200,22 +202,22 @@ class LearningType
     private bool $AutoEnrollAllDomainMembers;
 
     
-    private ArrayOfAnyType $AutoenrollRules;
+    private ?ArrayOfAnyType $AutoenrollRules;
 
     
     private bool $AutoenrollRulesRequired;
 
     
-    private string $AutoenrollRepeatType;
+    private ?string $AutoenrollRepeatType;
 
     
-    private string $AutoenrollRepeatMonthCount;
+    private ?string $AutoenrollRepeatMonthCount;
 
     
     private DateTimeInterface $AutoenrollLastRunDate;
 
     
-    private ArrayOfAnyType $AutoenrollExcludeRules;
+    private ?ArrayOfAnyType $AutoenrollExcludeRules;
 
     
     private bool $AutoenrollExcludeRulesRequired;
@@ -227,19 +229,19 @@ class LearningType
     private bool $UseAutoEnrollmentRuleForReEnroll;
 
     
-    private ArrayOfAnyType $RecertificationAutoEnrollRules;
+    private ?ArrayOfAnyType $RecertificationAutoEnrollRules;
 
     
-    private ArrayOfAnyType $RecertificationAutoEnrollExcludeRules;
+    private ?ArrayOfAnyType $RecertificationAutoEnrollExcludeRules;
 
     
     private bool $ReAutoEnrollmentAllowAll;
 
     
-    private string $ReAutoenrollRepeatType;
+    private ?string $ReAutoenrollRepeatType;
 
     
-    private string $ReAutoenrollRepeatMonthCount;
+    private ?string $ReAutoenrollRepeatMonthCount;
 
     
     private bool $ReAutoenrollAllRulesRequired;
@@ -263,7 +265,7 @@ class LearningType
     private bool $PermissionEnroll;
 
     
-    private string $EnrollPermissionFrom;
+    private ?string $EnrollPermissionFrom;
 
     
     private bool $PaymentEnroll;
@@ -302,10 +304,10 @@ class LearningType
     private bool $AllowAttendanceCode;
 
     
-    private ArrayOfAnyType $SelfEnrollRules;
+    private ?ArrayOfAnyType $SelfEnrollRules;
 
     
-    private ArrayOfAnyType $SelfEnrollGroups;
+    private ?ArrayOfAnyType $SelfEnrollGroups;
 
     
     private bool $SelfEnrollGroupRequired;
@@ -314,7 +316,7 @@ class LearningType
     private bool $SelfEnrollRulesRequired;
 
     
-    private ArrayOfAnyType $SelfEnrollExcludeRules;
+    private ?ArrayOfAnyType $SelfEnrollExcludeRules;
 
     
     private bool $SelfEnrollExcludeRulesRequired;
@@ -329,19 +331,19 @@ class LearningType
     private bool $PermissionUnenroll;
 
     
-    private string $UnenrollOption;
+    private ?string $UnenrollOption;
 
     
-    private string $UnenrollPermissionFrom;
+    private ?string $UnenrollPermissionFrom;
 
     
-    private ArrayOfAnyType $WithdrawalRules;
+    private ?ArrayOfAnyType $WithdrawalRules;
 
     
     private bool $WithdrawalRulesRequired;
 
     
-    private ArrayOfAnyType $WithdrawalExcludeRules;
+    private ?ArrayOfAnyType $WithdrawalExcludeRules;
 
     
     private bool $WithdrawalExcludeRulesRequired;
@@ -353,25 +355,25 @@ class LearningType
     private bool $AutoWithdrawNotMatchingAutoRules;
 
     
-    private ArrayOfAnyType $AutoWithdrawalRules;
+    private ?ArrayOfAnyType $AutoWithdrawalRules;
 
     
     private bool $AutoWithdrawalRulesRequired;
 
     
-    private ArrayOfAnyType $AutoWithdrawalExcludeRules;
+    private ?ArrayOfAnyType $AutoWithdrawalExcludeRules;
 
     
     private bool $AutoWithdrawalExcludeRulesRequired;
 
     
-    private ArrayOfAnyType $AnnouncementRules;
+    private ?ArrayOfAnyType $AnnouncementRules;
 
     
     private bool $AnnouncementRulesRequired;
 
     
-    private ArrayOfAnyType $AnnouncementExcludeRules;
+    private ?ArrayOfAnyType $AnnouncementExcludeRules;
 
     
     private bool $AnnouncementExcludeRulesRequired;
@@ -413,22 +415,22 @@ class LearningType
     private bool $AllowAnonPreview;
 
     
-    private string $FieldsXml;
+    private ?string $FieldsXml;
 
     
-    private string $BaseUrl;
+    private ?string $BaseUrl;
 
     
     private bool $HasAccessCode;
 
     
-    private string $AccessCode;
+    private ?string $AccessCode;
 
     
     private int $CourseSharingCount;
 
     
-    private string $Disclaimer;
+    private ?string $Disclaimer;
 
     
     private bool $ShowDisclaimerAlways;
@@ -437,7 +439,7 @@ class LearningType
     private bool $DisclaimerAgreed;
 
     
-    private string $DisclaimerTextButton;
+    private ?string $DisclaimerTextButton;
 
     
     private bool $HasDisclaimer;
@@ -446,13 +448,13 @@ class LearningType
     private bool $AllowMobileDownload;
 
     
-    private ArrayOfAnyType $AltPrices;
+    private ?ArrayOfAnyType $AltPrices;
 
     
-    private string $InitialScormVersion;
+    private ?string $InitialScormVersion;
 
     
-    private string $ReviewStatus;
+    private ?string $ReviewStatus;
 
     
     private bool $SendAccreditationExpiryNotification;
@@ -767,7 +769,7 @@ class LearningType
     private int $ClassroomWidth;
 
     
-    private string $ClassroomTemplate;
+    private ?string $ClassroomTemplate;
 
     
     private bool $ForceIECompatibilityMode;
@@ -779,7 +781,7 @@ class LearningType
     private bool $FullScreenSize;
 
     
-    private string $OpenCourseIn;
+    private ?string $OpenCourseIn;
 
     
     private bool $HasThreshold;
@@ -791,7 +793,7 @@ class LearningType
     private bool $LimitSecurityAccess;
 
     
-    private string $CreatorID;
+    private ?string $CreatorID;
 
     
     private bool $RequirePackageForCompletion;
@@ -821,7 +823,7 @@ class LearningType
     private int $MinPassingScore;
 
     
-    private string $PreventCompletionSettings;
+    private ?string $PreventCompletionSettings;
 
     
     private bool $HasAssessment;
@@ -839,10 +841,10 @@ class LearningType
     private int $PackageWeight;
 
     
-    private string $DeploymentType;
+    private ?string $DeploymentType;
 
     
-    private string $AzureRunMode;
+    private ?string $AzureRunMode;
 
     
     private bool $DynamicProgram;
@@ -851,10 +853,10 @@ class LearningType
     private float $LearningTime;
 
     
-    private string $EditorXML;
+    private ?string $EditorXML;
 
     
-    private string $TranscriptPrintMode;
+    private ?string $TranscriptPrintMode;
 
     
     private bool $HideTranscriptScore;
@@ -872,10 +874,10 @@ class LearningType
     private bool $Log;
 
     
-    private string $CustomScoreFeedbackXml;
+    private ?string $CustomScoreFeedbackXml;
 
     
-    private string $CustomActivityTypeID;
+    private ?string $CustomActivityTypeID;
 
     
     private bool $ShowHiddenSettings;
@@ -899,19 +901,19 @@ class LearningType
     private bool $MarkByModerator;
 
     
-    private ArrayOfAnyType $Assessments;
+    private ?ArrayOfAnyType $Assessments;
 
     
-    private ArrayOfAnyType $CertificateRules;
+    private ?ArrayOfAnyType $CertificateRules;
 
     
-    public function getCourseType(): string
+    public function getCourseType(): ?string
     {
         return $this->CourseType;
     }
 
     
-    public function withCourseType(string $CourseType): static
+    public function withCourseType(?string $CourseType): static
     {
         $new = clone $this;
         $new->CourseType = $CourseType;
@@ -920,13 +922,13 @@ class LearningType
     }
 
     
-    public function getID(): string
+    public function getID(): ?string
     {
         return $this->ID;
     }
 
     
-    public function withID(string $ID): static
+    public function withID(?string $ID): static
     {
         $new = clone $this;
         $new->ID = $ID;
@@ -935,13 +937,13 @@ class LearningType
     }
 
     
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
 
     
-    public function withCode(string $Code): static
+    public function withCode(?string $Code): static
     {
         $new = clone $this;
         $new->Code = $Code;
@@ -950,13 +952,13 @@ class LearningType
     }
 
     
-    public function getFullScreen(): string
+    public function getFullScreen(): ?string
     {
         return $this->FullScreen;
     }
 
     
-    public function withFullScreen(string $FullScreen): static
+    public function withFullScreen(?string $FullScreen): static
     {
         $new = clone $this;
         $new->FullScreen = $FullScreen;
@@ -965,13 +967,13 @@ class LearningType
     }
 
     
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
 
     
-    public function withTitle(string $Title): static
+    public function withTitle(?string $Title): static
     {
         $new = clone $this;
         $new->Title = $Title;
@@ -980,13 +982,13 @@ class LearningType
     }
 
     
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
 
     
-    public function withDescription(string $Description): static
+    public function withDescription(?string $Description): static
     {
         $new = clone $this;
         $new->Description = $Description;
@@ -995,13 +997,13 @@ class LearningType
     }
 
     
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
         return $this->Language;
     }
 
     
-    public function withLanguage(string $Language): static
+    public function withLanguage(?string $Language): static
     {
         $new = clone $this;
         $new->Language = $Language;
@@ -1024,14 +1026,18 @@ class LearningType
         return $new;
     }
 
-    
-    public function getLogo(): Base64Binary
+    /**
+     * @return null | mixed
+     */
+    public function getLogo(): mixed
     {
         return $this->Logo;
     }
 
-    
-    public function withLogo(Base64Binary $Logo): static
+    /**
+     * @param null | mixed $Logo
+     */
+    public function withLogo(mixed $Logo): static
     {
         $new = clone $this;
         $new->Logo = $Logo;
@@ -1040,13 +1046,13 @@ class LearningType
     }
 
     
-    public function getLogoContentType(): string
+    public function getLogoContentType(): ?string
     {
         return $this->LogoContentType;
     }
 
     
-    public function withLogoContentType(string $LogoContentType): static
+    public function withLogoContentType(?string $LogoContentType): static
     {
         $new = clone $this;
         $new->LogoContentType = $LogoContentType;
@@ -1055,13 +1061,13 @@ class LearningType
     }
 
     
-    public function getLogoID(): string
+    public function getLogoID(): ?string
     {
         return $this->LogoID;
     }
 
     
-    public function withLogoID(string $LogoID): static
+    public function withLogoID(?string $LogoID): static
     {
         $new = clone $this;
         $new->LogoID = $LogoID;
@@ -1070,13 +1076,13 @@ class LearningType
     }
 
     
-    public function getSeriesID(): string
+    public function getSeriesID(): ?string
     {
         return $this->SeriesID;
     }
 
     
-    public function withSeriesID(string $SeriesID): static
+    public function withSeriesID(?string $SeriesID): static
     {
         $new = clone $this;
         $new->SeriesID = $SeriesID;
@@ -1085,13 +1091,13 @@ class LearningType
     }
 
     
-    public function getSeriesName(): string
+    public function getSeriesName(): ?string
     {
         return $this->SeriesName;
     }
 
     
-    public function withSeriesName(string $SeriesName): static
+    public function withSeriesName(?string $SeriesName): static
     {
         $new = clone $this;
         $new->SeriesName = $SeriesName;
@@ -1100,13 +1106,13 @@ class LearningType
     }
 
     
-    public function getProgramID(): string
+    public function getProgramID(): ?string
     {
         return $this->ProgramID;
     }
 
     
-    public function withProgramID(string $ProgramID): static
+    public function withProgramID(?string $ProgramID): static
     {
         $new = clone $this;
         $new->ProgramID = $ProgramID;
@@ -1115,13 +1121,13 @@ class LearningType
     }
 
     
-    public function getProgramName(): string
+    public function getProgramName(): ?string
     {
         return $this->ProgramName;
     }
 
     
-    public function withProgramName(string $ProgramName): static
+    public function withProgramName(?string $ProgramName): static
     {
         $new = clone $this;
         $new->ProgramName = $ProgramName;
@@ -1145,13 +1151,13 @@ class LearningType
     }
 
     
-    public function getSKU(): string
+    public function getSKU(): ?string
     {
         return $this->SKU;
     }
 
     
-    public function withSKU(string $SKU): static
+    public function withSKU(?string $SKU): static
     {
         $new = clone $this;
         $new->SKU = $SKU;
@@ -1220,13 +1226,13 @@ class LearningType
     }
 
     
-    public function getCurrency(): string
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     
-    public function withCurrency(string $Currency): static
+    public function withCurrency(?string $Currency): static
     {
         $new = clone $this;
         $new->Currency = $Currency;
@@ -1235,13 +1241,13 @@ class LearningType
     }
 
     
-    public function getPaymentProvider(): string
+    public function getPaymentProvider(): ?string
     {
         return $this->PaymentProvider;
     }
 
     
-    public function withPaymentProvider(string $PaymentProvider): static
+    public function withPaymentProvider(?string $PaymentProvider): static
     {
         $new = clone $this;
         $new->PaymentProvider = $PaymentProvider;
@@ -1280,13 +1286,13 @@ class LearningType
     }
 
     
-    public function getAccreditationDetails(): AccreditationDetails
+    public function getAccreditationDetails(): ?AccreditationDetails
     {
         return $this->AccreditationDetails;
     }
 
     
-    public function withAccreditationDetails(AccreditationDetails $AccreditationDetails): static
+    public function withAccreditationDetails(?AccreditationDetails $AccreditationDetails): static
     {
         $new = clone $this;
         $new->AccreditationDetails = $AccreditationDetails;
@@ -1295,13 +1301,13 @@ class LearningType
     }
 
     
-    public function getReferences(): ArrayOfReference
+    public function getReferences(): ?ArrayOfReference
     {
         return $this->References;
     }
 
     
-    public function withReferences(ArrayOfReference $References): static
+    public function withReferences(?ArrayOfReference $References): static
     {
         $new = clone $this;
         $new->References = $References;
@@ -1325,13 +1331,13 @@ class LearningType
     }
 
     
-    public function getExclusionMode(): string
+    public function getExclusionMode(): ?string
     {
         return $this->ExclusionMode;
     }
 
     
-    public function withExclusionMode(string $ExclusionMode): static
+    public function withExclusionMode(?string $ExclusionMode): static
     {
         $new = clone $this;
         $new->ExclusionMode = $ExclusionMode;
@@ -1340,13 +1346,13 @@ class LearningType
     }
 
     
-    public function getLeaningPathActivityLayout(): string
+    public function getLeaningPathActivityLayout(): ?string
     {
         return $this->LeaningPathActivityLayout;
     }
 
     
-    public function withLeaningPathActivityLayout(string $LeaningPathActivityLayout): static
+    public function withLeaningPathActivityLayout(?string $LeaningPathActivityLayout): static
     {
         $new = clone $this;
         $new->LeaningPathActivityLayout = $LeaningPathActivityLayout;
@@ -1355,13 +1361,13 @@ class LearningType
     }
 
     
-    public function getShowLearnerProgressAs(): string
+    public function getShowLearnerProgressAs(): ?string
     {
         return $this->ShowLearnerProgressAs;
     }
 
     
-    public function withShowLearnerProgressAs(string $ShowLearnerProgressAs): static
+    public function withShowLearnerProgressAs(?string $ShowLearnerProgressAs): static
     {
         $new = clone $this;
         $new->ShowLearnerProgressAs = $ShowLearnerProgressAs;
@@ -1475,13 +1481,13 @@ class LearningType
     }
 
     
-    public function getVideoCompleteOnTimeMinute(): string
+    public function getVideoCompleteOnTimeMinute(): ?string
     {
         return $this->VideoCompleteOnTime_Minute;
     }
 
     
-    public function withVideoCompleteOnTimeMinute(string $VideoCompleteOnTime_Minute): static
+    public function withVideoCompleteOnTimeMinute(?string $VideoCompleteOnTime_Minute): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime_Minute = $VideoCompleteOnTime_Minute;
@@ -1490,13 +1496,13 @@ class LearningType
     }
 
     
-    public function getVideoCompleteOnTimeSec(): string
+    public function getVideoCompleteOnTimeSec(): ?string
     {
         return $this->VideoCompleteOnTime_Sec;
     }
 
     
-    public function withVideoCompleteOnTimeSec(string $VideoCompleteOnTime_Sec): static
+    public function withVideoCompleteOnTimeSec(?string $VideoCompleteOnTime_Sec): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime_Sec = $VideoCompleteOnTime_Sec;
@@ -1505,13 +1511,13 @@ class LearningType
     }
 
     
-    public function getCaptionInfo(): CaptionInfo
+    public function getCaptionInfo(): ?CaptionInfo
     {
         return $this->CaptionInfo;
     }
 
     
-    public function withCaptionInfo(CaptionInfo $CaptionInfo): static
+    public function withCaptionInfo(?CaptionInfo $CaptionInfo): static
     {
         $new = clone $this;
         $new->CaptionInfo = $CaptionInfo;
@@ -1610,13 +1616,13 @@ class LearningType
     }
 
     
-    public function getLastEnrollmentBasedFirstEnrollmentDateSetting(): string
+    public function getLastEnrollmentBasedFirstEnrollmentDateSetting(): ?string
     {
         return $this->LastEnrollmentBasedFirstEnrollmentDateSetting;
     }
 
     
-    public function withLastEnrollmentBasedFirstEnrollmentDateSetting(string $LastEnrollmentBasedFirstEnrollmentDateSetting): static
+    public function withLastEnrollmentBasedFirstEnrollmentDateSetting(?string $LastEnrollmentBasedFirstEnrollmentDateSetting): static
     {
         $new = clone $this;
         $new->LastEnrollmentBasedFirstEnrollmentDateSetting = $LastEnrollmentBasedFirstEnrollmentDateSetting;
@@ -1700,13 +1706,13 @@ class LearningType
     }
 
     
-    public function getSupervisorExtensionDaysLimitStartFrom(): string
+    public function getSupervisorExtensionDaysLimitStartFrom(): ?string
     {
         return $this->SupervisorExtensionDaysLimitStartFrom;
     }
 
     
-    public function withSupervisorExtensionDaysLimitStartFrom(string $SupervisorExtensionDaysLimitStartFrom): static
+    public function withSupervisorExtensionDaysLimitStartFrom(?string $SupervisorExtensionDaysLimitStartFrom): static
     {
         $new = clone $this;
         $new->SupervisorExtensionDaysLimitStartFrom = $SupervisorExtensionDaysLimitStartFrom;
@@ -1730,13 +1736,13 @@ class LearningType
     }
 
     
-    public function getDueDate(): string
+    public function getDueDate(): ?string
     {
         return $this->DueDate;
     }
 
     
-    public function withDueDate(string $DueDate): static
+    public function withDueDate(?string $DueDate): static
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
@@ -1805,13 +1811,13 @@ class LearningType
     }
 
     
-    public function getSuspendAccessDays(): string
+    public function getSuspendAccessDays(): ?string
     {
         return $this->SuspendAccessDays;
     }
 
     
-    public function withSuspendAccessDays(string $SuspendAccessDays): static
+    public function withSuspendAccessDays(?string $SuspendAccessDays): static
     {
         $new = clone $this;
         $new->SuspendAccessDays = $SuspendAccessDays;
@@ -1865,13 +1871,13 @@ class LearningType
     }
 
     
-    public function getAutoenrollRules(): ArrayOfAnyType
+    public function getAutoenrollRules(): ?ArrayOfAnyType
     {
         return $this->AutoenrollRules;
     }
 
     
-    public function withAutoenrollRules(ArrayOfAnyType $AutoenrollRules): static
+    public function withAutoenrollRules(?ArrayOfAnyType $AutoenrollRules): static
     {
         $new = clone $this;
         $new->AutoenrollRules = $AutoenrollRules;
@@ -1895,13 +1901,13 @@ class LearningType
     }
 
     
-    public function getAutoenrollRepeatType(): string
+    public function getAutoenrollRepeatType(): ?string
     {
         return $this->AutoenrollRepeatType;
     }
 
     
-    public function withAutoenrollRepeatType(string $AutoenrollRepeatType): static
+    public function withAutoenrollRepeatType(?string $AutoenrollRepeatType): static
     {
         $new = clone $this;
         $new->AutoenrollRepeatType = $AutoenrollRepeatType;
@@ -1910,13 +1916,13 @@ class LearningType
     }
 
     
-    public function getAutoenrollRepeatMonthCount(): string
+    public function getAutoenrollRepeatMonthCount(): ?string
     {
         return $this->AutoenrollRepeatMonthCount;
     }
 
     
-    public function withAutoenrollRepeatMonthCount(string $AutoenrollRepeatMonthCount): static
+    public function withAutoenrollRepeatMonthCount(?string $AutoenrollRepeatMonthCount): static
     {
         $new = clone $this;
         $new->AutoenrollRepeatMonthCount = $AutoenrollRepeatMonthCount;
@@ -1940,13 +1946,13 @@ class LearningType
     }
 
     
-    public function getAutoenrollExcludeRules(): ArrayOfAnyType
+    public function getAutoenrollExcludeRules(): ?ArrayOfAnyType
     {
         return $this->AutoenrollExcludeRules;
     }
 
     
-    public function withAutoenrollExcludeRules(ArrayOfAnyType $AutoenrollExcludeRules): static
+    public function withAutoenrollExcludeRules(?ArrayOfAnyType $AutoenrollExcludeRules): static
     {
         $new = clone $this;
         $new->AutoenrollExcludeRules = $AutoenrollExcludeRules;
@@ -2000,13 +2006,13 @@ class LearningType
     }
 
     
-    public function getRecertificationAutoEnrollRules(): ArrayOfAnyType
+    public function getRecertificationAutoEnrollRules(): ?ArrayOfAnyType
     {
         return $this->RecertificationAutoEnrollRules;
     }
 
     
-    public function withRecertificationAutoEnrollRules(ArrayOfAnyType $RecertificationAutoEnrollRules): static
+    public function withRecertificationAutoEnrollRules(?ArrayOfAnyType $RecertificationAutoEnrollRules): static
     {
         $new = clone $this;
         $new->RecertificationAutoEnrollRules = $RecertificationAutoEnrollRules;
@@ -2015,13 +2021,13 @@ class LearningType
     }
 
     
-    public function getRecertificationAutoEnrollExcludeRules(): ArrayOfAnyType
+    public function getRecertificationAutoEnrollExcludeRules(): ?ArrayOfAnyType
     {
         return $this->RecertificationAutoEnrollExcludeRules;
     }
 
     
-    public function withRecertificationAutoEnrollExcludeRules(ArrayOfAnyType $RecertificationAutoEnrollExcludeRules): static
+    public function withRecertificationAutoEnrollExcludeRules(?ArrayOfAnyType $RecertificationAutoEnrollExcludeRules): static
     {
         $new = clone $this;
         $new->RecertificationAutoEnrollExcludeRules = $RecertificationAutoEnrollExcludeRules;
@@ -2045,13 +2051,13 @@ class LearningType
     }
 
     
-    public function getReAutoenrollRepeatType(): string
+    public function getReAutoenrollRepeatType(): ?string
     {
         return $this->ReAutoenrollRepeatType;
     }
 
     
-    public function withReAutoenrollRepeatType(string $ReAutoenrollRepeatType): static
+    public function withReAutoenrollRepeatType(?string $ReAutoenrollRepeatType): static
     {
         $new = clone $this;
         $new->ReAutoenrollRepeatType = $ReAutoenrollRepeatType;
@@ -2060,13 +2066,13 @@ class LearningType
     }
 
     
-    public function getReAutoenrollRepeatMonthCount(): string
+    public function getReAutoenrollRepeatMonthCount(): ?string
     {
         return $this->ReAutoenrollRepeatMonthCount;
     }
 
     
-    public function withReAutoenrollRepeatMonthCount(string $ReAutoenrollRepeatMonthCount): static
+    public function withReAutoenrollRepeatMonthCount(?string $ReAutoenrollRepeatMonthCount): static
     {
         $new = clone $this;
         $new->ReAutoenrollRepeatMonthCount = $ReAutoenrollRepeatMonthCount;
@@ -2180,13 +2186,13 @@ class LearningType
     }
 
     
-    public function getEnrollPermissionFrom(): string
+    public function getEnrollPermissionFrom(): ?string
     {
         return $this->EnrollPermissionFrom;
     }
 
     
-    public function withEnrollPermissionFrom(string $EnrollPermissionFrom): static
+    public function withEnrollPermissionFrom(?string $EnrollPermissionFrom): static
     {
         $new = clone $this;
         $new->EnrollPermissionFrom = $EnrollPermissionFrom;
@@ -2375,13 +2381,13 @@ class LearningType
     }
 
     
-    public function getSelfEnrollRules(): ArrayOfAnyType
+    public function getSelfEnrollRules(): ?ArrayOfAnyType
     {
         return $this->SelfEnrollRules;
     }
 
     
-    public function withSelfEnrollRules(ArrayOfAnyType $SelfEnrollRules): static
+    public function withSelfEnrollRules(?ArrayOfAnyType $SelfEnrollRules): static
     {
         $new = clone $this;
         $new->SelfEnrollRules = $SelfEnrollRules;
@@ -2390,13 +2396,13 @@ class LearningType
     }
 
     
-    public function getSelfEnrollGroups(): ArrayOfAnyType
+    public function getSelfEnrollGroups(): ?ArrayOfAnyType
     {
         return $this->SelfEnrollGroups;
     }
 
     
-    public function withSelfEnrollGroups(ArrayOfAnyType $SelfEnrollGroups): static
+    public function withSelfEnrollGroups(?ArrayOfAnyType $SelfEnrollGroups): static
     {
         $new = clone $this;
         $new->SelfEnrollGroups = $SelfEnrollGroups;
@@ -2435,13 +2441,13 @@ class LearningType
     }
 
     
-    public function getSelfEnrollExcludeRules(): ArrayOfAnyType
+    public function getSelfEnrollExcludeRules(): ?ArrayOfAnyType
     {
         return $this->SelfEnrollExcludeRules;
     }
 
     
-    public function withSelfEnrollExcludeRules(ArrayOfAnyType $SelfEnrollExcludeRules): static
+    public function withSelfEnrollExcludeRules(?ArrayOfAnyType $SelfEnrollExcludeRules): static
     {
         $new = clone $this;
         $new->SelfEnrollExcludeRules = $SelfEnrollExcludeRules;
@@ -2510,13 +2516,13 @@ class LearningType
     }
 
     
-    public function getUnenrollOption(): string
+    public function getUnenrollOption(): ?string
     {
         return $this->UnenrollOption;
     }
 
     
-    public function withUnenrollOption(string $UnenrollOption): static
+    public function withUnenrollOption(?string $UnenrollOption): static
     {
         $new = clone $this;
         $new->UnenrollOption = $UnenrollOption;
@@ -2525,13 +2531,13 @@ class LearningType
     }
 
     
-    public function getUnenrollPermissionFrom(): string
+    public function getUnenrollPermissionFrom(): ?string
     {
         return $this->UnenrollPermissionFrom;
     }
 
     
-    public function withUnenrollPermissionFrom(string $UnenrollPermissionFrom): static
+    public function withUnenrollPermissionFrom(?string $UnenrollPermissionFrom): static
     {
         $new = clone $this;
         $new->UnenrollPermissionFrom = $UnenrollPermissionFrom;
@@ -2540,13 +2546,13 @@ class LearningType
     }
 
     
-    public function getWithdrawalRules(): ArrayOfAnyType
+    public function getWithdrawalRules(): ?ArrayOfAnyType
     {
         return $this->WithdrawalRules;
     }
 
     
-    public function withWithdrawalRules(ArrayOfAnyType $WithdrawalRules): static
+    public function withWithdrawalRules(?ArrayOfAnyType $WithdrawalRules): static
     {
         $new = clone $this;
         $new->WithdrawalRules = $WithdrawalRules;
@@ -2570,13 +2576,13 @@ class LearningType
     }
 
     
-    public function getWithdrawalExcludeRules(): ArrayOfAnyType
+    public function getWithdrawalExcludeRules(): ?ArrayOfAnyType
     {
         return $this->WithdrawalExcludeRules;
     }
 
     
-    public function withWithdrawalExcludeRules(ArrayOfAnyType $WithdrawalExcludeRules): static
+    public function withWithdrawalExcludeRules(?ArrayOfAnyType $WithdrawalExcludeRules): static
     {
         $new = clone $this;
         $new->WithdrawalExcludeRules = $WithdrawalExcludeRules;
@@ -2630,13 +2636,13 @@ class LearningType
     }
 
     
-    public function getAutoWithdrawalRules(): ArrayOfAnyType
+    public function getAutoWithdrawalRules(): ?ArrayOfAnyType
     {
         return $this->AutoWithdrawalRules;
     }
 
     
-    public function withAutoWithdrawalRules(ArrayOfAnyType $AutoWithdrawalRules): static
+    public function withAutoWithdrawalRules(?ArrayOfAnyType $AutoWithdrawalRules): static
     {
         $new = clone $this;
         $new->AutoWithdrawalRules = $AutoWithdrawalRules;
@@ -2660,13 +2666,13 @@ class LearningType
     }
 
     
-    public function getAutoWithdrawalExcludeRules(): ArrayOfAnyType
+    public function getAutoWithdrawalExcludeRules(): ?ArrayOfAnyType
     {
         return $this->AutoWithdrawalExcludeRules;
     }
 
     
-    public function withAutoWithdrawalExcludeRules(ArrayOfAnyType $AutoWithdrawalExcludeRules): static
+    public function withAutoWithdrawalExcludeRules(?ArrayOfAnyType $AutoWithdrawalExcludeRules): static
     {
         $new = clone $this;
         $new->AutoWithdrawalExcludeRules = $AutoWithdrawalExcludeRules;
@@ -2690,13 +2696,13 @@ class LearningType
     }
 
     
-    public function getAnnouncementRules(): ArrayOfAnyType
+    public function getAnnouncementRules(): ?ArrayOfAnyType
     {
         return $this->AnnouncementRules;
     }
 
     
-    public function withAnnouncementRules(ArrayOfAnyType $AnnouncementRules): static
+    public function withAnnouncementRules(?ArrayOfAnyType $AnnouncementRules): static
     {
         $new = clone $this;
         $new->AnnouncementRules = $AnnouncementRules;
@@ -2720,13 +2726,13 @@ class LearningType
     }
 
     
-    public function getAnnouncementExcludeRules(): ArrayOfAnyType
+    public function getAnnouncementExcludeRules(): ?ArrayOfAnyType
     {
         return $this->AnnouncementExcludeRules;
     }
 
     
-    public function withAnnouncementExcludeRules(ArrayOfAnyType $AnnouncementExcludeRules): static
+    public function withAnnouncementExcludeRules(?ArrayOfAnyType $AnnouncementExcludeRules): static
     {
         $new = clone $this;
         $new->AnnouncementExcludeRules = $AnnouncementExcludeRules;
@@ -2930,13 +2936,13 @@ class LearningType
     }
 
     
-    public function getFieldsXml(): string
+    public function getFieldsXml(): ?string
     {
         return $this->FieldsXml;
     }
 
     
-    public function withFieldsXml(string $FieldsXml): static
+    public function withFieldsXml(?string $FieldsXml): static
     {
         $new = clone $this;
         $new->FieldsXml = $FieldsXml;
@@ -2945,13 +2951,13 @@ class LearningType
     }
 
     
-    public function getBaseUrl(): string
+    public function getBaseUrl(): ?string
     {
         return $this->BaseUrl;
     }
 
     
-    public function withBaseUrl(string $BaseUrl): static
+    public function withBaseUrl(?string $BaseUrl): static
     {
         $new = clone $this;
         $new->BaseUrl = $BaseUrl;
@@ -2975,13 +2981,13 @@ class LearningType
     }
 
     
-    public function getAccessCode(): string
+    public function getAccessCode(): ?string
     {
         return $this->AccessCode;
     }
 
     
-    public function withAccessCode(string $AccessCode): static
+    public function withAccessCode(?string $AccessCode): static
     {
         $new = clone $this;
         $new->AccessCode = $AccessCode;
@@ -3005,13 +3011,13 @@ class LearningType
     }
 
     
-    public function getDisclaimer(): string
+    public function getDisclaimer(): ?string
     {
         return $this->Disclaimer;
     }
 
     
-    public function withDisclaimer(string $Disclaimer): static
+    public function withDisclaimer(?string $Disclaimer): static
     {
         $new = clone $this;
         $new->Disclaimer = $Disclaimer;
@@ -3050,13 +3056,13 @@ class LearningType
     }
 
     
-    public function getDisclaimerTextButton(): string
+    public function getDisclaimerTextButton(): ?string
     {
         return $this->DisclaimerTextButton;
     }
 
     
-    public function withDisclaimerTextButton(string $DisclaimerTextButton): static
+    public function withDisclaimerTextButton(?string $DisclaimerTextButton): static
     {
         $new = clone $this;
         $new->DisclaimerTextButton = $DisclaimerTextButton;
@@ -3095,13 +3101,13 @@ class LearningType
     }
 
     
-    public function getAltPrices(): ArrayOfAnyType
+    public function getAltPrices(): ?ArrayOfAnyType
     {
         return $this->AltPrices;
     }
 
     
-    public function withAltPrices(ArrayOfAnyType $AltPrices): static
+    public function withAltPrices(?ArrayOfAnyType $AltPrices): static
     {
         $new = clone $this;
         $new->AltPrices = $AltPrices;
@@ -3110,13 +3116,13 @@ class LearningType
     }
 
     
-    public function getInitialScormVersion(): string
+    public function getInitialScormVersion(): ?string
     {
         return $this->InitialScormVersion;
     }
 
     
-    public function withInitialScormVersion(string $InitialScormVersion): static
+    public function withInitialScormVersion(?string $InitialScormVersion): static
     {
         $new = clone $this;
         $new->InitialScormVersion = $InitialScormVersion;
@@ -3125,13 +3131,13 @@ class LearningType
     }
 
     
-    public function getReviewStatus(): string
+    public function getReviewStatus(): ?string
     {
         return $this->ReviewStatus;
     }
 
     
-    public function withReviewStatus(string $ReviewStatus): static
+    public function withReviewStatus(?string $ReviewStatus): static
     {
         $new = clone $this;
         $new->ReviewStatus = $ReviewStatus;
@@ -4700,13 +4706,13 @@ class LearningType
     }
 
     
-    public function getClassroomTemplate(): string
+    public function getClassroomTemplate(): ?string
     {
         return $this->ClassroomTemplate;
     }
 
     
-    public function withClassroomTemplate(string $ClassroomTemplate): static
+    public function withClassroomTemplate(?string $ClassroomTemplate): static
     {
         $new = clone $this;
         $new->ClassroomTemplate = $ClassroomTemplate;
@@ -4760,13 +4766,13 @@ class LearningType
     }
 
     
-    public function getOpenCourseIn(): string
+    public function getOpenCourseIn(): ?string
     {
         return $this->OpenCourseIn;
     }
 
     
-    public function withOpenCourseIn(string $OpenCourseIn): static
+    public function withOpenCourseIn(?string $OpenCourseIn): static
     {
         $new = clone $this;
         $new->OpenCourseIn = $OpenCourseIn;
@@ -4820,13 +4826,13 @@ class LearningType
     }
 
     
-    public function getCreatorID(): string
+    public function getCreatorID(): ?string
     {
         return $this->CreatorID;
     }
 
     
-    public function withCreatorID(string $CreatorID): static
+    public function withCreatorID(?string $CreatorID): static
     {
         $new = clone $this;
         $new->CreatorID = $CreatorID;
@@ -4970,13 +4976,13 @@ class LearningType
     }
 
     
-    public function getPreventCompletionSettings(): string
+    public function getPreventCompletionSettings(): ?string
     {
         return $this->PreventCompletionSettings;
     }
 
     
-    public function withPreventCompletionSettings(string $PreventCompletionSettings): static
+    public function withPreventCompletionSettings(?string $PreventCompletionSettings): static
     {
         $new = clone $this;
         $new->PreventCompletionSettings = $PreventCompletionSettings;
@@ -5060,13 +5066,13 @@ class LearningType
     }
 
     
-    public function getDeploymentType(): string
+    public function getDeploymentType(): ?string
     {
         return $this->DeploymentType;
     }
 
     
-    public function withDeploymentType(string $DeploymentType): static
+    public function withDeploymentType(?string $DeploymentType): static
     {
         $new = clone $this;
         $new->DeploymentType = $DeploymentType;
@@ -5075,13 +5081,13 @@ class LearningType
     }
 
     
-    public function getAzureRunMode(): string
+    public function getAzureRunMode(): ?string
     {
         return $this->AzureRunMode;
     }
 
     
-    public function withAzureRunMode(string $AzureRunMode): static
+    public function withAzureRunMode(?string $AzureRunMode): static
     {
         $new = clone $this;
         $new->AzureRunMode = $AzureRunMode;
@@ -5120,13 +5126,13 @@ class LearningType
     }
 
     
-    public function getEditorXML(): string
+    public function getEditorXML(): ?string
     {
         return $this->EditorXML;
     }
 
     
-    public function withEditorXML(string $EditorXML): static
+    public function withEditorXML(?string $EditorXML): static
     {
         $new = clone $this;
         $new->EditorXML = $EditorXML;
@@ -5135,13 +5141,13 @@ class LearningType
     }
 
     
-    public function getTranscriptPrintMode(): string
+    public function getTranscriptPrintMode(): ?string
     {
         return $this->TranscriptPrintMode;
     }
 
     
-    public function withTranscriptPrintMode(string $TranscriptPrintMode): static
+    public function withTranscriptPrintMode(?string $TranscriptPrintMode): static
     {
         $new = clone $this;
         $new->TranscriptPrintMode = $TranscriptPrintMode;
@@ -5225,13 +5231,13 @@ class LearningType
     }
 
     
-    public function getCustomScoreFeedbackXml(): string
+    public function getCustomScoreFeedbackXml(): ?string
     {
         return $this->CustomScoreFeedbackXml;
     }
 
     
-    public function withCustomScoreFeedbackXml(string $CustomScoreFeedbackXml): static
+    public function withCustomScoreFeedbackXml(?string $CustomScoreFeedbackXml): static
     {
         $new = clone $this;
         $new->CustomScoreFeedbackXml = $CustomScoreFeedbackXml;
@@ -5240,13 +5246,13 @@ class LearningType
     }
 
     
-    public function getCustomActivityTypeID(): string
+    public function getCustomActivityTypeID(): ?string
     {
         return $this->CustomActivityTypeID;
     }
 
     
-    public function withCustomActivityTypeID(string $CustomActivityTypeID): static
+    public function withCustomActivityTypeID(?string $CustomActivityTypeID): static
     {
         $new = clone $this;
         $new->CustomActivityTypeID = $CustomActivityTypeID;
@@ -5360,13 +5366,13 @@ class LearningType
     }
 
     
-    public function getAssessments(): ArrayOfAnyType
+    public function getAssessments(): ?ArrayOfAnyType
     {
         return $this->Assessments;
     }
 
     
-    public function withAssessments(ArrayOfAnyType $Assessments): static
+    public function withAssessments(?ArrayOfAnyType $Assessments): static
     {
         $new = clone $this;
         $new->Assessments = $Assessments;
@@ -5375,13 +5381,13 @@ class LearningType
     }
 
     
-    public function getCertificateRules(): ArrayOfAnyType
+    public function getCertificateRules(): ?ArrayOfAnyType
     {
         return $this->CertificateRules;
     }
 
     
-    public function withCertificateRules(ArrayOfAnyType $CertificateRules): static
+    public function withCertificateRules(?ArrayOfAnyType $CertificateRules): static
     {
         $new = clone $this;
         $new->CertificateRules = $CertificateRules;

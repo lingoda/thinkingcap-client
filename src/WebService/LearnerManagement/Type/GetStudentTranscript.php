@@ -8,19 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetStudentTranscript implements RequestInterface
 {
-    private string $apiKey;
+    private ?string $apiKey;
 
     
-    private string $studentID;
+    private ?string $studentID;
 
     
-    private string $type;
+    private ?string $type;
 
     /**
      * Constructor
      *
      */
-    public function __construct(string $apiKey, string $studentID, string $type)
+    public function __construct(?string $apiKey, ?string $studentID, ?string $type)
     {
         $this->apiKey = $apiKey;
         $this->studentID = $studentID;
@@ -28,13 +28,13 @@ class GetStudentTranscript implements RequestInterface
     }
 
     
-    public function getApiKey(): string
+    public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
     
-    public function withApiKey(string $apiKey): static
+    public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
         $new->apiKey = $apiKey;
@@ -43,13 +43,13 @@ class GetStudentTranscript implements RequestInterface
     }
 
     
-    public function getStudentID(): string
+    public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
     
-    public function withStudentID(string $studentID): static
+    public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
         $new->studentID = $studentID;
@@ -58,13 +58,13 @@ class GetStudentTranscript implements RequestInterface
     }
 
     
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
 
     
-    public function withType(string $type): static
+    public function withType(?string $type): static
     {
         $new = clone $this;
         $new->type = $type;
