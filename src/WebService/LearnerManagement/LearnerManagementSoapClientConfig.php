@@ -37,12 +37,14 @@ return Config::create()
             ])
         )
     )
+    // Allow extending types (ex: SupervisorUser)
     ->addRule(
         new Rules\IsExtendingTypeRule(
             $engine->getMetadata(),
             new Rules\AssembleRule(new Assembler\ExtendingTypeAssembler())
         )
     )
+    // add ResultInterface to any result class type
     ->addRule(
         new Rules\IsResultRule(
             $engine->getMetadata(),
@@ -51,6 +53,7 @@ return Config::create()
             ])
         )
     )
+    // Ignore nillable properties for Result and Message in ServiceResultOfString class
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
@@ -69,6 +72,7 @@ return Config::create()
             '/^(ServiceResultOfString)$/'
         )
     )
+    // All properties in ServiceUser class are protected
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\MultiRule([
@@ -77,6 +81,7 @@ return Config::create()
             '/^ServiceUser$/'
         )
     )
+    // Properties Title,ScreenName, Language in ServiceUser class are optional with default value
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
@@ -89,6 +94,11 @@ return Config::create()
             '/ServiceUser$/'
         )
     )
+    /**
+     * Not nullable properties
+     * Match -> ServiceResultOfString, ServiceResultOf*, *Response$, ^ServiceUser$
+     * Properties -> *Result$, ^UserID$, ^Email$
+     */
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(

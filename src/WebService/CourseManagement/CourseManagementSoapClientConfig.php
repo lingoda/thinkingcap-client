@@ -43,6 +43,7 @@ return Config::create()
             new Rules\AssembleRule(new Assembler\ExtendingTypeAssembler())
         )
     )
+    // add ResultInterface to any result class type
     ->addRule(
         new Rules\IsResultRule(
             $engine->getMetadata(),
@@ -51,6 +52,7 @@ return Config::create()
             ])
         )
     )
+    // Ignore nillable properties for Result and Message in ServiceResultOfString class
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
@@ -69,6 +71,7 @@ return Config::create()
             '/^(ServiceResultOfString)$/'
         )
     )
+    // Properties Tags, Sessions, CourseSession in LearningActivity and ArrayOfCourseSession class are optional with default value
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
@@ -81,6 +84,7 @@ return Config::create()
             '/^(LearningActivity|ArrayOfCourseSession)$/'
         )
     )
+    // ID, Type, Code, Language, Title, Description are protected and not null
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
@@ -99,6 +103,11 @@ return Config::create()
             '/^(LearningActivity)$/'
         )
     )
+    /**
+     * Not nullable properties
+     * Match -> ServiceResultOfString, ServiceResultOf*, *Response$, ^ServiceUser$
+     * Properties -> *Result$, ^UserID$, ^Email$
+     */
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
