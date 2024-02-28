@@ -6,13 +6,11 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceResultOfListOfLearningActivityRecord
 {
+    protected string $Message = '';
     private ArrayOfLearningActivityRecord $Result;
 
     
     private bool $Success;
-
-    
-    private ?string $Message;
 
     public function getResult(): ArrayOfLearningActivityRecord
     {
@@ -42,14 +40,12 @@ class ServiceResultOfListOfLearningActivityRecord
         return $new;
     }
 
-    
-    public function getMessage(): ?string
+    public function getMessage(): string
     {
         return $this->Message;
     }
 
-    
-    public function withMessage(?string $Message): static
+    public function withMessage(string $Message): static
     {
         $new = clone $this;
         $new->Message = $Message;

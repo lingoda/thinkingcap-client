@@ -68,7 +68,7 @@ return Config::create()
                 ]),
                 '/^(Result|Message)$/'
             ),
-            '/^(ServiceResultOfString)$/'
+            '/^(ServiceResultOfString|ServiceResultOfListOfLearningActivityRecord)$/'
         )
     )
     // Properties Tags, Sessions, CourseSession in LearningActivity and ArrayOfCourseSession class are optional with default value
