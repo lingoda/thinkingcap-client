@@ -69,7 +69,7 @@ return Config::create()
                 ]),
                 '/^(Result|Message)$/'
             ),
-            '/^(ServiceResultOfString)$/'
+            '/^(ServiceResultOfString|ServiceResultOfListOfLearningActivityRecord)$/'
         )
     )
     // All properties in ServiceUser class are protected
