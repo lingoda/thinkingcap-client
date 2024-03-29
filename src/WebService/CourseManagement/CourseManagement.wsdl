@@ -479,6 +479,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ObjectType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaFileID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
         </s:sequence>
       </s:complexType>
