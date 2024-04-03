@@ -70,6 +70,9 @@ class Reference
     private ?string $OriginalFileName;
 
     
+    private ?string $MediaFileID;
+
+    
     private ?string $FieldsXml;
 
     
@@ -372,6 +375,21 @@ class Reference
     {
         $new = clone $this;
         $new->OriginalFileName = $OriginalFileName;
+
+        return $new;
+    }
+
+    
+    public function getMediaFileID(): ?string
+    {
+        return $this->MediaFileID;
+    }
+
+    
+    public function withMediaFileID(?string $MediaFileID): static
+    {
+        $new = clone $this;
+        $new->MediaFileID = $MediaFileID;
 
         return $new;
     }

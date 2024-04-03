@@ -81,7 +81,7 @@ return Config::create()
             '/^ServiceUser$/'
         )
     )
-    // Properties Title,ScreenName, Language in ServiceUser class are optional with default value
+    // Properties Title,ScreenName, Language in ServiceUser and ServiceSupervisor in ArrayOfServiceSupervisor class are optional with default value
     ->addRule(
         new Rules\TypenameMatchesRule(
             new Rules\PropertynameMatchesRule(
@@ -89,9 +89,9 @@ return Config::create()
                     (new Assembler\PropertyAssemblerOptions())
                         ->withOptionalValue()
                 )),
-                '/^(Title|ScreenName|Language)$/'
+                '/^(Title|ScreenName|Language|ServiceSupervisor)$/'
             ),
-            '/ServiceUser$/'
+            '/^(ServiceUser|ArrayOfServiceSupervisor)$/'
         )
     )
     /**

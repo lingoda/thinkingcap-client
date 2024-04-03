@@ -9,7 +9,7 @@ class ArrayOfServiceSupervisor
     /**
      * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor>
      */
-    private ?array $ServiceSupervisor;
+    private ?array $ServiceSupervisor = null;
 
     /**
      * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor>
