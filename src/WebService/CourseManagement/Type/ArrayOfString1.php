@@ -9,7 +9,7 @@ class ArrayOfString1
     /**
      * @var null | array<int<0,max>, string>
      */
-    private ?array $Value;
+    private ?array $Value = null;
 
     /**
      * @return null | array<int<0,max>, string>

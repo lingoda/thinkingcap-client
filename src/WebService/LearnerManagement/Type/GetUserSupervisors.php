@@ -8,12 +8,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUserSupervisors implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userID;
+    private ?string $userID = null;
 
-    
     private bool $includeMetadata;
 
     /**
@@ -27,13 +25,11 @@ class GetUserSupervisors implements RequestInterface
         $this->includeMetadata = $includeMetadata;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class GetUserSupervisors implements RequestInterface
         return $new;
     }
 
-    
     public function getUserID(): ?string
     {
         return $this->userID;
     }
 
-    
     public function withUserID(?string $userID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class GetUserSupervisors implements RequestInterface
         return $new;
     }
 
-    
     public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    
     public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;

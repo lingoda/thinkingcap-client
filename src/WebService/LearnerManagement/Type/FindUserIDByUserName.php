@@ -8,10 +8,9 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class FindUserIDByUserName implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userName;
+    private ?string $userName = null;
 
     /**
      * Constructor
@@ -23,13 +22,11 @@ class FindUserIDByUserName implements RequestInterface
         $this->userName = $userName;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class FindUserIDByUserName implements RequestInterface
         return $new;
     }
 
-    
     public function getUserName(): ?string
     {
         return $this->userName;
     }
 
-    
     public function withUserName(?string $userName): static
     {
         $new = clone $this;

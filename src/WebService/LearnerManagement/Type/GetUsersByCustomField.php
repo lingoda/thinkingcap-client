@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetUsersByCustomField implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $customFieldID;
+    private ?string $customFieldID = null;
 
-    
-    private ?string $customFieldValue;
+    private ?string $customFieldValue = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class GetUsersByCustomField implements RequestInterface
         $this->customFieldValue = $customFieldValue;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class GetUsersByCustomField implements RequestInterface
         return $new;
     }
 
-    
     public function getCustomFieldID(): ?string
     {
         return $this->customFieldID;
     }
 
-    
     public function withCustomFieldID(?string $customFieldID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class GetUsersByCustomField implements RequestInterface
         return $new;
     }
 
-    
     public function getCustomFieldValue(): ?string
     {
         return $this->customFieldValue;
     }
 
-    
     public function withCustomFieldValue(?string $customFieldValue): static
     {
         $new = clone $this;

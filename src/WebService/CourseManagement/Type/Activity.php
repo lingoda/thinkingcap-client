@@ -8,182 +8,126 @@ use DateTimeInterface;
 
 class Activity extends LearningType
 {
-    private ?string $TypeName;
+    private ?string $TypeName = null;
 
-    
-    private ?TitleNode $TitleNode;
+    private ?TitleNode $TitleNode = null;
 
-    
-    private ?DescriptionNode $DescriptionNode;
+    private ?DescriptionNode $DescriptionNode = null;
 
-    
-    private ?string $Folder;
+    private ?string $Folder = null;
 
-    
-    private ?Schedule $Schedule;
+    private ?Schedule $Schedule = null;
 
-    
-    private ?ArrayOfString $StudentList;
+    private ?ArrayOfString $StudentList = null;
 
-    
     private bool $FixedTime;
 
-    
     private DateTimeInterface $SADueDate;
 
-    
     private DateTimeInterface $DateEnrolled;
 
-    
     private DateTimeInterface $DateStarted;
 
-    
     private bool $IsFixedUserNumber;
 
-    
     private int $FixedUserNumber;
 
-    
     private bool $AllowWaitListing;
 
-    
     private int $WaitListMaxNumber;
 
-    
     private bool $DisableSupervisorSignOff;
 
-    
     private bool $LearnerRequestEvaluation;
 
-    
     private bool $SendSupervisorSignOffEmailOnLogin;
 
-    
-    private ?string $AuthenticationTypeName;
+    private ?string $AuthenticationTypeName = null;
 
-    
-    private ?string $AuthenticationTypeCode;
+    private ?string $AuthenticationTypeCode = null;
 
-    
-    private ?string $HasLogo;
+    private ?string $HasLogo = null;
 
-    
-    private ?string $AuthCode;
+    private ?string $AuthCode = null;
 
-    
-    private ?string $StudentID;
+    private ?string $StudentID = null;
 
-    
-    private ?string $ProctorID;
+    private ?string $ProctorID = null;
 
-    
     private DateTimeInterface $LastCompletionDate;
 
-    
     private int $LastCompletionNo;
 
-    
     private bool $IsCompleted;
 
-    
-    private ?string $ContentType;
+    private ?string $ContentType = null;
 
     /**
      * @var null | mixed
      */
-    private mixed $DocumentFile;
+    private mixed $DocumentFile = null;
 
-    
     private int $Step;
 
-    
-    private ?string $Instructions;
+    private ?string $Instructions = null;
 
-    
     private bool $Published;
 
-    
     private bool $IsPortfolioEvidence;
 
-    
-    private ?string $PortfolioEvidenceType;
+    private ?string $PortfolioEvidenceType = null;
 
-    
-    private ?string $AttestationType;
+    private ?string $AttestationType = null;
 
-    
-    private ?string $SurveyContentType;
+    private ?string $SurveyContentType = null;
 
-    
-    private ?string $CustomTypeName;
+    private ?string $CustomTypeName = null;
 
-    
     private bool $IsCompletedTrainingDate;
 
-    
     private DateTimeInterface $TrainingCompletionDate;
 
-    
-    private ?string $ComprehensionDocumentID;
+    private ?string $ComprehensionDocumentID = null;
 
-    
-    private ?string $ComprehensionDocumentTitle;
+    private ?string $ComprehensionDocumentTitle = null;
 
-    
-    private ?string $ComprehensionDocumentComments;
+    private ?string $ComprehensionDocumentComments = null;
 
-    
-    private ?string $ComprehensionDocumentExtension;
+    private ?string $ComprehensionDocumentExtension = null;
 
-    
-    private ?string $ComprehensionDocumentContentType;
+    private ?string $ComprehensionDocumentContentType = null;
 
-    
     private bool $SendActivityResourceModificationNotification;
 
-    
-    private ?ArrayOfActivityNotification $ActivityNotifications;
+    private ?ArrayOfActivityNotification $ActivityNotifications = null;
 
-    
-    private ?ArrayOfAnyType $ActCertificateRules;
+    private ?ArrayOfAnyType $ActCertificateRules = null;
 
-    
-    private ?string $FileName;
+    private ?string $FileName = null;
 
-    
-    private ?string $OriginalFileName;
+    private ?string $OriginalFileName = null;
 
-    
     private float $CourseCredit;
 
-    
-    private ?string $RecordCreditValue;
+    private ?string $RecordCreditValue = null;
 
-    
-    private ?string $RecordID;
+    private ?string $RecordID = null;
 
-    
-    private ?string $LastRosterFilePath;
+    private ?string $LastRosterFilePath = null;
 
-    
     private bool $AllowCollaboration;
 
-    
     private bool $EndCollaborationOnCompletion;
 
-    
-    private ?string $CollaborationTitle;
+    private ?string $CollaborationTitle = null;
 
-    
-    private ?string $CollaborationDescription;
+    private ?string $CollaborationDescription = null;
 
-    
     public function getTypeName(): ?string
     {
         return $this->TypeName;
     }
 
-    
     public function withTypeName(?string $TypeName): static
     {
         $new = clone $this;
@@ -192,13 +136,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getTitleNode(): ?TitleNode
     {
         return $this->TitleNode;
     }
 
-    
     public function withTitleNode(?TitleNode $TitleNode): static
     {
         $new = clone $this;
@@ -207,13 +149,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getDescriptionNode(): ?DescriptionNode
     {
         return $this->DescriptionNode;
     }
 
-    
     public function withDescriptionNode(?DescriptionNode $DescriptionNode): static
     {
         $new = clone $this;
@@ -222,13 +162,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getFolder(): ?string
     {
         return $this->Folder;
     }
 
-    
     public function withFolder(?string $Folder): static
     {
         $new = clone $this;
@@ -237,13 +175,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getSchedule(): ?Schedule
     {
         return $this->Schedule;
     }
 
-    
     public function withSchedule(?Schedule $Schedule): static
     {
         $new = clone $this;
@@ -252,13 +188,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getStudentList(): ?ArrayOfString
     {
         return $this->StudentList;
     }
 
-    
     public function withStudentList(?ArrayOfString $StudentList): static
     {
         $new = clone $this;
@@ -267,13 +201,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getFixedTime(): bool
     {
         return $this->FixedTime;
     }
 
-    
     public function withFixedTime(bool $FixedTime): static
     {
         $new = clone $this;
@@ -282,13 +214,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getSADueDate(): DateTimeInterface
     {
         return $this->SADueDate;
     }
 
-    
     public function withSADueDate(DateTimeInterface $SADueDate): static
     {
         $new = clone $this;
@@ -297,13 +227,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getDateEnrolled(): DateTimeInterface
     {
         return $this->DateEnrolled;
     }
 
-    
     public function withDateEnrolled(DateTimeInterface $DateEnrolled): static
     {
         $new = clone $this;
@@ -312,13 +240,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getDateStarted(): DateTimeInterface
     {
         return $this->DateStarted;
     }
 
-    
     public function withDateStarted(DateTimeInterface $DateStarted): static
     {
         $new = clone $this;
@@ -327,13 +253,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getIsFixedUserNumber(): bool
     {
         return $this->IsFixedUserNumber;
     }
 
-    
     public function withIsFixedUserNumber(bool $IsFixedUserNumber): static
     {
         $new = clone $this;
@@ -342,13 +266,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getFixedUserNumber(): int
     {
         return $this->FixedUserNumber;
     }
 
-    
     public function withFixedUserNumber(int $FixedUserNumber): static
     {
         $new = clone $this;
@@ -357,13 +279,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getAllowWaitListing(): bool
     {
         return $this->AllowWaitListing;
     }
 
-    
     public function withAllowWaitListing(bool $AllowWaitListing): static
     {
         $new = clone $this;
@@ -372,13 +292,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getWaitListMaxNumber(): int
     {
         return $this->WaitListMaxNumber;
     }
 
-    
     public function withWaitListMaxNumber(int $WaitListMaxNumber): static
     {
         $new = clone $this;
@@ -387,13 +305,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getDisableSupervisorSignOff(): bool
     {
         return $this->DisableSupervisorSignOff;
     }
 
-    
     public function withDisableSupervisorSignOff(bool $DisableSupervisorSignOff): static
     {
         $new = clone $this;
@@ -402,13 +318,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getLearnerRequestEvaluation(): bool
     {
         return $this->LearnerRequestEvaluation;
     }
 
-    
     public function withLearnerRequestEvaluation(bool $LearnerRequestEvaluation): static
     {
         $new = clone $this;
@@ -417,13 +331,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getSendSupervisorSignOffEmailOnLogin(): bool
     {
         return $this->SendSupervisorSignOffEmailOnLogin;
     }
 
-    
     public function withSendSupervisorSignOffEmailOnLogin(bool $SendSupervisorSignOffEmailOnLogin): static
     {
         $new = clone $this;
@@ -432,13 +344,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getAuthenticationTypeName(): ?string
     {
         return $this->AuthenticationTypeName;
     }
 
-    
     public function withAuthenticationTypeName(?string $AuthenticationTypeName): static
     {
         $new = clone $this;
@@ -447,13 +357,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getAuthenticationTypeCode(): ?string
     {
         return $this->AuthenticationTypeCode;
     }
 
-    
     public function withAuthenticationTypeCode(?string $AuthenticationTypeCode): static
     {
         $new = clone $this;
@@ -462,13 +370,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getHasLogo(): ?string
     {
         return $this->HasLogo;
     }
 
-    
     public function withHasLogo(?string $HasLogo): static
     {
         $new = clone $this;
@@ -477,13 +383,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getAuthCode(): ?string
     {
         return $this->AuthCode;
     }
 
-    
     public function withAuthCode(?string $AuthCode): static
     {
         $new = clone $this;
@@ -492,13 +396,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
-    
     public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
@@ -507,13 +409,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getProctorID(): ?string
     {
         return $this->ProctorID;
     }
 
-    
     public function withProctorID(?string $ProctorID): static
     {
         $new = clone $this;
@@ -522,13 +422,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getLastCompletionDate(): DateTimeInterface
     {
         return $this->LastCompletionDate;
     }
 
-    
     public function withLastCompletionDate(DateTimeInterface $LastCompletionDate): static
     {
         $new = clone $this;
@@ -537,13 +435,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getLastCompletionNo(): int
     {
         return $this->LastCompletionNo;
     }
 
-    
     public function withLastCompletionNo(int $LastCompletionNo): static
     {
         $new = clone $this;
@@ -552,13 +448,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getIsCompleted(): bool
     {
         return $this->IsCompleted;
     }
 
-    
     public function withIsCompleted(bool $IsCompleted): static
     {
         $new = clone $this;
@@ -567,13 +461,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
-    
     public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
@@ -601,13 +493,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getStep(): int
     {
         return $this->Step;
     }
 
-    
     public function withStep(int $Step): static
     {
         $new = clone $this;
@@ -616,13 +506,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
-    
     public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
@@ -631,13 +519,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getPublished(): bool
     {
         return $this->Published;
     }
 
-    
     public function withPublished(bool $Published): static
     {
         $new = clone $this;
@@ -646,13 +532,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getIsPortfolioEvidence(): bool
     {
         return $this->IsPortfolioEvidence;
     }
 
-    
     public function withIsPortfolioEvidence(bool $IsPortfolioEvidence): static
     {
         $new = clone $this;
@@ -661,13 +545,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getPortfolioEvidenceType(): ?string
     {
         return $this->PortfolioEvidenceType;
     }
 
-    
     public function withPortfolioEvidenceType(?string $PortfolioEvidenceType): static
     {
         $new = clone $this;
@@ -676,13 +558,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getAttestationType(): ?string
     {
         return $this->AttestationType;
     }
 
-    
     public function withAttestationType(?string $AttestationType): static
     {
         $new = clone $this;
@@ -691,13 +571,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getSurveyContentType(): ?string
     {
         return $this->SurveyContentType;
     }
 
-    
     public function withSurveyContentType(?string $SurveyContentType): static
     {
         $new = clone $this;
@@ -706,13 +584,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getCustomTypeName(): ?string
     {
         return $this->CustomTypeName;
     }
 
-    
     public function withCustomTypeName(?string $CustomTypeName): static
     {
         $new = clone $this;
@@ -721,13 +597,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getIsCompletedTrainingDate(): bool
     {
         return $this->IsCompletedTrainingDate;
     }
 
-    
     public function withIsCompletedTrainingDate(bool $IsCompletedTrainingDate): static
     {
         $new = clone $this;
@@ -736,13 +610,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getTrainingCompletionDate(): DateTimeInterface
     {
         return $this->TrainingCompletionDate;
     }
 
-    
     public function withTrainingCompletionDate(DateTimeInterface $TrainingCompletionDate): static
     {
         $new = clone $this;
@@ -751,13 +623,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getComprehensionDocumentID(): ?string
     {
         return $this->ComprehensionDocumentID;
     }
 
-    
     public function withComprehensionDocumentID(?string $ComprehensionDocumentID): static
     {
         $new = clone $this;
@@ -766,13 +636,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getComprehensionDocumentTitle(): ?string
     {
         return $this->ComprehensionDocumentTitle;
     }
 
-    
     public function withComprehensionDocumentTitle(?string $ComprehensionDocumentTitle): static
     {
         $new = clone $this;
@@ -781,13 +649,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getComprehensionDocumentComments(): ?string
     {
         return $this->ComprehensionDocumentComments;
     }
 
-    
     public function withComprehensionDocumentComments(?string $ComprehensionDocumentComments): static
     {
         $new = clone $this;
@@ -796,13 +662,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getComprehensionDocumentExtension(): ?string
     {
         return $this->ComprehensionDocumentExtension;
     }
 
-    
     public function withComprehensionDocumentExtension(?string $ComprehensionDocumentExtension): static
     {
         $new = clone $this;
@@ -811,13 +675,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getComprehensionDocumentContentType(): ?string
     {
         return $this->ComprehensionDocumentContentType;
     }
 
-    
     public function withComprehensionDocumentContentType(?string $ComprehensionDocumentContentType): static
     {
         $new = clone $this;
@@ -826,13 +688,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getSendActivityResourceModificationNotification(): bool
     {
         return $this->SendActivityResourceModificationNotification;
     }
 
-    
     public function withSendActivityResourceModificationNotification(bool $SendActivityResourceModificationNotification): static
     {
         $new = clone $this;
@@ -841,13 +701,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getActivityNotifications(): ?ArrayOfActivityNotification
     {
         return $this->ActivityNotifications;
     }
 
-    
     public function withActivityNotifications(?ArrayOfActivityNotification $ActivityNotifications): static
     {
         $new = clone $this;
@@ -856,13 +714,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getActCertificateRules(): ?ArrayOfAnyType
     {
         return $this->ActCertificateRules;
     }
 
-    
     public function withActCertificateRules(?ArrayOfAnyType $ActCertificateRules): static
     {
         $new = clone $this;
@@ -871,13 +727,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getFileName(): ?string
     {
         return $this->FileName;
     }
 
-    
     public function withFileName(?string $FileName): static
     {
         $new = clone $this;
@@ -886,13 +740,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getOriginalFileName(): ?string
     {
         return $this->OriginalFileName;
     }
 
-    
     public function withOriginalFileName(?string $OriginalFileName): static
     {
         $new = clone $this;
@@ -901,13 +753,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getCourseCredit(): float
     {
         return $this->CourseCredit;
     }
 
-    
     public function withCourseCredit(float $CourseCredit): static
     {
         $new = clone $this;
@@ -916,13 +766,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getRecordCreditValue(): ?string
     {
         return $this->RecordCreditValue;
     }
 
-    
     public function withRecordCreditValue(?string $RecordCreditValue): static
     {
         $new = clone $this;
@@ -931,13 +779,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getRecordID(): ?string
     {
         return $this->RecordID;
     }
 
-    
     public function withRecordID(?string $RecordID): static
     {
         $new = clone $this;
@@ -946,13 +792,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getLastRosterFilePath(): ?string
     {
         return $this->LastRosterFilePath;
     }
 
-    
     public function withLastRosterFilePath(?string $LastRosterFilePath): static
     {
         $new = clone $this;
@@ -961,13 +805,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getAllowCollaboration(): bool
     {
         return $this->AllowCollaboration;
     }
 
-    
     public function withAllowCollaboration(bool $AllowCollaboration): static
     {
         $new = clone $this;
@@ -976,13 +818,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getEndCollaborationOnCompletion(): bool
     {
         return $this->EndCollaborationOnCompletion;
     }
 
-    
     public function withEndCollaborationOnCompletion(bool $EndCollaborationOnCompletion): static
     {
         $new = clone $this;
@@ -991,13 +831,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getCollaborationTitle(): ?string
     {
         return $this->CollaborationTitle;
     }
 
-    
     public function withCollaborationTitle(?string $CollaborationTitle): static
     {
         $new = clone $this;
@@ -1006,13 +844,11 @@ class Activity extends LearningType
         return $new;
     }
 
-    
     public function getCollaborationDescription(): ?string
     {
         return $this->CollaborationDescription;
     }
 
-    
     public function withCollaborationDescription(?string $CollaborationDescription): static
     {
         $new = clone $this;

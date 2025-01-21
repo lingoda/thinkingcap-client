@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetFeedbackCompleted implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentRecordID;
+    private ?string $studentRecordID = null;
 
-    
-    private ?string $learningPathID;
+    private ?string $learningPathID = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class SetFeedbackCompleted implements RequestInterface
         $this->learningPathID = $learningPathID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class SetFeedbackCompleted implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentRecordID(): ?string
     {
         return $this->studentRecordID;
     }
 
-    
     public function withStudentRecordID(?string $studentRecordID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class SetFeedbackCompleted implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningPathID(): ?string
     {
         return $this->learningPathID;
     }
 
-    
     public function withLearningPathID(?string $learningPathID): static
     {
         $new = clone $this;

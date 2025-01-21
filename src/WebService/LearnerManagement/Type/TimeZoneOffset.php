@@ -8,16 +8,13 @@ class TimeZoneOffset
 {
     private int $OffsetHours;
 
-    
     private int $OffsetMinutes;
 
-    
     public function getOffsetHours(): int
     {
         return $this->OffsetHours;
     }
 
-    
     public function withOffsetHours(int $OffsetHours): static
     {
         $new = clone $this;
@@ -26,13 +23,11 @@ class TimeZoneOffset
         return $new;
     }
 
-    
     public function getOffsetMinutes(): int
     {
         return $this->OffsetMinutes;
     }
 
-    
     public function withOffsetMinutes(int $OffsetMinutes): static
     {
         $new = clone $this;

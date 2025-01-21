@@ -8,111 +8,77 @@ use DateTimeInterface;
 
 class Assignment
 {
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $Name;
+    private ?string $Name = null;
 
-    
-    private ?string $Instructions;
+    private ?string $Instructions = null;
 
-    
-    private ?string $CourseID;
+    private ?string $CourseID = null;
 
-    
-    private ?string $CourseTitle;
+    private ?string $CourseTitle = null;
 
-    
-    private ?string $StudentID;
+    private ?string $StudentID = null;
 
-    
-    private ?string $StudentDisplayID;
+    private ?string $StudentDisplayID = null;
 
-    
-    private ?string $StudentName;
+    private ?string $StudentName = null;
 
-    
     private bool $AllowTextSubmission;
 
-    
     private bool $AllowFilesSubmission;
 
-    
     private bool $AllowAudioRecordingSubmission;
 
-    
     private bool $Mastery;
 
-    
     private bool $Completed;
 
-    
     private DateTimeInterface $SubmitDate;
 
-    
     private int $Score;
 
-    
     private int $MaxAttempts;
 
-    
-    private ?string $Comments;
+    private ?string $Comments = null;
 
-    
-    private ?string $FacultyID;
+    private ?string $FacultyID = null;
 
-    
-    private ?string $ContentType;
+    private ?string $ContentType = null;
 
-    
-    private ?string $AudioRecordingContentType;
+    private ?string $AudioRecordingContentType = null;
 
-    
-    private ?string $AdditionalFileContentType;
+    private ?string $AdditionalFileContentType = null;
 
-    
-    private ?string $ReviewercontentType;
+    private ?string $ReviewercontentType = null;
 
-    
-    private ?string $ReviewerfileName;
+    private ?string $ReviewerfileName = null;
 
-    
-    private ?string $Extension;
+    private ?string $Extension = null;
 
-    
-    private ?string $AdditionalFileExtension;
+    private ?string $AdditionalFileExtension = null;
 
-    
-    private ?string $AdditionalFileExtension1;
+    private ?string $AdditionalFileExtension1 = null;
 
-    
-    private ?string $AdditionalFileExtension2;
+    private ?string $AdditionalFileExtension2 = null;
 
-    
-    private ?string $AdditionalFileExtension3;
+    private ?string $AdditionalFileExtension3 = null;
 
-    
-    private ?string $AdditionalFileExtension4;
+    private ?string $AdditionalFileExtension4 = null;
 
-    
-    private ?string $Rubric;
+    private ?string $Rubric = null;
 
-    
-    private ?string $StudentNotes;
+    private ?string $StudentNotes = null;
 
-    
-    private ?string $StudentTextData;
+    private ?string $StudentTextData = null;
 
-    
-    private ?string $Status;
+    private ?string $Status = null;
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -121,13 +87,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getName(): ?string
     {
         return $this->Name;
     }
 
-    
     public function withName(?string $Name): static
     {
         $new = clone $this;
@@ -136,13 +100,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
-    
     public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
@@ -151,13 +113,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
-    
     public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
@@ -166,13 +126,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getCourseTitle(): ?string
     {
         return $this->CourseTitle;
     }
 
-    
     public function withCourseTitle(?string $CourseTitle): static
     {
         $new = clone $this;
@@ -181,13 +139,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
-    
     public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
@@ -196,13 +152,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getStudentDisplayID(): ?string
     {
         return $this->StudentDisplayID;
     }
 
-    
     public function withStudentDisplayID(?string $StudentDisplayID): static
     {
         $new = clone $this;
@@ -211,13 +165,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getStudentName(): ?string
     {
         return $this->StudentName;
     }
 
-    
     public function withStudentName(?string $StudentName): static
     {
         $new = clone $this;
@@ -226,13 +178,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAllowTextSubmission(): bool
     {
         return $this->AllowTextSubmission;
     }
 
-    
     public function withAllowTextSubmission(bool $AllowTextSubmission): static
     {
         $new = clone $this;
@@ -241,13 +191,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAllowFilesSubmission(): bool
     {
         return $this->AllowFilesSubmission;
     }
 
-    
     public function withAllowFilesSubmission(bool $AllowFilesSubmission): static
     {
         $new = clone $this;
@@ -256,13 +204,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAllowAudioRecordingSubmission(): bool
     {
         return $this->AllowAudioRecordingSubmission;
     }
 
-    
     public function withAllowAudioRecordingSubmission(bool $AllowAudioRecordingSubmission): static
     {
         $new = clone $this;
@@ -271,13 +217,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getMastery(): bool
     {
         return $this->Mastery;
     }
 
-    
     public function withMastery(bool $Mastery): static
     {
         $new = clone $this;
@@ -286,13 +230,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getCompleted(): bool
     {
         return $this->Completed;
     }
 
-    
     public function withCompleted(bool $Completed): static
     {
         $new = clone $this;
@@ -301,13 +243,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getSubmitDate(): DateTimeInterface
     {
         return $this->SubmitDate;
     }
 
-    
     public function withSubmitDate(DateTimeInterface $SubmitDate): static
     {
         $new = clone $this;
@@ -316,13 +256,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getScore(): int
     {
         return $this->Score;
     }
 
-    
     public function withScore(int $Score): static
     {
         $new = clone $this;
@@ -331,13 +269,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getMaxAttempts(): int
     {
         return $this->MaxAttempts;
     }
 
-    
     public function withMaxAttempts(int $MaxAttempts): static
     {
         $new = clone $this;
@@ -346,13 +282,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getComments(): ?string
     {
         return $this->Comments;
     }
 
-    
     public function withComments(?string $Comments): static
     {
         $new = clone $this;
@@ -361,13 +295,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getFacultyID(): ?string
     {
         return $this->FacultyID;
     }
 
-    
     public function withFacultyID(?string $FacultyID): static
     {
         $new = clone $this;
@@ -376,13 +308,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
-    
     public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
@@ -391,13 +321,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAudioRecordingContentType(): ?string
     {
         return $this->AudioRecordingContentType;
     }
 
-    
     public function withAudioRecordingContentType(?string $AudioRecordingContentType): static
     {
         $new = clone $this;
@@ -406,13 +334,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAdditionalFileContentType(): ?string
     {
         return $this->AdditionalFileContentType;
     }
 
-    
     public function withAdditionalFileContentType(?string $AdditionalFileContentType): static
     {
         $new = clone $this;
@@ -421,13 +347,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getReviewercontentType(): ?string
     {
         return $this->ReviewercontentType;
     }
 
-    
     public function withReviewercontentType(?string $ReviewercontentType): static
     {
         $new = clone $this;
@@ -436,13 +360,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getReviewerfileName(): ?string
     {
         return $this->ReviewerfileName;
     }
 
-    
     public function withReviewerfileName(?string $ReviewerfileName): static
     {
         $new = clone $this;
@@ -451,13 +373,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getExtension(): ?string
     {
         return $this->Extension;
     }
 
-    
     public function withExtension(?string $Extension): static
     {
         $new = clone $this;
@@ -466,13 +386,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAdditionalFileExtension(): ?string
     {
         return $this->AdditionalFileExtension;
     }
 
-    
     public function withAdditionalFileExtension(?string $AdditionalFileExtension): static
     {
         $new = clone $this;
@@ -481,13 +399,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAdditionalFileExtension1(): ?string
     {
         return $this->AdditionalFileExtension1;
     }
 
-    
     public function withAdditionalFileExtension1(?string $AdditionalFileExtension1): static
     {
         $new = clone $this;
@@ -496,13 +412,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAdditionalFileExtension2(): ?string
     {
         return $this->AdditionalFileExtension2;
     }
 
-    
     public function withAdditionalFileExtension2(?string $AdditionalFileExtension2): static
     {
         $new = clone $this;
@@ -511,13 +425,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAdditionalFileExtension3(): ?string
     {
         return $this->AdditionalFileExtension3;
     }
 
-    
     public function withAdditionalFileExtension3(?string $AdditionalFileExtension3): static
     {
         $new = clone $this;
@@ -526,13 +438,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getAdditionalFileExtension4(): ?string
     {
         return $this->AdditionalFileExtension4;
     }
 
-    
     public function withAdditionalFileExtension4(?string $AdditionalFileExtension4): static
     {
         $new = clone $this;
@@ -541,13 +451,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getRubric(): ?string
     {
         return $this->Rubric;
     }
 
-    
     public function withRubric(?string $Rubric): static
     {
         $new = clone $this;
@@ -556,13 +464,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getStudentNotes(): ?string
     {
         return $this->StudentNotes;
     }
 
-    
     public function withStudentNotes(?string $StudentNotes): static
     {
         $new = clone $this;
@@ -571,13 +477,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getStudentTextData(): ?string
     {
         return $this->StudentTextData;
     }
 
-    
     public function withStudentTextData(?string $StudentTextData): static
     {
         $new = clone $this;
@@ -586,13 +490,11 @@ class Assignment
         return $new;
     }
 
-    
     public function getStatus(): ?string
     {
         return $this->Status;
     }
 
-    
     public function withStatus(?string $Status): static
     {
         $new = clone $this;

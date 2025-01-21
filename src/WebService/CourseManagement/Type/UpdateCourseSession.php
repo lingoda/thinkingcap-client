@@ -8,54 +8,38 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateCourseSession implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
-    
-    private ?string $sessionID;
+    private ?string $sessionID = null;
 
-    
-    private ?string $sessionTitle;
+    private ?string $sessionTitle = null;
 
-    
-    private ?string $sessionDescription;
+    private ?string $sessionDescription = null;
 
-    
     private bool $sessionIsRequired;
 
-    
     private bool $timeIsTDB;
 
-    
-    private ?string $sessionStartDateTime;
+    private ?string $sessionStartDateTime = null;
 
-    
-    private ?string $sessionEndDateTime;
+    private ?string $sessionEndDateTime = null;
 
-    
     private bool $locationIsTBD;
 
-    
-    private ?string $sessionLocationID;
+    private ?string $sessionLocationID = null;
 
-    
-    private ?string $webinarProviderID;
+    private ?string $webinarProviderID = null;
 
-    
-    private ?string $zoomSubAccountHostID;
+    private ?string $zoomSubAccountHostID = null;
 
-    
-    private ?string $customMeetingURL;
+    private ?string $customMeetingURL = null;
 
-    
-    private ?string $attendanceCode;
+    private ?string $attendanceCode = null;
 
-    
     private bool $updateAdminCatalogs;
 
-    
     private bool $updateLearnerCatalogs;
 
     /**
@@ -83,13 +67,11 @@ class UpdateCourseSession implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -98,13 +80,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
@@ -113,13 +93,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionID(): ?string
     {
         return $this->sessionID;
     }
 
-    
     public function withSessionID(?string $sessionID): static
     {
         $new = clone $this;
@@ -128,13 +106,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionTitle(): ?string
     {
         return $this->sessionTitle;
     }
 
-    
     public function withSessionTitle(?string $sessionTitle): static
     {
         $new = clone $this;
@@ -143,13 +119,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionDescription(): ?string
     {
         return $this->sessionDescription;
     }
 
-    
     public function withSessionDescription(?string $sessionDescription): static
     {
         $new = clone $this;
@@ -158,13 +132,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionIsRequired(): bool
     {
         return $this->sessionIsRequired;
     }
 
-    
     public function withSessionIsRequired(bool $sessionIsRequired): static
     {
         $new = clone $this;
@@ -173,13 +145,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getTimeIsTDB(): bool
     {
         return $this->timeIsTDB;
     }
 
-    
     public function withTimeIsTDB(bool $timeIsTDB): static
     {
         $new = clone $this;
@@ -188,13 +158,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionStartDateTime(): ?string
     {
         return $this->sessionStartDateTime;
     }
 
-    
     public function withSessionStartDateTime(?string $sessionStartDateTime): static
     {
         $new = clone $this;
@@ -203,13 +171,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionEndDateTime(): ?string
     {
         return $this->sessionEndDateTime;
     }
 
-    
     public function withSessionEndDateTime(?string $sessionEndDateTime): static
     {
         $new = clone $this;
@@ -218,13 +184,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getLocationIsTBD(): bool
     {
         return $this->locationIsTBD;
     }
 
-    
     public function withLocationIsTBD(bool $locationIsTBD): static
     {
         $new = clone $this;
@@ -233,13 +197,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionLocationID(): ?string
     {
         return $this->sessionLocationID;
     }
 
-    
     public function withSessionLocationID(?string $sessionLocationID): static
     {
         $new = clone $this;
@@ -248,13 +210,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getWebinarProviderID(): ?string
     {
         return $this->webinarProviderID;
     }
 
-    
     public function withWebinarProviderID(?string $webinarProviderID): static
     {
         $new = clone $this;
@@ -263,13 +223,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getZoomSubAccountHostID(): ?string
     {
         return $this->zoomSubAccountHostID;
     }
 
-    
     public function withZoomSubAccountHostID(?string $zoomSubAccountHostID): static
     {
         $new = clone $this;
@@ -278,13 +236,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getCustomMeetingURL(): ?string
     {
         return $this->customMeetingURL;
     }
 
-    
     public function withCustomMeetingURL(?string $customMeetingURL): static
     {
         $new = clone $this;
@@ -293,13 +249,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getAttendanceCode(): ?string
     {
         return $this->attendanceCode;
     }
 
-    
     public function withAttendanceCode(?string $attendanceCode): static
     {
         $new = clone $this;
@@ -308,13 +262,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    
     public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
@@ -323,13 +275,11 @@ class UpdateCourseSession implements RequestInterface
         return $new;
     }
 
-    
     public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    
     public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;

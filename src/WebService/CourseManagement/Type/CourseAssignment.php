@@ -6,39 +6,29 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CourseAssignment
 {
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $Name;
+    private ?string $Name = null;
 
-    
-    private ?string $Instructions;
+    private ?string $Instructions = null;
 
-    
-    private ?string $CourseID;
+    private ?string $CourseID = null;
 
-    
     private bool $Mastery;
 
-    
     private int $MaxAttempts;
 
-    
     private bool $AllowTextSubmission;
 
-    
     private bool $AllowFilesSubmission;
 
-    
     private bool $AllowAudioRecordingSubmission;
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -47,13 +37,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getName(): ?string
     {
         return $this->Name;
     }
 
-    
     public function withName(?string $Name): static
     {
         $new = clone $this;
@@ -62,13 +50,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
-    
     public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
@@ -77,13 +63,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
-    
     public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
@@ -92,13 +76,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getMastery(): bool
     {
         return $this->Mastery;
     }
 
-    
     public function withMastery(bool $Mastery): static
     {
         $new = clone $this;
@@ -107,13 +89,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getMaxAttempts(): int
     {
         return $this->MaxAttempts;
     }
 
-    
     public function withMaxAttempts(int $MaxAttempts): static
     {
         $new = clone $this;
@@ -122,13 +102,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getAllowTextSubmission(): bool
     {
         return $this->AllowTextSubmission;
     }
 
-    
     public function withAllowTextSubmission(bool $AllowTextSubmission): static
     {
         $new = clone $this;
@@ -137,13 +115,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getAllowFilesSubmission(): bool
     {
         return $this->AllowFilesSubmission;
     }
 
-    
     public function withAllowFilesSubmission(bool $AllowFilesSubmission): static
     {
         $new = clone $this;
@@ -152,13 +128,11 @@ class CourseAssignment
         return $new;
     }
 
-    
     public function getAllowAudioRecordingSubmission(): bool
     {
         return $this->AllowAudioRecordingSubmission;
     }
 
-    
     public function withAllowAudioRecordingSubmission(bool $AllowAudioRecordingSubmission): static
     {
         $new = clone $this;

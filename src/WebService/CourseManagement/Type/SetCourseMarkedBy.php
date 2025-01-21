@@ -8,15 +8,12 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetCourseMarkedBy implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
-    
     private bool $moderator;
 
-    
     private bool $ta;
 
     /**
@@ -31,13 +28,11 @@ class SetCourseMarkedBy implements RequestInterface
         $this->ta = $ta;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class SetCourseMarkedBy implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class SetCourseMarkedBy implements RequestInterface
         return $new;
     }
 
-    
     public function getModerator(): bool
     {
         return $this->moderator;
     }
 
-    
     public function withModerator(bool $moderator): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class SetCourseMarkedBy implements RequestInterface
         return $new;
     }
 
-    
     public function getTa(): bool
     {
         return $this->ta;
     }
 
-    
     public function withTa(bool $ta): static
     {
         $new = clone $this;

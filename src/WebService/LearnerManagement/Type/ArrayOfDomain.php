@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 class ArrayOfDomain
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Domain>
+     * @var null | array<int<0,max>, Domain>
      */
-    private ?array $Domain;
+    private ?array $Domain = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Domain>
+     * @return null | array<int<0,max>, Domain>
      */
     public function getDomain(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfDomain
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Domain> $Domain
+     * @param null | array<int<0,max>, Domain> $Domain
      */
     public function withDomain(?array $Domain): static
     {

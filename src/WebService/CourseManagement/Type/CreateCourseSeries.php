@@ -8,24 +8,18 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class CreateCourseSeries implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $programID;
+    private ?string $programID = null;
 
-    
-    private ?string $code;
+    private ?string $code = null;
 
-    
-    private ?string $name;
+    private ?string $name = null;
 
-    
-    private ?string $description;
+    private ?string $description = null;
 
-    
-    private ?string $tags;
+    private ?string $tags = null;
 
-    
     private bool $denyInheritance;
 
     /**
@@ -43,13 +37,11 @@ class CreateCourseSeries implements RequestInterface
         $this->denyInheritance = $denyInheritance;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -58,13 +50,11 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    
     public function getProgramID(): ?string
     {
         return $this->programID;
     }
 
-    
     public function withProgramID(?string $programID): static
     {
         $new = clone $this;
@@ -73,13 +63,11 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    
     public function getCode(): ?string
     {
         return $this->code;
     }
 
-    
     public function withCode(?string $code): static
     {
         $new = clone $this;
@@ -88,13 +76,11 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    
     public function withName(?string $name): static
     {
         $new = clone $this;
@@ -103,13 +89,11 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    
     public function withDescription(?string $description): static
     {
         $new = clone $this;
@@ -118,13 +102,11 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    
     public function getTags(): ?string
     {
         return $this->tags;
     }
 
-    
     public function withTags(?string $tags): static
     {
         $new = clone $this;
@@ -133,13 +115,11 @@ class CreateCourseSeries implements RequestInterface
         return $new;
     }
 
-    
     public function getDenyInheritance(): bool
     {
         return $this->denyInheritance;
     }
 
-    
     public function withDenyInheritance(bool $denyInheritance): static
     {
         $new = clone $this;

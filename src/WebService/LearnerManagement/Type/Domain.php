@@ -6,27 +6,21 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Domain
 {
-    private ?string $DomainID;
+    private ?string $DomainID = null;
 
-    
-    private ?string $DomainName;
+    private ?string $DomainName = null;
 
-    
-    private ?string $DomainCode;
+    private ?string $DomainCode = null;
 
-    
-    private ?string $ParentDomainID;
+    private ?string $ParentDomainID = null;
 
-    
     private bool $MembershipPending;
 
-    
     public function getDomainID(): ?string
     {
         return $this->DomainID;
     }
 
-    
     public function withDomainID(?string $DomainID): static
     {
         $new = clone $this;
@@ -35,13 +29,11 @@ class Domain
         return $new;
     }
 
-    
     public function getDomainName(): ?string
     {
         return $this->DomainName;
     }
 
-    
     public function withDomainName(?string $DomainName): static
     {
         $new = clone $this;
@@ -50,13 +42,11 @@ class Domain
         return $new;
     }
 
-    
     public function getDomainCode(): ?string
     {
         return $this->DomainCode;
     }
 
-    
     public function withDomainCode(?string $DomainCode): static
     {
         $new = clone $this;
@@ -65,13 +55,11 @@ class Domain
         return $new;
     }
 
-    
     public function getParentDomainID(): ?string
     {
         return $this->ParentDomainID;
     }
 
-    
     public function withParentDomainID(?string $ParentDomainID): static
     {
         $new = clone $this;
@@ -80,13 +68,11 @@ class Domain
         return $new;
     }
 
-    
     public function getMembershipPending(): bool
     {
         return $this->MembershipPending;
     }
 
-    
     public function withMembershipPending(bool $MembershipPending): static
     {
         $new = clone $this;

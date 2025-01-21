@@ -9,7 +9,6 @@ class ServiceResultOfListOfLearningActivityRecord
     protected string $Message = '';
     private ArrayOfLearningActivityRecord $Result;
 
-    
     private bool $Success;
 
     public function getResult(): ArrayOfLearningActivityRecord
@@ -25,13 +24,11 @@ class ServiceResultOfListOfLearningActivityRecord
         return $new;
     }
 
-    
     public function getSuccess(): bool
     {
         return $this->Success;
     }
 
-    
     public function withSuccess(bool $Success): static
     {
         $new = clone $this;

@@ -8,18 +8,14 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class ChangeLearningActivityActiveStatus implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $learningObjectID;
+    private ?string $learningObjectID = null;
 
-    
     private bool $active;
 
-    
     private bool $updateAdminCatalogs;
 
-    
     private bool $updateLearnerCatalogs;
 
     /**
@@ -35,13 +31,11 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -50,13 +44,11 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningObjectID(): ?string
     {
         return $this->learningObjectID;
     }
 
-    
     public function withLearningObjectID(?string $learningObjectID): static
     {
         $new = clone $this;
@@ -65,13 +57,11 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    
     public function getActive(): bool
     {
         return $this->active;
     }
 
-    
     public function withActive(bool $active): static
     {
         $new = clone $this;
@@ -80,13 +70,11 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    
     public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    
     public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
@@ -95,13 +83,11 @@ class ChangeLearningActivityActiveStatus implements RequestInterface
         return $new;
     }
 
-    
     public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    
     public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;

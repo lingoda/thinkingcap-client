@@ -6,246 +6,167 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Course extends LearningType
 {
-    private ?string $Type;
+    private ?string $Type = null;
 
-    
     private bool $IsOnline;
 
-    
-    private ?string $Keywords;
+    private ?string $Keywords = null;
 
-    
     private float $CreditValue;
 
-    
     private int $CertificateScore;
 
-    
     private float $CertificateMinTime;
 
-    
-    private ?string $CertificateType;
+    private ?string $CertificateType = null;
 
-    
     private bool $CanPrintCertificate;
 
-    
     private bool $LimitReenroll;
 
-    
     private int $MaxReenrollment;
 
-    
     private int $ExpireUnit;
 
-    
-    private ?string $ExpireInterval;
+    private ?string $ExpireInterval = null;
 
-    
     private int $NotifyUnit;
 
-    
-    private ?string $NotifyInterval;
+    private ?string $NotifyInterval = null;
 
-    
     private bool $ProctorSignIn;
 
-    
-    private ?string $ShowModule;
+    private ?string $ShowModule = null;
 
-    
-    private ?string $ShowMenu;
+    private ?string $ShowMenu = null;
 
-    
-    private ?string $LastProgramID;
+    private ?string $LastProgramID = null;
 
-    
-    private ?string $ProgramPath;
+    private ?string $ProgramPath = null;
 
-    
-    private ?string $ModeratorID;
+    private ?string $ModeratorID = null;
 
-    
-    private ?string $ModeratorName;
+    private ?string $ModeratorName = null;
 
-    
-    private ?string $ModeratorUserName;
+    private ?string $ModeratorUserName = null;
 
-    
-    private ?string $AutoEnrollFields;
+    private ?string $AutoEnrollFields = null;
 
-    
-    private ?ArrayOfString $TeachingAssts;
+    private ?ArrayOfString $TeachingAssts = null;
 
-    
-    private ?string $TeachingAssistantList;
+    private ?string $TeachingAssistantList = null;
 
-    
     private bool $HasAssignments;
 
-    
     private bool $AllowReviewAfterAttemptEnd;
 
-    
-    private ?ArrayOfAssignment $Assignments;
+    private ?ArrayOfAssignment $Assignments = null;
 
-    
-    private ?ArrayOfCourseAssignment $CourseAssignments;
+    private ?ArrayOfCourseAssignment $CourseAssignments = null;
 
-    
     private bool $MasterGlossary;
 
-    
-    private ?ArrayOfAnyType $Sessions;
+    private ?ArrayOfAnyType $Sessions = null;
 
-    
-    private ?ArrayOfAnyType $PendingApprovalSessions;
+    private ?ArrayOfAnyType $PendingApprovalSessions = null;
 
-    
     private int $TotalEnrolled;
 
-    
     private int $TotalCompleted;
 
-    
     private int $TotalActive;
 
-    
     private int $TeachingAsstActive;
 
-    
     private bool $StudentPrerequisites;
 
-    
     private int $AssignmentCount;
 
-    
     private bool $ProxyAzure;
 
-    
     private bool $ProxyImages;
 
-    
     private bool $RunDirect;
 
-    
     private bool $RunDirectAlways;
 
-    
-    private ?ArrayOfCourseStylesheet $Stylesheets;
+    private ?string $PackageType = null;
 
-    
+    private ?ArrayOfCourseStylesheet $Stylesheets = null;
+
     private bool $Published;
 
-    
     private bool $AllowCollaboration;
 
-    
     private bool $EndCollaborationOnCompletion;
 
-    
-    private ?string $CollaborationTitle;
+    private ?string $CollaborationTitle = null;
 
-    
-    private ?string $CollaborationDescription;
+    private ?string $CollaborationDescription = null;
 
-    
-    private ?string $CollaborationCustomFields;
+    private ?string $CollaborationCustomFields = null;
 
-    
-    private ?ArrayOfCourseVersion $Versions;
+    private ?ArrayOfCourseVersion $Versions = null;
 
-    
-    private bool $HasChat;
-
-    
     private bool $ForceUserFeedback;
 
-    
-    private ?FeedbackSection $Feedback;
+    private ?FeedbackSection $Feedback = null;
 
-    
     private bool $IsAssessment;
 
-    
     private bool $HasSample;
 
-    
     private bool $UseOwnerSettingsForShared;
 
-    
-    private ?ArrayOfCourseNotification $CourseNotifications;
+    private ?ArrayOfCourseNotification $CourseNotifications = null;
 
-    
     private int $ClassSize;
 
-    
     private bool $ManualEnrollOverClassSize;
 
-    
     private int $WaitlistCutoffUnit;
 
-    
-    private ?string $WailtistCutoffInterval;
+    private ?string $WailtistCutoffInterval = null;
 
-    
     private bool $AllowWaitlist;
 
-    
     private int $WaitlistMaxNo;
 
-    
     private int $MinOptionalSessions;
 
-    
     private bool $RecordAttendance;
 
-    
-    private ?string $RecordAttendanceMode;
+    private ?string $RecordAttendanceMode = null;
 
-    
     private bool $ShowSignInRelatedContent;
 
-    
     private bool $ShowSignInLearners;
 
-    
     private bool $SignInWithBadge;
 
-    
     private bool $CompleteSessionWhenJoinByLearner;
 
-    
     private bool $RecordScore;
 
-    
     private bool $RecordComments;
 
-    
     private bool $RequiresChallenge;
 
-    
     private int $ChallengeMaxAttempt;
 
-    
     private bool $LockChallengeFailed;
 
-    
     private int $ChallengeFrequency;
 
-    
     private bool $AddTimeInReadOnly;
 
-    
     private int $Timeout;
 
-    
     public function getType(): ?string
     {
         return $this->Type;
     }
 
-    
     public function withType(?string $Type): static
     {
         $new = clone $this;
@@ -254,13 +175,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getIsOnline(): bool
     {
         return $this->IsOnline;
     }
 
-    
     public function withIsOnline(bool $IsOnline): static
     {
         $new = clone $this;
@@ -269,13 +188,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getKeywords(): ?string
     {
         return $this->Keywords;
     }
 
-    
     public function withKeywords(?string $Keywords): static
     {
         $new = clone $this;
@@ -284,13 +201,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCreditValue(): float
     {
         return $this->CreditValue;
     }
 
-    
     public function withCreditValue(float $CreditValue): static
     {
         $new = clone $this;
@@ -299,13 +214,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCertificateScore(): int
     {
         return $this->CertificateScore;
     }
 
-    
     public function withCertificateScore(int $CertificateScore): static
     {
         $new = clone $this;
@@ -314,13 +227,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCertificateMinTime(): float
     {
         return $this->CertificateMinTime;
     }
 
-    
     public function withCertificateMinTime(float $CertificateMinTime): static
     {
         $new = clone $this;
@@ -329,13 +240,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCertificateType(): ?string
     {
         return $this->CertificateType;
     }
 
-    
     public function withCertificateType(?string $CertificateType): static
     {
         $new = clone $this;
@@ -344,13 +253,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCanPrintCertificate(): bool
     {
         return $this->CanPrintCertificate;
     }
 
-    
     public function withCanPrintCertificate(bool $CanPrintCertificate): static
     {
         $new = clone $this;
@@ -359,13 +266,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getLimitReenroll(): bool
     {
         return $this->LimitReenroll;
     }
 
-    
     public function withLimitReenroll(bool $LimitReenroll): static
     {
         $new = clone $this;
@@ -374,13 +279,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getMaxReenrollment(): int
     {
         return $this->MaxReenrollment;
     }
 
-    
     public function withMaxReenrollment(int $MaxReenrollment): static
     {
         $new = clone $this;
@@ -389,13 +292,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getExpireUnit(): int
     {
         return $this->ExpireUnit;
     }
 
-    
     public function withExpireUnit(int $ExpireUnit): static
     {
         $new = clone $this;
@@ -404,13 +305,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getExpireInterval(): ?string
     {
         return $this->ExpireInterval;
     }
 
-    
     public function withExpireInterval(?string $ExpireInterval): static
     {
         $new = clone $this;
@@ -419,13 +318,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getNotifyUnit(): int
     {
         return $this->NotifyUnit;
     }
 
-    
     public function withNotifyUnit(int $NotifyUnit): static
     {
         $new = clone $this;
@@ -434,13 +331,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getNotifyInterval(): ?string
     {
         return $this->NotifyInterval;
     }
 
-    
     public function withNotifyInterval(?string $NotifyInterval): static
     {
         $new = clone $this;
@@ -449,13 +344,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getProctorSignIn(): bool
     {
         return $this->ProctorSignIn;
     }
 
-    
     public function withProctorSignIn(bool $ProctorSignIn): static
     {
         $new = clone $this;
@@ -464,13 +357,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getShowModule(): ?string
     {
         return $this->ShowModule;
     }
 
-    
     public function withShowModule(?string $ShowModule): static
     {
         $new = clone $this;
@@ -479,13 +370,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getShowMenu(): ?string
     {
         return $this->ShowMenu;
     }
 
-    
     public function withShowMenu(?string $ShowMenu): static
     {
         $new = clone $this;
@@ -494,13 +383,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getLastProgramID(): ?string
     {
         return $this->LastProgramID;
     }
 
-    
     public function withLastProgramID(?string $LastProgramID): static
     {
         $new = clone $this;
@@ -509,13 +396,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getProgramPath(): ?string
     {
         return $this->ProgramPath;
     }
 
-    
     public function withProgramPath(?string $ProgramPath): static
     {
         $new = clone $this;
@@ -524,13 +409,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getModeratorID(): ?string
     {
         return $this->ModeratorID;
     }
 
-    
     public function withModeratorID(?string $ModeratorID): static
     {
         $new = clone $this;
@@ -539,13 +422,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getModeratorName(): ?string
     {
         return $this->ModeratorName;
     }
 
-    
     public function withModeratorName(?string $ModeratorName): static
     {
         $new = clone $this;
@@ -554,13 +435,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getModeratorUserName(): ?string
     {
         return $this->ModeratorUserName;
     }
 
-    
     public function withModeratorUserName(?string $ModeratorUserName): static
     {
         $new = clone $this;
@@ -569,13 +448,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAutoEnrollFields(): ?string
     {
         return $this->AutoEnrollFields;
     }
 
-    
     public function withAutoEnrollFields(?string $AutoEnrollFields): static
     {
         $new = clone $this;
@@ -584,13 +461,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTeachingAssts(): ?ArrayOfString
     {
         return $this->TeachingAssts;
     }
 
-    
     public function withTeachingAssts(?ArrayOfString $TeachingAssts): static
     {
         $new = clone $this;
@@ -599,13 +474,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTeachingAssistantList(): ?string
     {
         return $this->TeachingAssistantList;
     }
 
-    
     public function withTeachingAssistantList(?string $TeachingAssistantList): static
     {
         $new = clone $this;
@@ -614,13 +487,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getHasAssignments(): bool
     {
         return $this->HasAssignments;
     }
 
-    
     public function withHasAssignments(bool $HasAssignments): static
     {
         $new = clone $this;
@@ -629,13 +500,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAllowReviewAfterAttemptEnd(): bool
     {
         return $this->AllowReviewAfterAttemptEnd;
     }
 
-    
     public function withAllowReviewAfterAttemptEnd(bool $AllowReviewAfterAttemptEnd): static
     {
         $new = clone $this;
@@ -644,13 +513,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAssignments(): ?ArrayOfAssignment
     {
         return $this->Assignments;
     }
 
-    
     public function withAssignments(?ArrayOfAssignment $Assignments): static
     {
         $new = clone $this;
@@ -659,13 +526,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCourseAssignments(): ?ArrayOfCourseAssignment
     {
         return $this->CourseAssignments;
     }
 
-    
     public function withCourseAssignments(?ArrayOfCourseAssignment $CourseAssignments): static
     {
         $new = clone $this;
@@ -674,13 +539,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getMasterGlossary(): bool
     {
         return $this->MasterGlossary;
     }
 
-    
     public function withMasterGlossary(bool $MasterGlossary): static
     {
         $new = clone $this;
@@ -689,13 +552,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getSessions(): ?ArrayOfAnyType
     {
         return $this->Sessions;
     }
 
-    
     public function withSessions(?ArrayOfAnyType $Sessions): static
     {
         $new = clone $this;
@@ -704,13 +565,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getPendingApprovalSessions(): ?ArrayOfAnyType
     {
         return $this->PendingApprovalSessions;
     }
 
-    
     public function withPendingApprovalSessions(?ArrayOfAnyType $PendingApprovalSessions): static
     {
         $new = clone $this;
@@ -719,13 +578,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTotalEnrolled(): int
     {
         return $this->TotalEnrolled;
     }
 
-    
     public function withTotalEnrolled(int $TotalEnrolled): static
     {
         $new = clone $this;
@@ -734,13 +591,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTotalCompleted(): int
     {
         return $this->TotalCompleted;
     }
 
-    
     public function withTotalCompleted(int $TotalCompleted): static
     {
         $new = clone $this;
@@ -749,13 +604,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTotalActive(): int
     {
         return $this->TotalActive;
     }
 
-    
     public function withTotalActive(int $TotalActive): static
     {
         $new = clone $this;
@@ -764,13 +617,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTeachingAsstActive(): int
     {
         return $this->TeachingAsstActive;
     }
 
-    
     public function withTeachingAsstActive(int $TeachingAsstActive): static
     {
         $new = clone $this;
@@ -779,13 +630,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getStudentPrerequisites(): bool
     {
         return $this->StudentPrerequisites;
     }
 
-    
     public function withStudentPrerequisites(bool $StudentPrerequisites): static
     {
         $new = clone $this;
@@ -794,13 +643,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAssignmentCount(): int
     {
         return $this->AssignmentCount;
     }
 
-    
     public function withAssignmentCount(int $AssignmentCount): static
     {
         $new = clone $this;
@@ -809,13 +656,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getProxyAzure(): bool
     {
         return $this->ProxyAzure;
     }
 
-    
     public function withProxyAzure(bool $ProxyAzure): static
     {
         $new = clone $this;
@@ -824,13 +669,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getProxyImages(): bool
     {
         return $this->ProxyImages;
     }
 
-    
     public function withProxyImages(bool $ProxyImages): static
     {
         $new = clone $this;
@@ -839,13 +682,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRunDirect(): bool
     {
         return $this->RunDirect;
     }
 
-    
     public function withRunDirect(bool $RunDirect): static
     {
         $new = clone $this;
@@ -854,13 +695,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRunDirectAlways(): bool
     {
         return $this->RunDirectAlways;
     }
 
-    
     public function withRunDirectAlways(bool $RunDirectAlways): static
     {
         $new = clone $this;
@@ -869,13 +708,24 @@ class Course extends LearningType
         return $new;
     }
 
-    
+    public function getPackageType(): ?string
+    {
+        return $this->PackageType;
+    }
+
+    public function withPackageType(?string $PackageType): static
+    {
+        $new = clone $this;
+        $new->PackageType = $PackageType;
+
+        return $new;
+    }
+
     public function getStylesheets(): ?ArrayOfCourseStylesheet
     {
         return $this->Stylesheets;
     }
 
-    
     public function withStylesheets(?ArrayOfCourseStylesheet $Stylesheets): static
     {
         $new = clone $this;
@@ -884,13 +734,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getPublished(): bool
     {
         return $this->Published;
     }
 
-    
     public function withPublished(bool $Published): static
     {
         $new = clone $this;
@@ -899,13 +747,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAllowCollaboration(): bool
     {
         return $this->AllowCollaboration;
     }
 
-    
     public function withAllowCollaboration(bool $AllowCollaboration): static
     {
         $new = clone $this;
@@ -914,13 +760,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getEndCollaborationOnCompletion(): bool
     {
         return $this->EndCollaborationOnCompletion;
     }
 
-    
     public function withEndCollaborationOnCompletion(bool $EndCollaborationOnCompletion): static
     {
         $new = clone $this;
@@ -929,13 +773,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCollaborationTitle(): ?string
     {
         return $this->CollaborationTitle;
     }
 
-    
     public function withCollaborationTitle(?string $CollaborationTitle): static
     {
         $new = clone $this;
@@ -944,13 +786,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCollaborationDescription(): ?string
     {
         return $this->CollaborationDescription;
     }
 
-    
     public function withCollaborationDescription(?string $CollaborationDescription): static
     {
         $new = clone $this;
@@ -959,13 +799,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCollaborationCustomFields(): ?string
     {
         return $this->CollaborationCustomFields;
     }
 
-    
     public function withCollaborationCustomFields(?string $CollaborationCustomFields): static
     {
         $new = clone $this;
@@ -974,13 +812,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getVersions(): ?ArrayOfCourseVersion
     {
         return $this->Versions;
     }
 
-    
     public function withVersions(?ArrayOfCourseVersion $Versions): static
     {
         $new = clone $this;
@@ -989,28 +825,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
-    public function getHasChat(): bool
-    {
-        return $this->HasChat;
-    }
-
-    
-    public function withHasChat(bool $HasChat): static
-    {
-        $new = clone $this;
-        $new->HasChat = $HasChat;
-
-        return $new;
-    }
-
-    
     public function getForceUserFeedback(): bool
     {
         return $this->ForceUserFeedback;
     }
 
-    
     public function withForceUserFeedback(bool $ForceUserFeedback): static
     {
         $new = clone $this;
@@ -1019,13 +838,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getFeedback(): ?FeedbackSection
     {
         return $this->Feedback;
     }
 
-    
     public function withFeedback(?FeedbackSection $Feedback): static
     {
         $new = clone $this;
@@ -1034,13 +851,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getIsAssessment(): bool
     {
         return $this->IsAssessment;
     }
 
-    
     public function withIsAssessment(bool $IsAssessment): static
     {
         $new = clone $this;
@@ -1049,13 +864,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getHasSample(): bool
     {
         return $this->HasSample;
     }
 
-    
     public function withHasSample(bool $HasSample): static
     {
         $new = clone $this;
@@ -1064,13 +877,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getUseOwnerSettingsForShared(): bool
     {
         return $this->UseOwnerSettingsForShared;
     }
 
-    
     public function withUseOwnerSettingsForShared(bool $UseOwnerSettingsForShared): static
     {
         $new = clone $this;
@@ -1079,13 +890,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCourseNotifications(): ?ArrayOfCourseNotification
     {
         return $this->CourseNotifications;
     }
 
-    
     public function withCourseNotifications(?ArrayOfCourseNotification $CourseNotifications): static
     {
         $new = clone $this;
@@ -1094,13 +903,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getClassSize(): int
     {
         return $this->ClassSize;
     }
 
-    
     public function withClassSize(int $ClassSize): static
     {
         $new = clone $this;
@@ -1109,13 +916,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getManualEnrollOverClassSize(): bool
     {
         return $this->ManualEnrollOverClassSize;
     }
 
-    
     public function withManualEnrollOverClassSize(bool $ManualEnrollOverClassSize): static
     {
         $new = clone $this;
@@ -1124,13 +929,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getWaitlistCutoffUnit(): int
     {
         return $this->WaitlistCutoffUnit;
     }
 
-    
     public function withWaitlistCutoffUnit(int $WaitlistCutoffUnit): static
     {
         $new = clone $this;
@@ -1139,13 +942,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getWailtistCutoffInterval(): ?string
     {
         return $this->WailtistCutoffInterval;
     }
 
-    
     public function withWailtistCutoffInterval(?string $WailtistCutoffInterval): static
     {
         $new = clone $this;
@@ -1154,13 +955,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAllowWaitlist(): bool
     {
         return $this->AllowWaitlist;
     }
 
-    
     public function withAllowWaitlist(bool $AllowWaitlist): static
     {
         $new = clone $this;
@@ -1169,13 +968,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getWaitlistMaxNo(): int
     {
         return $this->WaitlistMaxNo;
     }
 
-    
     public function withWaitlistMaxNo(int $WaitlistMaxNo): static
     {
         $new = clone $this;
@@ -1184,13 +981,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getMinOptionalSessions(): int
     {
         return $this->MinOptionalSessions;
     }
 
-    
     public function withMinOptionalSessions(int $MinOptionalSessions): static
     {
         $new = clone $this;
@@ -1199,13 +994,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRecordAttendance(): bool
     {
         return $this->RecordAttendance;
     }
 
-    
     public function withRecordAttendance(bool $RecordAttendance): static
     {
         $new = clone $this;
@@ -1214,13 +1007,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRecordAttendanceMode(): ?string
     {
         return $this->RecordAttendanceMode;
     }
 
-    
     public function withRecordAttendanceMode(?string $RecordAttendanceMode): static
     {
         $new = clone $this;
@@ -1229,13 +1020,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getShowSignInRelatedContent(): bool
     {
         return $this->ShowSignInRelatedContent;
     }
 
-    
     public function withShowSignInRelatedContent(bool $ShowSignInRelatedContent): static
     {
         $new = clone $this;
@@ -1244,13 +1033,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getShowSignInLearners(): bool
     {
         return $this->ShowSignInLearners;
     }
 
-    
     public function withShowSignInLearners(bool $ShowSignInLearners): static
     {
         $new = clone $this;
@@ -1259,13 +1046,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getSignInWithBadge(): bool
     {
         return $this->SignInWithBadge;
     }
 
-    
     public function withSignInWithBadge(bool $SignInWithBadge): static
     {
         $new = clone $this;
@@ -1274,13 +1059,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getCompleteSessionWhenJoinByLearner(): bool
     {
         return $this->CompleteSessionWhenJoinByLearner;
     }
 
-    
     public function withCompleteSessionWhenJoinByLearner(bool $CompleteSessionWhenJoinByLearner): static
     {
         $new = clone $this;
@@ -1289,13 +1072,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRecordScore(): bool
     {
         return $this->RecordScore;
     }
 
-    
     public function withRecordScore(bool $RecordScore): static
     {
         $new = clone $this;
@@ -1304,13 +1085,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRecordComments(): bool
     {
         return $this->RecordComments;
     }
 
-    
     public function withRecordComments(bool $RecordComments): static
     {
         $new = clone $this;
@@ -1319,13 +1098,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getRequiresChallenge(): bool
     {
         return $this->RequiresChallenge;
     }
 
-    
     public function withRequiresChallenge(bool $RequiresChallenge): static
     {
         $new = clone $this;
@@ -1334,13 +1111,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getChallengeMaxAttempt(): int
     {
         return $this->ChallengeMaxAttempt;
     }
 
-    
     public function withChallengeMaxAttempt(int $ChallengeMaxAttempt): static
     {
         $new = clone $this;
@@ -1349,13 +1124,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getLockChallengeFailed(): bool
     {
         return $this->LockChallengeFailed;
     }
 
-    
     public function withLockChallengeFailed(bool $LockChallengeFailed): static
     {
         $new = clone $this;
@@ -1364,13 +1137,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getChallengeFrequency(): int
     {
         return $this->ChallengeFrequency;
     }
 
-    
     public function withChallengeFrequency(int $ChallengeFrequency): static
     {
         $new = clone $this;
@@ -1379,13 +1150,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getAddTimeInReadOnly(): bool
     {
         return $this->AddTimeInReadOnly;
     }
 
-    
     public function withAddTimeInReadOnly(bool $AddTimeInReadOnly): static
     {
         $new = clone $this;
@@ -1394,13 +1163,11 @@ class Course extends LearningType
         return $new;
     }
 
-    
     public function getTimeout(): int
     {
         return $this->Timeout;
     }
 
-    
     public function withTimeout(int $Timeout): static
     {
         $new = clone $this;

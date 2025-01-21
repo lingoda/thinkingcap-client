@@ -8,16 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetStudentLPDetails implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentID;
+    private ?string $studentID = null;
 
-    
-    private ?string $learningPathID;
+    private ?string $learningPathID = null;
 
-    
-    private ?string $language;
+    private ?string $language = null;
 
     /**
      * Constructor
@@ -31,13 +28,11 @@ class GetStudentLPDetails implements RequestInterface
         $this->language = $language;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class GetStudentLPDetails implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
-    
     public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class GetStudentLPDetails implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningPathID(): ?string
     {
         return $this->learningPathID;
     }
 
-    
     public function withLearningPathID(?string $learningPathID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class GetStudentLPDetails implements RequestInterface
         return $new;
     }
 
-    
     public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    
     public function withLanguage(?string $language): static
     {
         $new = clone $this;

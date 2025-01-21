@@ -8,36 +8,27 @@ use DateTimeInterface;
 
 class LearningActivityCohort
 {
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $Code;
+    private ?string $Code = null;
 
-    
-    private ?string $Title;
+    private ?string $Title = null;
 
-    
-    private ?string $Description;
+    private ?string $Description = null;
 
-    
     private DateTimeInterface $StartDate;
 
-    
     private DateTimeInterface $DueDate;
 
-    
     private int $MaxEnrollments;
 
-    
     private bool $AllowSelfEnroll;
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -46,13 +37,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getCode(): ?string
     {
         return $this->Code;
     }
 
-    
     public function withCode(?string $Code): static
     {
         $new = clone $this;
@@ -61,13 +50,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getTitle(): ?string
     {
         return $this->Title;
     }
 
-    
     public function withTitle(?string $Title): static
     {
         $new = clone $this;
@@ -76,13 +63,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getDescription(): ?string
     {
         return $this->Description;
     }
 
-    
     public function withDescription(?string $Description): static
     {
         $new = clone $this;
@@ -91,13 +76,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    
     public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
@@ -106,13 +89,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getDueDate(): DateTimeInterface
     {
         return $this->DueDate;
     }
 
-    
     public function withDueDate(DateTimeInterface $DueDate): static
     {
         $new = clone $this;
@@ -121,13 +102,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getMaxEnrollments(): int
     {
         return $this->MaxEnrollments;
     }
 
-    
     public function withMaxEnrollments(int $MaxEnrollments): static
     {
         $new = clone $this;
@@ -136,13 +115,11 @@ class LearningActivityCohort
         return $new;
     }
 
-    
     public function getAllowSelfEnroll(): bool
     {
         return $this->AllowSelfEnroll;
     }
 
-    
     public function withAllowSelfEnroll(bool $AllowSelfEnroll): static
     {
         $new = clone $this;

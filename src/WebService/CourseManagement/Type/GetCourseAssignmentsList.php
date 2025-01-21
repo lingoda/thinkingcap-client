@@ -8,16 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseAssignmentsList implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
-    
-    private ?string $programID;
+    private ?string $programID = null;
 
-    
-    private ?string $status;
+    private ?string $status = null;
 
     /**
      * Constructor
@@ -31,13 +28,11 @@ class GetCourseAssignmentsList implements RequestInterface
         $this->status = $status;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class GetCourseAssignmentsList implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class GetCourseAssignmentsList implements RequestInterface
         return $new;
     }
 
-    
     public function getProgramID(): ?string
     {
         return $this->programID;
     }
 
-    
     public function withProgramID(?string $programID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class GetCourseAssignmentsList implements RequestInterface
         return $new;
     }
 
-    
     public function getStatus(): ?string
     {
         return $this->status;
     }
 
-    
     public function withStatus(?string $status): static
     {
         $new = clone $this;

@@ -8,80 +8,58 @@ use DateTimeInterface;
 
 class Reference
 {
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $CourseID;
+    private ?string $CourseID = null;
 
-    
-    private ?string $Type;
+    private ?string $Type = null;
 
-    
-    private ?string $ISBN;
+    private ?string $ISBN = null;
 
-    
-    private ?string $URL;
+    private ?string $URL = null;
 
-    
-    private ?string $VideoID;
+    private ?string $VideoID = null;
 
-    
-    private ?string $VideoDescription;
+    private ?string $VideoDescription = null;
 
-    
-    private ?string $Title;
+    private ?string $Title = null;
 
-    
-    private ?string $Author;
+    private ?string $Author = null;
 
-    
-    private ?string $Comments;
+    private ?string $Comments = null;
 
-    
-    private ?string $Extension;
+    private ?string $Extension = null;
 
-    
-    private ?string $ContentType;
+    private ?string $ContentType = null;
 
-    
     private int $ContentLength;
 
-    
-    private ?string $DocumentType;
+    private ?string $DocumentType = null;
 
     /**
      * @var null | mixed
      */
-    private mixed $DocumentFile;
+    private mixed $DocumentFile = null;
 
-    
     private DateTimeInterface $UploadDate;
 
-    
     private bool $HideFromLearners;
 
-    
-    private ?string $ParentID;
+    private ?string $ParentID = null;
 
-    
-    private ?string $ObjectType;
+    private ?string $ObjectType = null;
 
-    
-    private ?string $OriginalFileName;
+    private ?string $OriginalFileName = null;
 
-    
-    private ?string $MediaFileID;
+    private ?string $MediaFileID = null;
 
-    
-    private ?string $FieldsXml;
+    private ?string $FieldsXml = null;
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -90,13 +68,11 @@ class Reference
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
-    
     public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
@@ -105,13 +81,11 @@ class Reference
         return $new;
     }
 
-    
     public function getType(): ?string
     {
         return $this->Type;
     }
 
-    
     public function withType(?string $Type): static
     {
         $new = clone $this;
@@ -120,13 +94,11 @@ class Reference
         return $new;
     }
 
-    
     public function getISBN(): ?string
     {
         return $this->ISBN;
     }
 
-    
     public function withISBN(?string $ISBN): static
     {
         $new = clone $this;
@@ -135,13 +107,11 @@ class Reference
         return $new;
     }
 
-    
     public function getURL(): ?string
     {
         return $this->URL;
     }
 
-    
     public function withURL(?string $URL): static
     {
         $new = clone $this;
@@ -150,13 +120,11 @@ class Reference
         return $new;
     }
 
-    
     public function getVideoID(): ?string
     {
         return $this->VideoID;
     }
 
-    
     public function withVideoID(?string $VideoID): static
     {
         $new = clone $this;
@@ -165,13 +133,11 @@ class Reference
         return $new;
     }
 
-    
     public function getVideoDescription(): ?string
     {
         return $this->VideoDescription;
     }
 
-    
     public function withVideoDescription(?string $VideoDescription): static
     {
         $new = clone $this;
@@ -180,13 +146,11 @@ class Reference
         return $new;
     }
 
-    
     public function getTitle(): ?string
     {
         return $this->Title;
     }
 
-    
     public function withTitle(?string $Title): static
     {
         $new = clone $this;
@@ -195,13 +159,11 @@ class Reference
         return $new;
     }
 
-    
     public function getAuthor(): ?string
     {
         return $this->Author;
     }
 
-    
     public function withAuthor(?string $Author): static
     {
         $new = clone $this;
@@ -210,13 +172,11 @@ class Reference
         return $new;
     }
 
-    
     public function getComments(): ?string
     {
         return $this->Comments;
     }
 
-    
     public function withComments(?string $Comments): static
     {
         $new = clone $this;
@@ -225,13 +185,11 @@ class Reference
         return $new;
     }
 
-    
     public function getExtension(): ?string
     {
         return $this->Extension;
     }
 
-    
     public function withExtension(?string $Extension): static
     {
         $new = clone $this;
@@ -240,13 +198,11 @@ class Reference
         return $new;
     }
 
-    
     public function getContentType(): ?string
     {
         return $this->ContentType;
     }
 
-    
     public function withContentType(?string $ContentType): static
     {
         $new = clone $this;
@@ -255,13 +211,11 @@ class Reference
         return $new;
     }
 
-    
     public function getContentLength(): int
     {
         return $this->ContentLength;
     }
 
-    
     public function withContentLength(int $ContentLength): static
     {
         $new = clone $this;
@@ -270,13 +224,11 @@ class Reference
         return $new;
     }
 
-    
     public function getDocumentType(): ?string
     {
         return $this->DocumentType;
     }
 
-    
     public function withDocumentType(?string $DocumentType): static
     {
         $new = clone $this;
@@ -304,13 +256,11 @@ class Reference
         return $new;
     }
 
-    
     public function getUploadDate(): DateTimeInterface
     {
         return $this->UploadDate;
     }
 
-    
     public function withUploadDate(DateTimeInterface $UploadDate): static
     {
         $new = clone $this;
@@ -319,13 +269,11 @@ class Reference
         return $new;
     }
 
-    
     public function getHideFromLearners(): bool
     {
         return $this->HideFromLearners;
     }
 
-    
     public function withHideFromLearners(bool $HideFromLearners): static
     {
         $new = clone $this;
@@ -334,13 +282,11 @@ class Reference
         return $new;
     }
 
-    
     public function getParentID(): ?string
     {
         return $this->ParentID;
     }
 
-    
     public function withParentID(?string $ParentID): static
     {
         $new = clone $this;
@@ -349,13 +295,11 @@ class Reference
         return $new;
     }
 
-    
     public function getObjectType(): ?string
     {
         return $this->ObjectType;
     }
 
-    
     public function withObjectType(?string $ObjectType): static
     {
         $new = clone $this;
@@ -364,13 +308,11 @@ class Reference
         return $new;
     }
 
-    
     public function getOriginalFileName(): ?string
     {
         return $this->OriginalFileName;
     }
 
-    
     public function withOriginalFileName(?string $OriginalFileName): static
     {
         $new = clone $this;
@@ -379,13 +321,11 @@ class Reference
         return $new;
     }
 
-    
     public function getMediaFileID(): ?string
     {
         return $this->MediaFileID;
     }
 
-    
     public function withMediaFileID(?string $MediaFileID): static
     {
         $new = clone $this;
@@ -394,13 +334,11 @@ class Reference
         return $new;
     }
 
-    
     public function getFieldsXml(): ?string
     {
         return $this->FieldsXml;
     }
 
-    
     public function withFieldsXml(?string $FieldsXml): static
     {
         $new = clone $this;

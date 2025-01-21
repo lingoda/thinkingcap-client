@@ -8,24 +8,18 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetDomainUsers implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $domainID;
+    private ?string $domainID = null;
 
-    
     private bool $includeInactive;
 
-    
     private bool $includeMetadata;
 
-    
     private bool $includeDomains;
 
-    
     private int $offset;
 
-    
     private int $take;
 
     /**
@@ -43,13 +37,11 @@ class GetDomainUsers implements RequestInterface
         $this->take = $take;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -58,13 +50,11 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    
     public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
-    
     public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
@@ -73,13 +63,11 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    
     public function getIncludeInactive(): bool
     {
         return $this->includeInactive;
     }
 
-    
     public function withIncludeInactive(bool $includeInactive): static
     {
         $new = clone $this;
@@ -88,13 +76,11 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    
     public function getIncludeMetadata(): bool
     {
         return $this->includeMetadata;
     }
 
-    
     public function withIncludeMetadata(bool $includeMetadata): static
     {
         $new = clone $this;
@@ -103,13 +89,11 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    
     public function getIncludeDomains(): bool
     {
         return $this->includeDomains;
     }
 
-    
     public function withIncludeDomains(bool $includeDomains): static
     {
         $new = clone $this;
@@ -118,13 +102,11 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    
     public function getOffset(): int
     {
         return $this->offset;
     }
 
-    
     public function withOffset(int $offset): static
     {
         $new = clone $this;
@@ -133,13 +115,11 @@ class GetDomainUsers implements RequestInterface
         return $new;
     }
 
-    
     public function getTake(): int
     {
         return $this->take;
     }
 
-    
     public function withTake(int $take): static
     {
         $new = clone $this;

@@ -6,21 +6,17 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class CourseTALoad
 {
-    private ?string $TaID;
+    private ?string $TaID = null;
 
-    
-    private ?string $CourseID;
+    private ?string $CourseID = null;
 
-    
     private int $TaStudentCount;
 
-    
     public function getTaID(): ?string
     {
         return $this->TaID;
     }
 
-    
     public function withTaID(?string $TaID): static
     {
         $new = clone $this;
@@ -29,13 +25,11 @@ class CourseTALoad
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->CourseID;
     }
 
-    
     public function withCourseID(?string $CourseID): static
     {
         $new = clone $this;
@@ -44,13 +38,11 @@ class CourseTALoad
         return $new;
     }
 
-    
     public function getTaStudentCount(): int
     {
         return $this->TaStudentCount;
     }
 
-    
     public function withTaStudentCount(int $TaStudentCount): static
     {
         $new = clone $this;

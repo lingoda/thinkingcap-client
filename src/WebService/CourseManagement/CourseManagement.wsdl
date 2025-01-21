@@ -71,6 +71,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="ProxyImages" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="RunDirect" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="RunDirectAlways" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="PackageType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Stylesheets" type="tns:ArrayOfCourseStylesheet" />
               <s:element minOccurs="1" maxOccurs="1" name="Published" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="AllowCollaboration" type="s:boolean" />
@@ -79,7 +80,6 @@
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationCustomFields" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Versions" type="tns:ArrayOfCourseVersion" />
-              <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="ForceUserFeedback" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="Feedback" type="tns:FeedbackSection" />
               <s:element minOccurs="1" maxOccurs="1" name="IsAssessment" type="s:boolean" />
@@ -269,6 +269,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="InitialScormVersion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ReviewStatus" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAccreditationExpiryNotification" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnAccreditationExpiry" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartLearnerNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartModeratorNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentConfirmation" type="s:boolean" />
@@ -349,6 +350,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="SendPendingNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendFeedbackOverdueNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendfeedbackDueDateNotification" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendfeedbackReminderNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAssignmentSubmittedNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendActivityPeerReviewCancelled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendActivityReviewApprovalExpiryReminder" type="s:boolean" />
@@ -365,6 +367,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnSelfWithdraw" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnSelfWithdraw" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HasForum" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideLastEnrollmentDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverridePrerequisites" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideNotificationPeriod" type="s:boolean" />
@@ -387,6 +390,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssignmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssesmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireStatusSuccessPassed" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISucces" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MinPassingScore" type="s:int" />
@@ -400,6 +404,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="AzureRunMode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DynamicProgram" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LearningTime" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinLearningTime" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxLearningTime" type="s:double" />
           <s:element minOccurs="0" maxOccurs="1" name="EditorXML" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TranscriptPrintMode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HideTranscriptScore" type="s:boolean" />
@@ -447,6 +453,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ExpireMetadataFieldID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CreditsAcrossVariousCategories" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadge" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeIssuer" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionPriorDueDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionDayAfterEnroll" type="s:int" />
@@ -704,6 +711,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ImportDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="ScormVersion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChangeNote" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HasMinorVersions" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="UpdatedBy" type="s:string" />
@@ -790,6 +798,7 @@
       <s:complexType name="StudentRecord">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TypeName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsOnline" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsAssessment" type="s:boolean" />
@@ -847,6 +856,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireFeedbackPopUp" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssignmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssesmentForCompletion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsCompleted" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISuccess" type="s:boolean" />
@@ -959,9 +969,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="AttendanceCode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RecurringPeriod" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="RecurringNo" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Facilitators" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="FacilitatorsList" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Speakers" type="tns:ArrayOfUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectedUsers" type="tns:ArrayOfSessionConnectedUser" />
           <s:element minOccurs="0" maxOccurs="1" name="CertificateRules" type="tns:ArrayOfAnyType" />
         </s:sequence>
       </s:complexType>
@@ -1006,414 +1014,21 @@
           <s:element minOccurs="1" maxOccurs="1" name="OffsetMinutes" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfUser">
+      <s:complexType name="ArrayOfSessionConnectedUser">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SessionConnectedUser" nillable="true" type="tns:SessionConnectedUser" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="User">
+      <s:complexType name="SessionConnectedUser">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="CustomFields">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="DisplayID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="HomeDomain" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="HomeDomainName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BaseURLs" type="tns:ArrayOfDomainURLsCollection" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="LastLoginDate" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="LastLoginBrowser" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LastLoginDevice" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsLoginLocked" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsMFACheck" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="MFACreatedDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="MFACheckDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="CompletedUserSetup" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ScreenName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="CreationMethod" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualChange" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualDeletion" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="SyncDomain" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="PasswordChangeDate" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="MustChangePassword" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="Pending" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="SuperUser" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="CanUseLMSLogin" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="OutsideEmail" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="NewsLetterEmailOptOutDisabled" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Mails" type="tns:ArrayOfMail" />
-          <s:element minOccurs="0" maxOccurs="1" name="PersonalFolders" type="tns:ArrayOfMailFolder" />
-          <s:element minOccurs="0" maxOccurs="1" name="Contacts" type="tns:ArrayOfContact" />
-          <s:element minOccurs="0" maxOccurs="1" name="Roles" type="tns:ArrayOfRole" />
-          <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
-          <s:element minOccurs="1" maxOccurs="1" name="BlockNotifications" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="BlockNotificationsReason" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="BlockDomainAnnouncements" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Programs" type="tns:ArrayOfProgram" />
-          <s:element minOccurs="1" maxOccurs="1" name="ProgramMgr" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="Courses" type="tns:ArrayOfCourse" />
-          <s:element minOccurs="0" maxOccurs="1" name="CourseTitles" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="ActivityMaps" type="tns:ArrayOfCourse" />
-          <s:element minOccurs="0" maxOccurs="1" name="ActivityMapTitles" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="CurrentCourse" type="tns:Course" />
-          <s:element minOccurs="0" maxOccurs="1" name="TACourses" type="tns:ArrayOfCourse" />
-          <s:element minOccurs="0" maxOccurs="1" name="TACourseTitles" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="TAActivityMaps" type="tns:ArrayOfCourse" />
-          <s:element minOccurs="0" maxOccurs="1" name="TAActivityMapTitles" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="Impersonator" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="TimeZone" type="tns:TimeZone" />
-          <s:element minOccurs="0" maxOccurs="1" name="DateFormat" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfDomainURLsCollection">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainURLsCollection" nillable="true" type="tns:DomainURLsCollection" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="DomainURLsCollection">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="languageURLs" type="tns:ArrayOfString" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfMail">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Mail" nillable="true" type="tns:Mail" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Mail">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="MailID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromScreenName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ToEmail" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BCC" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="MailDate" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="NumReplies" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfMailFolder">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="MailFolder" nillable="true" type="tns:MailFolder" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="MailFolder">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfContact">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Contact">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactScreenName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfRole">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Role">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsDefault" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="ProgramID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfPermission">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Permission" nillable="true" type="tns:Permission" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Permission">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfProgram">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Program" nillable="true" type="tns:Program" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Program">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ParentPath" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ProgramPath" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="AutoEnrollSubprograms" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeUsersType" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="AutoIncludeUsers" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeUsersFields" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeCoursesType" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="AutoIncludeCourses" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeCoursesFields" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsSearchFilter" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowSelfRegistration" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationApproval" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationCodeForExistingAccounts" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresCode" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresRequest" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="AltPrices" type="tns:ArrayOfAnyType" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCodes" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCode" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationInstruction" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval_Domain" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="AutomaticApproveRegistrationDomain" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationFields" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationSubdomains" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowUserDomainSelection" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="UserDomainSelectionRequired" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="UserDomainSelectAll" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserDomainDisplayLabel" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomains" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomainsList" type="tns:ArrayOfProgram" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomainsDisplay" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomainsMode" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationIntroText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationToDomainIntroText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestConfirmationText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDisclaimerText" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationDisclaimerAck" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresPurchase" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresVerification" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationSubscription" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationPasses" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CollectLoginMetadataOnce" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowLoginNotRequiredFields" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationConfirmation" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationRequest" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="PasswordExpirationDurationInSeconds" type="s:long" />
-          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationApproval" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationDenial" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationConfirmation" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationRequest" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationApproval" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationDenial" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationEmailText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestEmailText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationApprovalEmailText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDenialEmailText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationCaptchaMode" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationCaptchaType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ForumCaptchaType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ForumDisclaimerText" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ShowForumDisclaimerWhen" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ForumDisclaimerButtonText" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ForumHasDisclaimer" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDenyPublicEmails" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutoFillDefaultFields" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="SubPrograms" type="tns:ArrayOfProgram" />
-          <s:element minOccurs="0" maxOccurs="1" name="ClassroomTemplate" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:base64Binary" />
-          <s:element minOccurs="0" maxOccurs="1" name="LogoContentType" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseCustomLearnerUrl" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseSSL" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowAdminsLMSLogin" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersLMSLogin" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseMFA" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="MFAMethod" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForLearner" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForAdmin" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="MFAAdminInterval" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="MFALearnerInterval" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnSSO" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnLMSLogin" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="HideUrlFromSearch" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="CanConsumeShared" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="CanShare" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="CanSiblingShareOnly" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritRosterOptions" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowChildRosterEnroll" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowAddUsersFromRoster" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AddUsersFromRosterToRoot" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RosterCompletionAfterStartDate" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="LimitRosterUploadDate" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="LimitRosterUploadUnit" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="IncludeStatusInRoster" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="IncludeSuccessInRoster" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="IncludeScoreInRoster" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="IncludeTimeSpentInRoster" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllColumnsRequiredInRoster" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="OverrideSessionCertificate" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="AllowedLearningActivities" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="ParentAllowedLearningActivities" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityTypeOffFilters" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="ParentLearningActivityTypeOffFilters" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityStatusOffFilters" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="ParentLearningActivityStatusOffFilters" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityOriginOffFilters" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="ParentLearningActivityOriginOffFilters" type="tns:ArrayOfString" />
-          <s:element minOccurs="1" maxOccurs="1" name="LearningActivityHideFilters" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ParentLearningActivityHideFilters" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="LearningActivitiesSortSettings" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DenyChildLearningObjects" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="GenerateLearningActivitiesCode" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowOverrideLearningActivitiesCode" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="WithdrawInactiveLearners" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsParent" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="SubscriptionRules" type="tns:ArrayOfAnyType" />
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationIntroXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDuplicateAccountInstrXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDisclaimerXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationTextXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestConfirmationTextXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationEmailXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestEmailXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestApprovalEmailXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestDenialEmailXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="0" maxOccurs="1" name="UserDomainDisplayLabelXmlNode">
-            <s:complexType mixed="true">
-              <s:sequence>
-                <s:any />
-              </s:sequence>
-            </s:complexType>
-          </s:element>
-          <s:element minOccurs="1" maxOccurs="1" name="CapLicenseTotal" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="CapLicenseActive" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="LicenseTotalUsers" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="LicenseActiveUsers" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="LicenseContact" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="LicenseAniversary" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="LicenseCycleDay" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="MonthlyUniqueLogins" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="OwnerID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="FromEmail" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="UseParentEmail" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritCreditSettings" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AwardCreditsAcrossVariousCategories" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritILTSettings" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="LimitCredits" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="MaxCreditsPerHour" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="MaxCreditsPerSession" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="MaxCreditsPerDay" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="FacilitatorCredits" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SpeakerCredits" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ReviewerCredits" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionLocation" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionFecilitators" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionSpeakers" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionCertificates" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionCredits" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionRequired" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionTimeDateTBD" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowLocationTimezone" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowAccommodationLink" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="DenyOutsideDomainsTranscriptVisibility" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ParentDenyOutsideDomainsTranscriptVisibility" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AllowDomainMembershipExtension" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="PendingUserMembership" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ForceDisplayDomainTimezone" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RemoveNotMatchingRulesUsers" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="LearningActivityDetailsPrivate" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="SupervisorRules" type="tns:ArrayOfAnyType" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfCourse">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserType" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="CourseTALoad">
@@ -2083,6 +1698,418 @@
           <s:element minOccurs="0" maxOccurs="1" name="Result" type="tns:ArrayOfUser" />
           <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFields">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RO" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeDomain" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeDomainName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaseURLs" type="tns:ArrayOfDomainURLsCollection" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLoginDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLoginBrowser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLoginDevice" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLoginLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMFACheck" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFACreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFACheckDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompletedUserSetup" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScreenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualChange" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualDeletion" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SyncDomain" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordChangeDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MustChangePassword" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pending" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SuperUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReadOnly" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGuest" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanUseLMSLogin" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutsideEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewsLetterEmailOptOutDisabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mails" type="tns:ArrayOfMail" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalFolders" type="tns:ArrayOfMailFolder" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contacts" type="tns:ArrayOfContact" />
+          <s:element minOccurs="0" maxOccurs="1" name="Roles" type="tns:ArrayOfRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlockNotifications" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlockNotificationsReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlockDomainAnnouncements" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Programs" type="tns:ArrayOfProgram" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProgramMgr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Courses" type="tns:ArrayOfCourse" />
+          <s:element minOccurs="0" maxOccurs="1" name="CourseTitles" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityMaps" type="tns:ArrayOfCourse" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityMapTitles" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentCourse" type="tns:Course" />
+          <s:element minOccurs="0" maxOccurs="1" name="TACourses" type="tns:ArrayOfCourse" />
+          <s:element minOccurs="0" maxOccurs="1" name="TACourseTitles" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TAActivityMaps" type="tns:ArrayOfCourse" />
+          <s:element minOccurs="0" maxOccurs="1" name="TAActivityMapTitles" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Impersonator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeZone" type="tns:TimeZone" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateFormat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDomainURLsCollection">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DomainURLsCollection" nillable="true" type="tns:DomainURLsCollection" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DomainURLsCollection">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="languageURLs" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Mail" nillable="true" type="tns:Mail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Mail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MailID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromScreenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BCC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumReplies" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMailFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MailFolder" nillable="true" type="tns:MailFolder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MailFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Contact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactScreenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Role">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDefault" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="tns:ArrayOfPermission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPermission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Permission" nillable="true" type="tns:Permission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Permission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProgram">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Program" nillable="true" type="tns:Program" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Program">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramPath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoEnrollSubprograms" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeUsersType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoIncludeUsers" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeUsersFields" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeCoursesType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoIncludeCourses" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutoIncludeCoursesFields" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSearchFilter" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowSelfRegistration" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationApproval" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationCodeForExistingAccounts" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresCode" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresRequest" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AltPrices" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCodes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationAccessCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationInstruction" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutomaticApproval_Domain" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutomaticApproveRegistrationDomain" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationFields" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationSubdomains" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowUserDomainSelection" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserDomainSelectionRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserDomainSelectAll" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserDomainDisplayLabel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomains" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomainsList" type="tns:ArrayOfProgram" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomainsDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRegistrationDomainsMode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationIntroText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationToDomainIntroText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestConfirmationText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDisclaimerText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequiresRegistrationDisclaimerAck" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresPurchase" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRequiresVerification" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationSubscription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationPasses" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CollectLoginMetadataOnce" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowLoginNotRequiredFields" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationConfirmation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationRequest" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordExpirationDurationInSeconds" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationApproval" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendRegistrationDenial" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationConfirmation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationRequest" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationApproval" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideGlobalRegistrationDenial" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationEmailText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestEmailText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationApprovalEmailText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDenialEmailText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationCaptchaMode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationCaptchaType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForumCaptchaType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForumDisclaimerText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShowForumDisclaimerWhen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForumDisclaimerButtonText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ForumHasDisclaimer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationDenyPublicEmails" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationAutoFillDefaultFields" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubPrograms" type="tns:ArrayOfProgram" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClassroomTemplate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogoContentType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseCustomLearnerUrl" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseSSL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAdminsLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowGuestLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFA" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MFAMethod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForLearner" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAForAdmin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFAAdminInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MFALearnerInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnSSO" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HideUrlFromSearch" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanConsumeShared" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanShare" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanSiblingShareOnly" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritRosterOptions" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowChildRosterEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowAddUsersFromRoster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddUsersFromRosterToRoot" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RosterCompletionAfterStartDate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LimitRosterUploadDate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LimitRosterUploadUnit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeStatusInRoster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeSuccessInRoster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeScoreInRoster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeTimeSpentInRoster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllColumnsRequiredInRoster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideSessionCertificate" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AllowedLearningActivities" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentAllowedLearningActivities" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityTypeOffFilters" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentLearningActivityTypeOffFilters" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityStatusOffFilters" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentLearningActivityStatusOffFilters" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityOriginOffFilters" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentLearningActivityOriginOffFilters" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="LearningActivityHideFilters" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentLearningActivityHideFilters" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivitiesSortSettings" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DenyChildLearningObjects" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GenerateLearningActivitiesCode" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowOverrideLearningActivitiesCode" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WithdrawInactiveLearners" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsParent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubscriptionRules" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationIntroXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDuplicateAccountInstrXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDisclaimerXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationTextXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestConfirmationTextXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationConfirmationEmailXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestEmailXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestApprovalEmailXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRequestDenialEmailXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="UserDomainDisplayLabelXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="CapLicenseTotal" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CapLicenseActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseTotalUsers" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseActiveUsers" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseContact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseAniversary" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseCycleDay" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonthlyUniqueLogins" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseParentEmail" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritCreditSettings" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AwardCreditsAcrossVariousCategories" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritILTSettings" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LimitCredits" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCreditsPerHour" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCreditsPerSession" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCreditsPerDay" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FacilitatorCredits" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpeakerCredits" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReviewerCredits" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionLocation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionConnections" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionCertificates" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionCredits" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionTimeDateTBD" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowLocationTimezone" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowAccommodationLink" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DenyOutsideDomainsTranscriptVisibility" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentDenyOutsideDomainsTranscriptVisibility" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowDomainMembershipExtension" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PendingUserMembership" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ForceDisplayDomainTimezone" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RemoveNotMatchingRulesUsers" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LearningActivityDetailsPrivate" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorRules" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCourse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetCourseModeratorsListResponse">

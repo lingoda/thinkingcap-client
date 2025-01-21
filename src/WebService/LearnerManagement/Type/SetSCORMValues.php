@@ -8,16 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetSCORMValues implements RequestInterface
 {
-    private ?string $userLogin;
+    private ?string $userLogin = null;
 
-    
-    private ?string $userPassword;
+    private ?string $userPassword = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
-    
-    private ?string $scormObjectJson;
+    private ?string $scormObjectJson = null;
 
     /**
      * Constructor
@@ -31,13 +28,11 @@ class SetSCORMValues implements RequestInterface
         $this->scormObjectJson = $scormObjectJson;
     }
 
-    
     public function getUserLogin(): ?string
     {
         return $this->userLogin;
     }
 
-    
     public function withUserLogin(?string $userLogin): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class SetSCORMValues implements RequestInterface
         return $new;
     }
 
-    
     public function getUserPassword(): ?string
     {
         return $this->userPassword;
     }
 
-    
     public function withUserPassword(?string $userPassword): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class SetSCORMValues implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class SetSCORMValues implements RequestInterface
         return $new;
     }
 
-    
     public function getScormObjectJson(): ?string
     {
         return $this->scormObjectJson;
     }
 
-    
     public function withScormObjectJson(?string $scormObjectJson): static
     {
         $new = clone $this;

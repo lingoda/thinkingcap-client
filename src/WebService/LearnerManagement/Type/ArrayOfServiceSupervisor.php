@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 class ArrayOfServiceSupervisor
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor>
+     * @var null | array<int<0,max>, ServiceSupervisor>
      */
     private ?array $ServiceSupervisor = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor>
+     * @return null | array<int<0,max>, ServiceSupervisor>
      */
     public function getServiceSupervisor(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfServiceSupervisor
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\ServiceSupervisor> $ServiceSupervisor
+     * @param null | array<int<0,max>, ServiceSupervisor> $ServiceSupervisor
      */
     public function withServiceSupervisor(?array $ServiceSupervisor): static
     {

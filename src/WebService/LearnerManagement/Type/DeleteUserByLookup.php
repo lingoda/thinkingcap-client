@@ -8,10 +8,9 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class DeleteUserByLookup implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $lookupValue;
+    private ?string $lookupValue = null;
 
     /**
      * Constructor
@@ -23,13 +22,11 @@ class DeleteUserByLookup implements RequestInterface
         $this->lookupValue = $lookupValue;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class DeleteUserByLookup implements RequestInterface
         return $new;
     }
 
-    
     public function getLookupValue(): ?string
     {
         return $this->lookupValue;
     }
 
-    
     public function withLookupValue(?string $lookupValue): static
     {
         $new = clone $this;

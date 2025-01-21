@@ -8,10 +8,8 @@ class ServiceResultOfString
 {
     protected string $Result = '';
 
-    
     protected string $Message = '';
 
-    
     private bool $Success;
 
     public function getResult(): string
@@ -27,13 +25,11 @@ class ServiceResultOfString
         return $new;
     }
 
-    
     public function getSuccess(): bool
     {
         return $this->Success;
     }
 
-    
     public function withSuccess(bool $Success): static
     {
         $new = clone $this;

@@ -6,51 +6,37 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class CourseSeries
 {
-    private ?string $SeriesID;
+    private ?string $SeriesID = null;
 
-    
-    private ?string $SeriesCode;
+    private ?string $SeriesCode = null;
 
-    
-    private ?string $SeriesTitle;
+    private ?string $SeriesTitle = null;
 
-    
-    private ?string $SeriesDescription;
+    private ?string $SeriesDescription = null;
 
-    
-    private ?string $SeriesKeyword;
+    private ?string $SeriesKeyword = null;
 
-    
-    private ?string $SeriesProgram;
+    private ?string $SeriesProgram = null;
 
-    
     private bool $AllowGlobalOnly;
 
-    
     private bool $WaitlistOnlyInOneMember;
 
-    
     private bool $DoNotInherit;
 
-    
-    private ?string $SeriesFieldsXml;
+    private ?string $SeriesFieldsXml = null;
 
-    
-    private ?ArrayOfAnyType $CertificateRules;
+    private ?ArrayOfAnyType $CertificateRules = null;
 
-    
-    private ?ArrayOfAnyType $EquivalencyLearningObjectsArray;
+    private ?ArrayOfAnyType $EquivalencyLearningObjectsArray = null;
 
-    
-    private ?ArrayOfAnyType $EquivalencyActivityArray;
+    private ?ArrayOfAnyType $EquivalencyActivityArray = null;
 
-    
     public function getSeriesID(): ?string
     {
         return $this->SeriesID;
     }
 
-    
     public function withSeriesID(?string $SeriesID): static
     {
         $new = clone $this;
@@ -59,13 +45,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getSeriesCode(): ?string
     {
         return $this->SeriesCode;
     }
 
-    
     public function withSeriesCode(?string $SeriesCode): static
     {
         $new = clone $this;
@@ -74,13 +58,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getSeriesTitle(): ?string
     {
         return $this->SeriesTitle;
     }
 
-    
     public function withSeriesTitle(?string $SeriesTitle): static
     {
         $new = clone $this;
@@ -89,13 +71,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getSeriesDescription(): ?string
     {
         return $this->SeriesDescription;
     }
 
-    
     public function withSeriesDescription(?string $SeriesDescription): static
     {
         $new = clone $this;
@@ -104,13 +84,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getSeriesKeyword(): ?string
     {
         return $this->SeriesKeyword;
     }
 
-    
     public function withSeriesKeyword(?string $SeriesKeyword): static
     {
         $new = clone $this;
@@ -119,13 +97,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getSeriesProgram(): ?string
     {
         return $this->SeriesProgram;
     }
 
-    
     public function withSeriesProgram(?string $SeriesProgram): static
     {
         $new = clone $this;
@@ -134,13 +110,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getAllowGlobalOnly(): bool
     {
         return $this->AllowGlobalOnly;
     }
 
-    
     public function withAllowGlobalOnly(bool $AllowGlobalOnly): static
     {
         $new = clone $this;
@@ -149,13 +123,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getWaitlistOnlyInOneMember(): bool
     {
         return $this->WaitlistOnlyInOneMember;
     }
 
-    
     public function withWaitlistOnlyInOneMember(bool $WaitlistOnlyInOneMember): static
     {
         $new = clone $this;
@@ -164,13 +136,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getDoNotInherit(): bool
     {
         return $this->DoNotInherit;
     }
 
-    
     public function withDoNotInherit(bool $DoNotInherit): static
     {
         $new = clone $this;
@@ -179,13 +149,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getSeriesFieldsXml(): ?string
     {
         return $this->SeriesFieldsXml;
     }
 
-    
     public function withSeriesFieldsXml(?string $SeriesFieldsXml): static
     {
         $new = clone $this;
@@ -194,13 +162,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getCertificateRules(): ?ArrayOfAnyType
     {
         return $this->CertificateRules;
     }
 
-    
     public function withCertificateRules(?ArrayOfAnyType $CertificateRules): static
     {
         $new = clone $this;
@@ -209,13 +175,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getEquivalencyLearningObjectsArray(): ?ArrayOfAnyType
     {
         return $this->EquivalencyLearningObjectsArray;
     }
 
-    
     public function withEquivalencyLearningObjectsArray(?ArrayOfAnyType $EquivalencyLearningObjectsArray): static
     {
         $new = clone $this;
@@ -224,13 +188,11 @@ class CourseSeries
         return $new;
     }
 
-    
     public function getEquivalencyActivityArray(): ?ArrayOfAnyType
     {
         return $this->EquivalencyActivityArray;
     }
 
-    
     public function withEquivalencyActivityArray(?ArrayOfAnyType $EquivalencyActivityArray): static
     {
         $new = clone $this;

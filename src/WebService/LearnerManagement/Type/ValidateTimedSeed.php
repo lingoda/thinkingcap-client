@@ -8,10 +8,9 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class ValidateTimedSeed implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $seed;
+    private ?string $seed = null;
 
     /**
      * Constructor
@@ -23,13 +22,11 @@ class ValidateTimedSeed implements RequestInterface
         $this->seed = $seed;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class ValidateTimedSeed implements RequestInterface
         return $new;
     }
 
-    
     public function getSeed(): ?string
     {
         return $this->seed;
     }
 
-    
     public function withSeed(?string $seed): static
     {
         $new = clone $this;

@@ -6,18 +6,15 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ActivityMap extends Course
 {
-    private ?string $objectivesJson;
+    private ?string $objectivesJson = null;
 
-    
-    private ?string $ObjectivesJson;
+    private ?string $ObjectivesJson = null;
 
-    
     public function getObjectivesJson(): ?string
     {
         return $this->ObjectivesJson;
     }
 
-    
     public function withObjectivesJson(?string $ObjectivesJson): static
     {
         $new = clone $this;

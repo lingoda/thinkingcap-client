@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseModeratorsList implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $type;
+    private ?string $type = null;
 
-    
-    private ?string $programID;
+    private ?string $programID = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class GetCourseModeratorsList implements RequestInterface
         $this->programID = $programID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class GetCourseModeratorsList implements RequestInterface
         return $new;
     }
 
-    
     public function getType(): ?string
     {
         return $this->type;
     }
 
-    
     public function withType(?string $type): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class GetCourseModeratorsList implements RequestInterface
         return $new;
     }
 
-    
     public function getProgramID(): ?string
     {
         return $this->programID;
     }
 
-    
     public function withProgramID(?string $programID): static
     {
         $new = clone $this;

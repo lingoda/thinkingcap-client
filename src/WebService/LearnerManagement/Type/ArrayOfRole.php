@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 class ArrayOfRole
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Role>
+     * @var null | array<int<0,max>, Role>
      */
-    private ?array $Role;
+    private ?array $Role = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Role>
+     * @return null | array<int<0,max>, Role>
      */
     public function getRole(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfRole
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Role> $Role
+     * @param null | array<int<0,max>, Role> $Role
      */
     public function withRole(?array $Role): static
     {

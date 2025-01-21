@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfDomainURLsCollection
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection>
+     * @var null | array<int<0,max>, DomainURLsCollection>
      */
-    private ?array $DomainURLsCollection;
+    private ?array $DomainURLsCollection = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection>
+     * @return null | array<int<0,max>, DomainURLsCollection>
      */
     public function getDomainURLsCollection(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfDomainURLsCollection
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\DomainURLsCollection> $DomainURLsCollection
+     * @param null | array<int<0,max>, DomainURLsCollection> $DomainURLsCollection
      */
     public function withDomainURLsCollection(?array $DomainURLsCollection): static
     {

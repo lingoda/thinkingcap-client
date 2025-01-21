@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfReference
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Reference>
+     * @var null | array<int<0,max>, Reference>
      */
-    private ?array $Reference;
+    private ?array $Reference = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Reference>
+     * @return null | array<int<0,max>, Reference>
      */
     public function getReference(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfReference
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Reference> $Reference
+     * @param null | array<int<0,max>, Reference> $Reference
      */
     public function withReference(?array $Reference): static
     {

@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfCourseAssignment
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseAssignment>
+     * @var null | array<int<0,max>, CourseAssignment>
      */
-    private ?array $CourseAssignment;
+    private ?array $CourseAssignment = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseAssignment>
+     * @return null | array<int<0,max>, CourseAssignment>
      */
     public function getCourseAssignment(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfCourseAssignment
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseAssignment> $CourseAssignment
+     * @param null | array<int<0,max>, CourseAssignment> $CourseAssignment
      */
     public function withCourseAssignment(?array $CourseAssignment): static
     {

@@ -8,57 +8,43 @@ use DateTimeInterface;
 
 class LearningActivityRecord
 {
-    private ?string $StudentID;
+    private ?string $StudentID = null;
 
-    
-    private ?string $StudentName;
+    private ?string $StudentName = null;
 
-    
-    private ?string $StudentEmail;
+    private ?string $StudentEmail = null;
 
-    
-    private ?string $LearningActivityID;
+    private ?string $LearningActivityID = null;
 
-    
-    private ?string $LearningActivityTitle;
+    private ?string $LearningActivityTitle = null;
 
-    
-    private ?string $LearningActivityCode;
+    private ?string $LearningActivityCode = null;
 
-    
     private int $EnrollmentNumber;
 
-    
-    private ?string $Status;
+    private ?string $Status = null;
 
-    
-    private ?string $Success;
+    private ?string $Success = null;
 
-    
     private int $Score;
 
-    
+    private float $PercentCompleted;
+
     private DateTimeInterface $DateEnrolled;
 
-    
     private DateTimeInterface $DateStarted;
 
-    
     private DateTimeInterface $DateCompleted;
 
-    
     private DateTimeInterface $AccreditationExpiring;
 
-    
     private DateTimeInterface $DueDate;
 
-    
     public function getStudentID(): ?string
     {
         return $this->StudentID;
     }
 
-    
     public function withStudentID(?string $StudentID): static
     {
         $new = clone $this;
@@ -67,13 +53,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getStudentName(): ?string
     {
         return $this->StudentName;
     }
 
-    
     public function withStudentName(?string $StudentName): static
     {
         $new = clone $this;
@@ -82,13 +66,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getStudentEmail(): ?string
     {
         return $this->StudentEmail;
     }
 
-    
     public function withStudentEmail(?string $StudentEmail): static
     {
         $new = clone $this;
@@ -97,13 +79,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getLearningActivityID(): ?string
     {
         return $this->LearningActivityID;
     }
 
-    
     public function withLearningActivityID(?string $LearningActivityID): static
     {
         $new = clone $this;
@@ -112,13 +92,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getLearningActivityTitle(): ?string
     {
         return $this->LearningActivityTitle;
     }
 
-    
     public function withLearningActivityTitle(?string $LearningActivityTitle): static
     {
         $new = clone $this;
@@ -127,13 +105,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getLearningActivityCode(): ?string
     {
         return $this->LearningActivityCode;
     }
 
-    
     public function withLearningActivityCode(?string $LearningActivityCode): static
     {
         $new = clone $this;
@@ -142,13 +118,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getEnrollmentNumber(): int
     {
         return $this->EnrollmentNumber;
     }
 
-    
     public function withEnrollmentNumber(int $EnrollmentNumber): static
     {
         $new = clone $this;
@@ -157,13 +131,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getStatus(): ?string
     {
         return $this->Status;
     }
 
-    
     public function withStatus(?string $Status): static
     {
         $new = clone $this;
@@ -172,13 +144,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getSuccess(): ?string
     {
         return $this->Success;
     }
 
-    
     public function withSuccess(?string $Success): static
     {
         $new = clone $this;
@@ -187,13 +157,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getScore(): int
     {
         return $this->Score;
     }
 
-    
     public function withScore(int $Score): static
     {
         $new = clone $this;
@@ -202,13 +170,24 @@ class LearningActivityRecord
         return $new;
     }
 
-    
+    public function getPercentCompleted(): float
+    {
+        return $this->PercentCompleted;
+    }
+
+    public function withPercentCompleted(float $PercentCompleted): static
+    {
+        $new = clone $this;
+        $new->PercentCompleted = $PercentCompleted;
+
+        return $new;
+    }
+
     public function getDateEnrolled(): DateTimeInterface
     {
         return $this->DateEnrolled;
     }
 
-    
     public function withDateEnrolled(DateTimeInterface $DateEnrolled): static
     {
         $new = clone $this;
@@ -217,13 +196,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getDateStarted(): DateTimeInterface
     {
         return $this->DateStarted;
     }
 
-    
     public function withDateStarted(DateTimeInterface $DateStarted): static
     {
         $new = clone $this;
@@ -232,13 +209,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getDateCompleted(): DateTimeInterface
     {
         return $this->DateCompleted;
     }
 
-    
     public function withDateCompleted(DateTimeInterface $DateCompleted): static
     {
         $new = clone $this;
@@ -247,13 +222,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getAccreditationExpiring(): DateTimeInterface
     {
         return $this->AccreditationExpiring;
     }
 
-    
     public function withAccreditationExpiring(DateTimeInterface $AccreditationExpiring): static
     {
         $new = clone $this;
@@ -262,13 +235,11 @@ class LearningActivityRecord
         return $new;
     }
 
-    
     public function getDueDate(): DateTimeInterface
     {
         return $this->DueDate;
     }
 
-    
     public function withDueDate(DateTimeInterface $DueDate): static
     {
         $new = clone $this;

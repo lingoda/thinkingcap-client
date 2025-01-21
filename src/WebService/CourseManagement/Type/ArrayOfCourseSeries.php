@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfCourseSeries
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSeries>
+     * @var null | array<int<0,max>, CourseSeries>
      */
-    private ?array $CourseSeries;
+    private ?array $CourseSeries = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSeries>
+     * @return null | array<int<0,max>, CourseSeries>
      */
     public function getCourseSeries(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfCourseSeries
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\CourseSeries> $CourseSeries
+     * @param null | array<int<0,max>, CourseSeries> $CourseSeries
      */
     public function withCourseSeries(?array $CourseSeries): static
     {

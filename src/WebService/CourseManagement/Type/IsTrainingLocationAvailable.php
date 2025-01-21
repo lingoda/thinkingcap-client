@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class IsTrainingLocationAvailable implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $locationID;
+    private ?string $locationID = null;
 
-    
-    private ?TimeIntervalsList $timeIntervalsList;
+    private ?TimeIntervalsList $timeIntervalsList = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class IsTrainingLocationAvailable implements RequestInterface
         $this->timeIntervalsList = $timeIntervalsList;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class IsTrainingLocationAvailable implements RequestInterface
         return $new;
     }
 
-    
     public function getLocationID(): ?string
     {
         return $this->locationID;
     }
 
-    
     public function withLocationID(?string $locationID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class IsTrainingLocationAvailable implements RequestInterface
         return $new;
     }
 
-    
     public function getTimeIntervalsList(): ?TimeIntervalsList
     {
         return $this->timeIntervalsList;
     }
 
-    
     public function withTimeIntervalsList(?TimeIntervalsList $timeIntervalsList): static
     {
         $new = clone $this;
