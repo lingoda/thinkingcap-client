@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetSCORMDetails implements RequestInterface
 {
-    private ?string $userLogin;
+    private ?string $userLogin = null;
 
-    
-    private ?string $userPassword;
+    private ?string $userPassword = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class GetSCORMDetails implements RequestInterface
         $this->courseID = $courseID;
     }
 
-    
     public function getUserLogin(): ?string
     {
         return $this->userLogin;
     }
 
-    
     public function withUserLogin(?string $userLogin): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class GetSCORMDetails implements RequestInterface
         return $new;
     }
 
-    
     public function getUserPassword(): ?string
     {
         return $this->userPassword;
     }
 
-    
     public function withUserPassword(?string $userPassword): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class GetSCORMDetails implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;

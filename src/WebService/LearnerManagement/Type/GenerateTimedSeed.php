@@ -8,9 +8,8 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GenerateTimedSeed implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
     private int $expireSeconds;
 
     /**
@@ -23,13 +22,11 @@ class GenerateTimedSeed implements RequestInterface
         $this->expireSeconds = $expireSeconds;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class GenerateTimedSeed implements RequestInterface
         return $new;
     }
 
-    
     public function getExpireSeconds(): int
     {
         return $this->expireSeconds;
     }
 
-    
     public function withExpireSeconds(int $expireSeconds): static
     {
         $new = clone $this;

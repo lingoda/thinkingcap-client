@@ -8,10 +8,9 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetEquivalencyLearningActivities implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $equivalencyID;
+    private ?string $equivalencyID = null;
 
     /**
      * Constructor
@@ -23,13 +22,11 @@ class GetEquivalencyLearningActivities implements RequestInterface
         $this->equivalencyID = $equivalencyID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class GetEquivalencyLearningActivities implements RequestInterface
         return $new;
     }
 
-    
     public function getEquivalencyID(): ?string
     {
         return $this->equivalencyID;
     }
 
-    
     public function withEquivalencyID(?string $equivalencyID): static
     {
         $new = clone $this;

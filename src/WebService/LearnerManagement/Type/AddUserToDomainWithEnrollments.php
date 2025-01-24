@@ -8,15 +8,12 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class AddUserToDomainWithEnrollments implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userID;
+    private ?string $userID = null;
 
-    
-    private ?string $domainID;
+    private ?string $domainID = null;
 
-    
     private bool $doAutoEnrollment;
 
     /**
@@ -31,13 +28,11 @@ class AddUserToDomainWithEnrollments implements RequestInterface
         $this->doAutoEnrollment = $doAutoEnrollment;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class AddUserToDomainWithEnrollments implements RequestInterface
         return $new;
     }
 
-    
     public function getUserID(): ?string
     {
         return $this->userID;
     }
 
-    
     public function withUserID(?string $userID): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class AddUserToDomainWithEnrollments implements RequestInterface
         return $new;
     }
 
-    
     public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
-    
     public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class AddUserToDomainWithEnrollments implements RequestInterface
         return $new;
     }
 
-    
     public function getDoAutoEnrollment(): bool
     {
         return $this->doAutoEnrollment;
     }
 
-    
     public function withDoAutoEnrollment(bool $doAutoEnrollment): static
     {
         $new = clone $this;

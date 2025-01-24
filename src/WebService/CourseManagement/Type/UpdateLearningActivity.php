@@ -8,54 +8,38 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateLearningActivity implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $learningActivityID;
+    private ?string $learningActivityID = null;
 
-    
-    private ?string $learningActivityType;
+    private ?string $learningActivityType = null;
 
-    
-    private ?string $learningActivityTitle;
+    private ?string $learningActivityTitle = null;
 
-    
-    private ?string $learningActivityCode;
+    private ?string $learningActivityCode = null;
 
-    
-    private ?string $learningActivityDescription;
+    private ?string $learningActivityDescription = null;
 
-    
-    private ?string $learningActivityLanguage;
+    private ?string $learningActivityLanguage = null;
 
-    
-    private ?string $learningActivityEquivalencyCode;
+    private ?string $learningActivityEquivalencyCode = null;
 
-    
-    private ?string $learningActivityTags;
+    private ?string $learningActivityTags = null;
 
-    
     private float $learningActivityEstimatedTimeMinutes;
 
-    
     private bool $learningActivityShowSupervisorLogin;
 
-    
     private bool $learningActivityRequiresEvidence;
 
-    
-    private ?string $learningActivityCertificateTemplateName;
+    private ?string $learningActivityCertificateTemplateName = null;
 
-    
     private int $learningActivityCertificateMinScore;
 
-    
-    private ?string $learningActivityCustomMetadata;
+    private ?string $learningActivityCustomMetadata = null;
 
-    
     private bool $updateAdminCatalogs;
 
-    
     private bool $updateLearnerCatalogs;
 
     /**
@@ -83,13 +67,11 @@ class UpdateLearningActivity implements RequestInterface
         $this->updateLearnerCatalogs = $updateLearnerCatalogs;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -98,13 +80,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityID(): ?string
     {
         return $this->learningActivityID;
     }
 
-    
     public function withLearningActivityID(?string $learningActivityID): static
     {
         $new = clone $this;
@@ -113,13 +93,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityType(): ?string
     {
         return $this->learningActivityType;
     }
 
-    
     public function withLearningActivityType(?string $learningActivityType): static
     {
         $new = clone $this;
@@ -128,13 +106,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityTitle(): ?string
     {
         return $this->learningActivityTitle;
     }
 
-    
     public function withLearningActivityTitle(?string $learningActivityTitle): static
     {
         $new = clone $this;
@@ -143,13 +119,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityCode(): ?string
     {
         return $this->learningActivityCode;
     }
 
-    
     public function withLearningActivityCode(?string $learningActivityCode): static
     {
         $new = clone $this;
@@ -158,13 +132,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityDescription(): ?string
     {
         return $this->learningActivityDescription;
     }
 
-    
     public function withLearningActivityDescription(?string $learningActivityDescription): static
     {
         $new = clone $this;
@@ -173,13 +145,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityLanguage(): ?string
     {
         return $this->learningActivityLanguage;
     }
 
-    
     public function withLearningActivityLanguage(?string $learningActivityLanguage): static
     {
         $new = clone $this;
@@ -188,13 +158,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityEquivalencyCode(): ?string
     {
         return $this->learningActivityEquivalencyCode;
     }
 
-    
     public function withLearningActivityEquivalencyCode(?string $learningActivityEquivalencyCode): static
     {
         $new = clone $this;
@@ -203,13 +171,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityTags(): ?string
     {
         return $this->learningActivityTags;
     }
 
-    
     public function withLearningActivityTags(?string $learningActivityTags): static
     {
         $new = clone $this;
@@ -218,13 +184,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityEstimatedTimeMinutes(): float
     {
         return $this->learningActivityEstimatedTimeMinutes;
     }
 
-    
     public function withLearningActivityEstimatedTimeMinutes(float $learningActivityEstimatedTimeMinutes): static
     {
         $new = clone $this;
@@ -233,13 +197,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityShowSupervisorLogin(): bool
     {
         return $this->learningActivityShowSupervisorLogin;
     }
 
-    
     public function withLearningActivityShowSupervisorLogin(bool $learningActivityShowSupervisorLogin): static
     {
         $new = clone $this;
@@ -248,13 +210,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityRequiresEvidence(): bool
     {
         return $this->learningActivityRequiresEvidence;
     }
 
-    
     public function withLearningActivityRequiresEvidence(bool $learningActivityRequiresEvidence): static
     {
         $new = clone $this;
@@ -263,13 +223,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityCertificateTemplateName(): ?string
     {
         return $this->learningActivityCertificateTemplateName;
     }
 
-    
     public function withLearningActivityCertificateTemplateName(?string $learningActivityCertificateTemplateName): static
     {
         $new = clone $this;
@@ -278,13 +236,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityCertificateMinScore(): int
     {
         return $this->learningActivityCertificateMinScore;
     }
 
-    
     public function withLearningActivityCertificateMinScore(int $learningActivityCertificateMinScore): static
     {
         $new = clone $this;
@@ -293,13 +249,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityCustomMetadata(): ?string
     {
         return $this->learningActivityCustomMetadata;
     }
 
-    
     public function withLearningActivityCustomMetadata(?string $learningActivityCustomMetadata): static
     {
         $new = clone $this;
@@ -308,13 +262,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getUpdateAdminCatalogs(): bool
     {
         return $this->updateAdminCatalogs;
     }
 
-    
     public function withUpdateAdminCatalogs(bool $updateAdminCatalogs): static
     {
         $new = clone $this;
@@ -323,13 +275,11 @@ class UpdateLearningActivity implements RequestInterface
         return $new;
     }
 
-    
     public function getUpdateLearnerCatalogs(): bool
     {
         return $this->updateLearnerCatalogs;
     }
 
-    
     public function withUpdateLearnerCatalogs(bool $updateLearnerCatalogs): static
     {
         $new = clone $this;

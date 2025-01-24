@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfPermission
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission>
+     * @var null | array<int<0,max>, Permission>
      */
-    private ?array $Permission;
+    private ?array $Permission = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission>
+     * @return null | array<int<0,max>, Permission>
      */
     public function getPermission(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfPermission
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Permission> $Permission
+     * @param null | array<int<0,max>, Permission> $Permission
      */
     public function withPermission(?array $Permission): static
     {

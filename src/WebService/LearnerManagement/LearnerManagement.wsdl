@@ -39,6 +39,7 @@
           </s:element>
           <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="DisplayID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RO" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="HomeDomain" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="HomeDomainName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="BaseURLs" type="tns:ArrayOfDomainURLsCollection" />
@@ -53,7 +54,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="CompletedUserSetup" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ScreenName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
@@ -70,6 +70,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Pending" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SuperUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReadOnly" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGuest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanUseLMSLogin" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="OutsideEmail" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="NewsLetterEmailOptOutDisabled" type="s:boolean" />
@@ -280,6 +282,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="UseSSL" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowAdminsLMSLogin" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowGuestLMSLogin" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UseMFA" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="MFAMethod" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="UseMFAForLearner" type="s:boolean" />
@@ -415,8 +418,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="SpeakerCredits" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="ReviewerCredits" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowSessionLocation" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionFecilitators" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionSpeakers" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowSessionConnections" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowSessionCertificates" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowSessionCredits" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowSessionRequired" type="s:boolean" />
@@ -489,6 +491,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="ProxyImages" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="RunDirect" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="RunDirectAlways" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="PackageType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Stylesheets" type="tns:ArrayOfCourseStylesheet" />
               <s:element minOccurs="1" maxOccurs="1" name="Published" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="AllowCollaboration" type="s:boolean" />
@@ -497,7 +500,6 @@
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationCustomFields" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Versions" type="tns:ArrayOfCourseVersion" />
-              <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="ForceUserFeedback" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="Feedback" type="tns:FeedbackSection" />
               <s:element minOccurs="1" maxOccurs="1" name="IsAssessment" type="s:boolean" />
@@ -687,6 +689,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="InitialScormVersion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ReviewStatus" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAccreditationExpiryNotification" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnAccreditationExpiry" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartLearnerNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartModeratorNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentConfirmation" type="s:boolean" />
@@ -767,6 +770,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="SendPendingNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendFeedbackOverdueNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendfeedbackDueDateNotification" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendfeedbackReminderNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAssignmentSubmittedNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendActivityPeerReviewCancelled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendActivityReviewApprovalExpiryReminder" type="s:boolean" />
@@ -783,6 +787,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnSelfWithdraw" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnSelfWithdraw" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HasForum" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideLastEnrollmentDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverridePrerequisites" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideNotificationPeriod" type="s:boolean" />
@@ -805,6 +810,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssignmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssesmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireStatusSuccessPassed" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISucces" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MinPassingScore" type="s:int" />
@@ -818,6 +824,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="AzureRunMode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DynamicProgram" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LearningTime" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinLearningTime" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxLearningTime" type="s:double" />
           <s:element minOccurs="0" maxOccurs="1" name="EditorXML" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TranscriptPrintMode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HideTranscriptScore" type="s:boolean" />
@@ -865,6 +873,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ExpireMetadataFieldID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CreditsAcrossVariousCategories" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadge" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeIssuer" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionPriorDueDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionDayAfterEnroll" type="s:int" />
@@ -993,6 +1002,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ImportDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="ScormVersion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChangeNote" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HasMinorVersions" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="UpdatedBy" type="s:string" />
@@ -1140,9 +1150,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="AttendanceCode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RecurringPeriod" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="RecurringNo" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Facilitators" type="tns:ArrayOfString" />
-          <s:element minOccurs="0" maxOccurs="1" name="FacilitatorsList" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Speakers" type="tns:ArrayOfUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectedUsers" type="tns:ArrayOfSessionConnectedUser" />
           <s:element minOccurs="0" maxOccurs="1" name="CertificateRules" type="tns:ArrayOfAnyType" />
         </s:sequence>
       </s:complexType>
@@ -1167,6 +1175,23 @@
           <s:element minOccurs="1" maxOccurs="1" name="DoNotInherit" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsOneTime" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="GoTo_Webcast" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSessionConnectedUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SessionConnectedUser" nillable="true" type="tns:SessionConnectedUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SessionConnectedUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserType" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="CourseTALoad">
@@ -1731,6 +1756,7 @@
       <s:complexType name="StudentRecord">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TypeName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsOnline" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsAssessment" type="s:boolean" />
@@ -1788,6 +1814,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireFeedbackPopUp" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssignmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssesmentForCompletion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsCompleted" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISuccess" type="s:boolean" />
@@ -1876,6 +1903,23 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="EnrollStudentWithDetailsResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnrollStudentQueued">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="learningObjectID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enrollmentDomainID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnrollStudentQueuedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrollStudentQueuedResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2033,6 +2077,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PercentCompleted" type="s:double" />
           <s:element minOccurs="1" maxOccurs="1" name="DateEnrolled" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DateStarted" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DateCompleted" type="s:dateTime" />
@@ -2110,6 +2155,22 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SetRecordDetailsResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendRecordDueDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentRecordID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newDueDateStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExtendRecordDueDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExtendRecordDueDateResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2545,6 +2606,12 @@
   <wsdl:message name="EnrollStudentWithDetailsSoapOut">
     <wsdl:part name="parameters" element="tns:EnrollStudentWithDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="EnrollStudentQueuedSoapIn">
+    <wsdl:part name="parameters" element="tns:EnrollStudentQueued" />
+  </wsdl:message>
+  <wsdl:message name="EnrollStudentQueuedSoapOut">
+    <wsdl:part name="parameters" element="tns:EnrollStudentQueuedResponse" />
+  </wsdl:message>
   <wsdl:message name="EnrollStudentSoapIn">
     <wsdl:part name="parameters" element="tns:EnrollStudent" />
   </wsdl:message>
@@ -2610,6 +2677,12 @@
   </wsdl:message>
   <wsdl:message name="SetRecordDetailsSoapOut">
     <wsdl:part name="parameters" element="tns:SetRecordDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtendRecordDueDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExtendRecordDueDate" />
+  </wsdl:message>
+  <wsdl:message name="ExtendRecordDueDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExtendRecordDueDateResponse" />
   </wsdl:message>
   <wsdl:message name="GenerateTimedSeedSoapIn">
     <wsdl:part name="parameters" element="tns:GenerateTimedSeed" />
@@ -2933,6 +3006,15 @@
   <wsdl:message name="EnrollStudentWithDetailsHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="EnrollStudentQueuedHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentID" type="s:string" />
+    <wsdl:part name="learningObjectID" type="s:string" />
+    <wsdl:part name="enrollmentDomainID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnrollStudentQueuedHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="EnrollStudentHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="studentID" type="s:string" />
@@ -3032,6 +3114,14 @@
     <wsdl:part name="timeSpent" type="s:string" />
   </wsdl:message>
   <wsdl:message name="SetRecordDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="ExtendRecordDueDateHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentRecordID" type="s:string" />
+    <wsdl:part name="newDueDateStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExtendRecordDueDateHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GenerateTimedSeedHttpGetIn">
@@ -3390,6 +3480,15 @@
   <wsdl:message name="EnrollStudentWithDetailsHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="EnrollStudentQueuedHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentID" type="s:string" />
+    <wsdl:part name="learningObjectID" type="s:string" />
+    <wsdl:part name="enrollmentDomainID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnrollStudentQueuedHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="EnrollStudentHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="studentID" type="s:string" />
@@ -3489,6 +3588,14 @@
     <wsdl:part name="timeSpent" type="s:string" />
   </wsdl:message>
   <wsdl:message name="SetRecordDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
+  <wsdl:message name="ExtendRecordDueDateHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentRecordID" type="s:string" />
+    <wsdl:part name="newDueDateStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExtendRecordDueDateHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GenerateTimedSeedHttpPostIn">
@@ -3616,17 +3723,17 @@
       <wsdl:output message="tns:GetAllUsersSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetDomainUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. &lt;br/&gt;Includes or not inactive users. Includes or not the users metadata. &lt;br/&gt;Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. &lt;br/&gt;If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetDomainUsersSoapIn" />
       <wsdl:output message="tns:GetDomainUsersSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). &lt;br/&gt;Parameters: &lt;br/&gt;api key, &lt;br/&gt;userID (optional GUID, system generated if not provided), &lt;br/&gt;user first name (required, 100 characters max), &lt;br/&gt;user last name (required, 100 characters max), &lt;br/&gt;user title (optional, 100 characters max), &lt;br/&gt;user email (required, 100 characters max), &lt;br/&gt;user password (optional, 50 characters max), &lt;br/&gt;user screen name (optional, 200 characters max), &lt;br/&gt;learner language (optional, 10 characters max - example: "en"), &lt;br/&gt;user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:RegisterUserSoapIn" />
       <wsdl:output message="tns:RegisterUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterBulkUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). &lt;br/&gt;Parameters: &lt;br/&gt;api key, &lt;br/&gt;userID (optional, system generated if not provided), &lt;br/&gt;user first name (required, 100 characters max), &lt;br/&gt;user last name (required, 100 characters max), &lt;br/&gt;user title (optional, 100 characters max), &lt;br/&gt;user email (required, 100 characters max), &lt;br/&gt;user password (optional, 50 characters max), &lt;br/&gt;user screen name (optional, 200 characters max), &lt;br/&gt;learner language (optional, 10 characters max - example: "en"), &lt;br/&gt;user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +&lt;br/&gt;source of bulk users registration (optional, 20 characters max), &lt;br/&gt;synch domain (optional, GUID - the domain where the bulk users import settings are found), &lt;br/&gt;protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
       <wsdl:input message="tns:RegisterBulkUserSoapIn" />
       <wsdl:output message="tns:RegisterBulkUserSoapOut" />
     </wsdl:operation>
@@ -3636,7 +3743,7 @@
       <wsdl:output message="tns:UpdateUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUserMetadataValues">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates one or more custom metadata fields values for a user specified by its LMS ID. Parameters: user LMS ID (GUID), fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &amp;lt;fields&amp;gt;&amp;lt;field id='' name='test'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;&amp;lt;/fields&amp;gt;.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates one or more custom metadata fields values for a user specified by its LMS ID. &lt;br/&gt;Parameters: &lt;br/&gt;user LMS ID (GUID), &lt;br/&gt;fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &amp;lt;fields&amp;gt;&amp;lt;field id='' name='test'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;&amp;lt;/fields&amp;gt;.</wsdl:documentation>
       <wsdl:input message="tns:UpdateUserMetadataValuesSoapIn" />
       <wsdl:output message="tns:UpdateUserMetadataValuesSoapOut" />
     </wsdl:operation>
@@ -3646,12 +3753,12 @@
       <wsdl:output message="tns:UpdateUserProfileSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateStudentSupervisors">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the supervisors list for a student. Parameters: student LMS ID (GUID), supervisors list as a comma separated list of IDs (GUIDs). Pass an empty supervisors list string to remove all supervisors.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the supervisors list for a student. &lt;br/&gt;Parameters: &lt;br/&gt;student LMS ID (GUID), &lt;br/&gt;supervisors list as a comma separated list of IDs (GUIDs). &lt;br/&gt;Pass an empty supervisors list string to remove all supervisors.</wsdl:documentation>
       <wsdl:input message="tns:UpdateStudentSupervisorsSoapIn" />
       <wsdl:output message="tns:UpdateStudentSupervisorsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. &lt;br/&gt;Includes or not inactive users. Includes or not the users metadata. &lt;br/&gt;Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. &lt;br/&gt;If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetSupervisorUsersSoapIn" />
       <wsdl:output message="tns:GetSupervisorUsersSoapOut" />
     </wsdl:operation>
@@ -3706,17 +3813,17 @@
       <wsdl:output message="tns:DeleteUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUserByLookup">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. &lt;br/&gt;Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
       <wsdl:input message="tns:DeleteUserByLookupSoapIn" />
       <wsdl:output message="tns:DeleteUserByLookupSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. &lt;br/&gt;The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainSoapIn" />
       <wsdl:output message="tns:AddUserToDomainSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddUserToDomainWithEnrollments">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. &lt;br/&gt;If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainWithEnrollmentsSoapIn" />
       <wsdl:output message="tns:AddUserToDomainWithEnrollmentsSoapOut" />
     </wsdl:operation>
@@ -3731,37 +3838,42 @@
       <wsdl:output message="tns:SetUserActiveByLookupSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStudentTranscript">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). &lt;br/&gt;If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. &lt;br/&gt;All returned times are in UTC.</wsdl:documentation>
       <wsdl:input message="tns:GetStudentTranscriptSoapIn" />
       <wsdl:output message="tns:GetStudentTranscriptSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="EnrollStudentWithDetails">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentWithDetailsSoapIn" />
       <wsdl:output message="tns:EnrollStudentWithDetailsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a request to enroll a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:input message="tns:EnrollStudentQueuedSoapIn" />
+      <wsdl:output message="tns:EnrollStudentQueuedSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentSoapIn" />
       <wsdl:output message="tns:EnrollStudentSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="EnrollStudentReservation">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. Returns a summary of the enrollment result. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;Returns a summary of the enrollment result. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentReservationSoapIn" />
       <wsdl:output message="tns:EnrollStudentReservationSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a student to enroll in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a student to enroll in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:StudentSelfEnrollSoapIn" />
       <wsdl:output message="tns:StudentSelfEnrollSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WithdrawStudent">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. &lt;br/&gt;If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
       <wsdl:input message="tns:WithdrawStudentSoapIn" />
       <wsdl:output message="tns:WithdrawStudentSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="MarkStudentSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.&lt;br/&gt;If successful, returns the student record ID.&lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:MarkStudentSessionSoapIn" />
       <wsdl:output message="tns:MarkStudentSessionSoapOut" />
     </wsdl:operation>
@@ -3791,9 +3903,14 @@
       <wsdl:output message="tns:GetAllStudentLearningActivityRecordsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. &lt;br/&gt;Status valid values are ['Completed','Active'] &lt;br/&gt;The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. &lt;br/&gt;The last module name, percent completed, score and credits are optional. &lt;br/&gt;The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
       <wsdl:input message="tns:SetRecordDetailsSoapIn" />
       <wsdl:output message="tns:SetRecordDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extends a record due date if the learning activity has an anticipated completion date set. The new due date should be in the format 'yyyy-MM-dd HH:mm:ss' ('2025-05-21 19:00:00') and in UTC timezone.</wsdl:documentation>
+      <wsdl:input message="tns:ExtendRecordDueDateSoapIn" />
+      <wsdl:output message="tns:ExtendRecordDueDateSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GenerateTimedSeed">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate an expiring seed string that can be appended to a request. Returns the timed seed as string.</wsdl:documentation>
@@ -3816,27 +3933,27 @@
       <wsdl:output message="tns:GetStudentAvailableCoursesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseCompletionStatusByDateRange">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains. &lt;br/&gt;If a learning activity code is passed, users completion status for that course only will be returned. &lt;br/&gt;If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned. &lt;br/&gt;The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'. &lt;br/&gt;If a learner LMS ID is passed, the completion status for only that learner will be returned. &lt;br/&gt;If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range. &lt;br/&gt;If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains.&lt;br/&gt;If a learning activity code is passed, users completion status for that course only will be returned.&lt;br/&gt;If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned.&lt;br/&gt;The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'.&lt;br/&gt;If a learner LMS ID is passed, the completion status for only that learner will be returned.&lt;br/&gt;If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range.&lt;br/&gt;If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseCompletionStatusByDateRangeSoapIn" />
       <wsdl:output message="tns:GetCourseCompletionStatusByDateRangeSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getLearningActivityListEnrollments">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;&lt;br /&gt;CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result. </wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. &lt;br/&gt;Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;&lt;br /&gt;CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result. </wsdl:documentation>
       <wsdl:input message="tns:getLearningActivityListEnrollmentsSoapIn" />
       <wsdl:output message="tns:getLearningActivityListEnrollmentsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getLearningActivityListEnrollmentsTruncated">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. &lt;br/&gt;Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:getLearningActivityListEnrollmentsTruncatedSoapIn" />
       <wsdl:output message="tns:getLearningActivityListEnrollmentsTruncatedSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLMSUserAutoLoginURL">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns URL used to log in a user in LMS. No password expected for federated authentication. If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. If a return URL is passed, the user will be redirected there after login.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns URL used to log in a user in LMS. &lt;br/&gt;No password expected for federated authentication. &lt;br/&gt;If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. &lt;br/&gt;If a return URL is passed, the user will be redirected there after login.</wsdl:documentation>
       <wsdl:input message="tns:GetLMSUserAutoLoginURLSoapIn" />
       <wsdl:output message="tns:GetLMSUserAutoLoginURLSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLMSUserAutoLoginURLByUsername">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a URL to log in a user found by username in LMS. If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a URL to log in a user found by username in LMS. &lt;br/&gt;If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.</wsdl:documentation>
       <wsdl:input message="tns:GetLMSUserAutoLoginURLByUsernameSoapIn" />
       <wsdl:output message="tns:GetLMSUserAutoLoginURLByUsernameSoapOut" />
     </wsdl:operation>
@@ -3873,17 +3990,17 @@
       <wsdl:output message="tns:GetAllUsersHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetDomainUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. &lt;br/&gt;Includes or not inactive users. Includes or not the users metadata. &lt;br/&gt;Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. &lt;br/&gt;If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetDomainUsersHttpGetIn" />
       <wsdl:output message="tns:GetDomainUsersHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). &lt;br/&gt;Parameters: &lt;br/&gt;api key, &lt;br/&gt;userID (optional GUID, system generated if not provided), &lt;br/&gt;user first name (required, 100 characters max), &lt;br/&gt;user last name (required, 100 characters max), &lt;br/&gt;user title (optional, 100 characters max), &lt;br/&gt;user email (required, 100 characters max), &lt;br/&gt;user password (optional, 50 characters max), &lt;br/&gt;user screen name (optional, 200 characters max), &lt;br/&gt;learner language (optional, 10 characters max - example: "en"), &lt;br/&gt;user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:RegisterUserHttpGetIn" />
       <wsdl:output message="tns:RegisterUserHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterBulkUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). &lt;br/&gt;Parameters: &lt;br/&gt;api key, &lt;br/&gt;userID (optional, system generated if not provided), &lt;br/&gt;user first name (required, 100 characters max), &lt;br/&gt;user last name (required, 100 characters max), &lt;br/&gt;user title (optional, 100 characters max), &lt;br/&gt;user email (required, 100 characters max), &lt;br/&gt;user password (optional, 50 characters max), &lt;br/&gt;user screen name (optional, 200 characters max), &lt;br/&gt;learner language (optional, 10 characters max - example: "en"), &lt;br/&gt;user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +&lt;br/&gt;source of bulk users registration (optional, 20 characters max), &lt;br/&gt;synch domain (optional, GUID - the domain where the bulk users import settings are found), &lt;br/&gt;protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
       <wsdl:input message="tns:RegisterBulkUserHttpGetIn" />
       <wsdl:output message="tns:RegisterBulkUserHttpGetOut" />
     </wsdl:operation>
@@ -3893,7 +4010,7 @@
       <wsdl:output message="tns:UpdateUserHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUserMetadataValues">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates one or more custom metadata fields values for a user specified by its LMS ID. Parameters: user LMS ID (GUID), fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &amp;lt;fields&amp;gt;&amp;lt;field id='' name='test'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;&amp;lt;/fields&amp;gt;.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates one or more custom metadata fields values for a user specified by its LMS ID. &lt;br/&gt;Parameters: &lt;br/&gt;user LMS ID (GUID), &lt;br/&gt;fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &amp;lt;fields&amp;gt;&amp;lt;field id='' name='test'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;&amp;lt;/fields&amp;gt;.</wsdl:documentation>
       <wsdl:input message="tns:UpdateUserMetadataValuesHttpGetIn" />
       <wsdl:output message="tns:UpdateUserMetadataValuesHttpGetOut" />
     </wsdl:operation>
@@ -3903,12 +4020,12 @@
       <wsdl:output message="tns:UpdateUserProfileHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateStudentSupervisors">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the supervisors list for a student. Parameters: student LMS ID (GUID), supervisors list as a comma separated list of IDs (GUIDs). Pass an empty supervisors list string to remove all supervisors.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the supervisors list for a student. &lt;br/&gt;Parameters: &lt;br/&gt;student LMS ID (GUID), &lt;br/&gt;supervisors list as a comma separated list of IDs (GUIDs). &lt;br/&gt;Pass an empty supervisors list string to remove all supervisors.</wsdl:documentation>
       <wsdl:input message="tns:UpdateStudentSupervisorsHttpGetIn" />
       <wsdl:output message="tns:UpdateStudentSupervisorsHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. &lt;br/&gt;Includes or not inactive users. Includes or not the users metadata. &lt;br/&gt;Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. &lt;br/&gt;If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetSupervisorUsersHttpGetIn" />
       <wsdl:output message="tns:GetSupervisorUsersHttpGetOut" />
     </wsdl:operation>
@@ -3963,17 +4080,17 @@
       <wsdl:output message="tns:DeleteUserHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUserByLookup">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. &lt;br/&gt;Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
       <wsdl:input message="tns:DeleteUserByLookupHttpGetIn" />
       <wsdl:output message="tns:DeleteUserByLookupHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. &lt;br/&gt;The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainHttpGetIn" />
       <wsdl:output message="tns:AddUserToDomainHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="AddUserToDomainWithEnrollments">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. &lt;br/&gt;If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainWithEnrollmentsHttpGetIn" />
       <wsdl:output message="tns:AddUserToDomainWithEnrollmentsHttpGetOut" />
     </wsdl:operation>
@@ -3988,37 +4105,42 @@
       <wsdl:output message="tns:SetUserActiveByLookupHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStudentTranscript">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). &lt;br/&gt;If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. &lt;br/&gt;All returned times are in UTC.</wsdl:documentation>
       <wsdl:input message="tns:GetStudentTranscriptHttpGetIn" />
       <wsdl:output message="tns:GetStudentTranscriptHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="EnrollStudentWithDetails">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentWithDetailsHttpGetIn" />
       <wsdl:output message="tns:EnrollStudentWithDetailsHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a request to enroll a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:input message="tns:EnrollStudentQueuedHttpGetIn" />
+      <wsdl:output message="tns:EnrollStudentQueuedHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentHttpGetIn" />
       <wsdl:output message="tns:EnrollStudentHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="EnrollStudentReservation">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. Returns a summary of the enrollment result. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;Returns a summary of the enrollment result. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentReservationHttpGetIn" />
       <wsdl:output message="tns:EnrollStudentReservationHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a student to enroll in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a student to enroll in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:StudentSelfEnrollHttpGetIn" />
       <wsdl:output message="tns:StudentSelfEnrollHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="WithdrawStudent">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. &lt;br/&gt;If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
       <wsdl:input message="tns:WithdrawStudentHttpGetIn" />
       <wsdl:output message="tns:WithdrawStudentHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="MarkStudentSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.&lt;br/&gt;If successful, returns the student record ID.&lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:MarkStudentSessionHttpGetIn" />
       <wsdl:output message="tns:MarkStudentSessionHttpGetOut" />
     </wsdl:operation>
@@ -4048,9 +4170,14 @@
       <wsdl:output message="tns:GetAllStudentLearningActivityRecordsHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. &lt;br/&gt;Status valid values are ['Completed','Active'] &lt;br/&gt;The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. &lt;br/&gt;The last module name, percent completed, score and credits are optional. &lt;br/&gt;The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
       <wsdl:input message="tns:SetRecordDetailsHttpGetIn" />
       <wsdl:output message="tns:SetRecordDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extends a record due date if the learning activity has an anticipated completion date set. The new due date should be in the format 'yyyy-MM-dd HH:mm:ss' ('2025-05-21 19:00:00') and in UTC timezone.</wsdl:documentation>
+      <wsdl:input message="tns:ExtendRecordDueDateHttpGetIn" />
+      <wsdl:output message="tns:ExtendRecordDueDateHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GenerateTimedSeed">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate an expiring seed string that can be appended to a request. Returns the timed seed as string.</wsdl:documentation>
@@ -4073,27 +4200,27 @@
       <wsdl:output message="tns:GetStudentAvailableCoursesHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseCompletionStatusByDateRange">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains. &lt;br/&gt;If a learning activity code is passed, users completion status for that course only will be returned. &lt;br/&gt;If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned. &lt;br/&gt;The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'. &lt;br/&gt;If a learner LMS ID is passed, the completion status for only that learner will be returned. &lt;br/&gt;If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range. &lt;br/&gt;If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains.&lt;br/&gt;If a learning activity code is passed, users completion status for that course only will be returned.&lt;br/&gt;If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned.&lt;br/&gt;The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'.&lt;br/&gt;If a learner LMS ID is passed, the completion status for only that learner will be returned.&lt;br/&gt;If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range.&lt;br/&gt;If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseCompletionStatusByDateRangeHttpGetIn" />
       <wsdl:output message="tns:GetCourseCompletionStatusByDateRangeHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="getLearningActivityListEnrollments">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;&lt;br /&gt;CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result. </wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. &lt;br/&gt;Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;&lt;br /&gt;CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result. </wsdl:documentation>
       <wsdl:input message="tns:getLearningActivityListEnrollmentsHttpGetIn" />
       <wsdl:output message="tns:getLearningActivityListEnrollmentsHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="getLearningActivityListEnrollmentsTruncated">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. &lt;br/&gt;Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:getLearningActivityListEnrollmentsTruncatedHttpGetIn" />
       <wsdl:output message="tns:getLearningActivityListEnrollmentsTruncatedHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLMSUserAutoLoginURL">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns URL used to log in a user in LMS. No password expected for federated authentication. If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. If a return URL is passed, the user will be redirected there after login.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns URL used to log in a user in LMS. &lt;br/&gt;No password expected for federated authentication. &lt;br/&gt;If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. &lt;br/&gt;If a return URL is passed, the user will be redirected there after login.</wsdl:documentation>
       <wsdl:input message="tns:GetLMSUserAutoLoginURLHttpGetIn" />
       <wsdl:output message="tns:GetLMSUserAutoLoginURLHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLMSUserAutoLoginURLByUsername">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a URL to log in a user found by username in LMS. If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a URL to log in a user found by username in LMS. &lt;br/&gt;If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.</wsdl:documentation>
       <wsdl:input message="tns:GetLMSUserAutoLoginURLByUsernameHttpGetIn" />
       <wsdl:output message="tns:GetLMSUserAutoLoginURLByUsernameHttpGetOut" />
     </wsdl:operation>
@@ -4130,17 +4257,17 @@
       <wsdl:output message="tns:GetAllUsersHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetDomainUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. &lt;br/&gt;Includes or not inactive users. Includes or not the users metadata. &lt;br/&gt;Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. &lt;br/&gt;If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetDomainUsersHttpPostIn" />
       <wsdl:output message="tns:GetDomainUsersHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). &lt;br/&gt;Parameters: &lt;br/&gt;api key, &lt;br/&gt;userID (optional GUID, system generated if not provided), &lt;br/&gt;user first name (required, 100 characters max), &lt;br/&gt;user last name (required, 100 characters max), &lt;br/&gt;user title (optional, 100 characters max), &lt;br/&gt;user email (required, 100 characters max), &lt;br/&gt;user password (optional, 50 characters max), &lt;br/&gt;user screen name (optional, 200 characters max), &lt;br/&gt;learner language (optional, 10 characters max - example: "en"), &lt;br/&gt;user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:RegisterUserHttpPostIn" />
       <wsdl:output message="tns:RegisterUserHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="RegisterBulkUser">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registers a new user account and set its metadata. Returns the new user ID (GUID). &lt;br/&gt;Parameters: &lt;br/&gt;api key, &lt;br/&gt;userID (optional, system generated if not provided), &lt;br/&gt;user first name (required, 100 characters max), &lt;br/&gt;user last name (required, 100 characters max), &lt;br/&gt;user title (optional, 100 characters max), &lt;br/&gt;user email (required, 100 characters max), &lt;br/&gt;user password (optional, 50 characters max), &lt;br/&gt;user screen name (optional, 200 characters max), &lt;br/&gt;learner language (optional, 10 characters max - example: "en"), &lt;br/&gt;user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;&amp;lt;field id='...'&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;...&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;, +&lt;br/&gt;source of bulk users registration (optional, 20 characters max), &lt;br/&gt;synch domain (optional, GUID - the domain where the bulk users import settings are found), &lt;br/&gt;protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)</wsdl:documentation>
       <wsdl:input message="tns:RegisterBulkUserHttpPostIn" />
       <wsdl:output message="tns:RegisterBulkUserHttpPostOut" />
     </wsdl:operation>
@@ -4150,7 +4277,7 @@
       <wsdl:output message="tns:UpdateUserHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUserMetadataValues">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates one or more custom metadata fields values for a user specified by its LMS ID. Parameters: user LMS ID (GUID), fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &amp;lt;fields&amp;gt;&amp;lt;field id='' name='test'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;&amp;lt;/fields&amp;gt;.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates one or more custom metadata fields values for a user specified by its LMS ID. &lt;br/&gt;Parameters: &lt;br/&gt;user LMS ID (GUID), &lt;br/&gt;fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &amp;lt;fields&amp;gt;&amp;lt;field id='' name='test'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;...&amp;lt;/value&amp;gt;&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;&amp;lt;/fields&amp;gt;.</wsdl:documentation>
       <wsdl:input message="tns:UpdateUserMetadataValuesHttpPostIn" />
       <wsdl:output message="tns:UpdateUserMetadataValuesHttpPostOut" />
     </wsdl:operation>
@@ -4160,12 +4287,12 @@
       <wsdl:output message="tns:UpdateUserProfileHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="UpdateStudentSupervisors">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the supervisors list for a student. Parameters: student LMS ID (GUID), supervisors list as a comma separated list of IDs (GUIDs). Pass an empty supervisors list string to remove all supervisors.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the supervisors list for a student. &lt;br/&gt;Parameters: &lt;br/&gt;student LMS ID (GUID), &lt;br/&gt;supervisors list as a comma separated list of IDs (GUIDs). &lt;br/&gt;Pass an empty supervisors list string to remove all supervisors.</wsdl:documentation>
       <wsdl:input message="tns:UpdateStudentSupervisorsHttpPostIn" />
       <wsdl:output message="tns:UpdateStudentSupervisorsHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetSupervisorUsers">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. &lt;br/&gt;Includes or not inactive users. Includes or not the users metadata. &lt;br/&gt;Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. &lt;br/&gt;If a negative or 0 offset is passed, returns the first page of users in last name, first name order.</wsdl:documentation>
       <wsdl:input message="tns:GetSupervisorUsersHttpPostIn" />
       <wsdl:output message="tns:GetSupervisorUsersHttpPostOut" />
     </wsdl:operation>
@@ -4220,17 +4347,17 @@
       <wsdl:output message="tns:DeleteUserHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUserByLookup">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a user account. &lt;br/&gt;Finds the user by LMS ID, email or any login field defined in the API key domain.</wsdl:documentation>
       <wsdl:input message="tns:DeleteUserByLookupHttpPostIn" />
       <wsdl:output message="tns:DeleteUserByLookupHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="AddUserToDomain">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. &lt;br/&gt;The user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainHttpPostIn" />
       <wsdl:output message="tns:AddUserToDomainHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="AddUserToDomainWithEnrollments">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a user to a domain. &lt;br/&gt;If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.</wsdl:documentation>
       <wsdl:input message="tns:AddUserToDomainWithEnrollmentsHttpPostIn" />
       <wsdl:output message="tns:AddUserToDomainWithEnrollmentsHttpPostOut" />
     </wsdl:operation>
@@ -4245,37 +4372,42 @@
       <wsdl:output message="tns:SetUserActiveByLookupHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStudentTranscript">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a student's transcript (all enrollments in learning activities). &lt;br/&gt;If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. &lt;br/&gt;All returned times are in UTC.</wsdl:documentation>
       <wsdl:input message="tns:GetStudentTranscriptHttpPostIn" />
       <wsdl:output message="tns:GetStudentTranscriptHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="EnrollStudentWithDetails">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentWithDetailsHttpPostIn" />
       <wsdl:output message="tns:EnrollStudentWithDetailsHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a request to enroll a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:input message="tns:EnrollStudentQueuedHttpPostIn" />
+      <wsdl:output message="tns:EnrollStudentQueuedHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentHttpPostIn" />
       <wsdl:output message="tns:EnrollStudentHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="EnrollStudentReservation">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. Returns a summary of the enrollment result. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;Returns a summary of the enrollment result. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:EnrollStudentReservationHttpPostIn" />
       <wsdl:output message="tns:EnrollStudentReservationHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="StudentSelfEnroll">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a student to enroll in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows a student to enroll in a learning activity (Course, Learning Path or Activity). &lt;br/&gt;If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. &lt;br/&gt;If no domain specified, the user will be enrolled in the original learning object domain. &lt;br/&gt;The learner must belong to this domain and satisfy the enrollment requirements. &lt;br/&gt;If successful, returns the student record ID. &lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:StudentSelfEnrollHttpPostIn" />
       <wsdl:output message="tns:StudentSelfEnrollHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="WithdrawStudent">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Withdraws a student from a learning activity. &lt;br/&gt;If successful, returns the withdrawn record enrollment domain ID</wsdl:documentation>
       <wsdl:input message="tns:WithdrawStudentHttpPostIn" />
       <wsdl:output message="tns:WithdrawStudentHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="MarkStudentSession">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marks a student's attendance in an IL course session. &lt;br/&gt;Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. &lt;br/&gt;If no score is to be set, a negative value should be passed. &lt;br/&gt;The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.&lt;br/&gt;If successful, returns the student record ID.&lt;br/&gt;Detailed results are recorded in the ActionLog.</wsdl:documentation>
       <wsdl:input message="tns:MarkStudentSessionHttpPostIn" />
       <wsdl:output message="tns:MarkStudentSessionHttpPostOut" />
     </wsdl:operation>
@@ -4305,9 +4437,14 @@
       <wsdl:output message="tns:GetAllStudentLearningActivityRecordsHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. &lt;br/&gt;Status valid values are ['Completed','Active'] &lt;br/&gt;The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. &lt;br/&gt;The last module name, percent completed, score and credits are optional. &lt;br/&gt;The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
       <wsdl:input message="tns:SetRecordDetailsHttpPostIn" />
       <wsdl:output message="tns:SetRecordDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extends a record due date if the learning activity has an anticipated completion date set. The new due date should be in the format 'yyyy-MM-dd HH:mm:ss' ('2025-05-21 19:00:00') and in UTC timezone.</wsdl:documentation>
+      <wsdl:input message="tns:ExtendRecordDueDateHttpPostIn" />
+      <wsdl:output message="tns:ExtendRecordDueDateHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GenerateTimedSeed">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate an expiring seed string that can be appended to a request. Returns the timed seed as string.</wsdl:documentation>
@@ -4330,27 +4467,27 @@
       <wsdl:output message="tns:GetStudentAvailableCoursesHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCourseCompletionStatusByDateRange">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains. &lt;br/&gt;If a learning activity code is passed, users completion status for that course only will be returned. &lt;br/&gt;If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned. &lt;br/&gt;The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'. &lt;br/&gt;If a learner LMS ID is passed, the completion status for only that learner will be returned. &lt;br/&gt;If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range. &lt;br/&gt;If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains.&lt;br/&gt;If a learning activity code is passed, users completion status for that course only will be returned.&lt;br/&gt;If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned.&lt;br/&gt;The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'.&lt;br/&gt;If a learner LMS ID is passed, the completion status for only that learner will be returned.&lt;br/&gt;If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range.&lt;br/&gt;If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.</wsdl:documentation>
       <wsdl:input message="tns:GetCourseCompletionStatusByDateRangeHttpPostIn" />
       <wsdl:output message="tns:GetCourseCompletionStatusByDateRangeHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="getLearningActivityListEnrollments">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;&lt;br /&gt;CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result. </wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. &lt;br/&gt;Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;&lt;br /&gt;CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result. </wsdl:documentation>
       <wsdl:input message="tns:getLearningActivityListEnrollmentsHttpPostIn" />
       <wsdl:output message="tns:getLearningActivityListEnrollmentsHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="getLearningActivityListEnrollmentsTruncated">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. &lt;br/&gt;Format for userCustomMetadata parameter: &amp;lt;field_list&amp;gt;&amp;lt;field id='..'&amp;gt;&amp;lt;values&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;&amp;lt;value&amp;gt;..&amp;lt;/value&amp;gt;..&amp;lt;/values&amp;gt;&amp;lt;/field&amp;gt;...&amp;lt;/field_list&amp;gt;</wsdl:documentation>
       <wsdl:input message="tns:getLearningActivityListEnrollmentsTruncatedHttpPostIn" />
       <wsdl:output message="tns:getLearningActivityListEnrollmentsTruncatedHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLMSUserAutoLoginURL">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns URL used to log in a user in LMS. No password expected for federated authentication. If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. If a return URL is passed, the user will be redirected there after login.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns URL used to log in a user in LMS. &lt;br/&gt;No password expected for federated authentication. &lt;br/&gt;If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. &lt;br/&gt;If a return URL is passed, the user will be redirected there after login.</wsdl:documentation>
       <wsdl:input message="tns:GetLMSUserAutoLoginURLHttpPostIn" />
       <wsdl:output message="tns:GetLMSUserAutoLoginURLHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLMSUserAutoLoginURLByUsername">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a URL to log in a user found by username in LMS. If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.</wsdl:documentation>
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a URL to log in a user found by username in LMS. &lt;br/&gt;If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.</wsdl:documentation>
       <wsdl:input message="tns:GetLMSUserAutoLoginURLByUsernameHttpPostIn" />
       <wsdl:output message="tns:GetLMSUserAutoLoginURLByUsernameHttpPostOut" />
     </wsdl:operation>
@@ -4616,6 +4753,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <soap:operation soapAction="http://www.thinkingcap.com/EnrollStudentQueued" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
       <soap:operation soapAction="http://www.thinkingcap.com/EnrollStudent" style="document" />
       <wsdl:input>
@@ -4708,6 +4854,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <soap:operation soapAction="http://www.thinkingcap.com/SetRecordDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <soap:operation soapAction="http://www.thinkingcap.com/ExtendRecordDueDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5078,6 +5233,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <soap12:operation soapAction="http://www.thinkingcap.com/EnrollStudentQueued" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
       <soap12:operation soapAction="http://www.thinkingcap.com/EnrollStudent" style="document" />
       <wsdl:input>
@@ -5170,6 +5334,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <soap12:operation soapAction="http://www.thinkingcap.com/SetRecordDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <soap12:operation soapAction="http://www.thinkingcap.com/ExtendRecordDueDate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5540,6 +5713,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <http:operation location="/EnrollStudentQueued" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
       <http:operation location="/EnrollStudent" />
       <wsdl:input>
@@ -5632,6 +5814,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <http:operation location="/SetRecordDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <http:operation location="/ExtendRecordDueDate" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -6002,6 +6193,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EnrollStudentQueued">
+      <http:operation location="/EnrollStudentQueued" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EnrollStudent">
       <http:operation location="/EnrollStudent" />
       <wsdl:input>
@@ -6094,6 +6294,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <http:operation location="/SetRecordDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendRecordDueDate">
+      <http:operation location="/ExtendRecordDueDate" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -8,10 +8,9 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetRecordDetails implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentRecordID;
+    private ?string $studentRecordID = null;
 
     /**
      * Constructor
@@ -23,13 +22,11 @@ class GetRecordDetails implements RequestInterface
         $this->studentRecordID = $studentRecordID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class GetRecordDetails implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentRecordID(): ?string
     {
         return $this->studentRecordID;
     }
 
-    
     public function withStudentRecordID(?string $studentRecordID): static
     {
         $new = clone $this;

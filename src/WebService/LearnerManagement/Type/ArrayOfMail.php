@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 class ArrayOfMail
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail>
+     * @var null | array<int<0,max>, Mail>
      */
-    private ?array $Mail;
+    private ?array $Mail = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail>
+     * @return null | array<int<0,max>, Mail>
      */
     public function getMail(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfMail
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\Mail> $Mail
+     * @param null | array<int<0,max>, Mail> $Mail
      */
     public function withMail(?array $Mail): static
     {

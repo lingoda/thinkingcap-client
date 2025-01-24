@@ -8,12 +8,10 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetUserActive implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userID;
+    private ?string $userID = null;
 
-    
     private bool $active;
 
     /**
@@ -27,13 +25,11 @@ class SetUserActive implements RequestInterface
         $this->active = $active;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class SetUserActive implements RequestInterface
         return $new;
     }
 
-    
     public function getUserID(): ?string
     {
         return $this->userID;
     }
 
-    
     public function withUserID(?string $userID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class SetUserActive implements RequestInterface
         return $new;
     }
 
-    
     public function getActive(): bool
     {
         return $this->active;
     }
 
-    
     public function withActive(bool $active): static
     {
         $new = clone $this;

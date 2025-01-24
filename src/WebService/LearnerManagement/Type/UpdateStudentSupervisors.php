@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateStudentSupervisors implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentID;
+    private ?string $studentID = null;
 
-    
-    private ?string $supervisorsList;
+    private ?string $supervisorsList = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class UpdateStudentSupervisors implements RequestInterface
         $this->supervisorsList = $supervisorsList;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class UpdateStudentSupervisors implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
-    
     public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class UpdateStudentSupervisors implements RequestInterface
         return $new;
     }
 
-    
     public function getSupervisorsList(): ?string
     {
         return $this->supervisorsList;
     }
 
-    
     public function withSupervisorsList(?string $supervisorsList): static
     {
         $new = clone $this;

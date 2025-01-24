@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 class ArrayOfCustomField
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CustomField>
+     * @var null | array<int<0,max>, CustomField>
      */
-    private ?array $CustomField;
+    private ?array $CustomField = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CustomField>
+     * @return null | array<int<0,max>, CustomField>
      */
     public function getCustomField(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfCustomField
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\CustomField> $CustomField
+     * @param null | array<int<0,max>, CustomField> $CustomField
      */
     public function withCustomField(?array $CustomField): static
     {

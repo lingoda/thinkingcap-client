@@ -8,15 +8,12 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class MergeStudentTranscripts implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentToRemainID;
+    private ?string $studentToRemainID = null;
 
-    
-    private ?string $studentToGoID;
+    private ?string $studentToGoID = null;
 
-    
     private bool $markMergedAccountsPending;
 
     /**
@@ -31,13 +28,11 @@ class MergeStudentTranscripts implements RequestInterface
         $this->markMergedAccountsPending = $markMergedAccountsPending;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class MergeStudentTranscripts implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentToRemainID(): ?string
     {
         return $this->studentToRemainID;
     }
 
-    
     public function withStudentToRemainID(?string $studentToRemainID): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class MergeStudentTranscripts implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentToGoID(): ?string
     {
         return $this->studentToGoID;
     }
 
-    
     public function withStudentToGoID(?string $studentToGoID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class MergeStudentTranscripts implements RequestInterface
         return $new;
     }
 
-    
     public function getMarkMergedAccountsPending(): bool
     {
         return $this->markMergedAccountsPending;
     }
 
-    
     public function withMarkMergedAccountsPending(bool $markMergedAccountsPending): static
     {
         $new = clone $this;

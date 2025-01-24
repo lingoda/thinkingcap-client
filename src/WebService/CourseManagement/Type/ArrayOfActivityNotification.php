@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfActivityNotification
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ActivityNotification>
+     * @var null | array<int<0,max>, ActivityNotification>
      */
-    private ?array $ActivityNotification;
+    private ?array $ActivityNotification = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ActivityNotification>
+     * @return null | array<int<0,max>, ActivityNotification>
      */
     public function getActivityNotification(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfActivityNotification
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\ActivityNotification> $ActivityNotification
+     * @param null | array<int<0,max>, ActivityNotification> $ActivityNotification
      */
     public function withActivityNotification(?array $ActivityNotification): static
     {

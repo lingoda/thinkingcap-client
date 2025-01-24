@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class UpdateUserMetadataValues implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userID;
+    private ?string $userID = null;
 
-    
-    private ?string $fieldsValuesXml;
+    private ?string $fieldsValuesXml = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class UpdateUserMetadataValues implements RequestInterface
         $this->fieldsValuesXml = $fieldsValuesXml;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class UpdateUserMetadataValues implements RequestInterface
         return $new;
     }
 
-    
     public function getUserID(): ?string
     {
         return $this->userID;
     }
 
-    
     public function withUserID(?string $userID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class UpdateUserMetadataValues implements RequestInterface
         return $new;
     }
 
-    
     public function getFieldsValuesXml(): ?string
     {
         return $this->fieldsValuesXml;
     }
 
-    
     public function withFieldsValuesXml(?string $fieldsValuesXml): static
     {
         $new = clone $this;

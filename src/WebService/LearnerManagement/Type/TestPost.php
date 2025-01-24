@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class TestPost implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
     /**
      * Constructor
@@ -19,13 +19,11 @@ class TestPost implements RequestInterface
         $this->apiKey = $apiKey;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;

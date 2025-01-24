@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLearningActivityCustomFieldValues implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $learningActivityID;
+    private ?string $learningActivityID = null;
 
-    
-    private ?string $customFieldID;
+    private ?string $customFieldID = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class GetLearningActivityCustomFieldValues implements RequestInterface
         $this->customFieldID = $customFieldID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class GetLearningActivityCustomFieldValues implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningActivityID(): ?string
     {
         return $this->learningActivityID;
     }
 
-    
     public function withLearningActivityID(?string $learningActivityID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class GetLearningActivityCustomFieldValues implements RequestInterface
         return $new;
     }
 
-    
     public function getCustomFieldID(): ?string
     {
         return $this->customFieldID;
     }
 
-    
     public function withCustomFieldID(?string $customFieldID): static
     {
         $new = clone $this;

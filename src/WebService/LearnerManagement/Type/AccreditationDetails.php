@@ -8,96 +8,69 @@ use DateTimeInterface;
 
 class AccreditationDetails
 {
-    private ?string $Type;
+    private ?string $Type = null;
 
-    
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
     private float $CreditValue;
 
-    
     private int $CertificateScore;
 
-    
     private bool $DoNotGrandCertificateUnlessCreditIssued;
 
-    
     private float $CertificateMinTime;
 
-    
-    private ?string $CertificateType;
+    private ?string $CertificateType = null;
 
-    
     private bool $CanPrintCertificate;
 
-    
     private bool $GrantCertificate;
 
-    
     private bool $CreditOnlyOnPass;
 
-    
     private bool $CertificateExpires;
 
-    
     private bool $CertificateExpireBasedOnEnrollmentDate;
 
-    
     private bool $CertificateExpireBasedOnCompletionDate;
 
-    
     private bool $CertificateExpireBasedOnFixedDate;
 
-    
     private bool $CertificateExpireBasedOnMetadataField;
 
-    
     private bool $LimitReenroll;
 
-    
     private int $MaxReenrollment;
 
-    
     private int $ExpireUnit;
 
-    
-    private ?string $ExpireInterval;
+    private ?string $ExpireInterval = null;
 
-    
     private int $NotifyUnit;
 
-    
-    private ?string $NotifyInterval;
+    private ?string $NotifyInterval = null;
 
-    
     private DateTimeInterface $ExpireDate;
 
-    
-    private ?string $ExpireMetadataFieldID;
+    private ?string $ExpireMetadataFieldID = null;
 
-    
     private bool $CreditsAcrossVariousCategories;
 
-    
     private bool $GrantOpenBadge;
 
-    
-    private ?string $OpenBadgeType;
+    private ?string $OpenBadgeIssuer = null;
 
-    
+    private ?string $OpenBadgeType = null;
+
     private bool $GrantOpenBadgeCompletionPriorDueDate;
 
-    
     private int $GrantOpenBadgeCompletionDayAfterEnroll;
 
-    
     public function getType(): ?string
     {
         return $this->Type;
     }
 
-    
     public function withType(?string $Type): static
     {
         $new = clone $this;
@@ -106,13 +79,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -121,13 +92,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCreditValue(): float
     {
         return $this->CreditValue;
     }
 
-    
     public function withCreditValue(float $CreditValue): static
     {
         $new = clone $this;
@@ -136,13 +105,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateScore(): int
     {
         return $this->CertificateScore;
     }
 
-    
     public function withCertificateScore(int $CertificateScore): static
     {
         $new = clone $this;
@@ -151,13 +118,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getDoNotGrandCertificateUnlessCreditIssued(): bool
     {
         return $this->DoNotGrandCertificateUnlessCreditIssued;
     }
 
-    
     public function withDoNotGrandCertificateUnlessCreditIssued(bool $DoNotGrandCertificateUnlessCreditIssued): static
     {
         $new = clone $this;
@@ -166,13 +131,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateMinTime(): float
     {
         return $this->CertificateMinTime;
     }
 
-    
     public function withCertificateMinTime(float $CertificateMinTime): static
     {
         $new = clone $this;
@@ -181,13 +144,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateType(): ?string
     {
         return $this->CertificateType;
     }
 
-    
     public function withCertificateType(?string $CertificateType): static
     {
         $new = clone $this;
@@ -196,13 +157,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCanPrintCertificate(): bool
     {
         return $this->CanPrintCertificate;
     }
 
-    
     public function withCanPrintCertificate(bool $CanPrintCertificate): static
     {
         $new = clone $this;
@@ -211,13 +170,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getGrantCertificate(): bool
     {
         return $this->GrantCertificate;
     }
 
-    
     public function withGrantCertificate(bool $GrantCertificate): static
     {
         $new = clone $this;
@@ -226,13 +183,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCreditOnlyOnPass(): bool
     {
         return $this->CreditOnlyOnPass;
     }
 
-    
     public function withCreditOnlyOnPass(bool $CreditOnlyOnPass): static
     {
         $new = clone $this;
@@ -241,13 +196,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateExpires(): bool
     {
         return $this->CertificateExpires;
     }
 
-    
     public function withCertificateExpires(bool $CertificateExpires): static
     {
         $new = clone $this;
@@ -256,13 +209,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateExpireBasedOnEnrollmentDate(): bool
     {
         return $this->CertificateExpireBasedOnEnrollmentDate;
     }
 
-    
     public function withCertificateExpireBasedOnEnrollmentDate(bool $CertificateExpireBasedOnEnrollmentDate): static
     {
         $new = clone $this;
@@ -271,13 +222,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateExpireBasedOnCompletionDate(): bool
     {
         return $this->CertificateExpireBasedOnCompletionDate;
     }
 
-    
     public function withCertificateExpireBasedOnCompletionDate(bool $CertificateExpireBasedOnCompletionDate): static
     {
         $new = clone $this;
@@ -286,13 +235,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateExpireBasedOnFixedDate(): bool
     {
         return $this->CertificateExpireBasedOnFixedDate;
     }
 
-    
     public function withCertificateExpireBasedOnFixedDate(bool $CertificateExpireBasedOnFixedDate): static
     {
         $new = clone $this;
@@ -301,13 +248,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCertificateExpireBasedOnMetadataField(): bool
     {
         return $this->CertificateExpireBasedOnMetadataField;
     }
 
-    
     public function withCertificateExpireBasedOnMetadataField(bool $CertificateExpireBasedOnMetadataField): static
     {
         $new = clone $this;
@@ -316,13 +261,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getLimitReenroll(): bool
     {
         return $this->LimitReenroll;
     }
 
-    
     public function withLimitReenroll(bool $LimitReenroll): static
     {
         $new = clone $this;
@@ -331,13 +274,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getMaxReenrollment(): int
     {
         return $this->MaxReenrollment;
     }
 
-    
     public function withMaxReenrollment(int $MaxReenrollment): static
     {
         $new = clone $this;
@@ -346,13 +287,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getExpireUnit(): int
     {
         return $this->ExpireUnit;
     }
 
-    
     public function withExpireUnit(int $ExpireUnit): static
     {
         $new = clone $this;
@@ -361,13 +300,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getExpireInterval(): ?string
     {
         return $this->ExpireInterval;
     }
 
-    
     public function withExpireInterval(?string $ExpireInterval): static
     {
         $new = clone $this;
@@ -376,13 +313,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getNotifyUnit(): int
     {
         return $this->NotifyUnit;
     }
 
-    
     public function withNotifyUnit(int $NotifyUnit): static
     {
         $new = clone $this;
@@ -391,13 +326,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getNotifyInterval(): ?string
     {
         return $this->NotifyInterval;
     }
 
-    
     public function withNotifyInterval(?string $NotifyInterval): static
     {
         $new = clone $this;
@@ -406,13 +339,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getExpireDate(): DateTimeInterface
     {
         return $this->ExpireDate;
     }
 
-    
     public function withExpireDate(DateTimeInterface $ExpireDate): static
     {
         $new = clone $this;
@@ -421,13 +352,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getExpireMetadataFieldID(): ?string
     {
         return $this->ExpireMetadataFieldID;
     }
 
-    
     public function withExpireMetadataFieldID(?string $ExpireMetadataFieldID): static
     {
         $new = clone $this;
@@ -436,13 +365,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getCreditsAcrossVariousCategories(): bool
     {
         return $this->CreditsAcrossVariousCategories;
     }
 
-    
     public function withCreditsAcrossVariousCategories(bool $CreditsAcrossVariousCategories): static
     {
         $new = clone $this;
@@ -451,13 +378,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getGrantOpenBadge(): bool
     {
         return $this->GrantOpenBadge;
     }
 
-    
     public function withGrantOpenBadge(bool $GrantOpenBadge): static
     {
         $new = clone $this;
@@ -466,13 +391,24 @@ class AccreditationDetails
         return $new;
     }
 
-    
+    public function getOpenBadgeIssuer(): ?string
+    {
+        return $this->OpenBadgeIssuer;
+    }
+
+    public function withOpenBadgeIssuer(?string $OpenBadgeIssuer): static
+    {
+        $new = clone $this;
+        $new->OpenBadgeIssuer = $OpenBadgeIssuer;
+
+        return $new;
+    }
+
     public function getOpenBadgeType(): ?string
     {
         return $this->OpenBadgeType;
     }
 
-    
     public function withOpenBadgeType(?string $OpenBadgeType): static
     {
         $new = clone $this;
@@ -481,13 +417,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getGrantOpenBadgeCompletionPriorDueDate(): bool
     {
         return $this->GrantOpenBadgeCompletionPriorDueDate;
     }
 
-    
     public function withGrantOpenBadgeCompletionPriorDueDate(bool $GrantOpenBadgeCompletionPriorDueDate): static
     {
         $new = clone $this;
@@ -496,13 +430,11 @@ class AccreditationDetails
         return $new;
     }
 
-    
     public function getGrantOpenBadgeCompletionDayAfterEnroll(): int
     {
         return $this->GrantOpenBadgeCompletionDayAfterEnroll;
     }
 
-    
     public function withGrantOpenBadgeCompletionDayAfterEnroll(int $GrantOpenBadgeCompletionDayAfterEnroll): static
     {
         $new = clone $this;

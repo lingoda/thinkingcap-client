@@ -8,25 +8,19 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class MarkStudentSession implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentID;
+    private ?string $studentID = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
-    
-    private ?string $sessionID;
+    private ?string $sessionID = null;
 
-    
     private int $scorePercent;
 
-    
-    private ?string $comments;
+    private ?string $comments = null;
 
-    
-    private ?string $attendanceValue;
+    private ?string $attendanceValue = null;
 
     /**
      * Constructor
@@ -43,13 +37,11 @@ class MarkStudentSession implements RequestInterface
         $this->attendanceValue = $attendanceValue;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -58,13 +50,11 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
-    
     public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
@@ -73,13 +63,11 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
@@ -88,13 +76,11 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    
     public function getSessionID(): ?string
     {
         return $this->sessionID;
     }
 
-    
     public function withSessionID(?string $sessionID): static
     {
         $new = clone $this;
@@ -103,13 +89,11 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    
     public function getScorePercent(): int
     {
         return $this->scorePercent;
     }
 
-    
     public function withScorePercent(int $scorePercent): static
     {
         $new = clone $this;
@@ -118,13 +102,11 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    
     public function getComments(): ?string
     {
         return $this->comments;
     }
 
-    
     public function withComments(?string $comments): static
     {
         $new = clone $this;
@@ -133,13 +115,11 @@ class MarkStudentSession implements RequestInterface
         return $new;
     }
 
-    
     public function getAttendanceValue(): ?string
     {
         return $this->attendanceValue;
     }
 
-    
     public function withAttendanceValue(?string $attendanceValue): static
     {
         $new = clone $this;

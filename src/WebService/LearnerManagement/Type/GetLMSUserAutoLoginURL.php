@@ -8,19 +8,15 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLMSUserAutoLoginURL implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userLogin;
+    private ?string $userLogin = null;
 
-    
-    private ?string $userPassword;
+    private ?string $userPassword = null;
 
-    
-    private ?string $domainID;
+    private ?string $domainID = null;
 
-    
-    private ?string $returnUrl;
+    private ?string $returnUrl = null;
 
     /**
      * Constructor
@@ -35,13 +31,11 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         $this->returnUrl = $returnUrl;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -50,13 +44,11 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    
     public function getUserLogin(): ?string
     {
         return $this->userLogin;
     }
 
-    
     public function withUserLogin(?string $userLogin): static
     {
         $new = clone $this;
@@ -65,13 +57,11 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    
     public function getUserPassword(): ?string
     {
         return $this->userPassword;
     }
 
-    
     public function withUserPassword(?string $userPassword): static
     {
         $new = clone $this;
@@ -80,13 +70,11 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    
     public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
-    
     public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
@@ -95,13 +83,11 @@ class GetLMSUserAutoLoginURL implements RequestInterface
         return $new;
     }
 
-    
     public function getReturnUrl(): ?string
     {
         return $this->returnUrl;
     }
 
-    
     public function withReturnUrl(?string $returnUrl): static
     {
         $new = clone $this;

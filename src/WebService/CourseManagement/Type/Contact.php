@@ -6,27 +6,21 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Contact
 {
-    private ?string $UserID;
+    private ?string $UserID = null;
 
-    
-    private ?string $ContactID;
+    private ?string $ContactID = null;
 
-    
-    private ?string $ContactName;
+    private ?string $ContactName = null;
 
-    
-    private ?string $ContactScreenName;
+    private ?string $ContactScreenName = null;
 
-    
-    private ?string $ContactEmail;
+    private ?string $ContactEmail = null;
 
-    
     public function getUserID(): ?string
     {
         return $this->UserID;
     }
 
-    
     public function withUserID(?string $UserID): static
     {
         $new = clone $this;
@@ -35,13 +29,11 @@ class Contact
         return $new;
     }
 
-    
     public function getContactID(): ?string
     {
         return $this->ContactID;
     }
 
-    
     public function withContactID(?string $ContactID): static
     {
         $new = clone $this;
@@ -50,13 +42,11 @@ class Contact
         return $new;
     }
 
-    
     public function getContactName(): ?string
     {
         return $this->ContactName;
     }
 
-    
     public function withContactName(?string $ContactName): static
     {
         $new = clone $this;
@@ -65,13 +55,11 @@ class Contact
         return $new;
     }
 
-    
     public function getContactScreenName(): ?string
     {
         return $this->ContactScreenName;
     }
 
-    
     public function withContactScreenName(?string $ContactScreenName): static
     {
         $new = clone $this;
@@ -80,13 +68,11 @@ class Contact
         return $new;
     }
 
-    
     public function getContactEmail(): ?string
     {
         return $this->ContactEmail;
     }
 
-    
     public function withContactEmail(?string $ContactEmail): static
     {
         $new = clone $this;

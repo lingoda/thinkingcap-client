@@ -8,42 +8,30 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class RegisterBulkUser implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userID;
+    private ?string $userID = null;
 
-    
-    private ?string $userFirstName;
+    private ?string $userFirstName = null;
 
-    
-    private ?string $userLastName;
+    private ?string $userLastName = null;
 
-    
-    private ?string $userTitle;
+    private ?string $userTitle = null;
 
-    
-    private ?string $userEmail;
+    private ?string $userEmail = null;
 
-    
-    private ?string $userPassword;
+    private ?string $userPassword = null;
 
-    
-    private ?string $userScreenName;
+    private ?string $userScreenName = null;
 
-    
-    private ?string $userLanguage;
+    private ?string $userLanguage = null;
 
-    
-    private ?string $userCustomMetadata;
+    private ?string $userCustomMetadata = null;
 
-    
-    private ?string $source;
+    private ?string $source = null;
 
-    
-    private ?string $syncDomainID;
+    private ?string $syncDomainID = null;
 
-    
     private bool $protectFromManualChange;
 
     /**
@@ -67,13 +55,11 @@ class RegisterBulkUser implements RequestInterface
         $this->protectFromManualChange = $protectFromManualChange;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -82,13 +68,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserID(): ?string
     {
         return $this->userID;
     }
 
-    
     public function withUserID(?string $userID): static
     {
         $new = clone $this;
@@ -97,13 +81,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserFirstName(): ?string
     {
         return $this->userFirstName;
     }
 
-    
     public function withUserFirstName(?string $userFirstName): static
     {
         $new = clone $this;
@@ -112,13 +94,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserLastName(): ?string
     {
         return $this->userLastName;
     }
 
-    
     public function withUserLastName(?string $userLastName): static
     {
         $new = clone $this;
@@ -127,13 +107,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserTitle(): ?string
     {
         return $this->userTitle;
     }
 
-    
     public function withUserTitle(?string $userTitle): static
     {
         $new = clone $this;
@@ -142,13 +120,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserEmail(): ?string
     {
         return $this->userEmail;
     }
 
-    
     public function withUserEmail(?string $userEmail): static
     {
         $new = clone $this;
@@ -157,13 +133,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserPassword(): ?string
     {
         return $this->userPassword;
     }
 
-    
     public function withUserPassword(?string $userPassword): static
     {
         $new = clone $this;
@@ -172,13 +146,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserScreenName(): ?string
     {
         return $this->userScreenName;
     }
 
-    
     public function withUserScreenName(?string $userScreenName): static
     {
         $new = clone $this;
@@ -187,13 +159,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserLanguage(): ?string
     {
         return $this->userLanguage;
     }
 
-    
     public function withUserLanguage(?string $userLanguage): static
     {
         $new = clone $this;
@@ -202,13 +172,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getUserCustomMetadata(): ?string
     {
         return $this->userCustomMetadata;
     }
 
-    
     public function withUserCustomMetadata(?string $userCustomMetadata): static
     {
         $new = clone $this;
@@ -217,13 +185,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getSource(): ?string
     {
         return $this->source;
     }
 
-    
     public function withSource(?string $source): static
     {
         $new = clone $this;
@@ -232,13 +198,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getSyncDomainID(): ?string
     {
         return $this->syncDomainID;
     }
 
-    
     public function withSyncDomainID(?string $syncDomainID): static
     {
         $new = clone $this;
@@ -247,13 +211,11 @@ class RegisterBulkUser implements RequestInterface
         return $new;
     }
 
-    
     public function getProtectFromManualChange(): bool
     {
         return $this->protectFromManualChange;
     }
 
-    
     public function withProtectFromManualChange(bool $protectFromManualChange): static
     {
         $new = clone $this;

@@ -6,36 +6,27 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class TimeZone
 {
-    private ?string $Code;
+    private ?string $Code = null;
 
-    
-    private ?string $DSTCode;
+    private ?string $DSTCode = null;
 
-    
-    private ?string $Name;
+    private ?string $Name = null;
 
-    
-    private ?string $CurrentLocation;
+    private ?string $CurrentLocation = null;
 
-    
     private bool $ApplyDaylightSavings;
 
-    
     private bool $IsDaylightSaving;
 
-    
-    private ?TimeZoneOffset $Offset;
+    private ?TimeZoneOffset $Offset = null;
 
-    
     private int $CiscoCode;
 
-    
     public function getCode(): ?string
     {
         return $this->Code;
     }
 
-    
     public function withCode(?string $Code): static
     {
         $new = clone $this;
@@ -44,13 +35,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getDSTCode(): ?string
     {
         return $this->DSTCode;
     }
 
-    
     public function withDSTCode(?string $DSTCode): static
     {
         $new = clone $this;
@@ -59,13 +48,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getName(): ?string
     {
         return $this->Name;
     }
 
-    
     public function withName(?string $Name): static
     {
         $new = clone $this;
@@ -74,13 +61,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getCurrentLocation(): ?string
     {
         return $this->CurrentLocation;
     }
 
-    
     public function withCurrentLocation(?string $CurrentLocation): static
     {
         $new = clone $this;
@@ -89,13 +74,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getApplyDaylightSavings(): bool
     {
         return $this->ApplyDaylightSavings;
     }
 
-    
     public function withApplyDaylightSavings(bool $ApplyDaylightSavings): static
     {
         $new = clone $this;
@@ -104,13 +87,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getIsDaylightSaving(): bool
     {
         return $this->IsDaylightSaving;
     }
 
-    
     public function withIsDaylightSaving(bool $IsDaylightSaving): static
     {
         $new = clone $this;
@@ -119,13 +100,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getOffset(): ?TimeZoneOffset
     {
         return $this->Offset;
     }
 
-    
     public function withOffset(?TimeZoneOffset $Offset): static
     {
         $new = clone $this;
@@ -134,13 +113,11 @@ class TimeZone
         return $new;
     }
 
-    
     public function getCiscoCode(): int
     {
         return $this->CiscoCode;
     }
 
-    
     public function withCiscoCode(int $CiscoCode): static
     {
         $new = clone $this;

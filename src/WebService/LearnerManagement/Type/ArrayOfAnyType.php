@@ -9,7 +9,7 @@ class ArrayOfAnyType
     /**
      * @var null | array<int<0,max>, mixed>
      */
-    private ?array $anyType;
+    private ?array $anyType = null;
 
     /**
      * @return null | array<int<0,max>, mixed>

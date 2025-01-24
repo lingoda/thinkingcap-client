@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfContact
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Contact>
+     * @var null | array<int<0,max>, Contact>
      */
-    private ?array $Contact;
+    private ?array $Contact = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Contact>
+     * @return null | array<int<0,max>, Contact>
      */
     public function getContact(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfContact
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\Contact> $Contact
+     * @param null | array<int<0,max>, Contact> $Contact
      */
     public function withContact(?array $Contact): static
     {

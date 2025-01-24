@@ -38,7 +38,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.
+     * Returns a list of the users in the optional passed domain or the API key domain if a domain is not passed. <br/>Includes or not inactive users. Includes or not the users metadata. <br/>Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed for the take parameter, returns 100 by default. <br/>If a negative or 0 offset is passed, returns the first page of users in last name, first name order.
      *
      * @param RequestInterface & Type\GetDomainUsers $parameters
      *
@@ -57,7 +57,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional GUID, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;...&lt;/field_list&gt;
+     * Registers a new user account and set its metadata. Returns the new user ID (GUID). <br/>Parameters: <br/>api key, <br/>userID (optional GUID, system generated if not provided), <br/>user first name (required, 100 characters max), <br/>user last name (required, 100 characters max), <br/>user title (optional, 100 characters max), <br/>user email (required, 100 characters max), <br/>user password (optional, 50 characters max), <br/>user screen name (optional, 200 characters max), <br/>learner language (optional, 10 characters max - example: "en"), <br/>user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;...&lt;/field_list&gt;
      *
      * @param RequestInterface & Type\RegisterUser $parameters
      *
@@ -76,7 +76,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Registers a new user account and set its metadata. Returns the new user ID (GUID). Parameters: api key, userID (optional, system generated if not provided), user first name (required, 100 characters max), user last name (required, 100 characters max), user title (optional, 100 characters max), user email (required, 100 characters max), user password (optional, 50 characters max), user screen name (optional, 200 characters max), learner language (optional, 10 characters max - example: "en"), user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;...&lt;/field_list&gt;, +source of bulk users registration (optional, 20 characters max), synch domain (optional, GUID - the domain where the bulk users import settings are found), protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)
+     * Registers a new user account and set its metadata. Returns the new user ID (GUID). <br/>Parameters: <br/>api key, <br/>userID (optional, system generated if not provided), <br/>user first name (required, 100 characters max), <br/>user last name (required, 100 characters max), <br/>user title (optional, 100 characters max), <br/>user email (required, 100 characters max), <br/>user password (optional, 50 characters max), <br/>user screen name (optional, 200 characters max), <br/>learner language (optional, 10 characters max - example: "en"), <br/>user custom metadata (optional, XML string). Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;&lt;field id='...'&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;...&lt;/field&gt;...&lt;/field_list&gt;, +<br/>source of bulk users registration (optional, 20 characters max), <br/>synch domain (optional, GUID - the domain where the bulk users import settings are found), <br/>protect added user from manual change (required, boolean - if True, the user fields mapped in the synch settings will be read only for manual oprations)
      *
      * @param RequestInterface & Type\RegisterBulkUser $parameters
      *
@@ -114,7 +114,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Updates one or more custom metadata fields values for a user specified by its LMS ID. Parameters: user LMS ID (GUID), fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &lt;fields&gt;&lt;field id='' name='test'&gt;&lt;values&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;&lt;/values&gt;&lt;/field&gt;&lt;/fields&gt;.
+     * Updates one or more custom metadata fields values for a user specified by its LMS ID. <br/>Parameters: <br/>user LMS ID (GUID), <br/>fieldsValuesXml - represents the user custom metadata fields values to be updated (XML string). If a metadata node is not found, it is created. Either the field ID or the field name has to be passed. The language assumed for the field names and values is english. Format: &lt;fields&gt;&lt;field id='' name='test'&gt;&lt;values&gt;&lt;value&gt;...&lt;/value&gt;&lt;value&gt;...&lt;/value&gt;&lt;/values&gt;&lt;/field&gt;&lt;/fields&gt;.
      *
      * @param RequestInterface & Type\UpdateUserMetadataValues $parameters
      *
@@ -152,7 +152,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Updates the supervisors list for a student. Parameters: student LMS ID (GUID), supervisors list as a comma separated list of IDs (GUIDs). Pass an empty supervisors list string to remove all supervisors.
+     * Updates the supervisors list for a student. <br/>Parameters: <br/>student LMS ID (GUID), <br/>supervisors list as a comma separated list of IDs (GUIDs). <br/>Pass an empty supervisors list string to remove all supervisors.
      *
      * @param RequestInterface & Type\UpdateStudentSupervisors $parameters
      *
@@ -171,7 +171,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. Includes or not inactive users. Includes or not the users metadata. Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. If a negative or 0 offset is passed, returns the first page of users in last name, first name order.
+     * Retrieves the list of users supervised by the passed supervisor specified by its LMS ID. <br/>Includes or not inactive users. Includes or not the users metadata. <br/>Retrieves a specified number of users starting from the specified offset. If a negative or 0 number of users is passed, returns 100 by default. <br/>If a negative or 0 offset is passed, returns the first page of users in last name, first name order.
      *
      * @param RequestInterface & Type\GetSupervisorUsers $parameters
      *
@@ -380,7 +380,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Deletes a user account. Finds the user by LMS ID, email or any login field defined in the API key domain.
+     * Deletes a user account. <br/>Finds the user by LMS ID, email or any login field defined in the API key domain.
      *
      * @param RequestInterface & Type\DeleteUserByLookup $parameters
      *
@@ -399,7 +399,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Adds a user to a domain. The user will be enrolled in the domain learning activities set to auto-enroll domain users.
+     * Adds a user to a domain. <br/>The user will be enrolled in the domain learning activities set to auto-enroll domain users.
      *
      * @param RequestInterface & Type\AddUserToDomain $parameters
      *
@@ -418,7 +418,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Adds a user to a domain. If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.
+     * Adds a user to a domain. <br/>If doAutoEnrollment=True, then the user will be enrolled in the domain learning activities set to auto-enroll domain users.
      *
      * @param RequestInterface & Type\AddUserToDomainWithEnrollments $parameters
      *
@@ -475,7 +475,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns a student's transcript (all enrollments in learning activities). If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. All returned times are in UTC.
+     * Returns a student's transcript (all enrollments in learning activities). <br/>If a learning activity type is passed, returns the student transcript for the passed learning activity type ('Course', 'Learning Path' or 'Activity') only. <br/>All returned times are in UTC.
      *
      * @param RequestInterface & Type\GetStudentTranscript $parameters
      *
@@ -494,7 +494,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.
+     * Enrolls a student in a learning activity (Course, Learning Path or Activity). <br/>If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. <br/>If no domain specified, the user will be enrolled in the original learning object domain. <br/>The learner must belong to this domain and satisfy the enrollment requirements. <br/>If successful, returns the student record ID. Detailed results are recorded in the ActionLog.
      *
      * @param RequestInterface & Type\EnrollStudentWithDetails $parameters
      *
@@ -513,7 +513,26 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Enrolls a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.
+     * Adds a request to enroll a student in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.
+     *
+     * @param RequestInterface & Type\EnrollStudentQueued $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface & Type\EnrollStudentQueuedResponse
+     */
+    public function enrollStudentQueued(Type\EnrollStudentQueued $parameters): Type\EnrollStudentQueuedResponse
+    {
+        $response = ($this->caller)('EnrollStudentQueued', $parameters);
+
+        \Psl\Type\instance_of(Type\EnrollStudentQueuedResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
+    }
+
+    /**
+     * Enrolls a student in a learning activity (Course, Learning Path or Activity). <br/>If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. <br/>If no domain specified, the user will be enrolled in the original learning object domain. <br/>The learner must belong to this domain and satisfy the enrollment requirements. <br/>If successful, returns the student record ID. <br/>Detailed results are recorded in the ActionLog.
      *
      * @param RequestInterface & Type\EnrollStudent $parameters
      *
@@ -532,7 +551,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. Returns a summary of the enrollment result. Detailed results are recorded in the ActionLog.
+     * Enrolls a student in a learning activity(Course, Learning Path or Activity) followed by a reservation of spot. <br/>If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. <br/>If no domain specified, the user will be enrolled in the original learning object domain. <br/>The learner must belong to this domain and satisfy the enrollment requirements. <br/>Returns a summary of the enrollment result. <br/>Detailed results are recorded in the ActionLog.
      *
      * @param RequestInterface & Type\EnrollStudentReservation $parameters
      *
@@ -551,7 +570,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Allows a student to enroll in a learning activity (Course, Learning Path or Activity). If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. If no domain specified, the user will be enrolled in the original learning object domain. The learner must belong to this domain and satisfy the enrollment requirements. If successful, returns the student record ID. Detailed results are recorded in the ActionLog.
+     * Allows a student to enroll in a learning activity (Course, Learning Path or Activity). <br/>If the learning object is shared between domains, the optional enrollmentDomainID parameter specifies the domain required for enrollment. <br/>If no domain specified, the user will be enrolled in the original learning object domain. <br/>The learner must belong to this domain and satisfy the enrollment requirements. <br/>If successful, returns the student record ID. <br/>Detailed results are recorded in the ActionLog.
      *
      * @param RequestInterface & Type\StudentSelfEnroll $parameters
      *
@@ -570,7 +589,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Withdraws a student from a learning activity. If successful, returns the withdrawn record enrollment domain ID
+     * Withdraws a student from a learning activity. <br/>If successful, returns the withdrawn record enrollment domain ID
      *
      * @param RequestInterface & Type\WithdrawStudent $parameters
      *
@@ -589,7 +608,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Marks a student's attendance in an IL course session. <br/>Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. <br/>If no score is to be set, a negative value should be passed. <br/>The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.
+     * Marks a student's attendance in an IL course session. <br/>Enrolls the student in the course if not already enrolled and sets the attendance, score and comments in the ILT session to the passed values. <br/>If no score is to be set, a negative value should be passed. <br/>The allowed values for the attendanceValue are "attended", "not attended" or the ID of a withdrawal reason available in the domain.<br/>If successful, returns the student record ID.<br/>Detailed results are recorded in the ActionLog.
      *
      * @param RequestInterface & Type\MarkStudentSession $parameters
      *
@@ -703,7 +722,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.
+     * Sets the details of a student learning activity record. <br/>Status valid values are ['Completed','Active'] <br/>The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. <br/>The last module name, percent completed, score and credits are optional. <br/>The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.
      *
      * @param RequestInterface & Type\SetRecordDetails $parameters
      *
@@ -716,6 +735,25 @@ class LearnerManagementSoapClient
         $response = ($this->caller)('SetRecordDetails', $parameters);
 
         \Psl\Type\instance_of(Type\SetRecordDetailsResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
+    }
+
+    /**
+     * Extends a record due date if the learning activity has an anticipated completion date set. The new due date should be in the format 'yyyy-MM-dd HH:mm:ss' ('2025-05-21 19:00:00') and in UTC timezone.
+     *
+     * @param RequestInterface & Type\ExtendRecordDueDate $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface & Type\ExtendRecordDueDateResponse
+     */
+    public function extendRecordDueDate(Type\ExtendRecordDueDate $parameters): Type\ExtendRecordDueDateResponse
+    {
+        $response = ($this->caller)('ExtendRecordDueDate', $parameters);
+
+        \Psl\Type\instance_of(Type\ExtendRecordDueDateResponse::class)->assert($response);
         \Psl\Type\instance_of(ResultInterface::class)->assert($response);
 
         return $response;
@@ -798,7 +836,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains. <br/>If a learning activity code is passed, users completion status for that course only will be returned. <br/>If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned. <br/>The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'. <br/>If a learner LMS ID is passed, the completion status for only that learner will be returned. <br/>If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range. <br/>If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.
+     * Gets a report of a learner or all learners completion status for a course or all courses in the passed domain or in all domains.<br/>If a learning activity code is passed, users completion status for that course only will be returned.<br/>If a learning activity code is not passed but a learning activity type is passed, completions for all learning activities of the passed type will be returned.<br/>The valid learning activity codes are: 'course','learning path','auth_self','auth_self_doc','auth_approver','watch_understand','read_understand'.<br/>If a learner LMS ID is passed, the completion status for only that learner will be returned.<br/>If a date range is passed in format MM/dd/yyyy, return is limited to status changes in that date range.<br/>If the course is an ILT the last date attendance was taken for a session in that course can be used instead of the completion date.
      *
      * @param RequestInterface & Type\GetCourseCompletionStatusByDateRange $parameters
      *
@@ -817,7 +855,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='..'&gt;&lt;values&gt;&lt;value&gt;..&lt;/value&gt;&lt;value&gt;..&lt;/value&gt;..&lt;/values&gt;&lt;/field&gt;...&lt;/field_list&gt;<br />CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result.
+     * Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. <br/>Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='..'&gt;&lt;values&gt;&lt;value&gt;..&lt;/value&gt;&lt;value&gt;..&lt;/value&gt;..&lt;/values&gt;&lt;/field&gt;...&lt;/field_list&gt;<br />CustomFieldIDs (Optional), the IDs (separated by comma) of the Custom Field that are required in the result.
      *
      * @param RequestInterface & Type\GetLearningActivityListEnrollments $parameters
      *
@@ -836,7 +874,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='..'&gt;&lt;values&gt;&lt;value&gt;..&lt;/value&gt;&lt;value&gt;..&lt;/value&gt;..&lt;/values&gt;&lt;/field&gt;...&lt;/field_list&gt;
+     * Returns an XML string containing courses/learning paths/both available for self enroll in the system or for a domain based on the user custom metadata (XML string) provided. <br/>Format for userCustomMetadata parameter: &lt;field_list&gt;&lt;field id='..'&gt;&lt;values&gt;&lt;value&gt;..&lt;/value&gt;&lt;value&gt;..&lt;/value&gt;..&lt;/values&gt;&lt;/field&gt;...&lt;/field_list&gt;
      *
      * @param RequestInterface & Type\GetLearningActivityListEnrollmentsTruncated $parameters
      *
@@ -855,7 +893,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns URL used to log in a user in LMS. No password expected for federated authentication. If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. If a return URL is passed, the user will be redirected there after login.
+     * Returns URL used to log in a user in LMS. <br/>No password expected for federated authentication. <br/>If domain not passed, the domain will be retrieved from the service URL. If this is not possible, root domain is used. The user belonging to the domain is validated. <br/>If a return URL is passed, the user will be redirected there after login.
      *
      * @param RequestInterface & Type\GetLMSUserAutoLoginURL $parameters
      *
@@ -874,7 +912,7 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns a URL to log in a user found by username in LMS. If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.
+     * Returns a URL to log in a user found by username in LMS. <br/>If domainID is null or empty, sign in user in root domain using the root domain authentication provider; if not, verify user against the user set authentication provider for the passed domain.
      *
      * @param RequestInterface & Type\GetLMSUserAutoLoginURLByUsername $parameters
      *

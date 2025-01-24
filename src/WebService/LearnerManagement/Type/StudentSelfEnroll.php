@@ -8,16 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class StudentSelfEnroll implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $studentID;
+    private ?string $studentID = null;
 
-    
-    private ?string $learningObjectID;
+    private ?string $learningObjectID = null;
 
-    
-    private ?string $enrollmentDomainID;
+    private ?string $enrollmentDomainID = null;
 
     /**
      * Constructor
@@ -31,13 +28,11 @@ class StudentSelfEnroll implements RequestInterface
         $this->enrollmentDomainID = $enrollmentDomainID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class StudentSelfEnroll implements RequestInterface
         return $new;
     }
 
-    
     public function getStudentID(): ?string
     {
         return $this->studentID;
     }
 
-    
     public function withStudentID(?string $studentID): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class StudentSelfEnroll implements RequestInterface
         return $new;
     }
 
-    
     public function getLearningObjectID(): ?string
     {
         return $this->learningObjectID;
     }
 
-    
     public function withLearningObjectID(?string $learningObjectID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class StudentSelfEnroll implements RequestInterface
         return $new;
     }
 
-    
     public function getEnrollmentDomainID(): ?string
     {
         return $this->enrollmentDomainID;
     }
 
-    
     public function withEnrollmentDomainID(?string $enrollmentDomainID): static
     {
         $new = clone $this;

@@ -20,106 +20,72 @@ class LearningActivity
 
     protected string $Language;
 
-    
-    private ?string $Instructions;
+    private ?string $Instructions = null;
 
-    
     private bool $IsOnline;
 
-    
     private bool $IsAssessment;
 
-    
-    private ?string $OwnerDomainID;
+    private ?string $OwnerDomainID = null;
 
-    
-    private ?string $OwnerDomainName;
+    private ?string $OwnerDomainName = null;
 
-    
-    private ?string $EquivalencyID;
+    private ?string $EquivalencyID = null;
 
-    
-    private ?string $EquivalencyName;
+    private ?string $EquivalencyName = null;
 
-    
     private bool $IsActive;
 
-    
     private ?string $Tags = null;
 
-    
-    private ?string $LogoUrl;
+    private ?string $LogoUrl = null;
 
-    
     private bool $HasForum;
 
-    
     private bool $HasFeedback;
 
-    
     private bool $HasAssignments;
 
-    
     private bool $HasSample;
 
-    
     private float $LearningTime;
 
-    
     private bool $GrantCertificate;
 
-    
     private float $CreditValue;
 
-    
     private bool $GrantBadge;
 
-    
     private DateTimeInterface $StartDate;
 
-    
     private DateTimeInterface $FirstEnrollmentDate;
 
-    
     private DateTimeInterface $LastEnrollmentDate;
 
-    
-    private ?string $DueDate;
+    private ?string $DueDate = null;
 
-    
     private bool $AccreditationExpires;
 
-    
     private int $AllowedReenrollmentsNumber;
 
-    
     private bool $AccreditationExpiresBasedOnEnrollmentDate;
 
-    
     private int $AccreditationExpiresUnits;
 
-    
-    private ?string $AccreditationExpiresInterval;
+    private ?string $AccreditationExpiresInterval = null;
 
-    
     private int $ReenrollmentAllowedBeforeExpiringUnits;
 
-    
-    private ?string $ReenrollmentAllowedBeforeExpiringInterval;
+    private ?string $ReenrollmentAllowedBeforeExpiringInterval = null;
 
-    
-    private ?ArrayOfCustomField $CustomFields;
+    private ?ArrayOfCustomField $CustomFields = null;
 
-    
     private ?ArrayOfCourseSession $Sessions = null;
 
-    
-    private ?ArrayOfLearningActivityCohort $Cohorts;
+    private ?ArrayOfLearningActivityCohort $Cohorts = null;
 
-    
-    private ?string $DetailsLink;
+    private ?string $DetailsLink = null;
 
-    
     private DateTimeInterface $LastModifiedTimestamp;
 
     public function getType(): string
@@ -187,13 +153,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getInstructions(): ?string
     {
         return $this->Instructions;
     }
 
-    
     public function withInstructions(?string $Instructions): static
     {
         $new = clone $this;
@@ -215,13 +179,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getIsOnline(): bool
     {
         return $this->IsOnline;
     }
 
-    
     public function withIsOnline(bool $IsOnline): static
     {
         $new = clone $this;
@@ -230,13 +192,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getIsAssessment(): bool
     {
         return $this->IsAssessment;
     }
 
-    
     public function withIsAssessment(bool $IsAssessment): static
     {
         $new = clone $this;
@@ -245,13 +205,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getOwnerDomainID(): ?string
     {
         return $this->OwnerDomainID;
     }
 
-    
     public function withOwnerDomainID(?string $OwnerDomainID): static
     {
         $new = clone $this;
@@ -260,13 +218,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getOwnerDomainName(): ?string
     {
         return $this->OwnerDomainName;
     }
 
-    
     public function withOwnerDomainName(?string $OwnerDomainName): static
     {
         $new = clone $this;
@@ -275,13 +231,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getEquivalencyID(): ?string
     {
         return $this->EquivalencyID;
     }
 
-    
     public function withEquivalencyID(?string $EquivalencyID): static
     {
         $new = clone $this;
@@ -290,13 +244,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getEquivalencyName(): ?string
     {
         return $this->EquivalencyName;
     }
 
-    
     public function withEquivalencyName(?string $EquivalencyName): static
     {
         $new = clone $this;
@@ -305,13 +257,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getIsActive(): bool
     {
         return $this->IsActive;
     }
 
-    
     public function withIsActive(bool $IsActive): static
     {
         $new = clone $this;
@@ -320,13 +270,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getTags(): ?string
     {
         return $this->Tags;
     }
 
-    
     public function withTags(?string $Tags): static
     {
         $new = clone $this;
@@ -335,13 +283,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getLogoUrl(): ?string
     {
         return $this->LogoUrl;
     }
 
-    
     public function withLogoUrl(?string $LogoUrl): static
     {
         $new = clone $this;
@@ -350,13 +296,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getHasForum(): bool
     {
         return $this->HasForum;
     }
 
-    
     public function withHasForum(bool $HasForum): static
     {
         $new = clone $this;
@@ -365,13 +309,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getHasFeedback(): bool
     {
         return $this->HasFeedback;
     }
 
-    
     public function withHasFeedback(bool $HasFeedback): static
     {
         $new = clone $this;
@@ -380,13 +322,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getHasAssignments(): bool
     {
         return $this->HasAssignments;
     }
 
-    
     public function withHasAssignments(bool $HasAssignments): static
     {
         $new = clone $this;
@@ -395,13 +335,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getHasSample(): bool
     {
         return $this->HasSample;
     }
 
-    
     public function withHasSample(bool $HasSample): static
     {
         $new = clone $this;
@@ -410,13 +348,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getLearningTime(): float
     {
         return $this->LearningTime;
     }
 
-    
     public function withLearningTime(float $LearningTime): static
     {
         $new = clone $this;
@@ -425,13 +361,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getGrantCertificate(): bool
     {
         return $this->GrantCertificate;
     }
 
-    
     public function withGrantCertificate(bool $GrantCertificate): static
     {
         $new = clone $this;
@@ -440,13 +374,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getCreditValue(): float
     {
         return $this->CreditValue;
     }
 
-    
     public function withCreditValue(float $CreditValue): static
     {
         $new = clone $this;
@@ -455,13 +387,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getGrantBadge(): bool
     {
         return $this->GrantBadge;
     }
 
-    
     public function withGrantBadge(bool $GrantBadge): static
     {
         $new = clone $this;
@@ -470,13 +400,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getStartDate(): DateTimeInterface
     {
         return $this->StartDate;
     }
 
-    
     public function withStartDate(DateTimeInterface $StartDate): static
     {
         $new = clone $this;
@@ -485,13 +413,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getFirstEnrollmentDate(): DateTimeInterface
     {
         return $this->FirstEnrollmentDate;
     }
 
-    
     public function withFirstEnrollmentDate(DateTimeInterface $FirstEnrollmentDate): static
     {
         $new = clone $this;
@@ -500,13 +426,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getLastEnrollmentDate(): DateTimeInterface
     {
         return $this->LastEnrollmentDate;
     }
 
-    
     public function withLastEnrollmentDate(DateTimeInterface $LastEnrollmentDate): static
     {
         $new = clone $this;
@@ -515,13 +439,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getDueDate(): ?string
     {
         return $this->DueDate;
     }
 
-    
     public function withDueDate(?string $DueDate): static
     {
         $new = clone $this;
@@ -530,13 +452,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getAccreditationExpires(): bool
     {
         return $this->AccreditationExpires;
     }
 
-    
     public function withAccreditationExpires(bool $AccreditationExpires): static
     {
         $new = clone $this;
@@ -545,13 +465,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getAllowedReenrollmentsNumber(): int
     {
         return $this->AllowedReenrollmentsNumber;
     }
 
-    
     public function withAllowedReenrollmentsNumber(int $AllowedReenrollmentsNumber): static
     {
         $new = clone $this;
@@ -560,13 +478,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getAccreditationExpiresBasedOnEnrollmentDate(): bool
     {
         return $this->AccreditationExpiresBasedOnEnrollmentDate;
     }
 
-    
     public function withAccreditationExpiresBasedOnEnrollmentDate(bool $AccreditationExpiresBasedOnEnrollmentDate): static
     {
         $new = clone $this;
@@ -575,13 +491,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getAccreditationExpiresUnits(): int
     {
         return $this->AccreditationExpiresUnits;
     }
 
-    
     public function withAccreditationExpiresUnits(int $AccreditationExpiresUnits): static
     {
         $new = clone $this;
@@ -590,13 +504,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getAccreditationExpiresInterval(): ?string
     {
         return $this->AccreditationExpiresInterval;
     }
 
-    
     public function withAccreditationExpiresInterval(?string $AccreditationExpiresInterval): static
     {
         $new = clone $this;
@@ -605,13 +517,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getReenrollmentAllowedBeforeExpiringUnits(): int
     {
         return $this->ReenrollmentAllowedBeforeExpiringUnits;
     }
 
-    
     public function withReenrollmentAllowedBeforeExpiringUnits(int $ReenrollmentAllowedBeforeExpiringUnits): static
     {
         $new = clone $this;
@@ -620,13 +530,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getReenrollmentAllowedBeforeExpiringInterval(): ?string
     {
         return $this->ReenrollmentAllowedBeforeExpiringInterval;
     }
 
-    
     public function withReenrollmentAllowedBeforeExpiringInterval(?string $ReenrollmentAllowedBeforeExpiringInterval): static
     {
         $new = clone $this;
@@ -635,13 +543,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getCustomFields(): ?ArrayOfCustomField
     {
         return $this->CustomFields;
     }
 
-    
     public function withCustomFields(?ArrayOfCustomField $CustomFields): static
     {
         $new = clone $this;
@@ -650,13 +556,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getSessions(): ?ArrayOfCourseSession
     {
         return $this->Sessions;
     }
 
-    
     public function withSessions(?ArrayOfCourseSession $Sessions): static
     {
         $new = clone $this;
@@ -665,13 +569,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getCohorts(): ?ArrayOfLearningActivityCohort
     {
         return $this->Cohorts;
     }
 
-    
     public function withCohorts(?ArrayOfLearningActivityCohort $Cohorts): static
     {
         $new = clone $this;
@@ -680,13 +582,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getDetailsLink(): ?string
     {
         return $this->DetailsLink;
     }
 
-    
     public function withDetailsLink(?string $DetailsLink): static
     {
         $new = clone $this;
@@ -695,13 +595,11 @@ class LearningActivity
         return $new;
     }
 
-    
     public function getLastModifiedTimestamp(): DateTimeInterface
     {
         return $this->LastModifiedTimestamp;
     }
 
-    
     public function withLastModifiedTimestamp(DateTimeInterface $LastModifiedTimestamp): static
     {
         $new = clone $this;

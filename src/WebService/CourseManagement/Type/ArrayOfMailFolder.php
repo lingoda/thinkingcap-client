@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfMailFolder
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\MailFolder>
+     * @var null | array<int<0,max>, MailFolder>
      */
-    private ?array $MailFolder;
+    private ?array $MailFolder = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\MailFolder>
+     * @return null | array<int<0,max>, MailFolder>
      */
     public function getMailFolder(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfMailFolder
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\MailFolder> $MailFolder
+     * @param null | array<int<0,max>, MailFolder> $MailFolder
      */
     public function withMailFolder(?array $MailFolder): static
     {

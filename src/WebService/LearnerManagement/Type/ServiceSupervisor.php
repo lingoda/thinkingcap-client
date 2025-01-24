@@ -6,15 +6,13 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceSupervisor extends ServiceUser
 {
-    private ?SupervisorType $SupervisorType;
+    private ?SupervisorType $SupervisorType = null;
 
-    
     public function getSupervisorType(): ?SupervisorType
     {
         return $this->SupervisorType;
     }
 
-    
     public function withSupervisorType(?SupervisorType $SupervisorType): static
     {
         $new = clone $this;

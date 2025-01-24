@@ -6,33 +6,25 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class Role
 {
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $Code;
+    private ?string $Code = null;
 
-    
-    private ?string $Title;
+    private ?string $Title = null;
 
-    
-    private ?string $Description;
+    private ?string $Description = null;
 
-    
     private bool $IsDefault;
 
-    
-    private ?string $ProgramID;
+    private ?string $ProgramID = null;
 
-    
-    private ?ArrayOfPermission $Permissions;
+    private ?ArrayOfPermission $Permissions = null;
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -41,13 +33,11 @@ class Role
         return $new;
     }
 
-    
     public function getCode(): ?string
     {
         return $this->Code;
     }
 
-    
     public function withCode(?string $Code): static
     {
         $new = clone $this;
@@ -56,13 +46,11 @@ class Role
         return $new;
     }
 
-    
     public function getTitle(): ?string
     {
         return $this->Title;
     }
 
-    
     public function withTitle(?string $Title): static
     {
         $new = clone $this;
@@ -71,13 +59,11 @@ class Role
         return $new;
     }
 
-    
     public function getDescription(): ?string
     {
         return $this->Description;
     }
 
-    
     public function withDescription(?string $Description): static
     {
         $new = clone $this;
@@ -86,13 +72,11 @@ class Role
         return $new;
     }
 
-    
     public function getIsDefault(): bool
     {
         return $this->IsDefault;
     }
 
-    
     public function withIsDefault(bool $IsDefault): static
     {
         $new = clone $this;
@@ -101,13 +85,11 @@ class Role
         return $new;
     }
 
-    
     public function getProgramID(): ?string
     {
         return $this->ProgramID;
     }
 
-    
     public function withProgramID(?string $ProgramID): static
     {
         $new = clone $this;
@@ -116,13 +98,11 @@ class Role
         return $new;
     }
 
-    
     public function getPermissions(): ?ArrayOfPermission
     {
         return $this->Permissions;
     }
 
-    
     public function withPermissions(?ArrayOfPermission $Permissions): static
     {
         $new = clone $this;

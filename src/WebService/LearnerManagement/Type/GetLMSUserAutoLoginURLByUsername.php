@@ -8,16 +8,13 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetLMSUserAutoLoginURLByUsername implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $userName;
+    private ?string $userName = null;
 
-    
-    private ?string $domainID;
+    private ?string $domainID = null;
 
-    
-    private ?string $returnUrl;
+    private ?string $returnUrl = null;
 
     /**
      * Constructor
@@ -31,13 +28,11 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         $this->returnUrl = $returnUrl;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -46,13 +41,11 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         return $new;
     }
 
-    
     public function getUserName(): ?string
     {
         return $this->userName;
     }
 
-    
     public function withUserName(?string $userName): static
     {
         $new = clone $this;
@@ -61,13 +54,11 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         return $new;
     }
 
-    
     public function getDomainID(): ?string
     {
         return $this->domainID;
     }
 
-    
     public function withDomainID(?string $domainID): static
     {
         $new = clone $this;
@@ -76,13 +67,11 @@ class GetLMSUserAutoLoginURLByUsername implements RequestInterface
         return $new;
     }
 
-    
     public function getReturnUrl(): ?string
     {
         return $this->returnUrl;
     }
 
-    
     public function withReturnUrl(?string $returnUrl): static
     {
         $new = clone $this;

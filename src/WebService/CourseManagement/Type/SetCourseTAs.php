@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class SetCourseTAs implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
-    
-    private ?string $taList;
+    private ?string $taList = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class SetCourseTAs implements RequestInterface
         $this->taList = $taList;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class SetCourseTAs implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class SetCourseTAs implements RequestInterface
         return $new;
     }
 
-    
     public function getTaList(): ?string
     {
         return $this->taList;
     }
 
-    
     public function withTaList(?string $taList): static
     {
         $new = clone $this;

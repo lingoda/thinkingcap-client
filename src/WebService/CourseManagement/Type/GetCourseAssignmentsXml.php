@@ -8,13 +8,11 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetCourseAssignmentsXml implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $user;
+    private ?string $user = null;
 
-    
-    private ?string $courseID;
+    private ?string $courseID = null;
 
     /**
      * Constructor
@@ -27,13 +25,11 @@ class GetCourseAssignmentsXml implements RequestInterface
         $this->courseID = $courseID;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class GetCourseAssignmentsXml implements RequestInterface
         return $new;
     }
 
-    
     public function getUser(): ?string
     {
         return $this->user;
     }
 
-    
     public function withUser(?string $user): static
     {
         $new = clone $this;
@@ -57,13 +51,11 @@ class GetCourseAssignmentsXml implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseID(): ?string
     {
         return $this->courseID;
     }
 
-    
     public function withCourseID(?string $courseID): static
     {
         $new = clone $this;

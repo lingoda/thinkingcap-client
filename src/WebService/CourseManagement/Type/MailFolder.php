@@ -6,24 +6,19 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class MailFolder
 {
-    private ?string $Description;
+    private ?string $Description = null;
 
-    
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $UserID;
+    private ?string $UserID = null;
 
-    
-    private ?string $Name;
+    private ?string $Name = null;
 
-    
     public function getDescription(): ?string
     {
         return $this->Description;
     }
 
-    
     public function withDescription(?string $Description): static
     {
         $new = clone $this;
@@ -32,13 +27,11 @@ class MailFolder
         return $new;
     }
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -47,13 +40,11 @@ class MailFolder
         return $new;
     }
 
-    
     public function getUserID(): ?string
     {
         return $this->UserID;
     }
 
-    
     public function withUserID(?string $UserID): static
     {
         $new = clone $this;
@@ -62,13 +53,11 @@ class MailFolder
         return $new;
     }
 
-    
     public function getName(): ?string
     {
         return $this->Name;
     }
 
-    
     public function withName(?string $Name): static
     {
         $new = clone $this;

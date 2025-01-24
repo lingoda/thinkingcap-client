@@ -8,11 +8,9 @@ class ServiceResultOfLearningActivity
 {
     private LearningActivity $Result;
 
-    
     private bool $Success;
 
-    
-    private ?string $Message;
+    private ?string $Message = null;
 
     public function getResult(): LearningActivity
     {
@@ -27,13 +25,11 @@ class ServiceResultOfLearningActivity
         return $new;
     }
 
-    
     public function getSuccess(): bool
     {
         return $this->Success;
     }
 
-    
     public function withSuccess(bool $Success): static
     {
         $new = clone $this;
@@ -42,13 +38,11 @@ class ServiceResultOfLearningActivity
         return $new;
     }
 
-    
     public function getMessage(): ?string
     {
         return $this->Message;
     }
 
-    
     public function withMessage(?string $Message): static
     {
         $new = clone $this;

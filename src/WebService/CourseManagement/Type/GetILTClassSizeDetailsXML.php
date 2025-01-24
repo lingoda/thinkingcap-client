@@ -8,10 +8,9 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 class GetILTClassSizeDetailsXML implements RequestInterface
 {
-    private ?string $apiKey;
+    private ?string $apiKey = null;
 
-    
-    private ?string $courseCode;
+    private ?string $courseCode = null;
 
     /**
      * Constructor
@@ -23,13 +22,11 @@ class GetILTClassSizeDetailsXML implements RequestInterface
         $this->courseCode = $courseCode;
     }
 
-    
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    
     public function withApiKey(?string $apiKey): static
     {
         $new = clone $this;
@@ -38,13 +35,11 @@ class GetILTClassSizeDetailsXML implements RequestInterface
         return $new;
     }
 
-    
     public function getCourseCode(): ?string
     {
         return $this->courseCode;
     }
 
-    
     public function withCourseCode(?string $courseCode): static
     {
         $new = clone $this;

@@ -6,21 +6,17 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class Permission
 {
-    private ?string $ID;
+    private ?string $ID = null;
 
-    
-    private ?string $Title;
+    private ?string $Title = null;
 
-    
-    private ?string $Code;
+    private ?string $Code = null;
 
-    
     public function getID(): ?string
     {
         return $this->ID;
     }
 
-    
     public function withID(?string $ID): static
     {
         $new = clone $this;
@@ -29,13 +25,11 @@ class Permission
         return $new;
     }
 
-    
     public function getTitle(): ?string
     {
         return $this->Title;
     }
 
-    
     public function withTitle(?string $Title): static
     {
         $new = clone $this;
@@ -44,13 +38,11 @@ class Permission
         return $new;
     }
 
-    
     public function getCode(): ?string
     {
         return $this->Code;
     }
 
-    
     public function withCode(?string $Code): static
     {
         $new = clone $this;

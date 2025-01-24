@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 class ArrayOfUser
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\User>
+     * @var null | array<int<0,max>, User>
      */
-    private ?array $User;
+    private ?array $User = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\User>
+     * @return null | array<int<0,max>, User>
      */
     public function getUser(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfUser
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type\User> $User
+     * @param null | array<int<0,max>, User> $User
      */
     public function withUser(?array $User): static
     {

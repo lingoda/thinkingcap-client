@@ -7,12 +7,12 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 class ArrayOfLearningActivityRecord
 {
     /**
-     * @var null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\LearningActivityRecord>
+     * @var null | array<int<0,max>, LearningActivityRecord>
      */
-    private ?array $LearningActivityRecord;
+    private ?array $LearningActivityRecord = null;
 
     /**
-     * @return null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\LearningActivityRecord>
+     * @return null | array<int<0,max>, LearningActivityRecord>
      */
     public function getLearningActivityRecord(): ?array
     {
@@ -20,7 +20,7 @@ class ArrayOfLearningActivityRecord
     }
 
     /**
-     * @param null | array<int<0,max>, \Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type\LearningActivityRecord> $LearningActivityRecord
+     * @param null | array<int<0,max>, LearningActivityRecord> $LearningActivityRecord
      */
     public function withLearningActivityRecord(?array $LearningActivityRecord): static
     {
