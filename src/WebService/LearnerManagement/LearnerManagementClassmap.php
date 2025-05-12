@@ -31,6 +31,7 @@ class LearnerManagementClassmap
             new ClassMap('Permission', Type\Permission::class),
             new ClassMap('ArrayOfProgram', Type\ArrayOfProgram::class),
             new ClassMap('Program', Type\Program::class),
+            new ClassMap('POPurchaseInstructionsXmlNode', Type\POPurchaseInstructionsXmlNode::class),
             new ClassMap('RegistrationIntroXmlNode', Type\RegistrationIntroXmlNode::class),
             new ClassMap('RegistrationDuplicateAccountInstrXmlNode', Type\RegistrationDuplicateAccountInstrXmlNode::class),
             new ClassMap('RegistrationDisclaimerXmlNode', Type\RegistrationDisclaimerXmlNode::class),

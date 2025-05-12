@@ -53,6 +53,8 @@ class Reference
 
     private ?string $MediaFileID = null;
 
+    private bool $ThumbnailAdded;
+
     private ?string $FieldsXml = null;
 
     public function getID(): ?string
@@ -330,6 +332,19 @@ class Reference
     {
         $new = clone $this;
         $new->MediaFileID = $MediaFileID;
+
+        return $new;
+    }
+
+    public function getThumbnailAdded(): bool
+    {
+        return $this->ThumbnailAdded;
+    }
+
+    public function withThumbnailAdded(bool $ThumbnailAdded): static
+    {
+        $new = clone $this;
+        $new->ThumbnailAdded = $ThumbnailAdded;
 
         return $new;
     }

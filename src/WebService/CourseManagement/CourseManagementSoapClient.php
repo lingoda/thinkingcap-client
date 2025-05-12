@@ -342,6 +342,25 @@ class CourseManagementSoapClient
     }
 
     /**
+     * Returns a list of the passed learning activity student records optionally filtered by status and including values for the passed metadata fields. <br/><br/>Parameters: <br/>- API key, <br/>- ID of the learning activity for which to return student records (required, string in GUID format), <br/>- optional, a status to filter the student records by ['active','completed'], <br/>- True to include the user metadata applying to the API key branch, <br/>- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.<br/><br/>Returns: if successful, a list of student record for the passed learning activity, filtered by the passed status and including or not the user metadata.
+     *
+     * @param RequestInterface & Type\GetLearningActivityStudentRecordsFiltered $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface & Type\GetLearningActivityStudentRecordsFilteredResponse
+     */
+    public function getLearningActivityStudentRecordsFiltered(Type\GetLearningActivityStudentRecordsFiltered $parameters): Type\GetLearningActivityStudentRecordsFilteredResponse
+    {
+        $response = ($this->caller)('GetLearningActivityStudentRecordsFiltered', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivityStudentRecordsFilteredResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
+    }
+
+    /**
      * Returns the value(s) of a learning activity custom metadata field.
      *
      * @param RequestInterface & Type\GetLearningActivityCustomFieldValues $parameters

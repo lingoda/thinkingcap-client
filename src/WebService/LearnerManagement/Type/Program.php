@@ -167,6 +167,8 @@ class Program
 
     private bool $AllowLearnersLMSLogin;
 
+    private bool $AllowSkipEmailNewAccounts;
+
     private bool $AllowGuestLMSLogin;
 
     private bool $UseMFA;
@@ -184,6 +186,22 @@ class Program
     private bool $UseMFAOnSSO;
 
     private bool $UseMFAOnLMSLogin;
+
+    private bool $AllowPOPurchases;
+
+    private bool $DoNotInheritPOPurchase;
+
+    private ?string $POPurchaseInvoiceEmail = null;
+
+    private ?string $POPurchaseInstructions = null;
+
+    private ?POPurchaseInstructionsXmlNode $POPurchaseInstructionsXmlNode = null;
+
+    private bool $AllowOverridePOPurchase;
+
+    private bool $DenyPOEnrollmentUntilPayed;
+
+    private ?string $POPurchaseAppliesTo = null;
 
     private bool $HideUrlFromSearch;
 
@@ -1382,6 +1400,19 @@ class Program
         return $new;
     }
 
+    public function getAllowSkipEmailNewAccounts(): bool
+    {
+        return $this->AllowSkipEmailNewAccounts;
+    }
+
+    public function withAllowSkipEmailNewAccounts(bool $AllowSkipEmailNewAccounts): static
+    {
+        $new = clone $this;
+        $new->AllowSkipEmailNewAccounts = $AllowSkipEmailNewAccounts;
+
+        return $new;
+    }
+
     public function getAllowGuestLMSLogin(): bool
     {
         return $this->AllowGuestLMSLogin;
@@ -1495,6 +1526,110 @@ class Program
     {
         $new = clone $this;
         $new->UseMFAOnLMSLogin = $UseMFAOnLMSLogin;
+
+        return $new;
+    }
+
+    public function getAllowPOPurchases(): bool
+    {
+        return $this->AllowPOPurchases;
+    }
+
+    public function withAllowPOPurchases(bool $AllowPOPurchases): static
+    {
+        $new = clone $this;
+        $new->AllowPOPurchases = $AllowPOPurchases;
+
+        return $new;
+    }
+
+    public function getDoNotInheritPOPurchase(): bool
+    {
+        return $this->DoNotInheritPOPurchase;
+    }
+
+    public function withDoNotInheritPOPurchase(bool $DoNotInheritPOPurchase): static
+    {
+        $new = clone $this;
+        $new->DoNotInheritPOPurchase = $DoNotInheritPOPurchase;
+
+        return $new;
+    }
+
+    public function getPOPurchaseInvoiceEmail(): ?string
+    {
+        return $this->POPurchaseInvoiceEmail;
+    }
+
+    public function withPOPurchaseInvoiceEmail(?string $POPurchaseInvoiceEmail): static
+    {
+        $new = clone $this;
+        $new->POPurchaseInvoiceEmail = $POPurchaseInvoiceEmail;
+
+        return $new;
+    }
+
+    public function getPOPurchaseInstructions(): ?string
+    {
+        return $this->POPurchaseInstructions;
+    }
+
+    public function withPOPurchaseInstructions(?string $POPurchaseInstructions): static
+    {
+        $new = clone $this;
+        $new->POPurchaseInstructions = $POPurchaseInstructions;
+
+        return $new;
+    }
+
+    public function getPOPurchaseInstructionsXmlNode(): ?POPurchaseInstructionsXmlNode
+    {
+        return $this->POPurchaseInstructionsXmlNode;
+    }
+
+    public function withPOPurchaseInstructionsXmlNode(?POPurchaseInstructionsXmlNode $POPurchaseInstructionsXmlNode): static
+    {
+        $new = clone $this;
+        $new->POPurchaseInstructionsXmlNode = $POPurchaseInstructionsXmlNode;
+
+        return $new;
+    }
+
+    public function getAllowOverridePOPurchase(): bool
+    {
+        return $this->AllowOverridePOPurchase;
+    }
+
+    public function withAllowOverridePOPurchase(bool $AllowOverridePOPurchase): static
+    {
+        $new = clone $this;
+        $new->AllowOverridePOPurchase = $AllowOverridePOPurchase;
+
+        return $new;
+    }
+
+    public function getDenyPOEnrollmentUntilPayed(): bool
+    {
+        return $this->DenyPOEnrollmentUntilPayed;
+    }
+
+    public function withDenyPOEnrollmentUntilPayed(bool $DenyPOEnrollmentUntilPayed): static
+    {
+        $new = clone $this;
+        $new->DenyPOEnrollmentUntilPayed = $DenyPOEnrollmentUntilPayed;
+
+        return $new;
+    }
+
+    public function getPOPurchaseAppliesTo(): ?string
+    {
+        return $this->POPurchaseAppliesTo;
+    }
+
+    public function withPOPurchaseAppliesTo(?string $POPurchaseAppliesTo): static
+    {
+        $new = clone $this;
+        $new->POPurchaseAppliesTo = $POPurchaseAppliesTo;
 
         return $new;
     }

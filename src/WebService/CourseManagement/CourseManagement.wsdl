@@ -99,7 +99,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="ShowSignInLearners" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="SignInWithBadge" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="CompleteSessionWhenJoinByLearner" type="s:boolean" />
-              <s:element minOccurs="1" maxOccurs="1" name="RecordScore" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CompleteSessionWhenMarkedByLearner" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="RecordComments" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="RequiresChallenge" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="ChallengeMaxAttempt" type="s:int" />
@@ -107,6 +107,7 @@
               <s:element minOccurs="1" maxOccurs="1" name="ChallengeFrequency" type="s:int" />
               <s:element minOccurs="1" maxOccurs="1" name="AddTimeInReadOnly" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="Timeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="WaitlistPaymentDurationDays" type="s:int" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -114,6 +115,7 @@
       <s:complexType name="LearningType">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="CourseType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FullScreen" type="s:string" />
@@ -250,6 +252,11 @@
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnLPEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="FastStartLPActivities" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersToShare" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowFacebook" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowLinkedin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowX" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowEmail" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentIsEnrolled" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPendingRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StudentHasPass" type="s:boolean" />
@@ -259,6 +266,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="HasAccessCode" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="AccessCode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CourseSharingCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordScore" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassingScore" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Disclaimer" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ShowDisclaimerAlways" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="DisclaimerAgreed" type="s:boolean" />
@@ -269,19 +278,19 @@
           <s:element minOccurs="0" maxOccurs="1" name="InitialScormVersion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ReviewStatus" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAccreditationExpiryNotification" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnAccreditationExpiry" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnAccreditationExpiry" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartLearnerNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartModeratorNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentConfirmation" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentRequestNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendThresholdNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendStartDateNotificationLearner" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorEnroll" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsEnroll" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyStudentEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentRequestConfirmation" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnEnrollRequestConfirmation" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnEnrollRequestConfirmation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnEnrollRequestConfirmation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnEnrollRequestConfirmation" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerOnEnrollRequestConfirmation" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendDueDateReminder1" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendDueDateReminder2" type="s:boolean" />
@@ -291,48 +300,48 @@
           <s:element minOccurs="1" maxOccurs="1" name="SendUpcomingILTReminder3" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentReminderNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendLearningPathModificationNotification" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnEnrollmentReminder" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnEnrollmentReminder" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendWithdrawRequestNotification" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnWithdrawRequest" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnWithdrawRequest" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorCompletion" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorCompletion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnWithdrawRequest" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnWithdrawRequest" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsCompletion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletionNotificationIncludeSuccess" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletionNotificationIncludeScore" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnDue" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnDue" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnOverDue1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnOverDue2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnOverDue3" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorSupervisorOnOverDue1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorSupervisorOnOverDue2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorSupervisorOnOverDue3" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnOverDue1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnOverDue2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnOverDue3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnDue" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnDue" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnOverDue1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnOverDue2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnOverDue3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsSupervisorOnOverDue1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsSupervisorOnOverDue2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsSupervisorOnOverDue3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnOverDue1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnOverDue2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnOverDue3" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerOnOverDue1" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerOnOverDue2" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerOnOverDue3" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendDueDateNotification" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnMissedILTSession" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnMissedILTSession" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnWaitingList" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnWithdraw" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnWithdraw" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnWaitingList" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnDueDateReminder1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnDueDateReminder2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnDueDateReminder3" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnDueDateReminder1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnDueDateReminder2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnDueDateReminder3" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnUpcomingILTReminder1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnUpcomingILTReminder2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnUpcomingILTReminder3" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnUpcomingILTReminder1" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnUpcomingILTReminder2" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnUpcomingILTReminder3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnMissedILTSession" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnMissedILTSession" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnWaitingList" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnWithdraw" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnWithdraw" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnWaitingList" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnDueDateReminder1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnDueDateReminder2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnDueDateReminder3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnDueDateReminder1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnDueDateReminder2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnDueDateReminder3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnUpcomingILTReminder1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnUpcomingILTReminder2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnUpcomingILTReminder3" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnUpcomingILTReminder1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnUpcomingILTReminder2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnUpcomingILTReminder3" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendOverDueNotification1" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendOverDueNotification2" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendOverDueNotification3" type="s:boolean" />
@@ -364,8 +373,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="SendRecommendationOutCome" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAccountVerification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSelfWithdraw" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifySupervisorOnSelfWithdraw" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyModeratorOnSelfWithdraw" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnSelfWithdraw" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnSelfWithdraw" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HasForum" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="HasChat" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideLastEnrollmentDate" type="s:boolean" />
@@ -391,9 +400,11 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireAssesmentForCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireStatusSuccessPassed" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESignatureStatement" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISucces" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MinPassingScore" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IltPassingScore" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="PreventCompletionSettings" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HasAssessment" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AssessmentWeight" type="s:int" />
@@ -453,6 +464,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ExpireMetadataFieldID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CreditsAcrossVariousCategories" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadge" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeIssuer" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionPriorDueDate" type="s:boolean" />
@@ -487,6 +499,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ObjectType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MediaFileID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThumbnailAdded" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
         </s:sequence>
       </s:complexType>
@@ -861,11 +874,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISuccess" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MinPassingScore" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordScore" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassingScore" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="BarAccess" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="EntrySuccess" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DateEnrolled" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="EnrollmentNotes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnrolledBy" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DateStarted" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletedDate" type="s:dateTime" />
@@ -963,6 +979,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DoProcessLocation" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordScore" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="DocumentFile" type="s:base64Binary" />
           <s:element minOccurs="0" maxOccurs="1" name="ContentType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="LastRosterFilePath" type="s:string" />
@@ -1482,19 +1499,41 @@
           <s:element minOccurs="0" maxOccurs="1" name="StudentID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnrollmentNumber" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Score" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PercentCompleted" type="s:double" />
           <s:element minOccurs="1" maxOccurs="1" name="DateEnrolled" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DateStarted" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DateCompleted" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccreditationExpiring" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetLearningActivityStudentRecordsResponse">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetLearningActivityStudentRecordsResult" type="tns:ServiceResultOfListOfLearningActivityRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLearningActivityStudentRecordsFiltered">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="learningActivityID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordStatus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="includedMetadataFields" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLearningActivityStudentRecordsFilteredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLearningActivityStudentRecordsFilteredResult" type="tns:ServiceResultOfListOfLearningActivityRecord" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1954,6 +1993,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="UseSSL" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowAdminsLMSLogin" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowSkipEmailNewAccounts" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowGuestLMSLogin" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UseMFA" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="MFAMethod" type="s:string" />
@@ -1963,6 +2003,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="MFALearnerInterval" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnSSO" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="UseMFAOnLMSLogin" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowPOPurchases" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoNotInheritPOPurchase" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="POPurchaseInvoiceEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POPurchaseInstructions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POPurchaseInstructionsXmlNode">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="AllowOverridePOPurchase" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DenyPOEnrollmentUntilPayed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="POPurchaseAppliesTo" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="HideUrlFromSearch" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanConsumeShared" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CanShare" type="s:boolean" />
@@ -2497,6 +2551,12 @@
   <wsdl:message name="GetLearningActivityStudentRecordsSoapOut">
     <wsdl:part name="parameters" element="tns:GetLearningActivityStudentRecordsResponse" />
   </wsdl:message>
+  <wsdl:message name="GetLearningActivityStudentRecordsFilteredSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLearningActivityStudentRecordsFiltered" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivityStudentRecordsFilteredSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLearningActivityStudentRecordsFilteredResponse" />
+  </wsdl:message>
   <wsdl:message name="GetLearningActivityCustomFieldValuesSoapIn">
     <wsdl:part name="parameters" element="tns:GetLearningActivityCustomFieldValues" />
   </wsdl:message>
@@ -2787,6 +2847,16 @@
     <wsdl:part name="learningActivityID" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetLearningActivityStudentRecordsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivityStudentRecordsFilteredHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="learningActivityID" type="s:string" />
+    <wsdl:part name="recordStatus" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includedMetadataFields" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivityStudentRecordsFilteredHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
   </wsdl:message>
   <wsdl:message name="GetLearningActivityCustomFieldValuesHttpGetIn">
@@ -3153,6 +3223,16 @@
   <wsdl:message name="GetLearningActivityStudentRecordsHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
   </wsdl:message>
+  <wsdl:message name="GetLearningActivityStudentRecordsFilteredHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="learningActivityID" type="s:string" />
+    <wsdl:part name="recordStatus" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includedMetadataFields" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivityStudentRecordsFilteredHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
+  </wsdl:message>
   <wsdl:message name="GetLearningActivityCustomFieldValuesHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="learningActivityID" type="s:string" />
@@ -3431,6 +3511,11 @@
       <wsdl:input message="tns:GetLearningActivityStudentRecordsSoapIn" />
       <wsdl:output message="tns:GetLearningActivityStudentRecordsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the passed learning activity student records optionally filtered by status and including values for the passed metadata fields. &lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ID of the learning activity for which to return student records (required, string in GUID format), &lt;br/&gt;- optional, a status to filter the student records by ['active','completed'], &lt;br/&gt;- True to include the user metadata applying to the API key branch, &lt;br/&gt;- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.&lt;br/&gt;&lt;br/&gt;Returns: if successful, a list of student record for the passed learning activity, filtered by the passed status and including or not the user metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetLearningActivityStudentRecordsFilteredSoapIn" />
+      <wsdl:output message="tns:GetLearningActivityStudentRecordsFilteredSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetLearningActivityCustomFieldValues">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the value(s) of a learning activity custom metadata field.</wsdl:documentation>
       <wsdl:input message="tns:GetLearningActivityCustomFieldValuesSoapIn" />
@@ -3618,6 +3703,11 @@
       <wsdl:input message="tns:GetLearningActivityStudentRecordsHttpGetIn" />
       <wsdl:output message="tns:GetLearningActivityStudentRecordsHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the passed learning activity student records optionally filtered by status and including values for the passed metadata fields. &lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ID of the learning activity for which to return student records (required, string in GUID format), &lt;br/&gt;- optional, a status to filter the student records by ['active','completed'], &lt;br/&gt;- True to include the user metadata applying to the API key branch, &lt;br/&gt;- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.&lt;br/&gt;&lt;br/&gt;Returns: if successful, a list of student record for the passed learning activity, filtered by the passed status and including or not the user metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetLearningActivityStudentRecordsFilteredHttpGetIn" />
+      <wsdl:output message="tns:GetLearningActivityStudentRecordsFilteredHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetLearningActivityCustomFieldValues">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the value(s) of a learning activity custom metadata field.</wsdl:documentation>
       <wsdl:input message="tns:GetLearningActivityCustomFieldValuesHttpGetIn" />
@@ -3799,6 +3889,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the passed learning activity student records.</wsdl:documentation>
       <wsdl:input message="tns:GetLearningActivityStudentRecordsHttpPostIn" />
       <wsdl:output message="tns:GetLearningActivityStudentRecordsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of the passed learning activity student records optionally filtered by status and including values for the passed metadata fields. &lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- ID of the learning activity for which to return student records (required, string in GUID format), &lt;br/&gt;- optional, a status to filter the student records by ['active','completed'], &lt;br/&gt;- True to include the user metadata applying to the API key branch, &lt;br/&gt;- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.&lt;br/&gt;&lt;br/&gt;Returns: if successful, a list of student record for the passed learning activity, filtered by the passed status and including or not the user metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetLearningActivityStudentRecordsFilteredHttpPostIn" />
+      <wsdl:output message="tns:GetLearningActivityStudentRecordsFilteredHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLearningActivityCustomFieldValues">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the value(s) of a learning activity custom metadata field.</wsdl:documentation>
@@ -4044,6 +4139,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLearningActivityStudentRecords">
       <soap:operation soapAction="http://www.thinkingcap.com/GetLearningActivityStudentRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <soap:operation soapAction="http://www.thinkingcap.com/GetLearningActivityStudentRecordsFiltered" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4387,6 +4491,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <soap12:operation soapAction="http://www.thinkingcap.com/GetLearningActivityStudentRecordsFiltered" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetLearningActivityCustomFieldValues">
       <soap12:operation soapAction="http://www.thinkingcap.com/GetLearningActivityCustomFieldValues" style="document" />
       <wsdl:input>
@@ -4723,6 +4836,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <http:operation location="/GetLearningActivityStudentRecordsFiltered" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetLearningActivityCustomFieldValues">
       <http:operation location="/GetLearningActivityCustomFieldValues" />
       <wsdl:input>
@@ -5043,6 +5165,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLearningActivityStudentRecords">
       <http:operation location="/GetLearningActivityStudentRecords" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLearningActivityStudentRecordsFiltered">
+      <http:operation location="/GetLearningActivityStudentRecordsFiltered" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
