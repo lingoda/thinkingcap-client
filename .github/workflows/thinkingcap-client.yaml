@@ -57,7 +57,7 @@ jobs:
                   extensions: apcu, redis
 
             - name: composer-cache
-              uses: actions/cache@v3.2.6
+              uses: actions/cache@v4
               with:
                   path: ${{ needs.prepare.outputs.composercachedir }}
                   key: composer-phppkg-${{ hashFiles('composer.lock') }}
@@ -75,7 +75,7 @@ jobs:
 
             - name: phpstan-cache
               if: ${{ !cancelled() }}
-              uses: actions/cache@v3.3.2
+              uses: actions/cache@v4
               with:
                   key: phpstan-phppkg-${{ github.ref }}-${{ github.sha }}
                   path: linters/.phpstan-cache
