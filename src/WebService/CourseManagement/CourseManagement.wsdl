@@ -1499,6 +1499,9 @@
           <s:element minOccurs="0" maxOccurs="1" name="StudentID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StudentEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LearningActivityCode" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="EnrollmentNumber" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />

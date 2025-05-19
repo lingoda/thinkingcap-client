@@ -2115,6 +2115,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DateCompleted" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="AccreditationExpiring" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetStudentLearningActivityRecordDetailsResponse">
@@ -2165,6 +2166,23 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetAllStudentLearningActivityRecordsResult" type="tns:ServiceResultOfListOfLearningActivityRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLearningActivitiesStudentRecordsWithPreset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxDaysToReport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeMetadata" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="includedMetadataFields" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLearningActivitiesStudentRecordsWithPresetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLearningActivitiesStudentRecordsWithPresetResult" type="tns:ServiceResultOfListOfLearningActivityRecord" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2704,6 +2722,12 @@
   <wsdl:message name="GetAllStudentLearningActivityRecordsSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllStudentLearningActivityRecordsResponse" />
   </wsdl:message>
+  <wsdl:message name="GetLearningActivitiesStudentRecordsWithPresetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLearningActivitiesStudentRecordsWithPreset" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivitiesStudentRecordsWithPresetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLearningActivitiesStudentRecordsWithPresetResponse" />
+  </wsdl:message>
   <wsdl:message name="SetRecordDetailsSoapIn">
     <wsdl:part name="parameters" element="tns:SetRecordDetails" />
   </wsdl:message>
@@ -3132,6 +3156,15 @@
     <wsdl:part name="learningObjectTypeFilter" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetAllStudentLearningActivityRecordsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivitiesStudentRecordsWithPresetHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="maxDaysToReport" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includedMetadataFields" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivitiesStudentRecordsWithPresetHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
   </wsdl:message>
   <wsdl:message name="SetRecordDetailsHttpGetIn">
@@ -3608,6 +3641,15 @@
   <wsdl:message name="GetAllStudentLearningActivityRecordsHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
   </wsdl:message>
+  <wsdl:message name="GetLearningActivitiesStudentRecordsWithPresetHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="maxDaysToReport" type="s:string" />
+    <wsdl:part name="includeMetadata" type="s:string" />
+    <wsdl:part name="includedMetadataFields" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLearningActivitiesStudentRecordsWithPresetHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfListOfLearningActivityRecord" />
+  </wsdl:message>
   <wsdl:message name="SetRecordDetailsHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
     <wsdl:part name="studentRecordID" type="s:string" />
@@ -3934,6 +3976,11 @@
       <wsdl:input message="tns:GetAllStudentLearningActivityRecordsSoapIn" />
       <wsdl:output message="tns:GetAllStudentLearningActivityRecordsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of completed student records in the passed date range (up to 7 days ago) or last 24 hours if a date range not passed and including values for the passed metadata fields. &lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- maximum number of days to report, up to 7; if passed 0, returns the completions for the past 24 hours &lt;br/&gt;- True to include the user metadata applying to the API key branch, &lt;br/&gt;- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.&lt;br/&gt;&lt;br/&gt;Returns: if successful, a list of completed student record for the learning activities matching the preset metadata fields and for students matching the preset metadata fields, including or not the user metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetLearningActivitiesStudentRecordsWithPresetSoapIn" />
+      <wsdl:output message="tns:GetLearningActivitiesStudentRecordsWithPresetSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. &lt;br/&gt;Status valid values are ['Completed','Active'] &lt;br/&gt;The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. &lt;br/&gt;The last module name, percent completed, score and credits are optional. &lt;br/&gt;The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
       <wsdl:input message="tns:SetRecordDetailsSoapIn" />
@@ -4201,6 +4248,11 @@
       <wsdl:input message="tns:GetAllStudentLearningActivityRecordsHttpGetIn" />
       <wsdl:output message="tns:GetAllStudentLearningActivityRecordsHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of completed student records in the passed date range (up to 7 days ago) or last 24 hours if a date range not passed and including values for the passed metadata fields. &lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- maximum number of days to report, up to 7; if passed 0, returns the completions for the past 24 hours &lt;br/&gt;- True to include the user metadata applying to the API key branch, &lt;br/&gt;- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.&lt;br/&gt;&lt;br/&gt;Returns: if successful, a list of completed student record for the learning activities matching the preset metadata fields and for students matching the preset metadata fields, including or not the user metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetLearningActivitiesStudentRecordsWithPresetHttpGetIn" />
+      <wsdl:output message="tns:GetLearningActivitiesStudentRecordsWithPresetHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. &lt;br/&gt;Status valid values are ['Completed','Active'] &lt;br/&gt;The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. &lt;br/&gt;The last module name, percent completed, score and credits are optional. &lt;br/&gt;The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
       <wsdl:input message="tns:SetRecordDetailsHttpGetIn" />
@@ -4467,6 +4519,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the student record information for all student enrollments. If a learning activity type filter is passed ("course","learning path","activity"), the records are filtered by the passed type.</wsdl:documentation>
       <wsdl:input message="tns:GetAllStudentLearningActivityRecordsHttpPostIn" />
       <wsdl:output message="tns:GetAllStudentLearningActivityRecordsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of completed student records in the passed date range (up to 7 days ago) or last 24 hours if a date range not passed and including values for the passed metadata fields. &lt;br/&gt;&lt;br/&gt;Parameters: &lt;br/&gt;- API key, &lt;br/&gt;- maximum number of days to report, up to 7; if passed 0, returns the completions for the past 24 hours &lt;br/&gt;- True to include the user metadata applying to the API key branch, &lt;br/&gt;- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.&lt;br/&gt;&lt;br/&gt;Returns: if successful, a list of completed student record for the learning activities matching the preset metadata fields and for students matching the preset metadata fields, including or not the user metadata.</wsdl:documentation>
+      <wsdl:input message="tns:GetLearningActivitiesStudentRecordsWithPresetHttpPostIn" />
+      <wsdl:output message="tns:GetLearningActivitiesStudentRecordsWithPresetHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. &lt;br/&gt;Status valid values are ['Completed','Active'] &lt;br/&gt;The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. &lt;br/&gt;The last module name, percent completed, score and credits are optional. &lt;br/&gt;The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
@@ -4877,6 +4934,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllStudentLearningActivityRecords">
       <soap:operation soapAction="http://www.thinkingcap.com/GetAllStudentLearningActivityRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <soap:operation soapAction="http://www.thinkingcap.com/GetLearningActivitiesStudentRecordsWithPreset" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5364,6 +5430,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <soap12:operation soapAction="http://www.thinkingcap.com/GetLearningActivitiesStudentRecordsWithPreset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <soap12:operation soapAction="http://www.thinkingcap.com/SetRecordDetails" style="document" />
       <wsdl:input>
@@ -5844,6 +5919,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <http:operation location="/GetLearningActivitiesStudentRecordsWithPreset" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SetRecordDetails">
       <http:operation location="/SetRecordDetails" />
       <wsdl:input>
@@ -6317,6 +6401,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllStudentLearningActivityRecords">
       <http:operation location="/GetAllStudentLearningActivityRecords" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLearningActivitiesStudentRecordsWithPreset">
+      <http:operation location="/GetLearningActivitiesStudentRecordsWithPreset" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -722,6 +722,25 @@ class LearnerManagementSoapClient
     }
 
     /**
+     * Returns a list of completed student records in the passed date range (up to 7 days ago) or last 24 hours if a date range not passed and including values for the passed metadata fields. <br/><br/>Parameters: <br/>- API key, <br/>- maximum number of days to report, up to 7; if passed 0, returns the completions for the past 24 hours <br/>- True to include the user metadata applying to the API key branch, <br/>- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.<br/><br/>Returns: if successful, a list of completed student record for the learning activities matching the preset metadata fields and for students matching the preset metadata fields, including or not the user metadata.
+     *
+     * @param RequestInterface & Type\GetLearningActivitiesStudentRecordsWithPreset $parameters
+     *
+     * @throws SoapException
+     *
+     * @return ResultInterface & Type\GetLearningActivitiesStudentRecordsWithPresetResponse
+     */
+    public function getLearningActivitiesStudentRecordsWithPreset(Type\GetLearningActivitiesStudentRecordsWithPreset $parameters): Type\GetLearningActivitiesStudentRecordsWithPresetResponse
+    {
+        $response = ($this->caller)('GetLearningActivitiesStudentRecordsWithPreset', $parameters);
+
+        \Psl\Type\instance_of(Type\GetLearningActivitiesStudentRecordsWithPresetResponse::class)->assert($response);
+        \Psl\Type\instance_of(ResultInterface::class)->assert($response);
+
+        return $response;
+    }
+
+    /**
      * Sets the details of a student learning activity record. <br/>Status valid values are ['Completed','Active'] <br/>The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. <br/>The last module name, percent completed, score and credits are optional. <br/>The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.
      *
      * @param RequestInterface & Type\SetRecordDetails $parameters

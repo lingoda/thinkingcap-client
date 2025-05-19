@@ -175,6 +175,8 @@ class LearnerManagementClassmap
             new ClassMap('GetStudentLearningActivityRecordsResponse', Type\GetStudentLearningActivityRecordsResponse::class),
             new ClassMap('GetAllStudentLearningActivityRecords', Type\GetAllStudentLearningActivityRecords::class),
             new ClassMap('GetAllStudentLearningActivityRecordsResponse', Type\GetAllStudentLearningActivityRecordsResponse::class),
+            new ClassMap('GetLearningActivitiesStudentRecordsWithPreset', Type\GetLearningActivitiesStudentRecordsWithPreset::class),
+            new ClassMap('GetLearningActivitiesStudentRecordsWithPresetResponse', Type\GetLearningActivitiesStudentRecordsWithPresetResponse::class),
             new ClassMap('SetRecordDetails', Type\SetRecordDetails::class),
             new ClassMap('SetRecordDetailsResponse', Type\SetRecordDetailsResponse::class),
             new ClassMap('ExtendRecordDueDate', Type\ExtendRecordDueDate::class),

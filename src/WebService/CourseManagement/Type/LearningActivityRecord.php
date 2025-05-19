@@ -14,6 +14,12 @@ class LearningActivityRecord
 
     private ?string $StudentEmail = null;
 
+    private ?string $LearningActivityID = null;
+
+    private ?string $LearningActivityTitle = null;
+
+    private ?string $LearningActivityCode = null;
+
     private int $EnrollmentNumber;
 
     private ?string $Status = null;
@@ -71,6 +77,45 @@ class LearningActivityRecord
     {
         $new = clone $this;
         $new->StudentEmail = $StudentEmail;
+
+        return $new;
+    }
+
+    public function getLearningActivityID(): ?string
+    {
+        return $this->LearningActivityID;
+    }
+
+    public function withLearningActivityID(?string $LearningActivityID): static
+    {
+        $new = clone $this;
+        $new->LearningActivityID = $LearningActivityID;
+
+        return $new;
+    }
+
+    public function getLearningActivityTitle(): ?string
+    {
+        return $this->LearningActivityTitle;
+    }
+
+    public function withLearningActivityTitle(?string $LearningActivityTitle): static
+    {
+        $new = clone $this;
+        $new->LearningActivityTitle = $LearningActivityTitle;
+
+        return $new;
+    }
+
+    public function getLearningActivityCode(): ?string
+    {
+        return $this->LearningActivityCode;
+    }
+
+    public function withLearningActivityCode(?string $LearningActivityCode): static
+    {
+        $new = clone $this;
+        $new->LearningActivityCode = $LearningActivityCode;
 
         return $new;
     }
