@@ -722,19 +722,19 @@ class LearnerManagementSoapClient
     }
 
     /**
-     * Returns a list of completed student records in the passed date range (up to 7 days ago) or last 24 hours if a date range not passed and including values for the passed metadata fields. <br/><br/>Parameters: <br/>- API key, <br/>- maximum number of days to report, up to 7; if passed 0, returns the completions for the past 24 hours <br/>- True to include the user metadata applying to the API key branch, <br/>- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.<br/><br/>Returns: if successful, a list of completed student record for the learning activities matching the preset metadata fields and for students matching the preset metadata fields, including or not the user metadata.
+     * Returns a list of completed student records in the passed date range (up to 7 days ago) or last 24 hours if a date range not passed and including values for the passed metadata fields. <br/><br/>Parameters: <br/>- required, API key, <br/>- required, maximum number of days to report, up to 7; if passed 0 or a negative value, returns the completions for the past 24 hours <br/>- required, True to include the user metadata applying to the API key branch, <br/>- optional, comma separated list of metadata field IDs to be returned; if not passed and requested to include metadata, all users metadata fields are returned.<br/><br/>Returns: if successful, a list of completed student record for the learning activities matching the preset metadata fields and for students matching the preset metadata fields, including or not the user metadata.
      *
-     * @param RequestInterface & Type\GetLearningActivitiesStudentRecordsWithPreset $parameters
+     * @param RequestInterface & Type\GetCompletedStudentRecordsWithPreset $parameters
      *
      * @throws SoapException
      *
-     * @return ResultInterface & Type\GetLearningActivitiesStudentRecordsWithPresetResponse
+     * @return ResultInterface & Type\GetCompletedStudentRecordsWithPresetResponse
      */
-    public function getLearningActivitiesStudentRecordsWithPreset(Type\GetLearningActivitiesStudentRecordsWithPreset $parameters): Type\GetLearningActivitiesStudentRecordsWithPresetResponse
+    public function getCompletedStudentRecordsWithPreset(Type\GetCompletedStudentRecordsWithPreset $parameters): Type\GetCompletedStudentRecordsWithPresetResponse
     {
-        $response = ($this->caller)('GetLearningActivitiesStudentRecordsWithPreset', $parameters);
+        $response = ($this->caller)('GetCompletedStudentRecordsWithPreset', $parameters);
 
-        \Psl\Type\instance_of(Type\GetLearningActivitiesStudentRecordsWithPresetResponse::class)->assert($response);
+        \Psl\Type\instance_of(Type\GetCompletedStudentRecordsWithPresetResponse::class)->assert($response);
         \Psl\Type\instance_of(ResultInterface::class)->assert($response);
 
         return $response;

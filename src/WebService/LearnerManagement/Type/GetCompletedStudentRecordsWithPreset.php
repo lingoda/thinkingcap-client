@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 
-class GetLearningActivitiesStudentRecordsWithPreset implements RequestInterface
+class GetCompletedStudentRecordsWithPreset implements RequestInterface
 {
     private ?string $apiKey = null;
 
