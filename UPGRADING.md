@@ -90,7 +90,12 @@ The WSDL descriptions are still available in the WSDL files themselves for refer
 
 ### 5. All generated types regenerated
 
-All type classes, client classes, and classmaps were regenerated with the v4 code generator. The public API (method names, property names) is unchanged, but:
+All type classes, client classes, and classmaps were regenerated with the v4 code generator. Most method/property names are unchanged, with these WSDL-driven exceptions:
+
+- `TrainingLocation::getGoToWebcast()` → `getGoTo_Webcast()` (both CourseManagement and LearnerManagement)
+- `Course::getRecordScore()` → `getCompleteSessionWhenMarkedByLearner()` (both CourseManagement and LearnerManagement)
+
+Other notable changes:
 
 - `declare(strict_types=1)` is present on all files (enforced by ECS)
 - Some internal type names in classmaps use disambiguated names (e.g., `LearningTypeCaptionInfo` in the classmap vs `CaptionInfo` in property types)
