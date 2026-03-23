@@ -32,7 +32,12 @@ final class FixtureTransport implements Transport
             ));
         }
 
-        return new SoapResponse(file_get_contents($fixturePath));
+        $content = file_get_contents($fixturePath);
+        if ($content === false) {
+            throw new \RuntimeException(sprintf('Failed to read fixture file "%s".', $fixturePath));
+        }
+
+        return new SoapResponse($content);
     }
 
     private function normalizeAction(string $action): string

@@ -12,6 +12,7 @@ use Phpro\SoapClient\Soap\DefaultEngineFactory;
 use Phpro\SoapClient\Soap\EngineOptions;
 use Soap\Encoding\EncoderRegistry;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Webmozart\Assert\Assert;
 
 class CourseClientFactory
 {
@@ -19,6 +20,8 @@ class CourseClientFactory
         string $wsdlUrl,
         EventDispatcherInterface $eventDispatcher
     ): CourseManagementSoapClient {
+        Assert::stringNotEmpty($wsdlUrl, 'WSDL URL must not be empty');
+
         $engine = DefaultEngineFactory::create(
             EngineOptions::defaults($wsdlUrl)
                 ->withEncoderRegistry(

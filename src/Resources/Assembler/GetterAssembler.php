@@ -16,7 +16,7 @@ class GetterAssembler implements AssemblerInterface
 {
     private GetterAssemblerOptions $options;
 
-    public function __construct(GetterAssemblerOptions $options = null)
+    public function __construct(?GetterAssemblerOptions $options = null)
     {
         $this->options = $options ?? new GetterAssemblerOptions();
     }

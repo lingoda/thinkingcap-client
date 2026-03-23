@@ -14,7 +14,7 @@ class ImmutableSetterAssembler implements AssemblerInterface
 {
     private ImmutableSetterAssemblerOptions $options;
 
-    public function __construct(ImmutableSetterAssemblerOptions $options = null)
+    public function __construct(?ImmutableSetterAssemblerOptions $options = null)
     {
         $this->options = $options ?? new ImmutableSetterAssemblerOptions();
     }

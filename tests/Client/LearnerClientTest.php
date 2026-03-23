@@ -60,6 +60,7 @@ final class LearnerClientTest extends KernelTestCase
 
         $response = $this->client->getUserByEmail($getUserByEmailType);
         $result = $response->getGetUserByEmailResult();
+        self::assertNotNull($result);
 
         self::assertFalse($result->getSuccess());
         self::assertNull($result->getResult());
