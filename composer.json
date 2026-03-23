@@ -5,8 +5,7 @@
     "require-dev": {
         "laminas/laminas-code": "^4.5",
         "phpspec/phpspec": "^7.2 || ^8.0",
-        "phpunit/phpunit": "^11.0",
-        "symfony/phpunit-bridge": "^7.0 || ^8.0"
+        "phpunit/phpunit": "^11.0"
     },
     "license": "proprietary",
     "require": {
