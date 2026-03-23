@@ -167,6 +167,8 @@ class Program
 
     private bool $AllowLearnersLMSLogin;
 
+    private bool $AllowSkipEmailNewAccounts;
+
     private bool $AllowGuestLMSLogin;
 
     private bool $UseMFA;
@@ -184,6 +186,22 @@ class Program
     private bool $UseMFAOnSSO;
 
     private bool $UseMFAOnLMSLogin;
+
+    private bool $AllowPOPurchases;
+
+    private bool $DoNotInheritPOPurchase;
+
+    private ?string $POPurchaseInvoiceEmail = null;
+
+    private ?string $POPurchaseInstructions = null;
+
+    private ?ProgramPOPurchaseInstructionsXmlNode $POPurchaseInstructionsXmlNode = null;
+
+    private bool $AllowOverridePOPurchase;
+
+    private bool $DenyPOEnrollmentUntilPayed;
+
+    private ?string $POPurchaseAppliesTo = null;
 
     private bool $HideUrlFromSearch;
 
@@ -253,25 +271,25 @@ class Program
 
     private ?ArrayOfAnyType $SubscriptionRules = null;
 
-    private ?RegistrationIntroXmlNode $RegistrationIntroXmlNode = null;
+    private ?ProgramRegistrationIntroXmlNode $RegistrationIntroXmlNode = null;
 
-    private ?RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode = null;
+    private ?ProgramRegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode = null;
 
-    private ?RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode = null;
+    private ?ProgramRegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode = null;
 
-    private ?RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode = null;
+    private ?ProgramRegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode = null;
 
-    private ?RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode = null;
+    private ?ProgramRegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode = null;
 
-    private ?RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode = null;
+    private ?ProgramRegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode = null;
 
-    private ?RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode = null;
+    private ?ProgramRegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode = null;
 
-    private ?RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode = null;
+    private ?ProgramRegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode = null;
 
-    private ?RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode = null;
+    private ?ProgramRegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode = null;
 
-    private ?UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode = null;
+    private ?ProgramUserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode = null;
 
     private bool $CapLicenseTotal;
 
@@ -674,12 +692,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationAutomaticApprovalDomain(): bool
+    public function getRegistrationAutomaticApproval_Domain(): bool
     {
         return $this->RegistrationAutomaticApproval_Domain;
     }
 
-    public function withRegistrationAutomaticApprovalDomain(bool $RegistrationAutomaticApproval_Domain): static
+    public function withRegistrationAutomaticApproval_Domain(bool $RegistrationAutomaticApproval_Domain): static
     {
         $new = clone $this;
         $new->RegistrationAutomaticApproval_Domain = $RegistrationAutomaticApproval_Domain;
@@ -1382,6 +1400,19 @@ class Program
         return $new;
     }
 
+    public function getAllowSkipEmailNewAccounts(): bool
+    {
+        return $this->AllowSkipEmailNewAccounts;
+    }
+
+    public function withAllowSkipEmailNewAccounts(bool $AllowSkipEmailNewAccounts): static
+    {
+        $new = clone $this;
+        $new->AllowSkipEmailNewAccounts = $AllowSkipEmailNewAccounts;
+
+        return $new;
+    }
+
     public function getAllowGuestLMSLogin(): bool
     {
         return $this->AllowGuestLMSLogin;
@@ -1495,6 +1526,110 @@ class Program
     {
         $new = clone $this;
         $new->UseMFAOnLMSLogin = $UseMFAOnLMSLogin;
+
+        return $new;
+    }
+
+    public function getAllowPOPurchases(): bool
+    {
+        return $this->AllowPOPurchases;
+    }
+
+    public function withAllowPOPurchases(bool $AllowPOPurchases): static
+    {
+        $new = clone $this;
+        $new->AllowPOPurchases = $AllowPOPurchases;
+
+        return $new;
+    }
+
+    public function getDoNotInheritPOPurchase(): bool
+    {
+        return $this->DoNotInheritPOPurchase;
+    }
+
+    public function withDoNotInheritPOPurchase(bool $DoNotInheritPOPurchase): static
+    {
+        $new = clone $this;
+        $new->DoNotInheritPOPurchase = $DoNotInheritPOPurchase;
+
+        return $new;
+    }
+
+    public function getPOPurchaseInvoiceEmail(): ?string
+    {
+        return $this->POPurchaseInvoiceEmail;
+    }
+
+    public function withPOPurchaseInvoiceEmail(?string $POPurchaseInvoiceEmail): static
+    {
+        $new = clone $this;
+        $new->POPurchaseInvoiceEmail = $POPurchaseInvoiceEmail;
+
+        return $new;
+    }
+
+    public function getPOPurchaseInstructions(): ?string
+    {
+        return $this->POPurchaseInstructions;
+    }
+
+    public function withPOPurchaseInstructions(?string $POPurchaseInstructions): static
+    {
+        $new = clone $this;
+        $new->POPurchaseInstructions = $POPurchaseInstructions;
+
+        return $new;
+    }
+
+    public function getPOPurchaseInstructionsXmlNode(): ?ProgramPOPurchaseInstructionsXmlNode
+    {
+        return $this->POPurchaseInstructionsXmlNode;
+    }
+
+    public function withPOPurchaseInstructionsXmlNode(?ProgramPOPurchaseInstructionsXmlNode $POPurchaseInstructionsXmlNode): static
+    {
+        $new = clone $this;
+        $new->POPurchaseInstructionsXmlNode = $POPurchaseInstructionsXmlNode;
+
+        return $new;
+    }
+
+    public function getAllowOverridePOPurchase(): bool
+    {
+        return $this->AllowOverridePOPurchase;
+    }
+
+    public function withAllowOverridePOPurchase(bool $AllowOverridePOPurchase): static
+    {
+        $new = clone $this;
+        $new->AllowOverridePOPurchase = $AllowOverridePOPurchase;
+
+        return $new;
+    }
+
+    public function getDenyPOEnrollmentUntilPayed(): bool
+    {
+        return $this->DenyPOEnrollmentUntilPayed;
+    }
+
+    public function withDenyPOEnrollmentUntilPayed(bool $DenyPOEnrollmentUntilPayed): static
+    {
+        $new = clone $this;
+        $new->DenyPOEnrollmentUntilPayed = $DenyPOEnrollmentUntilPayed;
+
+        return $new;
+    }
+
+    public function getPOPurchaseAppliesTo(): ?string
+    {
+        return $this->POPurchaseAppliesTo;
+    }
+
+    public function withPOPurchaseAppliesTo(?string $POPurchaseAppliesTo): static
+    {
+        $new = clone $this;
+        $new->POPurchaseAppliesTo = $POPurchaseAppliesTo;
 
         return $new;
     }
@@ -1941,12 +2076,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationIntroXmlNode(): ?RegistrationIntroXmlNode
+    public function getRegistrationIntroXmlNode(): ?ProgramRegistrationIntroXmlNode
     {
         return $this->RegistrationIntroXmlNode;
     }
 
-    public function withRegistrationIntroXmlNode(?RegistrationIntroXmlNode $RegistrationIntroXmlNode): static
+    public function withRegistrationIntroXmlNode(?ProgramRegistrationIntroXmlNode $RegistrationIntroXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationIntroXmlNode = $RegistrationIntroXmlNode;
@@ -1954,12 +2089,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationDuplicateAccountInstrXmlNode(): ?RegistrationDuplicateAccountInstrXmlNode
+    public function getRegistrationDuplicateAccountInstrXmlNode(): ?ProgramRegistrationDuplicateAccountInstrXmlNode
     {
         return $this->RegistrationDuplicateAccountInstrXmlNode;
     }
 
-    public function withRegistrationDuplicateAccountInstrXmlNode(?RegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode): static
+    public function withRegistrationDuplicateAccountInstrXmlNode(?ProgramRegistrationDuplicateAccountInstrXmlNode $RegistrationDuplicateAccountInstrXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationDuplicateAccountInstrXmlNode = $RegistrationDuplicateAccountInstrXmlNode;
@@ -1967,12 +2102,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationDisclaimerXmlNode(): ?RegistrationDisclaimerXmlNode
+    public function getRegistrationDisclaimerXmlNode(): ?ProgramRegistrationDisclaimerXmlNode
     {
         return $this->RegistrationDisclaimerXmlNode;
     }
 
-    public function withRegistrationDisclaimerXmlNode(?RegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode): static
+    public function withRegistrationDisclaimerXmlNode(?ProgramRegistrationDisclaimerXmlNode $RegistrationDisclaimerXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationDisclaimerXmlNode = $RegistrationDisclaimerXmlNode;
@@ -1980,12 +2115,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationConfirmationTextXmlNode(): ?RegistrationConfirmationTextXmlNode
+    public function getRegistrationConfirmationTextXmlNode(): ?ProgramRegistrationConfirmationTextXmlNode
     {
         return $this->RegistrationConfirmationTextXmlNode;
     }
 
-    public function withRegistrationConfirmationTextXmlNode(?RegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode): static
+    public function withRegistrationConfirmationTextXmlNode(?ProgramRegistrationConfirmationTextXmlNode $RegistrationConfirmationTextXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationTextXmlNode = $RegistrationConfirmationTextXmlNode;
@@ -1993,12 +2128,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationRequestConfirmationTextXmlNode(): ?RegistrationRequestConfirmationTextXmlNode
+    public function getRegistrationRequestConfirmationTextXmlNode(): ?ProgramRegistrationRequestConfirmationTextXmlNode
     {
         return $this->RegistrationRequestConfirmationTextXmlNode;
     }
 
-    public function withRegistrationRequestConfirmationTextXmlNode(?RegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode): static
+    public function withRegistrationRequestConfirmationTextXmlNode(?ProgramRegistrationRequestConfirmationTextXmlNode $RegistrationRequestConfirmationTextXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestConfirmationTextXmlNode = $RegistrationRequestConfirmationTextXmlNode;
@@ -2006,12 +2141,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationConfirmationEmailXmlNode(): ?RegistrationConfirmationEmailXmlNode
+    public function getRegistrationConfirmationEmailXmlNode(): ?ProgramRegistrationConfirmationEmailXmlNode
     {
         return $this->RegistrationConfirmationEmailXmlNode;
     }
 
-    public function withRegistrationConfirmationEmailXmlNode(?RegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode): static
+    public function withRegistrationConfirmationEmailXmlNode(?ProgramRegistrationConfirmationEmailXmlNode $RegistrationConfirmationEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationConfirmationEmailXmlNode = $RegistrationConfirmationEmailXmlNode;
@@ -2019,12 +2154,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationRequestEmailXmlNode(): ?RegistrationRequestEmailXmlNode
+    public function getRegistrationRequestEmailXmlNode(): ?ProgramRegistrationRequestEmailXmlNode
     {
         return $this->RegistrationRequestEmailXmlNode;
     }
 
-    public function withRegistrationRequestEmailXmlNode(?RegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode): static
+    public function withRegistrationRequestEmailXmlNode(?ProgramRegistrationRequestEmailXmlNode $RegistrationRequestEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestEmailXmlNode = $RegistrationRequestEmailXmlNode;
@@ -2032,12 +2167,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationRequestApprovalEmailXmlNode(): ?RegistrationRequestApprovalEmailXmlNode
+    public function getRegistrationRequestApprovalEmailXmlNode(): ?ProgramRegistrationRequestApprovalEmailXmlNode
     {
         return $this->RegistrationRequestApprovalEmailXmlNode;
     }
 
-    public function withRegistrationRequestApprovalEmailXmlNode(?RegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode): static
+    public function withRegistrationRequestApprovalEmailXmlNode(?ProgramRegistrationRequestApprovalEmailXmlNode $RegistrationRequestApprovalEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestApprovalEmailXmlNode = $RegistrationRequestApprovalEmailXmlNode;
@@ -2045,12 +2180,12 @@ class Program
         return $new;
     }
 
-    public function getRegistrationRequestDenialEmailXmlNode(): ?RegistrationRequestDenialEmailXmlNode
+    public function getRegistrationRequestDenialEmailXmlNode(): ?ProgramRegistrationRequestDenialEmailXmlNode
     {
         return $this->RegistrationRequestDenialEmailXmlNode;
     }
 
-    public function withRegistrationRequestDenialEmailXmlNode(?RegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode): static
+    public function withRegistrationRequestDenialEmailXmlNode(?ProgramRegistrationRequestDenialEmailXmlNode $RegistrationRequestDenialEmailXmlNode): static
     {
         $new = clone $this;
         $new->RegistrationRequestDenialEmailXmlNode = $RegistrationRequestDenialEmailXmlNode;
@@ -2058,12 +2193,12 @@ class Program
         return $new;
     }
 
-    public function getUserDomainDisplayLabelXmlNode(): ?UserDomainDisplayLabelXmlNode
+    public function getUserDomainDisplayLabelXmlNode(): ?ProgramUserDomainDisplayLabelXmlNode
     {
         return $this->UserDomainDisplayLabelXmlNode;
     }
 
-    public function withUserDomainDisplayLabelXmlNode(?UserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode): static
+    public function withUserDomainDisplayLabelXmlNode(?ProgramUserDomainDisplayLabelXmlNode $UserDomainDisplayLabelXmlNode): static
     {
         $new = clone $this;
         $new->UserDomainDisplayLabelXmlNode = $UserDomainDisplayLabelXmlNode;

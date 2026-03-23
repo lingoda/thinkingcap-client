@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetSCORMDetailsResponse implements ResultInterface
 {
-    private ServiceResultOfString $GetSCORMDetailsResult;
+    private ?ServiceResultOfString $GetSCORMDetailsResult;
 
-    public function getGetSCORMDetailsResult(): ServiceResultOfString
+    public function getGetSCORMDetailsResult(): ?ServiceResultOfString
     {
         return $this->GetSCORMDetailsResult;
     }
 
-    public function withGetSCORMDetailsResult(ServiceResultOfString $GetSCORMDetailsResult): static
+    public function withGetSCORMDetailsResult(?ServiceResultOfString $GetSCORMDetailsResult): static
     {
         $new = clone $this;
         $new->GetSCORMDetailsResult = $GetSCORMDetailsResult;

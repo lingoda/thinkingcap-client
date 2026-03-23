@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class AddLearningActivityResponse implements ResultInterface
 {
-    private ServiceResultOfString $AddLearningActivityResult;
+    private ?ServiceResultOfString $AddLearningActivityResult;
 
-    public function getAddLearningActivityResult(): ServiceResultOfString
+    public function getAddLearningActivityResult(): ?ServiceResultOfString
     {
         return $this->AddLearningActivityResult;
     }
 
-    public function withAddLearningActivityResult(ServiceResultOfString $AddLearningActivityResult): static
+    public function withAddLearningActivityResult(?ServiceResultOfString $AddLearningActivityResult): static
     {
         $new = clone $this;
         $new->AddLearningActivityResult = $AddLearningActivityResult;

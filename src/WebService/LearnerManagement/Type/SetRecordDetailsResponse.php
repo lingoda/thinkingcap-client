@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetRecordDetailsResponse implements ResultInterface
 {
-    private ServiceResultOfString $SetRecordDetailsResult;
+    private ?ServiceResultOfString $SetRecordDetailsResult;
 
-    public function getSetRecordDetailsResult(): ServiceResultOfString
+    public function getSetRecordDetailsResult(): ?ServiceResultOfString
     {
         return $this->SetRecordDetailsResult;
     }
 
-    public function withSetRecordDetailsResult(ServiceResultOfString $SetRecordDetailsResult): static
+    public function withSetRecordDetailsResult(?ServiceResultOfString $SetRecordDetailsResult): static
     {
         $new = clone $this;
         $new->SetRecordDetailsResult = $SetRecordDetailsResult;

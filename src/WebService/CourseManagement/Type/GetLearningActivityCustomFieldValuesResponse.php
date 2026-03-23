@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLearningActivityCustomFieldValuesResponse implements ResultInterface
 {
-    private ServiceResultOfCustomField $GetLearningActivityCustomFieldValuesResult;
+    private ?ServiceResultOfCustomField $GetLearningActivityCustomFieldValuesResult;
 
-    public function getGetLearningActivityCustomFieldValuesResult(): ServiceResultOfCustomField
+    public function getGetLearningActivityCustomFieldValuesResult(): ?ServiceResultOfCustomField
     {
         return $this->GetLearningActivityCustomFieldValuesResult;
     }
 
-    public function withGetLearningActivityCustomFieldValuesResult(ServiceResultOfCustomField $GetLearningActivityCustomFieldValuesResult): static
+    public function withGetLearningActivityCustomFieldValuesResult(?ServiceResultOfCustomField $GetLearningActivityCustomFieldValuesResult): static
     {
         $new = clone $this;
         $new->GetLearningActivityCustomFieldValuesResult = $GetLearningActivityCustomFieldValuesResult;

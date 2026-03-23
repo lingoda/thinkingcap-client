@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class AddUserToDomainWithEnrollmentsResponse implements ResultInterface
 {
-    private ServiceResultOfString $AddUserToDomainWithEnrollmentsResult;
+    private ?ServiceResultOfString $AddUserToDomainWithEnrollmentsResult;
 
-    public function getAddUserToDomainWithEnrollmentsResult(): ServiceResultOfString
+    public function getAddUserToDomainWithEnrollmentsResult(): ?ServiceResultOfString
     {
         return $this->AddUserToDomainWithEnrollmentsResult;
     }
 
-    public function withAddUserToDomainWithEnrollmentsResult(ServiceResultOfString $AddUserToDomainWithEnrollmentsResult): static
+    public function withAddUserToDomainWithEnrollmentsResult(?ServiceResultOfString $AddUserToDomainWithEnrollmentsResult): static
     {
         $new = clone $this;
         $new->AddUserToDomainWithEnrollmentsResult = $AddUserToDomainWithEnrollmentsResult;

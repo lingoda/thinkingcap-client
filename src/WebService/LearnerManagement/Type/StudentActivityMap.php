@@ -6,14 +6,14 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class StudentActivityMap extends StudentRecord
 {
-    private ?Xml $Xml = null;
+    private ?StudentActivityMapXml $Xml = null;
 
-    public function getXml(): ?Xml
+    public function getXml(): ?StudentActivityMapXml
     {
         return $this->Xml;
     }
 
-    public function withXml(?Xml $Xml): static
+    public function withXml(?StudentActivityMapXml $Xml): static
     {
         $new = clone $this;
         $new->Xml = $Xml;

@@ -2,11 +2,11 @@
 
 namespace Lingoda\ThinkingcapBundle\Resources\Assembler;
 
+use Laminas\Code\Generator\DocBlockGenerator;
 use Phpro\SoapClient\CodeGenerator\Assembler\AssemblerInterface;
 use Phpro\SoapClient\CodeGenerator\Context\ContextInterface;
 use Phpro\SoapClient\CodeGenerator\Context\PropertyContext;
 use Phpro\SoapClient\CodeGenerator\Util\Normalizer;
-use Phpro\SoapClient\CodeGenerator\LaminasCodeFactory\DocBlockGeneratorFactory;
 use Phpro\SoapClient\Exception\AssemblerException;
 use Laminas\Code\Generator\MethodGenerator;
 
@@ -53,18 +53,20 @@ class ImmutableSetterAssembler implements AssemblerInterface
                 $methodGenerator->setReturnType('static');
             }
             if ($this->options->useDocBlocks()) {
-                $methodGenerator->setDocBlock(DocBlockGeneratorFactory::fromArray([
-                    'tags' => [
-                        [
-                            'name' => 'param',
-                            'description' => !$this->options->useNillable() ? str_replace('null | ', '',$property->getDocBlockType()) : $property->getDocBlockType(),
-                        ],
-                        [
-                            'name' => 'return',
-                            'description' => 'static',
-                        ],
-                    ],
-                ]));
+                $methodGenerator->setDocBlock(
+                    (new DocBlockGenerator())
+                        ->setWordWrap(false)
+                        ->setTags([
+                            [
+                                'name' => 'param',
+                                'description' => !$this->options->useNillable() ? str_replace('null | ', '',$property->getDocBlockType()) : $property->getDocBlockType(),
+                            ],
+                            [
+                                'name' => 'return',
+                                'description' => 'static',
+                            ],
+                        ])
+                );
             }
             $class->addMethodFromGenerator($methodGenerator);
         } catch (\Exception $e) {

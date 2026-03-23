@@ -58,6 +58,8 @@ class AccreditationDetails
 
     private bool $GrantOpenBadge;
 
+    private ?string $OpenBadgeName = null;
+
     private ?string $OpenBadgeIssuer = null;
 
     private ?string $OpenBadgeType = null;
@@ -387,6 +389,19 @@ class AccreditationDetails
     {
         $new = clone $this;
         $new->GrantOpenBadge = $GrantOpenBadge;
+
+        return $new;
+    }
+
+    public function getOpenBadgeName(): ?string
+    {
+        return $this->OpenBadgeName;
+    }
+
+    public function withOpenBadgeName(?string $OpenBadgeName): static
+    {
+        $new = clone $this;
+        $new->OpenBadgeName = $OpenBadgeName;
 
         return $new;
     }

@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class EnrollStudentQueuedResponse implements ResultInterface
 {
-    private ServiceResultOfString $EnrollStudentQueuedResult;
+    private ?ServiceResultOfString $EnrollStudentQueuedResult;
 
-    public function getEnrollStudentQueuedResult(): ServiceResultOfString
+    public function getEnrollStudentQueuedResult(): ?ServiceResultOfString
     {
         return $this->EnrollStudentQueuedResult;
     }
 
-    public function withEnrollStudentQueuedResult(ServiceResultOfString $EnrollStudentQueuedResult): static
+    public function withEnrollStudentQueuedResult(?ServiceResultOfString $EnrollStudentQueuedResult): static
     {
         $new = clone $this;
         $new->EnrollStudentQueuedResult = $EnrollStudentQueuedResult;

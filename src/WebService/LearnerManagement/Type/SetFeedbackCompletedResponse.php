@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetFeedbackCompletedResponse implements ResultInterface
 {
-    private ServiceResultOfString $SetFeedbackCompletedResult;
+    private ?ServiceResultOfString $SetFeedbackCompletedResult;
 
-    public function getSetFeedbackCompletedResult(): ServiceResultOfString
+    public function getSetFeedbackCompletedResult(): ?ServiceResultOfString
     {
         return $this->SetFeedbackCompletedResult;
     }
 
-    public function withSetFeedbackCompletedResult(ServiceResultOfString $SetFeedbackCompletedResult): static
+    public function withSetFeedbackCompletedResult(?ServiceResultOfString $SetFeedbackCompletedResult): static
     {
         $new = clone $this;
         $new->SetFeedbackCompletedResult = $SetFeedbackCompletedResult;

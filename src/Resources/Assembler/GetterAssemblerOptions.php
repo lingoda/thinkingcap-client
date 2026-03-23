@@ -69,7 +69,7 @@ class GetterAssemblerOptions
         return $this->optionalValue;
     }
 
-    public function withNillable(bool $nillable = false): self
+    public function withNillable(bool $nillable = true): self
     {
         $new = clone $this;
         $new->nillable = $nillable;

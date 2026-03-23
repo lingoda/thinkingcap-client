@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class UpdateCourseSessionResponse implements ResultInterface
 {
-    private ServiceResultOfString $UpdateCourseSessionResult;
+    private ?ServiceResultOfString $UpdateCourseSessionResult;
 
-    public function getUpdateCourseSessionResult(): ServiceResultOfString
+    public function getUpdateCourseSessionResult(): ?ServiceResultOfString
     {
         return $this->UpdateCourseSessionResult;
     }
 
-    public function withUpdateCourseSessionResult(ServiceResultOfString $UpdateCourseSessionResult): static
+    public function withUpdateCourseSessionResult(?ServiceResultOfString $UpdateCourseSessionResult): static
     {
         $new = clone $this;
         $new->UpdateCourseSessionResult = $UpdateCourseSessionResult;

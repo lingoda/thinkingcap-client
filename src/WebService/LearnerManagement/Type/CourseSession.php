@@ -52,6 +52,8 @@ class CourseSession
 
     private bool $IsRequired;
 
+    private bool $RecordScore;
+
     /**
      * @var null | mixed
      */
@@ -366,6 +368,19 @@ class CourseSession
     {
         $new = clone $this;
         $new->IsRequired = $IsRequired;
+
+        return $new;
+    }
+
+    public function getRecordScore(): bool
+    {
+        return $this->RecordScore;
+    }
+
+    public function withRecordScore(bool $RecordScore): static
+    {
+        $new = clone $this;
+        $new->RecordScore = $RecordScore;
 
         return $new;
     }

@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ExtendRecordDueDateResponse implements ResultInterface
 {
-    private ServiceResultOfString $ExtendRecordDueDateResult;
+    private ?ServiceResultOfString $ExtendRecordDueDateResult;
 
-    public function getExtendRecordDueDateResult(): ServiceResultOfString
+    public function getExtendRecordDueDateResult(): ?ServiceResultOfString
     {
         return $this->ExtendRecordDueDateResult;
     }
 
-    public function withExtendRecordDueDateResult(ServiceResultOfString $ExtendRecordDueDateResult): static
+    public function withExtendRecordDueDateResult(?ServiceResultOfString $ExtendRecordDueDateResult): static
     {
         $new = clone $this;
         $new->ExtendRecordDueDateResult = $ExtendRecordDueDateResult;

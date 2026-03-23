@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetSCORMValuesResponse implements ResultInterface
 {
-    private ServiceResultOfString $SetSCORMValuesResult;
+    private ?ServiceResultOfString $SetSCORMValuesResult;
 
-    public function getSetSCORMValuesResult(): ServiceResultOfString
+    public function getSetSCORMValuesResult(): ?ServiceResultOfString
     {
         return $this->SetSCORMValuesResult;
     }
 
-    public function withSetSCORMValuesResult(ServiceResultOfString $SetSCORMValuesResult): static
+    public function withSetSCORMValuesResult(?ServiceResultOfString $SetSCORMValuesResult): static
     {
         $new = clone $this;
         $new->SetSCORMValuesResult = $SetSCORMValuesResult;

@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ValidateTimedSeedResponse implements ResultInterface
 {
-    private ServiceResultOfBoolean $ValidateTimedSeedResult;
+    private ?ServiceResultOfBoolean $ValidateTimedSeedResult;
 
-    public function getValidateTimedSeedResult(): ServiceResultOfBoolean
+    public function getValidateTimedSeedResult(): ?ServiceResultOfBoolean
     {
         return $this->ValidateTimedSeedResult;
     }
 
-    public function withValidateTimedSeedResult(ServiceResultOfBoolean $ValidateTimedSeedResult): static
+    public function withValidateTimedSeedResult(?ServiceResultOfBoolean $ValidateTimedSeedResult): static
     {
         $new = clone $this;
         $new->ValidateTimedSeedResult = $ValidateTimedSeedResult;

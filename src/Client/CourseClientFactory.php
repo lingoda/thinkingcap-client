@@ -9,7 +9,8 @@ use Lingoda\ThinkingcapBundle\WebService\CourseManagement\CourseManagementSoapCl
 use Phpro\SoapClient\Caller\EngineCaller;
 use Phpro\SoapClient\Caller\EventDispatchingCaller;
 use Phpro\SoapClient\Soap\DefaultEngineFactory;
-use Soap\ExtSoapEngine\ExtSoapOptions;
+use Phpro\SoapClient\Soap\EngineOptions;
+use Soap\Encoding\EncoderRegistry;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class CourseClientFactory
@@ -19,8 +20,12 @@ class CourseClientFactory
         EventDispatcherInterface $eventDispatcher
     ): CourseManagementSoapClient {
         $engine = DefaultEngineFactory::create(
-            ExtSoapOptions::defaults($wsdlUrl, [])
-                ->withClassMap(CourseManagementClassmap::getCollection())
+            EngineOptions::defaults($wsdlUrl)
+                ->withEncoderRegistry(
+                    EncoderRegistry::default()
+                        ->addClassMapCollection(CourseManagementClassmap::types())
+                        ->addBackedEnumClassMapCollection(CourseManagementClassmap::enums())
+                )
         );
 
         $caller = new EventDispatchingCaller(new EngineCaller($engine), $eventDispatcher);

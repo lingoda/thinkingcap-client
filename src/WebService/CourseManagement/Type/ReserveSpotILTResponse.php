@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ReserveSpotILTResponse implements ResultInterface
 {
-    private ServiceResultOfString $ReserveSpotILTResult;
+    private ?ServiceResultOfString $ReserveSpotILTResult;
 
-    public function getReserveSpotILTResult(): ServiceResultOfString
+    public function getReserveSpotILTResult(): ?ServiceResultOfString
     {
         return $this->ReserveSpotILTResult;
     }
 
-    public function withReserveSpotILTResult(ServiceResultOfString $ReserveSpotILTResult): static
+    public function withReserveSpotILTResult(?ServiceResultOfString $ReserveSpotILTResult): static
     {
         $new = clone $this;
         $new->ReserveSpotILTResult = $ReserveSpotILTResult;

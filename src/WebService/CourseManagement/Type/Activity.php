@@ -10,9 +10,9 @@ class Activity extends LearningType
 {
     private ?string $TypeName = null;
 
-    private ?TitleNode $TitleNode = null;
+    private ?ActivityTitleNode $TitleNode = null;
 
-    private ?DescriptionNode $DescriptionNode = null;
+    private ?ActivityDescriptionNode $DescriptionNode = null;
 
     private ?string $Folder = null;
 
@@ -136,12 +136,12 @@ class Activity extends LearningType
         return $new;
     }
 
-    public function getTitleNode(): ?TitleNode
+    public function getTitleNode(): ?ActivityTitleNode
     {
         return $this->TitleNode;
     }
 
-    public function withTitleNode(?TitleNode $TitleNode): static
+    public function withTitleNode(?ActivityTitleNode $TitleNode): static
     {
         $new = clone $this;
         $new->TitleNode = $TitleNode;
@@ -149,12 +149,12 @@ class Activity extends LearningType
         return $new;
     }
 
-    public function getDescriptionNode(): ?DescriptionNode
+    public function getDescriptionNode(): ?ActivityDescriptionNode
     {
         return $this->DescriptionNode;
     }
 
-    public function withDescriptionNode(?DescriptionNode $DescriptionNode): static
+    public function withDescriptionNode(?ActivityDescriptionNode $DescriptionNode): static
     {
         $new = clone $this;
         $new->DescriptionNode = $DescriptionNode;

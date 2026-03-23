@@ -14,11 +14,21 @@ class LearningActivityRecord
 
     private ?string $StudentEmail = null;
 
+    private ?string $LearningActivityID = null;
+
+    private ?string $LearningActivityTitle = null;
+
+    private ?string $LearningActivityCode = null;
+
+    private int $EnrollmentNumber;
+
     private ?string $Status = null;
 
     private ?string $Success = null;
 
     private int $Score;
+
+    private float $PercentCompleted;
 
     private DateTimeInterface $DateEnrolled;
 
@@ -26,7 +36,11 @@ class LearningActivityRecord
 
     private DateTimeInterface $DateCompleted;
 
+    private DateTimeInterface $AccreditationExpiring;
+
     private DateTimeInterface $DueDate;
+
+    private ?ArrayOfCustomField $CustomFields = null;
 
     public function getStudentID(): ?string
     {
@@ -63,6 +77,58 @@ class LearningActivityRecord
     {
         $new = clone $this;
         $new->StudentEmail = $StudentEmail;
+
+        return $new;
+    }
+
+    public function getLearningActivityID(): ?string
+    {
+        return $this->LearningActivityID;
+    }
+
+    public function withLearningActivityID(?string $LearningActivityID): static
+    {
+        $new = clone $this;
+        $new->LearningActivityID = $LearningActivityID;
+
+        return $new;
+    }
+
+    public function getLearningActivityTitle(): ?string
+    {
+        return $this->LearningActivityTitle;
+    }
+
+    public function withLearningActivityTitle(?string $LearningActivityTitle): static
+    {
+        $new = clone $this;
+        $new->LearningActivityTitle = $LearningActivityTitle;
+
+        return $new;
+    }
+
+    public function getLearningActivityCode(): ?string
+    {
+        return $this->LearningActivityCode;
+    }
+
+    public function withLearningActivityCode(?string $LearningActivityCode): static
+    {
+        $new = clone $this;
+        $new->LearningActivityCode = $LearningActivityCode;
+
+        return $new;
+    }
+
+    public function getEnrollmentNumber(): int
+    {
+        return $this->EnrollmentNumber;
+    }
+
+    public function withEnrollmentNumber(int $EnrollmentNumber): static
+    {
+        $new = clone $this;
+        $new->EnrollmentNumber = $EnrollmentNumber;
 
         return $new;
     }
@@ -106,6 +172,19 @@ class LearningActivityRecord
         return $new;
     }
 
+    public function getPercentCompleted(): float
+    {
+        return $this->PercentCompleted;
+    }
+
+    public function withPercentCompleted(float $PercentCompleted): static
+    {
+        $new = clone $this;
+        $new->PercentCompleted = $PercentCompleted;
+
+        return $new;
+    }
+
     public function getDateEnrolled(): DateTimeInterface
     {
         return $this->DateEnrolled;
@@ -145,6 +224,19 @@ class LearningActivityRecord
         return $new;
     }
 
+    public function getAccreditationExpiring(): DateTimeInterface
+    {
+        return $this->AccreditationExpiring;
+    }
+
+    public function withAccreditationExpiring(DateTimeInterface $AccreditationExpiring): static
+    {
+        $new = clone $this;
+        $new->AccreditationExpiring = $AccreditationExpiring;
+
+        return $new;
+    }
+
     public function getDueDate(): DateTimeInterface
     {
         return $this->DueDate;
@@ -154,6 +246,19 @@ class LearningActivityRecord
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
+
+        return $new;
+    }
+
+    public function getCustomFields(): ?ArrayOfCustomField
+    {
+        return $this->CustomFields;
+    }
+
+    public function withCustomFields(?ArrayOfCustomField $CustomFields): static
+    {
+        $new = clone $this;
+        $new->CustomFields = $CustomFields;
 
         return $new;
     }

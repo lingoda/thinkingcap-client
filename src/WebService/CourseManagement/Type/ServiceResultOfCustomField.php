@@ -6,18 +6,18 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfCustomField
 {
-    private CustomField $Result;
+    private ?CustomField $Result;
 
     private bool $Success;
 
     private ?string $Message = null;
 
-    public function getResult(): CustomField
+    public function getResult(): ?CustomField
     {
         return $this->Result;
     }
 
-    public function withResult(CustomField $Result): static
+    public function withResult(?CustomField $Result): static
     {
         $new = clone $this;
         $new->Result = $Result;

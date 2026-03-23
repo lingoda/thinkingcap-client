@@ -10,6 +10,8 @@ class LearningType
 {
     private ?string $CourseType = null;
 
+    private bool $IsDraft;
+
     private ?string $ID = null;
 
     private ?string $Code = null;
@@ -91,7 +93,7 @@ class LearningType
 
     private ?string $VideoCompleteOnTime_Sec = null;
 
-    private ?CaptionInfo $CaptionInfo = null;
+    private ?LearningTypeCaptionInfo $CaptionInfo = null;
 
     private bool $ManualEnrollNoMatch;
 
@@ -273,6 +275,16 @@ class LearningType
 
     private bool $FastStartLPActivities;
 
+    private bool $AllowLearnersToShare;
+
+    private bool $AllowFacebook;
+
+    private bool $AllowLinkedin;
+
+    private bool $AllowX;
+
+    private bool $AllowEmail;
+
     private bool $StudentIsEnrolled;
 
     private bool $StudentHasPendingRequest;
@@ -290,6 +302,10 @@ class LearningType
     private ?string $AccessCode = null;
 
     private int $CourseSharingCount;
+
+    private bool $RecordScore;
+
+    private int $PassingScore;
 
     private ?string $Disclaimer = null;
 
@@ -311,7 +327,7 @@ class LearningType
 
     private bool $SendAccreditationExpiryNotification;
 
-    private bool $NotifySupervisorOnAccreditationExpiry;
+    private bool $NotifyLearnerConnectionsOnAccreditationExpiry;
 
     private bool $SendSessionStartLearnerNotification;
 
@@ -325,17 +341,17 @@ class LearningType
 
     private bool $SendStartDateNotificationLearner;
 
-    private bool $NotifyModeratorEnroll;
+    private bool $NotifyActivityConnectionsEnroll;
 
-    private bool $NotifySupervisorEnroll;
+    private bool $NotifyLearnerConnectionsEnroll;
 
     private bool $NotifyStudentEnroll;
 
     private bool $SendEnrollmentRequestConfirmation;
 
-    private bool $NotifyModeratorOnEnrollRequestConfirmation;
+    private bool $NotifyActivityConnectionsOnEnrollRequestConfirmation;
 
-    private bool $NotifySupervisorOnEnrollRequestConfirmation;
+    private bool $NotifyLearnerConnectionsOnEnrollRequestConfirmation;
 
     private bool $NotifyLearnerOnEnrollRequestConfirmation;
 
@@ -355,17 +371,17 @@ class LearningType
 
     private bool $SendLearningPathModificationNotification;
 
-    private bool $NotifySupervisorOnEnrollmentReminder;
+    private bool $NotifyLearnerConnectionsOnEnrollmentReminder;
 
     private bool $SendWithdrawRequestNotification;
 
-    private bool $NotifyModeratorOnWithdrawRequest;
+    private bool $NotifyActivityConnectionsOnWithdrawRequest;
 
-    private bool $NotifySupervisorOnWithdrawRequest;
+    private bool $NotifyLearnerConnectionsOnWithdrawRequest;
 
-    private bool $NotifyModeratorCompletion;
+    private bool $NotifyActivityConnectionsCompletion;
 
-    private bool $NotifySupervisorCompletion;
+    private bool $NotifyLearnerConnectionsCompletion;
 
     private bool $NotifyLearnerCompletion;
 
@@ -373,27 +389,27 @@ class LearningType
 
     private bool $CompletionNotificationIncludeScore;
 
-    private bool $NotifyModeratorOnDue;
+    private bool $NotifyActivityConnectionsOnDue;
 
-    private bool $NotifySupervisorOnDue;
+    private bool $NotifyLearnerConnectionsOnDue;
 
-    private bool $NotifySupervisorOnOverDue1;
+    private bool $NotifyLearnerConnectionsOnOverDue1;
 
-    private bool $NotifySupervisorOnOverDue2;
+    private bool $NotifyLearnerConnectionsOnOverDue2;
 
-    private bool $NotifySupervisorOnOverDue3;
+    private bool $NotifyLearnerConnectionsOnOverDue3;
 
-    private bool $NotifySupervisorSupervisorOnOverDue1;
+    private bool $NotifyLearnerConnectionsSupervisorOnOverDue1;
 
-    private bool $NotifySupervisorSupervisorOnOverDue2;
+    private bool $NotifyLearnerConnectionsSupervisorOnOverDue2;
 
-    private bool $NotifySupervisorSupervisorOnOverDue3;
+    private bool $NotifyLearnerConnectionsSupervisorOnOverDue3;
 
-    private bool $NotifyModeratorOnOverDue1;
+    private bool $NotifyActivityConnectionsOnOverDue1;
 
-    private bool $NotifyModeratorOnOverDue2;
+    private bool $NotifyActivityConnectionsOnOverDue2;
 
-    private bool $NotifyModeratorOnOverDue3;
+    private bool $NotifyActivityConnectionsOnOverDue3;
 
     private bool $NotifyLearnerOnOverDue1;
 
@@ -403,41 +419,41 @@ class LearningType
 
     private bool $SendDueDateNotification;
 
-    private bool $NotifySupervisorOnMissedILTSession;
+    private bool $NotifyLearnerConnectionsOnMissedILTSession;
 
-    private bool $NotifyModeratorOnMissedILTSession;
+    private bool $NotifyActivityConnectionsOnMissedILTSession;
 
-    private bool $NotifySupervisorOnWaitingList;
+    private bool $NotifyLearnerConnectionsOnWaitingList;
 
-    private bool $NotifySupervisorOnWithdraw;
+    private bool $NotifyLearnerConnectionsOnWithdraw;
 
-    private bool $NotifyModeratorOnWithdraw;
+    private bool $NotifyActivityConnectionsOnWithdraw;
 
-    private bool $NotifyModeratorOnWaitingList;
+    private bool $NotifyActivityConnectionsOnWaitingList;
 
-    private bool $NotifyModeratorOnDueDateReminder1;
+    private bool $NotifyActivityConnectionsOnDueDateReminder1;
 
-    private bool $NotifyModeratorOnDueDateReminder2;
+    private bool $NotifyActivityConnectionsOnDueDateReminder2;
 
-    private bool $NotifyModeratorOnDueDateReminder3;
+    private bool $NotifyActivityConnectionsOnDueDateReminder3;
 
-    private bool $NotifySupervisorOnDueDateReminder1;
+    private bool $NotifyLearnerConnectionsOnDueDateReminder1;
 
-    private bool $NotifySupervisorOnDueDateReminder2;
+    private bool $NotifyLearnerConnectionsOnDueDateReminder2;
 
-    private bool $NotifySupervisorOnDueDateReminder3;
+    private bool $NotifyLearnerConnectionsOnDueDateReminder3;
 
-    private bool $NotifySupervisorOnUpcomingILTReminder1;
+    private bool $NotifyLearnerConnectionsOnUpcomingILTReminder1;
 
-    private bool $NotifySupervisorOnUpcomingILTReminder2;
+    private bool $NotifyLearnerConnectionsOnUpcomingILTReminder2;
 
-    private bool $NotifySupervisorOnUpcomingILTReminder3;
+    private bool $NotifyLearnerConnectionsOnUpcomingILTReminder3;
 
-    private bool $NotifyModeratorOnUpcomingILTReminder1;
+    private bool $NotifyActivityConnectionsOnUpcomingILTReminder1;
 
-    private bool $NotifyModeratorOnUpcomingILTReminder2;
+    private bool $NotifyActivityConnectionsOnUpcomingILTReminder2;
 
-    private bool $NotifyModeratorOnUpcomingILTReminder3;
+    private bool $NotifyActivityConnectionsOnUpcomingILTReminder3;
 
     private bool $SendOverDueNotification1;
 
@@ -501,9 +517,9 @@ class LearningType
 
     private bool $SendSelfWithdraw;
 
-    private bool $NotifySupervisorOnSelfWithdraw;
+    private bool $NotifyLearnerConnectionsOnSelfWithdraw;
 
-    private bool $NotifyModeratorOnSelfWithdraw;
+    private bool $NotifyActivityConnectionsOnSelfWithdraw;
 
     private bool $HasForum;
 
@@ -555,11 +571,15 @@ class LearningType
 
     private bool $RequireESignatureForCompletion;
 
+    private ?string $ESignatureStatement = null;
+
     private bool $ProcessUnknown;
 
     private bool $OverrideAPISucces;
 
     private int $MinPassingScore;
+
+    private int $IltPassingScore;
 
     private ?string $PreventCompletionSettings = null;
 
@@ -630,6 +650,19 @@ class LearningType
     {
         $new = clone $this;
         $new->CourseType = $CourseType;
+
+        return $new;
+    }
+
+    public function getIsDraft(): bool
+    {
+        return $this->IsDraft;
+    }
+
+    public function withIsDraft(bool $IsDraft): static
+    {
+        $new = clone $this;
+        $new->IsDraft = $IsDraft;
 
         return $new;
     }
@@ -1121,12 +1154,12 @@ class LearningType
         return $new;
     }
 
-    public function getVideoCompleteOnTimeMinute(): ?string
+    public function getVideoCompleteOnTime_Minute(): ?string
     {
         return $this->VideoCompleteOnTime_Minute;
     }
 
-    public function withVideoCompleteOnTimeMinute(?string $VideoCompleteOnTime_Minute): static
+    public function withVideoCompleteOnTime_Minute(?string $VideoCompleteOnTime_Minute): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime_Minute = $VideoCompleteOnTime_Minute;
@@ -1134,12 +1167,12 @@ class LearningType
         return $new;
     }
 
-    public function getVideoCompleteOnTimeSec(): ?string
+    public function getVideoCompleteOnTime_Sec(): ?string
     {
         return $this->VideoCompleteOnTime_Sec;
     }
 
-    public function withVideoCompleteOnTimeSec(?string $VideoCompleteOnTime_Sec): static
+    public function withVideoCompleteOnTime_Sec(?string $VideoCompleteOnTime_Sec): static
     {
         $new = clone $this;
         $new->VideoCompleteOnTime_Sec = $VideoCompleteOnTime_Sec;
@@ -1147,12 +1180,12 @@ class LearningType
         return $new;
     }
 
-    public function getCaptionInfo(): ?CaptionInfo
+    public function getCaptionInfo(): ?LearningTypeCaptionInfo
     {
         return $this->CaptionInfo;
     }
 
-    public function withCaptionInfo(?CaptionInfo $CaptionInfo): static
+    public function withCaptionInfo(?LearningTypeCaptionInfo $CaptionInfo): static
     {
         $new = clone $this;
         $new->CaptionInfo = $CaptionInfo;
@@ -1368,12 +1401,12 @@ class LearningType
         return $new;
     }
 
-    public function getEnrollmentCodeAfterEnrollmentDateNoOfDays(): int
+    public function getEnrollmentCodeAfterEnrollmentDate_NoOfDays(): int
     {
         return $this->EnrollmentCodeAfterEnrollmentDate_NoOfDays;
     }
 
-    public function withEnrollmentCodeAfterEnrollmentDateNoOfDays(int $EnrollmentCodeAfterEnrollmentDate_NoOfDays): static
+    public function withEnrollmentCodeAfterEnrollmentDate_NoOfDays(int $EnrollmentCodeAfterEnrollmentDate_NoOfDays): static
     {
         $new = clone $this;
         $new->EnrollmentCodeAfterEnrollmentDate_NoOfDays = $EnrollmentCodeAfterEnrollmentDate_NoOfDays;
@@ -2330,6 +2363,71 @@ class LearningType
         return $new;
     }
 
+    public function getAllowLearnersToShare(): bool
+    {
+        return $this->AllowLearnersToShare;
+    }
+
+    public function withAllowLearnersToShare(bool $AllowLearnersToShare): static
+    {
+        $new = clone $this;
+        $new->AllowLearnersToShare = $AllowLearnersToShare;
+
+        return $new;
+    }
+
+    public function getAllowFacebook(): bool
+    {
+        return $this->AllowFacebook;
+    }
+
+    public function withAllowFacebook(bool $AllowFacebook): static
+    {
+        $new = clone $this;
+        $new->AllowFacebook = $AllowFacebook;
+
+        return $new;
+    }
+
+    public function getAllowLinkedin(): bool
+    {
+        return $this->AllowLinkedin;
+    }
+
+    public function withAllowLinkedin(bool $AllowLinkedin): static
+    {
+        $new = clone $this;
+        $new->AllowLinkedin = $AllowLinkedin;
+
+        return $new;
+    }
+
+    public function getAllowX(): bool
+    {
+        return $this->AllowX;
+    }
+
+    public function withAllowX(bool $AllowX): static
+    {
+        $new = clone $this;
+        $new->AllowX = $AllowX;
+
+        return $new;
+    }
+
+    public function getAllowEmail(): bool
+    {
+        return $this->AllowEmail;
+    }
+
+    public function withAllowEmail(bool $AllowEmail): static
+    {
+        $new = clone $this;
+        $new->AllowEmail = $AllowEmail;
+
+        return $new;
+    }
+
     public function getStudentIsEnrolled(): bool
     {
         return $this->StudentIsEnrolled;
@@ -2443,6 +2541,32 @@ class LearningType
     {
         $new = clone $this;
         $new->CourseSharingCount = $CourseSharingCount;
+
+        return $new;
+    }
+
+    public function getRecordScore(): bool
+    {
+        return $this->RecordScore;
+    }
+
+    public function withRecordScore(bool $RecordScore): static
+    {
+        $new = clone $this;
+        $new->RecordScore = $RecordScore;
+
+        return $new;
+    }
+
+    public function getPassingScore(): int
+    {
+        return $this->PassingScore;
+    }
+
+    public function withPassingScore(int $PassingScore): static
+    {
+        $new = clone $this;
+        $new->PassingScore = $PassingScore;
 
         return $new;
     }
@@ -2577,15 +2701,15 @@ class LearningType
         return $new;
     }
 
-    public function getNotifySupervisorOnAccreditationExpiry(): bool
+    public function getNotifyLearnerConnectionsOnAccreditationExpiry(): bool
     {
-        return $this->NotifySupervisorOnAccreditationExpiry;
+        return $this->NotifyLearnerConnectionsOnAccreditationExpiry;
     }
 
-    public function withNotifySupervisorOnAccreditationExpiry(bool $NotifySupervisorOnAccreditationExpiry): static
+    public function withNotifyLearnerConnectionsOnAccreditationExpiry(bool $NotifyLearnerConnectionsOnAccreditationExpiry): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnAccreditationExpiry = $NotifySupervisorOnAccreditationExpiry;
+        $new->NotifyLearnerConnectionsOnAccreditationExpiry = $NotifyLearnerConnectionsOnAccreditationExpiry;
 
         return $new;
     }
@@ -2668,28 +2792,28 @@ class LearningType
         return $new;
     }
 
-    public function getNotifyModeratorEnroll(): bool
+    public function getNotifyActivityConnectionsEnroll(): bool
     {
-        return $this->NotifyModeratorEnroll;
+        return $this->NotifyActivityConnectionsEnroll;
     }
 
-    public function withNotifyModeratorEnroll(bool $NotifyModeratorEnroll): static
+    public function withNotifyActivityConnectionsEnroll(bool $NotifyActivityConnectionsEnroll): static
     {
         $new = clone $this;
-        $new->NotifyModeratorEnroll = $NotifyModeratorEnroll;
+        $new->NotifyActivityConnectionsEnroll = $NotifyActivityConnectionsEnroll;
 
         return $new;
     }
 
-    public function getNotifySupervisorEnroll(): bool
+    public function getNotifyLearnerConnectionsEnroll(): bool
     {
-        return $this->NotifySupervisorEnroll;
+        return $this->NotifyLearnerConnectionsEnroll;
     }
 
-    public function withNotifySupervisorEnroll(bool $NotifySupervisorEnroll): static
+    public function withNotifyLearnerConnectionsEnroll(bool $NotifyLearnerConnectionsEnroll): static
     {
         $new = clone $this;
-        $new->NotifySupervisorEnroll = $NotifySupervisorEnroll;
+        $new->NotifyLearnerConnectionsEnroll = $NotifyLearnerConnectionsEnroll;
 
         return $new;
     }
@@ -2720,28 +2844,28 @@ class LearningType
         return $new;
     }
 
-    public function getNotifyModeratorOnEnrollRequestConfirmation(): bool
+    public function getNotifyActivityConnectionsOnEnrollRequestConfirmation(): bool
     {
-        return $this->NotifyModeratorOnEnrollRequestConfirmation;
+        return $this->NotifyActivityConnectionsOnEnrollRequestConfirmation;
     }
 
-    public function withNotifyModeratorOnEnrollRequestConfirmation(bool $NotifyModeratorOnEnrollRequestConfirmation): static
+    public function withNotifyActivityConnectionsOnEnrollRequestConfirmation(bool $NotifyActivityConnectionsOnEnrollRequestConfirmation): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnEnrollRequestConfirmation = $NotifyModeratorOnEnrollRequestConfirmation;
+        $new->NotifyActivityConnectionsOnEnrollRequestConfirmation = $NotifyActivityConnectionsOnEnrollRequestConfirmation;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnEnrollRequestConfirmation(): bool
+    public function getNotifyLearnerConnectionsOnEnrollRequestConfirmation(): bool
     {
-        return $this->NotifySupervisorOnEnrollRequestConfirmation;
+        return $this->NotifyLearnerConnectionsOnEnrollRequestConfirmation;
     }
 
-    public function withNotifySupervisorOnEnrollRequestConfirmation(bool $NotifySupervisorOnEnrollRequestConfirmation): static
+    public function withNotifyLearnerConnectionsOnEnrollRequestConfirmation(bool $NotifyLearnerConnectionsOnEnrollRequestConfirmation): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnEnrollRequestConfirmation = $NotifySupervisorOnEnrollRequestConfirmation;
+        $new->NotifyLearnerConnectionsOnEnrollRequestConfirmation = $NotifyLearnerConnectionsOnEnrollRequestConfirmation;
 
         return $new;
     }
@@ -2863,15 +2987,15 @@ class LearningType
         return $new;
     }
 
-    public function getNotifySupervisorOnEnrollmentReminder(): bool
+    public function getNotifyLearnerConnectionsOnEnrollmentReminder(): bool
     {
-        return $this->NotifySupervisorOnEnrollmentReminder;
+        return $this->NotifyLearnerConnectionsOnEnrollmentReminder;
     }
 
-    public function withNotifySupervisorOnEnrollmentReminder(bool $NotifySupervisorOnEnrollmentReminder): static
+    public function withNotifyLearnerConnectionsOnEnrollmentReminder(bool $NotifyLearnerConnectionsOnEnrollmentReminder): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnEnrollmentReminder = $NotifySupervisorOnEnrollmentReminder;
+        $new->NotifyLearnerConnectionsOnEnrollmentReminder = $NotifyLearnerConnectionsOnEnrollmentReminder;
 
         return $new;
     }
@@ -2889,54 +3013,54 @@ class LearningType
         return $new;
     }
 
-    public function getNotifyModeratorOnWithdrawRequest(): bool
+    public function getNotifyActivityConnectionsOnWithdrawRequest(): bool
     {
-        return $this->NotifyModeratorOnWithdrawRequest;
+        return $this->NotifyActivityConnectionsOnWithdrawRequest;
     }
 
-    public function withNotifyModeratorOnWithdrawRequest(bool $NotifyModeratorOnWithdrawRequest): static
+    public function withNotifyActivityConnectionsOnWithdrawRequest(bool $NotifyActivityConnectionsOnWithdrawRequest): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnWithdrawRequest = $NotifyModeratorOnWithdrawRequest;
+        $new->NotifyActivityConnectionsOnWithdrawRequest = $NotifyActivityConnectionsOnWithdrawRequest;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnWithdrawRequest(): bool
+    public function getNotifyLearnerConnectionsOnWithdrawRequest(): bool
     {
-        return $this->NotifySupervisorOnWithdrawRequest;
+        return $this->NotifyLearnerConnectionsOnWithdrawRequest;
     }
 
-    public function withNotifySupervisorOnWithdrawRequest(bool $NotifySupervisorOnWithdrawRequest): static
+    public function withNotifyLearnerConnectionsOnWithdrawRequest(bool $NotifyLearnerConnectionsOnWithdrawRequest): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnWithdrawRequest = $NotifySupervisorOnWithdrawRequest;
+        $new->NotifyLearnerConnectionsOnWithdrawRequest = $NotifyLearnerConnectionsOnWithdrawRequest;
 
         return $new;
     }
 
-    public function getNotifyModeratorCompletion(): bool
+    public function getNotifyActivityConnectionsCompletion(): bool
     {
-        return $this->NotifyModeratorCompletion;
+        return $this->NotifyActivityConnectionsCompletion;
     }
 
-    public function withNotifyModeratorCompletion(bool $NotifyModeratorCompletion): static
+    public function withNotifyActivityConnectionsCompletion(bool $NotifyActivityConnectionsCompletion): static
     {
         $new = clone $this;
-        $new->NotifyModeratorCompletion = $NotifyModeratorCompletion;
+        $new->NotifyActivityConnectionsCompletion = $NotifyActivityConnectionsCompletion;
 
         return $new;
     }
 
-    public function getNotifySupervisorCompletion(): bool
+    public function getNotifyLearnerConnectionsCompletion(): bool
     {
-        return $this->NotifySupervisorCompletion;
+        return $this->NotifyLearnerConnectionsCompletion;
     }
 
-    public function withNotifySupervisorCompletion(bool $NotifySupervisorCompletion): static
+    public function withNotifyLearnerConnectionsCompletion(bool $NotifyLearnerConnectionsCompletion): static
     {
         $new = clone $this;
-        $new->NotifySupervisorCompletion = $NotifySupervisorCompletion;
+        $new->NotifyLearnerConnectionsCompletion = $NotifyLearnerConnectionsCompletion;
 
         return $new;
     }
@@ -2980,145 +3104,145 @@ class LearningType
         return $new;
     }
 
-    public function getNotifyModeratorOnDue(): bool
+    public function getNotifyActivityConnectionsOnDue(): bool
     {
-        return $this->NotifyModeratorOnDue;
+        return $this->NotifyActivityConnectionsOnDue;
     }
 
-    public function withNotifyModeratorOnDue(bool $NotifyModeratorOnDue): static
+    public function withNotifyActivityConnectionsOnDue(bool $NotifyActivityConnectionsOnDue): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnDue = $NotifyModeratorOnDue;
+        $new->NotifyActivityConnectionsOnDue = $NotifyActivityConnectionsOnDue;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnDue(): bool
+    public function getNotifyLearnerConnectionsOnDue(): bool
     {
-        return $this->NotifySupervisorOnDue;
+        return $this->NotifyLearnerConnectionsOnDue;
     }
 
-    public function withNotifySupervisorOnDue(bool $NotifySupervisorOnDue): static
+    public function withNotifyLearnerConnectionsOnDue(bool $NotifyLearnerConnectionsOnDue): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnDue = $NotifySupervisorOnDue;
+        $new->NotifyLearnerConnectionsOnDue = $NotifyLearnerConnectionsOnDue;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnOverDue1(): bool
+    public function getNotifyLearnerConnectionsOnOverDue1(): bool
     {
-        return $this->NotifySupervisorOnOverDue1;
+        return $this->NotifyLearnerConnectionsOnOverDue1;
     }
 
-    public function withNotifySupervisorOnOverDue1(bool $NotifySupervisorOnOverDue1): static
+    public function withNotifyLearnerConnectionsOnOverDue1(bool $NotifyLearnerConnectionsOnOverDue1): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnOverDue1 = $NotifySupervisorOnOverDue1;
+        $new->NotifyLearnerConnectionsOnOverDue1 = $NotifyLearnerConnectionsOnOverDue1;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnOverDue2(): bool
+    public function getNotifyLearnerConnectionsOnOverDue2(): bool
     {
-        return $this->NotifySupervisorOnOverDue2;
+        return $this->NotifyLearnerConnectionsOnOverDue2;
     }
 
-    public function withNotifySupervisorOnOverDue2(bool $NotifySupervisorOnOverDue2): static
+    public function withNotifyLearnerConnectionsOnOverDue2(bool $NotifyLearnerConnectionsOnOverDue2): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnOverDue2 = $NotifySupervisorOnOverDue2;
+        $new->NotifyLearnerConnectionsOnOverDue2 = $NotifyLearnerConnectionsOnOverDue2;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnOverDue3(): bool
+    public function getNotifyLearnerConnectionsOnOverDue3(): bool
     {
-        return $this->NotifySupervisorOnOverDue3;
+        return $this->NotifyLearnerConnectionsOnOverDue3;
     }
 
-    public function withNotifySupervisorOnOverDue3(bool $NotifySupervisorOnOverDue3): static
+    public function withNotifyLearnerConnectionsOnOverDue3(bool $NotifyLearnerConnectionsOnOverDue3): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnOverDue3 = $NotifySupervisorOnOverDue3;
+        $new->NotifyLearnerConnectionsOnOverDue3 = $NotifyLearnerConnectionsOnOverDue3;
 
         return $new;
     }
 
-    public function getNotifySupervisorSupervisorOnOverDue1(): bool
+    public function getNotifyLearnerConnectionsSupervisorOnOverDue1(): bool
     {
-        return $this->NotifySupervisorSupervisorOnOverDue1;
+        return $this->NotifyLearnerConnectionsSupervisorOnOverDue1;
     }
 
-    public function withNotifySupervisorSupervisorOnOverDue1(bool $NotifySupervisorSupervisorOnOverDue1): static
+    public function withNotifyLearnerConnectionsSupervisorOnOverDue1(bool $NotifyLearnerConnectionsSupervisorOnOverDue1): static
     {
         $new = clone $this;
-        $new->NotifySupervisorSupervisorOnOverDue1 = $NotifySupervisorSupervisorOnOverDue1;
+        $new->NotifyLearnerConnectionsSupervisorOnOverDue1 = $NotifyLearnerConnectionsSupervisorOnOverDue1;
 
         return $new;
     }
 
-    public function getNotifySupervisorSupervisorOnOverDue2(): bool
+    public function getNotifyLearnerConnectionsSupervisorOnOverDue2(): bool
     {
-        return $this->NotifySupervisorSupervisorOnOverDue2;
+        return $this->NotifyLearnerConnectionsSupervisorOnOverDue2;
     }
 
-    public function withNotifySupervisorSupervisorOnOverDue2(bool $NotifySupervisorSupervisorOnOverDue2): static
+    public function withNotifyLearnerConnectionsSupervisorOnOverDue2(bool $NotifyLearnerConnectionsSupervisorOnOverDue2): static
     {
         $new = clone $this;
-        $new->NotifySupervisorSupervisorOnOverDue2 = $NotifySupervisorSupervisorOnOverDue2;
+        $new->NotifyLearnerConnectionsSupervisorOnOverDue2 = $NotifyLearnerConnectionsSupervisorOnOverDue2;
 
         return $new;
     }
 
-    public function getNotifySupervisorSupervisorOnOverDue3(): bool
+    public function getNotifyLearnerConnectionsSupervisorOnOverDue3(): bool
     {
-        return $this->NotifySupervisorSupervisorOnOverDue3;
+        return $this->NotifyLearnerConnectionsSupervisorOnOverDue3;
     }
 
-    public function withNotifySupervisorSupervisorOnOverDue3(bool $NotifySupervisorSupervisorOnOverDue3): static
+    public function withNotifyLearnerConnectionsSupervisorOnOverDue3(bool $NotifyLearnerConnectionsSupervisorOnOverDue3): static
     {
         $new = clone $this;
-        $new->NotifySupervisorSupervisorOnOverDue3 = $NotifySupervisorSupervisorOnOverDue3;
+        $new->NotifyLearnerConnectionsSupervisorOnOverDue3 = $NotifyLearnerConnectionsSupervisorOnOverDue3;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnOverDue1(): bool
+    public function getNotifyActivityConnectionsOnOverDue1(): bool
     {
-        return $this->NotifyModeratorOnOverDue1;
+        return $this->NotifyActivityConnectionsOnOverDue1;
     }
 
-    public function withNotifyModeratorOnOverDue1(bool $NotifyModeratorOnOverDue1): static
+    public function withNotifyActivityConnectionsOnOverDue1(bool $NotifyActivityConnectionsOnOverDue1): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnOverDue1 = $NotifyModeratorOnOverDue1;
+        $new->NotifyActivityConnectionsOnOverDue1 = $NotifyActivityConnectionsOnOverDue1;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnOverDue2(): bool
+    public function getNotifyActivityConnectionsOnOverDue2(): bool
     {
-        return $this->NotifyModeratorOnOverDue2;
+        return $this->NotifyActivityConnectionsOnOverDue2;
     }
 
-    public function withNotifyModeratorOnOverDue2(bool $NotifyModeratorOnOverDue2): static
+    public function withNotifyActivityConnectionsOnOverDue2(bool $NotifyActivityConnectionsOnOverDue2): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnOverDue2 = $NotifyModeratorOnOverDue2;
+        $new->NotifyActivityConnectionsOnOverDue2 = $NotifyActivityConnectionsOnOverDue2;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnOverDue3(): bool
+    public function getNotifyActivityConnectionsOnOverDue3(): bool
     {
-        return $this->NotifyModeratorOnOverDue3;
+        return $this->NotifyActivityConnectionsOnOverDue3;
     }
 
-    public function withNotifyModeratorOnOverDue3(bool $NotifyModeratorOnOverDue3): static
+    public function withNotifyActivityConnectionsOnOverDue3(bool $NotifyActivityConnectionsOnOverDue3): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnOverDue3 = $NotifyModeratorOnOverDue3;
+        $new->NotifyActivityConnectionsOnOverDue3 = $NotifyActivityConnectionsOnOverDue3;
 
         return $new;
     }
@@ -3175,236 +3299,236 @@ class LearningType
         return $new;
     }
 
-    public function getNotifySupervisorOnMissedILTSession(): bool
+    public function getNotifyLearnerConnectionsOnMissedILTSession(): bool
     {
-        return $this->NotifySupervisorOnMissedILTSession;
+        return $this->NotifyLearnerConnectionsOnMissedILTSession;
     }
 
-    public function withNotifySupervisorOnMissedILTSession(bool $NotifySupervisorOnMissedILTSession): static
+    public function withNotifyLearnerConnectionsOnMissedILTSession(bool $NotifyLearnerConnectionsOnMissedILTSession): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnMissedILTSession = $NotifySupervisorOnMissedILTSession;
+        $new->NotifyLearnerConnectionsOnMissedILTSession = $NotifyLearnerConnectionsOnMissedILTSession;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnMissedILTSession(): bool
+    public function getNotifyActivityConnectionsOnMissedILTSession(): bool
     {
-        return $this->NotifyModeratorOnMissedILTSession;
+        return $this->NotifyActivityConnectionsOnMissedILTSession;
     }
 
-    public function withNotifyModeratorOnMissedILTSession(bool $NotifyModeratorOnMissedILTSession): static
+    public function withNotifyActivityConnectionsOnMissedILTSession(bool $NotifyActivityConnectionsOnMissedILTSession): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnMissedILTSession = $NotifyModeratorOnMissedILTSession;
+        $new->NotifyActivityConnectionsOnMissedILTSession = $NotifyActivityConnectionsOnMissedILTSession;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnWaitingList(): bool
+    public function getNotifyLearnerConnectionsOnWaitingList(): bool
     {
-        return $this->NotifySupervisorOnWaitingList;
+        return $this->NotifyLearnerConnectionsOnWaitingList;
     }
 
-    public function withNotifySupervisorOnWaitingList(bool $NotifySupervisorOnWaitingList): static
+    public function withNotifyLearnerConnectionsOnWaitingList(bool $NotifyLearnerConnectionsOnWaitingList): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnWaitingList = $NotifySupervisorOnWaitingList;
+        $new->NotifyLearnerConnectionsOnWaitingList = $NotifyLearnerConnectionsOnWaitingList;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnWithdraw(): bool
+    public function getNotifyLearnerConnectionsOnWithdraw(): bool
     {
-        return $this->NotifySupervisorOnWithdraw;
+        return $this->NotifyLearnerConnectionsOnWithdraw;
     }
 
-    public function withNotifySupervisorOnWithdraw(bool $NotifySupervisorOnWithdraw): static
+    public function withNotifyLearnerConnectionsOnWithdraw(bool $NotifyLearnerConnectionsOnWithdraw): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnWithdraw = $NotifySupervisorOnWithdraw;
+        $new->NotifyLearnerConnectionsOnWithdraw = $NotifyLearnerConnectionsOnWithdraw;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnWithdraw(): bool
+    public function getNotifyActivityConnectionsOnWithdraw(): bool
     {
-        return $this->NotifyModeratorOnWithdraw;
+        return $this->NotifyActivityConnectionsOnWithdraw;
     }
 
-    public function withNotifyModeratorOnWithdraw(bool $NotifyModeratorOnWithdraw): static
+    public function withNotifyActivityConnectionsOnWithdraw(bool $NotifyActivityConnectionsOnWithdraw): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnWithdraw = $NotifyModeratorOnWithdraw;
+        $new->NotifyActivityConnectionsOnWithdraw = $NotifyActivityConnectionsOnWithdraw;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnWaitingList(): bool
+    public function getNotifyActivityConnectionsOnWaitingList(): bool
     {
-        return $this->NotifyModeratorOnWaitingList;
+        return $this->NotifyActivityConnectionsOnWaitingList;
     }
 
-    public function withNotifyModeratorOnWaitingList(bool $NotifyModeratorOnWaitingList): static
+    public function withNotifyActivityConnectionsOnWaitingList(bool $NotifyActivityConnectionsOnWaitingList): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnWaitingList = $NotifyModeratorOnWaitingList;
+        $new->NotifyActivityConnectionsOnWaitingList = $NotifyActivityConnectionsOnWaitingList;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnDueDateReminder1(): bool
+    public function getNotifyActivityConnectionsOnDueDateReminder1(): bool
     {
-        return $this->NotifyModeratorOnDueDateReminder1;
+        return $this->NotifyActivityConnectionsOnDueDateReminder1;
     }
 
-    public function withNotifyModeratorOnDueDateReminder1(bool $NotifyModeratorOnDueDateReminder1): static
+    public function withNotifyActivityConnectionsOnDueDateReminder1(bool $NotifyActivityConnectionsOnDueDateReminder1): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnDueDateReminder1 = $NotifyModeratorOnDueDateReminder1;
+        $new->NotifyActivityConnectionsOnDueDateReminder1 = $NotifyActivityConnectionsOnDueDateReminder1;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnDueDateReminder2(): bool
+    public function getNotifyActivityConnectionsOnDueDateReminder2(): bool
     {
-        return $this->NotifyModeratorOnDueDateReminder2;
+        return $this->NotifyActivityConnectionsOnDueDateReminder2;
     }
 
-    public function withNotifyModeratorOnDueDateReminder2(bool $NotifyModeratorOnDueDateReminder2): static
+    public function withNotifyActivityConnectionsOnDueDateReminder2(bool $NotifyActivityConnectionsOnDueDateReminder2): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnDueDateReminder2 = $NotifyModeratorOnDueDateReminder2;
+        $new->NotifyActivityConnectionsOnDueDateReminder2 = $NotifyActivityConnectionsOnDueDateReminder2;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnDueDateReminder3(): bool
+    public function getNotifyActivityConnectionsOnDueDateReminder3(): bool
     {
-        return $this->NotifyModeratorOnDueDateReminder3;
+        return $this->NotifyActivityConnectionsOnDueDateReminder3;
     }
 
-    public function withNotifyModeratorOnDueDateReminder3(bool $NotifyModeratorOnDueDateReminder3): static
+    public function withNotifyActivityConnectionsOnDueDateReminder3(bool $NotifyActivityConnectionsOnDueDateReminder3): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnDueDateReminder3 = $NotifyModeratorOnDueDateReminder3;
+        $new->NotifyActivityConnectionsOnDueDateReminder3 = $NotifyActivityConnectionsOnDueDateReminder3;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnDueDateReminder1(): bool
+    public function getNotifyLearnerConnectionsOnDueDateReminder1(): bool
     {
-        return $this->NotifySupervisorOnDueDateReminder1;
+        return $this->NotifyLearnerConnectionsOnDueDateReminder1;
     }
 
-    public function withNotifySupervisorOnDueDateReminder1(bool $NotifySupervisorOnDueDateReminder1): static
+    public function withNotifyLearnerConnectionsOnDueDateReminder1(bool $NotifyLearnerConnectionsOnDueDateReminder1): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnDueDateReminder1 = $NotifySupervisorOnDueDateReminder1;
+        $new->NotifyLearnerConnectionsOnDueDateReminder1 = $NotifyLearnerConnectionsOnDueDateReminder1;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnDueDateReminder2(): bool
+    public function getNotifyLearnerConnectionsOnDueDateReminder2(): bool
     {
-        return $this->NotifySupervisorOnDueDateReminder2;
+        return $this->NotifyLearnerConnectionsOnDueDateReminder2;
     }
 
-    public function withNotifySupervisorOnDueDateReminder2(bool $NotifySupervisorOnDueDateReminder2): static
+    public function withNotifyLearnerConnectionsOnDueDateReminder2(bool $NotifyLearnerConnectionsOnDueDateReminder2): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnDueDateReminder2 = $NotifySupervisorOnDueDateReminder2;
+        $new->NotifyLearnerConnectionsOnDueDateReminder2 = $NotifyLearnerConnectionsOnDueDateReminder2;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnDueDateReminder3(): bool
+    public function getNotifyLearnerConnectionsOnDueDateReminder3(): bool
     {
-        return $this->NotifySupervisorOnDueDateReminder3;
+        return $this->NotifyLearnerConnectionsOnDueDateReminder3;
     }
 
-    public function withNotifySupervisorOnDueDateReminder3(bool $NotifySupervisorOnDueDateReminder3): static
+    public function withNotifyLearnerConnectionsOnDueDateReminder3(bool $NotifyLearnerConnectionsOnDueDateReminder3): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnDueDateReminder3 = $NotifySupervisorOnDueDateReminder3;
+        $new->NotifyLearnerConnectionsOnDueDateReminder3 = $NotifyLearnerConnectionsOnDueDateReminder3;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnUpcomingILTReminder1(): bool
+    public function getNotifyLearnerConnectionsOnUpcomingILTReminder1(): bool
     {
-        return $this->NotifySupervisorOnUpcomingILTReminder1;
+        return $this->NotifyLearnerConnectionsOnUpcomingILTReminder1;
     }
 
-    public function withNotifySupervisorOnUpcomingILTReminder1(bool $NotifySupervisorOnUpcomingILTReminder1): static
+    public function withNotifyLearnerConnectionsOnUpcomingILTReminder1(bool $NotifyLearnerConnectionsOnUpcomingILTReminder1): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnUpcomingILTReminder1 = $NotifySupervisorOnUpcomingILTReminder1;
+        $new->NotifyLearnerConnectionsOnUpcomingILTReminder1 = $NotifyLearnerConnectionsOnUpcomingILTReminder1;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnUpcomingILTReminder2(): bool
+    public function getNotifyLearnerConnectionsOnUpcomingILTReminder2(): bool
     {
-        return $this->NotifySupervisorOnUpcomingILTReminder2;
+        return $this->NotifyLearnerConnectionsOnUpcomingILTReminder2;
     }
 
-    public function withNotifySupervisorOnUpcomingILTReminder2(bool $NotifySupervisorOnUpcomingILTReminder2): static
+    public function withNotifyLearnerConnectionsOnUpcomingILTReminder2(bool $NotifyLearnerConnectionsOnUpcomingILTReminder2): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnUpcomingILTReminder2 = $NotifySupervisorOnUpcomingILTReminder2;
+        $new->NotifyLearnerConnectionsOnUpcomingILTReminder2 = $NotifyLearnerConnectionsOnUpcomingILTReminder2;
 
         return $new;
     }
 
-    public function getNotifySupervisorOnUpcomingILTReminder3(): bool
+    public function getNotifyLearnerConnectionsOnUpcomingILTReminder3(): bool
     {
-        return $this->NotifySupervisorOnUpcomingILTReminder3;
+        return $this->NotifyLearnerConnectionsOnUpcomingILTReminder3;
     }
 
-    public function withNotifySupervisorOnUpcomingILTReminder3(bool $NotifySupervisorOnUpcomingILTReminder3): static
+    public function withNotifyLearnerConnectionsOnUpcomingILTReminder3(bool $NotifyLearnerConnectionsOnUpcomingILTReminder3): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnUpcomingILTReminder3 = $NotifySupervisorOnUpcomingILTReminder3;
+        $new->NotifyLearnerConnectionsOnUpcomingILTReminder3 = $NotifyLearnerConnectionsOnUpcomingILTReminder3;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnUpcomingILTReminder1(): bool
+    public function getNotifyActivityConnectionsOnUpcomingILTReminder1(): bool
     {
-        return $this->NotifyModeratorOnUpcomingILTReminder1;
+        return $this->NotifyActivityConnectionsOnUpcomingILTReminder1;
     }
 
-    public function withNotifyModeratorOnUpcomingILTReminder1(bool $NotifyModeratorOnUpcomingILTReminder1): static
+    public function withNotifyActivityConnectionsOnUpcomingILTReminder1(bool $NotifyActivityConnectionsOnUpcomingILTReminder1): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnUpcomingILTReminder1 = $NotifyModeratorOnUpcomingILTReminder1;
+        $new->NotifyActivityConnectionsOnUpcomingILTReminder1 = $NotifyActivityConnectionsOnUpcomingILTReminder1;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnUpcomingILTReminder2(): bool
+    public function getNotifyActivityConnectionsOnUpcomingILTReminder2(): bool
     {
-        return $this->NotifyModeratorOnUpcomingILTReminder2;
+        return $this->NotifyActivityConnectionsOnUpcomingILTReminder2;
     }
 
-    public function withNotifyModeratorOnUpcomingILTReminder2(bool $NotifyModeratorOnUpcomingILTReminder2): static
+    public function withNotifyActivityConnectionsOnUpcomingILTReminder2(bool $NotifyActivityConnectionsOnUpcomingILTReminder2): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnUpcomingILTReminder2 = $NotifyModeratorOnUpcomingILTReminder2;
+        $new->NotifyActivityConnectionsOnUpcomingILTReminder2 = $NotifyActivityConnectionsOnUpcomingILTReminder2;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnUpcomingILTReminder3(): bool
+    public function getNotifyActivityConnectionsOnUpcomingILTReminder3(): bool
     {
-        return $this->NotifyModeratorOnUpcomingILTReminder3;
+        return $this->NotifyActivityConnectionsOnUpcomingILTReminder3;
     }
 
-    public function withNotifyModeratorOnUpcomingILTReminder3(bool $NotifyModeratorOnUpcomingILTReminder3): static
+    public function withNotifyActivityConnectionsOnUpcomingILTReminder3(bool $NotifyActivityConnectionsOnUpcomingILTReminder3): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnUpcomingILTReminder3 = $NotifyModeratorOnUpcomingILTReminder3;
+        $new->NotifyActivityConnectionsOnUpcomingILTReminder3 = $NotifyActivityConnectionsOnUpcomingILTReminder3;
 
         return $new;
     }
@@ -3812,28 +3936,28 @@ class LearningType
         return $new;
     }
 
-    public function getNotifySupervisorOnSelfWithdraw(): bool
+    public function getNotifyLearnerConnectionsOnSelfWithdraw(): bool
     {
-        return $this->NotifySupervisorOnSelfWithdraw;
+        return $this->NotifyLearnerConnectionsOnSelfWithdraw;
     }
 
-    public function withNotifySupervisorOnSelfWithdraw(bool $NotifySupervisorOnSelfWithdraw): static
+    public function withNotifyLearnerConnectionsOnSelfWithdraw(bool $NotifyLearnerConnectionsOnSelfWithdraw): static
     {
         $new = clone $this;
-        $new->NotifySupervisorOnSelfWithdraw = $NotifySupervisorOnSelfWithdraw;
+        $new->NotifyLearnerConnectionsOnSelfWithdraw = $NotifyLearnerConnectionsOnSelfWithdraw;
 
         return $new;
     }
 
-    public function getNotifyModeratorOnSelfWithdraw(): bool
+    public function getNotifyActivityConnectionsOnSelfWithdraw(): bool
     {
-        return $this->NotifyModeratorOnSelfWithdraw;
+        return $this->NotifyActivityConnectionsOnSelfWithdraw;
     }
 
-    public function withNotifyModeratorOnSelfWithdraw(bool $NotifyModeratorOnSelfWithdraw): static
+    public function withNotifyActivityConnectionsOnSelfWithdraw(bool $NotifyActivityConnectionsOnSelfWithdraw): static
     {
         $new = clone $this;
-        $new->NotifyModeratorOnSelfWithdraw = $NotifyModeratorOnSelfWithdraw;
+        $new->NotifyActivityConnectionsOnSelfWithdraw = $NotifyActivityConnectionsOnSelfWithdraw;
 
         return $new;
     }
@@ -4163,6 +4287,19 @@ class LearningType
         return $new;
     }
 
+    public function getESignatureStatement(): ?string
+    {
+        return $this->ESignatureStatement;
+    }
+
+    public function withESignatureStatement(?string $ESignatureStatement): static
+    {
+        $new = clone $this;
+        $new->ESignatureStatement = $ESignatureStatement;
+
+        return $new;
+    }
+
     public function getProcessUnknown(): bool
     {
         return $this->ProcessUnknown;
@@ -4198,6 +4335,19 @@ class LearningType
     {
         $new = clone $this;
         $new->MinPassingScore = $MinPassingScore;
+
+        return $new;
+    }
+
+    public function getIltPassingScore(): int
+    {
+        return $this->IltPassingScore;
+    }
+
+    public function withIltPassingScore(int $IltPassingScore): static
+    {
+        $new = clone $this;
+        $new->IltPassingScore = $IltPassingScore;
 
         return $new;
     }

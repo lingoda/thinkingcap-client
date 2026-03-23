@@ -7,14 +7,15 @@ use Lingoda\ThinkingcapBundle\Resources\Assembler as CustomAssembler;
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
 use Phpro\SoapClient\CodeGenerator\Rules;
-use Phpro\SoapClient\Soap\CodeGeneratorEngineFactory;
+use Phpro\SoapClient\Soap\DefaultEngineFactory;
+use Phpro\SoapClient\Soap\EngineOptions;
 use Soap\Wsdl\Loader\FlatteningLoader;
 use Soap\Wsdl\Loader\StreamWrapperLoader;
 
 return Config::create()
-    ->setEngine($engine = CodeGeneratorEngineFactory::create(
-        'src/WebService/LearnerManagement/LearnerManagement.wsdl',
-        new FlatteningLoader(new StreamWrapperLoader())
+    ->setEngine($engine = DefaultEngineFactory::create(
+        EngineOptions::defaults('src/WebService/LearnerManagement/LearnerManagement.wsdl')
+            ->withWsdlLoader(new FlatteningLoader(new StreamWrapperLoader()))
     ))
     ->setTypeDestination('src/WebService/LearnerManagement/Type')
     ->setTypeNamespace('Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type')
@@ -95,9 +96,9 @@ return Config::create()
         )
     )
     /**
-     * Not nullable properties
-     * Match -> ServiceResultOfString, ServiceResultOf*, *Response$, ^ServiceUser$
+     * Nullable properties for ServiceResultOf*, *Response$, ^ServiceUser$
      * Properties -> *Result$, ^UserID$, ^Email$
+     * withOptionalValue() forces nullable PHP types so the v4 encoding driver can assign null
      */
     ->addRule(
         new Rules\TypenameMatchesRule(
@@ -114,6 +115,7 @@ return Config::create()
                         new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
                             (new CustomAssembler\PropertyAssemblerOptions())
                                 ->withNillable()
+                                ->withOptionalValue()
                                 ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
                                 ->withDocBlocks(false)
                         )),
