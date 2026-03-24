@@ -6,18 +6,18 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceResultOfXmlDocument
 {
-    private Result $Result;
+    private ?ServiceResultOfXmlDocumentResult $Result;
 
     private bool $Success;
 
     private ?string $Message = null;
 
-    public function getResult(): Result
+    public function getResult(): ?ServiceResultOfXmlDocumentResult
     {
         return $this->Result;
     }
 
-    public function withResult(Result $Result): static
+    public function withResult(?ServiceResultOfXmlDocumentResult $Result): static
     {
         $new = clone $this;
         $new->Result = $Result;

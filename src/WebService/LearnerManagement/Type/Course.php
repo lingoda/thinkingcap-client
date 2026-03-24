@@ -146,7 +146,7 @@ class Course extends LearningType
 
     private bool $CompleteSessionWhenJoinByLearner;
 
-    private bool $RecordScore;
+    private bool $CompleteSessionWhenMarkedByLearner;
 
     private bool $RecordComments;
 
@@ -161,6 +161,8 @@ class Course extends LearningType
     private bool $AddTimeInReadOnly;
 
     private int $Timeout;
+
+    private int $WaitlistPaymentDurationDays;
 
     public function getType(): ?string
     {
@@ -1072,15 +1074,15 @@ class Course extends LearningType
         return $new;
     }
 
-    public function getRecordScore(): bool
+    public function getCompleteSessionWhenMarkedByLearner(): bool
     {
-        return $this->RecordScore;
+        return $this->CompleteSessionWhenMarkedByLearner;
     }
 
-    public function withRecordScore(bool $RecordScore): static
+    public function withCompleteSessionWhenMarkedByLearner(bool $CompleteSessionWhenMarkedByLearner): static
     {
         $new = clone $this;
-        $new->RecordScore = $RecordScore;
+        $new->CompleteSessionWhenMarkedByLearner = $CompleteSessionWhenMarkedByLearner;
 
         return $new;
     }
@@ -1172,6 +1174,19 @@ class Course extends LearningType
     {
         $new = clone $this;
         $new->Timeout = $Timeout;
+
+        return $new;
+    }
+
+    public function getWaitlistPaymentDurationDays(): int
+    {
+        return $this->WaitlistPaymentDurationDays;
+    }
+
+    public function withWaitlistPaymentDurationDays(int $WaitlistPaymentDurationDays): static
+    {
+        $new = clone $this;
+        $new->WaitlistPaymentDurationDays = $WaitlistPaymentDurationDays;
 
         return $new;
     }

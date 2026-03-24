@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLearningActivityEquivalencyByCodeResponse implements ResultInterface
 {
-    private ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult;
+    private ?ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult;
 
-    public function getGetLearningActivityEquivalencyByCodeResult(): ServiceResultOfXmlDocument
+    public function getGetLearningActivityEquivalencyByCodeResult(): ?ServiceResultOfXmlDocument
     {
         return $this->GetLearningActivityEquivalencyByCodeResult;
     }
 
-    public function withGetLearningActivityEquivalencyByCodeResult(ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult): static
+    public function withGetLearningActivityEquivalencyByCodeResult(?ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult): static
     {
         $new = clone $this;
         $new->GetLearningActivityEquivalencyByCodeResult = $GetLearningActivityEquivalencyByCodeResult;

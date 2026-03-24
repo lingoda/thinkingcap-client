@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GenerateECommerceCourseTokenResponse implements ResultInterface
 {
-    private ServiceResultOfString $GenerateECommerceCourseTokenResult;
+    private ?ServiceResultOfString $GenerateECommerceCourseTokenResult;
 
-    public function getGenerateECommerceCourseTokenResult(): ServiceResultOfString
+    public function getGenerateECommerceCourseTokenResult(): ?ServiceResultOfString
     {
         return $this->GenerateECommerceCourseTokenResult;
     }
 
-    public function withGenerateECommerceCourseTokenResult(ServiceResultOfString $GenerateECommerceCourseTokenResult): static
+    public function withGenerateECommerceCourseTokenResult(?ServiceResultOfString $GenerateECommerceCourseTokenResult): static
     {
         $new = clone $this;
         $new->GenerateECommerceCourseTokenResult = $GenerateECommerceCourseTokenResult;

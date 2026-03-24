@@ -2,23 +2,21 @@
 
 namespace Lingoda\ThinkingcapBundle\Resources\Assembler;
 
+use Laminas\Code\Generator\DocBlockGenerator;
 use Phpro\SoapClient\CodeGenerator\Assembler\AssemblerInterface;
 use Phpro\SoapClient\CodeGenerator\Context\ContextInterface;
 use Phpro\SoapClient\CodeGenerator\Context\PropertyContext;
 use Phpro\SoapClient\CodeGenerator\Model\Property;
 use Phpro\SoapClient\CodeGenerator\Util\Normalizer;
-use Phpro\SoapClient\CodeGenerator\LaminasCodeFactory\DocBlockGeneratorFactory;
 use Phpro\SoapClient\Exception\AssemblerException;
 use Laminas\Code\Generator\MethodGenerator;
 use Soap\Engine\Metadata\Model\TypeMeta;
-
-use function PHPUnit\Framework\assertNotEmpty;
 
 class GetterAssembler implements AssemblerInterface
 {
     private GetterAssemblerOptions $options;
 
-    public function __construct(GetterAssemblerOptions $options = null)
+    public function __construct(?GetterAssemblerOptions $options = null)
     {
         $this->options = $options ?? new GetterAssemblerOptions();
     }
@@ -60,14 +58,16 @@ class GetterAssembler implements AssemblerInterface
             }
 
             if ($this->options->useDocBlocks()) {
-                $methodGenerator->setDocBlock(DocBlockGeneratorFactory::fromArray([
-                    'tags' => [
-                        [
-                            'name'        => 'return',
-                            'description' => !$this->options->useNillable() ? str_replace('null | ', '',$property->getDocBlockType()) : $property->getDocBlockType(),
-                        ],
-                    ],
-                ]));
+                $methodGenerator->setDocBlock(
+                    (new DocBlockGenerator())
+                        ->setWordWrap(false)
+                        ->setTags([
+                            [
+                                'name'        => 'return',
+                                'description' => !$this->options->useNillable() ? str_replace('null | ', '',$property->getDocBlockType()) : $property->getDocBlockType(),
+                            ],
+                        ])
+                );
             }
 
             $class->addMethodFromGenerator($methodGenerator);

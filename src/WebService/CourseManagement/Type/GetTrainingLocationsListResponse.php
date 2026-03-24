@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetTrainingLocationsListResponse implements ResultInterface
 {
-    private ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult;
+    private ?ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult;
 
-    public function getGetTrainingLocationsListResult(): ServiceResultOfListOfTrainingLocation
+    public function getGetTrainingLocationsListResult(): ?ServiceResultOfListOfTrainingLocation
     {
         return $this->GetTrainingLocationsListResult;
     }
 
-    public function withGetTrainingLocationsListResult(ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult): static
+    public function withGetTrainingLocationsListResult(?ServiceResultOfListOfTrainingLocation $GetTrainingLocationsListResult): static
     {
         $new = clone $this;
         $new->GetTrainingLocationsListResult = $GetTrainingLocationsListResult;

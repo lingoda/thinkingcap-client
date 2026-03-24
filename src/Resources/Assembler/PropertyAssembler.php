@@ -2,11 +2,11 @@
 
 namespace Lingoda\ThinkingcapBundle\Resources\Assembler;
 
+use Laminas\Code\Generator\DocBlockGenerator;
 use Laminas\Code\Generator\TypeGenerator;
 use Phpro\SoapClient\CodeGenerator\Assembler\AssemblerInterface;
 use Phpro\SoapClient\CodeGenerator\Context\ContextInterface;
 use Phpro\SoapClient\CodeGenerator\Context\PropertyContext;
-use Phpro\SoapClient\CodeGenerator\LaminasCodeFactory\DocBlockGeneratorFactory;
 use Phpro\SoapClient\Exception\AssemblerException;
 use Laminas\Code\Generator\PropertyGenerator;
 use Soap\Engine\Metadata\Model\TypeMeta;
@@ -53,15 +53,15 @@ class PropertyAssembler implements AssemblerInterface
 
             if ($this->options->useDocBlocks()) {
                 $propertyGenerator->setDocBlock(
-                    DocBlockGeneratorFactory::fromArray([
-                        'longdescription' => $property->getMeta()->docs()->unwrapOr(''),
-                        'tags' => [
+                    (new DocBlockGenerator())
+                        ->setWordWrap(false)
+                        ->setLongDescription($property->getMeta()->docs()->unwrapOr(''))
+                        ->setTags([
                             [
                                 'name'        => 'var',
                                 'description' => !$this->options->useNillable() ? str_replace('null | ', '',$property->getDocBlockType()) : $property->getDocBlockType(),
                             ],
-                        ]
-                    ])
+                        ])
                 );
             }
 

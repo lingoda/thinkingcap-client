@@ -6,14 +6,14 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class AddTrainingLocationResponse
 {
-    private ServiceResultOfString $AddTrainingLocationResult;
+    private ?ServiceResultOfString $AddTrainingLocationResult;
 
-    public function getAddTrainingLocationResult(): ServiceResultOfString
+    public function getAddTrainingLocationResult(): ?ServiceResultOfString
     {
         return $this->AddTrainingLocationResult;
     }
 
-    public function withAddTrainingLocationResult(ServiceResultOfString $AddTrainingLocationResult): static
+    public function withAddTrainingLocationResult(?ServiceResultOfString $AddTrainingLocationResult): static
     {
         $new = clone $this;
         $new->AddTrainingLocationResult = $AddTrainingLocationResult;

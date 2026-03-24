@@ -9,8 +9,10 @@ use Lingoda\ThinkingcapBundle\WebService\CourseManagement\CourseManagementSoapCl
 use Phpro\SoapClient\Caller\EngineCaller;
 use Phpro\SoapClient\Caller\EventDispatchingCaller;
 use Phpro\SoapClient\Soap\DefaultEngineFactory;
-use Soap\ExtSoapEngine\ExtSoapOptions;
+use Phpro\SoapClient\Soap\EngineOptions;
+use Soap\Encoding\EncoderRegistry;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Webmozart\Assert\Assert;
 
 class CourseClientFactory
 {
@@ -18,9 +20,15 @@ class CourseClientFactory
         string $wsdlUrl,
         EventDispatcherInterface $eventDispatcher
     ): CourseManagementSoapClient {
+        Assert::stringNotEmpty($wsdlUrl, 'WSDL URL must not be empty');
+
         $engine = DefaultEngineFactory::create(
-            ExtSoapOptions::defaults($wsdlUrl, [])
-                ->withClassMap(CourseManagementClassmap::getCollection())
+            EngineOptions::defaults($wsdlUrl)
+                ->withEncoderRegistry(
+                    EncoderRegistry::default()
+                        ->addClassMapCollection(CourseManagementClassmap::types())
+                        ->addBackedEnumClassMapCollection(CourseManagementClassmap::enums())
+                )
         );
 
         $caller = new EventDispatchingCaller(new EngineCaller($engine), $eventDispatcher);

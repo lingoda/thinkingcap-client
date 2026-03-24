@@ -40,6 +40,8 @@ class LearningActivityRecord
 
     private DateTimeInterface $DueDate;
 
+    private ?ArrayOfCustomField $CustomFields = null;
+
     public function getStudentID(): ?string
     {
         return $this->StudentID;
@@ -244,6 +246,19 @@ class LearningActivityRecord
     {
         $new = clone $this;
         $new->DueDate = $DueDate;
+
+        return $new;
+    }
+
+    public function getCustomFields(): ?ArrayOfCustomField
+    {
+        return $this->CustomFields;
+    }
+
+    public function withCustomFields(?ArrayOfCustomField $CustomFields): static
+    {
+        $new = clone $this;
+        $new->CustomFields = $CustomFields;
 
         return $new;
     }

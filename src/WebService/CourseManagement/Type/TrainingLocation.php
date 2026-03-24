@@ -278,12 +278,12 @@ class TrainingLocation
         return $new;
     }
 
-    public function getGoToWebcast(): ?string
+    public function getGoTo_Webcast(): ?string
     {
         return $this->GoTo_Webcast;
     }
 
-    public function withGoToWebcast(?string $GoTo_Webcast): static
+    public function withGoTo_Webcast(?string $GoTo_Webcast): static
     {
         $new = clone $this;
         $new->GoTo_Webcast = $GoTo_Webcast;

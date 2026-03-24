@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class FindCourseResponse implements ResultInterface
 {
-    private ServiceResultOfCourse $FindCourseResult;
+    private ?ServiceResultOfCourse $FindCourseResult;
 
-    public function getFindCourseResult(): ServiceResultOfCourse
+    public function getFindCourseResult(): ?ServiceResultOfCourse
     {
         return $this->FindCourseResult;
     }
 
-    public function withFindCourseResult(ServiceResultOfCourse $FindCourseResult): static
+    public function withFindCourseResult(?ServiceResultOfCourse $FindCourseResult): static
     {
         $new = clone $this;
         $new->FindCourseResult = $FindCourseResult;

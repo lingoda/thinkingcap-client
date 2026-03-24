@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class RegisterBulkUserResponse implements ResultInterface
 {
-    private ServiceResultOfString $RegisterBulkUserResult;
+    private ?ServiceResultOfString $RegisterBulkUserResult;
 
-    public function getRegisterBulkUserResult(): ServiceResultOfString
+    public function getRegisterBulkUserResult(): ?ServiceResultOfString
     {
         return $this->RegisterBulkUserResult;
     }
 
-    public function withRegisterBulkUserResult(ServiceResultOfString $RegisterBulkUserResult): static
+    public function withRegisterBulkUserResult(?ServiceResultOfString $RegisterBulkUserResult): static
     {
         $new = clone $this;
         $new->RegisterBulkUserResult = $RegisterBulkUserResult;

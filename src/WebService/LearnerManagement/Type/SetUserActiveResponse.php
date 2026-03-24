@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetUserActiveResponse implements ResultInterface
 {
-    private ServiceResultOfString $SetUserActiveResult;
+    private ?ServiceResultOfString $SetUserActiveResult;
 
-    public function getSetUserActiveResult(): ServiceResultOfString
+    public function getSetUserActiveResult(): ?ServiceResultOfString
     {
         return $this->SetUserActiveResult;
     }
 
-    public function withSetUserActiveResult(ServiceResultOfString $SetUserActiveResult): static
+    public function withSetUserActiveResult(?ServiceResultOfString $SetUserActiveResult): static
     {
         $new = clone $this;
         $new->SetUserActiveResult = $SetUserActiveResult;

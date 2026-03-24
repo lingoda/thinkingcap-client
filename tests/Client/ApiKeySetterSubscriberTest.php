@@ -18,6 +18,12 @@ final class ApiKeySetterSubscriberTest extends KernelTestCase
         self::bootKernel();
     }
 
+    protected function tearDown(): void
+    {
+        self::ensureKernelShutdown();
+        parent::tearDown();
+    }
+
     public function testForNonExistingDomain(): void
     {
         $getUserByEmailType = RequestFactory::create(

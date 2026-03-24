@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLMSUserAutoLoginURLResponse implements ResultInterface
 {
-    private ServiceResultOfString $GetLMSUserAutoLoginURLResult;
+    private ?ServiceResultOfString $GetLMSUserAutoLoginURLResult;
 
-    public function getGetLMSUserAutoLoginURLResult(): ServiceResultOfString
+    public function getGetLMSUserAutoLoginURLResult(): ?ServiceResultOfString
     {
         return $this->GetLMSUserAutoLoginURLResult;
     }
 
-    public function withGetLMSUserAutoLoginURLResult(ServiceResultOfString $GetLMSUserAutoLoginURLResult): static
+    public function withGetLMSUserAutoLoginURLResult(?ServiceResultOfString $GetLMSUserAutoLoginURLResult): static
     {
         $new = clone $this;
         $new->GetLMSUserAutoLoginURLResult = $GetLMSUserAutoLoginURLResult;

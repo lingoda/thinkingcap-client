@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class MergeStudentTranscriptsResponse implements ResultInterface
 {
-    private ServiceResultOfString $MergeStudentTranscriptsResult;
+    private ?ServiceResultOfString $MergeStudentTranscriptsResult;
 
-    public function getMergeStudentTranscriptsResult(): ServiceResultOfString
+    public function getMergeStudentTranscriptsResult(): ?ServiceResultOfString
     {
         return $this->MergeStudentTranscriptsResult;
     }
 
-    public function withMergeStudentTranscriptsResult(ServiceResultOfString $MergeStudentTranscriptsResult): static
+    public function withMergeStudentTranscriptsResult(?ServiceResultOfString $MergeStudentTranscriptsResult): static
     {
         $new = clone $this;
         $new->MergeStudentTranscriptsResult = $MergeStudentTranscriptsResult;

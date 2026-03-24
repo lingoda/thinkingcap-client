@@ -53,7 +53,7 @@ class ImmutableSetterAssemblerOptions
         return $this->docBlocks;
     }
 
-    public function withNillable(bool $nillable = false): self
+    public function withNillable(bool $nillable = true): self
     {
         $new = clone $this;
         $new->nillable = $nillable;

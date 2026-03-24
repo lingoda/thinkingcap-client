@@ -8,13 +8,13 @@ use DateTimeInterface;
 
 class ServiceUser
 {
-    protected string $UserID;
+    protected ?string $UserID = '';
 
     protected ?string $FirstName = null;
 
     protected ?string $LastName = null;
 
-    protected string $Email;
+    protected ?string $Email = '';
 
     protected ?string $OutsideEmail = null;
 
@@ -42,12 +42,12 @@ class ServiceUser
 
     private ?string $Language = null;
 
-    public function getUserID(): string
+    public function getUserID(): ?string
     {
         return $this->UserID;
     }
 
-    public function withUserID(string $UserID): static
+    public function withUserID(?string $UserID): static
     {
         $new = clone $this;
         $new->UserID = $UserID;
@@ -81,12 +81,12 @@ class ServiceUser
         return $new;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->Email;
     }
 
-    public function withEmail(string $Email): static
+    public function withEmail(?string $Email): static
     {
         $new = clone $this;
         $new->Email = $Email;

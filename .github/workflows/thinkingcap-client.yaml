@@ -14,10 +14,10 @@ jobs:
         steps:
             # Cancel previous runs of the same branch
             - name: cancel
-              uses: styfle/cancel-workflow-action@0.11.0
+              uses: styfle/cancel-workflow-action@0.12.1
 
             - name: checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: composer-cache
               id: composercache
@@ -48,16 +48,16 @@ jobs:
             SYMFONY_DEPRECATIONS_HELPER: 'max[self]=0&verbose=0'
         steps:
             - name: checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Setup PHP
-              uses: shivammathur/setup-php@2.24.0
+              uses: shivammathur/setup-php@v2
               with:
-                  php-version: '8.1'
-                  extensions: apcu, redis
+                  php-version: '8.3'
+                  extensions: apcu, redis, soap, bcmath, intl, xsl
 
             - name: composer-cache
-              uses: actions/cache@v3.2.6
+              uses: actions/cache@v4
               with:
                   path: ${{ needs.prepare.outputs.composercachedir }}
                   key: composer-phppkg-${{ hashFiles('composer.lock') }}
@@ -75,7 +75,7 @@ jobs:
 
             - name: phpstan-cache
               if: ${{ !cancelled() }}
-              uses: actions/cache@v3.3.2
+              uses: actions/cache@v4
               with:
                   key: phpstan-phppkg-${{ github.ref }}-${{ github.sha }}
                   path: linters/.phpstan-cache

@@ -6,18 +6,18 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfListOfCourseSession
 {
-    private ArrayOfCourseSession $Result;
+    private ?ArrayOfCourseSession $Result;
 
     private bool $Success;
 
     private ?string $Message = null;
 
-    public function getResult(): ArrayOfCourseSession
+    public function getResult(): ?ArrayOfCourseSession
     {
         return $this->Result;
     }
 
-    public function withResult(ArrayOfCourseSession $Result): static
+    public function withResult(?ArrayOfCourseSession $Result): static
     {
         $new = clone $this;
         $new->Result = $Result;

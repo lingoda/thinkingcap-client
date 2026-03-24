@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class WithdrawStudentResponse implements ResultInterface
 {
-    private ServiceResultOfString $WithdrawStudentResult;
+    private ?ServiceResultOfString $WithdrawStudentResult;
 
-    public function getWithdrawStudentResult(): ServiceResultOfString
+    public function getWithdrawStudentResult(): ?ServiceResultOfString
     {
         return $this->WithdrawStudentResult;
     }
 
-    public function withWithdrawStudentResult(ServiceResultOfString $WithdrawStudentResult): static
+    public function withWithdrawStudentResult(?ServiceResultOfString $WithdrawStudentResult): static
     {
         $new = clone $this;
         $new->WithdrawStudentResult = $WithdrawStudentResult;

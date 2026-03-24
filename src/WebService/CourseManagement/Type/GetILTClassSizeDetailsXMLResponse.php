@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetILTClassSizeDetailsXMLResponse implements ResultInterface
 {
-    private ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult;
+    private ?ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult;
 
-    public function getGetILTClassSizeDetailsXMLResult(): ServiceResultOfXmlDocument
+    public function getGetILTClassSizeDetailsXMLResult(): ?ServiceResultOfXmlDocument
     {
         return $this->GetILTClassSizeDetailsXMLResult;
     }
 
-    public function withGetILTClassSizeDetailsXMLResult(ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult): static
+    public function withGetILTClassSizeDetailsXMLResult(?ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult): static
     {
         $new = clone $this;
         $new->GetILTClassSizeDetailsXMLResult = $GetILTClassSizeDetailsXMLResult;

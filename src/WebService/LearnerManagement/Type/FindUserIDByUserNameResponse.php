@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class FindUserIDByUserNameResponse implements ResultInterface
 {
-    private ServiceResultOfString $FindUserIDByUserNameResult;
+    private ?ServiceResultOfString $FindUserIDByUserNameResult;
 
-    public function getFindUserIDByUserNameResult(): ServiceResultOfString
+    public function getFindUserIDByUserNameResult(): ?ServiceResultOfString
     {
         return $this->FindUserIDByUserNameResult;
     }
 
-    public function withFindUserIDByUserNameResult(ServiceResultOfString $FindUserIDByUserNameResult): static
+    public function withFindUserIDByUserNameResult(?ServiceResultOfString $FindUserIDByUserNameResult): static
     {
         $new = clone $this;
         $new->FindUserIDByUserNameResult = $FindUserIDByUserNameResult;

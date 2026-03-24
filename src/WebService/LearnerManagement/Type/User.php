@@ -8,7 +8,7 @@ use DateTimeInterface;
 
 class User
 {
-    private ?CustomFields $CustomFields = null;
+    private ?UserCustomFields $CustomFields = null;
 
     private ?string $ID = null;
 
@@ -132,12 +132,12 @@ class User
 
     private ?string $FieldsXml = null;
 
-    public function getCustomFields(): ?CustomFields
+    public function getCustomFields(): ?UserCustomFields
     {
         return $this->CustomFields;
     }
 
-    public function withCustomFields(?CustomFields $CustomFields): static
+    public function withCustomFields(?UserCustomFields $CustomFields): static
     {
         $new = clone $this;
         $new->CustomFields = $CustomFields;

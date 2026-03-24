@@ -6,18 +6,18 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceResultOfUser
 {
-    private User $Result;
+    private ?User $Result;
 
     private bool $Success;
 
     private ?string $Message = null;
 
-    public function getResult(): User
+    public function getResult(): ?User
     {
         return $this->Result;
     }
 
-    public function withResult(User $Result): static
+    public function withResult(?User $Result): static
     {
         $new = clone $this;
         $new->Result = $Result;

@@ -8,14 +8,14 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class TestPostResponse implements ResultInterface
 {
-    private ServiceResultOfString $TestPostResult;
+    private ?ServiceResultOfString $TestPostResult;
 
-    public function getTestPostResult(): ServiceResultOfString
+    public function getTestPostResult(): ?ServiceResultOfString
     {
         return $this->TestPostResult;
     }
 
-    public function withTestPostResult(ServiceResultOfString $TestPostResult): static
+    public function withTestPostResult(?ServiceResultOfString $TestPostResult): static
     {
         $new = clone $this;
         $new->TestPostResult = $TestPostResult;

@@ -136,6 +136,10 @@ class StudentRecord
 
     private int $MinPassingScore;
 
+    private bool $RecordScore;
+
+    private int $PassingScore;
+
     private bool $BarAccess;
 
     private ?string $Success = null;
@@ -145,6 +149,8 @@ class StudentRecord
     private DateTimeInterface $DateEnrolled;
 
     private ?string $EnrollmentNotes = null;
+
+    private ?string $EnrolledBy = null;
 
     private DateTimeInterface $DateStarted;
 
@@ -1058,6 +1064,32 @@ class StudentRecord
         return $new;
     }
 
+    public function getRecordScore(): bool
+    {
+        return $this->RecordScore;
+    }
+
+    public function withRecordScore(bool $RecordScore): static
+    {
+        $new = clone $this;
+        $new->RecordScore = $RecordScore;
+
+        return $new;
+    }
+
+    public function getPassingScore(): int
+    {
+        return $this->PassingScore;
+    }
+
+    public function withPassingScore(int $PassingScore): static
+    {
+        $new = clone $this;
+        $new->PassingScore = $PassingScore;
+
+        return $new;
+    }
+
     public function getBarAccess(): bool
     {
         return $this->BarAccess;
@@ -1119,6 +1151,19 @@ class StudentRecord
     {
         $new = clone $this;
         $new->EnrollmentNotes = $EnrollmentNotes;
+
+        return $new;
+    }
+
+    public function getEnrolledBy(): ?string
+    {
+        return $this->EnrolledBy;
+    }
+
+    public function withEnrolledBy(?string $EnrolledBy): static
+    {
+        $new = clone $this;
+        $new->EnrolledBy = $EnrolledBy;
 
         return $new;
     }
