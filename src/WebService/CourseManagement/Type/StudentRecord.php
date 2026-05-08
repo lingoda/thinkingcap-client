@@ -142,6 +142,8 @@ class StudentRecord
 
     private bool $BarAccess;
 
+    private bool $EnforceLPFreshness;
+
     private ?string $Success = null;
 
     private ?string $EntrySuccess = null;
@@ -195,6 +197,8 @@ class StudentRecord
     private ?string $SummaryXml = null;
 
     private ?string $SummaryDuration = null;
+
+    private ?string $ScormDataJson = null;
 
     private bool $Enter;
 
@@ -1103,6 +1107,19 @@ class StudentRecord
         return $new;
     }
 
+    public function getEnforceLPFreshness(): bool
+    {
+        return $this->EnforceLPFreshness;
+    }
+
+    public function withEnforceLPFreshness(bool $EnforceLPFreshness): static
+    {
+        $new = clone $this;
+        $new->EnforceLPFreshness = $EnforceLPFreshness;
+
+        return $new;
+    }
+
     public function getSuccess(): ?string
     {
         return $this->Success;
@@ -1450,6 +1467,19 @@ class StudentRecord
     {
         $new = clone $this;
         $new->SummaryDuration = $SummaryDuration;
+
+        return $new;
+    }
+
+    public function getScormDataJson(): ?string
+    {
+        return $this->ScormDataJson;
+    }
+
+    public function withScormDataJson(?string $ScormDataJson): static
+    {
+        $new = clone $this;
+        $new->ScormDataJson = $ScormDataJson;
 
         return $new;
     }

@@ -64,6 +64,8 @@ class AccreditationDetails
 
     private ?string $OpenBadgeType = null;
 
+    private ?string $BadgeType = null;
+
     private bool $GrantOpenBadgeCompletionPriorDueDate;
 
     private int $GrantOpenBadgeCompletionDayAfterEnroll;
@@ -428,6 +430,19 @@ class AccreditationDetails
     {
         $new = clone $this;
         $new->OpenBadgeType = $OpenBadgeType;
+
+        return $new;
+    }
+
+    public function getBadgeType(): ?string
+    {
+        return $this->BadgeType;
+    }
+
+    public function withBadgeType(?string $BadgeType): static
+    {
+        $new = clone $this;
+        $new->BadgeType = $BadgeType;
 
         return $new;
     }

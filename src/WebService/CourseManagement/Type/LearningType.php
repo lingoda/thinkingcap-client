@@ -275,6 +275,8 @@ class LearningType
 
     private bool $FastStartLPActivities;
 
+    private bool $EnforceLPFreshness;
+
     private bool $AllowLearnersToShare;
 
     private bool $AllowFacebook;
@@ -329,6 +331,10 @@ class LearningType
 
     private bool $NotifyLearnerConnectionsOnAccreditationExpiry;
 
+    private bool $SendEnrollmentDeclined;
+
+    private bool $SendLearningActivityConnectionAssigned;
+
     private bool $SendSessionStartLearnerNotification;
 
     private bool $SendSessionStartModeratorNotification;
@@ -382,8 +388,6 @@ class LearningType
     private bool $NotifyActivityConnectionsCompletion;
 
     private bool $NotifyLearnerConnectionsCompletion;
-
-    private bool $NotifyLearnerCompletion;
 
     private bool $CompletionNotificationIncludeSuccess;
 
@@ -535,6 +539,8 @@ class LearningType
 
     private bool $ManualEnollOverrideSingleNonExpiringEnrollments;
 
+    private bool $ManualEnrollOverrideSingleSelfEnrollments;
+
     private int $ClassroomHeight;
 
     private int $ClassroomWidth;
@@ -572,6 +578,10 @@ class LearningType
     private bool $RequireESignatureForCompletion;
 
     private ?string $ESignatureStatement = null;
+
+    private ?string $ESignatureSupervisorStatement = null;
+
+    private ?string $ESignatureRequiredFrom = null;
 
     private bool $ProcessUnknown;
 
@@ -2363,6 +2373,19 @@ class LearningType
         return $new;
     }
 
+    public function getEnforceLPFreshness(): bool
+    {
+        return $this->EnforceLPFreshness;
+    }
+
+    public function withEnforceLPFreshness(bool $EnforceLPFreshness): static
+    {
+        $new = clone $this;
+        $new->EnforceLPFreshness = $EnforceLPFreshness;
+
+        return $new;
+    }
+
     public function getAllowLearnersToShare(): bool
     {
         return $this->AllowLearnersToShare;
@@ -2714,6 +2737,32 @@ class LearningType
         return $new;
     }
 
+    public function getSendEnrollmentDeclined(): bool
+    {
+        return $this->SendEnrollmentDeclined;
+    }
+
+    public function withSendEnrollmentDeclined(bool $SendEnrollmentDeclined): static
+    {
+        $new = clone $this;
+        $new->SendEnrollmentDeclined = $SendEnrollmentDeclined;
+
+        return $new;
+    }
+
+    public function getSendLearningActivityConnectionAssigned(): bool
+    {
+        return $this->SendLearningActivityConnectionAssigned;
+    }
+
+    public function withSendLearningActivityConnectionAssigned(bool $SendLearningActivityConnectionAssigned): static
+    {
+        $new = clone $this;
+        $new->SendLearningActivityConnectionAssigned = $SendLearningActivityConnectionAssigned;
+
+        return $new;
+    }
+
     public function getSendSessionStartLearnerNotification(): bool
     {
         return $this->SendSessionStartLearnerNotification;
@@ -3061,19 +3110,6 @@ class LearningType
     {
         $new = clone $this;
         $new->NotifyLearnerConnectionsCompletion = $NotifyLearnerConnectionsCompletion;
-
-        return $new;
-    }
-
-    public function getNotifyLearnerCompletion(): bool
-    {
-        return $this->NotifyLearnerCompletion;
-    }
-
-    public function withNotifyLearnerCompletion(bool $NotifyLearnerCompletion): static
-    {
-        $new = clone $this;
-        $new->NotifyLearnerCompletion = $NotifyLearnerCompletion;
 
         return $new;
     }
@@ -4053,6 +4089,19 @@ class LearningType
         return $new;
     }
 
+    public function getManualEnrollOverrideSingleSelfEnrollments(): bool
+    {
+        return $this->ManualEnrollOverrideSingleSelfEnrollments;
+    }
+
+    public function withManualEnrollOverrideSingleSelfEnrollments(bool $ManualEnrollOverrideSingleSelfEnrollments): static
+    {
+        $new = clone $this;
+        $new->ManualEnrollOverrideSingleSelfEnrollments = $ManualEnrollOverrideSingleSelfEnrollments;
+
+        return $new;
+    }
+
     public function getClassroomHeight(): int
     {
         return $this->ClassroomHeight;
@@ -4296,6 +4345,32 @@ class LearningType
     {
         $new = clone $this;
         $new->ESignatureStatement = $ESignatureStatement;
+
+        return $new;
+    }
+
+    public function getESignatureSupervisorStatement(): ?string
+    {
+        return $this->ESignatureSupervisorStatement;
+    }
+
+    public function withESignatureSupervisorStatement(?string $ESignatureSupervisorStatement): static
+    {
+        $new = clone $this;
+        $new->ESignatureSupervisorStatement = $ESignatureSupervisorStatement;
+
+        return $new;
+    }
+
+    public function getESignatureRequiredFrom(): ?string
+    {
+        return $this->ESignatureRequiredFrom;
+    }
+
+    public function withESignatureRequiredFrom(?string $ESignatureRequiredFrom): static
+    {
+        $new = clone $this;
+        $new->ESignatureRequiredFrom = $ESignatureRequiredFrom;
 
         return $new;
     }
