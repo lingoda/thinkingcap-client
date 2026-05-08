@@ -45,6 +45,8 @@ class Reference
 
     private bool $HideFromLearners;
 
+    private ?ArrayOfReferenceAudience $Audiences = null;
+
     private ?string $ParentID = null;
 
     private ?string $ObjectType = null;
@@ -54,6 +56,8 @@ class Reference
     private ?string $MediaFileID = null;
 
     private bool $ThumbnailAdded;
+
+    private ?string $ThumbnailURL = null;
 
     private ?string $FieldsXml = null;
 
@@ -284,6 +288,19 @@ class Reference
         return $new;
     }
 
+    public function getAudiences(): ?ArrayOfReferenceAudience
+    {
+        return $this->Audiences;
+    }
+
+    public function withAudiences(?ArrayOfReferenceAudience $Audiences): static
+    {
+        $new = clone $this;
+        $new->Audiences = $Audiences;
+
+        return $new;
+    }
+
     public function getParentID(): ?string
     {
         return $this->ParentID;
@@ -345,6 +362,19 @@ class Reference
     {
         $new = clone $this;
         $new->ThumbnailAdded = $ThumbnailAdded;
+
+        return $new;
+    }
+
+    public function getThumbnailURL(): ?string
+    {
+        return $this->ThumbnailURL;
+    }
+
+    public function withThumbnailURL(?string $ThumbnailURL): static
+    {
+        $new = clone $this;
+        $new->ThumbnailURL = $ThumbnailURL;
 
         return $new;
     }

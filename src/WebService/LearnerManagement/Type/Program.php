@@ -365,6 +365,10 @@ class Program
 
     private bool $LearningActivityDetailsPrivate;
 
+    private ?string $LTICertificatePassword = null;
+
+    private bool $ShowPostLoginMessage;
+
     private ?ArrayOfAnyType $SupervisorRules = null;
 
     public function getID(): ?string
@@ -2683,6 +2687,32 @@ class Program
     {
         $new = clone $this;
         $new->LearningActivityDetailsPrivate = $LearningActivityDetailsPrivate;
+
+        return $new;
+    }
+
+    public function getLTICertificatePassword(): ?string
+    {
+        return $this->LTICertificatePassword;
+    }
+
+    public function withLTICertificatePassword(?string $LTICertificatePassword): static
+    {
+        $new = clone $this;
+        $new->LTICertificatePassword = $LTICertificatePassword;
+
+        return $new;
+    }
+
+    public function getShowPostLoginMessage(): bool
+    {
+        return $this->ShowPostLoginMessage;
+    }
+
+    public function withShowPostLoginMessage(bool $ShowPostLoginMessage): static
+    {
+        $new = clone $this;
+        $new->ShowPostLoginMessage = $ShowPostLoginMessage;
 
         return $new;
     }

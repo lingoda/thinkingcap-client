@@ -42,6 +42,8 @@ class CourseVersion
 
     private ?string $ExternalLocation = null;
 
+    private ?string $LTIResourceLinkID = null;
+
     public function getCourseID(): ?string
     {
         return $this->CourseID;
@@ -259,6 +261,19 @@ class CourseVersion
     {
         $new = clone $this;
         $new->ExternalLocation = $ExternalLocation;
+
+        return $new;
+    }
+
+    public function getLTIResourceLinkID(): ?string
+    {
+        return $this->LTIResourceLinkID;
+    }
+
+    public function withLTIResourceLinkID(?string $LTIResourceLinkID): static
+    {
+        $new = clone $this;
+        $new->LTIResourceLinkID = $LTIResourceLinkID;
 
         return $new;
     }

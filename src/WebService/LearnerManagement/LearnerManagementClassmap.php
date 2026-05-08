@@ -50,6 +50,9 @@ class LearnerManagementClassmap
             new ClassMap('http://www.thinkingcap.com/', 'AccreditationDetails', Type\AccreditationDetails::class),
             new ClassMap('http://www.thinkingcap.com/', 'ArrayOfReference', Type\ArrayOfReference::class),
             new ClassMap('http://www.thinkingcap.com/', 'Reference', Type\Reference::class),
+            new ClassMap('http://www.thinkingcap.com/', 'ArrayOfReferenceAudience', Type\ArrayOfReferenceAudience::class),
+            new ClassMap('http://www.thinkingcap.com/', 'ReferenceAudience', Type\ReferenceAudience::class),
+            new ClassMap('http://www.thinkingcap.com/', 'CourseProctoringSettings', Type\CourseProctoringSettings::class),
             new ClassMap('http://www.thinkingcap.com/', 'ArrayOfAssignment', Type\ArrayOfAssignment::class),
             new ClassMap('http://www.thinkingcap.com/', 'Assignment', Type\Assignment::class),
             new ClassMap('http://www.thinkingcap.com/', 'ArrayOfCourseAssignment', Type\ArrayOfCourseAssignment::class),
@@ -201,14 +204,14 @@ class LearnerManagementClassmap
             new ClassMap('http://www.thinkingcap.com/', 'GetLMSUserAutoLoginURLByUsernameResponse', Type\GetLMSUserAutoLoginURLByUsernameResponse::class),
             new ClassMap('http://www.thinkingcap.com/', 'GetActiveDirectorySynchSettings', Type\GetActiveDirectorySynchSettings::class),
             new ClassMap('http://www.thinkingcap.com/', 'GetActiveDirectorySynchSettingsResponse', Type\GetActiveDirectorySynchSettingsResponse::class),
+            new ClassMap('http://www.thinkingcap.com/', 'SetFeedbackCompleted', Type\SetFeedbackCompleted::class),
+            new ClassMap('http://www.thinkingcap.com/', 'SetFeedbackCompletedResponse', Type\SetFeedbackCompletedResponse::class),
             new ClassMap('http://www.thinkingcap.com/', 'TestPost', Type\TestPost::class),
             new ClassMap('http://www.thinkingcap.com/', 'TestPostResponse', Type\TestPostResponse::class),
             new ClassMap('http://www.thinkingcap.com/', 'GetSCORMDetails', Type\GetSCORMDetails::class),
             new ClassMap('http://www.thinkingcap.com/', 'GetSCORMDetailsResponse', Type\GetSCORMDetailsResponse::class),
             new ClassMap('http://www.thinkingcap.com/', 'SetSCORMValues', Type\SetSCORMValues::class),
             new ClassMap('http://www.thinkingcap.com/', 'SetSCORMValuesResponse', Type\SetSCORMValuesResponse::class),
-            new ClassMap('http://www.thinkingcap.com/', 'SetFeedbackCompleted', Type\SetFeedbackCompleted::class),
-            new ClassMap('http://www.thinkingcap.com/', 'SetFeedbackCompletedResponse', Type\SetFeedbackCompletedResponse::class),
         );
     }
 

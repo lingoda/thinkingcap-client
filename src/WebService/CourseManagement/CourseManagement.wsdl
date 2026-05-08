@@ -44,6 +44,13 @@
               <s:element minOccurs="1" maxOccurs="1" name="NotifyUnit" type="s:int" />
               <s:element minOccurs="0" maxOccurs="1" name="NotifyInterval" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="ProctorSignIn" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctoringSettings" type="tns:CourseProctoringSettings" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringEnabled" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringMinInterval" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxInterval" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxScreenshots" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringScreenshotAtStart" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringBlockOnConsentDecline" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="ShowModule" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="ShowMenu" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="LastProgramID" type="s:string" />
@@ -252,6 +259,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnLPEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="FastStartLPActivities" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnforceLPFreshness" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersToShare" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowFacebook" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowLinkedin" type="s:boolean" />
@@ -279,6 +287,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="ReviewStatus" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAccreditationExpiryNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnAccreditationExpiry" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentDeclined" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendLearningActivityConnectionAssigned" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartLearnerNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartModeratorNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentConfirmation" type="s:boolean" />
@@ -306,7 +316,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnWithdrawRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsCompletion" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletionNotificationIncludeSuccess" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletionNotificationIncludeScore" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnDue" type="s:boolean" />
@@ -382,6 +391,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideNotificationPeriod" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideMaxReEnrollments" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideSingleNonExpiringEnrollments" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManualEnrollOverrideSingleSelfEnrollments" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ClassroomHeight" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ClassroomWidth" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="ClassroomTemplate" type="s:string" />
@@ -401,6 +411,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireStatusSuccessPassed" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="ESignatureStatement" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESignatureSupervisorStatement" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESignatureRequiredFrom" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISucces" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MinPassingScore" type="s:int" />
@@ -467,6 +479,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeIssuer" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BadgeType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionPriorDueDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionDayAfterEnroll" type="s:int" />
         </s:sequence>
@@ -495,12 +508,29 @@
           <s:element minOccurs="0" maxOccurs="1" name="DocumentFile" type="s:base64Binary" />
           <s:element minOccurs="1" maxOccurs="1" name="UploadDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="HideFromLearners" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Audiences" type="tns:ArrayOfReferenceAudience" />
           <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ObjectType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MediaFileID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ThumbnailAdded" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThumbnailURL" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReferenceAudience">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReferenceAudience" nillable="true" type="tns:ReferenceAudience" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReferenceAudience">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AudienceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityConnectionTypeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityConnectionTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfAnyType">
@@ -527,7 +557,6 @@
                   </s:sequence>
                 </s:complexType>
               </s:element>
-              <s:element minOccurs="0" maxOccurs="1" name="Folder" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="Schedule" type="tns:Schedule" />
               <s:element minOccurs="0" maxOccurs="1" name="StudentList" type="tns:ArrayOfString" />
               <s:element minOccurs="1" maxOccurs="1" name="FixedTime" type="s:boolean" />
@@ -555,9 +584,11 @@
               <s:element minOccurs="1" maxOccurs="1" name="Step" type="s:int" />
               <s:element minOccurs="0" maxOccurs="1" name="Instructions" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="Published" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ForPersonalPathsOnly" type="s:boolean" />
               <s:element minOccurs="1" maxOccurs="1" name="IsPortfolioEvidence" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="PortfolioEvidenceType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="AttestationType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AttestationRequiredType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="SurveyContentType" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CustomTypeName" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="IsCompletedTrainingDate" type="s:boolean" />
@@ -580,6 +611,36 @@
               <s:element minOccurs="1" maxOccurs="1" name="EndCollaborationOnCompletion" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationTitle" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="CollaborationDescription" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RequiresLearnerEvidence" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RequiresProctorEvidence" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerAttestationRequiresApproval" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerAttestationProctorCommentsEnabled" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerAttestationProctorCommentsRequired" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerAttestationProctorSuccessRequired" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerSubmissionProctorIsAnon" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerSubmissionAllowMultiple" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="LearnerInstructions" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerSubmissionMultipleUnlimited" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerSubmissionMultipleProctorDiscretion" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerSubmissionMaxAttempts" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="LearnerEvidenceType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorEvidenceType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LearnerEvidenceFormID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorEvidenceFormID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LearnerEvidenceSampleDoc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LearnerAttestationProctorSuccessType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorAttestationSuccessType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorEvidenceSampleDoc" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LearnerAttestationProctorMinScore" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctorAttestationMinScore" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctorAttestationSuccessRequired" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctorAttestationCommentsRequired" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctorAttestationCommentsEnabled" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorInstructions" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorApprovalButtonText" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorRejectionButtonText" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctorIsAnon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctorEvaluationTrigger" type="s:string" />
             </s:sequence>
           </s:extension>
         </s:complexContent>
@@ -630,6 +691,18 @@
           <s:element minOccurs="0" maxOccurs="1" name="LastSent" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Lang" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SMSText" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CourseProctoringSettings">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CourseID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringMinInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxScreenshots" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringScreenshotAtStart" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringBlockOnConsentDecline" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendProctoringImageFlaggedNotification" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfAssignment">
@@ -730,6 +803,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="UpdatedBy" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SummaryXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ExternalLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LTIResourceLinkID" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ActivityMapVersion">
@@ -774,6 +848,10 @@
           <s:element minOccurs="1" maxOccurs="1" name="ApplyToLPGroups" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsRequired" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="DisplaySlidingScale" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupInstruction" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChoiceCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowNumbers" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LabelStyle" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="DomainSurveyID" type="s:string" />
         </s:sequence>
       </s:complexType>
@@ -877,6 +955,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RecordScore" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="PassingScore" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="BarAccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnforceLPFreshness" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="EntrySuccess" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DateEnrolled" type="s:dateTime" />
@@ -904,6 +983,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DisclaimerAgreedDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="SummaryXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SummaryDuration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScormDataJson" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Enter" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Exit" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Feedback" type="s:boolean" />
@@ -1777,6 +1857,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastModifiedExtraInfo" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CreationMethod" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualChange" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualDeletion" type="s:boolean" />
@@ -1784,6 +1865,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="PasswordChangeDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="MustChangePassword" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="InactivatedAfterNoLogin" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
@@ -2161,6 +2243,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="ForceDisplayDomainTimezone" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RemoveNotMatchingRulesUsers" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LearningActivityDetailsPrivate" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LTICertificatePassword" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowPostLoginMessage" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="SupervisorRules" type="tns:ArrayOfAnyType" />
         </s:sequence>
       </s:complexType>

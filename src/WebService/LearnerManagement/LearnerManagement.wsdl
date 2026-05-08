@@ -58,6 +58,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastModifiedExtraInfo" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CreationMethod" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualChange" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ProtectFromManualDeletion" type="s:boolean" />
@@ -65,6 +66,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="PasswordChangeDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="MustChangePassword" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="InactivatedAfterNoLogin" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="StatusLocked" type="s:boolean" />
@@ -447,6 +449,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="ForceDisplayDomainTimezone" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RemoveNotMatchingRulesUsers" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="LearningActivityDetailsPrivate" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LTICertificatePassword" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowPostLoginMessage" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="SupervisorRules" type="tns:ArrayOfAnyType" />
         </s:sequence>
       </s:complexType>
@@ -479,6 +483,13 @@
               <s:element minOccurs="1" maxOccurs="1" name="NotifyUnit" type="s:int" />
               <s:element minOccurs="0" maxOccurs="1" name="NotifyInterval" type="s:string" />
               <s:element minOccurs="1" maxOccurs="1" name="ProctorSignIn" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProctoringSettings" type="tns:CourseProctoringSettings" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringEnabled" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringMinInterval" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxInterval" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxScreenshots" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringScreenshotAtStart" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProctoringBlockOnConsentDecline" type="s:boolean" />
               <s:element minOccurs="0" maxOccurs="1" name="ShowModule" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="ShowMenu" type="s:string" />
               <s:element minOccurs="0" maxOccurs="1" name="LastProgramID" type="s:string" />
@@ -687,6 +698,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ExcludeLPEnrollNotSelfEnrollActivities" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="WithdrawIncompleteLPActivitiesOnLPEnroll" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="FastStartLPActivities" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnforceLPFreshness" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowLearnersToShare" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowFacebook" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="AllowLinkedin" type="s:boolean" />
@@ -714,6 +726,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="ReviewStatus" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="SendAccreditationExpiryNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnAccreditationExpiry" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentDeclined" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendLearningActivityConnectionAssigned" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartLearnerNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendSessionStartModeratorNotification" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="SendEnrollmentConfirmation" type="s:boolean" />
@@ -741,7 +755,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsOnWithdrawRequest" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerConnectionsCompletion" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotifyLearnerCompletion" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletionNotificationIncludeSuccess" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="CompletionNotificationIncludeScore" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="NotifyActivityConnectionsOnDue" type="s:boolean" />
@@ -817,6 +830,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideNotificationPeriod" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideMaxReEnrollments" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ManualEnollOverrideSingleNonExpiringEnrollments" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ManualEnrollOverrideSingleSelfEnrollments" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="ClassroomHeight" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ClassroomWidth" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="ClassroomTemplate" type="s:string" />
@@ -836,6 +850,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="RequireStatusSuccessPassed" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="RequireESignatureForCompletion" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="ESignatureStatement" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESignatureSupervisorStatement" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESignatureRequiredFrom" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ProcessUnknown" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="OverrideAPISucces" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="MinPassingScore" type="s:int" />
@@ -902,6 +918,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeIssuer" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OpenBadgeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BadgeType" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionPriorDueDate" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="GrantOpenBadgeCompletionDayAfterEnroll" type="s:int" />
         </s:sequence>
@@ -930,12 +947,41 @@
           <s:element minOccurs="0" maxOccurs="1" name="DocumentFile" type="s:base64Binary" />
           <s:element minOccurs="1" maxOccurs="1" name="UploadDate" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="HideFromLearners" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Audiences" type="tns:ArrayOfReferenceAudience" />
           <s:element minOccurs="0" maxOccurs="1" name="ParentID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ObjectType" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MediaFileID" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ThumbnailAdded" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThumbnailURL" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="FieldsXml" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReferenceAudience">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReferenceAudience" nillable="true" type="tns:ReferenceAudience" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReferenceAudience">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AudienceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityConnectionTypeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivityConnectionTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CourseProctoringSettings">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CourseID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringMinInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxInterval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringMaxScreenshots" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringScreenshotAtStart" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProctoringBlockOnConsentDecline" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendProctoringImageFlaggedNotification" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfAssignment">
@@ -1036,6 +1082,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="UpdatedBy" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SummaryXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ExternalLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LTIResourceLinkID" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ActivityMapVersion">
@@ -1080,6 +1127,10 @@
           <s:element minOccurs="1" maxOccurs="1" name="ApplyToLPGroups" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="IsRequired" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="DisplaySlidingScale" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupInstruction" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChoiceCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowNumbers" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LabelStyle" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="DomainSurveyID" type="s:string" />
         </s:sequence>
       </s:complexType>
@@ -1851,6 +1902,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="RecordScore" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="PassingScore" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="BarAccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnforceLPFreshness" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Success" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="EntrySuccess" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DateEnrolled" type="s:dateTime" />
@@ -1878,6 +1930,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DisclaimerAgreedDate" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="SummaryXml" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SummaryDuration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScormDataJson" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Enter" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Exit" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Feedback" type="s:boolean" />
@@ -2411,6 +2464,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SetFeedbackCompleted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentRecordID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="learningPathID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFeedbackCompletedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetFeedbackCompletedResult" type="tns:ServiceResultOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="TestPost">
         <s:complexType>
           <s:sequence>
@@ -2455,22 +2524,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SetSCORMValuesResult" type="tns:ServiceResultOfString" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SetFeedbackCompleted">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="apiKey" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="studentRecordID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="learningPathID" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SetFeedbackCompletedResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SetFeedbackCompletedResult" type="tns:ServiceResultOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2800,6 +2853,12 @@
   <wsdl:message name="GetActiveDirectorySynchSettingsSoapOut">
     <wsdl:part name="parameters" element="tns:GetActiveDirectorySynchSettingsResponse" />
   </wsdl:message>
+  <wsdl:message name="SetFeedbackCompletedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetFeedbackCompleted" />
+  </wsdl:message>
+  <wsdl:message name="SetFeedbackCompletedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetFeedbackCompletedResponse" />
+  </wsdl:message>
   <wsdl:message name="TestPostSoapIn">
     <wsdl:part name="parameters" element="tns:TestPost" />
   </wsdl:message>
@@ -2817,12 +2876,6 @@
   </wsdl:message>
   <wsdl:message name="SetSCORMValuesSoapOut">
     <wsdl:part name="parameters" element="tns:SetSCORMValuesResponse" />
-  </wsdl:message>
-  <wsdl:message name="SetFeedbackCompletedSoapIn">
-    <wsdl:part name="parameters" element="tns:SetFeedbackCompleted" />
-  </wsdl:message>
-  <wsdl:message name="SetFeedbackCompletedSoapOut">
-    <wsdl:part name="parameters" element="tns:SetFeedbackCompletedResponse" />
   </wsdl:message>
   <wsdl:message name="GetAllUsersHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
@@ -3276,6 +3329,14 @@
   <wsdl:message name="GetActiveDirectorySynchSettingsHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="SetFeedbackCompletedHttpGetIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentRecordID" type="s:string" />
+    <wsdl:part name="learningPathID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetFeedbackCompletedHttpGetOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="TestPostHttpGetIn">
     <wsdl:part name="apiKey" type="s:string" />
   </wsdl:message>
@@ -3297,14 +3358,6 @@
     <wsdl:part name="scormObjectJson" type="s:string" />
   </wsdl:message>
   <wsdl:message name="SetSCORMValuesHttpGetOut">
-    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
-  </wsdl:message>
-  <wsdl:message name="SetFeedbackCompletedHttpGetIn">
-    <wsdl:part name="apiKey" type="s:string" />
-    <wsdl:part name="studentRecordID" type="s:string" />
-    <wsdl:part name="learningPathID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="SetFeedbackCompletedHttpGetOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:message name="GetAllUsersHttpPostIn">
@@ -3759,6 +3812,14 @@
   <wsdl:message name="GetActiveDirectorySynchSettingsHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
+  <wsdl:message name="SetFeedbackCompletedHttpPostIn">
+    <wsdl:part name="apiKey" type="s:string" />
+    <wsdl:part name="studentRecordID" type="s:string" />
+    <wsdl:part name="learningPathID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetFeedbackCompletedHttpPostOut">
+    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
+  </wsdl:message>
   <wsdl:message name="TestPostHttpPostIn">
     <wsdl:part name="apiKey" type="s:string" />
   </wsdl:message>
@@ -3780,14 +3841,6 @@
     <wsdl:part name="scormObjectJson" type="s:string" />
   </wsdl:message>
   <wsdl:message name="SetSCORMValuesHttpPostOut">
-    <wsdl:part name="Body" element="tns:ServiceResultOfString" />
-  </wsdl:message>
-  <wsdl:message name="SetFeedbackCompletedHttpPostIn">
-    <wsdl:part name="apiKey" type="s:string" />
-    <wsdl:part name="studentRecordID" type="s:string" />
-    <wsdl:part name="learningPathID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="SetFeedbackCompletedHttpPostOut">
     <wsdl:part name="Body" element="tns:ServiceResultOfString" />
   </wsdl:message>
   <wsdl:portType name="LearnerManagementSoap">
@@ -4041,6 +4094,11 @@
       <wsdl:input message="tns:GetActiveDirectorySynchSettingsSoapIn" />
       <wsdl:output message="tns:GetActiveDirectorySynchSettingsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
+      <wsdl:input message="tns:SetFeedbackCompletedSoapIn" />
+      <wsdl:output message="tns:SetFeedbackCompletedSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test POST-ing to web service</wsdl:documentation>
       <wsdl:input message="tns:TestPostSoapIn" />
@@ -4055,11 +4113,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets SCORM values for a course and student. Parameters: userLogin,userPassword,courseID (GUID),scormObjectJson (varchar, json format). </wsdl:documentation>
       <wsdl:input message="tns:SetSCORMValuesSoapIn" />
       <wsdl:output message="tns:SetSCORMValuesSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
-      <wsdl:input message="tns:SetFeedbackCompletedSoapIn" />
-      <wsdl:output message="tns:SetFeedbackCompletedSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="LearnerManagementHttpGet">
@@ -4313,6 +4366,11 @@
       <wsdl:input message="tns:GetActiveDirectorySynchSettingsHttpGetIn" />
       <wsdl:output message="tns:GetActiveDirectorySynchSettingsHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
+      <wsdl:input message="tns:SetFeedbackCompletedHttpGetIn" />
+      <wsdl:output message="tns:SetFeedbackCompletedHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test POST-ing to web service</wsdl:documentation>
       <wsdl:input message="tns:TestPostHttpGetIn" />
@@ -4327,11 +4385,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets SCORM values for a course and student. Parameters: userLogin,userPassword,courseID (GUID),scormObjectJson (varchar, json format). </wsdl:documentation>
       <wsdl:input message="tns:SetSCORMValuesHttpGetIn" />
       <wsdl:output message="tns:SetSCORMValuesHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
-      <wsdl:input message="tns:SetFeedbackCompletedHttpGetIn" />
-      <wsdl:output message="tns:SetFeedbackCompletedHttpGetOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="LearnerManagementHttpPost">
@@ -4585,6 +4638,11 @@
       <wsdl:input message="tns:GetActiveDirectorySynchSettingsHttpPostIn" />
       <wsdl:output message="tns:GetActiveDirectorySynchSettingsHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
+      <wsdl:input message="tns:SetFeedbackCompletedHttpPostIn" />
+      <wsdl:output message="tns:SetFeedbackCompletedHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test POST-ing to web service</wsdl:documentation>
       <wsdl:input message="tns:TestPostHttpPostIn" />
@@ -4599,11 +4657,6 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets SCORM values for a course and student. Parameters: userLogin,userPassword,courseID (GUID),scormObjectJson (varchar, json format). </wsdl:documentation>
       <wsdl:input message="tns:SetSCORMValuesHttpPostIn" />
       <wsdl:output message="tns:SetSCORMValuesHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets the details of a student learning activity record. Status valid values are ['Completed','Active'] The date completed is optional; if passed, the date completed should be in the format 'yyyy/MM/dd HH:mm:ss' and in UTC timezone. The last module name, percent completed, score and credits are optional. The time spent by the learner in the learning activity is optional; if passed, it should be in seconds.</wsdl:documentation>
-      <wsdl:input message="tns:SetFeedbackCompletedHttpPostIn" />
-      <wsdl:output message="tns:SetFeedbackCompletedHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="LearnerManagementSoap" type="tns:LearnerManagementSoap">
@@ -5058,6 +5111,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <soap:operation soapAction="http://www.thinkingcap.com/SetFeedbackCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <soap:operation soapAction="http://www.thinkingcap.com/TestPost" style="document" />
       <wsdl:input>
@@ -5078,15 +5140,6 @@
     </wsdl:operation>
     <wsdl:operation name="SetSCORMValues">
       <soap:operation soapAction="http://www.thinkingcap.com/SetSCORMValues" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <soap:operation soapAction="http://www.thinkingcap.com/SetFeedbackCompleted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5547,6 +5600,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <soap12:operation soapAction="http://www.thinkingcap.com/SetFeedbackCompleted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <soap12:operation soapAction="http://www.thinkingcap.com/TestPost" style="document" />
       <wsdl:input>
@@ -5567,15 +5629,6 @@
     </wsdl:operation>
     <wsdl:operation name="SetSCORMValues">
       <soap12:operation soapAction="http://www.thinkingcap.com/SetSCORMValues" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <soap12:operation soapAction="http://www.thinkingcap.com/SetFeedbackCompleted" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6036,6 +6089,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <http:operation location="/SetFeedbackCompleted" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <http:operation location="/TestPost" />
       <wsdl:input>
@@ -6056,15 +6118,6 @@
     </wsdl:operation>
     <wsdl:operation name="SetSCORMValues">
       <http:operation location="/SetSCORMValues" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <http:operation location="/SetFeedbackCompleted" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -6525,6 +6578,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetFeedbackCompleted">
+      <http:operation location="/SetFeedbackCompleted" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="TestPost">
       <http:operation location="/TestPost" />
       <wsdl:input>
@@ -6545,15 +6607,6 @@
     </wsdl:operation>
     <wsdl:operation name="SetSCORMValues">
       <http:operation location="/SetSCORMValues" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SetFeedbackCompleted">
-      <http:operation location="/SetFeedbackCompleted" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -48,6 +48,14 @@ class FeedbackQuestion
 
     private bool $DisplaySlidingScale;
 
+    private ?string $GroupInstruction = null;
+
+    private ?int $ChoiceCount = null;
+
+    private ?bool $ShowNumbers = null;
+
+    private ?string $LabelStyle = null;
+
     private ?string $DomainSurveyID = null;
 
     public function getID(): ?string
@@ -319,6 +327,58 @@ class FeedbackQuestion
     {
         $new = clone $this;
         $new->DisplaySlidingScale = $DisplaySlidingScale;
+
+        return $new;
+    }
+
+    public function getGroupInstruction(): ?string
+    {
+        return $this->GroupInstruction;
+    }
+
+    public function withGroupInstruction(?string $GroupInstruction): static
+    {
+        $new = clone $this;
+        $new->GroupInstruction = $GroupInstruction;
+
+        return $new;
+    }
+
+    public function getChoiceCount(): ?int
+    {
+        return $this->ChoiceCount;
+    }
+
+    public function withChoiceCount(?int $ChoiceCount): static
+    {
+        $new = clone $this;
+        $new->ChoiceCount = $ChoiceCount;
+
+        return $new;
+    }
+
+    public function getShowNumbers(): ?bool
+    {
+        return $this->ShowNumbers;
+    }
+
+    public function withShowNumbers(?bool $ShowNumbers): static
+    {
+        $new = clone $this;
+        $new->ShowNumbers = $ShowNumbers;
+
+        return $new;
+    }
+
+    public function getLabelStyle(): ?string
+    {
+        return $this->LabelStyle;
+    }
+
+    public function withLabelStyle(?string $LabelStyle): static
+    {
+        $new = clone $this;
+        $new->LabelStyle = $LabelStyle;
 
         return $new;
     }

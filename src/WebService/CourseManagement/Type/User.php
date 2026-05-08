@@ -52,6 +52,8 @@ class User
 
     private DateTimeInterface $LastModifiedDate;
 
+    private ?string $LastModifiedExtraInfo = null;
+
     private ?string $CreationMethod = null;
 
     private bool $ProtectFromManualChange;
@@ -65,6 +67,8 @@ class User
     private ?string $Password = null;
 
     private bool $MustChangePassword;
+
+    private bool $InactivatedAfterNoLogin;
 
     private ?string $Language = null;
 
@@ -418,6 +422,19 @@ class User
         return $new;
     }
 
+    public function getLastModifiedExtraInfo(): ?string
+    {
+        return $this->LastModifiedExtraInfo;
+    }
+
+    public function withLastModifiedExtraInfo(?string $LastModifiedExtraInfo): static
+    {
+        $new = clone $this;
+        $new->LastModifiedExtraInfo = $LastModifiedExtraInfo;
+
+        return $new;
+    }
+
     public function getCreationMethod(): ?string
     {
         return $this->CreationMethod;
@@ -505,6 +522,19 @@ class User
     {
         $new = clone $this;
         $new->MustChangePassword = $MustChangePassword;
+
+        return $new;
+    }
+
+    public function getInactivatedAfterNoLogin(): bool
+    {
+        return $this->InactivatedAfterNoLogin;
+    }
+
+    public function withInactivatedAfterNoLogin(bool $InactivatedAfterNoLogin): static
+    {
+        $new = clone $this;
+        $new->InactivatedAfterNoLogin = $InactivatedAfterNoLogin;
 
         return $new;
     }

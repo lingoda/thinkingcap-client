@@ -4,23 +4,20 @@ declare(strict_types=1);
 
 namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement;
 
-use Phpro\SoapClient\Caller\Caller;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Phpro\SoapClient\Type\ResultInterface;
 
 class CourseManagementSoapClient
 {
-    private Caller $caller;
+    private \Phpro\SoapClient\Caller\Caller $caller;
 
-    public function __construct(Caller $caller)
+    public function __construct(\Phpro\SoapClient\Caller\Caller $caller)
     {
         $this->caller = $caller;
     }
 
     /**
-     * Returns a course with the specified ID. Deprecated, use GetLearningActivityByID!
-     *
      * @param RequestInterface & Type\FindCourse $parameters
      *
      * @throws SoapException

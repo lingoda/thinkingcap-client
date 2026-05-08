@@ -14,8 +14,6 @@ class Activity extends LearningType
 
     private ?ActivityDescriptionNode $DescriptionNode = null;
 
-    private ?string $Folder = null;
-
     private ?Schedule $Schedule = null;
 
     private ?ArrayOfString $StudentList = null;
@@ -73,11 +71,15 @@ class Activity extends LearningType
 
     private bool $Published;
 
+    private bool $ForPersonalPathsOnly;
+
     private bool $IsPortfolioEvidence;
 
     private ?string $PortfolioEvidenceType = null;
 
     private ?string $AttestationType = null;
+
+    private ?string $AttestationRequiredType = null;
 
     private ?string $SurveyContentType = null;
 
@@ -123,6 +125,66 @@ class Activity extends LearningType
 
     private ?string $CollaborationDescription = null;
 
+    private bool $RequiresLearnerEvidence;
+
+    private bool $RequiresProctorEvidence;
+
+    private bool $LearnerAttestationRequiresApproval;
+
+    private bool $LearnerAttestationProctorCommentsEnabled;
+
+    private bool $LearnerAttestationProctorCommentsRequired;
+
+    private bool $LearnerAttestationProctorSuccessRequired;
+
+    private bool $LearnerSubmissionProctorIsAnon;
+
+    private bool $LearnerSubmissionAllowMultiple;
+
+    private ?string $LearnerInstructions = null;
+
+    private bool $LearnerSubmissionMultipleUnlimited;
+
+    private bool $LearnerSubmissionMultipleProctorDiscretion;
+
+    private int $LearnerSubmissionMaxAttempts;
+
+    private ?string $LearnerEvidenceType = null;
+
+    private ?string $ProctorEvidenceType = null;
+
+    private ?string $LearnerEvidenceFormID = null;
+
+    private ?string $ProctorEvidenceFormID = null;
+
+    private ?string $LearnerEvidenceSampleDoc = null;
+
+    private ?string $LearnerAttestationProctorSuccessType = null;
+
+    private ?string $ProctorAttestationSuccessType = null;
+
+    private ?string $ProctorEvidenceSampleDoc = null;
+
+    private int $LearnerAttestationProctorMinScore;
+
+    private int $ProctorAttestationMinScore;
+
+    private bool $ProctorAttestationSuccessRequired;
+
+    private bool $ProctorAttestationCommentsRequired;
+
+    private bool $ProctorAttestationCommentsEnabled;
+
+    private ?string $ProctorInstructions = null;
+
+    private ?string $ProctorApprovalButtonText = null;
+
+    private ?string $ProctorRejectionButtonText = null;
+
+    private bool $ProctorIsAnon;
+
+    private ?string $ProctorEvaluationTrigger = null;
+
     public function getTypeName(): ?string
     {
         return $this->TypeName;
@@ -158,19 +220,6 @@ class Activity extends LearningType
     {
         $new = clone $this;
         $new->DescriptionNode = $DescriptionNode;
-
-        return $new;
-    }
-
-    public function getFolder(): ?string
-    {
-        return $this->Folder;
-    }
-
-    public function withFolder(?string $Folder): static
-    {
-        $new = clone $this;
-        $new->Folder = $Folder;
 
         return $new;
     }
@@ -532,6 +581,19 @@ class Activity extends LearningType
         return $new;
     }
 
+    public function getForPersonalPathsOnly(): bool
+    {
+        return $this->ForPersonalPathsOnly;
+    }
+
+    public function withForPersonalPathsOnly(bool $ForPersonalPathsOnly): static
+    {
+        $new = clone $this;
+        $new->ForPersonalPathsOnly = $ForPersonalPathsOnly;
+
+        return $new;
+    }
+
     public function getIsPortfolioEvidence(): bool
     {
         return $this->IsPortfolioEvidence;
@@ -567,6 +629,19 @@ class Activity extends LearningType
     {
         $new = clone $this;
         $new->AttestationType = $AttestationType;
+
+        return $new;
+    }
+
+    public function getAttestationRequiredType(): ?string
+    {
+        return $this->AttestationRequiredType;
+    }
+
+    public function withAttestationRequiredType(?string $AttestationRequiredType): static
+    {
+        $new = clone $this;
+        $new->AttestationRequiredType = $AttestationRequiredType;
 
         return $new;
     }
@@ -853,6 +928,396 @@ class Activity extends LearningType
     {
         $new = clone $this;
         $new->CollaborationDescription = $CollaborationDescription;
+
+        return $new;
+    }
+
+    public function getRequiresLearnerEvidence(): bool
+    {
+        return $this->RequiresLearnerEvidence;
+    }
+
+    public function withRequiresLearnerEvidence(bool $RequiresLearnerEvidence): static
+    {
+        $new = clone $this;
+        $new->RequiresLearnerEvidence = $RequiresLearnerEvidence;
+
+        return $new;
+    }
+
+    public function getRequiresProctorEvidence(): bool
+    {
+        return $this->RequiresProctorEvidence;
+    }
+
+    public function withRequiresProctorEvidence(bool $RequiresProctorEvidence): static
+    {
+        $new = clone $this;
+        $new->RequiresProctorEvidence = $RequiresProctorEvidence;
+
+        return $new;
+    }
+
+    public function getLearnerAttestationRequiresApproval(): bool
+    {
+        return $this->LearnerAttestationRequiresApproval;
+    }
+
+    public function withLearnerAttestationRequiresApproval(bool $LearnerAttestationRequiresApproval): static
+    {
+        $new = clone $this;
+        $new->LearnerAttestationRequiresApproval = $LearnerAttestationRequiresApproval;
+
+        return $new;
+    }
+
+    public function getLearnerAttestationProctorCommentsEnabled(): bool
+    {
+        return $this->LearnerAttestationProctorCommentsEnabled;
+    }
+
+    public function withLearnerAttestationProctorCommentsEnabled(bool $LearnerAttestationProctorCommentsEnabled): static
+    {
+        $new = clone $this;
+        $new->LearnerAttestationProctorCommentsEnabled = $LearnerAttestationProctorCommentsEnabled;
+
+        return $new;
+    }
+
+    public function getLearnerAttestationProctorCommentsRequired(): bool
+    {
+        return $this->LearnerAttestationProctorCommentsRequired;
+    }
+
+    public function withLearnerAttestationProctorCommentsRequired(bool $LearnerAttestationProctorCommentsRequired): static
+    {
+        $new = clone $this;
+        $new->LearnerAttestationProctorCommentsRequired = $LearnerAttestationProctorCommentsRequired;
+
+        return $new;
+    }
+
+    public function getLearnerAttestationProctorSuccessRequired(): bool
+    {
+        return $this->LearnerAttestationProctorSuccessRequired;
+    }
+
+    public function withLearnerAttestationProctorSuccessRequired(bool $LearnerAttestationProctorSuccessRequired): static
+    {
+        $new = clone $this;
+        $new->LearnerAttestationProctorSuccessRequired = $LearnerAttestationProctorSuccessRequired;
+
+        return $new;
+    }
+
+    public function getLearnerSubmissionProctorIsAnon(): bool
+    {
+        return $this->LearnerSubmissionProctorIsAnon;
+    }
+
+    public function withLearnerSubmissionProctorIsAnon(bool $LearnerSubmissionProctorIsAnon): static
+    {
+        $new = clone $this;
+        $new->LearnerSubmissionProctorIsAnon = $LearnerSubmissionProctorIsAnon;
+
+        return $new;
+    }
+
+    public function getLearnerSubmissionAllowMultiple(): bool
+    {
+        return $this->LearnerSubmissionAllowMultiple;
+    }
+
+    public function withLearnerSubmissionAllowMultiple(bool $LearnerSubmissionAllowMultiple): static
+    {
+        $new = clone $this;
+        $new->LearnerSubmissionAllowMultiple = $LearnerSubmissionAllowMultiple;
+
+        return $new;
+    }
+
+    public function getLearnerInstructions(): ?string
+    {
+        return $this->LearnerInstructions;
+    }
+
+    public function withLearnerInstructions(?string $LearnerInstructions): static
+    {
+        $new = clone $this;
+        $new->LearnerInstructions = $LearnerInstructions;
+
+        return $new;
+    }
+
+    public function getLearnerSubmissionMultipleUnlimited(): bool
+    {
+        return $this->LearnerSubmissionMultipleUnlimited;
+    }
+
+    public function withLearnerSubmissionMultipleUnlimited(bool $LearnerSubmissionMultipleUnlimited): static
+    {
+        $new = clone $this;
+        $new->LearnerSubmissionMultipleUnlimited = $LearnerSubmissionMultipleUnlimited;
+
+        return $new;
+    }
+
+    public function getLearnerSubmissionMultipleProctorDiscretion(): bool
+    {
+        return $this->LearnerSubmissionMultipleProctorDiscretion;
+    }
+
+    public function withLearnerSubmissionMultipleProctorDiscretion(bool $LearnerSubmissionMultipleProctorDiscretion): static
+    {
+        $new = clone $this;
+        $new->LearnerSubmissionMultipleProctorDiscretion = $LearnerSubmissionMultipleProctorDiscretion;
+
+        return $new;
+    }
+
+    public function getLearnerSubmissionMaxAttempts(): int
+    {
+        return $this->LearnerSubmissionMaxAttempts;
+    }
+
+    public function withLearnerSubmissionMaxAttempts(int $LearnerSubmissionMaxAttempts): static
+    {
+        $new = clone $this;
+        $new->LearnerSubmissionMaxAttempts = $LearnerSubmissionMaxAttempts;
+
+        return $new;
+    }
+
+    public function getLearnerEvidenceType(): ?string
+    {
+        return $this->LearnerEvidenceType;
+    }
+
+    public function withLearnerEvidenceType(?string $LearnerEvidenceType): static
+    {
+        $new = clone $this;
+        $new->LearnerEvidenceType = $LearnerEvidenceType;
+
+        return $new;
+    }
+
+    public function getProctorEvidenceType(): ?string
+    {
+        return $this->ProctorEvidenceType;
+    }
+
+    public function withProctorEvidenceType(?string $ProctorEvidenceType): static
+    {
+        $new = clone $this;
+        $new->ProctorEvidenceType = $ProctorEvidenceType;
+
+        return $new;
+    }
+
+    public function getLearnerEvidenceFormID(): ?string
+    {
+        return $this->LearnerEvidenceFormID;
+    }
+
+    public function withLearnerEvidenceFormID(?string $LearnerEvidenceFormID): static
+    {
+        $new = clone $this;
+        $new->LearnerEvidenceFormID = $LearnerEvidenceFormID;
+
+        return $new;
+    }
+
+    public function getProctorEvidenceFormID(): ?string
+    {
+        return $this->ProctorEvidenceFormID;
+    }
+
+    public function withProctorEvidenceFormID(?string $ProctorEvidenceFormID): static
+    {
+        $new = clone $this;
+        $new->ProctorEvidenceFormID = $ProctorEvidenceFormID;
+
+        return $new;
+    }
+
+    public function getLearnerEvidenceSampleDoc(): ?string
+    {
+        return $this->LearnerEvidenceSampleDoc;
+    }
+
+    public function withLearnerEvidenceSampleDoc(?string $LearnerEvidenceSampleDoc): static
+    {
+        $new = clone $this;
+        $new->LearnerEvidenceSampleDoc = $LearnerEvidenceSampleDoc;
+
+        return $new;
+    }
+
+    public function getLearnerAttestationProctorSuccessType(): ?string
+    {
+        return $this->LearnerAttestationProctorSuccessType;
+    }
+
+    public function withLearnerAttestationProctorSuccessType(?string $LearnerAttestationProctorSuccessType): static
+    {
+        $new = clone $this;
+        $new->LearnerAttestationProctorSuccessType = $LearnerAttestationProctorSuccessType;
+
+        return $new;
+    }
+
+    public function getProctorAttestationSuccessType(): ?string
+    {
+        return $this->ProctorAttestationSuccessType;
+    }
+
+    public function withProctorAttestationSuccessType(?string $ProctorAttestationSuccessType): static
+    {
+        $new = clone $this;
+        $new->ProctorAttestationSuccessType = $ProctorAttestationSuccessType;
+
+        return $new;
+    }
+
+    public function getProctorEvidenceSampleDoc(): ?string
+    {
+        return $this->ProctorEvidenceSampleDoc;
+    }
+
+    public function withProctorEvidenceSampleDoc(?string $ProctorEvidenceSampleDoc): static
+    {
+        $new = clone $this;
+        $new->ProctorEvidenceSampleDoc = $ProctorEvidenceSampleDoc;
+
+        return $new;
+    }
+
+    public function getLearnerAttestationProctorMinScore(): int
+    {
+        return $this->LearnerAttestationProctorMinScore;
+    }
+
+    public function withLearnerAttestationProctorMinScore(int $LearnerAttestationProctorMinScore): static
+    {
+        $new = clone $this;
+        $new->LearnerAttestationProctorMinScore = $LearnerAttestationProctorMinScore;
+
+        return $new;
+    }
+
+    public function getProctorAttestationMinScore(): int
+    {
+        return $this->ProctorAttestationMinScore;
+    }
+
+    public function withProctorAttestationMinScore(int $ProctorAttestationMinScore): static
+    {
+        $new = clone $this;
+        $new->ProctorAttestationMinScore = $ProctorAttestationMinScore;
+
+        return $new;
+    }
+
+    public function getProctorAttestationSuccessRequired(): bool
+    {
+        return $this->ProctorAttestationSuccessRequired;
+    }
+
+    public function withProctorAttestationSuccessRequired(bool $ProctorAttestationSuccessRequired): static
+    {
+        $new = clone $this;
+        $new->ProctorAttestationSuccessRequired = $ProctorAttestationSuccessRequired;
+
+        return $new;
+    }
+
+    public function getProctorAttestationCommentsRequired(): bool
+    {
+        return $this->ProctorAttestationCommentsRequired;
+    }
+
+    public function withProctorAttestationCommentsRequired(bool $ProctorAttestationCommentsRequired): static
+    {
+        $new = clone $this;
+        $new->ProctorAttestationCommentsRequired = $ProctorAttestationCommentsRequired;
+
+        return $new;
+    }
+
+    public function getProctorAttestationCommentsEnabled(): bool
+    {
+        return $this->ProctorAttestationCommentsEnabled;
+    }
+
+    public function withProctorAttestationCommentsEnabled(bool $ProctorAttestationCommentsEnabled): static
+    {
+        $new = clone $this;
+        $new->ProctorAttestationCommentsEnabled = $ProctorAttestationCommentsEnabled;
+
+        return $new;
+    }
+
+    public function getProctorInstructions(): ?string
+    {
+        return $this->ProctorInstructions;
+    }
+
+    public function withProctorInstructions(?string $ProctorInstructions): static
+    {
+        $new = clone $this;
+        $new->ProctorInstructions = $ProctorInstructions;
+
+        return $new;
+    }
+
+    public function getProctorApprovalButtonText(): ?string
+    {
+        return $this->ProctorApprovalButtonText;
+    }
+
+    public function withProctorApprovalButtonText(?string $ProctorApprovalButtonText): static
+    {
+        $new = clone $this;
+        $new->ProctorApprovalButtonText = $ProctorApprovalButtonText;
+
+        return $new;
+    }
+
+    public function getProctorRejectionButtonText(): ?string
+    {
+        return $this->ProctorRejectionButtonText;
+    }
+
+    public function withProctorRejectionButtonText(?string $ProctorRejectionButtonText): static
+    {
+        $new = clone $this;
+        $new->ProctorRejectionButtonText = $ProctorRejectionButtonText;
+
+        return $new;
+    }
+
+    public function getProctorIsAnon(): bool
+    {
+        return $this->ProctorIsAnon;
+    }
+
+    public function withProctorIsAnon(bool $ProctorIsAnon): static
+    {
+        $new = clone $this;
+        $new->ProctorIsAnon = $ProctorIsAnon;
+
+        return $new;
+    }
+
+    public function getProctorEvaluationTrigger(): ?string
+    {
+        return $this->ProctorEvaluationTrigger;
+    }
+
+    public function withProctorEvaluationTrigger(?string $ProctorEvaluationTrigger): static
+    {
+        $new = clone $this;
+        $new->ProctorEvaluationTrigger = $ProctorEvaluationTrigger;
 
         return $new;
     }
