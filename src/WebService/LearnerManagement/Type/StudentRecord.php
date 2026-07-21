@@ -30,6 +30,10 @@ class StudentRecord
 
     private ?string $StudentDisplayID = null;
 
+    private ?string $StudentFirstName = null;
+
+    private ?string $StudentLastName = null;
+
     private ?string $StudentName = null;
 
     private ?string $StudentEmail = null;
@@ -375,6 +379,32 @@ class StudentRecord
     {
         $new = clone $this;
         $new->StudentDisplayID = $StudentDisplayID;
+
+        return $new;
+    }
+
+    public function getStudentFirstName(): ?string
+    {
+        return $this->StudentFirstName;
+    }
+
+    public function withStudentFirstName(?string $StudentFirstName): static
+    {
+        $new = clone $this;
+        $new->StudentFirstName = $StudentFirstName;
+
+        return $new;
+    }
+
+    public function getStudentLastName(): ?string
+    {
+        return $this->StudentLastName;
+    }
+
+    public function withStudentLastName(?string $StudentLastName): static
+    {
+        $new = clone $this;
+        $new->StudentLastName = $StudentLastName;
 
         return $new;
     }
