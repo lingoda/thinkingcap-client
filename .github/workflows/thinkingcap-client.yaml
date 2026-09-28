@@ -2,7 +2,6 @@ name: thinkingcap-client
 permissions: write-all
 on: [pull_request, push]
 env:
-    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     GITHUB_TOKEN: ${{ github.token }}
 
 concurrency:
@@ -98,10 +97,9 @@ jobs:
 
             - name: slack
               if: failure()
-              uses: 8398a7/action-slack@v3.15.1
+              uses: lingoda/github-cicd/actions/slack-notify@v2
               with:
-                  status: ${{ job.status }}
-                  fields: ref,author
-                  text: '<https://github.com/lingoda/lingoda/actions/runs/${{ github.run_id }}|Failed stan/spec> :shit:'
-                  author_name: ${{ job.name }}
+                  token: ${{ secrets.SLACK_BOT_TOKEN }}
                   channel: ${{ needs.prepare.outputs.slackuser }}
+                  message: 'Failed stan/spec'
+                  emoji: ':shit:'
