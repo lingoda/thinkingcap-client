@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLearningActivityListEnrollmentsTruncatedResponse implements ResultInterface
 {
-    private ?ServiceResultOfXmlDocument $getLearningActivityListEnrollmentsTruncatedResult;
+    private ?ServiceResultOfXmlDocument $getLearningActivityListEnrollmentsTruncatedResult = null;
 
     public function getGetLearningActivityListEnrollmentsTruncatedResult(): ?ServiceResultOfXmlDocument
     {
@@ -21,5 +21,10 @@ class GetLearningActivityListEnrollmentsTruncatedResponse implements ResultInter
         $new->getLearningActivityListEnrollmentsTruncatedResult = $getLearningActivityListEnrollmentsTruncatedResult;
 
         return $new;
+    }
+
+    public function ensureGetLearningActivityListEnrollmentsTruncatedResult(): ServiceResultOfXmlDocument
+    {
+        return $this->getLearningActivityListEnrollmentsTruncatedResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'getLearningActivityListEnrollmentsTruncatedResult');
     }
 }

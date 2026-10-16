@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class RegisterUserResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $RegisterUserResult;
+    private ?ServiceResultOfString $RegisterUserResult = null;
 
     public function getRegisterUserResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class RegisterUserResponse implements ResultInterface
         $new->RegisterUserResult = $RegisterUserResult;
 
         return $new;
+    }
+
+    public function ensureRegisterUserResult(): ServiceResultOfString
+    {
+        return $this->RegisterUserResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'RegisterUserResult');
     }
 }

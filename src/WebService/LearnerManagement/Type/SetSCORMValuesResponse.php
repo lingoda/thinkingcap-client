@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetSCORMValuesResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $SetSCORMValuesResult;
+    private ?ServiceResultOfString $SetSCORMValuesResult = null;
 
     public function getSetSCORMValuesResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class SetSCORMValuesResponse implements ResultInterface
         $new->SetSCORMValuesResult = $SetSCORMValuesResult;
 
         return $new;
+    }
+
+    public function ensureSetSCORMValuesResult(): ServiceResultOfString
+    {
+        return $this->SetSCORMValuesResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SetSCORMValuesResult');
     }
 }

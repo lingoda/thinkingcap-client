@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class AddTrainingLocationResponse
 {
-    private ?ServiceResultOfString $AddTrainingLocationResult;
+    private ?ServiceResultOfString $AddTrainingLocationResult = null;
 
     public function getAddTrainingLocationResult(): ?ServiceResultOfString
     {
@@ -19,5 +19,10 @@ class AddTrainingLocationResponse
         $new->AddTrainingLocationResult = $AddTrainingLocationResult;
 
         return $new;
+    }
+
+    public function ensureAddTrainingLocationResult(): ServiceResultOfString
+    {
+        return $this->AddTrainingLocationResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'AddTrainingLocationResult');
     }
 }

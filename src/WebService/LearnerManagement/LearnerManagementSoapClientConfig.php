@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Laminas\Code\Generator\PropertyGenerator;
 use Lingoda\ThinkingcapBundle\Resources\Assembler as CustomAssembler;
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
@@ -54,77 +53,13 @@ return Config::create()
             ])
         )
     )
-    // Ignore nillable properties for Result and Message in ServiceResultOfString class
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\MultiRule([
-                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
-                        (new CustomAssembler\PropertyAssemblerOptions())
-                            ->withNillable()
-                            ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
-                            ->withOptionalValue()
-                    )),
-                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                ]),
-                '/^(Result|Message)$/'
-            ),
-            '/^(ServiceResultOfString|ServiceResultOfListOfLearningActivityRecord)$/'
-        )
-    )
-    // All properties in ServiceUser class are protected
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\MultiRule([
-                new Rules\AssembleRule(new Assembler\PropertyAssembler((new Assembler\PropertyAssemblerOptions())->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED))),
-            ]),
-            '/^ServiceUser$/'
-        )
-    )
-    // Properties Title,ScreenName, Language in ServiceUser and ServiceSupervisor in ArrayOfServiceSupervisor class are optional with default value
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\AssembleRule(new Assembler\PropertyAssembler(
-                    (new Assembler\PropertyAssemblerOptions())
-                        ->withOptionalValue()
-                )),
-                '/^(Title|ScreenName|Language|ServiceSupervisor)$/'
-            ),
-            '/^(ServiceUser|ArrayOfServiceSupervisor)$/'
-        )
-    )
-    /**
-     * Nullable properties for ServiceResultOf*, *Response$, ^ServiceUser$
-     * Properties -> *Result$, ^UserID$, ^Email$
-     * withOptionalValue() forces nullable PHP types so the v4 encoding driver can assign null
-     */
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\MultiRule([
-                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
-                        (new CustomAssembler\PropertyAssemblerOptions())
-                            ->withNillable()
-                            ->withDocBlocks(false)
-                    )),
-                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                    new Rules\PropertynameMatchesRule(
-                        new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
-                            (new CustomAssembler\PropertyAssemblerOptions())
-                                ->withNillable()
-                                ->withOptionalValue()
-                                ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
-                                ->withDocBlocks(false)
-                        )),
-                        '/^(UserID|Email)$/'
-                    ),
-                ]),
-                '/(Result$)|^(UserID|Email)$/'
-            ),
-            '/^(?!ServiceResultOfString)(ServiceResultOf)|(Response$)|(^ServiceUser$)/'
-        )
-    )
+    // Must come after GetterAssembler: adds ensure*() for the nullable getters selected below
+    ->addRule(new Rules\AssembleRule(new CustomAssembler\EnsureGetterAssembler(
+        CustomAssembler\EnsureGetterAssemblerOptions::create()
+            ->forResponseWrappers()
+            ->forServiceResults()
+            ->forProperties([
+                'ServiceUser' => ['UserID', 'Email'],
+            ])
+    )))
 ;

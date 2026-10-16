@@ -63,3 +63,14 @@ composer install --dev
 ```bash
 ./vendor/bin/soap-client generate:classmap --config=src/WebService/CourseManagement/CourseManagementSoapClientConfig.php
 ```
+
+## `ensure*()` getters
+
+`EnsureGetterAssembler` (the last rule in each `*SoapClientConfig.php`) adds `ensure<Field>()` next to nullable
+getters selected by `EnsureGetterAssemblerOptions`:
+
+- `forResponseWrappers()`: `<Operation>Response::<Operation>Result`
+- `forServiceResults()`: `ServiceResultOf*::Result`
+- `forProperties(['Type' => ['Field', ...]])`: individual fields a consumer requires
+
+To add one, extend `forProperties()` in the config of the service that owns the type and regenerate.

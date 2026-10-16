@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceResultOfUserList
 {
-    private ?ArrayOfUser $Result;
+    private ?ArrayOfUser $Result = null;
 
     private bool $Success;
 
@@ -23,6 +23,11 @@ class ServiceResultOfUserList
         $new->Result = $Result;
 
         return $new;
+    }
+
+    public function ensureResult(): ArrayOfUser
+    {
+        return $this->Result ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Result');
     }
 
     public function getSuccess(): bool

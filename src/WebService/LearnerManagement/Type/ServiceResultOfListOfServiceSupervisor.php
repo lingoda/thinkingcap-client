@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceResultOfListOfServiceSupervisor
 {
-    private ?ArrayOfServiceSupervisor $Result;
+    private ?ArrayOfServiceSupervisor $Result = null;
 
     private bool $Success;
 
@@ -23,6 +23,11 @@ class ServiceResultOfListOfServiceSupervisor
         $new->Result = $Result;
 
         return $new;
+    }
+
+    public function ensureResult(): ArrayOfServiceSupervisor
+    {
+        return $this->Result ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Result');
     }
 
     public function getSuccess(): bool

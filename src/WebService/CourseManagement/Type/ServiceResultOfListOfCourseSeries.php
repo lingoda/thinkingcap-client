@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfListOfCourseSeries
 {
-    private ?ArrayOfCourseSeries $Result;
+    private ?ArrayOfCourseSeries $Result = null;
 
     private bool $Success;
 
@@ -23,6 +23,11 @@ class ServiceResultOfListOfCourseSeries
         $new->Result = $Result;
 
         return $new;
+    }
+
+    public function ensureResult(): ArrayOfCourseSeries
+    {
+        return $this->Result ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Result');
     }
 
     public function getSuccess(): bool

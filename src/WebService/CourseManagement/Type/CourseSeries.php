@@ -58,6 +58,11 @@ class CourseSeries
         return $new;
     }
 
+    public function ensureSeriesCode(): string
+    {
+        return $this->SeriesCode ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SeriesCode');
+    }
+
     public function getSeriesTitle(): ?string
     {
         return $this->SeriesTitle;

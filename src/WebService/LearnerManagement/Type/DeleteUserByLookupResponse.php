@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class DeleteUserByLookupResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $DeleteUserByLookupResult;
+    private ?ServiceResultOfString $DeleteUserByLookupResult = null;
 
     public function getDeleteUserByLookupResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class DeleteUserByLookupResponse implements ResultInterface
         $new->DeleteUserByLookupResult = $DeleteUserByLookupResult;
 
         return $new;
+    }
+
+    public function ensureDeleteUserByLookupResult(): ServiceResultOfString
+    {
+        return $this->DeleteUserByLookupResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'DeleteUserByLookupResult');
     }
 }

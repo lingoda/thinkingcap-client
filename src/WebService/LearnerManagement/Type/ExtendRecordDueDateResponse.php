@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ExtendRecordDueDateResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $ExtendRecordDueDateResult;
+    private ?ServiceResultOfString $ExtendRecordDueDateResult = null;
 
     public function getExtendRecordDueDateResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class ExtendRecordDueDateResponse implements ResultInterface
         $new->ExtendRecordDueDateResult = $ExtendRecordDueDateResult;
 
         return $new;
+    }
+
+    public function ensureExtendRecordDueDateResult(): ServiceResultOfString
+    {
+        return $this->ExtendRecordDueDateResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'ExtendRecordDueDateResult');
     }
 }

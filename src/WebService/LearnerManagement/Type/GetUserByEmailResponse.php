@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetUserByEmailResponse implements ResultInterface
 {
-    private ?ServiceResultOfServiceUser $GetUserByEmailResult;
+    private ?ServiceResultOfServiceUser $GetUserByEmailResult = null;
 
     public function getGetUserByEmailResult(): ?ServiceResultOfServiceUser
     {
@@ -21,5 +21,10 @@ class GetUserByEmailResponse implements ResultInterface
         $new->GetUserByEmailResult = $GetUserByEmailResult;
 
         return $new;
+    }
+
+    public function ensureGetUserByEmailResult(): ServiceResultOfServiceUser
+    {
+        return $this->GetUserByEmailResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetUserByEmailResult');
     }
 }

@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetCourseMarkedByResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $SetCourseMarkedByResult;
+    private ?ServiceResultOfString $SetCourseMarkedByResult = null;
 
     public function getSetCourseMarkedByResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class SetCourseMarkedByResponse implements ResultInterface
         $new->SetCourseMarkedByResult = $SetCourseMarkedByResult;
 
         return $new;
+    }
+
+    public function ensureSetCourseMarkedByResult(): ServiceResultOfString
+    {
+        return $this->SetCourseMarkedByResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SetCourseMarkedByResult');
     }
 }

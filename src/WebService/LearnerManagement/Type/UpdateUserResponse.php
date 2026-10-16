@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class UpdateUserResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $UpdateUserResult;
+    private ?ServiceResultOfString $UpdateUserResult = null;
 
     public function getUpdateUserResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class UpdateUserResponse implements ResultInterface
         $new->UpdateUserResult = $UpdateUserResult;
 
         return $new;
+    }
+
+    public function ensureUpdateUserResult(): ServiceResultOfString
+    {
+        return $this->UpdateUserResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'UpdateUserResult');
     }
 }

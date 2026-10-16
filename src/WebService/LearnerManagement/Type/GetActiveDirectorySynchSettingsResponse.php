@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetActiveDirectorySynchSettingsResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $GetActiveDirectorySynchSettingsResult;
+    private ?ServiceResultOfString $GetActiveDirectorySynchSettingsResult = null;
 
     public function getGetActiveDirectorySynchSettingsResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class GetActiveDirectorySynchSettingsResponse implements ResultInterface
         $new->GetActiveDirectorySynchSettingsResult = $GetActiveDirectorySynchSettingsResult;
 
         return $new;
+    }
+
+    public function ensureGetActiveDirectorySynchSettingsResult(): ServiceResultOfString
+    {
+        return $this->GetActiveDirectorySynchSettingsResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetActiveDirectorySynchSettingsResult');
     }
 }

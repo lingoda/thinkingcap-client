@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLMSUserAutoLoginURLByUsernameResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult;
+    private ?ServiceResultOfString $GetLMSUserAutoLoginURLByUsernameResult = null;
 
     public function getGetLMSUserAutoLoginURLByUsernameResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class GetLMSUserAutoLoginURLByUsernameResponse implements ResultInterface
         $new->GetLMSUserAutoLoginURLByUsernameResult = $GetLMSUserAutoLoginURLByUsernameResult;
 
         return $new;
+    }
+
+    public function ensureGetLMSUserAutoLoginURLByUsernameResult(): ServiceResultOfString
+    {
+        return $this->GetLMSUserAutoLoginURLByUsernameResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetLMSUserAutoLoginURLByUsernameResult');
     }
 }

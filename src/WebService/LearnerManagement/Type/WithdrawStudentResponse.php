@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class WithdrawStudentResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $WithdrawStudentResult;
+    private ?ServiceResultOfString $WithdrawStudentResult = null;
 
     public function getWithdrawStudentResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class WithdrawStudentResponse implements ResultInterface
         $new->WithdrawStudentResult = $WithdrawStudentResult;
 
         return $new;
+    }
+
+    public function ensureWithdrawStudentResult(): ServiceResultOfString
+    {
+        return $this->WithdrawStudentResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'WithdrawStudentResult');
     }
 }
