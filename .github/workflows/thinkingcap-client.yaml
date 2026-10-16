@@ -97,7 +97,7 @@ jobs:
 
             - name: slack
               if: failure()
-              uses: lingoda/github-cicd/actions/slack-notify@v2
+              uses: ./.github/actions/slack-notify
               with:
                   token: ${{ secrets.SLACK_BOT_TOKEN }}
                   channel: ${{ needs.prepare.outputs.slackuser }}

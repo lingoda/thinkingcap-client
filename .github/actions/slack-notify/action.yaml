@@ -1,0 +1,45 @@
+name: 'Slack Notify'
+description: 'Send Slack notifications using slackapi/slack-github-action'
+
+inputs:
+    token:
+        description: 'Slack Bot Token (xoxb-...)'
+        required: true
+    channel:
+        description: 'Slack channel ID'
+        required: false
+        default: 'C5DTDHL8Y'
+    message:
+        description: 'Message text'
+        required: true
+    emoji:
+        description: 'Emoji to append'
+        required: false
+        default: ''
+    mention:
+        description: 'User/group to mention (e.g., "<!here>" or "<!subteam^SAWF8KLCF>")'
+        required: false
+        default: ''
+
+runs:
+    using: 'composite'
+    steps:
+        - name: Send Slack notification
+          uses: slackapi/slack-github-action@0d95c9a7becc1e6e297d76df9bc735c44f4cbcbc # v3.0.5
+          with:
+              method: chat.postMessage
+              token: ${{ inputs.token }}
+              retries: 5
+              errors: true
+              payload: |
+                  channel: "${{ inputs.channel }}"
+                  text: "${{ inputs.mention }} ${{ inputs.message }} ${{ inputs.emoji }}"
+                  blocks:
+                    - type: "section"
+                      text:
+                        type: "mrkdwn"
+                        text: "${{ inputs.mention }} ${{ inputs.message }} ${{ inputs.emoji }}"
+                    - type: "context"
+                      elements:
+                        - type: "mrkdwn"
+                          text: "<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow> | *Ref:* `${{ github.ref_name }}` | *Actor:* ${{ github.actor }}"
