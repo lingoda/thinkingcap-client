@@ -8,39 +8,39 @@ use DateTimeInterface;
 
 class ServiceUser
 {
-    protected ?string $UserID = '';
+    private ?string $UserID = null;
 
-    protected ?string $FirstName = null;
+    private ?string $FirstName = null;
 
-    protected ?string $LastName = null;
+    private ?string $LastName = null;
 
-    protected ?string $Email = '';
+    private ?string $Email = null;
 
-    protected ?string $OutsideEmail = null;
-
-    protected bool $Active;
-
-    protected ?string $HomeDomainID = null;
-
-    protected ?string $HomeDomainName = null;
-
-    protected DateTimeInterface $CreationDate;
-
-    protected DateTimeInterface $LastModifiedDate;
-
-    protected DateTimeInterface $LastLoginDate;
-
-    protected ?string $ProfilePhotoUrl = null;
-
-    protected ?ArrayOfCustomField $CustomFields = null;
-
-    protected ?ArrayOfDomain $Domains = null;
+    private ?string $OutsideEmail = null;
 
     private ?string $Title = null;
 
     private ?string $ScreenName = null;
 
+    private bool $Active;
+
+    private ?string $HomeDomainID = null;
+
+    private ?string $HomeDomainName = null;
+
+    private DateTimeInterface $CreationDate;
+
+    private DateTimeInterface $LastModifiedDate;
+
+    private DateTimeInterface $LastLoginDate;
+
     private ?string $Language = null;
+
+    private ?string $ProfilePhotoUrl = null;
+
+    private ?ArrayOfCustomField $CustomFields = null;
+
+    private ?ArrayOfDomain $Domains = null;
 
     public function getUserID(): ?string
     {
@@ -53,6 +53,11 @@ class ServiceUser
         $new->UserID = $UserID;
 
         return $new;
+    }
+
+    public function ensureUserID(): string
+    {
+        return $this->UserID ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'UserID');
     }
 
     public function getFirstName(): ?string
@@ -92,6 +97,11 @@ class ServiceUser
         $new->Email = $Email;
 
         return $new;
+    }
+
+    public function ensureEmail(): string
+    {
+        return $this->Email ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Email');
     }
 
     public function getOutsideEmail(): ?string

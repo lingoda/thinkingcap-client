@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class TestPostResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $TestPostResult;
+    private ?ServiceResultOfString $TestPostResult = null;
 
     public function getTestPostResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class TestPostResponse implements ResultInterface
         $new->TestPostResult = $TestPostResult;
 
         return $new;
+    }
+
+    public function ensureTestPostResult(): ServiceResultOfString
+    {
+        return $this->TestPostResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'TestPostResult');
     }
 }

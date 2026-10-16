@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetUserActiveResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $SetUserActiveResult;
+    private ?ServiceResultOfString $SetUserActiveResult = null;
 
     public function getSetUserActiveResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class SetUserActiveResponse implements ResultInterface
         $new->SetUserActiveResult = $SetUserActiveResult;
 
         return $new;
+    }
+
+    public function ensureSetUserActiveResult(): ServiceResultOfString
+    {
+        return $this->SetUserActiveResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SetUserActiveResult');
     }
 }

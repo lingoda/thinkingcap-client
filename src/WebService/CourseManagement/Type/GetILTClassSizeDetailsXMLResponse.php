@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetILTClassSizeDetailsXMLResponse implements ResultInterface
 {
-    private ?ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult;
+    private ?ServiceResultOfXmlDocument $GetILTClassSizeDetailsXMLResult = null;
 
     public function getGetILTClassSizeDetailsXMLResult(): ?ServiceResultOfXmlDocument
     {
@@ -21,5 +21,10 @@ class GetILTClassSizeDetailsXMLResponse implements ResultInterface
         $new->GetILTClassSizeDetailsXMLResult = $GetILTClassSizeDetailsXMLResult;
 
         return $new;
+    }
+
+    public function ensureGetILTClassSizeDetailsXMLResult(): ServiceResultOfXmlDocument
+    {
+        return $this->GetILTClassSizeDetailsXMLResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetILTClassSizeDetailsXMLResult');
     }
 }

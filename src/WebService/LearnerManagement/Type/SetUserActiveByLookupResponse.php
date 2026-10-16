@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetUserActiveByLookupResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $SetUserActiveByLookupResult;
+    private ?ServiceResultOfString $SetUserActiveByLookupResult = null;
 
     public function getSetUserActiveByLookupResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class SetUserActiveByLookupResponse implements ResultInterface
         $new->SetUserActiveByLookupResult = $SetUserActiveByLookupResult;
 
         return $new;
+    }
+
+    public function ensureSetUserActiveByLookupResult(): ServiceResultOfString
+    {
+        return $this->SetUserActiveByLookupResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SetUserActiveByLookupResult');
     }
 }

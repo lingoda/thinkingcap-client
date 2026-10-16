@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GenerateTimedSeedResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $GenerateTimedSeedResult;
+    private ?ServiceResultOfString $GenerateTimedSeedResult = null;
 
     public function getGenerateTimedSeedResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class GenerateTimedSeedResponse implements ResultInterface
         $new->GenerateTimedSeedResult = $GenerateTimedSeedResult;
 
         return $new;
+    }
+
+    public function ensureGenerateTimedSeedResult(): ServiceResultOfString
+    {
+        return $this->GenerateTimedSeedResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GenerateTimedSeedResult');
     }
 }

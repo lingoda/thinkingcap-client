@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetCompletedStudentRecordsWithPresetResponse implements ResultInterface
 {
-    private ?ServiceResultOfListOfLearningActivityRecord $GetCompletedStudentRecordsWithPresetResult;
+    private ?ServiceResultOfListOfLearningActivityRecord $GetCompletedStudentRecordsWithPresetResult = null;
 
     public function getGetCompletedStudentRecordsWithPresetResult(): ?ServiceResultOfListOfLearningActivityRecord
     {
@@ -21,5 +21,10 @@ class GetCompletedStudentRecordsWithPresetResponse implements ResultInterface
         $new->GetCompletedStudentRecordsWithPresetResult = $GetCompletedStudentRecordsWithPresetResult;
 
         return $new;
+    }
+
+    public function ensureGetCompletedStudentRecordsWithPresetResult(): ServiceResultOfListOfLearningActivityRecord
+    {
+        return $this->GetCompletedStudentRecordsWithPresetResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetCompletedStudentRecordsWithPresetResult');
     }
 }

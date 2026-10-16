@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLearningActivityCustomFieldValuesResponse implements ResultInterface
 {
-    private ?ServiceResultOfCustomField $GetLearningActivityCustomFieldValuesResult;
+    private ?ServiceResultOfCustomField $GetLearningActivityCustomFieldValuesResult = null;
 
     public function getGetLearningActivityCustomFieldValuesResult(): ?ServiceResultOfCustomField
     {
@@ -21,5 +21,10 @@ class GetLearningActivityCustomFieldValuesResponse implements ResultInterface
         $new->GetLearningActivityCustomFieldValuesResult = $GetLearningActivityCustomFieldValuesResult;
 
         return $new;
+    }
+
+    public function ensureGetLearningActivityCustomFieldValuesResult(): ServiceResultOfCustomField
+    {
+        return $this->GetLearningActivityCustomFieldValuesResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetLearningActivityCustomFieldValuesResult');
     }
 }

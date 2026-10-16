@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetCourseCompletionStatusByDateRangeResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $GetCourseCompletionStatusByDateRangeResult;
+    private ?ServiceResultOfString $GetCourseCompletionStatusByDateRangeResult = null;
 
     public function getGetCourseCompletionStatusByDateRangeResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class GetCourseCompletionStatusByDateRangeResponse implements ResultInterface
         $new->GetCourseCompletionStatusByDateRangeResult = $GetCourseCompletionStatusByDateRangeResult;
 
         return $new;
+    }
+
+    public function ensureGetCourseCompletionStatusByDateRangeResult(): ServiceResultOfString
+    {
+        return $this->GetCourseCompletionStatusByDateRangeResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetCourseCompletionStatusByDateRangeResult');
     }
 }

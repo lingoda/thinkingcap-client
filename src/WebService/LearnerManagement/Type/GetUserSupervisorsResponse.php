@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetUserSupervisorsResponse implements ResultInterface
 {
-    private ?ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult;
+    private ?ServiceResultOfListOfServiceSupervisor $GetUserSupervisorsResult = null;
 
     public function getGetUserSupervisorsResult(): ?ServiceResultOfListOfServiceSupervisor
     {
@@ -21,5 +21,10 @@ class GetUserSupervisorsResponse implements ResultInterface
         $new->GetUserSupervisorsResult = $GetUserSupervisorsResult;
 
         return $new;
+    }
+
+    public function ensureGetUserSupervisorsResult(): ServiceResultOfListOfServiceSupervisor
+    {
+        return $this->GetUserSupervisorsResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetUserSupervisorsResult');
     }
 }

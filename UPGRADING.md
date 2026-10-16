@@ -1,3 +1,43 @@
+# Upgrading to 4.4
+
+## New: `ensure<Field>()` getters
+
+Selected nullable getters get a strict twin that returns the same value but throws
+`Lingoda\ThinkingcapBundle\Exception\MissingFieldException` (an `\UnexpectedValueException`) when it is missing:
+
+- every `<Operation>Response::get<Operation>Result()` → `ensure<Operation>Result()`
+- every `ServiceResultOf*::getResult()` → `ensureResult()`
+- `LearningActivity`: `ensureID()`, `ensureType()`, `ensureCode()`, `ensureLanguage()`
+- `CourseSeries::ensureSeriesCode()`, `CourseSession::ensureSessionID()` (CourseManagement)
+- `ServiceUser`: `ensureUserID()`, `ensureEmail()` (inherited by `ServiceSupervisor`)
+
+```php
+// before
+$result = $response->getGetUserByEmailResult();
+Assert::notNull($result);
+$user = $result->getResult();
+Assert::notNull($user);
+$userId = $user->getUserID();
+Assert::notNull($userId);
+
+// after (keep the getSuccess() check: Result is null when the call failed)
+$result = $response->ensureGetUserByEmailResult();
+if (!$result->getSuccess()) { /* ... */ }
+$userId = $result->ensureResult()->ensureUserID();
+```
+
+The `get*()` getters are unchanged. Fields where `null` is a valid answer (`Message`, lists, optional text) have no
+`ensure*()`; the list is in the `EnsureGetterAssemblerOptions` of each `*SoapClientConfig.php`.
+
+## Changed
+
+- The custom code-generation assemblers in `Lingoda\ThinkingcapBundle\Resources\Assembler` (`GetterAssembler`,
+  `PropertyAssembler`, `ImmutableSetterAssembler` and their options) are removed; types are generated with phpro's
+  built-in assemblers plus `EnsureGetterAssembler`. Generated `get*()`/`with*()` signatures are identical.
+- Generated properties are `private` and nullable ones default to `null`. Objects built with `new` (e.g. in tests)
+  now return `null`, not `''`, for an unset `ServiceResultOf*::Result`/`Message` and `ServiceUser::UserID`/`Email`.
+  Decoded responses are unaffected: the decoder already assigned `null` to missing elements.
+
 # Upgrading from v3 to v4
 
 ## Requirements
@@ -107,6 +147,8 @@ Other notable changes:
 The custom assembler options (`PropertyAssemblerOptions`, `GetterAssemblerOptions`, `ImmutableSetterAssemblerOptions`) had a bug where `->withNillable()` (called without arguments) would set nillable to `false` due to the default parameter value. This has been fixed — `->withNillable()` now correctly preserves nullable types.
 
 If you extended these custom assemblers and relied on `->withNillable()` stripping nullable types, update your code to use `->withNillable(false)` explicitly.
+
+These assemblers were removed in 4.4 (see above).
 
 ## Testing
 

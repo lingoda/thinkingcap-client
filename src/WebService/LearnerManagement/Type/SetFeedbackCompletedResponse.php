@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class SetFeedbackCompletedResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $SetFeedbackCompletedResult;
+    private ?ServiceResultOfString $SetFeedbackCompletedResult = null;
 
     public function getSetFeedbackCompletedResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class SetFeedbackCompletedResponse implements ResultInterface
         $new->SetFeedbackCompletedResult = $SetFeedbackCompletedResult;
 
         return $new;
+    }
+
+    public function ensureSetFeedbackCompletedResult(): ServiceResultOfString
+    {
+        return $this->SetFeedbackCompletedResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SetFeedbackCompletedResult');
     }
 }

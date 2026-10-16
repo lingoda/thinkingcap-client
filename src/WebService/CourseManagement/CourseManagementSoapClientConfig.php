@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Laminas\Code\Generator\PropertyGenerator;
 use Lingoda\ThinkingcapBundle\Resources\Assembler as CustomAssembler;
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
@@ -53,77 +52,15 @@ return Config::create()
             ])
         )
     )
-    // Ignore nillable properties for Result and Message in ServiceResultOfString class
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\MultiRule([
-                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
-                        (new CustomAssembler\PropertyAssemblerOptions())
-                            ->withNillable()
-                            ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
-                            ->withOptionalValue()
-                    )),
-                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                ]),
-                '/^(Result|Message)$/'
-            ),
-            '/^(ServiceResultOfString|ServiceResultOfListOfLearningActivityRecord)$/'
-        )
-    )
-    // Properties Tags, Sessions, CourseSession in LearningActivity and ArrayOfCourseSession class are optional with default value
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\AssembleRule(new Assembler\PropertyAssembler(
-                    (new Assembler\PropertyAssemblerOptions())
-                        ->withOptionalValue()
-                )),
-                '/^(Tags|Sessions|CourseSession)$/'
-            ),
-            '/^(LearningActivity|ArrayOfCourseSession)$/'
-        )
-    )
-    // ID, Type, Code, Language, Title, Description are protected and not null
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\MultiRule([
-                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
-                        (new CustomAssembler\PropertyAssemblerOptions())
-                            ->withNillable()
-                            ->withVisibility(PropertyGenerator::VISIBILITY_PROTECTED)
-                            ->withDocBlocks(false)
-                    )),
-                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                ]),
-                '/^(ID|Type|Code|Language|Title|Description)$/'
-            ),
-            '/^(LearningActivity)$/'
-        )
-    )
-    /**
-     * Nullable properties for ServiceResultOf*, *Response$
-     * Properties -> *Result$
-     * withOptionalValue() forces nullable PHP types so the v4 encoding driver can assign null
-     */
-    ->addRule(
-        new Rules\TypenameMatchesRule(
-            new Rules\PropertynameMatchesRule(
-                new Rules\MultiRule([
-                    new Rules\AssembleRule(new CustomAssembler\PropertyAssembler(
-                        (new CustomAssembler\PropertyAssemblerOptions())
-                            ->withNillable()
-                            ->withDocBlocks(false)
-                    )),
-                    new Rules\AssembleRule(new CustomAssembler\GetterAssembler((new CustomAssembler\GetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                    new Rules\AssembleRule(new CustomAssembler\ImmutableSetterAssembler((new CustomAssembler\ImmutableSetterAssemblerOptions())->withNillable()->withDocBlocks(false))),
-                ]),
-                '/Result$/'
-            ),
-            '/^(?!ServiceResultOfString)(ServiceResultOf)|(Response$)/'
-        )
-    )
+    // Must come after GetterAssembler: adds ensure*() for the nullable getters selected below
+    ->addRule(new Rules\AssembleRule(new CustomAssembler\EnsureGetterAssembler(
+        CustomAssembler\EnsureGetterAssemblerOptions::create()
+            ->forResponseWrappers()
+            ->forServiceResults()
+            ->forProperties([
+                'LearningActivity' => ['ID', 'Type', 'Code', 'Language'],
+                'CourseSeries' => ['SeriesCode'],
+                'CourseSession' => ['SessionID'],
+            ])
+    )))
 ;

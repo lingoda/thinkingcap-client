@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class IsTrainingLocationAvailableResponse implements ResultInterface
 {
-    private ?ServiceResultOfBoolean $IsTrainingLocationAvailableResult;
+    private ?ServiceResultOfBoolean $IsTrainingLocationAvailableResult = null;
 
     public function getIsTrainingLocationAvailableResult(): ?ServiceResultOfBoolean
     {
@@ -21,5 +21,10 @@ class IsTrainingLocationAvailableResponse implements ResultInterface
         $new->IsTrainingLocationAvailableResult = $IsTrainingLocationAvailableResult;
 
         return $new;
+    }
+
+    public function ensureIsTrainingLocationAvailableResult(): ServiceResultOfBoolean
+    {
+        return $this->IsTrainingLocationAvailableResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'IsTrainingLocationAvailableResult');
     }
 }
