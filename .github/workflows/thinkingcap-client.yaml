@@ -41,6 +41,7 @@ jobs:
         strategy:
             matrix:
                 install-args: ['']
+                symfony: ['', '6.4.*']
             fail-fast: false
         env:
             # List deprecations and fail on self ones
@@ -61,6 +62,11 @@ jobs:
                   path: ${{ needs.prepare.outputs.composercachedir }}
                   key: composer-phppkg-${{ hashFiles('composer.lock') }}
                   restore-keys: composer-phppkg-
+
+            - name: pin symfony
+              if: ${{ matrix.symfony != '' }}
+              run: |
+                  composer require --no-update symfony/framework-bundle:${{ matrix.symfony }} symfony/http-client:${{ matrix.symfony }} symfony/yaml:${{ matrix.symfony }}
 
             - name: install
               run: |
