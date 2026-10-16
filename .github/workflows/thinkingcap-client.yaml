@@ -41,10 +41,13 @@ jobs:
         strategy:
             matrix:
                 install-args: ['']
+                symfony: ['', '6.4.*']
             fail-fast: false
         env:
             # List deprecations and fail on self ones
             SYMFONY_DEPRECATIONS_HELPER: 'max[self]=0&verbose=0'
+            # symfony/flex restricts every symfony/* component to this constraint; empty means latest
+            SYMFONY_REQUIRE: ${{ matrix.symfony }}
         steps:
             - name: checkout
               uses: actions/checkout@v4
@@ -54,6 +57,7 @@ jobs:
               with:
                   php-version: '8.3'
                   extensions: apcu, redis, soap, bcmath, intl, xsl
+                  tools: flex
 
             - name: composer-cache
               uses: actions/cache@v4
