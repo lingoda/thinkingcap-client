@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfXmlDocument
 {
-    private ?ServiceResultOfXmlDocumentResult $Result;
+    private ?ServiceResultOfXmlDocumentResult $Result = null;
 
     private bool $Success;
 
@@ -23,6 +23,11 @@ class ServiceResultOfXmlDocument
         $new->Result = $Result;
 
         return $new;
+    }
+
+    public function ensureResult(): ServiceResultOfXmlDocumentResult
+    {
+        return $this->Result ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Result');
     }
 
     public function getSuccess(): bool

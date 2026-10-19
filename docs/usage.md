@@ -55,5 +55,11 @@ $response = $client->getUserByEmail($getUserByEmailType);
 5- Use `$response` to access the api calling result, or check if the call was successful or not:
 
 ```
-$response->getGetUserByEmailResult()->getSuccess()
+$result = $response->ensureGetUserByEmailResult();
+$result->getSuccess();
+$userId = $result->ensureResult()->ensureUserID(); // only after a successful call
 ```
+
+`get*()` getters return what Thinkingcap sent and are nullable where the WSDL marks the field optional.
+`ensure*()` getters (generated for response wrappers, results and a few required fields) return the same value
+or throw `MissingFieldException`.

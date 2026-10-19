@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class MergeStudentTranscriptsResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $MergeStudentTranscriptsResult;
+    private ?ServiceResultOfString $MergeStudentTranscriptsResult = null;
 
     public function getMergeStudentTranscriptsResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class MergeStudentTranscriptsResponse implements ResultInterface
         $new->MergeStudentTranscriptsResult = $MergeStudentTranscriptsResult;
 
         return $new;
+    }
+
+    public function ensureMergeStudentTranscriptsResult(): ServiceResultOfString
+    {
+        return $this->MergeStudentTranscriptsResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'MergeStudentTranscriptsResult');
     }
 }

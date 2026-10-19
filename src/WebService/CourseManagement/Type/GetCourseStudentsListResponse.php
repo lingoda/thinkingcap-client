@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetCourseStudentsListResponse implements ResultInterface
 {
-    private ?ServiceResultOfListOfStudentRecord $GetCourseStudentsListResult;
+    private ?ServiceResultOfListOfStudentRecord $GetCourseStudentsListResult = null;
 
     public function getGetCourseStudentsListResult(): ?ServiceResultOfListOfStudentRecord
     {
@@ -21,5 +21,10 @@ class GetCourseStudentsListResponse implements ResultInterface
         $new->GetCourseStudentsListResult = $GetCourseStudentsListResult;
 
         return $new;
+    }
+
+    public function ensureGetCourseStudentsListResult(): ServiceResultOfListOfStudentRecord
+    {
+        return $this->GetCourseStudentsListResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetCourseStudentsListResult');
     }
 }

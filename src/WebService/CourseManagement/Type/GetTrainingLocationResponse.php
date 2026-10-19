@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetTrainingLocationResponse implements ResultInterface
 {
-    private ?ServiceResultOfTrainingLocation $GetTrainingLocationResult;
+    private ?ServiceResultOfTrainingLocation $GetTrainingLocationResult = null;
 
     public function getGetTrainingLocationResult(): ?ServiceResultOfTrainingLocation
     {
@@ -21,5 +21,10 @@ class GetTrainingLocationResponse implements ResultInterface
         $new->GetTrainingLocationResult = $GetTrainingLocationResult;
 
         return $new;
+    }
+
+    public function ensureGetTrainingLocationResult(): ServiceResultOfTrainingLocation
+    {
+        return $this->GetTrainingLocationResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetTrainingLocationResult');
     }
 }

@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetLearningActivityEquivalencyByCodeResponse implements ResultInterface
 {
-    private ?ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult;
+    private ?ServiceResultOfXmlDocument $GetLearningActivityEquivalencyByCodeResult = null;
 
     public function getGetLearningActivityEquivalencyByCodeResult(): ?ServiceResultOfXmlDocument
     {
@@ -21,5 +21,10 @@ class GetLearningActivityEquivalencyByCodeResponse implements ResultInterface
         $new->GetLearningActivityEquivalencyByCodeResult = $GetLearningActivityEquivalencyByCodeResult;
 
         return $new;
+    }
+
+    public function ensureGetLearningActivityEquivalencyByCodeResult(): ServiceResultOfXmlDocument
+    {
+        return $this->GetLearningActivityEquivalencyByCodeResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetLearningActivityEquivalencyByCodeResult');
     }
 }

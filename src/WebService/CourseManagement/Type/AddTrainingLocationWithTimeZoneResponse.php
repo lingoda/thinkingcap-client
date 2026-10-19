@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class AddTrainingLocationWithTimeZoneResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $AddTrainingLocationWithTimeZoneResult;
+    private ?ServiceResultOfString $AddTrainingLocationWithTimeZoneResult = null;
 
     public function getAddTrainingLocationWithTimeZoneResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class AddTrainingLocationWithTimeZoneResponse implements ResultInterface
         $new->AddTrainingLocationWithTimeZoneResult = $AddTrainingLocationWithTimeZoneResult;
 
         return $new;
+    }
+
+    public function ensureAddTrainingLocationWithTimeZoneResult(): ServiceResultOfString
+    {
+        return $this->AddTrainingLocationWithTimeZoneResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'AddTrainingLocationWithTimeZoneResult');
     }
 }

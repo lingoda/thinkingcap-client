@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class EnrollStudentResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $EnrollStudentResult;
+    private ?ServiceResultOfString $EnrollStudentResult = null;
 
     public function getEnrollStudentResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class EnrollStudentResponse implements ResultInterface
         $new->EnrollStudentResult = $EnrollStudentResult;
 
         return $new;
+    }
+
+    public function ensureEnrollStudentResult(): ServiceResultOfString
+    {
+        return $this->EnrollStudentResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'EnrollStudentResult');
     }
 }

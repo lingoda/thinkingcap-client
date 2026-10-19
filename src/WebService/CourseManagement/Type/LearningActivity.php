@@ -8,19 +8,19 @@ use DateTimeInterface;
 
 class LearningActivity
 {
-    protected ?string $Type;
+    private ?string $Type = null;
 
-    protected ?string $ID;
+    private ?string $ID = null;
 
-    protected ?string $Code;
+    private ?string $Code = null;
 
-    protected ?string $Title;
+    private ?string $Title = null;
 
-    protected ?string $Description;
-
-    protected ?string $Language;
+    private ?string $Description = null;
 
     private ?string $Instructions = null;
+
+    private ?string $Language = null;
 
     private bool $IsOnline;
 
@@ -101,6 +101,11 @@ class LearningActivity
         return $new;
     }
 
+    public function ensureType(): string
+    {
+        return $this->Type ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Type');
+    }
+
     public function getID(): ?string
     {
         return $this->ID;
@@ -114,6 +119,11 @@ class LearningActivity
         return $new;
     }
 
+    public function ensureID(): string
+    {
+        return $this->ID ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'ID');
+    }
+
     public function getCode(): ?string
     {
         return $this->Code;
@@ -125,6 +135,11 @@ class LearningActivity
         $new->Code = $Code;
 
         return $new;
+    }
+
+    public function ensureCode(): string
+    {
+        return $this->Code ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Code');
     }
 
     public function getTitle(): ?string
@@ -177,6 +192,11 @@ class LearningActivity
         $new->Language = $Language;
 
         return $new;
+    }
+
+    public function ensureLanguage(): string
+    {
+        return $this->Language ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Language');
     }
 
     public function getIsOnline(): bool

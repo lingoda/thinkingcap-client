@@ -86,6 +86,11 @@ class CourseSession
         return $new;
     }
 
+    public function ensureSessionID(): string
+    {
+        return $this->SessionID ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'SessionID');
+    }
+
     public function getSessionName(): ?string
     {
         return $this->SessionName;

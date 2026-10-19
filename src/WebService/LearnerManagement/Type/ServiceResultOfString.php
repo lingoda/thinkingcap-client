@@ -6,11 +6,11 @@ namespace Lingoda\ThinkingcapBundle\WebService\LearnerManagement\Type;
 
 class ServiceResultOfString
 {
-    protected ?string $Result = '';
-
-    protected ?string $Message = '';
+    private ?string $Result = null;
 
     private bool $Success;
+
+    private ?string $Message = null;
 
     public function getResult(): ?string
     {
@@ -23,6 +23,11 @@ class ServiceResultOfString
         $new->Result = $Result;
 
         return $new;
+    }
+
+    public function ensureResult(): string
+    {
+        return $this->Result ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Result');
     }
 
     public function getSuccess(): bool

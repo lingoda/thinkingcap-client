@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ValidateTimedSeedResponse implements ResultInterface
 {
-    private ?ServiceResultOfBoolean $ValidateTimedSeedResult;
+    private ?ServiceResultOfBoolean $ValidateTimedSeedResult = null;
 
     public function getValidateTimedSeedResult(): ?ServiceResultOfBoolean
     {
@@ -21,5 +21,10 @@ class ValidateTimedSeedResponse implements ResultInterface
         $new->ValidateTimedSeedResult = $ValidateTimedSeedResult;
 
         return $new;
+    }
+
+    public function ensureValidateTimedSeedResult(): ServiceResultOfBoolean
+    {
+        return $this->ValidateTimedSeedResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'ValidateTimedSeedResult');
     }
 }

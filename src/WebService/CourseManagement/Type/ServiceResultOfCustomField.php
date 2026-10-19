@@ -6,7 +6,7 @@ namespace Lingoda\ThinkingcapBundle\WebService\CourseManagement\Type;
 
 class ServiceResultOfCustomField
 {
-    private ?CustomField $Result;
+    private ?CustomField $Result = null;
 
     private bool $Success;
 
@@ -23,6 +23,11 @@ class ServiceResultOfCustomField
         $new->Result = $Result;
 
         return $new;
+    }
+
+    public function ensureResult(): CustomField
+    {
+        return $this->Result ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'Result');
     }
 
     public function getSuccess(): bool

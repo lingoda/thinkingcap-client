@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class GetDomainUsersResponse implements ResultInterface
 {
-    private ?ServiceResultOfListOfServiceUser $GetDomainUsersResult;
+    private ?ServiceResultOfListOfServiceUser $GetDomainUsersResult = null;
 
     public function getGetDomainUsersResult(): ?ServiceResultOfListOfServiceUser
     {
@@ -21,5 +21,10 @@ class GetDomainUsersResponse implements ResultInterface
         $new->GetDomainUsersResult = $GetDomainUsersResult;
 
         return $new;
+    }
+
+    public function ensureGetDomainUsersResult(): ServiceResultOfListOfServiceUser
+    {
+        return $this->GetDomainUsersResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'GetDomainUsersResult');
     }
 }

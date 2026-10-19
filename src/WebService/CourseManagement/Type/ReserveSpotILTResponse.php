@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class ReserveSpotILTResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $ReserveSpotILTResult;
+    private ?ServiceResultOfString $ReserveSpotILTResult = null;
 
     public function getReserveSpotILTResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class ReserveSpotILTResponse implements ResultInterface
         $new->ReserveSpotILTResult = $ReserveSpotILTResult;
 
         return $new;
+    }
+
+    public function ensureReserveSpotILTResult(): ServiceResultOfString
+    {
+        return $this->ReserveSpotILTResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'ReserveSpotILTResult');
     }
 }

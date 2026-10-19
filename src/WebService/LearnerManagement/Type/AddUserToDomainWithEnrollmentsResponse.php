@@ -8,7 +8,7 @@ use Phpro\SoapClient\Type\ResultInterface;
 
 class AddUserToDomainWithEnrollmentsResponse implements ResultInterface
 {
-    private ?ServiceResultOfString $AddUserToDomainWithEnrollmentsResult;
+    private ?ServiceResultOfString $AddUserToDomainWithEnrollmentsResult = null;
 
     public function getAddUserToDomainWithEnrollmentsResult(): ?ServiceResultOfString
     {
@@ -21,5 +21,10 @@ class AddUserToDomainWithEnrollmentsResponse implements ResultInterface
         $new->AddUserToDomainWithEnrollmentsResult = $AddUserToDomainWithEnrollmentsResult;
 
         return $new;
+    }
+
+    public function ensureAddUserToDomainWithEnrollmentsResult(): ServiceResultOfString
+    {
+        return $this->AddUserToDomainWithEnrollmentsResult ?? throw \Lingoda\ThinkingcapBundle\Exception\MissingFieldException::create(self::class, 'AddUserToDomainWithEnrollmentsResult');
     }
 }
